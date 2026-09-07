@@ -7,12 +7,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: python -m compileall src
-      - run: python scripts/check_contracts.py
-  frontend-scaffold:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: {node-version: "22"}
-      - run: npm --prefix frontend run check
+        with: {node-version: "22", cache: npm, cache-dependency-path: frontend/package-lock.json}
+      - run: python -m pip install -r requirements/foundation.txt
+      - run: python -m pip install --no-build-isolation --no-deps -e .
+      - run: npm --prefix frontend ci --ignore-scripts
+      - run: python scripts/run_gate.py PR_FAST

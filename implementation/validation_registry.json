@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "validations": [
+    {
+      "id": "VAL-001",
+      "mandatory": true,
+      "owner_scope": "S03",
+      "fixture_owner": "S03",
+      "reference_owner": "S03",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "MILESTONE",
+      "fixture_path": "validation/fixtures/VAL-001/",
+      "reference_path": "validation/references/VAL-001/",
+      "test": "tests/numerical/VAL-001/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-002",
+      "mandatory": true,
+      "owner_scope": "S04",
+      "fixture_owner": "S04",
+      "reference_owner": "S04",
+      "rerun_scopes": [
+        "S02",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "MILESTONE",
+      "fixture_path": "validation/fixtures/VAL-002/",
+      "reference_path": "validation/references/VAL-002/",
+      "test": "tests/numerical/VAL-002/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-003",
+      "mandatory": true,
+      "owner_scope": "S14",
+      "fixture_owner": "S14",
+      "reference_owner": "S14",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "MILESTONE",
+      "fixture_path": "validation/fixtures/VAL-003/",
+      "reference_path": "validation/references/VAL-003/",
+      "test": "tests/numerical/VAL-003/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-004",
+      "mandatory": true,
+      "owner_scope": "S07",
+      "fixture_owner": "S07",
+      "reference_owner": "S07",
+      "rerun_scopes": [
+        "S09",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-004/",
+      "reference_path": "validation/references/VAL-004/",
+      "test": "tests/numerical/VAL-004/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-005",
+      "mandatory": true,
+      "owner_scope": "S13",
+      "fixture_owner": "S13",
+      "reference_owner": "S13",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-005/",
+      "reference_path": "validation/references/VAL-005/",
+      "test": "tests/numerical/VAL-005/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-006",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-006/",
+      "reference_path": "validation/references/VAL-006/",
+      "test": "tests/numerical/VAL-006/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-007",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-007/",
+      "reference_path": "validation/references/VAL-007/",
+      "test": "tests/numerical/VAL-007/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-008",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-008/",
+      "reference_path": "validation/references/VAL-008/",
+      "test": "tests/numerical/VAL-008/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-009",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-009/",
+      "reference_path": "validation/references/VAL-009/",
+      "test": "tests/numerical/VAL-009/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-010",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-010/",
+      "reference_path": "validation/references/VAL-010/",
+      "test": "tests/numerical/VAL-010/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-011",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S05",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-011/",
+      "reference_path": "validation/references/VAL-011/",
+      "test": "tests/numerical/VAL-011/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-012",
+      "mandatory": false,
+      "owner_scope": null,
+      "fixture_owner": null,
+      "reference_owner": null,
+      "rerun_scopes": [],
+      "gate_class": "NOT_REQUIRED",
+      "fixture_path": null,
+      "reference_path": null,
+      "test": null,
+      "execution_status": "NOT_REQUIRED_BY_CURRENT_C1",
+      "contract_status": "UNASSIGNED_NOT_MANDATORY",
+      "failure_consequence": "No GEN1 execution required; adding it requires normative adjudication"
+    },
+    {
+      "id": "VAL-013",
+      "mandatory": true,
+      "owner_scope": "S11",
+      "fixture_owner": "S11",
+      "reference_owner": "S11",
+      "rerun_scopes": [
+        "S08",
+        "S09",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "HEAVY_VERIFICATION",
+      "fixture_path": "validation/fixtures/VAL-013/",
+      "reference_path": "validation/references/VAL-013/",
+      "test": "tests/numerical/VAL-013/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-014",
+      "mandatory": true,
+      "owner_scope": "S11",
+      "fixture_owner": "S11",
+      "reference_owner": "S11",
+      "rerun_scopes": [
+        "S08",
+        "S10",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "HEAVY_VERIFICATION",
+      "fixture_path": "validation/fixtures/VAL-014/",
+      "reference_path": "validation/references/VAL-014/",
+      "test": "tests/numerical/VAL-014/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-015",
+      "mandatory": false,
+      "owner_scope": null,
+      "fixture_owner": null,
+      "reference_owner": null,
+      "rerun_scopes": [],
+      "gate_class": "NOT_REQUIRED",
+      "fixture_path": null,
+      "reference_path": null,
+      "test": null,
+      "execution_status": "NOT_REQUIRED_BY_CURRENT_C1",
+      "contract_status": "UNASSIGNED_NOT_MANDATORY",
+      "failure_consequence": "No GEN1 execution required; adding it requires normative adjudication"
+    },
+    {
+      "id": "VAL-016",
+      "mandatory": true,
+      "owner_scope": "S11",
+      "fixture_owner": "S11",
+      "reference_owner": "S11",
+      "rerun_scopes": [
+        "S08",
+        "S09",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "HEAVY_VERIFICATION",
+      "fixture_path": "validation/fixtures/VAL-016/",
+      "reference_path": "validation/references/VAL-016/",
+      "test": "tests/numerical/VAL-016/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-017",
+      "mandatory": false,
+      "owner_scope": null,
+      "fixture_owner": null,
+      "reference_owner": null,
+      "rerun_scopes": [],
+      "gate_class": "NOT_REQUIRED",
+      "fixture_path": null,
+      "reference_path": null,
+      "test": null,
+      "execution_status": "NOT_REQUIRED_BY_CURRENT_C1",
+      "contract_status": "UNASSIGNED_NOT_MANDATORY",
+      "failure_consequence": "No GEN1 execution required; adding it requires normative adjudication"
+    },
+    {
+      "id": "VAL-018",
+      "mandatory": true,
+      "owner_scope": "S14",
+      "fixture_owner": "S14",
+      "reference_owner": "S14",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-018/",
+      "reference_path": "validation/references/VAL-018/",
+      "test": "tests/numerical/VAL-018/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-019",
+      "mandatory": false,
+      "owner_scope": null,
+      "fixture_owner": null,
+      "reference_owner": null,
+      "rerun_scopes": [],
+      "gate_class": "NOT_REQUIRED",
+      "fixture_path": null,
+      "reference_path": null,
+      "test": null,
+      "execution_status": "NOT_REQUIRED_BY_CURRENT_C1",
+      "contract_status": "UNASSIGNED_NOT_MANDATORY",
+      "failure_consequence": "No GEN1 execution required; adding it requires normative adjudication"
+    },
+    {
+      "id": "VAL-020",
+      "mandatory": true,
+      "owner_scope": "S11",
+      "fixture_owner": "S11",
+      "reference_owner": "S11",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "HEAVY_VERIFICATION",
+      "fixture_path": "validation/fixtures/VAL-020/",
+      "reference_path": "validation/references/VAL-020/",
+      "test": "tests/numerical/VAL-020/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-021",
+      "mandatory": true,
+      "owner_scope": "S16",
+      "fixture_owner": "S16",
+      "reference_owner": "S16",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "HEAVY_VERIFICATION",
+      "fixture_path": "validation/fixtures/VAL-021/",
+      "reference_path": "validation/references/VAL-021/",
+      "test": "tests/numerical/VAL-021/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-022",
+      "mandatory": true,
+      "owner_scope": "S14",
+      "fixture_owner": "S14",
+      "reference_owner": "S14",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "EXPERIMENTAL_VALIDATION",
+      "fixture_path": "validation/fixtures/VAL-022/",
+      "reference_path": "validation/references/VAL-022/",
+      "test": "tests/numerical/VAL-022/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "MISSING_FICHE",
+      "failure_consequence": "Blocks experimental/predictive claim; never reuse calibration data as validation"
+    },
+    {
+      "id": "VAL-023",
+      "mandatory": true,
+      "owner_scope": "S13",
+      "fixture_owner": "S13",
+      "reference_owner": "S13",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-023/",
+      "reference_path": "validation/references/VAL-023/",
+      "test": "tests/numerical/VAL-023/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-024",
+      "mandatory": true,
+      "owner_scope": "S14",
+      "fixture_owner": "S14",
+      "reference_owner": "S14",
+      "rerun_scopes": [
+        "S15",
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-024/",
+      "reference_path": "validation/references/VAL-024/",
+      "test": "tests/numerical/VAL-024/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-025",
+      "mandatory": true,
+      "owner_scope": "S18",
+      "fixture_owner": "S18",
+      "reference_owner": "S18",
+      "rerun_scopes": [
+        "S22"
+      ],
+      "gate_class": "EXPERIMENTAL_VALIDATION",
+      "fixture_path": "validation/fixtures/VAL-025/",
+      "reference_path": "validation/references/VAL-025/",
+      "test": "tests/numerical/VAL-025/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks experimental/predictive claim; never reuse calibration data as validation"
+    },
+    {
+      "id": "VAL-026",
+      "mandatory": true,
+      "owner_scope": "S18",
+      "fixture_owner": "S18",
+      "reference_owner": "S18",
+      "rerun_scopes": [
+        "S22"
+      ],
+      "gate_class": "EXPERIMENTAL_VALIDATION",
+      "fixture_path": "validation/fixtures/VAL-026/",
+      "reference_path": "validation/references/VAL-026/",
+      "test": "tests/numerical/VAL-026/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks experimental/predictive claim; never reuse calibration data as validation"
+    },
+    {
+      "id": "VAL-027",
+      "mandatory": true,
+      "owner_scope": "S06",
+      "fixture_owner": "S06",
+      "reference_owner": "S06",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-027/",
+      "reference_path": "validation/references/VAL-027/",
+      "test": "tests/numerical/VAL-027/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    },
+    {
+      "id": "VAL-028",
+      "mandatory": true,
+      "owner_scope": "S12",
+      "fixture_owner": "S12",
+      "reference_owner": "S12",
+      "rerun_scopes": [
+        "S18",
+        "S22"
+      ],
+      "gate_class": "PR_SCIENTIFIC_AFFECTED",
+      "fixture_path": "validation/fixtures/VAL-028/",
+      "reference_path": "validation/references/VAL-028/",
+      "test": "tests/numerical/VAL-028/test_acceptance.py",
+      "execution_status": "NOT_IMPLEMENTED",
+      "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+    }
+  ]
+}

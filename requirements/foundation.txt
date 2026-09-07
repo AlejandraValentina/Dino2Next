@@ -1,0 +1,10 @@
+# Foundation-only environment; production dependencies belong to their owning scopes.
+hatchling==1.27.0
+packaging==25.0
+pathspec==0.12.1
+pluggy==1.6.0
+trove-classifiers==2025.5.9.12
+pytest==8.4.1
+iniconfig==2.1.0
+Pygments==2.19.2
+

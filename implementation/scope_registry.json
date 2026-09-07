@@ -1,0 +1,2446 @@
+{
+  "schema_version": 1,
+  "scopes": [
+    {
+      "id": "S00",
+      "title": "bootstrap-tooling",
+      "objective": "Install and verify the documentation/toolchain foundation without a solver.",
+      "status": "COMPLETE_FOUNDATION",
+      "normative_ids": [
+        "CAP-010",
+        "NUM-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "scripts/",
+        "tests/contract/foundation/",
+        "pyproject.toml",
+        ".github/",
+        "frontend/scaffold/",
+        "frontend/tsconfig.json",
+        "frontend/package.json",
+        "frontend/package-lock.json",
+        "requirements/foundation.txt"
+      ],
+      "interfaces": [
+        {
+          "name": "FoundationChecks",
+          "purpose": "Install and verify the documentation/toolchain foundation without a solver.",
+          "inputs": "repository root; optional scope ID and gate class",
+          "outputs": "JSON PASS/FAIL report and process exit status",
+          "units": "no physical values",
+          "owner": "S00",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "INTEGRITY_ERROR, SCOPE_CONSISTENCY_ERROR, GATE_UNAVAILABLE"
+        }
+      ],
+      "behavior": [
+        "Verify C1 SHA-256 bytes and mandatory file coverage.",
+        "Run real pytest and TypeScript compiler, reject missing test paths.",
+        "Validate scope structure, ownership, dependency edges and generated documents.",
+        "Do not mark scientific gates as passed when a runner or fixture is absent."
+      ],
+      "tests": [
+        "tests/contract/foundation/test_manifest_integrity.py",
+        "tests/contract/foundation/test_scope_lint.py",
+        "tests/contract/foundation/test_gates.py",
+        "tests/contract/foundation/test_foundation.py"
+      ],
+      "dependencies": [],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/contract/foundation -q"
+      ],
+      "artifacts": [
+        "scripts/",
+        "pyproject.toml",
+        ".github/",
+        "frontend/scaffold/",
+        "frontend/tsconfig.json",
+        "frontend/package.json",
+        "frontend/package-lock.json",
+        "requirements/foundation.txt",
+        "artifacts/S00/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S01",
+      "title": "units-config-provenance",
+      "objective": "Produce immutable SI configuration primitives and canonical provenance for all later scopes.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-010",
+        "NUM-001",
+        "NUM-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/units/",
+        "src/dino2next/config/",
+        "src/dino2next/provenance/",
+        "schemas/common/",
+        "tests/unit/s01/",
+        "tests/contract/s01/"
+      ],
+      "interfaces": [
+        {
+          "name": "ConfigSnapshot",
+          "purpose": "Produce immutable SI configuration primitives and canonical provenance for all later scopes.",
+          "inputs": "Quantity(value: float, unit: str, dimension: str); schema_version: str; JSON-compatible mapping; ResourceRef(id, sha256, media_type)",
+          "outputs": "to_si(quantity) -> float; canonical_bytes(mapping) -> bytes; content_hash(bytes) -> str; freeze_config(mapping) -> ConfigSnapshot(version, SI payload, resource refs, sha256)",
+          "units": "SI storage; supported presentation length mm/m, area mm2/m2, volume cm3/m3, pressure Pa/kPa/bar, angle deg/rad, temperature K/degC, speed rpm/rad/s, power W/kW; no engine calculations",
+          "owner": "S01",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "UNIT_DIMENSION_MISMATCH, NONFINITE_VALUE, SCHEMA_VERSION_UNSUPPORTED, UNKNOWN_FIELD, RESOURCE_HASH_MISMATCH"
+        }
+      ],
+      "behavior": [
+        "Reject NaN/infinity, unknown units and dimension mismatch; handle affine temperature conversion explicitly.",
+        "Canonical JSON uses sorted keys, compact separators, UTF-8, allow_nan=False; arrays preserve order.",
+        "Never mutate input dictionaries; file bytes rather than parsed/reformatted content determine resource SHA.",
+        "Validate common metadata only; later scopes own their scientific payload schemas."
+      ],
+      "tests": [
+        "tests/unit/s01/test_units.py",
+        "tests/contract/s01/test_snapshots.py",
+        "tests/contract/s01/test_hashes.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S00",
+          "interface": "FoundationChecks",
+          "reason": "Run the installed acceptance and integrity tools"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s01/test_units.py tests/contract/s01/test_snapshots.py tests/contract/s01/test_hashes.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/units/",
+        "src/dino2next/config/",
+        "src/dino2next/provenance/",
+        "schemas/common/",
+        "artifacts/S01/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S02",
+      "title": "geometry-events",
+      "objective": "Implement measured geometry value objects and kinematics; enumerate events without changing state.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-001",
+        "PHY-001",
+        "NUM-001",
+        "NUM-008",
+        "VAL-002"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/geometry/",
+        "schemas/geometry/",
+        "tests/unit/s02/",
+        "tests/contract/s02/"
+      ],
+      "interfaces": [
+        {
+          "name": "GeometryModel",
+          "purpose": "Implement measured geometry value objects and kinematics; enumerate events without changing state.",
+          "inputs": "CrankGeometry(bore, stroke, rod, clearance_volume, crankcase_tdc_volume); measured area/perimeter samples; unwrapped theta; EventSpec(theta, kind, component_id)",
+          "outputs": "volumes(theta) -> VolumeGeometry(Vc,Vcc,dVc_dtheta,dVcc_dtheta); passage_geometry() -> immutable samples; events_between(start,end) -> ordered EventOccurrence list",
+          "units": "m, m2, m3, rad; dV/dtheta m3/rad; count integer applied once",
+          "owner": "S02",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "GEOMETRY_INVALID, AREA_DOMAIN_ERROR, VOLUME_NONPOSITIVE"
+        }
+      ],
+      "behavior": [
+        "Use PHY-001 crank-slider and measured T3 dimensions; validate rod > stroke/2 and positive volumes.",
+        "Preserve area versus count provenance; never multiply count twice.",
+        "Unwrapped event enumeration assigns stable occurrence IDs; no repeated event at a shared interval boundary.",
+        "Geometry event enumeration does not perform thermochemical relabel or zone merge."
+      ],
+      "tests": [
+        "tests/unit/s02/test_crank_slider.py",
+        "tests/unit/s02/test_area_count.py",
+        "tests/contract/s02/test_events.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S01",
+          "interface": "ConfigSnapshot",
+          "reason": "Consume SI quantities, hashes and schema metadata"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s02/test_crank_slider.py tests/unit/s02/test_area_count.py tests/contract/s02/test_events.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/geometry/",
+        "schemas/geometry/",
+        "artifacts/S02/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S03",
+      "title": "thermochemistry",
+      "objective": "Implement immutable NASA/EOS dataset evaluation and inversion with explicit domain errors.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-002",
+        "CAP-006",
+        "PHY-002",
+        "NUM-001",
+        "VAL-001"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/thermo/",
+        "schemas/thermo/",
+        "tests/unit/s03/",
+        "tests/contract/s03/",
+        "validation/fixtures/VAL-001/",
+        "validation/references/VAL-001/",
+        "validation/expected/VAL-001/",
+        "tests/numerical/VAL-001/"
+      ],
+      "interfaces": [
+        {
+          "name": "ThermoModel",
+          "purpose": "Implement immutable NASA/EOS dataset evaluation and inversion with explicit domain errors.",
+          "inputs": "ThermoDataset(species names/order, molar masses, NASA7 ranges/coefficients, reference metadata, sha256); T,p,Y or rho,e,Y",
+          "outputs": "evaluate(T,p,Y) -> ThermoState(rho,R,cp,cv,h,e,gamma,a); invert_energy(rho,e,Y) -> ThermoState; species_properties(T) -> read-only arrays",
+          "units": "K, Pa, kg/m3, kg/kmol, J/kg, J/(kg K), m/s; Y dimensionless",
+          "owner": "S03",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "EOS_OUT_OF_DOMAIN, COMPOSITION_INVALID, DATASET_HASH_MISMATCH, EOS_INVERSION_FAILED"
+        }
+      ],
+      "behavior": [
+        "Use five chemical species in normative order, distinct from provenance tags.",
+        "Low/high NASA branch at 1000 K follows C1 exactly; no extrapolation or hidden formation-energy offset.",
+        "Check simplex and supplied dataset identity; no undocumented built-in fuel dataset.",
+        "Return diagnostic inversion residual and preserve input; use fixture oracle independent of candidate evaluator."
+      ],
+      "tests": [
+        "tests/unit/s03/test_nasa_branches.py",
+        "tests/unit/s03/test_eos_inversion.py",
+        "tests/contract/s03/test_dataset_identity.py",
+        "tests/numerical/VAL-001/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S01",
+          "interface": "ConfigSnapshot",
+          "reason": "Bind SI inputs and immutable dataset hash"
+        }
+      ],
+      "vals": [
+        "VAL-001"
+      ],
+      "issues": [
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s03/test_nasa_branches.py tests/unit/s03/test_eos_inversion.py tests/contract/s03/test_dataset_identity.py tests/numerical/VAL-001/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/thermo/",
+        "schemas/thermo/",
+        "validation/fixtures/VAL-001/",
+        "validation/references/VAL-001/",
+        "validation/expected/VAL-001/",
+        "artifacts/S03/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S04",
+      "title": "conservative-volumes",
+      "objective": "Provide single-zone extensive inventories and signed transfer/source ledger primitives.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-002",
+        "PHY-002",
+        "PHY-003",
+        "NUM-001",
+        "NUM-007",
+        "VAL-002"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/volumes/",
+        "schemas/volumes/",
+        "tests/unit/s04/",
+        "tests/contract/s04/",
+        "validation/fixtures/VAL-002/",
+        "validation/references/VAL-002/",
+        "validation/expected/VAL-002/",
+        "tests/numerical/VAL-002/"
+      ],
+      "interfaces": [
+        {
+          "name": "VolumeInventory",
+          "purpose": "Provide single-zone extensive inventories and signed transfer/source ledger primitives.",
+          "inputs": "species_mass[5], internal_energy, tracer_mass[4], VolumeGeometry and signed TransferLedger records",
+          "outputs": "state(inventory,volume,ThermoModel) -> VolumeState; balance_rates(transfers,heat,p_dV) -> InventoryRate; apply_increment(inventory,increment) -> new inventory",
+          "units": "kg, J, m3, kg/s, W; rate sign positive into volume",
+          "owner": "S04",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "VOLUME_NONPOSITIVE, INVENTORY_INADMISSIBLE, TRANSFER_LEDGER_MISMATCH"
+        }
+      ],
+      "behavior": [
+        "Use total internal energy including formation; negative numeric U alone is not an invalidity test.",
+        "Pair interface increments by transfer ID and opposite extensive values; keep physical sources separate.",
+        "Do not implement two-zone closure here; S12 owns it and builds on these primitives.",
+        "Compute p*dV work at the same stage state and geometry."
+      ],
+      "tests": [
+        "tests/unit/s04/test_closed_volume.py",
+        "tests/contract/s04/test_transfer_pairs.py",
+        "tests/numerical/VAL-002/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S02",
+          "interface": "GeometryModel",
+          "reason": "Evaluate stage volume and displacement rate"
+        },
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Recover state from extensive chemical masses and energy"
+        }
+      ],
+      "vals": [
+        "VAL-002"
+      ],
+      "issues": [
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s04/test_closed_volume.py tests/contract/s04/test_transfer_pairs.py tests/numerical/VAL-002/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/volumes/",
+        "schemas/volumes/",
+        "validation/fixtures/VAL-002/",
+        "validation/references/VAL-002/",
+        "validation/expected/VAL-002/",
+        "artifacts/S04/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S05",
+      "title": "finite-volume-state",
+      "objective": "Implement area-weighted cell storage, geometry integration and conservative inventory reporting.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-003",
+        "PHY-004",
+        "NUM-001",
+        "NUM-004",
+        "VAL-011"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/gasdynamics/",
+        "tests/unit/s05/",
+        "tests/contract/s05/"
+      ],
+      "interfaces": [
+        {
+          "name": "DuctState",
+          "purpose": "Implement area-weighted cell storage, geometry integration and conservative inventory reporting.",
+          "inputs": "Mesh1D(cell bounds, area averages, face areas, perimeter); Q[cell, component] with chemical/tracer ordering; ThermoModel",
+          "outputs": "primitive(duct) -> read-only state arrays; integrated_inventory(duct) -> extensive totals; geometry_source(duct) -> momentum rate array",
+          "units": "Q=A*U averages; kg/m, kg/s, J/m for respective components; SI mesh",
+          "owner": "S05",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "MESH_NONCONFORMING, GEOMETRY_INVALID, EOS_OUT_OF_DOMAIN"
+        }
+      ],
+      "behavior": [
+        "Distinguish cell average from integrated inventory using dx.",
+        "Use exact piecewise geometry integration and AF+p\u0394A semantics.",
+        "Do not compute numerical face fluxes in this scope.",
+        "Keep closed-port storage persistent; do not derive storage from Cd or opening."
+      ],
+      "tests": [
+        "tests/unit/s05/test_cell_inventory.py",
+        "tests/contract/s05/test_geometry_balance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S02",
+          "interface": "GeometryModel",
+          "reason": "Consume physical face/average geometry"
+        },
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Recover NASA states"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s05/test_cell_inventory.py tests/contract/s05/test_geometry_balance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/gasdynamics/",
+        "artifacts/S05/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S06",
+      "title": "numerical-kernel",
+      "objective": "Implement the already selected interior recipe and integrator through explicit replace-free interfaces.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-003",
+        "NUM-001",
+        "NUM-002",
+        "NUM-003",
+        "NUM-004",
+        "NUM-005",
+        "NUM-006",
+        "NUM-010",
+        "VAL-006",
+        "VAL-007",
+        "VAL-008",
+        "VAL-009",
+        "VAL-010",
+        "VAL-011",
+        "VAL-027"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/numerics/",
+        "tests/unit/s06/",
+        "tests/contract/s06/",
+        "validation/fixtures/VAL-006/",
+        "validation/references/VAL-006/",
+        "validation/expected/VAL-006/",
+        "tests/numerical/VAL-006/",
+        "validation/fixtures/VAL-007/",
+        "validation/references/VAL-007/",
+        "validation/expected/VAL-007/",
+        "tests/numerical/VAL-007/",
+        "validation/fixtures/VAL-008/",
+        "validation/references/VAL-008/",
+        "validation/expected/VAL-008/",
+        "tests/numerical/VAL-008/",
+        "validation/fixtures/VAL-009/",
+        "validation/references/VAL-009/",
+        "validation/expected/VAL-009/",
+        "tests/numerical/VAL-009/",
+        "validation/fixtures/VAL-010/",
+        "validation/references/VAL-010/",
+        "validation/expected/VAL-010/",
+        "tests/numerical/VAL-010/",
+        "validation/fixtures/VAL-011/",
+        "validation/references/VAL-011/",
+        "validation/expected/VAL-011/",
+        "tests/numerical/VAL-011/",
+        "validation/fixtures/VAL-027/",
+        "validation/references/VAL-027/",
+        "validation/expected/VAL-027/",
+        "tests/numerical/VAL-027/"
+      ],
+      "interfaces": [
+        {
+          "name": "NumericalKernel",
+          "purpose": "Implement the already selected interior recipe and integrator through explicit replace-free interfaces.",
+          "inputs": "DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1",
+          "outputs": "reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics)",
+          "units": "seconds; face flux per area before area weighting; extensive ledger integrals after stage quadrature",
+          "owner": "S06",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "ROE_SECANT_NONHYPERBOLIC, EOS_OUT_OF_DOMAIN, STAGE_INADMISSIBLE, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Implement the exact approved shock sensor, secant/interpolated flux and joint guard only after H-01 closure supplies their normative equations.",
+        "Do not infer the sensor formula from three constants or copy research code as authority.",
+        "Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.",
+        "No global coupled timestep policy here; S16 composes all source bounds."
+      ],
+      "tests": [
+        "tests/unit/s06/test_reconstruction.py",
+        "tests/unit/s06/test_flux.py",
+        "tests/contract/s06/test_step_transaction.py",
+        "tests/numerical/VAL-006/test_acceptance.py",
+        "tests/numerical/VAL-007/test_acceptance.py",
+        "tests/numerical/VAL-008/test_acceptance.py",
+        "tests/numerical/VAL-009/test_acceptance.py",
+        "tests/numerical/VAL-010/test_acceptance.py",
+        "tests/numerical/VAL-011/test_acceptance.py",
+        "tests/numerical/VAL-027/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S05",
+          "interface": "DuctState",
+          "reason": "Read conservative mesh/state arrays"
+        },
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Use consistent thermodynamic derivatives and state recovery"
+        }
+      ],
+      "vals": [
+        "VAL-006",
+        "VAL-007",
+        "VAL-008",
+        "VAL-009",
+        "VAL-010",
+        "VAL-011",
+        "VAL-027"
+      ],
+      "issues": [
+        "H-01",
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s06/test_reconstruction.py tests/unit/s06/test_flux.py tests/contract/s06/test_step_transaction.py tests/numerical/VAL-006/test_acceptance.py tests/numerical/VAL-007/test_acceptance.py tests/numerical/VAL-008/test_acceptance.py tests/numerical/VAL-009/test_acceptance.py tests/numerical/VAL-010/test_acceptance.py tests/numerical/VAL-011/test_acceptance.py tests/numerical/VAL-027/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/numerics/",
+        "validation/fixtures/VAL-006/",
+        "validation/references/VAL-006/",
+        "validation/expected/VAL-006/",
+        "validation/fixtures/VAL-007/",
+        "validation/references/VAL-007/",
+        "validation/expected/VAL-007/",
+        "validation/fixtures/VAL-008/",
+        "validation/references/VAL-008/",
+        "validation/expected/VAL-008/",
+        "validation/fixtures/VAL-009/",
+        "validation/references/VAL-009/",
+        "validation/expected/VAL-009/",
+        "validation/fixtures/VAL-010/",
+        "validation/references/VAL-010/",
+        "validation/expected/VAL-010/",
+        "validation/fixtures/VAL-011/",
+        "validation/references/VAL-011/",
+        "validation/expected/VAL-011/",
+        "validation/fixtures/VAL-027/",
+        "validation/references/VAL-027/",
+        "validation/expected/VAL-027/",
+        "artifacts/S06/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S07",
+      "title": "boundaries-coupling",
+      "objective": "Produce oriented half-Riemann boundary traces and a shared interface ledger.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-002",
+        "CAP-004",
+        "PHY-004",
+        "PHY-005",
+        "NUM-007",
+        "NUM-008",
+        "VAL-004"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/boundaries/",
+        "src/dino2next/coupling/",
+        "tests/unit/s07/",
+        "tests/contract/s07/",
+        "validation/fixtures/VAL-004/",
+        "validation/references/VAL-004/",
+        "validation/expected/VAL-004/",
+        "tests/numerical/VAL-004/"
+      ],
+      "interfaces": [
+        {
+          "name": "BoundaryCoupler",
+          "purpose": "Produce oriented half-Riemann boundary traces and a shared interface ledger.",
+          "inputs": "reservoir state, duct face state, outward normal, physical face area, opening fraction, time; ThermoModel",
+          "outputs": "solve(...) -> BoundaryTrace(donor, p,T,u,M, flux, diagnostics); pair_flux(trace,left_id,right_id) -> TransferLedger pair",
+          "units": "SI; outward normal +/-1; kg/s, N, W and species/tracer kg/s",
+          "owner": "S07",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "BOUNDARY_NO_PHYSICAL_ROOT, EOS_OUT_OF_DOMAIN, CHARACTERISTIC_DOMAIN_ERROR"
+        }
+      ],
+      "behavior": [
+        "Use the approved full boundary equations after H-01 supplies the missing half-Riemann recipe.",
+        "Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.",
+        "Closed face has zero mass/energy/species exchange and physical pressure force.",
+        "One flux record is shared by both endpoints; never evaluate different times for each end."
+      ],
+      "tests": [
+        "tests/unit/s07/test_boundary_donor.py",
+        "tests/contract/s07/test_oriented_flux.py",
+        "tests/numerical/VAL-004/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Evaluate donor thermodynamics"
+        },
+        {
+          "scope": "S04",
+          "interface": "VolumeInventory",
+          "reason": "Return paired increments to the volume"
+        },
+        {
+          "scope": "S06",
+          "interface": "NumericalKernel",
+          "reason": "Consume reconstructed traces"
+        }
+      ],
+      "vals": [
+        "VAL-004"
+      ],
+      "issues": [
+        "H-01",
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s07/test_boundary_donor.py tests/contract/s07/test_oriented_flux.py tests/numerical/VAL-004/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/boundaries/",
+        "src/dino2next/coupling/",
+        "validation/fixtures/VAL-004/",
+        "validation/references/VAL-004/",
+        "validation/expected/VAL-004/",
+        "artifacts/S07/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S08",
+      "title": "dynamic-ports",
+      "objective": "Implement persistent T3 storage and opening/closing communication semantics.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-004",
+        "PHY-005",
+        "NUM-001",
+        "NUM-007",
+        "NUM-008",
+        "VAL-013",
+        "VAL-014",
+        "VAL-016"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/ports/passage/",
+        "tests/unit/s08/",
+        "tests/contract/s08/"
+      ],
+      "interfaces": [
+        {
+          "name": "PortPassage",
+          "purpose": "Implement persistent T3 storage and opening/closing communication semantics.",
+          "inputs": "physical Mesh1D, DuctState, opening schedule, endpoints and loss-source callback",
+          "outputs": "evaluate(stage) -> PassageRates and paired flux records; snapshot() -> persistent conserved field",
+          "units": "physical m,m2,m3; opening dimensionless; no Cd-derived volume",
+          "owner": "S08",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "INADMISSIBLE_WINDOW_STATE, PORT_GEOMETRY_MISMATCH, BOUNDARY_NO_PHYSICAL_ROOT"
+        }
+      ],
+      "behavior": [
+        "Opening controls communicating face only; closure, reversal and choking do not reset cells.",
+        "Accept a loss-source interface, not an online ambiguous Cd inversion.",
+        "Attach normal/endpoint identities to transfers and retain closed inventory.",
+        "Consume S09 CharacterizedLoss later through the declared callback; zero-loss analytical verification is explicitly synthetic."
+      ],
+      "tests": [
+        "tests/unit/s08/test_retained_inventory.py",
+        "tests/contract/s08/test_window_transitions.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S05",
+          "interface": "DuctState",
+          "reason": "Own persistent passage state"
+        },
+        {
+          "scope": "S07",
+          "interface": "BoundaryCoupler",
+          "reason": "Produce interface traces and paired fluxes"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s08/test_retained_inventory.py tests/contract/s08/test_window_transitions.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/ports/passage/",
+        "artifacts/S08/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S09",
+      "title": "loss-characterization",
+      "objective": "Produce offline characterized lambda certificates and guarded runtime loss evaluation.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-004",
+        "PHY-005",
+        "NUM-005",
+        "NUM-007",
+        "VAL-004",
+        "VAL-013",
+        "VAL-016"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/ports/characterization/",
+        "schemas/port_loss/",
+        "tests/unit/s09/",
+        "tests/contract/s09/"
+      ],
+      "interfaces": [
+        {
+          "name": "CharacterizedLoss",
+          "purpose": "Produce offline characterized lambda certificates and guarded runtime loss evaluation.",
+          "inputs": "RawCdDataset(stations, pressure types, reference area, direction, opening, observations,covariance); fixed geometry/EOS hashes; auxiliary p_window_in where required",
+          "outputs": "characterize(dataset) -> LossMapCertificate; evaluate(certificate,state,opening,direction) -> lambda, uncertainty, momentum source and entropy diagnostic",
+          "units": "Cd/lambda dimensionless; pressure Pa; w 1/m; source in Q momentum units; raw data immutable",
+          "owner": "S09",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "LOSS_PARAMETER_NONIDENTIFIABLE, LOSS_PARAMETER_ILL_CONDITIONED, AUXILIARY_MEASUREMENT_REQUIRED, LOSS_DATA_OUT_OF_DOMAIN"
+        }
+      ],
+      "behavior": [
+        "Raw Cd remains unchanged and linked to every fitted point.",
+        "Report lack of identifying observations rather than choose a root in a plateau.",
+        "No negative lambda, clipping, unqualified interpolation or extrapolation.",
+        "C1 must supply the interpolation/certificate conditioning contract in H-05 before runtime mapping is implemented."
+      ],
+      "tests": [
+        "tests/unit/s09/test_identification_status.py",
+        "tests/contract/s09/test_raw_cd_provenance.py",
+        "tests/contract/s09/test_map_domain.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S01",
+          "interface": "ConfigSnapshot",
+          "reason": "Bind raw and derived resource identity"
+        },
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Use the certified EOS"
+        },
+        {
+          "scope": "S08",
+          "interface": "PortPassage",
+          "reason": "Evaluate the fixed characterization passage"
+        }
+      ],
+      "vals": [],
+      "issues": [
+        "H-05"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s09/test_identification_status.py tests/contract/s09/test_raw_cd_provenance.py tests/contract/s09/test_map_domain.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/ports/characterization/",
+        "schemas/port_loss/",
+        "artifacts/S09/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S10",
+      "title": "cylinder-crankcase",
+      "objective": "Compose the moving cylinder and crankcase balances without owning combustion or scavenging.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-002",
+        "PHY-001",
+        "PHY-003",
+        "NUM-002",
+        "NUM-007",
+        "VAL-014"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/engine/volumes/",
+        "tests/unit/s10/",
+        "tests/contract/s10/"
+      ],
+      "interfaces": [
+        {
+          "name": "EngineVolumes",
+          "purpose": "Compose the moving cylinder and crankcase balances without owning combustion or scavenging.",
+          "inputs": "GeometryModel; initial VolumeInventory; stage time; paired TransferLedger; explicit heat/source contributions",
+          "outputs": "evaluate(stage) -> cylinder/crankcase rates, p*dV work ledger and VolumeState pair",
+          "units": "m3, Pa, K, J, W, kg/s",
+          "owner": "S10",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "INVENTORY_INADMISSIBLE, GEOMETRY_INVALID, INTERFACE_TIME_MISMATCH"
+        }
+      ],
+      "behavior": [
+        "Evaluate V and Vdot at exactly the integrator stage time.",
+        "Cylinder and crankcase work are recorded separately with the normative sign.",
+        "No duplication of port inventories inside 0D volumes.",
+        "Expose a cylinder closure protocol consumed by S12; do not implement two zones twice."
+      ],
+      "tests": [
+        "tests/unit/s10/test_moving_work.py",
+        "tests/contract/s10/test_volume_port_pairing.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S02",
+          "interface": "GeometryModel",
+          "reason": "Get time-aligned geometry"
+        },
+        {
+          "scope": "S04",
+          "interface": "VolumeInventory",
+          "reason": "Update extensive state"
+        },
+        {
+          "scope": "S08",
+          "interface": "PortPassage",
+          "reason": "Consume paired passage transfers"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s10/test_moving_work.py tests/contract/s10/test_volume_port_pairing.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/engine/volumes/",
+        "artifacts/S10/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S11",
+      "title": "transfers-exhaust",
+      "objective": "Assemble the explicit GEN1 path topology and enforce supported connections.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-003",
+        "CAP-004",
+        "PHY-004",
+        "PHY-005",
+        "NUM-007",
+        "NUM-008",
+        "VAL-020"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/engine/topology/",
+        "schemas/topology/",
+        "tests/unit/s11/",
+        "tests/contract/s11/",
+        "validation/fixtures/VAL-013/",
+        "validation/references/VAL-013/",
+        "validation/expected/VAL-013/",
+        "tests/numerical/VAL-013/",
+        "validation/fixtures/VAL-014/",
+        "validation/references/VAL-014/",
+        "validation/expected/VAL-014/",
+        "tests/numerical/VAL-014/",
+        "validation/fixtures/VAL-016/",
+        "validation/references/VAL-016/",
+        "validation/expected/VAL-016/",
+        "tests/numerical/VAL-016/",
+        "validation/fixtures/VAL-020/",
+        "validation/references/VAL-020/",
+        "validation/expected/VAL-020/",
+        "tests/numerical/VAL-020/"
+      ],
+      "interfaces": [
+        {
+          "name": "EngineTopology",
+          "purpose": "Assemble the explicit GEN1 path topology and enforce supported connections.",
+          "inputs": "EngineVolumes, intake/transfer/exhaust PortPassage definitions, exterior states and component IDs",
+          "outputs": "build() -> immutable EngineTopology(path IDs, endpoints, physical inventories, event targets); connected_interfaces() -> ordered interface list",
+          "units": "SI geometry and states; stable string component IDs",
+          "owner": "S11",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "UNSUPPORTED_TOPOLOGY, DUPLICATE_COMPONENT_ID, UNCONNECTED_INTERFACE, DOUBLE_COUNTED_VOLUME"
+        }
+      ],
+      "behavior": [
+        "Allow N independent transfer passages and no generic junction solver.",
+        "Exactly one owner per passage and inventory; reject duplicate shared volumes.",
+        "Ensure closed windows retain domains and exhaust geometry remains physical.",
+        "Do not aggregate completed runs or integrate dynamics in topology assembly."
+      ],
+      "tests": [
+        "tests/unit/s11/test_supported_topology.py",
+        "tests/contract/s11/test_inventory_ownership.py",
+        "tests/numerical/VAL-013/test_acceptance.py",
+        "tests/numerical/VAL-014/test_acceptance.py",
+        "tests/numerical/VAL-016/test_acceptance.py",
+        "tests/numerical/VAL-020/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S08",
+          "interface": "PortPassage",
+          "reason": "Connect the explicit physical passages"
+        },
+        {
+          "scope": "S10",
+          "interface": "EngineVolumes",
+          "reason": "Resolve endpoint inventories"
+        },
+        {
+          "scope": "S09",
+          "interface": "CharacterizedLoss",
+          "reason": "Use characterized lambda in all coupled verification fixtures"
+        }
+      ],
+      "vals": [
+        "VAL-013",
+        "VAL-014",
+        "VAL-016",
+        "VAL-020"
+      ],
+      "issues": [
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s11/test_supported_topology.py tests/contract/s11/test_inventory_ownership.py tests/numerical/VAL-013/test_acceptance.py tests/numerical/VAL-014/test_acceptance.py tests/numerical/VAL-016/test_acceptance.py tests/numerical/VAL-020/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/engine/topology/",
+        "schemas/topology/",
+        "validation/fixtures/VAL-013/",
+        "validation/references/VAL-013/",
+        "validation/expected/VAL-013/",
+        "validation/fixtures/VAL-014/",
+        "validation/references/VAL-014/",
+        "validation/expected/VAL-014/",
+        "validation/fixtures/VAL-016/",
+        "validation/references/VAL-016/",
+        "validation/expected/VAL-016/",
+        "validation/fixtures/VAL-020/",
+        "validation/references/VAL-020/",
+        "validation/expected/VAL-020/",
+        "artifacts/S11/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S12",
+      "title": "scavenging-tracers",
+      "objective": "Implement two-zone state evolution, provenance relabels and scavenging outputs.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-005",
+        "PHY-003",
+        "PHY-009",
+        "NUM-007",
+        "NUM-008",
+        "VAL-028"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/scavenging/",
+        "schemas/scavenging/",
+        "tests/unit/s12/",
+        "tests/contract/s12/",
+        "validation/fixtures/VAL-028/",
+        "validation/references/VAL-028/",
+        "validation/expected/VAL-028/",
+        "tests/numerical/VAL-028/"
+      ],
+      "interfaces": [
+        {
+          "name": "ScavengingModel",
+          "purpose": "Implement two-zone state evolution, provenance relabels and scavenging outputs.",
+          "inputs": "zone chemical masses/energy/tracers; common cylinder volume; signed transfers; chi,kappa; event occurrence",
+          "outputs": "rates(...) -> zone rates and transfer donor state; apply_event(...) -> conserved merged/relabelled state and ledger; metrics(cycle) -> typed metrics",
+          "units": "kg,J,K,Pa,seconds; chi/kappa/fractions dimensionless",
+          "owner": "S12",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "ZONE_INVENTORY_INVALID, ZERO_DENOMINATOR, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Birth introduces no seed inventory and EPC merge is conservative.",
+        "F0/F1/R/X remain separate from chemical species.",
+        "Use selected exhaust and transfer-backflow splits without changing chi/kappa.",
+        "H-04 must resolve missing zone-energy and metric denominator definitions; no guessed residual/trapping formula."
+      ],
+      "tests": [
+        "tests/unit/s12/test_birth_merge.py",
+        "tests/unit/s12/test_relabel_ledger.py",
+        "tests/contract/s12/test_scavenging_metrics.py",
+        "tests/numerical/VAL-028/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S04",
+          "interface": "VolumeInventory",
+          "reason": "Compose extensive primitive ledgers"
+        },
+        {
+          "scope": "S10",
+          "interface": "EngineVolumes",
+          "reason": "Implement the cylinder closure interface"
+        },
+        {
+          "scope": "S11",
+          "interface": "EngineTopology",
+          "reason": "Resolve transfer/exhaust event IDs"
+        }
+      ],
+      "vals": [
+        "VAL-028"
+      ],
+      "issues": [
+        "H-04",
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s12/test_birth_merge.py tests/unit/s12/test_relabel_ledger.py tests/contract/s12/test_scavenging_metrics.py tests/numerical/VAL-028/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/scavenging/",
+        "schemas/scavenging/",
+        "validation/fixtures/VAL-028/",
+        "validation/references/VAL-028/",
+        "validation/expected/VAL-028/",
+        "artifacts/S12/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S13",
+      "title": "combustion",
+      "objective": "Advance the selected closed-cylinder prescribed reaction and exact stoichiometric ledger.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-006",
+        "PHY-002",
+        "PHY-006",
+        "NUM-002",
+        "NUM-005",
+        "VAL-005",
+        "VAL-023"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/combustion/",
+        "schemas/combustion/",
+        "tests/unit/s13/",
+        "tests/contract/s13/",
+        "validation/fixtures/VAL-005/",
+        "validation/references/VAL-005/",
+        "validation/expected/VAL-005/",
+        "tests/numerical/VAL-005/",
+        "validation/fixtures/VAL-023/",
+        "validation/references/VAL-023/",
+        "validation/expected/VAL-023/",
+        "tests/numerical/VAL-023/"
+      ],
+      "interfaces": [
+        {
+          "name": "CombustionModel",
+          "purpose": "Advance the selected closed-cylinder prescribed reaction and exact stoichiometric ledger.",
+          "inputs": "merged cylinder inventory; SOC/end event; supplied Wiebe parameters; stage angle; reactant-limited initial extent",
+          "outputs": "initialize_soc(...) -> BurnState; reaction_increment(t0,t1) -> species increment and progress; admissibility_bound(...) -> bound diagnostic",
+          "units": "extent kmol; kg chemical changes; rad/seconds; total-energy source zero",
+          "owner": "S13",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "COMBUSTION_PORT_OPEN, REACTANT_DEPLETION, SOC_OUT_OF_DOMAIN, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Use the exact selected reaction-coordinate integration, not an extra LHV energy source.",
+        "Reject open-port or unmerged-cylinder SOC; preserve unburned reactants.",
+        "End-burn handling is event aligned and does not overshoot terminal extent.",
+        "H-02 must define how the exact coordinate composes with SSPRK2; no hidden splitting."
+      ],
+      "tests": [
+        "tests/unit/s13/test_reaction_balance.py",
+        "tests/contract/s13/test_soc_events.py",
+        "tests/numerical/VAL-005/test_acceptance.py",
+        "tests/numerical/VAL-023/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Use formation-inclusive species properties"
+        },
+        {
+          "scope": "S10",
+          "interface": "EngineVolumes",
+          "reason": "Read cylinder inventory"
+        },
+        {
+          "scope": "S12",
+          "interface": "ScavengingModel",
+          "reason": "Require conservative merged state at SOC"
+        }
+      ],
+      "vals": [
+        "VAL-005",
+        "VAL-023"
+      ],
+      "issues": [
+        "H-02",
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s13/test_reaction_balance.py tests/contract/s13/test_soc_events.py tests/numerical/VAL-005/test_acceptance.py tests/numerical/VAL-023/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/combustion/",
+        "schemas/combustion/",
+        "validation/fixtures/VAL-005/",
+        "validation/references/VAL-005/",
+        "validation/expected/VAL-005/",
+        "validation/fixtures/VAL-023/",
+        "validation/references/VAL-023/",
+        "validation/expected/VAL-023/",
+        "artifacts/S13/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S14",
+      "title": "thermal-losses",
+      "objective": "Implement selected thermal and mechanical gas-path source closures with separate ledgers.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-007",
+        "CAP-008",
+        "PHY-007",
+        "PHY-008",
+        "NUM-005",
+        "VAL-003",
+        "VAL-018",
+        "VAL-022",
+        "VAL-024"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/heat_transfer/",
+        "src/dino2next/losses/",
+        "schemas/thermal_loss/",
+        "tests/unit/s14/",
+        "tests/contract/s14/",
+        "validation/fixtures/VAL-003/",
+        "validation/references/VAL-003/",
+        "validation/expected/VAL-003/",
+        "tests/numerical/VAL-003/",
+        "validation/fixtures/VAL-018/",
+        "validation/references/VAL-018/",
+        "validation/expected/VAL-018/",
+        "tests/numerical/VAL-018/",
+        "validation/fixtures/VAL-022/",
+        "validation/references/VAL-022/",
+        "validation/expected/VAL-022/",
+        "tests/numerical/VAL-022/",
+        "validation/fixtures/VAL-024/",
+        "validation/references/VAL-024/",
+        "validation/expected/VAL-024/",
+        "tests/numerical/VAL-024/"
+      ],
+      "interfaces": [
+        {
+          "name": "PhysicalSources",
+          "purpose": "Implement selected thermal and mechanical gas-path source closures with separate ledgers.",
+          "inputs": "ThermoState; physical geometry/perimeter; prescribed wall data; Hcc,Cq,roughness and measured K map; disjoint loss regions",
+          "outputs": "evaluate(...) -> SourceRates(momentum,heat,species=0), entropy/force diagnostics and timestep-bound inputs",
+          "units": "N/m for A-weighted momentum source; W/m duct heat; W 0D heat; Pa FMEP separate",
+          "owner": "S14",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "THERMAL_MODEL_OUT_OF_DOMAIN, LOSS_REGION_OVERLAP, REQUIRED_MAP_MISSING, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Reject W2/K duplicate representation of the same measured region.",
+        "Adiabatic shear has zero total-energy source; heat remains separately signed.",
+        "No zero/default substitution for missing Hcc/Cq required characterization.",
+        "H-06 must supply the exact named correlation realization and H-03 the absent VAL-022 fiche."
+      ],
+      "tests": [
+        "tests/unit/s14/test_source_ledgers.py",
+        "tests/contract/s14/test_loss_region_ownership.py",
+        "tests/numerical/VAL-003/test_acceptance.py",
+        "tests/numerical/VAL-018/test_acceptance.py",
+        "tests/numerical/VAL-022/test_acceptance.py",
+        "tests/numerical/VAL-024/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S03",
+          "interface": "ThermoModel",
+          "reason": "Use pinned transport/EOS properties"
+        },
+        {
+          "scope": "S11",
+          "interface": "EngineTopology",
+          "reason": "Locate physical walls and loss regions"
+        },
+        {
+          "scope": "S09",
+          "interface": "CharacterizedLoss",
+          "reason": "Exclude W2 characterization regions from local K"
+        },
+        {
+          "scope": "S12",
+          "interface": "ScavengingModel",
+          "reason": "Combined source verification includes zone exchange"
+        },
+        {
+          "scope": "S13",
+          "interface": "CombustionModel",
+          "reason": "Combined source verification includes prescribed chemistry"
+        }
+      ],
+      "vals": [
+        "VAL-003",
+        "VAL-018",
+        "VAL-022",
+        "VAL-024"
+      ],
+      "issues": [
+        "H-03",
+        "H-06"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s14/test_source_ledgers.py tests/contract/s14/test_loss_region_ownership.py tests/numerical/VAL-003/test_acceptance.py tests/numerical/VAL-018/test_acceptance.py tests/numerical/VAL-022/test_acceptance.py tests/numerical/VAL-024/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/heat_transfer/",
+        "src/dino2next/losses/",
+        "schemas/thermal_loss/",
+        "validation/fixtures/VAL-003/",
+        "validation/references/VAL-003/",
+        "validation/expected/VAL-003/",
+        "validation/fixtures/VAL-018/",
+        "validation/references/VAL-018/",
+        "validation/expected/VAL-018/",
+        "validation/fixtures/VAL-022/",
+        "validation/references/VAL-022/",
+        "validation/expected/VAL-022/",
+        "validation/fixtures/VAL-024/",
+        "validation/references/VAL-024/",
+        "validation/expected/VAL-024/",
+        "artifacts/S14/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S15",
+      "title": "performance",
+      "objective": "Derive backend-owned work and indicated/brake outputs from accepted cycle ledgers.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-008",
+        "PHY-010",
+        "NUM-010",
+        "VAL-024"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/results/performance/",
+        "tests/unit/s15/",
+        "tests/contract/s15/"
+      ],
+      "interfaces": [
+        {
+          "name": "PerformanceResult",
+          "purpose": "Derive backend-owned work and indicated/brake outputs from accepted cycle ledgers.",
+          "inputs": "completed accepted-cycle work/heat/mass ledgers; displaced volume; rpm; optional qualified FMEP and auxiliary losses",
+          "outputs": "derive_performance(...) -> PerformanceResult(values, units, semantic kinds, availability reasons, parent hashes)",
+          "units": "J/rev, Pa MEP, N m, W; no frontend computation",
+          "owner": "S15",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "BRAKE_OUTPUT_UNAVAILABLE, CYCLE_NOT_ACCEPTED, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Do not label cylinder indicated work as brake or silently include/exclude crankcase work.",
+        "Missing mechanical map returns typed unavailable fields, not zeros.",
+        "Preserve work components and parent ledger identity.",
+        "H-04 must resolve any MEP/work-boundary and metric definition absent from C1 before calculation."
+      ],
+      "tests": [
+        "tests/unit/s15/test_work_semantics.py",
+        "tests/contract/s15/test_brake_availability.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S10",
+          "interface": "EngineVolumes",
+          "reason": "Consume cylinder/crankcase work ledgers"
+        },
+        {
+          "scope": "S12",
+          "interface": "ScavengingModel",
+          "reason": "Consume accepted scavenging cycle metrics"
+        },
+        {
+          "scope": "S13",
+          "interface": "CombustionModel",
+          "reason": "Consume burn/energy diagnostics"
+        },
+        {
+          "scope": "S14",
+          "interface": "PhysicalSources",
+          "reason": "Consume wall/gas/mechanical loss ledgers"
+        }
+      ],
+      "vals": [],
+      "issues": [
+        "H-04"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s15/test_work_semantics.py tests/contract/s15/test_brake_availability.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/results/performance/",
+        "artifacts/S15/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S16",
+      "title": "periodic-sweep",
+      "objective": "Compose full GEN1 stage transactions, event handling, periodicity and bounded sweeps.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-009",
+        "NUM-002",
+        "NUM-005",
+        "NUM-006",
+        "NUM-008",
+        "NUM-009",
+        "NUM-010",
+        "VAL-021"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/convergence/",
+        "src/dino2next/engine/execution/",
+        "tests/unit/s16/",
+        "tests/integration/s16/",
+        "validation/fixtures/VAL-021/",
+        "validation/references/VAL-021/",
+        "validation/expected/VAL-021/",
+        "tests/numerical/VAL-021/"
+      ],
+      "interfaces": [
+        {
+          "name": "EngineRunner",
+          "purpose": "Compose full GEN1 stage transactions, event handling, periodicity and bounded sweeps.",
+          "inputs": "EngineTopology and all source/closure implementations; initial full state; SimulationPoint(rpm, profile, hashes); cancellation request",
+          "outputs": "advance() -> accepted checkpoint or failure; run_point() -> PointRunOutcome; run_sweep() -> ordered outcomes; period_test() -> defects/lag/status",
+          "units": "SI full state; seconds/rad; normalized defects with contract scales",
+          "owner": "S16",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "ADMISSIBILITY_RETRY_EXHAUSTED, MAX_CYCLES_REACHED, MULTIPERIODIC_UNSUPPORTED, MULTIPLE_ATTRACTORS_DETECTED"
+        }
+      ],
+      "behavior": [
+        "Roll back state and ledgers together on rejected global steps; expose every retry.",
+        "No maxcycle-as-convergence, phase shifting or averaging distinct attractors.",
+        "Cancellation only at accepted-state boundaries; warm start has an explicit hashed predecessor.",
+        "H-02 must specify missing dt/event/scale details; full-source numerical qualification remains a separate pending gate."
+      ],
+      "tests": [
+        "tests/unit/s16/test_period_lags.py",
+        "tests/unit/s16/test_retry_transaction.py",
+        "tests/integration/s16/test_sweep_failure.py",
+        "tests/numerical/VAL-021/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S06",
+          "interface": "NumericalKernel",
+          "reason": "Execute SSPRK stage proposals"
+        },
+        {
+          "scope": "S07",
+          "interface": "BoundaryCoupler",
+          "reason": "Pair global stage transfers"
+        },
+        {
+          "scope": "S09",
+          "interface": "CharacterizedLoss",
+          "reason": "Evaluate guarded loss map"
+        },
+        {
+          "scope": "S11",
+          "interface": "EngineTopology",
+          "reason": "Order physical components/events"
+        },
+        {
+          "scope": "S12",
+          "interface": "ScavengingModel",
+          "reason": "Apply zone rates and events"
+        },
+        {
+          "scope": "S13",
+          "interface": "CombustionModel",
+          "reason": "Apply reaction coordinate"
+        },
+        {
+          "scope": "S14",
+          "interface": "PhysicalSources",
+          "reason": "Assemble heat/shear source rates"
+        },
+        {
+          "scope": "S15",
+          "interface": "PerformanceResult",
+          "reason": "Assess output defects"
+        }
+      ],
+      "vals": [
+        "VAL-021"
+      ],
+      "issues": [
+        "H-02",
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s16/test_period_lags.py tests/unit/s16/test_retry_transaction.py tests/integration/s16/test_sweep_failure.py tests/numerical/VAL-021/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/convergence/",
+        "src/dino2next/engine/execution/",
+        "validation/fixtures/VAL-021/",
+        "validation/references/VAL-021/",
+        "validation/expected/VAL-021/",
+        "artifacts/S16/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S17",
+      "title": "application-results",
+      "objective": "Expose versioned local project/run/result APIs with immutable revisions and replayable artifacts.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-010",
+        "NUM-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/application/",
+        "src/dino2next/api/",
+        "src/dino2next/results/storage/",
+        "schemas/api/",
+        "frontend/src/api/",
+        "tests/integration/s17/",
+        "tests/contract/s17/"
+      ],
+      "interfaces": [
+        {
+          "name": "ApplicationAPI",
+          "purpose": "Expose versioned local project/run/result APIs with immutable revisions and replayable artifacts.",
+          "inputs": "EngineProject revision commands, SimulationRequest(project_hash,operating_point,profile), idempotency key, run ID",
+          "outputs": "POST /api/v1/projects; POST revisions; POST preflight; POST runs; GET run/status/diagnostics/results/traces; POST cancel; GET comparison; OpenAPI and generated TypeScript client",
+          "units": "JSON SI values with units/source metadata; IDs and hashes strings",
+          "owner": "S17",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "SCHEMA_VERSION_UNSUPPORTED, REVISION_CONFLICT, PREFLIGHT_FAILED, RUN_NOT_FOUND, ARTIFACT_INCOMPLETE"
+        }
+      ],
+      "behavior": [
+        "Project edits produce revisions; a submitted run reads only its pinned revision.",
+        "Idempotent duplicate submission returns same run; conflicting request key rejects.",
+        "Preserve missing/unavailable outputs and measurement/simulation source distinction.",
+        "Publish artifacts atomically with manifest; never turn cancellation/failure into success."
+      ],
+      "tests": [
+        "tests/integration/s17/test_run_lifecycle.py",
+        "tests/contract/s17/test_openapi.py",
+        "tests/contract/s17/test_replay_manifest.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S01",
+          "interface": "ConfigSnapshot",
+          "reason": "Use canonical immutable resources"
+        },
+        {
+          "scope": "S16",
+          "interface": "EngineRunner",
+          "reason": "Execute supported point/sweep requests"
+        },
+        {
+          "scope": "S15",
+          "interface": "PerformanceResult",
+          "reason": "Serialize backend authoritative outputs"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/integration/s17/test_run_lifecycle.py tests/contract/s17/test_openapi.py tests/contract/s17/test_replay_manifest.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/application/",
+        "src/dino2next/api/",
+        "src/dino2next/results/storage/",
+        "schemas/api/",
+        "frontend/src/api/",
+        "artifacts/S17/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S18",
+      "title": "validation-system",
+      "objective": "Aggregate owned fixture adapters into versioned gate execution without owning their science.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-010",
+        "NUM-010",
+        "VAL-025",
+        "VAL-026"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/validation/",
+        "validation/harness/",
+        "tests/unit/s18/",
+        "tests/contract/s18/",
+        "validation/fixtures/VAL-025/",
+        "validation/references/VAL-025/",
+        "validation/expected/VAL-025/",
+        "tests/numerical/VAL-025/",
+        "validation/fixtures/VAL-026/",
+        "validation/references/VAL-026/",
+        "validation/expected/VAL-026/",
+        "tests/numerical/VAL-026/"
+      ],
+      "interfaces": [
+        {
+          "name": "ValidationRunner",
+          "purpose": "Aggregate owned fixture adapters into versioned gate execution without owning their science.",
+          "inputs": "GateRegistry; explicitly requested VAL IDs; immutable candidate/reference artifacts; optional preregistered experimental partitions",
+          "outputs": "run_gate() -> ValidationResult(id,status,metrics,thresholds,artifact_hashes); aggregate() -> gate report",
+          "units": "observable units inherited from each fixture; no cross-metric rescaling",
+          "owner": "S18",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "GATE_UNAVAILABLE, REFERENCE_NOT_QUALIFIED, VERIFICATION_FAILURE, PARTITION_LEAKAGE"
+        }
+      ],
+      "behavior": [
+        "Import owner adapters without editing their fixture/reference/expected directories.",
+        "Keep NOT_IMPLEMENTED, NOT_EXECUTED, BLOCKED_CONTRACT and FAIL distinct; none counts as PASS.",
+        "Heavy jobs run only by explicit gate invocation; no PR_FAST dispatch.",
+        "Experimental data are never fabricated; H-03 covers missing preregistration details."
+      ],
+      "tests": [
+        "tests/unit/s18/test_gate_aggregation.py",
+        "tests/contract/s18/test_reference_independence.py",
+        "tests/numerical/VAL-025/test_acceptance.py",
+        "tests/numerical/VAL-026/test_acceptance.py"
+      ],
+      "dependencies": [
+        {
+          "scope": "S01",
+          "interface": "ConfigSnapshot",
+          "reason": "Hash fixture/reference resources"
+        },
+        {
+          "scope": "S06",
+          "interface": "NumericalKernel",
+          "reason": "Consume canonical candidate runner"
+        },
+        {
+          "scope": "S09",
+          "interface": "CharacterizedLoss",
+          "reason": "Read characterization provenance"
+        },
+        {
+          "scope": "S16",
+          "interface": "EngineRunner",
+          "reason": "Run combined/periodic fixtures"
+        }
+      ],
+      "vals": [
+        "VAL-025",
+        "VAL-026"
+      ],
+      "issues": [
+        "H-03"
+      ],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/unit/s18/test_gate_aggregation.py tests/contract/s18/test_reference_independence.py tests/numerical/VAL-025/test_acceptance.py tests/numerical/VAL-026/test_acceptance.py -q"
+      ],
+      "artifacts": [
+        "src/dino2next/validation/",
+        "validation/harness/",
+        "validation/fixtures/VAL-025/",
+        "validation/references/VAL-025/",
+        "validation/expected/VAL-025/",
+        "validation/fixtures/VAL-026/",
+        "validation/references/VAL-026/",
+        "validation/expected/VAL-026/",
+        "artifacts/S18/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S19",
+      "title": "frontend-model",
+      "objective": "Build the traditional engine tree, short wizard and backend-consumed model editors.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-001",
+        "CAP-004",
+        "CAP-010",
+        "PHY-001",
+        "PHY-005"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [
+        "docs/ux/UX1.0/ENGINEERING_WORKFLOW.md",
+        "docs/ux/UX1.0/NAVIGATION_MODEL.md",
+        "docs/ux/UX1.0/INPUT_FORM_PATTERNS.md",
+        "docs/ux/UX1.0/BASIC_VS_ADVANCED_POLICY.md",
+        "docs/ux/UX1.0/ENGINEERING_USER_JOURNEYS.md",
+        "docs/ux/UX1.0/UI_TRACEABILITY_MATRIX.md"
+      ],
+      "allowed_paths": [
+        "frontend/src/model/",
+        "frontend/src/navigation/",
+        "frontend/src/shell/",
+        "frontend/src/route_entries/model.ts",
+        "frontend/tests/s19/",
+        "frontend/package.json",
+        "frontend/package-lock.json",
+        "frontend/tsconfig.json",
+        "frontend/vite.config.ts",
+        "frontend/playwright.config.ts",
+        "frontend/vitest.config.ts",
+        "frontend/index.html"
+      ],
+      "interfaces": [
+        {
+          "name": "ModelWorkspace",
+          "purpose": "Build the traditional engine tree, short wizard and backend-consumed model editors.",
+          "inputs": "generated ApplicationAPI client; project revision; field descriptors with schema JSON Pointer, units, required/domain/availability metadata",
+          "outputs": "ModelWorkspace route /projects/:id/model/:section; draft/save/preflight intents; ModelRouteEntry; FieldBinding registry",
+          "units": "display units from backend schema; stored SI through API; no authoritative derived displacement/power",
+          "owner": "S19",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "FIELD_UNSUPPORTED, UNSAVED_CHANGES, API_VALIDATION_ERROR, REVISION_CONFLICT"
+        }
+      ],
+      "behavior": [
+        "Implement J01\u2013J04: short creation, geometry/ports, exhaust and operating-point editing with free navigation after creation.",
+        "Every scientific editable field binds to S17 schema pointer and eventual solver input/provenance; absent backend consumer means disabled NOT_YET_SUPPORTED.",
+        "No physical calculator in frontend; displayed derived displacement comes from backend.",
+        "Advanced station/uncertainty metadata is reachable without hiding required errors; keyboard tree and focus restoration are tested.",
+        "Own shell route outlet that consumes named route entries; S20/S21 own their entries and do not rewrite shell.",
+        "Add React/Vite/Vitest/Playwright tooling with committed exact npm lock; scripts test:unit (vitest run), test:e2e (playwright test), build and typecheck. Network/download setup is explicit; tests use API fixtures labelled CONTRACT_TEST_ONLY and never persist them as engine evidence."
+      ],
+      "tests": [
+        "frontend/tests/s19/model.test.tsx",
+        "frontend/tests/s19/journeys.spec.ts"
+      ],
+      "dependencies": [
+        {
+          "scope": "S17",
+          "interface": "ApplicationAPI",
+          "reason": "Consume generated client, schemas and immutable revision endpoints"
+        },
+        {
+          "scope": "S00",
+          "interface": "FoundationChecks",
+          "reason": "Explicit tooling handoff for frontend package/lock/tsconfig after S00 completion"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "npm --prefix frontend run test:unit -- tests/s19",
+        "npm --prefix frontend run test:e2e -- tests/s19/journeys.spec.ts",
+        "npm --prefix frontend run build"
+      ],
+      "artifacts": [
+        "frontend/src/model/",
+        "frontend/src/navigation/",
+        "frontend/src/shell/",
+        "frontend/src/route_entries/model.ts",
+        "frontend/package.json",
+        "frontend/package-lock.json",
+        "frontend/tsconfig.json",
+        "frontend/vite.config.ts",
+        "frontend/playwright.config.ts",
+        "frontend/vitest.config.ts",
+        "frontend/index.html",
+        "artifacts/S19/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S20",
+      "title": "frontend-run",
+      "objective": "Implement preflight, accepted-run status, cancellation and RPM-sweep control.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-009",
+        "CAP-010",
+        "NUM-009",
+        "NUM-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [
+        "docs/ux/UX1.0/VALIDATION_AND_ERROR_UX.md",
+        "docs/ux/UX1.0/ENGINEERING_USER_JOURNEYS.md",
+        "docs/ux/UX1.0/ENGINEERING_WORKFLOW.md"
+      ],
+      "allowed_paths": [
+        "frontend/src/run/",
+        "frontend/src/preflight/",
+        "frontend/src/route_entries/run.ts",
+        "frontend/tests/s20/"
+      ],
+      "interfaces": [
+        {
+          "name": "RunWorkspace",
+          "purpose": "Implement preflight, accepted-run status, cancellation and RPM-sweep control.",
+          "inputs": "ApplicationAPI; immutable project revision; ModelRouteEntry outlet; preflight diagnostics and run/sweep statuses",
+          "outputs": "routes /projects/:id/preflight and /runs/:runId; submit/cancel intents; diagnostic field links",
+          "units": "backend SI request with display conversions only; progress never physical convergence calculation",
+          "owner": "S20",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "PREFLIGHT_FAILED, SUBMISSION_CONFLICT, STATUS_UNAVAILABLE; preserve all backend scientific failure codes"
+        }
+      ],
+      "behavior": [
+        "Implement J05,J06,J08: click diagnostic to exact field, submit pinned revision once, show sweep per-point status.",
+        "Do not enable run with failed/stale preflight; invalidate preflight on changed revision.",
+        "Polling uses backend status, stops on terminal state; cancellation request is not immediately CANCELLED.",
+        "Maxcycles/multiperiodicity/missing maps remain explicit, never green progress completion."
+      ],
+      "tests": [
+        "frontend/tests/s20/run.test.tsx",
+        "frontend/tests/s20/journeys.spec.ts"
+      ],
+      "dependencies": [
+        {
+          "scope": "S17",
+          "interface": "ApplicationAPI",
+          "reason": "Consume run/preflight/cancel/sweep endpoints"
+        },
+        {
+          "scope": "S19",
+          "interface": "ModelWorkspace",
+          "reason": "Use shell route outlet and stable field links"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "npm --prefix frontend run test:unit -- tests/s20",
+        "npm --prefix frontend run test:e2e -- tests/s20/journeys.spec.ts",
+        "npm --prefix frontend run build"
+      ],
+      "artifacts": [
+        "frontend/src/run/",
+        "frontend/src/preflight/",
+        "frontend/src/route_entries/run.ts",
+        "artifacts/S20/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S21",
+      "title": "frontend-results",
+      "objective": "Render engineering traces and comparisons from immutable backend results.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-005",
+        "CAP-008",
+        "CAP-010",
+        "PHY-009",
+        "PHY-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [
+        "docs/ux/UX1.0/RESULTS_WORKFLOW.md",
+        "docs/ux/UX1.0/ENGINEERING_USER_JOURNEYS.md",
+        "docs/ux/UX1.0/VALIDATION_AND_ERROR_UX.md",
+        "docs/ux/UX1.0/UI_TRACEABILITY_MATRIX.md"
+      ],
+      "allowed_paths": [
+        "frontend/src/results/",
+        "frontend/src/compare/",
+        "frontend/src/route_entries/results.ts",
+        "frontend/tests/s21/"
+      ],
+      "interfaces": [
+        {
+          "name": "ResultsWorkspace",
+          "purpose": "Render engineering traces and comparisons from immutable backend results.",
+          "inputs": "TraceSeries and result manifests; source-kind/unit/location metadata; parent run IDs",
+          "outputs": "routes /runs/:id/results and /compare; axis/trace selection and export requests",
+          "units": "display-only unit conversion; no torque/IMEP/Mach/scavenging derivation",
+          "owner": "S21",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "RESULT_UNAVAILABLE, INCOMPATIBLE_TRACE_AXIS, BRAKE_OUTPUT_UNAVAILABLE, ARTIFACT_INCOMPLETE"
+        }
+      ],
+      "behavior": [
+        "Implement J07,J09: p\u2013theta/PV views and run overlay preserving original phase and location.",
+        "Simulation and measurement get distinct legend/source markers.",
+        "Unavailable brake values never render as zero; failed sweep points are gaps with reasons.",
+        "Export requests preserve run/trace hashes; frontend does not synthesize scientific result data."
+      ],
+      "tests": [
+        "frontend/tests/s21/results.test.tsx",
+        "frontend/tests/s21/journeys.spec.ts"
+      ],
+      "dependencies": [
+        {
+          "scope": "S17",
+          "interface": "ApplicationAPI",
+          "reason": "Read authoritative traces, result and provenance"
+        },
+        {
+          "scope": "S19",
+          "interface": "ModelWorkspace",
+          "reason": "Use shell route outlet and unit preferences"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "npm --prefix frontend run test:unit -- tests/s21",
+        "npm --prefix frontend run test:e2e -- tests/s21/journeys.spec.ts",
+        "npm --prefix frontend run build"
+      ],
+      "artifacts": [
+        "frontend/src/results/",
+        "frontend/src/compare/",
+        "frontend/src/route_entries/results.ts",
+        "artifacts/S21/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    },
+    {
+      "id": "S22",
+      "title": "integrated-gen1",
+      "objective": "Assemble the executable product and enforce milestone claims without altering module science.",
+      "status": "NOT_STARTED",
+      "normative_ids": [
+        "CAP-001",
+        "CAP-002",
+        "CAP-003",
+        "CAP-004",
+        "CAP-005",
+        "CAP-006",
+        "CAP-007",
+        "CAP-008",
+        "CAP-009",
+        "CAP-010",
+        "NUM-010"
+      ],
+      "architecture": [
+        "docs/architecture/A1.0/DOMAIN_MODEL.md",
+        "docs/architecture/A1.0/MODULE_BOUNDARIES.md",
+        "docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md"
+      ],
+      "ux": [],
+      "allowed_paths": [
+        "src/dino2next/composition/",
+        "tests/system/s22/",
+        "frontend/tests/s22/",
+        "release/",
+        "pyproject.toml"
+      ],
+      "interfaces": [
+        {
+          "name": "IntegratedProduct",
+          "purpose": "Assemble the executable product and enforce milestone claims without altering module science.",
+          "inputs": "selected implementations and their resource certificates; ApplicationAPI; UI entry points; ValidationRunner reports",
+          "outputs": "local start command; release readiness manifest; end-to-end project/run/results workflow",
+          "units": "no new scientific units or meanings; all values preserve producer metadata",
+          "owner": "S22",
+          "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
+          "failures": "READINESS_GATE_FAILED, REQUIRED_ENGINE_DATA_NOT_YET_ACQUIRED, SCIENTIFIC_CHANGE_REQUIRED"
+        }
+      ],
+      "behavior": [
+        "Wire existing modules only; defects in other modules return to their owner scope.",
+        "Require passed milestone and heavy gates before numerical-verification claim; leave experimental claims pending if data absent.",
+        "System journey uses a clearly labelled synthetic verification fixture or supplied characterized engine; never fake a real-engine result.",
+        "Report unmet gate IDs and artifact links rather than readiness partial-success."
+      ],
+      "tests": [
+        "tests/system/s22/test_product_replay.py",
+        "frontend/tests/s22/product.spec.ts"
+      ],
+      "dependencies": [
+        {
+          "scope": "S18",
+          "interface": "ValidationRunner",
+          "reason": "Consume gate results"
+        },
+        {
+          "scope": "S20",
+          "interface": "RunWorkspace",
+          "reason": "Drive run workflow"
+        },
+        {
+          "scope": "S21",
+          "interface": "ResultsWorkspace",
+          "reason": "Render accepted results"
+        },
+        {
+          "scope": "S17",
+          "interface": "ApplicationAPI",
+          "reason": "Wire local application service"
+        },
+        {
+          "scope": "S00",
+          "interface": "FoundationChecks",
+          "reason": "Explicit final packaging metadata handoff; no scientific dependency selection"
+        }
+      ],
+      "vals": [],
+      "issues": [],
+      "acceptance": [
+        "python scripts/run_foundation.py",
+        "python -m pytest tests/system/s22/test_product_replay.py -q",
+        "npm --prefix frontend run test:e2e -- tests/s22/product.spec.ts"
+      ],
+      "artifacts": [
+        "src/dino2next/composition/",
+        "release/",
+        "pyproject.toml",
+        "artifacts/S22/acceptance.json"
+      ],
+      "forbidden_changes": [
+        "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
+        "Any module/fixture owned by another scope except the documented S00 to S19 tooling handoff.",
+        "Clipping, silent normalization/parameter fitting, candidate as oracle, fabricated scientific output."
+      ],
+      "dod": [
+        "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
+        "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
+        "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+      ],
+      "failure_semantics": {
+        "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
+        "VERIFICATION_FAILURE": "Candidate/reference/gate disagrees with frozen acceptance; retain evidence and block the corresponding claim, never tune acceptance.",
+        "SCIENTIFIC_CHANGE_REQUIRED": "Missing or contradictory normative formula/fixture; file a BCR with affected IDs and stop affected implementation before choosing science.",
+        "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
+      }
+    }
+  ]
+}
