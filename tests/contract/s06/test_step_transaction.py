@@ -176,3 +176,41 @@ def test_primitive_diagnostic_sequences_are_deeply_immutable(kernel):
     result=replace(batch,roundoff_records=nested)
     nested[0][2][1]=42.
     assert result.roundoff_records==((0,"diagnostic",("immutable",1.)),)
+
+
+@pytest.mark.parametrize("rejection", [["mutable"], {}, 7, False, "", "   "])
+def test_rejection_code_is_an_immutable_nonempty_string(rejection):
+    with pytest.raises(ValueContractError) as exc:
+        StepAttempt(None,rejection,())
+    assert exc.value.code=="STAGE_INADMISSIBLE"
+
+
+@pytest.mark.parametrize("name,shape", [
+    ("face_integrals",(4,12)), ("face_integrals",(5,11)), ("face_integrals",(5,12,1)),
+    ("source_integrals",(5,12)), ("source_integrals",(4,11)), ("source_integrals",(4,12,1)),
+])
+def test_accepted_ledger_shapes_match_state(kernel,name,shape):
+    state=initial(kernel)
+    with pytest.raises(ValueContractError) as exc:
+        StepAttempt(state,None,(),**{name:np.zeros(shape)})
+    assert exc.value.code=="STAGE_INADMISSIBLE"
+
+
+def test_valid_ledger_shapes_remain_detached(kernel):
+    state=initial(kernel)
+    faces=np.ones((5,12));sources=np.ones((4,12))
+    attempt=StepAttempt(state,None,(),faces,sources)
+    faces[0,0]=sources[0,0]=2
+    assert attempt.face_integrals.shape==(5,12) and attempt.face_integrals[0,0]==1
+    assert attempt.source_integrals.shape==(4,12) and attempt.source_integrals[0,0]==1
+
+
+@pytest.mark.parametrize("field,value", [
+    ("source_kind",["GEN1_RUNTIME"]), ("source_kind","unknown"), ("source_kind",""),
+    ("recovery_identity",["mutable"]), ("recovery_identity",""), ("recovery_identity","   "),
+])
+def test_face_identity_values_are_validated_at_construction(kernel,field,value):
+    faces=kernel.reconstruct(initial(kernel))
+    with pytest.raises(ValueContractError) as exc:
+        replace(faces,**{field:value})
+    assert exc.value.code=="STAGE_INADMISSIBLE"

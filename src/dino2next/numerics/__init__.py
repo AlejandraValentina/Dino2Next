@@ -146,6 +146,10 @@ class FaceStates:
             object.__setattr__(self, name, a)
         if self.boundary not in ("periodic", "physical"):
             fail("STAGE_INADMISSIBLE", "/boundary", "Explicit boundary kind required")
+        if type(self.source_kind) is not str or self.source_kind not in ("GEN1_RUNTIME", "NUMERICAL_FIXTURE_ONLY"):
+            fail("STAGE_INADMISSIBLE", "/source_kind", "Explicit face thermodynamic classification required")
+        if type(self.recovery_identity) is not str or not self.recovery_identity.strip():
+            fail("STAGE_INADMISSIBLE", "/recovery_identity", "Immutable nonempty thermodynamic identity required")
         object.__setattr__(self,"roundoff_records",diagnostic_tuple(self.roundoff_records))
 
 
@@ -197,13 +201,17 @@ class StepAttempt:
             fail("STAGE_INADMISSIBLE", "/attempt", "Accepted state or rejection must be exclusive")
         if self.state is not None and not isinstance(self.state, KernelState):
             fail("STAGE_INADMISSIBLE", "/attempt", "Expected immutable KernelState")
+        if self.rejection is not None and (type(self.rejection) is not str or not self.rejection.strip()):
+            fail("STAGE_INADMISSIBLE", "/rejection", "Rejection requires a nonempty immutable code string")
         object.__setattr__(self, "diagnostics", diagnostic_tuple(self.diagnostics))
         for name in ("face_integrals", "source_integrals"):
             value = getattr(self, name)
             if value is not None:
                 if self.state is None:
                     fail("STAGE_INADMISSIBLE", "/attempt", "Rejected step cannot publish committed ledgers")
-                object.__setattr__(self, name, frozen_array(value))
+                n = len(self.state.Q)
+                shape = (n + 1, 12) if name == "face_integrals" else (n, 12)
+                object.__setattr__(self, name, frozen_array(value, shape))
 
     @property
     def accepted(self):
