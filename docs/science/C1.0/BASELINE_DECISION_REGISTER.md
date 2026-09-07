@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -11,3 +11,7 @@ BCR-AR-002 is APPROVED. BCR-AR-001 is WITHDRAWN. C10-NUM-NP-02 and C03-BLK-001 a
 ## R2 selected adjudications
 
 BCR-C1R2-H01-BOUNDARY, BCR-C1R2-H02-TIME-PERIODICITY and BCR-C1R2-H03-VALIDATION-FIXTURES are APPROVED/SELECTED. BC-001…008, TS-001…007 and the current executable fixture catalogue are normative. Interior AR002 and H04–06 remain unchanged. No pending numerical execution is asserted PASS.
+
+## R3 selected adjudication
+
+BCR-S03-NASA-INVERSION selects TI-001…005: continuous derived NASA5 h/s with unchanged cp and lower formation reference; unique energy/enthalpy inversion; distinct RAW/runtime identities and independent reference obligations. S01/S02 are already accepted. Only this representation issue is adjudicated; no new scientific autonomy is granted to S03 or subsequent implementation scopes.

@@ -1,0 +1,29 @@
+{
+  "version": "C1.0",
+  "status": "SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN",
+  "date": "2026-09-07",
+  "scope": "GEN1 contract for implementation; verification execution remains mandatory",
+  "legacy_disposition": "SALVAGE",
+  "mandatory_legacy_dependency": "NONE",
+  "predecessor": "C0.10-characteristic-reconstruction + recovered autonomous campaign",
+  "files": {
+    "docs/science/C1.0/BASELINE_DECISION_REGISTER.md": "40b7a8a586eead18c2b5672e3b186449b0ca52d5fa0b4e77b7ad7829b75587d3",
+    "docs/science/C1.0/BASELINE_TRACEABILITY_MATRIX.md": "df30641c1d12db3ab284a70e91ff9596d3ed8c1dff087d48a1c6605d35b0d547",
+    "docs/science/C1.0/GEN1_CONTRACT.md": "0a4d60ae4da68e45264da93d06c89ef08e00118e81cac2fe2e5f6d969266bd64",
+    "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md": "61f0e9efa632884ed7fb769774d06e8680990993ccc52c5b9fd6aba7cdd3990b",
+    "docs/science/C1.0/PHYSICS_SPEC.md": "5b472fae0955173111cb725ab99f4f168282de41f6412f49e2060a45f987bc44",
+    "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md": "c05581e6d79e3d33dd74a84e964cde32773594e5f499442f4539a6d535f5e65d",
+    "docs/science/C1.0/SCIENTIFIC_DECISIONS.md": "44490eeab3418489768960a65fdccf4a241407db03fb612911af5958d96aec57",
+    "docs/science/C1.0/VALIDATION_SPEC.md": "e9cc99f96a8f6c4506f3131f50c7cd1fbcef39af6ce4ac9fb5ae567183de57f4",
+    "docs/science/C1.0/VERIFICATION_EXECUTION_MATRIX.md": "14084b289588e4e46af68c51063bdd76058b27742e68e5be208889e2c516d076",
+    "docs/science/C1.0/LEGACY_DISPOSITION.md": "5ae4b398b04ec18c49018cc91594cda992bb07941b112f33b9af8f6848e7ce7e"
+  },
+  "pending_execution": [
+    "VAL-014 final production qualification",
+    "VAL-016-R1 final production qualification",
+    "VAL-020 heavy reference qualification",
+    "full RHS source/recovery campaign",
+    "VAL-021 periodic sensitivity",
+    "VAL-025/026 experimental validation"
+  ]
+}

@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 
 # C1.0-R2 adjudication record
 
@@ -7,3 +7,7 @@ Predecessor: C1.0-R1 at ce3c8dcf63bd875d71b96f2b7222c21b5ada7bfa. Its complete c
 SCIENTIFIC_DECISION_CHANGED = YES, limited to the three explicit BCRs. H-01: reservoir half-Riemann/domain recipe BC-001…008. H-02: exact prescribed-source SSPRK2 coordinates, complete dt/event/scales TS-001…007. H-03: field-complete current validation catalogue and independent reference construction. H-04/H-05/H-06 remain CLOSED without changed physical decisions. Interior AR-002, T3, W2, offline characterized loss, chemistry and thermal closures are preserved.
 
 All 24 mandatory VAL have a current 19-field fiche; historical experimental IDs are not silently reused. No current threshold was increased. Published methods and Dino2Next adaptations are explicitly distinguished. Lightweight executed evidence is algebra/ODE only. The implementation baseline is frozen; numerical/scientific/predictive qualification are not granted. Readiness additionally requires strict foundation tests and standalone readiness PASS at the PR HEAD.
+
+## C1.0-R3 scoped scientific revision
+
+SCIENTIFIC_DECISION_CHANGED = YES only for BCR-S03-NASA-INVERSION. TI-001…005 derive continuous thermochemistry from unchanged RAW, preserve lower formation reference/cp, define inverse and reference identities. Original R2 corpus and manifest are byte-exact in history/C1.0-R2. Existing R2 decisions remain selected; this is not a general re-adjudication.

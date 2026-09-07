@@ -216,5 +216,30 @@
     "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
     "definition_line": "## Physical boundaries (NUM-007/008)",
     "definition_status": "COMPLETE"
+  },
+  "TI-001": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-001 \u2014 representation and derivation (PHY-002)",
+    "definition_status": "COMPLETE"
+  },
+  "TI-002": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-002 \u2014 global invertibility and error separation",
+    "definition_status": "COMPLETE"
+  },
+  "TI-003": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-003 \u2014 ThermoModel inverse contract",
+    "definition_status": "COMPLETE"
+  },
+  "TI-004": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-004 \u2014 VAL-001 and independent reference",
+    "definition_status": "COMPLETE"
+  },
+  "TI-005": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-005 \u2014 consumers and mandatory revalidation",
+    "definition_status": "COMPLETE"
   }
 }

@@ -27,3 +27,7 @@ S17 publishes `FieldDescriptor(id, schema_pointer, domain_path, solver_input_pat
 S19 owns shell/navigation and a route outlet consuming named route entries. S20 owns run/preflight entry; S21 owns results/compare entry. Each entry exports route path, component and accessibility title. The shell loads registered feature entries without scientific logic. Test-only API fixtures are explicitly CONTRACT_TEST_ONLY, contain provenance/source-kind labels and cannot be saved/exported as simulation evidence. No user-facing mock engine output is provided by this foundation.
 
 Field-group bindings and required journey assertions: `implementation/UI_FIELD_BINDINGS.md`.
+
+## S03 runtime thermochemistry — C1.0-R3
+
+ThermoModel uses BCR-S03-NASA-INVERSION TI-001…005 and derived identity DINO2NEXT_NASA5_CONTINUOUS 1.0.0. Energy/enthalpy inversion returns unique in-domain temperature with target and signed residual diagnostics; it does not mutate or replace conserved inputs. RAW, derived and generator hashes are separate. EOS_OUT_OF_DOMAIN and EOS_INVERSION_FAILED remain distinct; no first-root or seed-dependent success. Full signatures are in S03.

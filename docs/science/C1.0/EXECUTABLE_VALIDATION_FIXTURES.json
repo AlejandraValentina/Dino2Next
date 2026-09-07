@@ -1,12 +1,12 @@
 {
-  "version": "C1.0-R2",
+  "version": "C1.0-R3",
   "status": "SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN",
-  "common": "COMMON-001: NASA species order is isooctane,O2,N2,CO2,H2O. Dry air molar O2:1,N2:3.76. Premix at phi has C8H18:1,O2:12.5/phi,N2:47/phi. Complete lean products CO2:8,H2O:9,O2:12.5/phi-12.5,N2:47/phi. Convert molar amounts to mass using selected dataset MW; no rounded alternative coefficients. For tests explicitly using constant-gamma gas, all units remain SI and the EOS is a mathematical numerical-verification adapter, not a changed GEN1 chemistry. Canonical initial tags R unless specified. No reported execution PASS is implied by a complete fiche.",
+  "common": "COMMON-001: NASA species order is isooctane,O2,N2,CO2,H2O. Dry air molar O2:1,N2:3.76. Premix at phi has C8H18:1,O2:12.5/phi,N2:47/phi. Complete lean products CO2:8,H2O:9,O2:12.5/phi-12.5,N2:47/phi. Convert molar amounts to mass using selected dataset MW; no rounded alternative coefficients. For tests explicitly using constant-gamma gas, all units remain SI and the EOS is a mathematical numerical-verification adapter, not a changed GEN1 chemistry. Canonical initial tags R unless specified. No reported execution PASS is implied by a complete fiche. Runtime NASA5 is DINO2NEXT_NASA5_CONTINUOUS 1.0.0 under BCR-S03-NASA-INVERSION TI-001; RAW identity is separate.",
   "fixtures": {
     "VAL-001": {
       "objective": "Geometry/NASA identities and EOS round trip",
       "type": "UNIT",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "B=.052 m,S=.05 m,l=.101 m,Vclear=1.2e-5 m\u00b3,VccTDC=3e-4 m\u00b3; theta=j*pi/180,j=0..360. T=[350,400,600,999.999999,1000,1000.000001,1600,2200] K; p=[5e4,1e5,1e6,5e6] Pa. Five pure species (mathematical stress), dry air, premix phi=.6,.7,.8 and their complete lean products. Composition definitions COMMON-001.",
       "geometry": "Crank-slider and zero-dimensional property evaluations.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -15,9 +15,9 @@
       "boundary_states": "Closed, no external mass flux; only sources explicitly named.",
       "end_condition": "All Cartesian tuples, no time evolution.",
       "sampling": "Every tuple and angle.",
-      "independent_reference": "Independent Cantera 3.2.0 evaluation of identical NASA coefficient bytes, analytic crank-slider identities and independent high-precision polynomial arithmetic.",
-      "reference_resolution": "Exact selected coefficient bytes, 80-digit polynomial spot checks at all interval boundaries. T=1000 follows selected lower/upper interval convention; unilateral derivatives only.",
-      "observable": "V,dV/dtheta,cp,cv,h,u,gamma,R, h-u-RT,cp-cv-R,sumY,T inverse and elemental mass.",
+      "independent_reference": "Independent Cantera 3.2.0 evaluation of TI-001 derived representation, analytic crank-slider identities and independent high-precision polynomial arithmetic; no candidate imports.",
+      "reference_resolution": "Identical RAW source coefficients plus the independently derived TI-001 integration constants/anchored definition; 80-digit boundary checks. T=1000 uses selected high cp branch and unilateral derivatives. RAW/derived differences are reported separately.",
+      "observable": "V,dV/dtheta,cp,cv,h,u,gamma,R, h-u-RT,cp-cv-R,sumY,T inverse and elemental mass.; h inverse and signed input-energy/enthalpy residual; continuity and one-sided derivatives per TI-004.",
       "normalization": "cp by cp; h by max(abs(h),cp*T); u by max(abs(u),cv*T); gamma by gamma. Identity conditioning is sum of absolute operands divided by its nonzero physical reference.",
       "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.",
       "threshold": "Scaled cp,h,u,gamma errors\u22641e-8; T inversion\u22641e-8 K; identities\u2264gamma_128 times conditioning (gamma_n=n*eps/(1-n*eps)); energy inversion residual\u2264cv*1e-8 K.",
@@ -27,7 +27,7 @@
     "VAL-002": {
       "objective": "Closed moving volume reversible work",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma=1.4,R=287 J/kg/K,m=.001 kg,T0=600 K,U0=m*R*T0/(gamma-1).",
       "geometry": "V=.001*(1+.2*sin(2*pi*t)) m\u00b3; no passage.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -48,7 +48,7 @@
     "VAL-003": {
       "objective": "Closed thermal relaxation",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "m=.001 kg,cv=1000 J/kg/K,R=287 J/kg/K,T0=400 and 800 K,H=hA=2 W/K,Tw=600 K.",
       "geometry": "V=.001 m\u00b3.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -69,7 +69,7 @@
     "VAL-004": {
       "objective": "Ideal capacity identity AND half-Riemann boundary classification; these are separate subcases",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "A=2e-4 m\u00b2; reservoir pR=600000 Pa,T0=[400,700,1500] K, gamma1.4 R287. Ratios pback/pR=[.1,.3,.6,.9,.999,1]. Repeat NASA air/premix phi.7/products phi.7, T0=[700,1000]. Boundary wave tests: pi=200000 Pa,Ti=700 K,Mi=[-2,-.5,0,.5], pR/pi=[.5,1,2], TR=700 K; NASA compositions same plus air\u2192products contact.",
       "geometry": "One equal-area boundary and ideal convergent nozzle diagnostic, zero time integration; ideal nozzle is not W2 or Cd inversion.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -90,7 +90,7 @@
     "VAL-005": {
       "objective": "Prescribed closed UV combustion without heat-release double counting",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "NASA premix phi=[.6,.7,.8],T_SOC=[350,450,600,750] K,p_SOC=[3e5,6e5,1e6] Pa; initial m=pV/(Rmix*T),V=1e-4 m\u00b3; eta=[.8,1],Wiebe a=5,n=2, SOC time0,duration=.001 s. Include homogeneous residual mass fraction [0,.2,.4] made from same-phi products.",
       "geometry": "One closed fixed-volume homogeneous inventory.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -111,7 +111,7 @@
     "VAL-006": {
       "objective": "Sod shock tube",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1; x<.5:rho1,u0,p1; x>.5:rho.125,u0,p.1.",
       "geometry": "x=[0,1]m,A=1m\u00b2.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -132,7 +132,7 @@
     "VAL-007": {
       "objective": "Stationary and advected material contact",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1,p=1; rhoL1,rhoR2 atx=.5; u=[0,1] m/s.",
       "geometry": "x=[0,1]m,A1.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -153,7 +153,7 @@
     "VAL-008": {
       "objective": "NASA species/thermal contacts and mixed shocks",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "At x=.5, pL=pR=1e5 Pa,u=[0,100,-100]m/s. Pairs: pureN2/CO2 both600K; N2 600K/CO2 1800K; premixphi.7 400K/productsphi.7 1800K. Mixed shock subcases same composition pairs, u=0,T both700K,pR=1e5,pL/pR=[2,5,10].",
       "geometry": "x=[0,1]m,A1.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -174,7 +174,7 @@
     "VAL-009": {
       "objective": "Traveling acoustic mode",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1,rho=1+eps*cos(2pi*x),p=1+1.4eps*cos(2pi*x),u=sqrt(1.4)*eps*cos(2pi*x),eps=1e-5; repeat eps/2.",
       "geometry": "x=[0,1]m,A1.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -195,7 +195,7 @@
     "VAL-010": {
       "objective": "Separate rigid standing-wave and free-end pulse reflection operators",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1,rho0=p0=1,c=sqrt(1.4),eps=1e-5. Rigid: p=1+eps*cos(pi*x),rho=1+eps*cos(pi*x)/c\u00b2,u=0. Free: g(x)=eps*exp(-((x-.25)/.05)^2),p=1+g,rho=1+g/c\u00b2,u=g/c.",
       "geometry": "x=[0,1]m,A1.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -216,7 +216,7 @@
     "VAL-011": {
       "objective": "Rest and smooth quasi-1D nozzle balance",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1: rest rho=p=1,u0. Smooth p0=T01,Mthroat=.3 atx=.5; subsonic area-Mach solution.",
       "geometry": "A=1+.4*(x-.5)^2 m\u00b2 on x0..1.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -237,7 +237,7 @@
     "VAL-013": {
       "objective": "Coupled T3/W2; original fixtures preserved, final reference execution pending",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Left finite V=2e-4 m\u00b3,p=130000 Pa,T700,air; right infinite p120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.",
       "geometry": "Persistent pipe L=.2m,A=2e-4m\u00b2; W2 support[.15,.2]m,w20m^-1; characterized lambda .04 forward,.06 reverse; no other sources. VAL020 window fraction sin\u00b2(pi*(thetaDeg-120)/120) for120..240deg,zero otherwise; other face fullyopen. Other fixtures fullyopen.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -258,7 +258,7 @@
     "VAL-014": {
       "objective": "Coupled T3/W2; original fixtures preserved, final reference execution pending",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Left cylinder B=S=.04m,l=.08m,Vclear8e-6m\u00b3,RPM6000,theta0=pi/2,p120000,T700,air; right infinitep120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.",
       "geometry": "Persistent pipe L=.2m,A=2e-4m\u00b2; W2 support[.15,.2]m,w20m^-1; characterized lambda .04 forward,.06 reverse; no other sources. VAL020 window fraction sin\u00b2(pi*(thetaDeg-120)/120) for120..240deg,zero otherwise; other face fullyopen. Other fixtures fullyopen.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -279,7 +279,7 @@
     "VAL-016": {
       "objective": "Coupled T3/W2; original fixtures preserved, final reference execution pending",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Left V(t)=2e-4*(1-.08*sin(pi*t/.002)^2)m\u00b3,p120000,T700,premixphi.7; right infinitep120000,T700,productsphi.7. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.",
       "geometry": "Persistent pipe L=.2m,A=2e-4m\u00b2; W2 support[.15,.2]m,w20m^-1; characterized lambda .04 forward,.06 reverse; no other sources. VAL020 window fraction sin\u00b2(pi*(thetaDeg-120)/120) for120..240deg,zero otherwise; other face fullyopen. Other fixtures fullyopen.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -300,7 +300,7 @@
     "VAL-020": {
       "objective": "Coupled T3/W2; original fixtures preserved, final reference execution pending",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Left cylinder asVAL014; right finite crankcase Vcc=1.5e-4-Apiston*s(theta), bothp120000,T700,air,theta0=pi/2,RPM6000. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.",
       "geometry": "Persistent pipe L=.2m,A=2e-4m\u00b2; W2 support[.15,.2]m,w20m^-1; characterized lambda .04 forward,.06 reverse; no other sources. VAL020 window fraction sin\u00b2(pi*(thetaDeg-120)/120) for120..240deg,zero otherwise; other face fullyopen. Other fixtures fullyopen.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -321,7 +321,7 @@
     "VAL-018": {
       "objective": "Passive momentum sources plus heat, separately and together",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R287,rho1 kg/m\u00b3,T0=700K,u0=[-100,100]m/s. b=[0,2]m^-1,Hvol=[0,2000]W/m\u00b3/K,Tw600K; all four combinations. E=rho*(cv*T+u\u00b2/2).",
       "geometry": "Uniform parcel V=.001m\u00b3; equivalent window w20m^-1,lambda.2 givesb2; fixed geometry, no flux divergence.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -342,7 +342,7 @@
     "VAL-021": {
       "objective": "Deterministic periodicity detector coupon AND mandatory later full-kernel sensitivity",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Dimensionless normalized persistent-state vector with one coordinate for each TS006 block plus two independent cell coordinates: x_n=xstar+a*r^n, xstar=1, a=[.01,-.01,.005,-.005] applied separately and one species-partition perturbation(+.005,-.005). r=.5 and .9. Full-state scale mapping TS006; ambient120000Pa,350K,air,Vcmax1e-4,Vccmax2e-4,Vd9e-5m\u00b3,pipeA2e-4.",
       "geometry": "No PDE geometry for detector coupon; normalized vector embedded in admissible inventory reference states.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -363,7 +363,7 @@
     "VAL-023": {
       "objective": "Reaction-limit and event/source composition negative tests",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Use VAL005 exact mixtures/volume; eta=[.8,1],a5,n2,duration1ms. Positive tuples and out-of-domain cases individually classified by independent exactUV path. Add negativeinputs eta1.01,negativefuelmass,openportduringSOC; exactfailcodes required.",
       "geometry": "Same closed homogeneous volume asVAL005, no heat/work.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -384,7 +384,7 @@
     "VAL-024": {
       "objective": "Distributed/local passive loss and station semantics",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R287,rho1,T700,u0=[-100,100]. Laminar shear mu=2e-5Pa*s,Dh=.001m,Re=abs(u)*rho*Dh/mu (initial5000 notlaminar: use u0=[-.01,.01] forlaminar subcase only). Distributedlaminar rate c=32mu/(rho*Dh\u00b2). LocalK=.2,w20 givesb2; use\u00b1100 forK. Mapquerytests: characterizedlambda points .04/.06 bydirection,opening1,station metadata frozen; wrongstation andoutofdomain explicitfailure.",
       "geometry": "UniformfixedparcelV.001m\u00b3; sourcesonly. LocalKregiondisjointfromW2; test eachseparately.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -405,7 +405,7 @@
     "VAL-027": {
       "objective": "Isolate temporal order at fixed semidiscrete mesh",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "gamma1.4,R1,rho=1+.01sin(2pi*x),u=.3,p1; periodic.",
       "geometry": "x0..1,A1,N40fixed.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -426,7 +426,7 @@
     "VAL-028": {
       "objective": "Two-zone mixing,birth,merge,re-entry exact limits",
       "type": "NUMERICAL_VERIFICATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "cp1000,R287,cv713; mixingmA.0003,mB.0007kg,TA400,TB900K,p1e5Pa,HA120J,HB630J,tau.01s. Birthsubcase A0,B.001kg,Tboth700,p1e5,mdotintoA=.01kg/s,tau.01. Reentrysubcase initiallysameemptyA,B.001,T700,externalmdotintoB=.01kg/s taggedX; existingBtagR.",
       "geometry": "MixV=R*(mA*TA+mB*TB)/1e5 fixed. Birth/reentryV(t)=R*700*(.001+.01*t)/1e5; exact movingvolume dictatedbyconstantp/T; no heat.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -447,7 +447,7 @@
     "VAL-022": {
       "objective": "Motored experimental validation",
       "type": "EXPERIMENTAL_VALIDATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.",
       "geometry": "MeasuredGEN1hardwareSI;componentcharacterizationseparatefromenginecalibration.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -468,7 +468,7 @@
     "VAL-025": {
       "objective": "Fired full-engine validation",
       "type": "EXPERIMENTAL_VALIDATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.",
       "geometry": "MeasuredGEN1hardwareSI;componentcharacterizationseparatefromenginecalibration.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
@@ -489,7 +489,7 @@
     "VAL-026": {
       "objective": "Held-out predictive validation",
       "type": "EXPERIMENTAL_VALIDATION",
-      "physics_numerics": "Current C1.0-R2 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+      "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
       "initial_state": "Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.",
       "geometry": "MeasuredGEN1hardwareSI;componentcharacterizationseparatefromenginecalibration.",
       "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",

@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from render_scopes import documents
-from check_contracts import check as check_integrity
+from check_contracts import check as check_integrity, VERSION
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -78,7 +78,7 @@ def check(root=ROOT, readiness=False):
             assert set(c['required_fields'])==required and (root/c['normative_path']).is_file(), 'INCOMPLETE_FIXTURE_FIELDS: '+v['id']
         fixtures_path = root/'docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json'
         fixtures = json.loads(fixtures_path.read_text())
-        assert fixtures['version'] == 'C1.0-R2', 'FIXTURE_REVISION_MISMATCH'
+        assert fixtures['version'] == VERSION, 'FIXTURE_REVISION_MISMATCH'
         assert set(fixtures['fixtures']) == set(cv), 'FIXTURE_VALUE_COVERAGE_MISSING'
         catalogue = (root/'docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md').read_text()
         for identifier, values in fixtures['fixtures'].items():

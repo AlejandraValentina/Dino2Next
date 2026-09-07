@@ -1,6 +1,6 @@
 # Codex start contract
 
-NEXT_CODEX_SCOPE = S01. S00 = COMPLETE_FOUNDATION after PR_FAST succeeds. Do not start S01 as part of the foundation review. Operational readiness requires strict PR_FAST and standalone readiness PASS; S01 depends on S00 and is not started here.
+NEXT_CODEX_SCOPE = S03. S00 = COMPLETE_FOUNDATION; S01 and S02 accepted in PR #2/#3. Resume S03 only after BCR-S03-NASA-INVERSION is integrated and R3 foundation/readiness pass. Preserve artifacts/campaign/checkpoint.json; do not redo accepted scopes.
 
 1. Read root AGENTS, docs/CODEX_READINESS_AUDIT.md, then C1 GEN1_CONTRACT and its authority order. C1 governs science, A1 organization, UX1 journeys, active scope implementation. Hash integrity is necessary, not proof of completeness.
 2. Read PUBLIC_INTERFACE_CONTRACT, SCOPE_DEPENDENCY_GRAPH, SCOPE_VALIDATION_MATRIX and the next scope. Every dependency must have accepted artifacts, not merely a closed task.
@@ -27,4 +27,4 @@ IMPLEMENTATION_DEFECT: fix within owned paths and rerun. VERIFICATION_FAILURE: p
 
 PASS means the named gate ran all its required checks at the reported commit. PR_FAST PASS means tooling/integrity/structural consistency only. It does not mean numerical verification, scientific validation, predictive validation, or globally executable science. Heavy runs remain MANDATORY_VERIFICATION_DURING_IMPLEMENTATION.
 
-Active baseline revision: C1.0-R2. H-01…H-06 CLOSED. The three new adjudications are explicitly recorded by R2 BCRs. Numerical, scientific and predictive verification remain separate mandatory execution gates; implementation scopes may not change scientific decisions.
+Active baseline revision: C1.0-R3 (R2 decisions preserved; TI-001…005 is the sole scoped R3 change). H-01…H-06 CLOSED. The three new adjudications are explicitly recorded by R2 BCRs. Numerical, scientific and predictive verification remain separate mandatory execution gates; implementation scopes may not change scientific decisions.

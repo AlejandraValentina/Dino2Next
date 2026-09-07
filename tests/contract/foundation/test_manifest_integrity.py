@@ -68,6 +68,20 @@ def test_duplicate_manifest_key_fails(corpus):
 
 
 def test_predecessor_bytes_preserved(corpus):
- assert module.check(corpus)['version']=='C1.0-R2'
+ assert module.check(corpus)['version']=='C1.0-R3'
  p=corpus/module.PREFIX/'history/C1.0/PHYSICS_SPEC.md';p.write_bytes(p.read_bytes()+b'changed')
  with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):module.check(corpus)
+
+
+def test_derived_runtime_identity_is_required(corpus):
+ p=corpus/module.PREFIX/'datasets/thermo_runtime_continuous_v1.json'
+ p.unlink()
+ with pytest.raises(module.IntegrityError,match='MISSING'):
+  module.check(corpus)
+
+
+def test_r2_archive_is_byte_bound(corpus):
+ p=corpus/module.PREFIX/'history/C1.0-R2/PHYSICS_SPEC.md'
+ p.write_bytes(p.read_bytes()+b'changed')
+ with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):
+  module.check(corpus)
