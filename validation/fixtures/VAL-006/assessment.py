@@ -15,6 +15,19 @@ def driver():
     return result
 
 
+def smooth_orders(spatial):
+    """Both frozen acoustic field norms, with no density-L1-only shortcut."""
+    return {norm: np.log2(np.asarray([row['max_'+norm][:2] for row in spatial[:-1]])/
+                          np.asarray([row['max_'+norm][:2] for row in spatial[1:]])).tolist()
+            for norm in ('L1', 'L2')}
+
+
+def require_smooth_orders(orders, threshold):
+    for norm, rows in orders.items():
+        measured=np.asarray(rows)[-2:]
+        assert np.all(np.isfinite(measured)) and np.all(measured >= threshold), (norm, measured)
+
+
 def run_case(fixture_id, case_index):
     fixture_path = ROOT/f'validation/fixtures/{fixture_id}/input.json'
     # Pins executable coverage (all meshes/CFL/cases), not only descriptive fiche.
@@ -58,6 +71,7 @@ def run_case(fixture_id, case_index):
             rows = record['metrics']
             values = np.asarray([row['L1'] for row in rows])
             row = dict(N=n, CFL=cfl, max_L1=values.max(axis=0).tolist(),
+                       max_L2=np.max([x['L2'] for x in rows],axis=0).tolist(),
                        final_L1=values[-1].tolist(), max_Linf=np.max([x['Linf'] for x in rows], axis=0).tolist(),
                        ledger_max=float(np.max(np.abs([x['ledger'] for x in rows]))),
                        steps=len(record['steps']), rejected=len(record['rejections']))
@@ -80,6 +94,8 @@ def run_case(fixture_id, case_index):
     orders = np.log2(errors[:-1]/errors[1:]) if np.all(errors>0) else np.full(len(errors)-1, np.nan)
     report = dict(fixture=fixture_id, case=case, classification='NUMERICAL_VERIFICATION',
                   results=results, spatial_density_orders=orders.tolist(), result='METRICS_RECORDED_PENDING_ASSERTIONS')
+    if fixture_id == 'VAL-009':
+        report['smooth_density_velocity_orders']=smooth_orders(spatial)
     finest = fixture['meshes'][-1]
     temporal_fields = [np.load(ROOT/f"artifacts/{fixture_id}/{case['name']}-N{finest}-CFL{cfl}.npz")['Q'] for cfl in fixture['CFL']]
     report['finest_mesh_temporal_separation'] = [dict(CFL_pair=[a,b],
@@ -128,7 +144,7 @@ def run_case(fixture_id, case_index):
             assert all(x['amplitude_relative_error'] <= 2*(2*np.pi/x['N'])**2+10*case['epsilon'] for x in results)
             assert all(x['phase_error'] <= np.pi/x['N'] for x in results)
             # Preserve measured nonlinear remainder and orders; no subtraction.
-            assert np.all(orders[-2:]>=expected['smooth_order_min']), orders
+            require_smooth_orders(report['smooth_density_velocity_orders'], expected['smooth_order_min'])
         elif fixture_id == 'VAL-010':
             if case['kind'] == 'rigid':
                 assert spatial[-1]['max_L1'][2]/case['epsilon'] <= expected['finest_rigid_normalized_L1_max']

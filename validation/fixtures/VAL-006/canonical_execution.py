@@ -126,7 +126,8 @@ class CanonicalRHS:
         sources = np.zeros_like(state.Q)
         if self.fixture_id == 'VAL-011':
             sources[:, 1] = k.recover(U).V[:, 2]*np.diff(state.mesh.face_areas)/np.asarray(state.mesh.dx)
-        active = np.flatnonzero((faces.contraction < 1) | (faces.flattening > 0) | faces.near)
+        # flattening is the remaining slope multiplier: one is inactive.
+        active = np.flatnonzero((faces.contraction < 1) | (faces.flattening < 1) | faces.near)
         if len(active) or np.any(flux.flux_b):
             self.limiter_records.append(dict(time=time, cells=active.tolist(),
                 contraction=faces.contraction[active].tolist(), flattening=faces.flattening[active].tolist(),

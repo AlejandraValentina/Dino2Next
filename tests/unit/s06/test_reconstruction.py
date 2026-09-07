@@ -88,3 +88,17 @@ def test_joint_contraction_preserves_inputs_and_both_simplexes(kernel):
     assert np.any(faces.contraction<1)
     assert kernel.admissible(faces.left) and kernel.admissible(faces.right)
     np.testing.assert_array_equal(state.Q,before)
+def test_acoustic_acceptance_rejects_unqualified_l2_even_when_l1_is_second_order():
+    """Regression for VAL-009's omitted density/velocity L2 order gate."""
+    import importlib.util
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[3]
+    spec=importlib.util.spec_from_file_location('s06_metric_guard',root/'validation/fixtures/VAL-006/assessment.py')
+    metrics=importlib.util.module_from_spec(spec);spec.loader.exec_module(metrics)
+    rows=[{'max_L1':[4.**(-i),4.**(-i)],'max_L2':[2.**(-1.75*i),2.**(-1.75*i)]} for i in range(4)]
+    import pytest
+    with pytest.raises(AssertionError,match='L2'):
+        metrics.require_smooth_orders(metrics.smooth_orders(rows),1.8)
+    for row in rows:
+        row['max_L2']=row['max_L1']
+    metrics.require_smooth_orders(metrics.smooth_orders(rows),1.8)
