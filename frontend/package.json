@@ -1,0 +1,11 @@
+{
+  "name": "dino2next-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "check": "tsc --noEmit && node --test scaffold/check.test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {"typescript": "5.9.3"}
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "issues": [
+    {
+      "id": "H-01",
+      "normative_ids": [
+        "NUM-003",
+        "NUM-004",
+        "NUM-007",
+        "NUM-008"
+      ],
+      "title": "Selected kernel and boundary recipes are referenced but not specified",
+      "evidence": "AR002/ARKERNEL restore the interior algorithm. C03 NUM-008 only names the physical boundary; C06 T3 decision does not specify its complete half-Riemann evaluator. ARBOUNDARY computes a sonic root down to 200 K then checks the face at 300 K, without a selected documentary policy for formal/out-of-domain states, complete branch brackets or global failure semantics.",
+      "required_action": "Execute owned implementation verification gates; no scientific decision delegated.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "historical_alternatives": "C03 memoryless port candidates are superseded. ARBOUNDARY/Illinois research evaluators are evidence of implemented controls, not a complete selected GEN1 domain/branch contract.",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ],
+      "adjudication_revision": "C1.0-R2",
+      "closure_evidence": "BOUNDARY_CONTRACT.md BC-001\u2026008",
+      "previous_missing_clause": "NUM-007/008 boundary domain and branch recipe"
+    },
+    {
+      "id": "H-02",
+      "normative_ids": [
+        "NUM-002",
+        "NUM-005",
+        "NUM-006",
+        "NUM-009"
+      ],
+      "title": "Stage/source/event and periodic scaling recipe is incomplete",
+      "evidence": "C1 freezes constants and event order; C03 selects same-stage SSPRK2 ledgers. ARTIME calls rays preparatory; ARPERIOD explicitly says no full criterion is adjudicated. ARRAY has polynomial code but no selected full source/chemistry-stage composition or state-scale table.",
+      "required_action": "Execute owned implementation verification gates; no scientific decision delegated.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "historical_alternatives": "C03 pending coefficients and AR preparatory rays are not complete selections. Current C1 constants remain authoritative but cannot determine all missing expressions.",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ],
+      "adjudication_revision": "C1.0-R2",
+      "closure_evidence": "TIME_EVENT_PERIODICITY_CONTRACT.md TS-001\u2026007",
+      "previous_missing_clause": "NUM-002/005/006/009 source staging and periodic scales"
+    },
+    {
+      "id": "H-03",
+      "normative_ids": [
+        "VAL-001",
+        "VAL-022",
+        "VAL-025",
+        "VAL-026"
+      ],
+      "title": "Mandatory validation contracts are not executable from C1 alone",
+      "evidence": "VAL-022 motored meaning and EX data contract restored. C03 used 018/023/024 as experiments whereas C1 names numerical source tests. ARCOUPLED restores SI fixtures but reference qualification remains pending; no heavy runs are needed here. VAL-021 coupon/full-scale table and full VAL-028 birth/merge/re-entry test inputs are not selected. Historical pulse and later Fourier phase operators require exact case reconciliation for VAL-010.",
+      "required_action": "Execute owned implementation verification gates; no scientific decision delegated.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "historical_alternatives": "Old experimental tests cannot silently become the numerical source fixtures now required. Preparatory scripts without documentary selection cannot supply new truth/threshold values.",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ],
+      "adjudication_revision": "C1.0-R2",
+      "closure_evidence": "EXECUTABLE_VALIDATION_FIXTURES.json + REFERENCE_EXECUTION_CONTRACT.md",
+      "previous_missing_clause": "VAL-010/018/021/023/024/028 and remaining fixture field omissions"
+    },
+    {
+      "id": "H-04",
+      "normative_ids": [
+        "PHY-003",
+        "PHY-009",
+        "PHY-010"
+      ],
+      "title": "Zone evolution and output definitions omitted from their claimed normative destination",
+      "evidence": "C03PHY PHY-003/009/010 SELECTED restored in PH-001/002.",
+      "required_action": "Existing mandatory verification and experimental qualification remain; no new scientific selection.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ]
+    },
+    {
+      "id": "H-05",
+      "normative_ids": [
+        "PHY-005"
+      ],
+      "title": "Characterized-loss runtime contract lacks interpolation and identifiability details",
+      "evidence": "C09THEORY/MAP/RUNTIME/DATA selected hybrid policy restored in LC-001\u2026005. Protocol-specific resolution remains a mandatory measured input, not an invented universal cutoff.",
+      "required_action": "Existing mandatory verification and experimental qualification remain; no new scientific selection.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ]
+    },
+    {
+      "id": "H-06",
+      "normative_ids": [
+        "PHY-007",
+        "PHY-008"
+      ],
+      "title": "Thermal and loss correlations lack their exact selected realization",
+      "evidence": "C03PHY PHY-007/008 exact formulas and selected thermo_transport.yaml restored in PH-003/004 with byte hashes.",
+      "required_action": "Existing mandatory verification and experimental qualification remain; no new scientific selection.",
+      "status": "CLOSED",
+      "blocks": "NONE",
+      "restoration_revision": "C1.0-R1",
+      "sources_reviewed": [
+        "SOURCE_ADJUDICATION_INDEX.json",
+        "history/C1.0 current priority",
+        "C03/C09/AR selected documents and explicitly superseded/preparatory alternatives"
+      ]
+    }
+  ]
+}
