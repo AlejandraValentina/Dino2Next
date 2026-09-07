@@ -1,0 +1,25 @@
+# Scope dependency graph
+
+- S00 `bootstrap-tooling` ← root
+- S01 `units-config-provenance` ← S00
+- S02 `geometry-events` ← S01
+- S03 `thermochemistry` ← S01
+- S04 `conservative-volumes` ← S02, S03
+- S05 `finite-volume-state` ← S02, S03
+- S06 `numerical-kernel` ← S05
+- S07 `boundaries-coupling` ← S04, S06
+- S08 `dynamic-ports` ← S07
+- S09 `loss-characterization` ← S03, S08
+- S10 `cylinder-crankcase` ← S04, S08
+- S11 `transfers-exhaust` ← S08, S10
+- S12 `scavenging-tracers` ← S10, S11
+- S13 `combustion` ← S03, S10
+- S14 `thermal-losses` ← S03, S11
+- S15 `performance` ← S10, S12, S13, S14
+- S16 `periodic-sweep` ← S15
+- S17 `application-results` ← S16
+- S18 `validation-system` ← S06, S09, S16
+- S19 `frontend-model` ← S17
+- S20 `frontend-run` ← S17, S19
+- S21 `frontend-results` ← S17, S19
+- S22 `integrated-gen1` ← S18, S20, S21
