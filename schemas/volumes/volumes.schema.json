@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dino2next:volume-inventory:1.0",
+  "title": "Formation-inclusive SI single-zone inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "species_mass", "internal_energy", "tracer_mass", "species_order", "tracer_order"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "species_mass": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "number", "minimum": 0}, "description": "kg; sum strictly positive"},
+    "tracer_mass": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number", "minimum": 0}, "description": "kg; separate origin mass sum checked against chemical mass"},
+    "internal_energy": {"type": "number", "description": "J including formation; negative numeric values permitted"},
+    "species_order": {"const": ["C8H18,isooctane", "O2", "N2", "CO2", "H2O"]},
+    "tracer_order": {"const": ["F0", "F1", "R", "X"]}
+  },
+  "$defs": {
+    "increment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["species_mass", "internal_energy", "tracer_mass", "species_order", "tracer_order", "mass_unit", "energy_unit", "sign_convention"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "species_mass": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "number"}},
+        "tracer_mass": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
+        "internal_energy": {"type": "number"},
+        "species_order": {"const": ["C8H18,isooctane", "O2", "N2", "CO2", "H2O"]},
+        "tracer_order": {"const": ["F0", "F1", "R", "X"]},
+        "mass_unit": {"const": "kg"},
+        "energy_unit": {"const": "J"},
+        "sign_convention": {"const": "POSITIVE_INTO_VOLUME"}
+      }
+    },
+    "transfer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "id", "source_id", "receiver_id", "endpoint_id", "stage_id", "time_interval", "stage_time", "increment"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "id": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "receiver_id": {"type": "string", "minLength": 1},
+        "endpoint_id": {"type": "string", "minLength": 1},
+        "stage_id": {"type": "string", "minLength": 1},
+        "time_interval": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}, "description": "s; positive interval checked by runtime"},
+        "stage_time": {"type": "number", "description": "s; one of the two exact interval endpoints"},
+        "increment": {"$ref": "#/$defs/increment"}
+      }
+    }
+  }
+}
