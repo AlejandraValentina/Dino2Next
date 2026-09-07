@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -11,6 +11,3 @@ Required inputs include measured bore/stroke/rod/clearance and crankcase volume;
 `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN` means Codex can implement without choosing science. `NUMERICALLY_VERIFIED_GEN1` additionally requires all nonexperimental mandatory gates to pass on production code. `SCIENTIFICALLY_COMPLETE_GEN1` additionally requires subsystem and engine scientific validation. `PREDICTIVELY_VALIDATED_GEN1` additionally requires held-out VAL-026 without recalibration.
 
 Contract precedence: GEN1_CONTRACT; PRODUCT_AND_CAPABILITY_CONTRACT; PHYSICS_SPEC; NUMERICAL_METHOD_SPEC; VALIDATION_SPEC; SCIENTIFIC_DECISIONS; BASELINE_DECISION_REGISTER; research/history; legacy. A contradiction must be fixed by BCR rather than hidden by precedence.
-
-## Revision authority
-Active revision C1.0-R1: NORMATIVE_COMPLETENESS_REVISION, SCIENTIFIC_DECISION_CHANGED=NO. Companion annexes elaborate their parent PHY/NUM/VAL clauses at the same authority level; they do not silently override conflicts. NORMATIVE_CONSOLIDATION_RECORD.md scopes each restoration. The predecessor manifest and bytes are preserved in history/C1.0. The historical implementation-frozen status is preserved, but global operational readiness is not established while named specification gaps remain.

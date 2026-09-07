@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -25,7 +25,6 @@ Tests are typed as UNIT, REGRESSION, NUMERICAL_VERIFICATION, SCIENTIFIC_VALIDATI
 | VAL-018 | NUMERICAL_VERIFICATION | source-only and combined heat/shear/K/W2 | analytic/reference error≤0.1%; total-energy ledger≤1e-10; passive entropy |
 | VAL-020 | NUMERICAL_VERIFICATION | moving crankcase–transfer–cylinder with opening/closing | same 0.1/0.01% and phase budgets; retained passage inventory |
 | VAL-021 | NUMERICAL_VERIFICATION | complete coupon from cold/warm/high/low composition | NUM-009 thresholds, period 2–8 detection, max-cycle and multiple-attractor semantics |
-| VAL-022 | EXPERIMENTAL_VALIDATION | Motored cylinder/crankcase campaign, VF-022 and EXR-001/002 | Preregistered 95%/Holm and metrological capability; REQUIRES_EXPERIMENTAL_DATA |
 | VAL-023 | NUMERICAL_VERIFICATION | reaction source limits | no depleted reactant; exact coordinate/species/energy ledgers |
 | VAL-024 | NUMERICAL_VERIFICATION | distributed/local loss | sign/passivity/analytic laminar limit and map station semantics |
 | VAL-025 | EXPERIMENTAL_VALIDATION | complete reference engine calibration/validation split | GUM uncertainty, preregistered observables; calibration allowed only on calibration partition |
@@ -36,6 +35,3 @@ Tests are typed as UNIT, REGRESSION, NUMERICAL_VERIFICATION, SCIENTIFIC_VALIDATI
 Coupled scales: p=120 kPa, T=700 K, mass=rho_air(120 kPa,700 K)Vleft(0), energy=mass·cv_air·700 K, mass flow=rho_air·a_air·2e-4 m², fractions=1. Reference error allocation is 10% of the 0.1% total budget. Phase uses the frozen isolated-extremum/zero-crossing operator without shifting or filtering.
 
 VAL-020 heavy reference execution remains mandatory before `NUMERICALLY_VERIFIED_GEN1`; the recovered 8192 run is complete but does not meet its reference allocation. Failure blocks the numerical-verification claim and requires a BCR before changing method, fixture or threshold. It does not reopen this implementation contract by itself.
-
-## C1.0-R1 documentary restoration
-Detailed clauses: VALIDATION_FIXTURE_RESTORATION.md and EXPERIMENTAL_DATA_CONTRACT.md. These are normative companions for their explicit clause IDs; missing decisions are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.

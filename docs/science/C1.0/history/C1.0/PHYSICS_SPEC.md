@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -31,10 +31,7 @@ Cylinder/head/piston: Annand $h=a_A(k/B)Re^{0.7}$ with measured wall temperature
 Distributed wall shear uses Churchill Darcy factor with declared roughness, Reynolds and hydraulic diameter; Re→0 uses the analytic laminar limit. Measured local K is applied only at its characterized region and never where Cd/W2 already represents the loss. Shear opposes motion while total-energy source remains zero for adiabatic friction. Mechanical loss is an input FMEP map; absent qualification makes brake outputs unavailable.
 
 ## PHY-009 — tracers and metrics
-F0 fresh delivered, F1 transferred, R retained burned-history and X exterior-origin are provenance tracers, not species. Relabel operations have exact ledgers. Delivery, trapping, scavenging, charging, residual and short-circuit fractions use the restored cycle-integrated definitions in PHYSICS_RESTORATION_ANNEX PH-002; zero denominator returns UNDEFINED_METRIC.
+F0 fresh delivered, F1 transferred, R retained burned-history and X exterior-origin are provenance tracers, not species. Relabel operations have exact ledgers. Delivery, trapping, scavenging, charging, residual and short-circuit fractions use cycle-integrated tracer/mass definitions in VALIDATION_SPEC; denominators and zero-denominator failures are explicit.
 
 ## PHY-010 — work and performance
 $W_c=\oint p_c dV_c$, $W_{cc}=\oint p_{cc}dV_{cc}$, indicated metrics derive from cylinder work; pumping/crankcase work remains separate. Brake work equals indicated system work minus qualified mechanical/auxiliary losses. Each output declares indicated, pumping, friction or brake semantics.
-
-## C1.0-R1 documentary restoration
-Detailed clauses: PHYSICS_RESTORATION_ANNEX.md and LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md. These are normative companions for their explicit clause IDs; missing decisions are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.

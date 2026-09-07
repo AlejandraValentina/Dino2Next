@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -25,6 +25,3 @@ At the identical post-event crank angle compare all 0D masses/energies/species/t
 
 ## Verification and failures (NUM-006/010)
 Mesh refinement by 2 over at least three levels and time refinement by 2 at fixed fine mesh are mandatory. Smooth order must be 1.8–2.2; discontinuities use exact/reference L1 and dedicated limits. Diagnostics expose every retry, limiter activation, minimum state, source bound, event, root failure and local/global conservation residual. Required named failures include EOS/domain, map/out-of-domain, nonidentifiable loss, no boundary root, nonhyperbolic Roe state, inadmissible stage, retry exhaustion, multiperiodicity and multiple attractors.
-
-## C1.0-R1 documentary restoration
-Detailed clauses: NUMERICAL_KERNEL_NORMATIVE_ANNEX.md and STAGE_EVENT_RESTORATION_ANNEX.md. These are normative companions for their explicit clause IDs; missing decisions are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.
