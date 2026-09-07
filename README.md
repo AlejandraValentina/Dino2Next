@@ -8,4 +8,4 @@ Status: C1.0 scientific implementation baseline frozen; A1.0 architecture frozen
 
 Start: [CODEX_START_HERE](implementation/CODEX_START_HERE.md). Operational audit: [CODEX_READINESS_AUDIT](docs/CODEX_READINESS_AUDIT.md). Foundation checks are executable, but three remaining specification gaps prevent a global CODEX_READY declaration.
 
-Active documentary revision: C1.0-R1. H-04/H-05/H-06 are restored; H-01/H-02/H-03 remain MISSING_PREIMPLEMENTATION_SCIENTIFIC_DECISION. No new scientific choice is authorized by the restoration.
+Active baseline revision: C1.0-R2. H-01…H-06 CLOSED. The three new adjudications are explicitly recorded by R2 BCRs. Numerical, scientific and predictive verification remain separate mandatory execution gates; implementation scopes may not change scientific decisions.

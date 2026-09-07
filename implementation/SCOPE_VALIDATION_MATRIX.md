@@ -1,6 +1,6 @@
 # Scope validation matrix
 
-All 28 identifiers are classified. A number alone does not create a mandatory validation: 012,015,017,019 have no requirement in current C1 and remain explicit nonmandatory entries. VAL-022 is mandatory by CAP-007 and restored as the C03 motored experimental data contract VF-022; S18 owns it. Other incomplete contracts remain explicit in the coverage audit.
+All 28 identifiers are classified. A number alone does not create a mandatory validation: 012,015,017,019 have no requirement in current C1 and remain explicit nonmandatory entries. VAL-022 is mandatory by CAP-007 and restored as the C03 motored experimental data contract VF-022; S18 owns it. All 24 mandatory fiches have concrete field values in the R2 coverage catalogue; execution status remains separate.
 
 Reference owner is accountable for a separate implementation/data source, not permission to use candidate output as its oracle. Fixture, reference and expected bundle has exactly one owner. Rerun scopes have read-only access.
 

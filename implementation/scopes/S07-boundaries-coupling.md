@@ -18,26 +18,30 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
-- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BOUNDARY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 
 ## Required interfaces
 ### BoundaryCoupler
 - Purpose: Produce oriented half-Riemann boundary traces and a shared interface ledger.
-- Inputs: reservoir state, duct face state, outward normal, physical face area, opening fraction, time; ThermoModel
+- Inputs: reservoir quiescent p,T,Y,origin; reconstructed duct face state; local orientation n (+1 left/−1 right); physical Aface and Aopen in m²; stage time; ThermoModel, per BC-001
 - Outputs/signatures: solve(...) -> BoundaryTrace(donor, p,T,u,M, flux, diagnostics); pair_flux(trace,left_id,right_id) -> TransferLedger pair
 - Units: SI; outward normal +/-1; kg/s, N, W and species/tracer kg/s
 - Owner: S07
 - Mutability: Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.
-- Failure semantics: BOUNDARY_NO_PHYSICAL_ROOT, EOS_OUT_OF_DOMAIN, CHARACTERISTIC_DOMAIN_ERROR
+- Failure semantics: NO_PHYSICAL_BOUNDARY_ROOT, BOUNDARY_THERMOCHEMICAL_DOMAIN_VIOLATION, INCOMPATIBLE_INCOMING_STATE, UNSUPPORTED_SUPERSONIC_INFLOW, NUMERICAL_BOUNDARY_ROOT_FAILURE
 
 Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Internal algorithms remain subordinate to C1; this scope does not supply missing science.
 
 ## Required behavior
-- Use the approved full boundary equations after H-01 supplies the missing half-Riemann recipe.
+- Implement BC-001…008 including domain-limited roots, donor reversal, sonic sampling and partial aperture/wall force.
 - Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.
 - Closed face has zero mass/energy/species exchange and physical pressure force.
 - One flux record is shared by both endpoints; never evaluate different times for each end.
@@ -107,6 +111,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open preimplementation decisions: `H-01`, `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+No direct specification gap recorded for this scope. Dependency acceptance is still required.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

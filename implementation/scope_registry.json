@@ -90,7 +90,7 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S01",
@@ -178,9 +178,13 @@
       },
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md"
+        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S02",
@@ -268,9 +272,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S03",
@@ -334,9 +342,7 @@
       "vals": [
         "VAL-001"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s03/test_nasa_branches.py tests/unit/s03/test_eos_inversion.py tests/contract/s03/test_dataset_identity.py tests/numerical/VAL-001/test_acceptance.py -q"
@@ -370,9 +376,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S04",
@@ -441,9 +451,7 @@
       "vals": [
         "VAL-002"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s04/test_closed_volume.py tests/contract/s04/test_transfer_pairs.py tests/numerical/VAL-002/test_acceptance.py -q"
@@ -477,9 +485,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S05",
@@ -569,9 +581,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S06",
@@ -638,7 +654,7 @@
         {
           "name": "NumericalKernel",
           "purpose": "Implement the already selected interior recipe and integrator through explicit replace-free interfaces.",
-          "inputs": "DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1",
+          "inputs": "DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only",
           "outputs": "reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics)",
           "units": "seconds; face flux per area before area weighting; extensive ledger integrals after stage quadrature",
           "owner": "S06",
@@ -647,7 +663,7 @@
         }
       ],
       "behavior": [
-        "Implement the exact approved shock sensor, secant/interpolated flux and joint guard only after H-01 closure supplies their normative equations.",
+        "Implement NK-001\u2026004 exactly; the joint guard receives the TS-001 physical trial-state mapping from the caller, never assumes an unreacted final combination.",
         "Do not infer the sensor formula from three constants or copy research code as authority.",
         "Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.",
         "No global coupled timestep policy here; S16 composes all source bounds."
@@ -685,10 +701,7 @@
         "VAL-011",
         "VAL-027"
       ],
-      "issues": [
-        "H-01",
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s06/test_reconstruction.py tests/unit/s06/test_flux.py tests/contract/s06/test_step_transaction.py tests/numerical/VAL-006/test_acceptance.py tests/numerical/VAL-007/test_acceptance.py tests/numerical/VAL-008/test_acceptance.py tests/numerical/VAL-009/test_acceptance.py tests/numerical/VAL-010/test_acceptance.py tests/numerical/VAL-011/test_acceptance.py tests/numerical/VAL-027/test_acceptance.py -q"
@@ -738,9 +751,13 @@
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S07",
@@ -776,16 +793,16 @@
         {
           "name": "BoundaryCoupler",
           "purpose": "Produce oriented half-Riemann boundary traces and a shared interface ledger.",
-          "inputs": "reservoir state, duct face state, outward normal, physical face area, opening fraction, time; ThermoModel",
+          "inputs": "reservoir quiescent p,T,Y,origin; reconstructed duct face state; local orientation n (+1 left/\u22121 right); physical Aface and Aopen in m\u00b2; stage time; ThermoModel, per BC-001",
           "outputs": "solve(...) -> BoundaryTrace(donor, p,T,u,M, flux, diagnostics); pair_flux(trace,left_id,right_id) -> TransferLedger pair",
           "units": "SI; outward normal +/-1; kg/s, N, W and species/tracer kg/s",
           "owner": "S07",
           "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
-          "failures": "BOUNDARY_NO_PHYSICAL_ROOT, EOS_OUT_OF_DOMAIN, CHARACTERISTIC_DOMAIN_ERROR"
+          "failures": "NO_PHYSICAL_BOUNDARY_ROOT, BOUNDARY_THERMOCHEMICAL_DOMAIN_VIOLATION, INCOMPATIBLE_INCOMING_STATE, UNSUPPORTED_SUPERSONIC_INFLOW, NUMERICAL_BOUNDARY_ROOT_FAILURE"
         }
       ],
       "behavior": [
-        "Use the approved full boundary equations after H-01 supplies the missing half-Riemann recipe.",
+        "Implement BC-001\u2026008 including domain-limited roots, donor reversal, sonic sampling and partial aperture/wall force.",
         "Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.",
         "Closed face has zero mass/energy/species exchange and physical pressure force.",
         "One flux record is shared by both endpoints; never evaluate different times for each end."
@@ -815,10 +832,7 @@
       "vals": [
         "VAL-004"
       ],
-      "issues": [
-        "H-01",
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s07/test_boundary_donor.py tests/contract/s07/test_oriented_flux.py tests/numerical/VAL-004/test_acceptance.py -q"
@@ -853,9 +867,13 @@
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
         "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S08",
@@ -949,9 +967,13 @@
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
         "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S09",
@@ -995,7 +1017,7 @@
         "Raw Cd remains unchanged and linked to every fitted point.",
         "Report lack of identifying observations rather than choose a root in a plateau.",
         "No negative lambda, clipping, unqualified interpolation or extrapolation.",
-        "C1 must supply the interpolation/certificate conditioning contract in H-05 before runtime mapping is implemented."
+        "Use LC-001\u2026005 interpolation, certificate, covariance and conditioning guards; no online ambiguous Cd inversion."
       ],
       "tests": [
         "tests/unit/s09/test_identification_status.py",
@@ -1052,9 +1074,13 @@
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
         "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S10",
@@ -1150,9 +1176,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S11",
@@ -1245,9 +1275,7 @@
         "VAL-016",
         "VAL-020"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s11/test_supported_topology.py tests/contract/s11/test_inventory_ownership.py tests/numerical/VAL-013/test_acceptance.py tests/numerical/VAL-014/test_acceptance.py tests/numerical/VAL-016/test_acceptance.py tests/numerical/VAL-020/test_acceptance.py -q"
@@ -1291,9 +1319,13 @@
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
         "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S12",
@@ -1340,7 +1372,7 @@
         "Birth introduces no seed inventory and EPC merge is conservative.",
         "F0/F1/R/X remain separate from chemical species.",
         "Use selected exhaust and transfer-backflow splits without changing chi/kappa.",
-        "H-04 must resolve missing zone-energy and metric denominator definitions; no guessed residual/trapping formula."
+        "Use PH-001/002 zone-energy equations and exact metric denominators; test the current VAL-028 birth/merge/re-entry coupons."
       ],
       "tests": [
         "tests/unit/s12/test_birth_merge.py",
@@ -1368,9 +1400,7 @@
       "vals": [
         "VAL-028"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s12/test_birth_merge.py tests/unit/s12/test_relabel_ledger.py tests/contract/s12/test_scavenging_metrics.py tests/numerical/VAL-028/test_acceptance.py -q"
@@ -1404,9 +1434,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S13",
@@ -1447,7 +1481,7 @@
           "name": "CombustionModel",
           "purpose": "Advance the selected closed-cylinder prescribed reaction and exact stoichiometric ledger.",
           "inputs": "merged cylinder inventory; SOC/end event; supplied Wiebe parameters; stage angle; reactant-limited initial extent",
-          "outputs": "initialize_soc(...) -> BurnState; reaction_increment(t0,t1) -> species increment and progress; admissibility_bound(...) -> bound diagnostic",
+          "outputs": "initialize_soc(...) -> BurnState(xi_max, b, event_id); extent(time) -> kmol; reaction_increment(t0,t1) -> b*delta_xi; to_transformed(Q,time) -> Z; to_physical(Z,time) -> Q; admissibility_bound(...) -> TS-003 bound diagnostic",
           "units": "extent kmol; kg chemical changes; rad/seconds; total-energy source zero",
           "owner": "S13",
           "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
@@ -1458,7 +1492,7 @@
         "Use the exact selected reaction-coordinate integration, not an extra LHV energy source.",
         "Reject open-port or unmerged-cylinder SOC; preserve unburned reactants.",
         "End-burn handling is event aligned and does not overshoot terminal extent.",
-        "H-02 must define how the exact coordinate composes with SSPRK2; no hidden splitting."
+        "Expose TS-001 extent(t), stoichiometric b and the physical Q\u2194Z transformation; never add the extent increment twice or supply an LHV energy source."
       ],
       "tests": [
         "tests/unit/s13/test_reaction_balance.py",
@@ -1487,10 +1521,7 @@
         "VAL-005",
         "VAL-023"
       ],
-      "issues": [
-        "H-02",
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s13/test_reaction_balance.py tests/contract/s13/test_soc_events.py tests/numerical/VAL-005/test_acceptance.py tests/numerical/VAL-023/test_acceptance.py -q"
@@ -1527,9 +1558,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S14",
@@ -1588,7 +1623,7 @@
         "Reject W2/K duplicate representation of the same measured region.",
         "Adiabatic shear has zero total-energy source; heat remains separately signed.",
         "No zero/default substitution for missing Hcc/Cq required characterization.",
-        "H-06 must supply the exact named correlation realization and H-03 the absent VAL-022 fiche."
+        "Use PH-003/004 exact thermal/loss formulas and VAL-018/024 source coupons. S18 owns the experimental VAL-022 fixture."
       ],
       "tests": [
         "tests/unit/s14/test_source_ledgers.py",
@@ -1629,9 +1664,7 @@
         "VAL-018",
         "VAL-024"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s14/test_source_ledgers.py tests/contract/s14/test_loss_region_ownership.py tests/numerical/VAL-003/test_acceptance.py tests/numerical/VAL-018/test_acceptance.py tests/numerical/VAL-024/test_acceptance.py -q"
@@ -1672,9 +1705,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S15",
@@ -1714,7 +1751,7 @@
         "Do not label cylinder indicated work as brake or silently include/exclude crankcase work.",
         "Missing mechanical map returns typed unavailable fields, not zeros.",
         "Preserve work components and parent ledger identity.",
-        "H-04 must resolve any MEP/work-boundary and metric definition absent from C1 before calculation."
+        "Apply PH-002 indicated/net/brake definitions and TS-006 output scales; missing FMEP makes brake outputs unavailable."
       ],
       "tests": [
         "tests/unit/s15/test_work_semantics.py",
@@ -1773,9 +1810,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S16",
@@ -1824,7 +1865,7 @@
         "Roll back state and ledgers together on rejected global steps; expose every retry.",
         "No maxcycle-as-convergence, phase shifting or averaging distinct attractors.",
         "Cancellation only at accepted-state boundaries; warm start has an explicit hashed predecessor.",
-        "H-02 must specify missing dt/event/scale details; full-source numerical qualification remains a separate pending gate."
+        "Implement TS-001\u2026006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory."
       ],
       "tests": [
         "tests/unit/s16/test_period_lags.py",
@@ -1877,10 +1918,7 @@
       "vals": [
         "VAL-021"
       ],
-      "issues": [
-        "H-02",
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s16/test_period_lags.py tests/unit/s16/test_retry_transaction.py tests/integration/s16/test_sweep_failure.py tests/numerical/VAL-021/test_acceptance.py -q"
@@ -1913,9 +1951,13 @@
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md"
+        "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S17",
@@ -2014,9 +2056,13 @@
       },
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md"
+        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S18",
@@ -2070,7 +2116,7 @@
         "Import owner adapters without editing their fixture/reference/expected directories.",
         "Keep NOT_IMPLEMENTED, NOT_EXECUTED, BLOCKED_CONTRACT and FAIL distinct; none counts as PASS.",
         "Heavy jobs run only by explicit gate invocation; no PR_FAST dispatch.",
-        "Experimental data are never fabricated; H-03 covers missing preregistration details."
+        "Use EXR-001/002 and current VAL-022/025/026 data contracts; missing measured data are unavailable, never fabricated."
       ],
       "tests": [
         "tests/unit/s18/test_gate_aggregation.py",
@@ -2106,9 +2152,7 @@
         "VAL-026",
         "VAL-022"
       ],
-      "issues": [
-        "H-03"
-      ],
+      "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
         "python -m pytest tests/unit/s18/test_gate_aggregation.py tests/contract/s18/test_reference_independence.py tests/numerical/VAL-025/test_acceptance.py tests/numerical/VAL-026/test_acceptance.py tests/numerical/VAL-022/test_acceptance.py -q"
@@ -2148,9 +2192,13 @@
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
         "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
-        "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md"
+        "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "BLOCKED"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S19",
@@ -2268,9 +2316,13 @@
       },
       "normative_annexes": [
         "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md"
+        "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S20",
@@ -2366,9 +2418,13 @@
       },
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
-        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md"
+        "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S21",
@@ -2465,9 +2521,13 @@
         "OUT_OF_SCOPE": "Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently."
       },
       "normative_annexes": [
-        "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md"
+        "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
     {
       "id": "S22",
@@ -2582,9 +2642,13 @@
       "normative_annexes": [
         "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
         "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
-        "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md"
+        "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md",
+        "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+        "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+        "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
       ],
-      "specification_precondition": "SATISFIED_DIRECT_CLAUSES_ONLY"
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     }
   ]
 }

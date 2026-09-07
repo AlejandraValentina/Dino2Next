@@ -20,10 +20,14 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
-- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BOUNDARY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 
 ## Required interfaces
 ### PhysicalSources
@@ -41,7 +45,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Reject W2/K duplicate representation of the same measured region.
 - Adiabatic shear has zero total-energy source; heat remains separately signed.
 - No zero/default substitution for missing Hcc/Cq required characterization.
-- H-06 must supply the exact named correlation realization and H-03 the absent VAL-022 fiche.
+- Use PH-003/004 exact thermal/loss formulas and VAL-018/024 source coupons. S18 owns the experimental VAL-022 fixture.
 
 ## Allowed paths
 - `src/dino2next/heat_transfer/`
@@ -126,6 +130,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open preimplementation decisions: `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+No direct specification gap recorded for this scope. Dependency acceptance is still required.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

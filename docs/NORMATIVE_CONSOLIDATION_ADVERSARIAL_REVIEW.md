@@ -1,34 +1,30 @@
-# Consolidation adversarial review
+# R2 adversarial implementer review
 
-Result: SPEC_NOT_EXECUTABLE globally. No new scientific selection, no heavy verification and no S01 implementation. A direct restored clause is not equivalent to all dependency inputs being complete.
+Result: PASS — SPEC_EXECUTABLE for implementation scope definition. This is a documentary/adjudication review, not a claim that future numerical gates pass. No independent second agent is represented as having reviewed this work.
 
-| Scope | Can implement without scientific choice? | Remaining direct/inherited decisions |
+| Scope | Can implement without selecting science? | Concrete authority / check |
 |---|---|---|
-| S01 | YES for listed scope, subject to normal review | none recorded |
-| S02 | YES for listed scope, subject to normal review | none recorded |
-| S03 | NO | H-03 |
-| S04 | NO | H-03 |
-| S05 | NO | H-03 |
-| S06 | NO | H-01, H-03 |
-| S07 | NO | H-01, H-03 |
-| S08 | NO | H-01, H-03 |
-| S09 | NO | H-01, H-03 |
-| S10 | NO | H-01, H-03 |
-| S11 | NO | H-01, H-03 |
-| S12 | NO | H-01, H-03 |
-| S13 | NO | H-01, H-02, H-03 |
-| S14 | NO | H-01, H-02, H-03 |
-| S15 | NO | H-01, H-02, H-03 |
-| S16 | NO | H-01, H-02, H-03 |
-| S17 | NO | H-01, H-02, H-03 |
-| S18 | NO | H-01, H-02, H-03 |
-| S19 | NO | H-01, H-02, H-03 |
-| S20 | NO | H-01, H-02, H-03 |
-| S21 | NO | H-01, H-02, H-03 |
-| S22 | NO | H-01, H-02, H-03 |
+| S01 | YES | Unit/config value and provenance contracts; no physics computation. |
+| S02 | YES | PHY001 crank-slider geometry and exact VAL001 inputs. |
+| S03 | YES | PHY002 selected NASA bytes, LC/PH context and current VAL001 tuple/reference. |
+| S04 | YES | PHY003/PH001 inventories; TS002 work and VAL002 exact path. |
+| S05 | YES | NUM001 conservative cell storage and selected independent fractions. |
+| S06 | YES | NK001…004 interior recipe; TS001 trial mapping; explicit current kernel VAL fiches. |
+| S07 | YES | BC001…008 exact boundary/root/domain/failure recipe and VAL004. |
+| S08 | YES | T3 persistent volume and BC006 aperture; W2 geometry unchanged. |
+| S09 | YES | LC001…005 characterized-loss certificate/interpolation and station semantics. |
+| S10 | YES | PH001 finite engine inventory/topology interfaces and TS002 stage coupling. |
+| S11 | YES | BC007 shared ledgers, current013/014/016/020 and REF001 construction. |
+| S12 | YES | PH001/002 zone equations/metrics, currentVAL028 exact birth/merge/reentry. |
+| S13 | YES | TS001 exact extent transform, currentVAL005/023 and formation energy. |
+| S14 | YES | PH003/004 sources and currentVAL003/018/024. |
+| S15 | YES | PH002 work/friction/brake boundary; TS006 output scales. |
+| S16 | YES | TS001…006 complete RHS/dt/events/retry/period state; VAL021 coupon and pending sensitivity gate. |
+| S17 | YES | A1 API/resource/error contracts and field descriptors; no new scientific calculation. |
+| S18 | YES | Every mandatory reference/fixture has one owner, concrete R2 fields and explicit acquisition/failure gates. |
+| S19 | YES | UX1 model journey and UI_FIELD_BINDINGS; only S17 supported descriptors editable. |
+| S20 | YES | UX1 run journey, preflight/hash/cancel/status contracts; no frontend solver. |
+| S21 | YES | UX1 results/compare journey; consumes authoritative provenance-tagged outputs. |
+| S22 | YES | Dependency acceptance, composition/API journeys and all owned gate semantics; no missing scientific selector. |
 
-Reviewer findings: NUM-007/008 still has no fully adjudicated boundary root/domain prescription; NUM-005/009 still lacks selected complete stage/scale tables; current VAL-018/023/024 numerical scope cannot inherit the old experimental recipes. These are missing preimplementation decisions, not failures of pending heavy execution.
-
-Restored: zone-pressure/enthalpy equations, birth/merge/tracer semantics and performance denominators; exact thermal and loss formulas/data; C09 sector/certificate/interpolation/runtime requirements; interior AR002 stencil/flux/admissibility; motored VAL-022 plus EX acquisition/uncertainty contract.
-
-Source search: current C1 and its recovery classification, AR002 plus full kernel/coupled/time/periodicity reports, C10 eigenstructure, C03 physical/numerical/validation/GEN1 contracts, C09 theory/map/runtime/data/BCR and C02 experimental contract. Raw source bytes and SHA-256 are in the active baseline evidence index. Historical rejected AR001 and pending C03/AR recipes were not promoted. No external literature search was performed.
+Adversarial checks resolved: old200K root removed; finite/aperture storage separated; chemical energy not doubled; final RK combination maps Z at endpoint; retries rollback events/ledgers; undefined metrics cannot converge; free pulse Fourier phase is not peak timing; reused source VAL IDs have new explicit coupons; missing real experimental data remain unavailable. All new choices are labeled Dino2Next adaptations and BCR-authorized. Remaining numerical execution can fail and then requires the stated BCR workflow, never a free implementation choice.

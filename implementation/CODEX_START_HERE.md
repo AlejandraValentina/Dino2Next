@@ -1,6 +1,6 @@
 # Codex start contract
 
-NEXT_CODEX_SCOPE = S01. S00 = COMPLETE_FOUNDATION after PR_FAST succeeds. Do not start S01 as part of the foundation review. Global readiness remains blocked by the three remaining specification gaps; S01 has no direct scientific gap and depends only on S00.
+NEXT_CODEX_SCOPE = S01. S00 = COMPLETE_FOUNDATION after PR_FAST succeeds. Do not start S01 as part of the foundation review. Operational readiness requires strict PR_FAST and standalone readiness PASS; S01 depends on S00 and is not started here.
 
 1. Read root AGENTS, docs/CODEX_READINESS_AUDIT.md, then C1 GEN1_CONTRACT and its authority order. C1 governs science, A1 organization, UX1 journeys, active scope implementation. Hash integrity is necessary, not proof of completeness.
 2. Read PUBLIC_INTERFACE_CONTRACT, SCOPE_DEPENDENCY_GRAPH, SCOPE_VALIDATION_MATRIX and the next scope. Every dependency must have accepted artifacts, not merely a closed task.
@@ -19,7 +19,7 @@ npm --prefix frontend ci --ignore-scripts
 python scripts/run_gate.py PR_FAST
 ```
 
-Then run every command in the active scope, including each enumerated VAL adapter. Future adapters must be created by their owner; unavailable fixtures are not skip/PASS. `python scripts/check_scopes.py --readiness` intentionally fails while H-01/H-02/H-03 remain unresolved. It is separate from the foundation structural CI.
+Then run every command in the active scope, including each enumerated VAL adapter. Future adapters must be created by their owner; unavailable fixtures are not skip/PASS. `python scripts/check_scopes.py --readiness` must PASS and is a strict CI step. A failed gate cannot be treated as expected failure.
 
 ## Stop/report rules
 
@@ -27,4 +27,4 @@ IMPLEMENTATION_DEFECT: fix within owned paths and rerun. VERIFICATION_FAILURE: p
 
 PASS means the named gate ran all its required checks at the reported commit. PR_FAST PASS means tooling/integrity/structural consistency only. It does not mean numerical verification, scientific validation, predictive validation, or globally executable science. Heavy runs remain MANDATORY_VERIFICATION_DURING_IMPLEMENTATION.
 
-Active documentary revision: C1.0-R1. H-04/H-05/H-06 are restored; H-01/H-02/H-03 remain MISSING_PREIMPLEMENTATION_SCIENTIFIC_DECISION. No new scientific choice is authorized by the restoration.
+Active baseline revision: C1.0-R2. H-01…H-06 CLOSED. The three new adjudications are explicitly recorded by R2 BCRs. Numerical, scientific and predictive verification remain separate mandatory execution gates; implementation scopes may not change scientific decisions.

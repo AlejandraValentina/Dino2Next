@@ -17,14 +17,18 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
-- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BOUNDARY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 
 ## Required interfaces
 ### NumericalKernel
 - Purpose: Implement the already selected interior recipe and integrator through explicit replace-free interfaces.
-- Inputs: DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1
+- Inputs: DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only
 - Outputs/signatures: reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics)
 - Units: seconds; face flux per area before area weighting; extensive ledger integrals after stage quadrature
 - Owner: S06
@@ -34,7 +38,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Internal algorithms remain subordinate to C1; this scope does not supply missing science.
 
 ## Required behavior
-- Implement the exact approved shock sensor, secant/interpolated flux and joint guard only after H-01 closure supplies their normative equations.
+- Implement NK-001…004 exactly; the joint guard receives the TS-001 physical trial-state mapping from the caller, never assumes an unreacted final combination.
 - Do not infer the sensor formula from three constants or copy research code as authority.
 - Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.
 - No global coupled timestep policy here; S16 composes all source bounds.
@@ -151,6 +155,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open preimplementation decisions: `H-01`, `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+No direct specification gap recorded for this scope. Dependency acceptance is still required.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

@@ -18,16 +18,20 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
-- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
-- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BOUNDARY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 
 ## Required interfaces
 ### CombustionModel
 - Purpose: Advance the selected closed-cylinder prescribed reaction and exact stoichiometric ledger.
 - Inputs: merged cylinder inventory; SOC/end event; supplied Wiebe parameters; stage angle; reactant-limited initial extent
-- Outputs/signatures: initialize_soc(...) -> BurnState; reaction_increment(t0,t1) -> species increment and progress; admissibility_bound(...) -> bound diagnostic
+- Outputs/signatures: initialize_soc(...) -> BurnState(xi_max, b, event_id); extent(time) -> kmol; reaction_increment(t0,t1) -> b*delta_xi; to_transformed(Q,time) -> Z; to_physical(Z,time) -> Q; admissibility_bound(...) -> TS-003 bound diagnostic
 - Units: extent kmol; kg chemical changes; rad/seconds; total-energy source zero
 - Owner: S13
 - Mutability: Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.
@@ -39,7 +43,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Use the exact selected reaction-coordinate integration, not an extra LHV energy source.
 - Reject open-port or unmerged-cylinder SOC; preserve unburned reactants.
 - End-burn handling is event aligned and does not overshoot terminal extent.
-- H-02 must define how the exact coordinate composes with SSPRK2; no hidden splitting.
+- Expose TS-001 extent(t), stoichiometric b and the physical Q↔Z transformation; never add the extent increment twice or supply an LHV energy source.
 
 ## Allowed paths
 - `src/dino2next/combustion/`
@@ -114,6 +118,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open preimplementation decisions: `H-02`, `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+No direct specification gap recorded for this scope. Dependency acceptance is still required.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

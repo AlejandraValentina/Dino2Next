@@ -76,6 +76,18 @@ def check(root=ROOT, readiness=False):
             assert c['contract_status']=='COMPLETE' and not c['missing'], 'INCOMPLETE_VALIDATION_CONTRACT: '+v['id']
             required={'objective','type','physics_numerics','initial_state','geometry','domain','mesh_sequence','dt_sequence','boundary_states','end_condition','sampling','independent_reference','reference_resolution','observable','normalization','metric','threshold','failure','artifacts'}
             assert set(c['required_fields'])==required and (root/c['normative_path']).is_file(), 'INCOMPLETE_FIXTURE_FIELDS: '+v['id']
+        fixtures_path = root/'docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json'
+        fixtures = json.loads(fixtures_path.read_text())
+        assert fixtures['version'] == 'C1.0-R2', 'FIXTURE_REVISION_MISMATCH'
+        assert set(fixtures['fixtures']) == set(cv), 'FIXTURE_VALUE_COVERAGE_MISSING'
+        catalogue = (root/'docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md').read_text()
+        for identifier, values in fixtures['fixtures'].items():
+            assert set(values) == required, 'FIXTURE_FIELDS_MISSING: ' + identifier
+            assert cv[identifier].get('fixture_key') == identifier, 'FIXTURE_LINK_MISMATCH'
+            for field, value in values.items():
+                assert isinstance(value,str) and bool(value.strip()), 'EMPTY_FIXTURE_VALUE: '+identifier+'/'+field
+                assert not any(marker in value for marker in ('TODO','TBD','MODEL_SELECTION_OPEN','ACCEPTANCE_THRESHOLD_REQUIRES')), 'PLACEHOLDER_FIXTURE_VALUE: '+identifier+'/'+field
+                assert '**'+field+'**: '+value in catalogue, 'FIXTURE_CATALOGUE_DRIFT: '+identifier+'/'+field
         for s in scopes:
             assert not s['issues'], 'UNSATISFIED_SCOPE_PRECONDITION: '+s['id']
     return {'result':'PASS','scope_count':len(scopes),'mandatory_validations_owned':sum(v['mandatory'] for v in vals),'open_specification_gaps':len(opened),'scientific_readiness':'PASS' if readiness else 'NOT_ASSERTED'}
