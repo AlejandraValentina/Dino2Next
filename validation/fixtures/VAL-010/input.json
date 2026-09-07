@@ -1,0 +1,69 @@
+{
+  "id": "VAL-010",
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "baseline": "C1.0-R3",
+  "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+  "frozen_source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35",
+  "frozen_fiche": {
+    "objective": "Separate rigid standing-wave and free-end pulse reflection operators",
+    "type": "NUMERICAL_VERIFICATION",
+    "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "initial_state": "gamma1.4,R1,rho0=p0=1,c=sqrt(1.4),eps=1e-5. Rigid: p=1+eps*cos(pi*x),rho=1+eps*cos(pi*x)/c\u00b2,u=0. Free: g(x)=eps*exp(-((x-.25)/.05)^2),p=1+g,rho=1+g/c\u00b2,u=g/c.",
+    "geometry": "x=[0,1]m,A1.",
+    "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
+    "mesh_sequence": "N=[200,400,800] uniform.",
+    "dt_sequence": "CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.",
+    "boundary_states": "Rigid: u=0 both ends. Free: right p-prime=0 pressure-release acoustic boundary, left zero incoming acoustic invariant; these are linear canonical BC tests distinct from nonlinear reservoir capacity.",
+    "end_condition": "Rigid t=.6s; free t=1/c s.",
+    "sampling": "Initial and final full cell-average fields plus 101 uniformly spaced times using endpoint alignment. Reference averages use Gauss16/32 with exact wave breaks split; no point-value vs average comparison.",
+    "independent_reference": "Rigid exact linear p-prime=eps*cos(pi*x)*cos(pi*c*t),u=eps/c*sin(pi*x)*sin(pi*c*t). Free p-prime=g(x-c*t)-g(2-x-c*t),u=(g(x-c*t)+g(2-x-c*t))/c. Exact Gaussian cell integrals via erf.",
+    "reference_resolution": "Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.",
+    "observable": "Rigid pressure L1; free full reflected spatial waveform Fourier coefficient C=sum dx*p-prime*exp(-2pi i*x) with exact cell-integral operator; pulse peak/time recorded separately as diagnostics.",
+    "normalization": "Rigid eps; free complex reference coefficient, phase radians. Peak diagnostics are not a replacement acceptance operator.",
+    "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.",
+    "threshold": "Rigid L1(p-p_ref)/eps\u2264.01 atN800; free abs(abs(C)/abs(Cref)-1)\u2264.01 and abs(arg(C/Cref))\u2264pi/N. Cref must be nonzero; cannot use peak-time difference as Fourier phase. Repeat eps/2 to bound nonlinear remainder.",
+    "failure": "IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.",
+    "artifacts": "Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation."
+  },
+  "gamma": 1.4,
+  "R_SI": 1.0,
+  "species_tag": "N2 mathematical carrier only",
+  "origin_tag": "R",
+  "CFL": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "sampling_points": 101,
+  "meshes": [
+    200,
+    400,
+    800
+  ],
+  "cases": [
+    {
+      "name": "rigid-full",
+      "kind": "rigid",
+      "epsilon": 1e-05,
+      "time": 0.6
+    },
+    {
+      "name": "rigid-half",
+      "kind": "rigid",
+      "epsilon": 5e-06,
+      "time": 0.6
+    },
+    {
+      "name": "free-full",
+      "kind": "free",
+      "epsilon": 1e-05,
+      "time": 0.8451542547285166
+    },
+    {
+      "name": "free-half",
+      "kind": "free",
+      "epsilon": 5e-06,
+      "time": 0.8451542547285166
+    }
+  ]
+}

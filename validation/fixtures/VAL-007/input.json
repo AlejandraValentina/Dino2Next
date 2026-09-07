@@ -1,0 +1,55 @@
+{
+  "id": "VAL-007",
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "baseline": "C1.0-R3",
+  "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+  "frozen_source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35",
+  "frozen_fiche": {
+    "objective": "Stationary and advected material contact",
+    "type": "NUMERICAL_VERIFICATION",
+    "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "initial_state": "gamma1.4,R1,p=1; rhoL1,rhoR2 atx=.5; u=[0,1] m/s.",
+    "geometry": "x=[0,1]m,A1.",
+    "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
+    "mesh_sequence": "N=[100,200,400] uniform.",
+    "dt_sequence": "CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.",
+    "boundary_states": "Extrapolation, no wave reaches exterior.",
+    "end_condition": "t=.1 s.",
+    "sampling": "Initial and final full cell-average fields plus 101 uniformly spaced times using endpoint alignment. Reference averages use Gauss16/32 with exact wave breaks split; no point-value vs average comparison.",
+    "independent_reference": "Exact moving step at .5+u*t, exact cut-cell averages.",
+    "reference_resolution": "Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.",
+    "observable": "p,u,rho and inventories.",
+    "normalization": "Per-observable initial nonzero inventory or explicit scale below; species use total initial mass, energy uses initial sensible cv*T*mass; formation terms remain in ledgers.",
+    "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.",
+    "threshold": "max abs(p-1),abs(u-u0)\u22641e-10; L1rho\u22642dx*abs(rhoR-rhoL); stationary state conserved at roundoff; advected error decreases.",
+    "failure": "IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.",
+    "artifacts": "Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation."
+  },
+  "gamma": 1.4,
+  "R_SI": 1.0,
+  "species_tag": "N2 mathematical carrier only",
+  "origin_tag": "R",
+  "CFL": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "sampling_points": 101,
+  "meshes": [
+    100,
+    200,
+    400
+  ],
+  "cases": [
+    {
+      "name": "stationary",
+      "speed": 0.0,
+      "time": 0.1
+    },
+    {
+      "name": "advected",
+      "speed": 1.0,
+      "time": 0.1
+    }
+  ]
+}

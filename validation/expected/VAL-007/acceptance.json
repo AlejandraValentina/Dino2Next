@@ -1,0 +1,10 @@
+{
+  "id": "VAL-007",
+  "classification": "NUMERICAL_VERIFICATION",
+  "thresholds": {
+    "pressure_velocity_Linf_max": 1e-10,
+    "density_L1_cells_max": 2,
+    "stationary_roundoff_multiplier": 256
+  },
+  "source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35"
+}

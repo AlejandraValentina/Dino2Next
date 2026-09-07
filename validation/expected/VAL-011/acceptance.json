@@ -1,0 +1,11 @@
+{
+  "id": "VAL-011",
+  "classification": "NUMERICAL_VERIFICATION",
+  "thresholds": {
+    "rest_pressure_velocity_Linf_max": 1e-10,
+    "finest_density_L1_max": 2e-06,
+    "smooth_order_min": 1.8,
+    "ledger_max": 1e-10
+  },
+  "source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35"
+}

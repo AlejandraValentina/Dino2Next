@@ -1,0 +1,11 @@
+{
+  "id": "VAL-027",
+  "classification": "NUMERICAL_VERIFICATION",
+  "thresholds": {
+    "finest_density_L1_max": 1e-10,
+    "first_two_order_min": 1.8,
+    "first_two_order_max": 2.2,
+    "reference_discrepancy_max": 1e-11
+  },
+  "source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35"
+}
