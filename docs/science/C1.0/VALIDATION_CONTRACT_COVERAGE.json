@@ -25,9 +25,11 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-001"
     },
     {
       "id": "VAL-002",
@@ -54,9 +56,11 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-002"
     },
     {
       "id": "VAL-003",
@@ -83,13 +87,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-003"
     },
     {
       "id": "VAL-004",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -111,16 +117,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "current ideal-nozzle versus T3 test boundary applicability and complete NASA cases"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-004"
     },
     {
       "id": "VAL-005",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -142,12 +148,12 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "current UV dynamic fixture initial inventory, duration and stage composition"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-005"
     },
     {
       "id": "VAL-006",
@@ -174,9 +180,11 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-006"
     },
     {
       "id": "VAL-007",
@@ -203,13 +211,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-007"
     },
     {
       "id": "VAL-008",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -231,12 +241,12 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "adjudicated mixed-shock complete input/oracle roster"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-008"
     },
     {
       "id": "VAL-009",
@@ -263,13 +273,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-009"
     },
     {
       "id": "VAL-010",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -291,12 +303,12 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "Gaussian pulse versus Fourier phase case/operator reconciliation"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-010"
     },
     {
       "id": "VAL-011",
@@ -323,13 +335,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-011"
     },
     {
       "id": "VAL-013",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -351,16 +365,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "complete sampling/mesh/dt roster authoritative fixture attachment"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-013"
     },
     {
       "id": "VAL-014",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -382,16 +396,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "complete sampling/mesh/dt roster authoritative fixture attachment"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-014"
     },
     {
       "id": "VAL-016",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -413,16 +427,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "complete sampling/mesh/dt roster authoritative fixture attachment"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-016"
     },
     {
       "id": "VAL-018",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -444,16 +458,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "exact combined source fixture and independent reference"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-018"
     },
     {
       "id": "VAL-020",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -475,16 +489,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "complete sampling/mesh/dt roster authoritative fixture attachment"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-020"
     },
     {
       "id": "VAL-021",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -506,12 +520,12 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "complete coupon, initial states and periodic scales"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-021"
     },
     {
       "id": "VAL-022",
@@ -538,13 +552,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "REQUIRES_EXPERIMENTAL_DATA",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-022"
     },
     {
       "id": "VAL-023",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -566,16 +582,16 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "exact current numerical source-limit fixture; old ID was experimental"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-023"
     },
     {
       "id": "VAL-024",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -597,12 +613,12 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "exact current numerical source/loss fixture; old ID was experimental"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-024"
     },
     {
       "id": "VAL-025",
@@ -629,9 +645,11 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md",
-      "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+      "execution_status": "REQUIRES_EXPERIMENTAL_DATA",
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-025"
     },
     {
       "id": "VAL-026",
@@ -658,9 +676,11 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md",
-      "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+      "execution_status": "REQUIRES_EXPERIMENTAL_DATA",
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-026"
     },
     {
       "id": "VAL-027",
@@ -687,13 +707,15 @@
         "artifacts"
       ],
       "missing": [],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-027"
     },
     {
       "id": "VAL-028",
-      "contract_status": "INCOMPLETE",
+      "contract_status": "COMPLETE",
       "required_fields": [
         "objective",
         "type",
@@ -715,12 +737,13 @@
         "failure",
         "artifacts"
       ],
-      "missing": [
-        "birth/merge/re-entry dynamic fixture beyond exact mixing limit"
-      ],
-      "normative_path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "missing": [],
+      "normative_path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
       "execution_status": "NOT_IMPLEMENTED",
-      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control."
+      "note": "COMPLETE means documentary input/protocol, never execution PASS. Active C1 thresholds control.",
+      "fixture_json": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+      "fixture_key": "VAL-028"
     }
-  ]
+  ],
+  "version": "C1.0-R2"
 }

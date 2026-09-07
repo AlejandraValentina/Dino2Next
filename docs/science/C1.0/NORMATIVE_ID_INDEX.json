@@ -208,13 +208,13 @@
     "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
   },
   "NUM-007": {
-    "path": "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
-    "definition_line": "## NK-005 \u2014 NUM-007/008 limits and incomplete boundary specification",
-    "definition_status": "INCOMPLETE"
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Physical boundaries (NUM-007/008)",
+    "definition_status": "COMPLETE"
   },
   "NUM-008": {
-    "path": "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
-    "definition_line": "## NK-005 \u2014 NUM-007/008 limits and incomplete boundary specification",
-    "definition_status": "INCOMPLETE"
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Physical boundaries (NUM-007/008)",
+    "definition_status": "COMPLETE"
   }
 }

@@ -1,145 +1,127 @@
 {
-  "scientific_decision_changed": false,
+  "version": "C1.0-R2",
+  "scientific_decision_changed": true,
+  "predecessor": "C1.0-R1",
   "changes": [
     {
       "path": "docs/science/C1.0/BASELINE_DECISION_REGISTER.md",
-      "before_sha256": "40b7a8a586eead18c2b5672e3b186449b0ca52d5fa0b4e77b7ad7829b75587d3",
-      "after_sha256": "36443acf824b0d1cc0e94a19449a580bbbec236f76c6825bd849d1ccc9423cdc",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+      "before_sha256": "36443acf824b0d1cc0e94a19449a580bbbec236f76c6825bd849d1ccc9423cdc",
+      "after_sha256": "4e82127c42f65cea2a4407e488e1ba00a64944ea2d7145a1b0abd22a1251a14f"
     },
     {
       "path": "docs/science/C1.0/BASELINE_TRACEABILITY_MATRIX.md",
-      "before_sha256": "df30641c1d12db3ab284a70e91ff9596d3ed8c1dff087d48a1c6605d35b0d547",
-      "after_sha256": "2e0741b8da2c64e1c46cb7edd6b51491b2be916bf89e0d43a325967be0e4e902",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+      "before_sha256": "2e0741b8da2c64e1c46cb7edd6b51491b2be916bf89e0d43a325967be0e4e902",
+      "after_sha256": "a646636e9cd66a918ca944fe6d47601ebc16121461765c40a11ec6263e74ceb0"
+    },
+    {
+      "path": "docs/science/C1.0/BCR-C1R2-H01-BOUNDARY.md",
+      "before_sha256": null,
+      "after_sha256": "46e14471df6fb357b5bc5c07023a646335d49eb25c51555bfb9f27910dc8bbb5"
+    },
+    {
+      "path": "docs/science/C1.0/BCR-C1R2-H02-TIME-PERIODICITY.md",
+      "before_sha256": null,
+      "after_sha256": "16d38c0d88f5c4cb11ca4f01ce84774b6aefeec3fb7c0d90b33c6c9724c8bea8"
+    },
+    {
+      "path": "docs/science/C1.0/BCR-C1R2-H03-VALIDATION-FIXTURES.md",
+      "before_sha256": null,
+      "after_sha256": "3a6e3c910d2095bda901809b52fc1cd3b52125adaf52393eb1afbb31f35f3170"
+    },
+    {
+      "path": "docs/science/C1.0/BOUNDARY_CONTRACT.md",
+      "before_sha256": null,
+      "after_sha256": "9725559d421e2d7217b6ccefb437b1f532b310aca16b42d0d614647143f29ef3"
+    },
+    {
+      "path": "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
+      "before_sha256": null,
+      "after_sha256": "0a1e698f25dd0bc3ea24b5333da59f1865bd45fea374cd2d92ebcda1f8301507"
+    },
+    {
+      "path": "docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md",
+      "before_sha256": "ebca9561ec18431fb7667cbe4e693da1947bfdba24c87b0447e2c15efbfc0c70",
+      "after_sha256": "6812609d1e0febdb8c7032ee0e446418c0956afecead5f0376e36063db4425b3"
     },
     {
       "path": "docs/science/C1.0/GEN1_CONTRACT.md",
-      "before_sha256": "0a4d60ae4da68e45264da93d06c89ef08e00118e81cac2fe2e5f6d969266bd64",
-      "after_sha256": "e03065d9d7d4c4cabed52b565cdfe046bd95e6b4df29fa7cda980369f71686bb",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
-      "before_sha256": "61f0e9efa632884ed7fb769774d06e8680990993ccc52c5b9fd6aba7cdd3990b",
-      "after_sha256": "cee354d9a41e8ac14b40d6bbcd5360daa1c8dbf8e1e7caf6afaf9255621b575d",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/PHYSICS_SPEC.md",
-      "before_sha256": "5b472fae0955173111cb725ab99f4f168282de41f6412f49e2060a45f987bc44",
-      "after_sha256": "98181b62e9408b20b8e9311f8b58ccde67cc0ffd469d9b98af048580df56cfc7",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
-      "before_sha256": "c05581e6d79e3d33dd74a84e964cde32773594e5f499442f4539a6d535f5e65d",
-      "after_sha256": "e7b6e98a0309b259d3c9e452ebb0ff96fd83ed59c0a5c25618672b5f6d8a05eb",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/SCIENTIFIC_DECISIONS.md",
-      "before_sha256": "44490eeab3418489768960a65fdccf4a241407db03fb612911af5958d96aec57",
-      "after_sha256": "4e23d1154dfd3b756c109bf57c873b98e5027341b49a362114256517fad03f50",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/VALIDATION_SPEC.md",
-      "before_sha256": "e9cc99f96a8f6c4506f3131f50c7cd1fbcef39af6ce4ac9fb5ae567183de57f4",
-      "after_sha256": "1a3df1f90c6d982e7e5d0ed03616f27769f1c848441c15963fba76edd0f80739",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
-    },
-    {
-      "path": "docs/science/C1.0/VERIFICATION_EXECUTION_MATRIX.md",
-      "before_sha256": "14084b289588e4e46af68c51063bdd76058b27742e68e5be208889e2c516d076",
-      "after_sha256": "f27f1c7f22849ca6d6725faa63a5e2ca49adc5de4e35aaea057ebfe104c893e1",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+      "before_sha256": "e03065d9d7d4c4cabed52b565cdfe046bd95e6b4df29fa7cda980369f71686bb",
+      "after_sha256": "77bade6a47d9122dabaec1b76c954a8b8aba94078f0c2bac1ad286ffefbcd204"
     },
     {
       "path": "docs/science/C1.0/LEGACY_DISPOSITION.md",
-      "before_sha256": "5ae4b398b04ec18c49018cc91594cda992bb07941b112f33b9af8f6848e7ce7e",
-      "after_sha256": "2442c2e15b9e2aac64842306a4b5eae84f2211d2ba0caf1c9333fa379ecc9263",
-      "issues": [
-        "H-01",
-        "H-02",
-        "H-03",
-        "H-04",
-        "H-05",
-        "H-06"
-      ],
-      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+      "before_sha256": "2442c2e15b9e2aac64842306a4b5eae84f2211d2ba0caf1c9333fa379ecc9263",
+      "after_sha256": "c0cd434f1bdaa5968c7bf28894daf29e5ebd2d9fe7f891bdbb721268201e4699"
+    },
+    {
+      "path": "docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md",
+      "before_sha256": "3d3419cb57a043ecb620849c250a206bc751cd6371a6f43580ca1156b9b51cdf",
+      "after_sha256": "b1f10548670f4354f0884bf916c64fb77047ff2da5a8461062f84715cfb2788c"
+    },
+    {
+      "path": "docs/science/C1.0/NORMATIVE_CONSOLIDATION_RECORD.md",
+      "before_sha256": "276e942cfb52ede0e5bef29b77db7db155444cef4dfbc41a364b4deca232a3b0",
+      "after_sha256": "f4ce120ae694d783de10fda3fb6e9eb8e7b9fbeaaabd6d11dcbff1574123c970"
+    },
+    {
+      "path": "docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md",
+      "before_sha256": "b29c914a56c13749e6db84034e5cd2680bf31d46b5c74b7c0871ce02b82c8c92",
+      "after_sha256": "f89b54c21f039c56201858aa706245031e9bf0b05c3f23f785def2608d3951dc"
+    },
+    {
+      "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+      "before_sha256": "cee354d9a41e8ac14b40d6bbcd5360daa1c8dbf8e1e7caf6afaf9255621b575d",
+      "after_sha256": "54b1f769abef124152c8843582e546795220dac138fd87b6d05b878656c66c52"
+    },
+    {
+      "path": "docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md",
+      "before_sha256": "9ca003f8344da7baa965c3b06ec62e85c9b790ad3605e8d313da3ac0bd000571",
+      "after_sha256": "4d9da8bd4c8ec48aa6f01ad62bdab194874e9c8cc6014162d47c96336c7a4dd0"
+    },
+    {
+      "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+      "before_sha256": "98181b62e9408b20b8e9311f8b58ccde67cc0ffd469d9b98af048580df56cfc7",
+      "after_sha256": "19300f28f9165a4dc404ebb5522c2e9f8e98c669e15403be95d2a75cf56008cd"
+    },
+    {
+      "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+      "before_sha256": "e7b6e98a0309b259d3c9e452ebb0ff96fd83ed59c0a5c25618672b5f6d8a05eb",
+      "after_sha256": "efee7f27141d07d52060d2adb55efd9da3d4d0187d03e748c8bfdc469d8210f8"
+    },
+    {
+      "path": "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+      "before_sha256": null,
+      "after_sha256": "5af6169eef245be17e2e4f2dcf7c09adff723b4b01c3faa4fcaba6577981a246"
+    },
+    {
+      "path": "docs/science/C1.0/SCIENTIFIC_DECISIONS.md",
+      "before_sha256": "4e23d1154dfd3b756c109bf57c873b98e5027341b49a362114256517fad03f50",
+      "after_sha256": "1644ff215116c2d08a82bcbd6eadf272635bac9b59c8cd7fdf349c47e43045bc"
+    },
+    {
+      "path": "docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md",
+      "before_sha256": "f48c29e9592421c1af4acac40ceb31b86efd418cebdea8bdf31539a0bc43436f",
+      "after_sha256": "613e0b1a130b547c095d740c3defa7098c6637d87adfe41705f8501d73511a9a"
+    },
+    {
+      "path": "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
+      "before_sha256": null,
+      "after_sha256": "138ef1637cd367971f314680ab98fefeb9184ed9140b88a82d00898c2e8737b0"
+    },
+    {
+      "path": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md",
+      "before_sha256": "be29e7bd1abee068adf828c47aa7c5a9be57fc48573b01309049dbf6f471cf80",
+      "after_sha256": "93f334de241b29b8a9f4724a19e1d7e188959bbbf289f44f1879009b303d80f6"
+    },
+    {
+      "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+      "before_sha256": "1a3df1f90c6d982e7e5d0ed03616f27769f1c848441c15963fba76edd0f80739",
+      "after_sha256": "ab49271d61ab2786fed910a1f7077e9ab94c538bd593d924dad95494303f56e3"
+    },
+    {
+      "path": "docs/science/C1.0/VERIFICATION_EXECUTION_MATRIX.md",
+      "before_sha256": "f27f1c7f22849ca6d6725faa63a5e2ca49adc5de4e35aaea057ebfe104c893e1",
+      "after_sha256": "c2d44a47b721b558fd99fad334a0f541aaf3ca6944bd934eace59913520ebb3e"
     }
   ]
 }

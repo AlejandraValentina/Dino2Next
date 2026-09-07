@@ -1,9 +1,9 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
-> Revision: `NORMATIVE_COMPLETENESS_REVISION`; scientific decisions changed: NO. This restoration does not assert all specification gaps are closed.
+> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> Revision: explicit H-01/H-02/H-03 adjudication. See the R2 BCRs; R1 history is preserved byte-exact.
 
 # Restored validation definitions
 
-The active C1 table keeps its current types and thresholds. This annex restores compatible input definitions from C03; it does not resurrect superseded methods, change CFL 0.2 of the current kernel, or assign old meanings to reassigned VAL IDs. A historical stricter/looser acceptance quoted below is provenance only where the active C1 table differs. No adapter may silently resolve such a conflict; affected entries remain incomplete.
+The active C1 table keeps its current types and thresholds. This annex restores compatible input definitions from C03; it does not resurrect superseded methods, change CFL 0.2 of the current kernel, or assign old meanings to reassigned VAL IDs. Historical inputs below are retained as provenance; the R2 EXECUTABLE_VALIDATION_CATALOGUE and JSON explicitly consolidate current inputs and the unchanged active acceptance table. Historical CFL .3/.15 below is not a production requirement: R2 uses .2/.1/.05.
 
 ## VF-001 — VAL-001 restored input/reference definition
 Source: C03VAL VAL-001.
@@ -109,6 +109,7 @@ The input-defined total normalized L∞ requirement is1e−3 for each primary ob
 For pressure the reference allowance is12Pa; for local mass flow it is6.239136106e−6kg/s. These values predate the reference refinements and have not been increased. The engineering reference estimator uses twice the last intergrid difference divided by2^observed_order−1, with an observed order greater than.5 and separately assessed time/root/roundoff contributions. This is an engineering estimate, not a rigorous PDE interval bound. Pointwise Richardson acceleration was tested and rejected because it did not improve the complete waveform.
 
 
-## Remaining fixture decisions (H-03)
-Current C1 reuses VAL-018/023/024 for numerical source tests; C03 used those numbers for experiments. Their old experimental fiches cannot define the newly scoped source fixtures. VAL-021 lacks the complete coupon and scale table (H-02). VAL-028 gives an exact mixing case, but its current birth/merge/re-entry obligation lacks a complete selected dynamic fixture. VAL-010 current free-end Fourier phase terminology and historical Gaussian-pulse reference need an authoritative case/operator reconciliation. No new fixture values, thresholds or reference selection are made here. Other entries with incomplete field audit remain blocked in VALIDATION_CONTRACT_COVERAGE.json.
 
+## R2 current fixtures
+
+All current execution fields are in EXECUTABLE_VALIDATION_FIXTURES.json and its catalogue. Current VAL018/023/024 numerical meanings are explicitly selected; their older experimental meanings remain history only.

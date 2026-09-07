@@ -1,5 +1,5 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
-> Revision: `NORMATIVE_COMPLETENESS_REVISION`; scientific decisions changed: NO. This restoration does not assert all specification gaps are closed.
+> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> Revision: explicit H-01/H-02/H-03 adjudication. See the R2 BCRs; R1 history is preserved byte-exact.
 
 # Restored numerical kernel
 
@@ -139,11 +139,6 @@ HLLC con estimaciones Davis SL=min(vL−cL,vR−cR), SR=max(vL+cL,vR+cR), c seg�
 Se selecciona conservación estricta sobre double-flux de energía no conservativa. No se exige presión a precisión de máquina en contacto térmico advectado: error medido y refinamiento son obligatorios. HLLC estacionario sí preserva contacto a roundoff en la suite. Este resultado no prueba shocks multiespecie extremos.
 
 
-## NK-005 — NUM-007/008 limits and incomplete boundary specification
+## NK-005 — physical boundary companion
 
-
-The upper EOS temperature boundary is not an invariant convex set for Euler. A valid initial condition does not guarantee that this finite-resolution method can complete it. The executed300/2200K and301/2199K moving contacts can exhaust recovery even though their exact contact solution stays within the EOS domain. This is **NUMERICAL_ADMISSIBILITY_NOT_RESOLVED**, not invalid physics, invalid input, a successful run, or permission to extend the EOS. Report the attempted states, error margins, dt, mesh and retries; return no accepted simulation result. Mesh/time refinement or a future verified numerical improvement may resolve such a point. The domain and all mandatory positive-test thresholds are unchanged. Operational400/1800K contacts atphi.6/.8 complete in both directions. This limitation is retained in claims and failure diagnostics; it is not hidden by declaring all endpoint tests PASS.
-
-
-H-01 remains MISSING_PREIMPLEMENTATION_SCIENTIFIC_DECISION for NUM-007/008: no complete documentary pressure-root/branch/bracket/domain recipe is selected for all physical boundary regimes. ARBOUNDARY is retained only as inspected research evidence; its 200 K sonic root bracket and 300 K output guard must not silently become a production thermochemical-domain policy. Its implementation name cannot close this omission. No port model or flux is changed.
-
+NUM-007/008 are specified in BOUNDARY_CONTRACT.md BC-001…008. The interior AR-002 recipe above remains unchanged. No flux B at physical faces. T3 geometry and W2 do not use an algebraic Cd boundary. NASA roots are domain bounded; the old research 200K bracket is not permitted. TS-001 defines how the joint guard tests actual reaction-mapped SSPRK2 states.

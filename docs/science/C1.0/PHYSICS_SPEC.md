@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -36,5 +36,9 @@ F0 fresh delivered, F1 transferred, R retained burned-history and X exterior-ori
 ## PHY-010 — work and performance
 $W_c=\oint p_c dV_c$, $W_{cc}=\oint p_{cc}dV_{cc}$, indicated metrics derive from cylinder work; pumping/crankcase work remains separate. Brake work equals indicated system work minus qualified mechanical/auxiliary losses. Each output declares indicated, pumping, friction or brake semantics.
 
-## C1.0-R1 documentary restoration
-Detailed clauses: PHYSICS_RESTORATION_ANNEX.md and LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md. These are normative companions for their explicit clause IDs; missing decisions are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.
+## C1.0-R2 documentary restoration
+Detailed clauses: PHYSICS_RESTORATION_ANNEX.md and LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md. These are normative companions for their explicit clause IDs; R2 adjudications are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.
+
+## R2 executable companions
+
+BOUNDARY_CONTRACT.md, TIME_EVENT_PERIODICITY_CONTRACT.md and EXECUTABLE_VALIDATION_CATALOGUE.md / EXECUTABLE_VALIDATION_FIXTURES.json complete the implementation contract. REFERENCE_EXECUTION_CONTRACT.md fixes the independent reference recipes. Heavy verification remains MANDATORY_VERIFICATION_DURING_IMPLEMENTATION, not an implementation prerequisite waived by readiness.

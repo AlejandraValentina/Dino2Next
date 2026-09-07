@@ -1,4 +1,4 @@
-> **Normative — C1.0-R1** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -16,9 +16,7 @@ Use HLLC with Davis speeds elsewhere. At shock-intersecting interior faces use t
 Use $A_fF$ and cell momentum source $p_i(A_{i+1/2}-A_{i-1/2})/\Delta x$. All selected physical sources form one method-of-lines RHS. W2, shear and local loss act in momentum with zero total-energy source; wall heat acts only in energy; chemistry advances the exact reaction coordinate and stoichiometric masses without an LHV source. Coupled interfaces use one mass/total-enthalpy/species/tracer flux with opposite ledger signs.
 
 ## Time integration and events (NUM-002/005)
-SSPRK2 unsplit: $Q^{(1)}=Q^n+\Delta tL(t_n,Q^n)$; $Q^{n+1}=\frac12[Q^n+Q^{(1)}+\Delta tL(t_n+\Delta t,Q^{(1)})]$. Check every Euler stage and final combination. Align steps exactly to port opening/closing, transfer/exhaust relabel/merge, SOC, burn end and cycle boundary; coincident events execute in the order topology → conservative relabel/merge → combustion coordinate. An event is applied once using unwrapped angle.
-
-The pre-step bound is the minimum of: acoustic $0.2\min\Delta x/(|u|+a)$; exact positive-inventory donor/species ray with factor 0.5; exact formation-aware quadratic lower/upper-temperature ray with factor 0.5; W2/shear/local-loss momentum sign-preservation ray with factor 0.5; moving-volume fractional change 0.5; zone exchange $0.5\kappa/\omega$; remaining reaction-coordinate/reactant bound; next-event time. Bounds are recomputed at each stage. A nonfinite/nonpositive/EOS-domain/simplex/reachable-chemistry violation rejects the whole transaction, restores the last accepted state, halves dt and retries. Maximum 16 retries; then `ADMISSIBILITY_RETRY_EXHAUSTED`. No state repair. Roundoff-only simplex normalization is permitted only when the discrepancy is ≤256 machine epsilon times inventory, with a recorded ledger; otherwise reject.
+SSPRK2 unsplit with the exact prescribed-source coordinate Z=Q−b xi(t), as specified step by step in TS-001. All shared fluxes and nonreaction sources use the two common stage states. Final combination is in Z, then mapped to physical Q at the endpoint. No LHV source and no Lie/Strang splitting. TS-002…005 give the complete RHS, first-exit bounds, transactional retries and event table; constants remain acoustic0.2, safety0.5 and sixteen retries with halving.
 
 ## Periodicity (NUM-009)
 At the identical post-event crank angle compare all 0D masses/energies/species/tracers/zones/reaction coordinates and every distributed conserved cell state. Scales are $S_q=\max(|q|,q_{ambient/reference},q_{floor})$ by physical block; floors are 256 epsilon times its nonzero reference scale. Use the maximum componentwise normalized defect, plus separate subsystem maxima. Period-1 requires state defect ≤1e-6 and successive-cycle changes in indicated work, delivery, trapping, short-circuit, retained composition and peak pressure ≤1e-4 of declared physical scales for three consecutive cycles. Test lags 2…8; if a higher lag passes while lag 1 fails, return `MULTIPERIODIC_UNSUPPORTED`. Stop after 1000 cycles with `MAX_CYCLES_REACHED`, never convergence. Cold/warm final states must meet the same defect; otherwise `MULTIPLE_ATTRACTORS_DETECTED`.
@@ -26,5 +24,10 @@ At the identical post-event crank angle compare all 0D masses/energies/species/t
 ## Verification and failures (NUM-006/010)
 Mesh refinement by 2 over at least three levels and time refinement by 2 at fixed fine mesh are mandatory. Smooth order must be 1.8–2.2; discontinuities use exact/reference L1 and dedicated limits. Diagnostics expose every retry, limiter activation, minimum state, source bound, event, root failure and local/global conservation residual. Required named failures include EOS/domain, map/out-of-domain, nonidentifiable loss, no boundary root, nonhyperbolic Roe state, inadmissible stage, retry exhaustion, multiperiodicity and multiple attractors.
 
-## C1.0-R1 documentary restoration
-Detailed clauses: NUMERICAL_KERNEL_NORMATIVE_ANNEX.md and STAGE_EVENT_RESTORATION_ANNEX.md. These are normative companions for their explicit clause IDs; missing decisions are enumerated in NORMATIVE_CONSOLIDATION_RECORD.md. No silent precedence override is permitted.
+## Physical boundaries (NUM-007/008)
+
+BOUNDARY_CONTRACT.md BC-001…008 specifies the equal-area, reservoir half-Riemann evaluator, wave sampling, domain300…2200K, bounded roots, partial aperture/wall flux and every failure. No Cd restriction is inserted at this boundary. Physical T3 geometry and W2 are unchanged.
+
+## C1.0-R2 contract integration
+
+NUMERICAL_KERNEL_NORMATIVE_ANNEX.md fixes the unchanged interior AR-002. TIME_EVENT_PERIODICITY_CONTRACT.md is the complete time/source/event/scale recipe; BOUNDARY_CONTRACT.md is the complete physical-boundary recipe. R2 BCRs record new decisions, not historical restoration. Mandatory numerical execution remains pending.

@@ -15,7 +15,9 @@ REQUIRED = frozenset(f'{PREFIX}/{name}.md' for name in (
     'VERIFICATION_EXECUTION_MATRIX', 'LEGACY_DISPOSITION',
 ))
 REQUIRED |= frozenset(f'{PREFIX}/{name}.md' for name in ('NUMERICAL_KERNEL_NORMATIVE_ANNEX','PHYSICS_RESTORATION_ANNEX','LOSS_CHARACTERIZATION_NORMATIVE_ANNEX','STAGE_EVENT_RESTORATION_ANNEX','VALIDATION_FIXTURE_RESTORATION','EXPERIMENTAL_DATA_CONTRACT','NORMATIVE_CONSOLIDATION_RECORD'))
-VERSION = 'C1.0-R1'
+REQUIRED |= frozenset(f'{PREFIX}/{name}.md' for name in ('BOUNDARY_CONTRACT', 'TIME_EVENT_PERIODICITY_CONTRACT', 'EXECUTABLE_VALIDATION_CATALOGUE', 'REFERENCE_EXECUTION_CONTRACT', 'BCR-C1R2-H01-BOUNDARY', 'BCR-C1R2-H02-TIME-PERIODICITY', 'BCR-C1R2-H03-VALIDATION-FIXTURES'))
+REQUIRED_DATA = frozenset(f'{PREFIX}/{name}' for name in ('EXECUTABLE_VALIDATION_FIXTURES.json', 'VALIDATION_CONTRACT_COVERAGE.json', 'NORMATIVE_ID_INDEX.json', 'datasets/thermo_species.json', 'datasets/thermo_transport.yaml'))
+VERSION = 'C1.0-R2'
 STATUS = 'SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN'
 
 class IntegrityError(ValueError):
@@ -38,7 +40,7 @@ def check(root: Path = ROOT) -> dict:
     if manifest.get('version') != VERSION or manifest.get('status') != STATUS:
         raise IntegrityError('MANIFEST_VERSION_OR_STATUS')
     files = manifest.get('files')
-    if not isinstance(files, dict) or not REQUIRED <= files.keys():
+    if not isinstance(files, dict) or not (REQUIRED | REQUIRED_DATA) <= files.keys():
         raise IntegrityError('REQUIRED_NORMATIVE_FILE_UNLISTED')
     actual = {p.relative_to(root).as_posix() for p in (root / PREFIX).rglob('*') if p.is_file()}
     unlisted = actual - files.keys() - {MANIFEST}
@@ -67,7 +69,7 @@ def check(root: Path = ROOT) -> dict:
         raise IntegrityError('PREDECESSOR_MANIFEST_MISMATCH')
     previous = json.loads(predecessor.read_text())
     for name, digest in previous['files'].items():
-        archived = predecessor.parent / Path(name).name
+        archived = predecessor.parent / Path(name).relative_to(PREFIX)
         if hashlib.sha256(archived.read_bytes()).hexdigest() != digest:
             raise IntegrityError('PREDECESSOR_BYTES_MISMATCH: ' + name)
     return {'check': 'manifest_integrity', 'result': 'PASS', 'version': VERSION, 'files': len(files)}

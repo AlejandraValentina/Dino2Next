@@ -1,0 +1,610 @@
+{
+  "label": "RESEARCH_ONLY_NON_PRODUCTION",
+  "scope": "algebra and small ODE checks only; no FV/coupled/engine PASS",
+  "seed": 72026,
+  "environment": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "cantera": "3.2.0"
+  },
+  "results": [
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 400.0,
+      "ratio": 1.01,
+      "T": 401.12512320247254,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": -5.820766091346741e-11,
+      "entropy_jump": 2.9072553843434434e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 400.0,
+      "ratio": 1.2,
+      "T": 421.17119907365804,
+      "mass_residual": 0.0,
+      "momentum_residual": -5.820766091346741e-11,
+      "energy_residual": 0.0,
+      "entropy_jump": 0.17879588320192852
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 400.0,
+      "ratio": 2.0,
+      "T": 490.48719681189846,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": -1.2281816452741623e-08,
+      "entropy_jump": 9.737531339031193
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 400.0,
+      "ratio": 3.0,
+      "T": 563.8681738325316,
+      "mass_residual": 1.1368683772161603e-13,
+      "momentum_residual": -5.820766091346741e-11,
+      "energy_residual": 0.0,
+      "entropy_jump": 38.14664844769959
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 700.0,
+      "ratio": 1.01,
+      "T": 701.8583010399456,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": 1.1641532182693481e-10,
+      "entropy_jump": 2.981743909913348e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 700.0,
+      "ratio": 1.2,
+      "T": 734.8346826717143,
+      "mass_residual": 0.0,
+      "momentum_residual": 2.9103830456733704e-11,
+      "energy_residual": 2.3283064365386963e-09,
+      "entropy_jump": 0.18362886032355163
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 700.0,
+      "ratio": 2.0,
+      "T": 847.2335115050292,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": 2.3283064365386963e-10,
+      "entropy_jump": 10.05303988250489
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 700.0,
+      "ratio": 3.0,
+      "T": 964.3938732331175,
+      "mass_residual": -5.684341886080802e-14,
+      "momentum_residual": 0.0,
+      "energy_residual": 1.1641532182693481e-10,
+      "entropy_jump": 39.61332391801625
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 1000.0,
+      "ratio": 1.01,
+      "T": 1002.4987350907093,
+      "mass_residual": 2.842170943040401e-14,
+      "momentum_residual": 0.0,
+      "energy_residual": -1.1641532182693481e-10,
+      "entropy_jump": 3.3090170290961396e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 1000.0,
+      "ratio": 1.2,
+      "T": 1046.808503616554,
+      "mass_residual": -2.842170943040401e-14,
+      "momentum_residual": 2.9103830456733704e-11,
+      "energy_residual": 4.656612873077393e-10,
+      "entropy_jump": 0.18957945847068913
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 1000.0,
+      "ratio": 2.0,
+      "T": 1197.813566937498,
+      "mass_residual": -5.684341886080802e-14,
+      "momentum_residual": 0.0,
+      "energy_residual": -2.3283064365386963e-10,
+      "entropy_jump": 10.384806641924115
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "O2:1,N2:3.76",
+      "T0": 1000.0,
+      "ratio": 3.0,
+      "T": 1355.75699158815,
+      "mass_residual": 5.684341886080802e-14,
+      "momentum_residual": -5.820766091346741e-11,
+      "energy_residual": 4.656612873077393e-10,
+      "entropy_jump": 40.96614230346131
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 400.0,
+      "ratio": 1.01,
+      "T": 401.07229188985406,
+      "mass_residual": 5.684341886080802e-14,
+      "momentum_residual": -2.9103830456733704e-11,
+      "energy_residual": 2.3283064365386963e-10,
+      "entropy_jump": 2.9973391065141186e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 400.0,
+      "ratio": 1.2,
+      "T": 420.14139841680554,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": 2.3283064365386963e-10,
+      "entropy_jump": 0.18442294296801265
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 400.0,
+      "ratio": 2.0,
+      "T": 485.6887501079962,
+      "mass_residual": 0.0,
+      "momentum_residual": 5.820766091346741e-11,
+      "energy_residual": 6.984919309616089e-10,
+      "entropy_jump": 10.06695563543417
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 400.0,
+      "ratio": 3.0,
+      "T": 554.6897211830905,
+      "mass_residual": -1.1368683772161603e-13,
+      "momentum_residual": 5.820766091346741e-11,
+      "energy_residual": -4.656612873077393e-10,
+      "entropy_jump": 39.548927588277365
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 700.0,
+      "ratio": 1.01,
+      "T": 701.7447159285734,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": -6.984919309616089e-10,
+      "entropy_jump": 3.095999545621453e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 700.0,
+      "ratio": 1.2,
+      "T": 732.6552361967354,
+      "mass_residual": -5.684341886080802e-14,
+      "momentum_residual": 2.9103830456733704e-11,
+      "energy_residual": 4.889443516731262e-09,
+      "entropy_jump": 0.1906895203410386
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 700.0,
+      "ratio": 2.0,
+      "T": 837.5199989661453,
+      "mass_residual": 0.0,
+      "momentum_residual": 5.820766091346741e-11,
+      "energy_residual": 0.0,
+      "entropy_jump": 10.45543615848328
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 700.0,
+      "ratio": 3.0,
+      "T": 946.3548974832855,
+      "mass_residual": -1.1368683772161603e-13,
+      "momentum_residual": 5.820766091346741e-11,
+      "energy_residual": -4.656612873077393e-10,
+      "entropy_jump": 41.296203480080294
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 1000.0,
+      "ratio": 1.01,
+      "T": 1002.3252060548599,
+      "mass_residual": 2.842170943040401e-14,
+      "momentum_residual": -5.820766091346741e-11,
+      "energy_residual": 4.656612873077393e-10,
+      "entropy_jump": 3.48890243913047e-05
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 1000.0,
+      "ratio": 1.2,
+      "T": 1043.4773110992269,
+      "mass_residual": 0.0,
+      "momentum_residual": 0.0,
+      "energy_residual": 1.1641532182693481e-10,
+      "entropy_jump": 0.19710257520273444
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 1000.0,
+      "ratio": 2.0,
+      "T": 1182.8912524009786,
+      "mass_residual": 5.684341886080802e-14,
+      "momentum_residual": 0.0,
+      "energy_residual": -2.3283064365386963e-10,
+      "entropy_jump": 10.817958065017592
+    },
+    {
+      "check": "NASA_RH",
+      "composition": "CO2:8,H2O:9,O2:5.357142857142858,N2:67.14285714285714",
+      "T0": 1000.0,
+      "ratio": 3.0,
+      "T": 1327.9104673240656,
+      "mass_residual": -5.684341886080802e-14,
+      "momentum_residual": 5.820766091346741e-11,
+      "energy_residual": -3.4924596548080444e-10,
+      "entropy_jump": 42.801904633135564
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 350.0,
+      "pressure_ratio": 0.2,
+      "error": -5.684341886080802e-14,
+      "in_GEN1": false
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 350.0,
+      "pressure_ratio": 0.5,
+      "error": -5.684341886080802e-14,
+      "in_GEN1": false
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 350.0,
+      "pressure_ratio": 0.9,
+      "error": -7.105427357601002e-15,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 350.0,
+      "pressure_ratio": 1.0,
+      "error": 0.0,
+      "in_GEN1": true
+    },
+    {
+      "check": "sonic_domain",
+      "T0": 350.0,
+      "Ts": 291.6666666666667,
+      "valid_GEN1": false,
+      "sonic_residual": -1.4551915228366852e-11
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 700.0,
+      "pressure_ratio": 0.2,
+      "error": 1.1368683772161603e-13,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 700.0,
+      "pressure_ratio": 0.5,
+      "error": 2.842170943040401e-14,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 700.0,
+      "pressure_ratio": 0.9,
+      "error": 3.623767952376511e-13,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 700.0,
+      "pressure_ratio": 1.0,
+      "error": 0.0,
+      "in_GEN1": true
+    },
+    {
+      "check": "sonic_domain",
+      "T0": 700.0,
+      "Ts": 583.3333333333334,
+      "valid_GEN1": true,
+      "sonic_residual": -2.9103830456733704e-11
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 1500.0,
+      "pressure_ratio": 0.2,
+      "error": -2.2737367544323206e-13,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 1500.0,
+      "pressure_ratio": 0.5,
+      "error": 1.7053025658242404e-13,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 1500.0,
+      "pressure_ratio": 0.9,
+      "error": -1.4210854715202004e-14,
+      "in_GEN1": true
+    },
+    {
+      "check": "gamma_rarefaction",
+      "T0": 1500.0,
+      "pressure_ratio": 1.0,
+      "error": 0.0,
+      "in_GEN1": true
+    },
+    {
+      "check": "sonic_domain",
+      "T0": 1500.0,
+      "Ts": 1250.0,
+      "valid_GEN1": true,
+      "sonic_residual": 1.1641532182693481e-10
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -2.0,
+      "pressure_ratio": 0.5,
+      "regime": "supersonic_outflow",
+      "pface": 200000.0,
+      "Tface": 700.0,
+      "uface": -1060.6790277930454,
+      "Mface": -2.0
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -2.0,
+      "pressure_ratio": 1.0,
+      "regime": "supersonic_outflow",
+      "pface": 200000.0,
+      "Tface": 700.0,
+      "uface": -1060.6790277930454,
+      "Mface": -2.0
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -2.0,
+      "pressure_ratio": 2.0,
+      "regime": "supersonic_outflow",
+      "pface": 200000.0,
+      "Tface": 700.0,
+      "uface": -1060.6790277930454,
+      "Mface": -2.0
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -0.5,
+      "pressure_ratio": 0.5,
+      "regime": "sonic_outflow",
+      "pface": 108770.23565207764,
+      "Tface": 588.1944444444446,
+      "uface": -486.1445544051456,
+      "Mface": -0.9999999999999994
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -0.5,
+      "pressure_ratio": 1.0,
+      "regime": "subsonic_outflow",
+      "pface": 200000.0,
+      "Tface": 700.0,
+      "uface": -265.16975694826135,
+      "Mface": -0.5
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": -0.5,
+      "pressure_ratio": 2.0,
+      "regime": "subsonic_inflow",
+      "pface": 399841.1248319279,
+      "Tface": 699.9205511449597,
+      "uface": 12.63379395810585,
+      "Mface": 0.023823438845406834
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.0,
+      "pressure_ratio": 0.5,
+      "regime": "subsonic_outflow",
+      "pface": 100000.0,
+      "Tface": 574.2347492053466,
+      "uface": -249.99233033112552,
+      "Mface": -0.5204475683690616
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.0,
+      "pressure_ratio": 1.0,
+      "regime": "subsonic_outflow",
+      "pface": 200000.0,
+      "Tface": 700.0,
+      "uface": 0.0,
+      "Mface": 0.0
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.0,
+      "pressure_ratio": 2.0,
+      "regime": "subsonic_inflow",
+      "pface": 352151.1851294458,
+      "Tface": 674.9773963809109,
+      "uface": 224.2106390668158,
+      "Mface": 0.430533188595953
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.5,
+      "pressure_ratio": 0.5,
+      "regime": "subsonic_inflow",
+      "pface": 99944.12018869075,
+      "Tface": 699.8882180663046,
+      "uface": 14.98565663539816,
+      "Mface": 0.028258979209277484
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.5,
+      "pressure_ratio": 1.0,
+      "regime": "subsonic_inflow",
+      "pface": 177048.47150383657,
+      "Tface": 676.0408674326231,
+      "uface": 219.39438763983938,
+      "Mface": 0.4209534490806634
+    },
+    {
+      "check": "gamma_boundary",
+      "Mi": 0.5,
+      "pressure_ratio": 2.0,
+      "regime": "subsonic_inflow",
+      "pface": 271581.2282910843,
+      "Tface": 626.6892661993741,
+      "uface": 383.7724119910882,
+      "Mface": 0.7647908041294107
+    },
+    {
+      "check": "mild_inflow_with_outside_sonic",
+      "Tface": 340.0,
+      "uface": 141.73919711921613,
+      "pface": 180704.11818067645,
+      "sonicT": 291.6666666666667
+    },
+    {
+      "check": "affine_extent",
+      "steps": 8,
+      "terminal": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "check": "affine_extent",
+      "steps": 16,
+      "terminal": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "check": "affine_extent",
+      "steps": 32,
+      "terminal": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "check": "thermal_ray",
+      "cases": 128,
+      "max_allowed_relative_error": 1e-14
+    },
+    {
+      "check": "passive_W2",
+      "u0": -100.0,
+      "u": -33.333333333333336,
+      "energy_residual": 0.0
+    },
+    {
+      "check": "passive_W2",
+      "u0": 100.0,
+      "u": 33.333333333333336,
+      "energy_residual": 0.0
+    },
+    {
+      "check": "zone_mixing_RK2",
+      "errors": [
+        3.5143141652267456e-05,
+        8.619551676811187e-06,
+        2.1345935335409364e-06,
+        5.311411824547368e-07
+      ],
+      "orders": [
+        2.0275584297014766,
+        2.0136514533691274,
+        2.006794080539251
+      ]
+    },
+    {
+      "check": "period_coupon",
+      "truth": 1,
+      "detected": 1
+    },
+    {
+      "check": "period_coupon",
+      "truth": 2,
+      "detected": 2
+    },
+    {
+      "check": "period_coupon",
+      "truth": 3,
+      "detected": 3
+    },
+    {
+      "check": "period_coupon",
+      "truth": 4,
+      "detected": 4
+    },
+    {
+      "check": "period_coupon",
+      "truth": 5,
+      "detected": 5
+    },
+    {
+      "check": "period_coupon",
+      "truth": 6,
+      "detected": 6
+    },
+    {
+      "check": "period_coupon",
+      "truth": 7,
+      "detected": 7
+    },
+    {
+      "check": "period_coupon",
+      "truth": 8,
+      "detected": 8
+    },
+    {
+      "check": "maxcycles_not_convergence",
+      "residual": 0.009048328935585562
+    }
+  ],
+  "status": "PASS"
+}
