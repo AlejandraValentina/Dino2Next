@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -43,3 +43,7 @@ Detailed clauses: VALIDATION_FIXTURE_RESTORATION.md and EXPERIMENTAL_DATA_CONTRA
 ## R2 executable companions
 
 BOUNDARY_CONTRACT.md, TIME_EVENT_PERIODICITY_CONTRACT.md and EXECUTABLE_VALIDATION_CATALOGUE.md / EXECUTABLE_VALIDATION_FIXTURES.json complete the implementation contract. REFERENCE_EXECUTION_CONTRACT.md fixes the independent reference recipes. Heavy verification remains MANDATORY_VERIFICATION_DURING_IMPLEMENTATION, not an implementation prerequisite waived by readiness.
+
+## R3 VAL-001 representation boundary
+
+VAL-001 compares production against independent DINO2NEXT_NASA5_CONTINUOUS 1.0.0 evaluation, not against discontinuous RAW energy. Existing tuples and thresholds remain unchanged. TI-004 additionally checks endpoints, h inverse, interval derivatives, continuity and crossings; RAW-minus-derived changes are reported separately. The original RAW counterexample remains required BCR regression evidence, not a failed production run.

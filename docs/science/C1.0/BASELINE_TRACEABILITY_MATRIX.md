@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -18,3 +18,7 @@
 | CAP-010 | PHY-001–010 | NUM-010 | all mandatory VAL | manifest/diagnostics | none |
 
 Every mandatory capability has a defined implementation and validation chain. Pending execution is identified in VERIFICATION_EXECUTION_MATRIX rather than represented as a missing link.
+
+## R3 representation traceability
+
+PHY-002 / PH-004 → BCR-S03-NASA-INVERSION TI-001…005 → derived dataset and research/bcr_s03_nasa_inversion generator/checks → S03 ThermoModel → VAL-001. Consumer reruns are enumerated in TI-005. RAW inputs and archived R2 remain hash-addressed; small BCR checks are not production acceptance.

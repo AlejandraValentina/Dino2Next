@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 
 # Reference execution details — REF-001
 
@@ -11,3 +11,7 @@ Reference B uses finite-volume exact cell averages, piecewise-constant states an
 For reference A geometric point-state versus candidate cell-average comparisons, integrate the reference reconstructed field over each candidate cell before computing norms. A station observable is a point value in both, not one solver's cell average versus the other's nodal pressure. Nonuniform physical segments require mesh vertices aligned to geometric/source breakpoints. Constant-area coupled fixtures remove the geometric difference; VAL-011 checks geometry separately.
 
 ESTABLISHED_PUBLISHED_METHOD: Jiang & Shu (1996), *Efficient Implementation of Weighted ENO Schemes*, DOI [10.1006/jcph.1996.0130](https://doi.org/10.1006/jcph.1996.0130), and exact Euler wave sampling [Clawpack](https://www.clawpack.org/riemann_book/html/Euler.html). The normalized regularizer, observation rule, reference pair and error allocations are DINO2NEXT_SPECIFIC_ADAPTATION. No claim of a published theorem about the entire NASA/engine boundary follows from these references.
+
+## R3 thermochemistry reference identity
+
+REF-001 and every NASA reference use TI-001 derived thermodynamics, including entropy wave curves, Hugoniot, enthalpy inversion and source temperature bounds. Each reference implements that definition independently of the candidate. RAW evidence cannot qualify the derived representation automatically. TI-004 specifies Cantera/high-precision cross-checks; TI-005 retains all assigned reruns and budgets.

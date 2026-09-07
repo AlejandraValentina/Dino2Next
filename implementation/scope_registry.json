@@ -290,7 +290,12 @@
         "CAP-006",
         "PHY-002",
         "NUM-001",
-        "VAL-001"
+        "VAL-001",
+        "TI-001",
+        "TI-002",
+        "TI-003",
+        "TI-004",
+        "TI-005"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -312,8 +317,8 @@
         {
           "name": "ThermoModel",
           "purpose": "Implement immutable NASA/EOS dataset evaluation and inversion with explicit domain errors.",
-          "inputs": "ThermoDataset(species names/order, molar masses, NASA7 ranges/coefficients, reference metadata, sha256); T,p,Y or rho,e,Y",
-          "outputs": "evaluate(T,p,Y) -> ThermoState(rho,R,cp,cv,h,e,gamma,a); invert_energy(rho,e,Y) -> ThermoState; species_properties(T) -> read-only arrays",
+          "inputs": "ThermoDataset(selected five-species RAW source hashes, DINO2NEXT_NASA5_CONTINUOUS 1.0.0 derived identity/hash and generator provenance); T,p,Y or rho,e,Y; p,h,Y for enthalpy recovery",
+          "outputs": "evaluate(T,p,Y) -> ThermoState(T,p,rho,R,cp,cv,h,e,gamma,a); invert_energy(rho,e,Y) -> ThermoState with target/residual diagnostic; invert_enthalpy(p,h,Y) -> ThermoState with target/residual diagnostic; species_properties(T) -> read-only cp,h,e,s,R arrays",
           "units": "K, Pa, kg/m3, kg/kmol, J/kg, J/(kg K), m/s; Y dimensionless",
           "owner": "S03",
           "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
@@ -324,7 +329,8 @@
         "Use five chemical species in normative order, distinct from provenance tags.",
         "Low/high NASA branch at 1000 K follows C1 exactly; no extrapolation or hidden formation-energy offset.",
         "Check simplex and supplied dataset identity; no undocumented built-in fuel dataset.",
-        "Return diagnostic inversion residual and preserve input; use fixture oracle independent of candidate evaluator."
+        "Return diagnostic inversion residual and preserve input; use fixture oracle independent of candidate evaluator.",
+        "Use BCR-S03-NASA-INVERSION TI-001\u2026005 derived runtime representation, unique bracketed energy/enthalpy inverse, original target/residual diagnostics and independent derived reference. Never overwrite input conserved state or relabel RAW energy."
       ],
       "tests": [
         "tests/unit/s03/test_nasa_branches.py",
@@ -380,7 +386,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S03-NASA-INVERSION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },

@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 > Revision: explicit H-01/H-02/H-03 adjudication. See the R2 BCRs; R1 history is preserved byte-exact.
 
 # Restored zones, outputs, thermal and losses
@@ -71,7 +71,7 @@ VAL-018 mide el cierre conjunto pulsante; función cuasiestacionaria no predice 
 
 
 ## PH-004 — dataset identity
-The byte-preserved `datasets/thermo_transport.yaml` is the C03 selected Cantera 3.2.0 export; `datasets/thermo_species.json` is its selected NASA extract. The active manifest records their SHA-256. The YAML state stanza is export metadata, never an engine initial condition. Runtime/install version and loaded-file hash must be recorded and compared to the manifest; there is no invented future installation hash. A different coefficient or transport dataset is not an interchangeable installation.
+The byte-preserved `datasets/thermo_transport.yaml` is the C03 selected Cantera 3.2.0 export; `datasets/thermo_species.json` is its selected NASA extract. The active manifest records their SHA-256. The YAML state stanza is export metadata, never an engine initial condition. Runtime/install version and loaded-file hash must be recorded and compared to the manifest; there is no invented future installation hash. RAW identities remain immutable. C1.0-R3 runtime thermodynamics is the separately versioned derived representation DINO2NEXT_NASA5_CONTINUOUS 1.0.0 (datasets/thermo_runtime_continuous_v1.json), defined in BCR-S03-NASA-INVERSION TI-001. Record RAW, derived and generator hashes separately. Transport collision parameters and mixture rules remain unchanged. Derived thermodynamics must be installed in any transport phase; never import RAW high-branch energy as runtime energy. A different coefficient or transport dataset is not an interchangeable installation.
 
 ## PH-005 — inherited scientific source attribution
 
@@ -87,3 +87,6 @@ The byte-preserved `datasets/thermo_transport.yaml` is the C03 selected Cantera 
 - C03-R09: [Levine y Schwinger, 1948](https://doi.org/10.1103/PhysRev.73.383), límite acústico de extremo sin brida. Condición de presión impuesta GEN1 es su aproximación de baja frecuencia, no una frontera sin reflexión.
 - Fuentes de Euler/FV/HLLC/SSPRK y scavenging finalistas: registro R01–R38/NR01–NR16 de C0.2. El nuevo closure de dos zonas se declara derivación reducida propia a partir de balances; no se atribuyen sus parámetros a Benson o Blair.
 
+## C1.0-R3 identity application
+
+Every e/h/s evaluation, zone birth/merge, source ray and EOS recovery in this annex uses TI-001. No RAW-based execution is promoted as verification of the derived representation; TI-005 enumerates reruns.

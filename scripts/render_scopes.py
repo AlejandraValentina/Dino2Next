@@ -15,7 +15,7 @@ def documents(root=ROOT):
         b += ['', '## Normative IDs', ', '.join(f'`{x}`' for x in s['normative_ids']), '', 'C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.']
         b += [f'- `{p}` — '+ ('public resource and error contracts' if 'APPLICATION' in p else 'ownership and value-object contracts') for p in s['architecture']]
         b += [f'- `{p}`' for p in s['ux']]
-        b += [f'- `{p}` — C1.0-R2 normative clause companion' for p in s.get('normative_annexes', [])]
+        b += [(f'- `{p}` — normative clause companion' if 'BCR-S03-NASA-INVERSION' in p else f'- `{p}` — C1.0-R2 normative clause companion') for p in s.get('normative_annexes', [])]
         b += ['', '## Required interfaces']
         for i in s['interfaces']:
             b += [f'### {i["name"]}',f'- Purpose: {i["purpose"]}',f'- Inputs: {i["inputs"]}',f'- Outputs/signatures: {i["outputs"]}',f'- Units: {i["units"]}',f'- Owner: {i["owner"]}',f'- Mutability: {i["mutability"]}',f'- Failure semantics: {i["failures"]}']

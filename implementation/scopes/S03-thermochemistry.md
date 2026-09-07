@@ -10,7 +10,7 @@ ID: `S03`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S01 produces `ConfigSnapshot`: Bind SI inputs and immutable dataset hash.
 
 ## Normative IDs
-`CAP-002`, `CAP-006`, `PHY-002`, `NUM-001`, `VAL-001`
+`CAP-002`, `CAP-006`, `PHY-002`, `NUM-001`, `VAL-001`, `TI-001`, `TI-002`, `TI-003`, `TI-004`, `TI-005`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -24,12 +24,13 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S03-NASA-INVERSION.md` — normative clause companion
 
 ## Required interfaces
 ### ThermoModel
 - Purpose: Implement immutable NASA/EOS dataset evaluation and inversion with explicit domain errors.
-- Inputs: ThermoDataset(species names/order, molar masses, NASA7 ranges/coefficients, reference metadata, sha256); T,p,Y or rho,e,Y
-- Outputs/signatures: evaluate(T,p,Y) -> ThermoState(rho,R,cp,cv,h,e,gamma,a); invert_energy(rho,e,Y) -> ThermoState; species_properties(T) -> read-only arrays
+- Inputs: ThermoDataset(selected five-species RAW source hashes, DINO2NEXT_NASA5_CONTINUOUS 1.0.0 derived identity/hash and generator provenance); T,p,Y or rho,e,Y; p,h,Y for enthalpy recovery
+- Outputs/signatures: evaluate(T,p,Y) -> ThermoState(T,p,rho,R,cp,cv,h,e,gamma,a); invert_energy(rho,e,Y) -> ThermoState with target/residual diagnostic; invert_enthalpy(p,h,Y) -> ThermoState with target/residual diagnostic; species_properties(T) -> read-only cp,h,e,s,R arrays
 - Units: K, Pa, kg/m3, kg/kmol, J/kg, J/(kg K), m/s; Y dimensionless
 - Owner: S03
 - Mutability: Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.
@@ -42,6 +43,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Low/high NASA branch at 1000 K follows C1 exactly; no extrapolation or hidden formation-energy offset.
 - Check simplex and supplied dataset identity; no undocumented built-in fuel dataset.
 - Return diagnostic inversion residual and preserve input; use fixture oracle independent of candidate evaluator.
+- Use BCR-S03-NASA-INVERSION TI-001…005 derived runtime representation, unique bracketed energy/enthalpy inverse, original target/residual diagnostics and independent derived reference. Never overwrite input conserved state or relabel RAW energy.
 
 ## Allowed paths
 - `src/dino2next/thermo/`

@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 > Revision: explicit H-01/H-02/H-03 adjudication. See the R2 BCRs; R1 history is preserved byte-exact.
 
 # Restored validation definitions
@@ -10,7 +10,7 @@ Source: C03VAL VAL-001.
 
  — identidades V0, UNIT_TEST / NUMERICAL_VERIFICATION
 
-PHY-001/002/006. B=.052 m,S=.05 m,l=.101 m,Vclear=1.2e−5 m³,Vcc,TDC=3e−4 m³; θ=jπ/180, j=0…360. Oráculos PMS/PMI exactos y diferenciación analítica. EOS: NASA cinco especies en T={350,400,600,999.999999,1000,1000.000001,1600,2200} K, p={5e4,1e5,1e6,5e6} Pa y cinco puros + premixφ=.6,.7,.8 + productos correspondientes; puros son stress matemático. Observar V,h−u−RT,cp−cv−R,ΣY,elementos,T roundtrip. Identidades: tolerancia γ128κ; roundtripT≤1e−8 K con raíz bracket cerrada y residual de energía≤cv·1e−8 K. Comparación propiedades contra Cantera3.2 con mismo dataset: |δcp|/cp,|δh|/max(|h|,cpT),|δu|/max(|u|,cvT)≤10^−8, margen sobre 7.12e−10 observado en cambio de rama de C02. A1000 exigir convención documentada, derivadas unilaterales; no derivada central entre ramas. Fail significa identidad/inversión/dataset incorrectos, no modelo químico validado. Artefactos tablas y condicionamiento.
+PHY-001/002/006. B=.052 m,S=.05 m,l=.101 m,Vclear=1.2e−5 m³,Vcc,TDC=3e−4 m³; θ=jπ/180, j=0…360. Oráculos PMS/PMI exactos y diferenciación analítica. EOS: NASA cinco especies en T={350,400,600,999.999999,1000,1000.000001,1600,2200} K, p={5e4,1e5,1e6,5e6} Pa y cinco puros + premixφ=.6,.7,.8 + productos correspondientes; puros son stress matemático. Observar V,h−u−RT,cp−cv−R,ΣY,elementos,T roundtrip. Identidades: tolerancia γ128κ; roundtripT≤1e−8 K con raíz bracket cerrada y residual de energía≤cv·1e−8 K. Comparación propiedades contra Cantera3.2 con la representación derivada TI-001 (identidad RAW separada): |δcp|/cp,|δh|/max(|h|,cpT),|δu|/max(|u|,cvT)≤10^−8, los presupuestos se conservan sin trasladar evidencia C02/RAW como verificación de la representación derivada. A1000 exigir convención documentada, derivadas unilaterales; no derivada central entre ramas. Fail significa identidad/inversión/dataset incorrectos, no modelo químico validado. Artefactos tablas y condicionamiento.
 
 
 ## VF-002 — VAL-002 restored input/reference definition
@@ -89,7 +89,7 @@ Source: ARCOUPLED fixed SI fixtures, scope/budgets and phase audit, retained by 
 
 
 
-All pipes: L=0.2 m, A=2e-4 m², persistent physical volume. W2 support [0.15,0.2] m, w=20 m⁻¹; λ=0.04 forward and0.06 reverse. No geometry or loss parameter is fitted to candidate output. Initial pipe pressure/composition use a cosine blend between the stated end inventories, T=700 K and u=0. NASA5 properties and formation energy are unchanged.
+All pipes: L=0.2 m, A=2e-4 m², persistent physical volume. W2 support [0.15,0.2] m, w=20 m⁻¹; λ=0.04 forward and0.06 reverse. No geometry or loss parameter is fitted to candidate output. Initial pipe pressure/composition use a cosine blend between the stated end inventories, T=700 K and u=0. NASA5 properties and formation energy follow TI-001 continuous runtime identity in R3; the lower formation reference is unchanged.
 
 - VAL-013: finite left reservoir V=2e-4 m³,p=130000 Pa,T=700 K, dry model air; right infinite reservoir120000 Pa,700 K, same air. End0.0005 s, fully open.
 - VAL-014: moving cylinder B=S=0.04 m,l=0.08 m,Vclear=8e-6 m³,6000 rpm, initial θ=π/2. Initially120000 Pa,700 K, air. Right infinite120000 Pa/700 K. End0.002 s, fully open. The crank-slider fixes V and Vdot; work is integrated with the same stage pressure used by energy.
@@ -113,3 +113,7 @@ For pressure the reference allowance is12Pa; for local mass flow it is6.23913610
 ## R2 current fixtures
 
 All current execution fields are in EXECUTABLE_VALIDATION_FIXTURES.json and its catalogue. Current VAL018/023/024 numerical meanings are explicitly selected; their older experimental meanings remain history only.
+
+## R3 applicability
+
+TI-004 defines the runtime/reference identity and additional continuity/inversion checks. All original fixture states, timing and thresholds are retained. Previously evaluated RAW references must be regenerated/requalified for TI-001 before a PASS claim.

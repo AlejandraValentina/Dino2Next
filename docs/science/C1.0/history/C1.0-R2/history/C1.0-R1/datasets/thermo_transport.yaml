@@ -1,0 +1,105 @@
+generator: YamlWriter
+cantera-version: 3.2.0
+git-commit: 4a8358e
+date: Sun Sep  6 11:46:17 2026
+phases:
+  - name: ""
+    thermo: ideal-gas
+    elements: [C, H, O, N]
+    species: ["C8H18,isooctane", O2, N2, CO2, H2O]
+    transport: mixture-averaged
+    state:
+      T: 2200.0
+      density: 0.1567733873735242
+      Y: {CO2: 0.1371763503346385, H2O: 0.06317198630253645,
+      N2: 0.7328628360063707, O2: 0.06678882735645432}
+species:
+  - name: C8H18,isooctane
+    composition: {C: 8.0, H: 18.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [0.815737338, 0.0732643959, 1.78300688e-05, -6.9358962e-08,
+        3.21629382e-11, -3.04772862e+04, 24.1509994]
+        - [15.9899273, 0.055318479, -1.95267072e-05, 3.11779172e-09,
+        -1.85312577e-13, -3.58757973e+04, -60.1161414]
+      note: X 4/85
+    transport:
+      model: gas
+      geometry: nonlinear
+      diameter: 6.414
+      well-depth: 458.5
+      rotational-relaxation: 1.0
+  - name: O2
+    composition: {O: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [3.78245636, -2.99673415e-03, 9.847302e-06, -9.68129508e-09,
+        3.24372836e-12, -1063.94356, 3.65767573]
+        - [3.66096083, 6.56365523e-04, -1.41149485e-07, 2.05797658e-11,
+        -1.29913248e-15, -1215.97725, 3.41536184]
+      note: TPIS89
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 3.458
+      well-depth: 107.4
+      polarizability: 1.6
+      rotational-relaxation: 3.8
+  - name: N2
+    composition: {N: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [3.53100528, -1.23660987e-04, -5.02999437e-07, 2.43530612e-09,
+        -1.40881235e-12, -1046.97628, 2.96747468]
+        - [2.95257626, 1.39690057e-03, -4.92631691e-07, 7.86010367e-11,
+        -4.60755321e-15, -923.948645, 5.87189252]
+      note: TPIS78
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 3.621
+      well-depth: 97.53
+      polarizability: 1.76
+      rotational-relaxation: 4.0
+  - name: CO2
+    composition: {C: 1.0, O: 2.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [2.35677352, 8.98459677e-03, -7.12356269e-06, 2.45919022e-09,
+        -1.43699548e-13, -4.83719697e+04, 9.90105222]
+        - [4.63659493, 2.74131991e-03, -9.95828531e-07, 1.60373011e-10,
+        -9.16103468e-15, -4.90249341e+04, -1.93534855]
+      note: L 7/88
+    transport:
+      model: gas
+      geometry: linear
+      diameter: 3.763
+      well-depth: 244.0
+      polarizability: 2.65
+      rotational-relaxation: 2.1
+  - name: H2O
+    composition: {H: 2.0, O: 1.0}
+    thermo:
+      model: NASA7
+      temperature-ranges: [200.0, 1000.0, 6000.0]
+      data:
+        - [4.19864056, -2.0364341e-03, 6.52040211e-06, -5.48797062e-09,
+        1.77197817e-12, -3.02937267e+04, -0.849032208]
+        - [2.67703787, 2.97318329e-03, -7.7376969e-07, 9.44336689e-11,
+        -4.26900959e-15, -2.98858938e+04, 6.88255571]
+      note: L 8/89
+    transport:
+      model: gas
+      geometry: nonlinear
+      diameter: 2.605
+      well-depth: 572.4
+      dipole: 1.844
+      rotational-relaxation: 4.0

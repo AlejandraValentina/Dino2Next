@@ -1,8 +1,8 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 
 # Executable validation catalogue
 
-COMMON-001: NASA species order is isooctane,O2,N2,CO2,H2O. Dry air molar O2:1,N2:3.76. Premix at phi has C8H18:1,O2:12.5/phi,N2:47/phi. Complete lean products CO2:8,H2O:9,O2:12.5/phi-12.5,N2:47/phi. Convert molar amounts to mass using selected dataset MW; no rounded alternative coefficients. For tests explicitly using constant-gamma gas, all units remain SI and the EOS is a mathematical numerical-verification adapter, not a changed GEN1 chemistry. Canonical initial tags R unless specified. No reported execution PASS is implied by a complete fiche.
+COMMON-001: NASA species order is isooctane,O2,N2,CO2,H2O. Dry air molar O2:1,N2:3.76. Premix at phi has C8H18:1,O2:12.5/phi,N2:47/phi. Complete lean products CO2:8,H2O:9,O2:12.5/phi-12.5,N2:47/phi. Convert molar amounts to mass using selected dataset MW; no rounded alternative coefficients. For tests explicitly using constant-gamma gas, all units remain SI and the EOS is a mathematical numerical-verification adapter, not a changed GEN1 chemistry. Canonical initial tags R unless specified. No reported execution PASS is implied by a complete fiche. Runtime NASA5 is DINO2NEXT_NASA5_CONTINUOUS 1.0.0 under BCR-S03-NASA-INVERSION TI-001; RAW identity is separate.
 
 The JSON companion contains the same field values. All required execution remains mandatory during implementation. Experimental acquisition remains independent. No frozen R1 threshold is relaxed.
 
@@ -12,7 +12,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: UNIT
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: B=.052 m,S=.05 m,l=.101 m,Vclear=1.2e-5 m³,VccTDC=3e-4 m³; theta=j*pi/180,j=0..360. T=[350,400,600,999.999999,1000,1000.000001,1600,2200] K; p=[5e4,1e5,1e6,5e6] Pa. Five pure species (mathematical stress), dry air, premix phi=.6,.7,.8 and their complete lean products. Composition definitions COMMON-001.
 
@@ -30,11 +30,11 @@ The JSON companion contains the same field values. All required execution remain
 
 **sampling**: Every tuple and angle.
 
-**independent_reference**: Independent Cantera 3.2.0 evaluation of identical NASA coefficient bytes, analytic crank-slider identities and independent high-precision polynomial arithmetic.
+**independent_reference**: Independent Cantera 3.2.0 evaluation of TI-001 derived representation, analytic crank-slider identities and independent high-precision polynomial arithmetic; no candidate imports.
 
-**reference_resolution**: Exact selected coefficient bytes, 80-digit polynomial spot checks at all interval boundaries. T=1000 follows selected lower/upper interval convention; unilateral derivatives only.
+**reference_resolution**: Identical RAW source coefficients plus the independently derived TI-001 integration constants/anchored definition; 80-digit boundary checks. T=1000 uses selected high cp branch and unilateral derivatives. RAW/derived differences are reported separately.
 
-**observable**: V,dV/dtheta,cp,cv,h,u,gamma,R, h-u-RT,cp-cv-R,sumY,T inverse and elemental mass.
+**observable**: V,dV/dtheta,cp,cv,h,u,gamma,R, h-u-RT,cp-cv-R,sumY,T inverse and elemental mass.; h inverse and signed input-energy/enthalpy residual; continuity and one-sided derivatives per TI-004.
 
 **normalization**: cp by cp; h by max(abs(h),cp*T); u by max(abs(u),cv*T); gamma by gamma. Identity conditioning is sum of absolute operands divided by its nonzero physical reference.
 
@@ -52,7 +52,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma=1.4,R=287 J/kg/K,m=.001 kg,T0=600 K,U0=m*R*T0/(gamma-1).
 
@@ -92,7 +92,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: m=.001 kg,cv=1000 J/kg/K,R=287 J/kg/K,T0=400 and 800 K,H=hA=2 W/K,Tw=600 K.
 
@@ -132,7 +132,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: A=2e-4 m²; reservoir pR=600000 Pa,T0=[400,700,1500] K, gamma1.4 R287. Ratios pback/pR=[.1,.3,.6,.9,.999,1]. Repeat NASA air/premix phi.7/products phi.7, T0=[700,1000]. Boundary wave tests: pi=200000 Pa,Ti=700 K,Mi=[-2,-.5,0,.5], pR/pi=[.5,1,2], TR=700 K; NASA compositions same plus air→products contact.
 
@@ -172,7 +172,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: NASA premix phi=[.6,.7,.8],T_SOC=[350,450,600,750] K,p_SOC=[3e5,6e5,1e6] Pa; initial m=pV/(Rmix*T),V=1e-4 m³; eta=[.8,1],Wiebe a=5,n=2, SOC time0,duration=.001 s. Include homogeneous residual mass fraction [0,.2,.4] made from same-phi products.
 
@@ -212,7 +212,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1; x<.5:rho1,u0,p1; x>.5:rho.125,u0,p.1.
 
@@ -252,7 +252,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,p=1; rhoL1,rhoR2 atx=.5; u=[0,1] m/s.
 
@@ -292,7 +292,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: At x=.5, pL=pR=1e5 Pa,u=[0,100,-100]m/s. Pairs: pureN2/CO2 both600K; N2 600K/CO2 1800K; premixphi.7 400K/productsphi.7 1800K. Mixed shock subcases same composition pairs, u=0,T both700K,pR=1e5,pL/pR=[2,5,10].
 
@@ -332,7 +332,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,rho=1+eps*cos(2pi*x),p=1+1.4eps*cos(2pi*x),u=sqrt(1.4)*eps*cos(2pi*x),eps=1e-5; repeat eps/2.
 
@@ -372,7 +372,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,rho0=p0=1,c=sqrt(1.4),eps=1e-5. Rigid: p=1+eps*cos(pi*x),rho=1+eps*cos(pi*x)/c²,u=0. Free: g(x)=eps*exp(-((x-.25)/.05)^2),p=1+g,rho=1+g/c²,u=g/c.
 
@@ -412,7 +412,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1: rest rho=p=1,u0. Smooth p0=T01,Mthroat=.3 atx=.5; subsonic area-Mach solution.
 
@@ -452,7 +452,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left finite V=2e-4 m³,p=130000 Pa,T700,air; right infinite p120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -492,7 +492,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left cylinder B=S=.04m,l=.08m,Vclear8e-6m³,RPM6000,theta0=pi/2,p120000,T700,air; right infinitep120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -532,7 +532,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left V(t)=2e-4*(1-.08*sin(pi*t/.002)^2)m³,p120000,T700,premixphi.7; right infinitep120000,T700,productsphi.7. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -572,7 +572,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R287,rho1 kg/m³,T0=700K,u0=[-100,100]m/s. b=[0,2]m^-1,Hvol=[0,2000]W/m³/K,Tw600K; all four combinations. E=rho*(cv*T+u²/2).
 
@@ -612,7 +612,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left cylinder asVAL014; right finite crankcase Vcc=1.5e-4-Apiston*s(theta), bothp120000,T700,air,theta0=pi/2,RPM6000. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -652,7 +652,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Dimensionless normalized persistent-state vector with one coordinate for each TS006 block plus two independent cell coordinates: x_n=xstar+a*r^n, xstar=1, a=[.01,-.01,.005,-.005] applied separately and one species-partition perturbation(+.005,-.005). r=.5 and .9. Full-state scale mapping TS006; ambient120000Pa,350K,air,Vcmax1e-4,Vccmax2e-4,Vd9e-5m³,pipeA2e-4.
 
@@ -692,7 +692,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: EXPERIMENTAL_VALIDATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
 
@@ -732,7 +732,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Use VAL005 exact mixtures/volume; eta=[.8,1],a5,n2,duration1ms. Positive tuples and out-of-domain cases individually classified by independent exactUV path. Add negativeinputs eta1.01,negativefuelmass,openportduringSOC; exactfailcodes required.
 
@@ -772,7 +772,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R287,rho1,T700,u0=[-100,100]. Laminar shear mu=2e-5Pa*s,Dh=.001m,Re=abs(u)*rho*Dh/mu (initial5000 notlaminar: use u0=[-.01,.01] forlaminar subcase only). Distributedlaminar rate c=32mu/(rho*Dh²). LocalK=.2,w20 givesb2; use±100 forK. Mapquerytests: characterizedlambda points .04/.06 bydirection,opening1,station metadata frozen; wrongstation andoutofdomain explicitfailure.
 
@@ -812,7 +812,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: EXPERIMENTAL_VALIDATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
 
@@ -852,7 +852,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: EXPERIMENTAL_VALIDATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
 
@@ -892,7 +892,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,rho=1+.01sin(2pi*x),u=.3,p1; periodic.
 
@@ -932,7 +932,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R2 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: cp1000,R287,cv713; mixingmA.0003,mB.0007kg,TA400,TB900K,p1e5Pa,HA120J,HB630J,tau.01s. Birthsubcase A0,B.001kg,Tboth700,p1e5,mdotintoA=.01kg/s,tau.01. Reentrysubcase initiallysameemptyA,B.001,T700,externalmdotintoB=.01kg/s taggedX; existingBtagR.
 

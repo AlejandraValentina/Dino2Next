@@ -1,4 +1,4 @@
-> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -21,3 +21,7 @@
 ## R2 selected adjudications
 
 BCR-C1R2-H01-BOUNDARY, BCR-C1R2-H02-TIME-PERIODICITY and BCR-C1R2-H03-VALIDATION-FIXTURES are APPROVED/SELECTED. BC-001…008, TS-001…007 and the current executable fixture catalogue are normative. Interior AR002 and H04–06 remain unchanged. No pending numerical execution is asserted PASS.
+
+## R3 — BCR-S03-NASA-INVERSION
+
+SELECTED: alternative B, DINO2NEXT_NASA5_CONTINUOUS 1.0.0 under TI-001…005. Alternative A retains set-valued inversion/gaps and is not selected for GEN1 conservative state recovery. The 1e-8 K inversion budget is unchanged. No physical uncertainty or engine accuracy is inferred from continuity.
