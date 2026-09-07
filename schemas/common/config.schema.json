@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dino2next:common:config:1.0",
+  "title": "Common configuration envelope (scientific payload owned by later scopes)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "payload"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "payload": {"type": "object"},
+    "resource_refs": {"type": "array", "items": {"$ref": "#/$defs/resource_ref"}}
+  },
+  "$defs": {
+    "resource_ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "sha256", "media_type"],
+      "properties": {
+        "id": {"type": "string", "pattern": "\\S"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "media_type": {"type": "string", "pattern": "\\S"}
+      }
+    },
+    "quantity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "unit", "dimension"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"enum": ["m", "mm", "m2", "mm2", "m3", "cm3", "Pa", "kPa", "bar", "rad", "deg", "K", "degC", "rad/s", "rpm", "W", "kW"]},
+        "dimension": {"enum": ["length", "area", "volume", "pressure", "angle", "temperature", "speed", "power"]}
+      }
+    }
+  }
+}
