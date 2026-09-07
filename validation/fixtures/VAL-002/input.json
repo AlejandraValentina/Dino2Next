@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "id": "VAL-002",
+  "classification": "MATHEMATICAL_CONSTANT_GAMMA_NUMERICAL_VERIFICATION_ONLY",
+  "contract": "C1.0-R3 VF-002 / VAL-002 / TS-001",
+  "gamma": "1.4",
+  "R_J_kg_K": "287",
+  "mass_kg": "0.001",
+  "T0_K": "600",
+  "V0_m3": "0.001",
+  "volume_amplitude": "0.2",
+  "angular_frequency_rad_s": "2*pi",
+  "time_start_s": "0",
+  "time_end_s": "1",
+  "steps": [100, 200, 400, 800],
+  "boundary": "CLOSED_NO_MASS_FLUX",
+  "heat_W": "0",
+  "sampling": "INITIAL_AND_EVERY_ACCEPTED_ENDPOINT",
+  "state_layout": "Five inert constituent masses and four origin masses in production inventory containers; no chemistry or NASA approximation claim"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "id": "VAL-002",
+  "trajectory_relative_error_max": 0.0001,
+  "observed_order_min": 1.8,
+  "order_pairs": [[200, 400], [400, 800]],
+  "energy_scale": "U0",
+  "pressure_scale": "p0",
+  "mass_scale": "m0",
+  "ledger_normalized_max": 1e-10,
+  "ledger_scale": "abs(U0)+integral(abs(stage pressure work))dt+abs(U0 reference)",
+  "trajectory_norms": "Maximum and time-averaged trapezoidal L1/L2 over every accepted endpoint",
+  "work_balance": "U-U0+sum(stage-weighted p*dV); compensated sum with gamma256 arithmetic conditioning",
+  "classification": "NUMERICAL_VERIFICATION_NOT_EXPERIMENTAL"
+}
