@@ -1,8 +1,8 @@
 # Foundation readiness
 
-C1.0 — SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN (unchanged).
-A1.0 — SOFTWARE_ARCHITECTURE_FROZEN; UX1.0 — ENGINEERING_UI_BASELINE_FROZEN.
+C1.0-R1 — NORMATIVE_COMPLETENESS_REVISION.
+SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN status is retained from C1.0; scientific decisions changed: NO.
 
-DINO2NEXT_FOUNDATION_HARDENING_REQUIRED.
+DINO2NEXT_PREIMPLEMENTATION_DECISION_REQUIRED.
 
-See CODEX_READINESS_AUDIT.md for six concrete specification gaps. S00 tooling completion and green PR_FAST do not assert global operational readiness. Numerical verification, scientific validation and predictive validation remain pending. NEXT_CODEX_SCOPE = S01; no implementation is started by this audit.
+H-04/H-05/H-06 CLOSED. H-01/H-02/H-03 contain the remaining missing preimplementation clauses. S00 COMPLETE_FOUNDATION; NEXT_CODEX_SCOPE=S01, not started. Foundation CI is distinct from a passing global readiness check and from scientific validation.

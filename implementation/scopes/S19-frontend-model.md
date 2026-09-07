@@ -23,6 +23,8 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/ux/UX1.0/BASIC_VS_ADVANCED_POLICY.md`
 - `docs/ux/UX1.0/ENGINEERING_USER_JOURNEYS.md`
 - `docs/ux/UX1.0/UI_TRACEABILITY_MATRIX.md`
+- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/LOSS_CHARACTERIZATION_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
 
 ## Required interfaces
 ### ModelWorkspace

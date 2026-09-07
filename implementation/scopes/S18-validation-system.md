@@ -13,12 +13,16 @@ ID: `S18`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S16 produces `EngineRunner`: Run combined/periodic fixtures.
 
 ## Normative IDs
-`CAP-010`, `NUM-010`, `VAL-025`, `VAL-026`
+`CAP-010`, `NUM-010`, `VAL-025`, `VAL-026`, `VAL-022`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/EXPERIMENTAL_DATA_CONTRACT.md` — C1.0-R1 selected-source restoration
 
 ## Required interfaces
 ### ValidationRunner
@@ -51,6 +55,10 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/references/VAL-026/`
 - `validation/expected/VAL-026/`
 - `tests/numerical/VAL-026/`
+- `validation/fixtures/VAL-022/`
+- `validation/references/VAL-022/`
+- `validation/expected/VAL-022/`
+- `tests/numerical/VAL-022/`
 
 Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
@@ -64,16 +72,17 @@ Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixtu
 - `tests/contract/s18/test_reference_independence.py`
 - `tests/numerical/VAL-025/test_acceptance.py`
 - `tests/numerical/VAL-026/test_acceptance.py`
+- `tests/numerical/VAL-022/test_acceptance.py`
 
 These are files to create by scope completion, not tests claimed to exist today. Foundation tests already exist. Scientific fixtures are data, not pytest directories: their owning acceptance test imports them and fails if they or a qualified reference are missing. Frontend unit/E2E commands use Vitest/Playwright produced by S19, never pytest.
 
-Owned numerical/experimental fixtures: VAL-025, VAL-026
+Owned numerical/experimental fixtures: VAL-025, VAL-026, VAL-022
 
 ## Acceptance
 Run from repository root with the activated foundation environment. S00 setup: `python -m venv .venv`, activate it, `python -m pip install -r requirements/foundation.txt`, `python -m pip install --no-build-isolation --no-deps -e .`, `npm --prefix frontend ci`.
 ```sh
 python scripts/run_foundation.py
-python -m pytest tests/unit/s18/test_gate_aggregation.py tests/contract/s18/test_reference_independence.py tests/numerical/VAL-025/test_acceptance.py tests/numerical/VAL-026/test_acceptance.py -q
+python -m pytest tests/unit/s18/test_gate_aggregation.py tests/contract/s18/test_reference_independence.py tests/numerical/VAL-025/test_acceptance.py tests/numerical/VAL-026/test_acceptance.py tests/numerical/VAL-022/test_acceptance.py -q
 ```
 
 Install scope-specific dependencies with pinned locks during the owning scope; acceptance cannot skip missing tests. Foundation commands execute now. Feature commands must execute at this scope’s completion; zero tests, unavailable adapters and unresolved contract gaps are not PASS.
@@ -88,6 +97,9 @@ Install scope-specific dependencies with pinned locks during the owning scope; a
 - `validation/references/VAL-026/`
 - `validation/expected/VAL-026/`
 - `artifacts/S18/acceptance.json`
+- `validation/fixtures/VAL-022/`
+- `validation/references/VAL-022/`
+- `validation/expected/VAL-022/`
 
 The acceptance artifact records commands, exits, nonzero collected-test counts, C1 hash, commit, environment and any pending heavy gates. It is an output under ignored `artifacts/`, not a fabricated precompleted report.
 
@@ -111,6 +123,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open audit findings: `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+Open preimplementation decisions: `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

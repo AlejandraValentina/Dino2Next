@@ -20,6 +20,10 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/PHYSICS_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
 
 ## Required interfaces
 ### PhysicalSources
@@ -53,10 +57,6 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/references/VAL-018/`
 - `validation/expected/VAL-018/`
 - `tests/numerical/VAL-018/`
-- `validation/fixtures/VAL-022/`
-- `validation/references/VAL-022/`
-- `validation/expected/VAL-022/`
-- `tests/numerical/VAL-022/`
 - `validation/fixtures/VAL-024/`
 - `validation/references/VAL-024/`
 - `validation/expected/VAL-024/`
@@ -74,18 +74,17 @@ Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixtu
 - `tests/contract/s14/test_loss_region_ownership.py`
 - `tests/numerical/VAL-003/test_acceptance.py`
 - `tests/numerical/VAL-018/test_acceptance.py`
-- `tests/numerical/VAL-022/test_acceptance.py`
 - `tests/numerical/VAL-024/test_acceptance.py`
 
 These are files to create by scope completion, not tests claimed to exist today. Foundation tests already exist. Scientific fixtures are data, not pytest directories: their owning acceptance test imports them and fails if they or a qualified reference are missing. Frontend unit/E2E commands use Vitest/Playwright produced by S19, never pytest.
 
-Owned numerical/experimental fixtures: VAL-003, VAL-018, VAL-022, VAL-024
+Owned numerical/experimental fixtures: VAL-003, VAL-018, VAL-024
 
 ## Acceptance
 Run from repository root with the activated foundation environment. S00 setup: `python -m venv .venv`, activate it, `python -m pip install -r requirements/foundation.txt`, `python -m pip install --no-build-isolation --no-deps -e .`, `npm --prefix frontend ci`.
 ```sh
 python scripts/run_foundation.py
-python -m pytest tests/unit/s14/test_source_ledgers.py tests/contract/s14/test_loss_region_ownership.py tests/numerical/VAL-003/test_acceptance.py tests/numerical/VAL-018/test_acceptance.py tests/numerical/VAL-022/test_acceptance.py tests/numerical/VAL-024/test_acceptance.py -q
+python -m pytest tests/unit/s14/test_source_ledgers.py tests/contract/s14/test_loss_region_ownership.py tests/numerical/VAL-003/test_acceptance.py tests/numerical/VAL-018/test_acceptance.py tests/numerical/VAL-024/test_acceptance.py -q
 ```
 
 Install scope-specific dependencies with pinned locks during the owning scope; acceptance cannot skip missing tests. Foundation commands execute now. Feature commands must execute at this scope’s completion; zero tests, unavailable adapters and unresolved contract gaps are not PASS.
@@ -100,9 +99,6 @@ Install scope-specific dependencies with pinned locks during the owning scope; a
 - `validation/fixtures/VAL-018/`
 - `validation/references/VAL-018/`
 - `validation/expected/VAL-018/`
-- `validation/fixtures/VAL-022/`
-- `validation/references/VAL-022/`
-- `validation/expected/VAL-022/`
 - `validation/fixtures/VAL-024/`
 - `validation/references/VAL-024/`
 - `validation/expected/VAL-024/`
@@ -130,6 +126,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open audit findings: `H-03`, `H-06`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+Open preimplementation decisions: `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

@@ -379,20 +379,20 @@
     {
       "id": "VAL-022",
       "mandatory": true,
-      "owner_scope": "S14",
-      "fixture_owner": "S14",
-      "reference_owner": "S14",
+      "owner_scope": "S18",
+      "fixture_owner": "S18",
+      "reference_owner": "S18",
       "rerun_scopes": [
-        "S18",
         "S22"
       ],
       "gate_class": "EXPERIMENTAL_VALIDATION",
       "fixture_path": "validation/fixtures/VAL-022/",
       "reference_path": "validation/references/VAL-022/",
       "test": "tests/numerical/VAL-022/test_acceptance.py",
-      "execution_status": "NOT_IMPLEMENTED",
-      "contract_status": "MISSING_FICHE",
-      "failure_consequence": "Blocks experimental/predictive claim; never reuse calibration data as validation"
+      "execution_status": "REQUIRES_EXPERIMENTAL_DATA",
+      "contract_status": "MANDATORY_WITH_COMPLETE_FICHE",
+      "failure_consequence": "Blocks experimental/predictive claim; never reuse calibration data as validation",
+      "normative_fiche": "docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md#vf-022--val-022-motored-data-contract"
     },
     {
       "id": "VAL-023",

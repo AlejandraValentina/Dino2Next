@@ -6,4 +6,6 @@ The executable ordering is SCOPE_DEPENDENCY_GRAPH.md, generated from scope_regis
 
 S01–S05 establish values, geometry, thermochemistry and conservative inventories; S06–S14 establish numerical and physical subsystems; S15–S18 produce performance, orchestration, API and validation aggregation; S19–S21 implement UX journeys; S22 composes accepted components. This grouping is explanatory: the graph, not a numeric range, determines readiness to start.
 
-H-01…H-06 block the affected scientific scopes until existing adjudicated specifications are consolidated. No roadmap milestone authorizes inventing those details. Heavy verification remains mandatory during the owning implementation milestone, never silently waived or placed in PR_FAST.
+H-01/H-02/H-03 block the affected scientific scopes until existing adjudicated specifications are consolidated. No roadmap milestone authorizes inventing those details. Heavy verification remains mandatory during the owning implementation milestone, never silently waived or placed in PR_FAST.
+
+Active documentary revision: C1.0-R1. H-04/H-05/H-06 are restored; H-01/H-02/H-03 remain MISSING_PREIMPLEMENTATION_SCIENTIFIC_DECISION. No new scientific choice is authorized by the restoration.

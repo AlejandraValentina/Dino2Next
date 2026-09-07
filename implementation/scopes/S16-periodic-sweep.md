@@ -23,6 +23,9 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/MODULE_BOUNDARIES.md` — ownership and value-object contracts
 - `docs/architecture/A1.0/APPLICATION_AND_API_CONTRACT.md` — public resource and error contracts
+- `docs/science/C1.0/NUMERICAL_KERNEL_NORMATIVE_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/STAGE_EVENT_RESTORATION_ANNEX.md` — C1.0-R1 selected-source restoration
+- `docs/science/C1.0/VALIDATION_FIXTURE_RESTORATION.md` — C1.0-R1 selected-source restoration
 
 ## Required interfaces
 ### EngineRunner
@@ -108,6 +111,6 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - `OUT_OF_SCOPE`: Required change lies outside allowed ownership; return to owner or amend software-only scope with review; do not edit silently.
 
 ## Specification preconditions
-Open audit findings: `H-02`, `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
+Open preimplementation decisions: `H-02`, `H-03`. Stop the affected scientific path until reviewed normative consolidation resolves these. See `implementation/readiness_issues.json` and `docs/CODEX_READINESS_AUDIT.md`. This is not an invitation for Codex to choose a formula.
 
 Rollback: keep failure artifacts, revert only this scope’s unaccepted changes or abandon its unmerged branch. Never reset unrelated work or rewrite a shared fixture.

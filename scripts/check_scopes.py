@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from render_scopes import documents
+from check_contracts import check as check_integrity
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -50,11 +51,41 @@ def check(root=ROOT, readiness=False):
         assert all(x in by for x in v['rerun_scopes'])
     for path, expected in documents(root).items():
         assert (root/path).read_text() == expected, f'generated document drift: {path}'
+    check_integrity(root)
+    index = json.loads((root/'docs/science/C1.0/NORMATIVE_ID_INDEX.json').read_text())
+    for s in scopes:
+        for identifier in s['normative_ids']:
+            assert identifier in index, 'UNDEFINED_NORMATIVE_ID: ' + identifier
+            item = index[identifier]
+            assert item['definition_line'] in (root/item['path']).read_text().splitlines(), 'STALE_NORMATIVE_DEFINITION: ' + identifier
+        for path in s.get('normative_annexes', []): assert (root/path).is_file(), 'missing normative annex'
     issues = json.loads((root/'implementation/readiness_issues.json').read_text())['issues']
-    if readiness: assert not issues, 'OPEN_SPECIFICATION_GAPS: ' + ', '.join(x['id'] for x in issues)
-    return {'result':'PASS','scope_count':len(scopes),'mandatory_validations_owned':sum(v['mandatory'] for v in vals),'open_specification_gaps':len(issues),'scientific_readiness':'NOT_ASSERTED'}
+    assert {i['id'] for i in issues} == {f'H-{n:02}' for n in range(1,7)}, 'ISSUE_COVERAGE_MISSING'
+    opened = [i['id'] for i in issues if i['status'] != 'CLOSED']
+    coverage = json.loads((root/'docs/science/C1.0/VALIDATION_CONTRACT_COVERAGE.json').read_text())['validations']
+    cv = {v['id']:v for v in coverage}
+    assert len(cv)==len(coverage) and set(cv)=={v['id'] for v in vals if v['mandatory']}, 'FIXTURE_COVERAGE_MISSING'
+    if readiness:
+        assert not opened, 'MISSING_PREIMPLEMENTATION_SCIENTIFIC_DECISION: ' + ', '.join(opened)
+        for scope in scopes:
+            for identifier in scope['normative_ids']:
+                assert index[identifier].get('definition_status','COMPLETE') == 'COMPLETE', 'INCOMPLETE_NORMATIVE_DEFINITION: '+identifier
+        for v in vals:
+            if not v['mandatory']: continue
+            c=cv[v['id']]
+            assert c['contract_status']=='COMPLETE' and not c['missing'], 'INCOMPLETE_VALIDATION_CONTRACT: '+v['id']
+            required={'objective','type','physics_numerics','initial_state','geometry','domain','mesh_sequence','dt_sequence','boundary_states','end_condition','sampling','independent_reference','reference_resolution','observable','normalization','metric','threshold','failure','artifacts'}
+            assert set(c['required_fields'])==required and (root/c['normative_path']).is_file(), 'INCOMPLETE_FIXTURE_FIELDS: '+v['id']
+        for s in scopes:
+            assert not s['issues'], 'UNSATISFIED_SCOPE_PRECONDITION: '+s['id']
+    return {'result':'PASS','scope_count':len(scopes),'mandatory_validations_owned':sum(v['mandatory'] for v in vals),'open_specification_gaps':len(opened),'scientific_readiness':'PASS' if readiness else 'NOT_ASSERTED'}
 
 if __name__ == '__main__':
-    p=argparse.ArgumentParser(); p.add_argument('--readiness',action='store_true'); a=p.parse_args()
-    try: print(json.dumps(check(readiness=a.readiness)))
-    except (AssertionError, KeyError, ValueError, OSError) as e: print(f'SCOPE_CONSISTENCY_ERROR: {e}'); raise SystemExit(1)
+    p=argparse.ArgumentParser(); p.add_argument('--readiness',action='store_true'); p.add_argument('--report',type=Path); a=p.parse_args()
+    try:
+        result=check(readiness=a.readiness); code=0
+    except (AssertionError, KeyError, ValueError, OSError) as e:
+        result={'result':'FAIL','reason':str(e)};code=1
+    if a.report:
+        a.report.parent.mkdir(parents=True,exist_ok=True); a.report.write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result));raise SystemExit(code)

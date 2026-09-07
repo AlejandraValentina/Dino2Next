@@ -1,6 +1,6 @@
 # Scope validation matrix
 
-All 28 identifiers are classified. A number alone does not create a mandatory validation: 012,015,017,019 have no requirement in current C1 and remain explicit nonmandatory entries. VAL-022 is mandatory by CAP-007 traceability but lacks a fiche; ownership does not cure that specification defect.
+All 28 identifiers are classified. A number alone does not create a mandatory validation: 012,015,017,019 have no requirement in current C1 and remain explicit nonmandatory entries. VAL-022 is mandatory by CAP-007 and restored as the C03 motored experimental data contract VF-022; S18 owns it. Other incomplete contracts remain explicit in the coverage audit.
 
 Reference owner is accountable for a separate implementation/data source, not permission to use candidate output as its oracle. Fixture, reference and expected bundle has exactly one owner. Rerun scopes have read-only access.
 
@@ -27,7 +27,7 @@ Reference owner is accountable for a separate implementation/data source, not pe
 | VAL-019 | no | not required | none | NOT_REQUIRED | none | none | UNASSIGNED_NOT_MANDATORY | No GEN1 execution required; adding it requires normative adjudication |
 | VAL-020 | yes | S11 | S18, S22 | HEAVY_VERIFICATION | S11 | S11 | owner milestone / NOT_IMPLEMENTED | Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change |
 | VAL-021 | yes | S16 | S18, S22 | HEAVY_VERIFICATION | S16 | S16 | owner milestone / NOT_IMPLEMENTED | Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change |
-| VAL-022 | yes | S14 | S18, S22 | EXPERIMENTAL_VALIDATION | S14 | S14 | owner milestone / NOT_IMPLEMENTED | Blocks experimental/predictive claim; never reuse calibration data as validation |
+| VAL-022 | yes | S18 | S22 | EXPERIMENTAL_VALIDATION | S18 | S18 | owner milestone / REQUIRES_EXPERIMENTAL_DATA | Blocks experimental/predictive claim; never reuse calibration data as validation |
 | VAL-023 | yes | S13 | S18, S22 | PR_SCIENTIFIC_AFFECTED | S13 | S13 | owner milestone / NOT_IMPLEMENTED | Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change |
 | VAL-024 | yes | S14 | S15, S18, S22 | PR_SCIENTIFIC_AFFECTED | S14 | S14 | owner milestone / NOT_IMPLEMENTED | Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change |
 | VAL-025 | yes | S18 | S22 | EXPERIMENTAL_VALIDATION | S18 | S18 | owner milestone / NOT_IMPLEMENTED | Blocks experimental/predictive claim; never reuse calibration data as validation |
