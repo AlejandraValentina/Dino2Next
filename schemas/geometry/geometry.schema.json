@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dino2next:geometry:1.0",
+  "title": "SI geometry payload for common configuration envelope 1.0",
+  "type": "object", "additionalProperties": false, "required": ["crank"],
+  "properties": {
+    "crank": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bore", "stroke", "rod", "clearance_volume", "crankcase_tdc_volume"],
+      "properties": {
+        "bore": {"$ref": "#/$defs/length"}, "stroke": {"$ref": "#/$defs/length"},
+        "rod": {"$ref": "#/$defs/length"},
+        "clearance_volume": {"$ref": "#/$defs/volume"},
+        "crankcase_tdc_volume": {"$ref": "#/$defs/volume"}
+      }
+    },
+    "passages": {"type": "array", "items": {"$ref": "#/$defs/passage"}},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  },
+  "$defs": {
+    "quantity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "unit", "dimension"],
+      "properties": {"value": {"type": "number"}, "unit": {"type": "string"}, "dimension": {"type": "string"}}
+    },
+    "length": {"allOf": [{"$ref": "#/$defs/quantity"}, {"properties": {"unit": {"const": "m"}, "dimension": {"const": "length"}}}]},
+    "area": {"allOf": [{"$ref": "#/$defs/quantity"}, {"properties": {"unit": {"const": "m2"}, "dimension": {"const": "area"}}}]},
+    "volume": {"allOf": [{"$ref": "#/$defs/quantity"}, {"properties": {"unit": {"const": "m3"}, "dimension": {"const": "volume"}}}]},
+    "angle": {"allOf": [{"$ref": "#/$defs/quantity"}, {"properties": {"unit": {"const": "rad"}, "dimension": {"const": "angle"}}}]},
+    "passage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_id", "positions", "areas", "perimeters", "count", "area_basis"],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "positions": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/length"}},
+        "areas": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/area"}},
+        "perimeters": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/length"}},
+        "count": {"type": "integer", "minimum": 1},
+        "area_basis": {"enum": ["PER_PASSAGE", "AGGREGATE"]}
+      }
+    },
+    "event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theta", "kind", "component_id"],
+      "properties": {
+        "theta": {"$ref": "#/$defs/angle"},
+        "component_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["OPENING", "CLOSING", "OPENING_KNOT", "OPENING_EXTREMUM", "TRANSFER_OPENING", "EXHAUST_CLOSURE", "SOC_MERGE", "SOC", "BURN_END", "CYCLE_BOUNDARY"]}
+      }
+    }
+  }
+}
