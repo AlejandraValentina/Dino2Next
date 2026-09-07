@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dino2next:thermo-state:1.0",
+  "title": "Derived NASA5 SI thermodynamic state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "T", "p", "rho", "R", "cp", "cv", "h", "e", "gamma", "a", "Y", "dataset_sha256", "diagnostic"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "T": {"type": "number", "minimum": 300, "maximum": 2200, "description": "K"},
+    "p": {"type": "number", "minimum": 50000, "maximum": 5000000, "description": "Pa"},
+    "rho": {"type": "number", "exclusiveMinimum": 0, "description": "kg/m3"},
+    "R": {"$ref": "#/$defs/heat_capacity"},
+    "cp": {"$ref": "#/$defs/heat_capacity"},
+    "cv": {"$ref": "#/$defs/heat_capacity"},
+    "h": {"$ref": "#/$defs/specific_energy"},
+    "e": {"$ref": "#/$defs/specific_energy"},
+    "gamma": {"type": "number", "exclusiveMinimum": 0, "description": "dimensionless"},
+    "a": {"type": "number", "exclusiveMinimum": 0, "description": "m/s"},
+    "Y": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "number", "minimum": 0, "maximum": 1}, "description": "Mass fractions: isooctane,O2,N2,CO2,H2O; runtime verifies sum"},
+    "dataset_sha256": {"const": "5b4d37b8821fcfac906fc2ff726945b6455049e229f16c56ba66b40bec0eda7a"},
+    "diagnostic": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/inversion"}]}
+  },
+  "$defs": {
+    "heat_capacity": {"type": "number", "exclusiveMinimum": 0, "description": "J/(kg K)"},
+    "specific_energy": {"type": "number", "description": "J/kg, includes formation reference"},
+    "inversion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "target", "residual", "iterations", "temperature_bracket"],
+      "properties": {
+        "kind": {"enum": ["energy", "enthalpy"]},
+        "target": {"$ref": "#/$defs/specific_energy"},
+        "residual": {"$ref": "#/$defs/specific_energy"},
+        "iterations": {"type": "integer", "minimum": 1},
+        "temperature_bracket": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 300, "maximum": 2200}, "description": "K; runtime verifies ordered interval width <=1e-8 and containment"}
+      }
+    }
+  }
+}

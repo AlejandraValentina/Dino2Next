@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "classification": "NUMERICAL_ACCEPTANCE_CONTRACT_NOT_EXPERIMENTAL",
+  "normative_ids": ["VAL-001", "VF-001", "TI-001", "TI-003", "TI-004"],
+  "property_scaled_max": 1e-8,
+  "temperature_error_K": 1e-8,
+  "energy_residual_cv_K": 1e-8,
+  "enthalpy_residual_cp_K": 1e-8,
+  "identity_gamma_n": 128,
+  "required_original_thermo_tuples": 384,
+  "required_total_thermo_tuples_with_300_K": 432,
+  "required_geometry_angles": 361,
+  "experimental_validation": "NOT_PERFORMED",
+  "predictive_validation": "NOT_PERFORMED"
+}
