@@ -1,0 +1,122 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "RESOLUTION_EVIDENCE_CORROBORATED_FOR_DECLARED_OBSERVABLE_NOT_FULL_GEN1_COST_QUALIFICATION",
+  "four_actual_full_kernel_runs": [
+    {
+      "CFL": 0.05,
+      "epsilon": 1e-05,
+      "steps": 32100,
+      "retries": 0,
+      "absolute_upper_max": 0.0005438440526869131,
+      "relative_upper_max": 0.006444409278754135,
+      "phase_upper_max": 0.00034124594599271185,
+      "phase_budget": 0.001963495408493621,
+      "GNU_user_seconds": 2119.75,
+      "GNU_wall": "35:47.35",
+      "GNU_max_RSS_KiB": 131724,
+      "review_sha256": "9e69a3324415fa40782bebb080221b947766f17a4cdc5ffcd5ff157c4c19de2d"
+    },
+    {
+      "CFL": 0.05,
+      "epsilon": 5e-06,
+      "steps": 32100,
+      "retries": 0,
+      "absolute_upper_max": 0.0005095582907833537,
+      "relative_upper_max": 0.006405639851973746,
+      "phase_upper_max": 0.00032931834560079337,
+      "phase_budget": 0.001963495408493621,
+      "GNU_user_seconds": 2068.27,
+      "GNU_wall": "34:53.43",
+      "GNU_max_RSS_KiB": 127088,
+      "review_sha256": "b4b799ec539a300922945ea2d647891b07b649b4571c289fe6e8dda9b6a40a8a"
+    },
+    {
+      "CFL": 0.1,
+      "epsilon": 1e-05,
+      "steps": 16100,
+      "retries": 0,
+      "absolute_upper_max": 0.0005508712731446478,
+      "relative_upper_max": 0.006543710257693546,
+      "phase_upper_max": 0.00033706260544433486,
+      "phase_budget": 0.001963495408493621,
+      "GNU_user_seconds": 1218.78,
+      "GNU_wall": "20:47.55",
+      "GNU_max_RSS_KiB": 118372,
+      "review_sha256": "0a2af9b39d2d0d5fadf170f158a773e06ef61f7eada88ee9cecdd3746fb567d0"
+    },
+    {
+      "CFL": 0.1,
+      "epsilon": 5e-06,
+      "steps": 16100,
+      "retries": 0,
+      "absolute_upper_max": 0.0005165173717201567,
+      "relative_upper_max": 0.006506035073729005,
+      "phase_upper_max": 0.0003166625293845106,
+      "phase_budget": 0.001963495408493621,
+      "GNU_user_seconds": 1287.8,
+      "GNU_wall": "22:04.45",
+      "GNU_max_RSS_KiB": 117804,
+      "review_sha256": "b6cd1a1deb56ec36bcc418a31f52882fa105630619fa9663e81770747034702a"
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "CFL_SENSITIVITY_NOT_TEMPORAL_ORDER",
+      "epsilon": 1e-05,
+      "max_coefficient_difference_over_A0": [
+        3.5022619085880444e-06,
+        3.527187950978694e-06,
+        7.028175413107131e-06
+      ]
+    },
+    {
+      "kind": "CFL_SENSITIVITY_NOT_TEMPORAL_ORDER",
+      "epsilon": 5e-06,
+      "max_coefficient_difference_over_A0": [
+        3.458381698968859e-06,
+        3.5059211536287705e-06,
+        6.9590798645158285e-06
+      ]
+    },
+    {
+      "kind": "EPSILON_HALVING_NORMALIZED_DIFFERENCE_NOT_ERROR_SUBTRACTION",
+      "CFL": 0.05,
+      "max_time_mean_absolute_rho_u_p": [
+        2.2070130237250574e-06,
+        2.565962686565368e-06,
+        3.0470413692196274e-06
+      ],
+      "max_pointwise_rho_u_p": [
+        5.378620882012797e-05,
+        6.947363215981106e-05,
+        7.531101298141607e-05
+      ]
+    },
+    {
+      "kind": "EPSILON_HALVING_NORMALIZED_DIFFERENCE_NOT_ERROR_SUBTRACTION",
+      "CFL": 0.1,
+      "max_time_mean_absolute_rho_u_p": [
+        2.2012039205265843e-06,
+        2.5551610619239154e-06,
+        3.0366201983489383e-06
+      ],
+      "max_pointwise_rho_u_p": [
+        5.38184052878421e-05,
+        6.947768978160518e-05,
+        7.533301760176414e-05
+      ]
+    }
+  ],
+  "scientific_scope": [
+    "All 101 samples, reference-qualified masks and absolute complex tails, both independently executed amplitudes and both CFL values satisfy the unchanged 1% and pi/N observation budgets at N1600. No error or uncertainty subtracted to obtain acceptance.",
+    "Two CFL values demonstrate measured sensitivity, not a temporal convergence order or certified zero-step error. Epsilon comparison is observed normalized difference, not automatic linearity of full nonlinear kernel.",
+    "Supports a proposed N1600 resolution obligation for this specified free-reflection case. Does not retroactively pass historical N200/400/800, complete their spatial/stability obligations, approve rigid cases or full VAL010/S06."
+  ],
+  "cost_scope": [
+    "GNU time describes each run over the prescribed single acoustic transit, with four concurrent processes initially. Kernel initialization, assessment and process timing differ; report each label explicitly.",
+    "These data demonstrate executable cost on this environment, not acceptable full two-stroke engine-cycle cost. No engine geometry, cycle horizon, multiple ducts, smallest-cell dt, material coupling or hardware target has been benchmarked.",
+    "A claim of practical GEN1 engine runtime requires an explicit representative model/horizon and a stated cost budget followed by measurement. This missing application cost decision does not invalidate the narrow numerical resolution evidence or authorize loosening its 1% gate.",
+    "Adjudication may accept the bounded resolution obligation with cost limitations explicitly retained; it may not claim full-engine performance qualification or infer it from a single transit."
+  ],
+  "findings": []
+}

@@ -1,0 +1,1 @@
+AREA03 plan: use authoritative Delta W / Delta x for bulk Mesh1D average only; retain physical face areas, perimeter and NASA. Add actual two-thin-cell kernel recovery regression plus reference-state immutability, run all area/advisor checks and controls, compare archived arrays honestly. No scientific gates or tolerances changed. All edits owned area_hybrid only.

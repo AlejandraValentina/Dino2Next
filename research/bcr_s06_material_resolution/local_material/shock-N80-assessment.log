@@ -1,0 +1,5 @@
+N 80 sample 25 stage-checks 125
+N 80 sample 50 stage-checks 241
+N 80 sample 75 stage-checks 369
+N 80 sample 100 stage-checks 489
+{"N": 80, "stage_physical_checks": 489, "causal_max_speed": 638.6977412519551, "time_max_L1_upper": [0.010317219353890328, 0.00928683507580712, 0.020015306754381044], "elapsed_seconds": 22.843093750067055}

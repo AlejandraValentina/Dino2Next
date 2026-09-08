@@ -1,0 +1,19 @@
+{
+  "independent_tests": "16 passed in 3.39s",
+  "roundtrip": "unit_state inherited multiply/divide causes only2.22e-16 relative density in this probe; explicit floating arithmetic, not the amplified bulk volume-measure discrepancy.",
+  "source_sha256": "3a98afd8d3a369d296b82f067f024f0b8035652298aed6c1498ce1a8cbbd424a",
+  "limits": "No complete regional representation, broad variable-area capability or GEN1/S06 approval until open finding resolved.",
+  "reviewer": "/root/s01_reviewer",
+  "result": "AREA02_CLOSED_AREA03_OPEN",
+  "closed": {
+    "id": "AREA-02",
+    "basis": "Remap and sampling intersections now use inherited authoritative W at existing faces, canonical W at new physical coordinates, and retain exact integral-minus-W residuals. Thin-region self projection identity test passes. No inventory or EOS repair; new representation convention explicitly documented."
+  },
+  "open": {
+    "request": "Unify bulk-consumed volume with authoritativeW representation and record remaining arithmetic/inverse residual effects. Preserve NASA/inventories and original bulk source snapshot.",
+    "id": "AREA-03",
+    "actual": "Regional recovery p100000.00000012; bulk EOS usingI/integral(xderived) gives p99999.98304328 and99999.98302954, relative density drift about−1.696e-7. It uses a second volume measure despite authoritativeDeltaW.",
+    "reproducer": "A=1+2x² on[0,1], basegrid[.9,.9000000001,.9000000002], twoN2/T600/p1e5/u0 rows labelsL/L; patch isFalse/False.",
+    "path": "area_hybrid/area_solver.py bulk_call"
+  }
+}

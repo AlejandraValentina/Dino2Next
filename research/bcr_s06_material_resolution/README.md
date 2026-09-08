@@ -1,6 +1,6 @@
-# BCR-S06-MATERIAL-RESOLUTION — prototyping and adjudication package
+# BCR-S06-MATERIAL-RESOLUTION â€” prototyping and adjudication package
 
-Status: PROTOTYPING; no normative recipe approved yet. BaseC1.0-R4/main15b070b6; implementationPR8 remains cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161. This new BCR is separate from mergedPR9 and from the implementationPR.
+Status: PROTOTYPING AND BOUNDED ADJUDICATION REVIEW; no normative recipe approved yet. Base C1.0-R4/main15b070b6; implementation PR8 is 2d04c16fc77b603596f7db04a8ed7d35953afa17, with the independently reviewed exact sparse-sum software change. Historical reference cc5c4ed6 is preserved. This BCR is PR10, separate from merged PR9 and from implementation PR8.
 
 The user explicitly authorized bounded prototyping and independent scientific/architecture adjudication of two mechanisms:
 
@@ -27,4 +27,10 @@ The actual independent review package is under reviews/. It corroborates the ini
 
 STATE_INTERFACE_PROPOSAL.md records an additive S05 direction and explicit observable weighting, with geometry/reconstruction obligations still open. The local_material/ large raw records are stored losslessly in a hash-verified ZIP; run its restore_evidence.py before replaying raw-data audits. software_equivalence/ contains the independently reviewed exact-sum and streaming-storage evidence used for full-kernel acoustic experiments. These software checks do not replace the pending numerical checks.
 
-The ordinary-MUSCL coupling, variable-area geometric stage representation and full-kernel N1600 confirmations are separate subsequent increments. Each needs its own evidence and review before a normative selection or merge. The accepted baseline remains C1.0-R4.
+The subsequent increments now include independently reviewed ordinary-MUSCL coupling and exact faster overlap enumeration, nine composition/thermal/motion controls, and a directed NASA shock at N80/N160. Those are prototype evidence, not the full contractual VAL008 matrix. Large hybrid records are losslessly packaged separately: run `local_material/restore_hybrid.py`; the earlier `restore_evidence.py` and archive remain unchanged.
+
+The variable-area prototype evolves cumulative volume W and extensive inventories together. Review found and fixed endpoint-representation and thin-region projection defects. Their original sources, results and findings remain in the package. Independent closure reviews now corroborate W-overlap and ordinary-bulk consistency, including the thin-region reproducers. The final bounded interior formulation awaits its explicit adjudication. The volumetric timestep advisor was reviewed as a predictor with stage guards, not a general NASA positivity theorem. Material birth/exit and physical boundary transfer remain explicit consumer obligations; no full GEN1 boundary recipe is claimed.
+
+All four predefined N1600 full-kernel confirmations completed and were independently audited (both epsilon and CFL .1/.05). All 101 observations in each satisfy the unchanged absolute, relative and phase bounds, with conservation corroborated. `acoustic/kernel_data/` contains the full sampled conserved fields, execution records, assessments and costs; its manifest states that the large per-step streams are not included, although their complete independent audits and hashes are preserved. The source files consumed are copied under `acoustic/kernel_sources/` with original hashes. `acoustic/MR010_ADJUDICATION_PROPOSAL.md` proposes the explicit resolution table and retains the historical failures. Four fine runs do not complete the coarse convergence matrix, rigid-boundary coverage or S06 acceptance.
+
+Measured acoustic cost is 20â€“36 minutes per canonical transit with four initially concurrent processes, not a full-engine benchmark or a claim of practical GEN1 cost. The accepted baseline remains C1.0-R4 until a separately reviewed normative change is integrated.

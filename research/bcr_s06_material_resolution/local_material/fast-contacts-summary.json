@@ -1,0 +1,328 @@
+{
+  "classification": "PROTOTYPE_CONTACT_COVERAGE_NOT_FULL_VAL008_ACCEPTANCE",
+  "completed": 9,
+  "required": 9,
+  "cases": [
+    {
+      "pair": 0,
+      "velocity": 0.0,
+      "elapsed_seconds": 0.8742289892397821,
+      "steps": 30,
+      "physical_stage_checks": 120,
+      "max_characteristic_speed": 496.0526067852123,
+      "max_pressure_error_Pa": 1.2127566151320934e-07,
+      "exterior_pressure_error_Pa": 1.2127566151320934e-07,
+      "max_velocity_error": 1.0562336713196256e-13,
+      "ST003_normalized": [
+        1.4228479034733124e-17,
+        1.671049705852748e-33,
+        5.072590777322279e-17,
+        0.0,
+        0.0,
+        3.2400399900895795e-17,
+        1.4228479034733124e-17,
+        0.0,
+        3.2400399900895795e-17,
+        0.0,
+        1.4228479034733124e-17,
+        0.0
+      ],
+      "crossings": [],
+      "raw_file": "fast-contact-0-0.json",
+      "raw_sha256": "ffe05b6148d68803164f48622629a50e326bd0ff90b6c313d8ae12a75ceed2fd"
+    },
+    {
+      "pair": 0,
+      "velocity": 100.0,
+      "elapsed_seconds": 1.6756988149136305,
+      "steps": 49,
+      "physical_stage_checks": 196,
+      "max_characteristic_speed": 596.0526067852124,
+      "max_pressure_error_Pa": 1.2153759598731995e-07,
+      "exterior_pressure_error_Pa": 1.2127566151320934e-07,
+      "max_velocity_error": 2.7000623958883807e-13,
+      "ST003_normalized": [
+        5.635144988855592e-17,
+        2.0131694000048395e-18,
+        6.40257431704723e-17,
+        0.0,
+        0.0,
+        4.663568266639111e-17,
+        1.5545227555463702e-17,
+        0.0,
+        4.663568266639111e-17,
+        0.0,
+        1.5545227555463702e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          44,
+          0.0008611356124151883,
+          0.5861135613415189,
+          13,
+          14
+        ]
+      ],
+      "raw_file": "fast-contact-0-100.json",
+      "raw_sha256": "ac4cd7e5de8a92b5434565ca4181b9ad245b633ec6124a21922d22d5127f6650"
+    },
+    {
+      "pair": 0,
+      "velocity": -100.0,
+      "elapsed_seconds": 1.6008471981622279,
+      "steps": 50,
+      "physical_stage_checks": 200,
+      "max_characteristic_speed": 596.0526067852124,
+      "max_pressure_error_Pa": 1.21421180665493e-07,
+      "exterior_pressure_error_Pa": 1.2127566151320934e-07,
+      "max_velocity_error": 1.1368683772161603e-13,
+      "ST003_normalized": [
+        5.8294603332988885e-18,
+        5.6368743200135496e-18,
+        1.1524633770685014e-16,
+        0.0,
+        0.0,
+        2.137468788876259e-17,
+        2.3317841333195554e-17,
+        0.0,
+        2.137468788876259e-17,
+        0.0,
+        2.3317841333195554e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          1,
+          2.7961737734119987e-05,
+          0.497203826326588,
+          13,
+          12
+        ],
+        [
+          43,
+          0.0008382367385788681,
+          0.4161763262421131,
+          12,
+          11
+        ]
+      ],
+      "raw_file": "fast-contact-0--100.json",
+      "raw_sha256": "7ca64897655db869f9d10234cd41e5a8734147949fdbbcd4741b600fbe081d4b"
+    },
+    {
+      "pair": 1,
+      "velocity": 0.0,
+      "elapsed_seconds": 9.426497179549187,
+      "steps": 38,
+      "physical_stage_checks": 152,
+      "max_characteristic_speed": 628.5399819303914,
+      "max_pressure_error_Pa": 1.616863301023841e-07,
+      "exterior_pressure_error_Pa": 1.616863301023841e-07,
+      "max_velocity_error": 6.97087106085254e-10,
+      "ST003_normalized": [
+        0.0,
+        4.741215465229038e-19,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "crossings": [],
+      "raw_file": "fast-contact-1-0.json",
+      "raw_sha256": "741ef3e4d420ae1ca0120686c52584c4e023fc56e7144d3af3e4fa11f0057cae"
+    },
+    {
+      "pair": 1,
+      "velocity": 100.0,
+      "elapsed_seconds": 16.3874195208773,
+      "steps": 62,
+      "physical_stage_checks": 248,
+      "max_characteristic_speed": 728.5399819317,
+      "max_pressure_error_Pa": 3.785535227507353e-07,
+      "exterior_pressure_error_Pa": 3.785535227507353e-07,
+      "max_velocity_error": 7.097611387507641e-10,
+      "ST003_normalized": [
+        1.1865354352584396e-17,
+        1.4114807888929633e-17,
+        2.899283041071601e-17,
+        0.0,
+        0.0,
+        1.6611496093618154e-17,
+        1.5424960658359717e-17,
+        0.0,
+        1.6611496093618154e-17,
+        0.0,
+        1.5424960658359717e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          54,
+          0.000852143975006696,
+          0.5852143976012515,
+          13,
+          14
+        ]
+      ],
+      "raw_file": "fast-contact-1-100.json",
+      "raw_sha256": "c59881996bf004838227dbb93d8eaf1d89e89d578dc314c9238651b0c1dfb931"
+    },
+    {
+      "pair": 1,
+      "velocity": -100.0,
+      "elapsed_seconds": 15.234020065050572,
+      "steps": 60,
+      "physical_stage_checks": 240,
+      "max_characteristic_speed": 728.5399819296942,
+      "max_pressure_error_Pa": 1.616863301023841e-07,
+      "exterior_pressure_error_Pa": 1.616863301023841e-07,
+      "max_velocity_error": 6.997424861765467e-10,
+      "ST003_normalized": [
+        1.898456696413504e-17,
+        2.780189432667961e-17,
+        1.4496415205358086e-16,
+        0.0,
+        0.0,
+        2.3730708705168802e-17,
+        1.305188978784284e-17,
+        0.0,
+        2.3730708705168802e-17,
+        0.0,
+        1.305188978784284e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          1,
+          2.2876804375953963e-05,
+          0.4977123196624171,
+          13,
+          12
+        ],
+        [
+          53,
+          0.000841140095447267,
+          0.4158859905558485,
+          12,
+          11
+        ]
+      ],
+      "raw_file": "fast-contact-1--100.json",
+      "raw_sha256": "9c15fdd05f98ca2287d4dea7412077246f66557bbbe0b2d4f65b897d27a473f0"
+    },
+    {
+      "pair": 2,
+      "velocity": 0.0,
+      "elapsed_seconds": 12.694146926049143,
+      "steps": 49,
+      "physical_stage_checks": 196,
+      "max_characteristic_speed": 813.5455492175098,
+      "max_pressure_error_Pa": 3.6382698453962803e-07,
+      "exterior_pressure_error_Pa": 3.6382698453962803e-07,
+      "max_velocity_error": 4.83806651912661e-10,
+      "ST003_normalized": [
+        8.5925349247865e-17,
+        3.609258625321461e-18,
+        1.420848087872645e-17,
+        0.0,
+        1.4154425342682827e-17,
+        1.3773386210625814e-16,
+        9.909879118965163e-19,
+        3.1632795649924757e-19,
+        0.0,
+        0.0,
+        1.364049701033472e-17,
+        0.0
+      ],
+      "crossings": [],
+      "raw_file": "fast-contact-2-0.json",
+      "raw_sha256": "0522a9efe1471a978a3dd40d46b66e8ec2d1280cc2520101a88cfd4d040aa6c4"
+    },
+    {
+      "pair": 2,
+      "velocity": 100.0,
+      "elapsed_seconds": 19.551889773923904,
+      "steps": 74,
+      "physical_stage_checks": 296,
+      "max_characteristic_speed": 913.5455492187345,
+      "max_pressure_error_Pa": 3.6381243262439966e-07,
+      "exterior_pressure_error_Pa": 3.6381243262439966e-07,
+      "max_velocity_error": 5.950084869255079e-10,
+      "ST003_normalized": [
+        1.3089389164731589e-17,
+        2.0035315420029174e-17,
+        6.484156242975192e-17,
+        8.180868227957243e-19,
+        0.0,
+        1.243491970649501e-16,
+        1.2271302341935864e-18,
+        2.7269560759857475e-19,
+        4.799442693734916e-17,
+        0.0,
+        1.090782430394299e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          64,
+          0.0008372510463833562,
+          0.5837251047379604,
+          13,
+          14
+        ]
+      ],
+      "raw_file": "fast-contact-2-100.json",
+      "raw_sha256": "a49d8b15ef0077284405b0cbdd9841cfd305a8dd2dda676e1b0b5b354e77f170"
+    },
+    {
+      "pair": 2,
+      "velocity": -100.0,
+      "elapsed_seconds": 20.72200299380347,
+      "steps": 74,
+      "physical_stage_checks": 296,
+      "max_characteristic_speed": 913.5455492175297,
+      "max_pressure_error_Pa": 3.6381243262439966e-07,
+      "exterior_pressure_error_Pa": 3.6381243262439966e-07,
+      "max_velocity_error": 5.037179562350502e-10,
+      "ST003_normalized": [
+        3.0541908051040365e-17,
+        4.6749069313401374e-17,
+        1.2469531236490865e-16,
+        1.6361736455914482e-18,
+        1.0907824303942987e-17,
+        1.3307545650810446e-16,
+        2.5906082721864596e-18,
+        1.7725214493907356e-18,
+        8.289946470996671e-17,
+        0.0,
+        1.854330131670308e-17,
+        0.0
+      ],
+      "crossings": [
+        [
+          1,
+          1.824393612442333e-05,
+          0.4981756064875532,
+          13,
+          12
+        ],
+        [
+          65,
+          0.0008435261525600538,
+          0.4156473848436163,
+          12,
+          11
+        ]
+      ],
+      "raw_file": "fast-contact-2--100.json",
+      "raw_sha256": "3757136350e2c938526e498ba88016933856e018f46e2bbaaa499a7758bd2cfd"
+    }
+  ]
+}

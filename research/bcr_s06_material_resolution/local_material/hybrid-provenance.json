@@ -1,0 +1,12 @@
+{
+  "classification": "PROVENANCE_DISAMBIGUATION_NO_ARITHMETIC_OR_TRAJECTORY_CHANGE",
+  "original_report_sha256": "5bd1bc0ccfd31aecb0c7b6e26bffe4ce1f251adf11d2ecd23d6495ac79b36164",
+  "reason": "Original p.name mapping collapsed two prototype.py keys. Exact sources already bound by local/hybrid manifests and independent review; original report preserved.",
+  "source_sha256": {
+    "research\\bcr_s06_material_resolution\\local_material\\hybrid.py": "2bdb700ee7342ceb6f685dff89f0fa009da7b52b1e7adae97fb0ca36c90fe404",
+    "research\\bcr_s06_material_resolution\\local_material\\prototype.py": "c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee",
+    "research\\bcr_s06_material_resolution\\material\\prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32",
+    "research\\bcr_s06_material_resolution\\local_material\\kernel_source.py": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+    "research\\bcr_s06_material_resolution\\local_material\\run_hybrid.py": "2e918c523043cb859329102ade613bb2b2217b20075fe0bf45d62045a5462b2d"
+  }
+}

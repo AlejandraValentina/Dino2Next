@@ -1,0 +1,23 @@
+	Command being timed: "python artifacts/S06-exact-sums/streaming/run.py --cfl 0.1 --epsilon 1e-5 --observation /mnt/e/dino2/Dino2Next-S06-MR/research/bcr_s06_material_resolution/acoustic/observation.py --output artifacts/S06-MR-kernel/N1600-CFL0.1-eps1e-5"
+	User time (seconds): 1218.78
+	System time (seconds): 1.48
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 20:47.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 118372
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 80576
+	Voluntary context switches: 52592
+	Involuntary context switches: 886
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

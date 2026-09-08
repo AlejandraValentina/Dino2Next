@@ -1,0 +1,19 @@
+{
+  "source_sha256": "5f3731bfd920382ebc0db993ef924ecfc47ad5c37ccc4cb2662128edf91c51b4",
+  "findings": [
+    {
+      "detail": "Accepted PolynomialSegment(0,1,(1,0,2),(1,)) initialization rejects rounded W(right)=float(5/3)>exact integral as outside domain. Independently reproduced on 24-cell grid. Needs explicit endpoint representation and roundoff accounting, no arbitrary physical-volume clipping.",
+      "id": "AREA-01",
+      "path": "area_hybrid/area_solver.py:49 and regional_geometry/geometry.py:26"
+    }
+  ],
+  "tests": "7 passed in 1.81s",
+  "reviewer": "/root/s01_reviewer",
+  "result": "CHANGES_REQUESTED_BOUNDED_PROTOTYPE",
+  "limits": [
+    "W/I stage coupling, identical source in high/low guard and second FE/final checks inspected; no source or production edits.",
+    "Inherited length-based dt predictor does not yet establish volume/face-area CFL or adequate retries for arbitrary area gradients. Remains explicit pre-recipe obligation.",
+    "First-order pressure source, one segment, inverse residual effects on remap/projection, physical waves/exits/events remain bounded prototype limitations.",
+    "Initial tests cover rest and manufactured GCL, not full numerical acceptance."
+  ]
+}

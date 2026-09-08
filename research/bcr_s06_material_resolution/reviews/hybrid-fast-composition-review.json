@@ -1,0 +1,14 @@
+{
+  "scope": "Reviewed composition/MRO and executed exact three-step contact and wave equality tests for states, fluxes, dt, stage/guard/remap/transaction records. Underlying overlap helper was independently reviewed by ROOT; no self attribution of that review.",
+  "reviewer": "/root/s01_reviewer",
+  "source_sha256": {
+    "fast_hybrid.py": "e491679e409dd5f8c47f1918a943879a87ba974350c56c64cb47aa79108904e4",
+    "test_fast_hybrid.py": "6fa83a10a5d856690adfb4fdfa29e24666785052fe266fc6c50d26f7b6cb9168",
+    "fast_overlap.py": "3a7a9f5f76d8f7eec0ea35589c6b749836b9e0e7107233231a0bdf66e517dd28"
+  },
+  "limitations": [
+    "No whole GEN1 recipe approval, shock qualification or S06 acceptance."
+  ],
+  "result": "BOUNDED_COMPOSITION_EQUIVALENCE_CORROBORATED",
+  "independent_tests": "2 passed in 3.71s"
+}

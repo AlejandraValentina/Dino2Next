@@ -1,0 +1,32 @@
+def reorganize(self, state):
+    """Only between full steps; conservative overlaps never cross a label.
+
+    Retain every physical material boundary. Remove only ordinary grid
+    faces within exclusion*dx of it; no small material slab is deleted.
+    """
+    material = state.edges[self.interfaces(state)]
+    keep = [x for x in self.grid[1:-1]
+            if not len(material) or np.min(abs(material-x)) >= self.exclusion*self.dx]
+    edges = np.array(sorted([state.edges[0], *keep, *material, state.edges[-1]]))
+    if np.array_equal(edges, state.edges):
+        return state
+    labels = tuple(state.labels[min(len(state.labels)-1, np.searchsorted(state.edges, x, side='right')-1)]
+                   for x in (edges[:-1]+edges[1:])/2)
+    inventory = np.zeros((len(labels), 12))
+    sweep = MonotoneTargets(edges)
+    for i, (left, right) in enumerate(zip(state.edges[:-1], state.edges[1:])):
+        targets = sweep(left, right)
+        remainder = state.inventory[i].copy()
+        for k, (j, overlap) in enumerate(targets):
+            if labels[j] != state.labels[i]:
+                raise TrialRejected('REMAP_CROSSES_MATERIAL')
+            amount = remainder.copy() if k == len(targets)-1 else state.inventory[i]*(overlap/(right-left))
+            inventory[j] += amount
+            remainder -= amount
+    result = State(edges, inventory, labels)
+    self.recover(result)
+    residual = np.sum(result.inventory, axis=0)-np.sum(state.inventory, axis=0)
+    self.remap_records.append({'transaction_id': self._transaction_id,
+                               'old_intervals': len(state.labels), 'new_intervals': len(result.labels),
+                               'residual': residual.tolist()})
+    return result
