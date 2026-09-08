@@ -1,7 +1,10 @@
 """Selected NK-001..004 kernel; physical boundaries and global time policy are injected."""
 
 from dataclasses import dataclass, field
+from collections import OrderedDict
 from math import fsum
+from struct import pack
+from threading import RLock
 from types import MappingProxyType
 import numpy as np
 
@@ -229,7 +232,9 @@ def mc(a, b):
 
 
 class NumericalKernel:
-    """Stateless array backend with constructor-injected, classified EOS."""
+    """Array backend with classified EOS and bounded exact NASA-call memoization."""
+
+    _THERMO_CACHE_LIMIT = 65536
 
     def __init__(self, thermo, *, source_kind="GEN1_RUNTIME", profile=None):
         self.profile = profile or NumericalProfile()
@@ -240,6 +245,9 @@ class NumericalKernel:
         if source_kind == "GEN1_RUNTIME" and type(thermo) is ThermoModel:
             self.identity = thermo.dataset.name+" "+thermo.dataset.version+" "+thermo.dataset.sha256
             self._R = np.asarray(thermo.species_properties(300).R)
+            self._thermo_cache = OrderedDict()
+            self._thermo_cache_model = thermo
+            self._thermo_cache_lock = RLock()
         elif source_kind == "NUMERICAL_FIXTURE_ONLY":
             if getattr(thermo, "source_kind", None) != source_kind or any(not callable(getattr(thermo, name, None)) for name in (
                     "evaluate_batch", "recover_batch", "species_properties_batch")):
@@ -275,15 +283,42 @@ class NumericalKernel:
             for density, v, y in zip(rho, value, Y):
                 y = tuple(map(float, y))
                 if recover:
-                    r = self.thermo.invert_energy(float(density), float(v), y)
+                    r = self._cached_thermo_call(True, float(density), float(v), y)
                 else:
                     R = fsum(a*b for a,b in zip(y,self._R))
-                    r = self.thermo.evaluate(float(v/(density*R)), float(v), y)
+                    r = self._cached_thermo_call(False, float(v/(density*R)), float(v), y)
                 rows.append(r)
             out = {k: np.asarray([getattr(r,k) for r in rows]) for k in ("T", "p", "e", "cp", "cv", "R", "a")}
         if any(v.shape != rho.shape or not np.all(np.isfinite(v)) for v in out.values()) or any(np.any(out[k] <= 0) for k in ("T","p","cp","cv","R","a")):
             fail("EOS_OUT_OF_DOMAIN", "/thermo", "Invalid EOS batch result")
         return out
+
+    def _cached_thermo_call(self, recover, first, second, y):
+        """Memoize exact accepted-model calls; never cache an exception.
+
+        Binary keys preserve signed zero and every representable neighbor.
+        The argument construction and original ThermoModel call are unchanged.
+        LRU bounds retained successful immutable states, not numerical precision.
+        """
+        model = self.thermo
+        method = model.invert_energy if recover else model.evaluate
+        if type(model) is not ThermoModel:
+            return method(first, second, y)
+        with self._thermo_cache_lock:
+            if self._thermo_cache_model is not model:
+                self._thermo_cache.clear()
+                self._thermo_cache_model = model
+            arguments = (first, second, *y)
+            key = (b'I' if recover else b'E') + pack('!'+str(len(arguments))+'d', *arguments)
+            cache = self._thermo_cache
+            if key in cache:
+                cache.move_to_end(key)
+                return cache[key]
+            result = method(first, second, y)
+            cache[key] = result
+            if len(cache) > self._THERMO_CACHE_LIMIT:
+                cache.popitem(last=False)
+            return result
 
     def recover(self, U):
         U = np.asarray(U, float)

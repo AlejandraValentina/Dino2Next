@@ -1,0 +1,12 @@
+{
+  "id": "VAL-008",
+  "source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
+  "thresholds": {
+    "operational_pressure_L1_max": 0.0005,
+    "operational_pressure_Linf_max": 0.005,
+    "thermal_pressure_L1_max": 0.002,
+    "thermal_pressure_Linf_max": 0.02,
+    "shock_last_two_orders_min": 0.5,
+    "ledger_max": 1e-10
+  }
+}
