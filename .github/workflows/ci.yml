@@ -33,3 +33,23 @@ jobs:
       - run: python -m pip install -r research/bcr_s03_nasa_inversion/requirements.txt
       - run: python research/bcr_s03_nasa_inversion/generate.py --check
       - run: python research/bcr_s03_nasa_inversion/checks.py --check
+
+  s06-verification-contract-bcr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m pip install -r research/bcr_s06_verification/requirements.txt
+      - run: python research/bcr_s06_verification/checks.py
+      - name: Preserve bounded BCR certificate summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s06-bcr-certificates
+          path: |
+            artifacts/S06-BCR/checks.json
+            artifacts/S06-BCR/reference-010-certified.json
+            artifacts/S06-BCR/val027/contact-target-certificate.json
+            artifacts/S06-BCR/*.log
+          if-no-files-found: error

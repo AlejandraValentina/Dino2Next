@@ -1,0 +1,145 @@
+{
+  "scientific_decision_changed": false,
+  "changes": [
+    {
+      "path": "docs/science/C1.0/BASELINE_DECISION_REGISTER.md",
+      "before_sha256": "40b7a8a586eead18c2b5672e3b186449b0ca52d5fa0b4e77b7ad7829b75587d3",
+      "after_sha256": "36443acf824b0d1cc0e94a19449a580bbbec236f76c6825bd849d1ccc9423cdc",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/BASELINE_TRACEABILITY_MATRIX.md",
+      "before_sha256": "df30641c1d12db3ab284a70e91ff9596d3ed8c1dff087d48a1c6605d35b0d547",
+      "after_sha256": "2e0741b8da2c64e1c46cb7edd6b51491b2be916bf89e0d43a325967be0e4e902",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/GEN1_CONTRACT.md",
+      "before_sha256": "0a4d60ae4da68e45264da93d06c89ef08e00118e81cac2fe2e5f6d969266bd64",
+      "after_sha256": "e03065d9d7d4c4cabed52b565cdfe046bd95e6b4df29fa7cda980369f71686bb",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+      "before_sha256": "61f0e9efa632884ed7fb769774d06e8680990993ccc52c5b9fd6aba7cdd3990b",
+      "after_sha256": "cee354d9a41e8ac14b40d6bbcd5360daa1c8dbf8e1e7caf6afaf9255621b575d",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+      "before_sha256": "5b472fae0955173111cb725ab99f4f168282de41f6412f49e2060a45f987bc44",
+      "after_sha256": "98181b62e9408b20b8e9311f8b58ccde67cc0ffd469d9b98af048580df56cfc7",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+      "before_sha256": "c05581e6d79e3d33dd74a84e964cde32773594e5f499442f4539a6d535f5e65d",
+      "after_sha256": "e7b6e98a0309b259d3c9e452ebb0ff96fd83ed59c0a5c25618672b5f6d8a05eb",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/SCIENTIFIC_DECISIONS.md",
+      "before_sha256": "44490eeab3418489768960a65fdccf4a241407db03fb612911af5958d96aec57",
+      "after_sha256": "4e23d1154dfd3b756c109bf57c873b98e5027341b49a362114256517fad03f50",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+      "before_sha256": "e9cc99f96a8f6c4506f3131f50c7cd1fbcef39af6ce4ac9fb5ae567183de57f4",
+      "after_sha256": "1a3df1f90c6d982e7e5d0ed03616f27769f1c848441c15963fba76edd0f80739",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/VERIFICATION_EXECUTION_MATRIX.md",
+      "before_sha256": "14084b289588e4e46af68c51063bdd76058b27742e68e5be208889e2c516d076",
+      "after_sha256": "f27f1c7f22849ca6d6725faa63a5e2ca49adc5de4e35aaea057ebfe104c893e1",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    },
+    {
+      "path": "docs/science/C1.0/LEGACY_DISPOSITION.md",
+      "before_sha256": "5ae4b398b04ec18c49018cc91594cda992bb07941b112f33b9af8f6848e7ce7e",
+      "after_sha256": "2442c2e15b9e2aac64842306a4b5eae84f2211d2ba0caf1c9333fa379ecc9263",
+      "issues": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06"
+      ],
+      "change": "Revision header plus explicit restoration links/metric cross-reference/VAL-022 where applicable; see record"
+    }
+  ]
+}

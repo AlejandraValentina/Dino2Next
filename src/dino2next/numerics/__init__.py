@@ -57,7 +57,7 @@ def diagnostic_tuple(value):
 
 @dataclass(frozen=True, slots=True)
 class NumericalProfile:
-    contract: str = "C1.0-R3 NK-001..004 TS-001"
+    contract: str = "C1.0-R4 NK-001..004 TS-001 SV-009"
     acoustic_cfl: float = .2
     compression_threshold: float = .33
     flatten_start: float = .75
@@ -68,7 +68,7 @@ class NumericalProfile:
     def __post_init__(self):
         if (self.contract, self.acoustic_cfl, self.compression_threshold, self.flatten_start,
                 self.flatten_factor, self.guard_bisections, self.roundoff_reductions) != (
-                "C1.0-R3 NK-001..004 TS-001", .2, .33, .75, 10., 54, 8):
+                "C1.0-R4 NK-001..004 TS-001 SV-009", .2, .33, .75, 10., 54, 8):
             fail("SCIENTIFIC_CHANGE_REQUIRED", "/profile", "Only the frozen numerical profile is supported")
 
 
@@ -128,6 +128,7 @@ class FaceStates:
     source_kind: str
     recovery_identity: str
     roundoff_records: tuple = ()
+    acoustic_extrema: tuple = ()
 
     def __post_init__(self):
         u = frozen_array(self.cell_U)
@@ -151,6 +152,7 @@ class FaceStates:
         if type(self.recovery_identity) is not str or not self.recovery_identity.strip():
             fail("STAGE_INADMISSIBLE", "/recovery_identity", "Immutable nonempty thermodynamic identity required")
         object.__setattr__(self,"roundoff_records",diagnostic_tuple(self.roundoff_records))
+        object.__setattr__(self,"acoustic_extrema",diagnostic_tuple(self.acoustic_extrema))
 
 
 @dataclass(frozen=True, slots=True)
@@ -382,8 +384,24 @@ class NumericalKernel:
         flatten=1-np.maximum.reduce([chi[3:3+n],chi[4:4+n],chi[5:5+n]])
         dl=self._project(center-ext[3:3+n],center,primitive.a)
         dr=self._project(ext[5:5+n]-center,center,primitive.a)
+        # SV-009: every difference uses this center's SAME primitive basis L_i.
+        dmm=self._project(ext[3:3+n]-ext[2:2+n],center,primitive.a)
+        dpp=self._project(ext[6:6+n]-ext[5:5+n],center,primitive.a)
         amplitudes=mc(dl,dr)
+        extrema=[]
         for k in (0,2):
+            active=(~near)&(np.minimum(dl[:,k]*dr[:,k],dmm[:,k]*dpp[:,k])<0)
+            ids=np.flatnonzero(active)
+            dm,dp=dl[ids,k],dr[ids,k]
+            dc=(dm+dp)/2
+            qm,qc,qp=dm-dmm[ids,k],dp-dm,dpp[ids,k]-dp
+            s2=np.sign(qc)
+            curvature=np.minimum(np.abs(qc),np.minimum(np.maximum(s2*qm,0),np.maximum(s2*qp,0)))
+            side=np.where(s2*dc<0,np.abs(dm),np.abs(dp))
+            bound=np.minimum((3/2)*(5/4)*curvature,2*side)
+            selected=np.sign(dc)*np.minimum(np.abs(dc),bound)
+            extrema.extend((int(i),k,float(amplitudes[i,k]),float(value)) for i,value in zip(ids,selected))
+            amplitudes[ids,k]=selected
             amplitudes[near,k]=minmod(dl[near,k],dr[near,k])
         slope=self._unproject(amplitudes,center,primitive.a)
         valid=self._faces_valid(center,slope,U)
@@ -411,7 +429,7 @@ class NumericalKernel:
         left=np.vstack((plus[-1] if boundary=="periodic" else extended[3],plus))
         right=np.vstack((minus,minus[0] if boundary=="periodic" else extended[-4]))
         return FaceStates(left,right,U,center,extended[3:-3],near,contraction,flatten,boundary,self.source_kind,self.identity,
-                          primitive.roundoff_records)
+                          primitive.roundoff_records,tuple(extrema))
 
     def physical_flux(self,U):
         U=np.asarray(U,float); p=self.recover(U).V
@@ -553,6 +571,7 @@ class NumericalKernel:
             high[-1]=high[0]; low[-1]=low[0]
         records=(
             ("derived_fraction_roundoff",faces.roundoff_records),
+            ("acoustic_extrema",faces.acoustic_extrema),
             ("reconstruction_contraction",tuple((int(i),float(faces.contraction[i])) for i in np.flatnonzero(faces.contraction<1))),
             ("flattening",tuple((int(i),float(faces.flattening[i])) for i in np.flatnonzero(faces.flattening<1))),
             ("flux_b_faces",tuple(map(int,np.flatnonzero(selected)))),

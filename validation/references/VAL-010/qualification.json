@@ -9,16 +9,19 @@
     "numpy": "2.2.6",
     "mpmath": "1.3.0"
   },
-  "reference_sha256": "def29742d70790088d48f39c70e09721be4b777ada1b308a7b01db36ca131533",
-  "qualification_sha256": "8aaf7ea3dae96c02a0ea73de3dacaa55f9e8a28861169d1d55017ddf8945d90d",
-  "fixture_source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35",
+  "reference_sha256": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+  "qualification_sha256": "3a4320255968b6264fa84c7bae1c5e8c30c7b2c8e6a813e9fc4e34cf1b503314",
+  "fixture_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
   "checks": {
     "free_erf_cells_80_max": "0.00000000000000011083544955717443548237885301824746261615527740802533390009045302928845085052316",
     "rigid_cells_80_max": "0.00000000000000010143093071986290387514243162173541753059387283115926845778244185247654415564336",
     "full_waveform_fourier_80_max": "0.00000000000000000000039196096619435014970023769699961153385015715069744456524806729408900445022744446",
     "fourier_gauss16_32": 1.4973568522298576e-22,
     "cell_fourier_operator_80": "0.0000000000000000000006569036150516150490600865917026398105816329813935954661862864706263155064665781",
-    "allocation": "Pressure<1e-14 versus rigid eps/2 allocation5e-9; nonzero full Gaussian Fourier abs reference error<1e-18 versus relative amplitude allocation.001 and phase pi/800/10."
+    "allocation": "Pressure<1e-14 versus rigid eps/2 allocation5e-9; nonzero full Gaussian Fourier abs reference error<1e-18 versus relative amplitude allocation.001 and phase pi/800/10.",
+    "free_observation_certificate_sha256": "e86e70cf8fd9366ca9bf880f41cccb3a768c6184c83adaaf9c34ce1bfae7332e",
+    "free_observation_qualifier_sha256": "81968001cc092509f171d0127f7d465587359d3aa647bf448d0d40911a4920f3",
+    "free_operator": "SV-010 C_h components; interval certified mask, all101 absolute coverage. Earlier continuous-total Fourier checks are auxiliary historical diagnostics only."
   },
   "meaning": "Reference qualification only; candidate numerical acceptance remains separate."
 }

@@ -146,6 +146,13 @@ def execute(fixture_id, n, case, cfl, *, output_root=None):
     initial_ref = reference.cell_averages(state.mesh.cell_bounds, 0., **reference_parameters(case))
     reference_samples = [np.column_stack([initial_ref[name] for name in ('rho','u','p')])]
     samples, times, steps, rejected, metrics = [state.Q.copy()], [0.], [], [], []
+    # Initial sample is measured too: initialization/recovery roundoff is not
+    # silently treated as an exact candidate state.
+    initial_error = abs(initial_primitive.V[:, :3]-reference_samples[0])
+    metrics.append(dict(time=0., L1=np.sum(dx[:,None]*initial_error,axis=0).tolist(),
+        L2=np.sqrt(np.sum(dx[:,None]*initial_error**2,axis=0)).tolist(),
+        Linf=initial_error.max(axis=0).tolist(), ledger=np.zeros(12).tolist(),
+        inventory=initial_inventory.tolist(), boundary=np.zeros(12).tolist(), source=np.zeros(12).tolist()))
     start = clock.monotonic()
     end = case['time']; time = 0.
     for target in np.linspace(0., end, 101)[1:]:

@@ -1,13 +1,13 @@
 {
   "id": "VAL-007",
   "classification": "NUMERICAL_FIXTURE_ONLY",
-  "baseline": "C1.0-R3",
+  "baseline": "C1.0-R4",
   "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
-  "frozen_source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35",
+  "frozen_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
   "frozen_fiche": {
     "objective": "Stationary and advected material contact",
     "type": "NUMERICAL_VERIFICATION",
-    "physics_numerics": "Current C1.0-R3 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "physics_numerics": "Current C1.0-R4 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
     "initial_state": "gamma1.4,R1,p=1; rhoL1,rhoR2 atx=.5; u=[0,1] m/s.",
     "geometry": "x=[0,1]m,A1.",
     "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",

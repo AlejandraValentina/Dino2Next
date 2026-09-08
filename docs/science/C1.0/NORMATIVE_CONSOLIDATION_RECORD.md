@@ -11,3 +11,7 @@ All 24 mandatory VAL have a current 19-field fiche; historical experimental IDs 
 ## C1.0-R3 scoped scientific revision
 
 SCIENTIFIC_DECISION_CHANGED = YES only for BCR-S03-NASA-INVERSION. TI-001…005 derive continuous thermochemistry from unchanged RAW, preserve lower formation reference/cp, define inverse and reference identities. Original R2 corpus and manifest are byte-exact in history/C1.0-R2. Existing R2 decisions remain selected; this is not a general re-adjudication.
+
+## C1.0-R4 bounded S06 decisions
+
+BCR-S06-VERIFICATION-CONTRACT SV-008/009/010/027 is the normative companion for the four affected gates. It preserves original failed evidence, all unrelated physics, amplitude/error budgets and accepted TI-001..005. SV-009 changes only smooth acoustic limiting and requires affected kernel regressions. SV-008 preserves the original error window despite added computational guards. SV-010 separates directional reflection signals, qualifying a reference-defined observation mask and retaining absolute checks on every sample. SV-027 retains original levels and threshold and adds .000125s; reference qualification is not a two-run discrepancy mislabeled as certification. No implementation, numerical, experimental or predictive acceptance follows from document existence.

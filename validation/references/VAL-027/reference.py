@@ -25,7 +25,7 @@ def integrate(kernel, state, rhs, *, crosscheck=False):
     result = solve_ivp(derivative, (0., .1), state.Q.ravel(), method='DOP853',
                        rtol=1e-13 if crosscheck else 2.3e-14,
                        atol=1e-15 if crosscheck else 1e-16, max_step=.0001,
-                       t_eval=np.linspace(0, .1, 401))
+                       t_eval=np.arange(801)*.000125)
     if not result.success or result.t[-1] != .1:
         raise AssertionError('REFERENCE_NOT_QUALIFIED: DOP853 did not finish')
     return result.t, result.y.T.reshape((-1,)+shape), result.nfev

@@ -10,8 +10,8 @@
     "mpmath": "1.3.0"
   },
   "reference_sha256": "395804e1a8129df36b3abbf7408772bfb11fe351070f73c1cb4f03e6c18907be",
-  "qualification_sha256": "8aaf7ea3dae96c02a0ea73de3dacaa55f9e8a28861169d1d55017ddf8945d90d",
-  "fixture_source_sha256": "5d8a015d1a579012e857e765b649d3d40b7f3e1650363f0028414abe3cbd7d35",
+  "qualification_sha256": "3a4320255968b6264fa84c7bae1c5e8c30c7b2c8e6a813e9fc4e34cf1b503314",
+  "fixture_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
   "checks": {
     "cutcell_80_max": "0.0000000000000050182080713057030662076553800072106662705036132235047836548485169013384002993328",
     "allocation": "<1e-11, 10% of1e-10 p/u gate; p/u analytic constants exact."

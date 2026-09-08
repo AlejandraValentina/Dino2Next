@@ -102,3 +102,77 @@ def test_acoustic_acceptance_rejects_unqualified_l2_even_when_l1_is_second_order
     for row in rows:
         row['max_L2']=row['max_L1']
     metrics.require_smooth_orders(metrics.smooth_orders(rows),1.8)
+
+@pytest.mark.parametrize('differences,expected',[
+    ((2.6,.6,-1.4,-3.4),-.4),  # displaced quadratic maximum; MC would erase slope
+    ((-2.6,-.6,1.4,3.4),.4),  # displaced quadratic minimum
+    ((0.,1.,-1.,0.),0.),       # zero centered derivative
+    ((1.,0.,2.,3.),0.),       # detector equality retains ordinary MC
+    ((1.,1.,2.,3.),1.5),       # monotone region retains MC
+])
+def test_sv009_acoustic_quadratics_and_detector_equality(kernel,monkeypatch,differences,expected):
+    n=6;U=kernel.primitive_to_conservative(primitive(1.,0.,1e5,n))
+    dmm,dm,dp,dpp=differences
+    values=[]
+    for value in (dm,dp,dmm,dpp):
+        row=np.full((n,12),value);values.append(row)
+    calls=iter(values);captured=[]
+    monkeypatch.setattr(kernel,'_project',lambda *args:next(calls))
+    def capture(amplitudes,*args):
+        captured.append(amplitudes.copy());return np.zeros_like(amplitudes)
+    monkeypatch.setattr(kernel,'_unproject',capture)
+    faces=kernel.reconstruct(kernel.state(mesh(n),U))
+    for family in (0,2):np.testing.assert_allclose(captured[0][:,family],expected,atol=1e-15)
+    material=[1,*range(3,12)]
+    np.testing.assert_array_equal(captured[0][:,material],mc(np.full((n,10),dm),np.full((n,10),dp)))
+    if min(dm*dp,dmm*dpp)>=0:assert faces.acoustic_extrema==()
+
+
+def test_sv009_four_differences_use_common_center_basis_and_physical_ghosts(kernel,monkeypatch):
+    n=8;V=primitive(np.linspace(1.,1.2,n),np.linspace(-5,7,n),1e5+100*np.cos(np.arange(n)),n)
+    U=kernel.primitive_to_conservative(V)
+    left=np.repeat(U[:1],4,axis=0);right=np.repeat(U[-1:],4,axis=0)
+    left[-2,1]-=.5;right[1,1]+=.3
+    state=kernel.state(mesh(n),U);calls=[];actual=kernel._project
+    def project(delta,center,a):
+        calls.append((delta.copy(),center.copy(),a.copy()));return actual(delta,center,a)
+    monkeypatch.setattr(kernel,'_project',project)
+    faces=kernel.reconstruct(state,boundary='physical',ghosts=(left,right))
+    assert len(calls)==4
+    ext=kernel.recover(np.concatenate((left,U,right))).V
+    expected=[ext[4:4+n]-ext[3:3+n],ext[5:5+n]-ext[4:4+n],ext[3:3+n]-ext[2:2+n],ext[6:6+n]-ext[5:5+n]]
+    for (delta,center,a),wanted in zip(calls,expected):
+        np.testing.assert_array_equal(delta,wanted)
+        np.testing.assert_array_equal(center,calls[0][1]);np.testing.assert_array_equal(a,calls[0][2])
+    assert kernel.admissible(faces.left) and kernel.admissible(faces.right)
+
+
+def test_sv009_compression_uses_original_acoustic_minmod_and_material_mc(kernel,monkeypatch):
+    n=20;x=np.arange(n);V=primitive(1+.01*np.cos(x),np.where(x<10,100.,0.),np.where(x<10,4e5,1e5),n)
+    U=kernel.primitive_to_conservative(V);state=kernel.state(mesh(n),U)
+    actual_project=kernel._project;actual_unproject=kernel._unproject;projected=[];limited=[]
+    def project(*args):
+        result=actual_project(*args);projected.append(result.copy());return result
+    def unproject(a,*args):limited.append(a.copy());return actual_unproject(a,*args)
+    monkeypatch.setattr(kernel,'_project',project);monkeypatch.setattr(kernel,'_unproject',unproject)
+    faces=kernel.reconstruct(state)
+    assert np.any(faces.near) and np.any(faces.flattening<1)
+    for k in (0,2):np.testing.assert_array_equal(limited[0][faces.near,k],minmod(projected[0][faces.near,k],projected[1][faces.near,k]))
+    material=[1,*range(3,12)]
+    np.testing.assert_array_equal(limited[0][:,material],mc(projected[0][:,material],projected[1][:,material]))
+    assert all(not faces.near[i] for i,k,old,new in faces.acoustic_extrema)
+    assert np.any(kernel.interior_flux(faces).flux_b)
+
+
+def test_sv009_diagnostics_are_immutable_and_propagate_to_flux(kernel):
+    from dataclasses import replace
+    n=12;V=primitive(1.,0.,1e5+100*np.cos(2*np.pi*(np.arange(n)+.2)/n),n)
+    faces=kernel.reconstruct(kernel.state(mesh(n),kernel.primitive_to_conservative(V)))
+    assert faces.acoustic_extrema and {row[1] for row in faces.acoustic_extrema}<={0,2}
+    mutable=[list(row) for row in faces.acoustic_extrema]
+    detached=replace(faces,acoustic_extrema=mutable);mutable[0][0]=-123
+    assert detached.acoustic_extrema==faces.acoustic_extrema
+    flux=kernel.interior_flux(faces)
+    assert dict(flux.diagnostics)['acoustic_extrema']==faces.acoustic_extrema
+    assert NumericalProfile().contract=='C1.0-R4 NK-001..004 TS-001 SV-009'
+    with pytest.raises(ValueContractError):NumericalProfile(contract='C1.0-R3 NK-001..004 TS-001')

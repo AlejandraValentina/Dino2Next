@@ -100,3 +100,21 @@ def test_unchanged_nasa_endpoint_faces_reuse_original_conserved_state():
         faces=kernel.reconstruct(duct)
         np.testing.assert_array_equal(faces.left,np.repeat(U[:1],5,axis=0))
         np.testing.assert_array_equal(faces.right,np.repeat(U[:1],5,axis=0))
+
+
+def test_sv009_nasa_smooth_acoustic_faces_preserve_formation_and_admissibility():
+    kernel=nasa_kernel();n=12;x=2*np.pi*(np.arange(n)+.2)/n
+    Y=(0.,.1,.7,.1,.1);rows=[]
+    for pressure in 1e5+100*np.cos(x):
+        props=kernel.thermo.evaluate(700.,float(pressure),Y)
+        rows.append([props.rho,0.,pressure,*Y,0.,0.,1.,0.])
+    U=kernel.primitive_to_conservative(np.array(rows));state=kernel.state(mesh(n),U)
+    before=state.Q.copy();faces=kernel.reconstruct(state)
+    assert faces.acoustic_extrema and not np.any(faces.near)
+    assert np.all(U[:,2]<0) and np.all(faces.left[:,2]<0)
+    assert kernel.admissible(faces.left) and kernel.admissible(faces.right)
+    np.testing.assert_array_equal(state.Q,before)
+    for face in (faces.left,faces.right):
+        recovered=kernel.recover(face).V
+        np.testing.assert_allclose(recovered[:,3:8],np.broadcast_to(Y,(n+1,5)),atol=1e-15,rtol=0)
+        np.testing.assert_array_equal(recovered[:,8:],np.broadcast_to([0,0,1,0],(n+1,4)))

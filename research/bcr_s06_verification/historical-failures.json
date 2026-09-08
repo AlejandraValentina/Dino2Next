@@ -1,0 +1,24 @@
+{
+  "classification": "HISTORICAL_FAILURE_EVIDENCE_NOT_CURRENT_ACCEPTANCE",
+  "numerical_candidate": "77caaba3614d747eb12e2d36f926a7f17950ea91",
+  "published_implementation": "8cf8de398bd47dcf896989109b479f35cdfa51a6",
+  "source_baseline": "C1.0-R3",
+  "failures": {
+    "VAL008": "7/9 characteristic cones reach old computational boundary; material contact does not leave window.",
+    "VAL009": "L2 density/velocity final-two orders below1.8; missing assertion repaired, original incomplete PASS superseded.",
+    "VAL010free": "Pressure and its Fourier reference cancel identically at ct=.75 (sample75); C/Cref undefined.",
+    "VAL027": {
+      "max_density_L1": 1.030122570577774e-10,
+      "limit": 1e-10,
+      "independent_scalar_max_density_L1": 1.0303883857e-10
+    }
+  },
+  "artifact_hashes": {
+    "artifacts\\S06\\VAL-008-travel.json": "7fb9a331e51a0922b31defd304e1d7d2b1b1159ce01c53a0233996e275e6a1fd",
+    "artifacts\\S06\\independent-val010-reference-review.json": "d3d19a3b2edb35d93291b36c9b8b815463b75be49aeaac9e2b936d56a76f4714",
+    "artifacts\\VAL-009\\acceptance.json": "47b5f0fb3f551df2568b12b0ca78ba513a3d45212d1b737beef914015e8a8378",
+    "artifacts\\VAL-027\\acceptance.json": "e4ffaf2f4852850db2969501ea23a4dc02acd618197b08bae9600743a98b92ab",
+    "artifacts\\S06\\val027-audit.json": "2530de8c7cdf9147dda81dc4eff034d5f765c8aac2a9ad8f753ef9f8dc8c9820"
+  },
+  "reproduction": "Original clauses archived byte-exact; portable scalar and analytic scripts reproduce causes without using candidate outputs as an oracle."
+}

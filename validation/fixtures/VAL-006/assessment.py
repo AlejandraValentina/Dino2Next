@@ -28,10 +28,44 @@ def require_smooth_orders(orders, threshold):
         assert np.all(np.isfinite(measured)) and np.all(measured >= threshold), (norm, measured)
 
 
+def assess_reflection_sample(reference, edges, primitive, certified, n, time, sample_index):
+    scale = certified['A0'] - certified['A0_error_upper']
+    assert np.isfinite(scale) and scale > 0, 'REFERENCE_NOT_QUALIFIED: A0 enclosure'
+    pprime = primitive[:, 2]-1.
+    acoustic_velocity = np.sqrt(1.4)*primitive[:, 1]  # fixed rho0=1, never local rho
+    signals = {'incident': (pprime+acoustic_velocity)/2,
+               'reflected': (pprime-acoustic_velocity)/2, 'pressure': pprime}
+    components = {}
+    for name, signal in signals.items():
+        C = reference.fourier_coefficient(edges, signal)
+        oracle = certified[name]; Cref = oracle['C']; uncertainty = oracle['error_upper']
+        assert np.isfinite(uncertainty) and uncertainty >= 0
+        absolute = (abs(C-Cref)+uncertainty)/scale
+        result = dict(C=[C.real,C.imag], Cref=[Cref.real,Cref.imag],
+                      reference_error_upper=uncertainty,
+                      absolute_error_upper_normalized=absolute, passed=bool(absolute <= .01))
+        if name != 'pressure' and oracle['phase_eligible']:
+            lower = abs(Cref)-uncertainty
+            assert lower > 0, 'REFERENCE_NOT_QUALIFIED: observable coefficient includes zero'
+            amplitude = (abs(abs(C)-abs(Cref))+uncertainty)/lower
+            phase = None if abs(C) == 0 else float(abs(np.angle(C*np.conj(Cref))))
+            phase_upper = None if phase is None else phase+float(np.arcsin(min(1., uncertainty/abs(Cref))))
+            result.update(phase_status='UNDEFINED_ZERO_CANDIDATE' if phase is None else 'ASSESSED',
+                          amplitude_relative_error_upper=amplitude, phase_error_upper=phase_upper)
+            result['passed'] = result['passed'] and amplitude <= .01 and phase_upper is not None and phase_upper <= np.pi/n
+        elif name != 'pressure':
+            result['phase_status'] = 'NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION'
+        else:
+            result['phase_status'] = 'ABSOLUTE_COMPLEX_GATE_ONLY'
+        components[name] = result
+    return dict(time=time, sample_index=sample_index, components=components,
+                passed=bool(all(c['passed'] for c in components.values())))
+
+
 def run_case(fixture_id, case_index):
     fixture_path = ROOT/f'validation/fixtures/{fixture_id}/input.json'
     # Pins executable coverage (all meshes/CFL/cases), not only descriptive fiche.
-    approved_input_hashes = {'VAL-006': '97550cd33c23f09b911d35968041cdf2b660d218114991d563fb7f3da607df9f', 'VAL-007': 'd23e561eca59ce4b72931992f1782c106a5ca36c594c36909525474ab0d2fb6e', 'VAL-009': '862d6b5caa7b79495147649fcb3a57cc38e93afa820f3a3f5d5c1831429b65de', 'VAL-010': '71951a0ae0e6d3fa7c0508fb9200f258994417ca6cfc519511e6460b6f17d858', 'VAL-011': '88e4fa08d660ee667e60ceeb281b2f79c35055945658cd7f15b3b489b4334c7c'}
+    approved_input_hashes = {'VAL-006': '1af64df7634a365b80591d10a850a8a256239cc34267cb4d7b48daa3798d8d92', 'VAL-007': '7f3fcb2345891ed383de538ea7bf7601039759597b0a8e8f66b3b6e4c0cf1078', 'VAL-009': 'bb69023983cb6fe6521314b53701ef555a79c6896deb1cce0bd77b713b2cd781', 'VAL-010': '4c78b379f3c89e8e70a3884eaf2bfeea8b5c0f1173501362c18d60f42ba399b5', 'VAL-011': 'b933b7581a77e953f7a77212d3ef89860aa306cb39311c78212a872066a359e7'}
     assert sha256(fixture_path.read_bytes()).hexdigest() == approved_input_hashes[fixture_id]
     fixture = json.loads(fixture_path.read_text())
     source = ROOT/fixture['frozen_source']
@@ -50,21 +84,10 @@ def run_case(fixture_id, case_index):
         'VAL-006': dict(finest_density_L1_max=.004375,last_two_orders_min=.5,ledger_max=1e-10),
         'VAL-007': dict(pressure_velocity_Linf_max=1e-10,density_L1_cells_max=2,stationary_roundoff_multiplier=256),
         'VAL-009': dict(amplitude_N_factor=2,amplitude_epsilon_factor=10,phase_pi_over_N=1,smooth_order_min=1.8),
-        'VAL-010': dict(finest_rigid_normalized_L1_max=.01,free_amplitude_relative_max=.01,free_phase_pi_over_N=1),
+        'VAL-010': dict(finest_rigid_normalized_L1_max=.01,free_amplitude_relative_max=.01,free_phase_pi_over_N=1,free_absolute_complex_max=.01,free_phase_resolution=.01),
         'VAL-011': dict(rest_pressure_velocity_Linf_max=1e-10,finest_density_L1_max=2e-6,smooth_order_min=1.8,ledger_max=1e-10)}
     assert expected == normative_thresholds[fixture_id], 'Frozen threshold record changed'
     d = driver(); case = fixture['cases'][case_index]; results = []
-    if fixture_id == 'VAL-010' and case['kind'] == 'free':
-        # Frozen sample j=75: ct=.75, hence both Gaussian centers equal1.
-        # The full pressure reference is identically zero, not a tiny floating
-        # Fourier denominator. No final-only exception exists in the fiche.
-        out=ROOT/'artifacts/VAL-010'; out.mkdir(parents=True,exist_ok=True)
-        (out/f"{case['name']}-assessment.json").write_text(json.dumps(dict(
-            result='SCIENTIFIC_CHANGE_REQUIRED', sample_index=75, sample_count=101,
-            time=.75/np.sqrt(1.4), exact_reference_coefficient=0,
-            reason='VAL-010 maximum-timewise Fourier normalization requires nonzero Cref; incident and reflected pressure cancel at required sample75',
-            case=case, evidence='artifacts/S06/canonical-setup-audit.json'),indent=2)+'\n')
-        raise AssertionError('SCIENTIFIC_CHANGE_REQUIRED: VAL-010 free Cref=0 at mandatory sample75')
     for n in fixture['meshes']:
         for cfl in fixture['CFL']:
             record, state, reference = d.execute(fixture_id, n, case, cfl)
@@ -79,15 +102,26 @@ def run_case(fixture_id, case_index):
                 k, _, _ = d.setup(fixture_id, n, case)
                 raw = np.load(ROOT/f"artifacts/{fixture_id}/{case['name']}-N{n}-CFL{cfl}.npz")
                 modes = []
-                for time, q in zip(raw['times'], raw['Q']):
-                    p = k.recover(q).V[:, 2]
-                    C = reference.fourier_coefficient(state.mesh.cell_bounds, p-1)
-                    Cref = reference.exact_fourier(float(time), epsilon=case['epsilon'])
-                    assert abs(Cref) > 0, 'REFERENCE_NOT_QUALIFIED: zero Fourier reference'
-                    modes.append(dict(time=float(time), C=[C.real,C.imag], Cref=[Cref.real,Cref.imag],
-                        amplitude_relative_error=abs(abs(C)/abs(Cref)-1), phase_error=abs(np.angle(C/Cref))))
-                row.update(modes=modes, amplitude_relative_error=max(m['amplitude_relative_error'] for m in modes),
-                           phase_error=max(m['phase_error'] for m in modes))
+                assert len(raw['times']) == len(raw['Q']) == 101
+                for sample_index, (time, q) in enumerate(zip(raw['times'], raw['Q'])):
+                    v = k.recover(q).V
+                    if fixture_id == 'VAL-010':
+                        certified = reference.free_observation_reference(n, sample_index, case['epsilon'])
+                        modes.append(assess_reflection_sample(reference, state.mesh.cell_bounds, v,
+                            certified, n, float(time), sample_index))
+                    else:
+                        C = reference.fourier_coefficient(state.mesh.cell_bounds, v[:,2]-1)
+                        Cref = reference.exact_fourier(float(time), epsilon=case['epsilon'])
+                        assert abs(Cref) > 0, 'REFERENCE_NOT_QUALIFIED: zero Fourier reference'
+                        modes.append(dict(time=float(time), C=[C.real,C.imag], Cref=[Cref.real,Cref.imag],
+                            amplitude_relative_error=abs(abs(C)/abs(Cref)-1), phase_error=abs(np.angle(C/Cref))))
+                row.update(modes=modes)
+                if fixture_id == 'VAL-010':
+                    row['reflection_pass'] = all(m['passed'] for m in modes)
+                    row['absolute_complex_max'] = max(c['absolute_error_upper_normalized'] for m in modes for c in m['components'].values())
+                else:
+                    row.update(amplitude_relative_error=max(m['amplitude_relative_error'] for m in modes),
+                               phase_error=max(m['phase_error'] for m in modes))
             results.append(row)
     spatial = [x for x in results if x['CFL'] == .05]
     errors = np.asarray([x['max_L1'][0] for x in spatial])
@@ -149,8 +183,7 @@ def run_case(fixture_id, case_index):
             if case['kind'] == 'rigid':
                 assert spatial[-1]['max_L1'][2]/case['epsilon'] <= expected['finest_rigid_normalized_L1_max']
             else:
-                assert all(x['amplitude_relative_error'] <= expected['free_amplitude_relative_max'] for x in results)
-                assert all(x['phase_error'] <= np.pi/x['N'] for x in results)
+                assert all(x['reflection_pass'] for x in results), 'SV-010 directional amplitude/phase/absolute gate failed'
         elif fixture_id == 'VAL-011':
             if not case['smooth']:
                 assert max(max(x['max_Linf'][1:]) for x in results) <= expected['rest_pressure_velocity_Linf_max']

@@ -123,6 +123,11 @@ def qualify():
     assert rigiderr<mp.mpf('1e-14')
     record('010',{'free_erf_cells_80_max':str(err),'rigid_cells_80_max':str(rigiderr),'full_waveform_fourier_80_max':str(fourier_err),'fourier_gauss16_32':quad,'cell_fourier_operator_80':qualify_fourier_operator(ref),
       'allocation':'Pressure<1e-14 versus rigid eps/2 allocation5e-9; nonzero full Gaussian Fourier abs reference error<1e-18 versus relative amplitude allocation.001 and phase pi/800/10.'})
+    free_certificate=ref._free_qualified_record()
+    assert len(free_certificate['meshes'])==3 and all(len(x['samples'])==101 for x in free_certificate['meshes'])
+    result['010']['checks']['free_observation_certificate_sha256']=digest(BASE/'VAL-010/free_observation_qualification.json')
+    result['010']['checks']['free_observation_qualifier_sha256']=digest(BASE/'VAL-010/qualify_free.py')
+    result['010']['checks']['free_operator']='SV-010 C_h components; interval certified mask, all101 absolute coverage. Earlier continuous-total Fourier checks are auxiliary historical diagnostics only.'
     ref=load('011');quad=0.;err=mp.mpf(0)
     def nozzle(x):
         area=1+mp.mpf('.4')*(x-mp.mpf('.5'))**2
