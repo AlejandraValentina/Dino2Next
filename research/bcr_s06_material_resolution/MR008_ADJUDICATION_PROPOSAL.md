@@ -1,10 +1,10 @@
 # MR-008 — propuesta acotada de representación material interior 1D
 
-Estado: **PROPUESTA NO ADJUDICADA; AREA-02 CERRADO; AREA-03 ABIERTO**.
+Estado: **PROPUESTA NO ADJUDICADA; AREA-01/02/03 CERRADOS EN ALCANCE ACOTADO**.
 Autor: `/root/bcr_science_review`. Requiere revisión independiente de sus
 contribuciones antes de modificar normativa. Este documento selecciona una
-propuesta concreta para el interior de S06; no aprueba ahora su receta completa,
-congela la transferencia pendiente, acepta S06 ni declara capacidad GEN1.
+propuesta concreta para el interior de S06; no adjudica su receta, no acepta
+S06 ni declara capacidad GEN1.
 
 ## Decisión propuesta y correspondencia física
 
@@ -40,8 +40,11 @@ materiales ordenadas e identidad de recuperación/clasificación física. I12
 conserva el orden rho, momentum, energía total, cinco especies y cuatro orígenes,
 integrados físicamente sobre el intervalo. V_r=W_right-W_left y U_r=I_r/V_r.
 Los x físicos se derivan de W mediante la inversión geométrica calificada;
-no son una segunda geometría editable. Se conservan brackets, residuos y la
-convención explícita de extremos ya revisada, sin modificar W para ocultarlos.
+no son una segunda geometría editable. Conservar brackets válidos de inversión
+y residuos exactos de integral menos W. El extremo canónico derecho que coincide
+con el W almacenado del proveedor se representa por su x físico y residuo
+firmado explícitos, no por un falso bracket de raíz fuera del dominio. Rechazar
+el siguiente W representable fuera del dominio; no modificar W para ocultarlo.
 
 Propiedad de celdas base, fracciones y solapamientos son productos derivados.
 La proyección conservativa es la suma de inventarios intersectados dividida
@@ -53,8 +56,11 @@ Los productos públicos se distinguen explícitamente:
 
 - `regional_states`: estados NASA de cada I12/V, con temperaturas regionales.
 - `conservative_projection` e inventario total compensado: cantidades conservadas.
-- `pressure_volume_average`: integral(A*p) sobre solapamientos dividida por
-  integral(A). Una media de longitud, si se requiere, se nombra separadamente.
+- `pressure_volume_average`: sum_r(p_r*DeltaW_interseccion_r)/DeltaW_objetivo,
+  con la misma medida W representada que remap/proyección. Esta es la
+  discretización declarada de integral(A*p)/integral(A); no reintegrar A en
+  x redondeados para sus pesos o denominador. Registrar residuos respecto a
+  la integral física exacta. Una media de longitud se nombra separadamente.
 - Velocidad bulk y fracciones químicas/de origen proyectadas: cocientes de
   inventarios, por tanto ponderados por masa. No se intercambian con medias
   volumétricas de velocidad o composición. No se publica un ambiguo conjunto
@@ -81,7 +87,10 @@ cuya distancia al contacto sea menor que .35*dx_base_min. Se aglomera así la
 pieza geométricamente pequeña con material contiguo de la misma región; no se
 elimina el contacto. Los contactos reales que delimitan una lámina material
 fina permanecen ambos, aunque impongan dt pequeño. No se fusionan regiones
-distintas ni se borra masa pequeña por conveniencia.
+distintas ni se borra masa pequeña por conveniencia. El valor .35 y el ancho
+de parche de cuatro celdas son selecciones explícitas de esta propuesta,
+respaldadas por controles acotados y sujetas a las regresiones pendientes;
+no son teoremas heredados de Pan ni garantías de precisión universal.
 
 **Remap.** Repartir cada donante mediante solapamientos dentro de la misma
 región; conservar orden y transferencia compartida. La regla de primer orden
@@ -89,8 +98,8 @@ propuesta es I_donante por la fracción de volumen representado solapado; el
 último receptor recibe el resto conservado del donante. Recuperar y validar
 todos los receptores antes de aceptar. No corregir presión tras el remap ni
 restar su error de los resultados. La consistencia de esos volúmenes con W
-autoritativo tiene cierre acotado AREA-02; la representación completa sigue bloqueada por AREA-03 hasta
-el cierre específico descrito más abajo. El barrido monotónico optimiza solo
+autoritativo y su consumo bulk tienen cierre acotado AREA-02/03, con la
+convención explícita descrita más abajo. El barrido monotónico optimiza solo
 la búsqueda de intersecciones, con equivalencia exacta ya revisada; no cambia
 la regla de reparto.
 
@@ -109,6 +118,34 @@ su rama, incluida flux B. La igualdad de fluxes fuera del parche está probada
 para controles acotados; no prueba identidad de toda la actualización I/Q ni
 permite trasladar automáticamente anteriores PASS.
 
+**Riemann regional propuesto.** La fuente concreta es
+`local_material/prototype.py`, SHA256
+c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee,
+funciones `rhs` y `flux`, consumidas selectivamente por el híbrido. Para
+estados NASA izquierdos/derechos físicamente recuperados:
+
+    sL = min(uL-aL,uR-aR); sR = max(uL+aL,uR+aR)
+    dL = rhoL*(sL-uL); dR = rhoR*(sR-uR)
+    u* = (pR-pL+dL*uL-dR*uR)/(dL-dR)
+    p* = pL+dL*(u*-uL)
+
+Rechazar transaccionalmente `RIEMANN_INADMISSIBLE` si la operación no es
+finita, p*<=0 o no sL<u*<sR; no ajustar presión o energía. En cara material,
+s=u* y el flux ALE usa p* como se define abajo. En cara ordinaria usar FL si
+sL>=0, FR si sR<=0; en otro caso elegir K=L si u*>=0 y K=R si u*<0:
+
+    rho*K = rhoK*(sK-uK)/(sK-u*)
+    U*K = UK*(rho*K/rhoK), excepto momentum y energía
+    momentum*K = rho*K*u*
+    energy*K = rho*K*(energyK/rhoK+(u*-uK)*(u*+pK/(rhoK*(sK-uK))))
+    F_HLLC = FK+sK*(U*K-UK)
+
+Recuperar el estado estrella con NASA estricta antes de consumir ese flux;
+el fallo rechaza el trial, no habilita otra EOS. Especies y orígenes siguen
+la misma razón de densidad. F(U) tiene advección uU, con p añadido al
+momentum y pu a energía. Estas son elecciones Davis/HLLC concretas de la
+adaptación; no se atribuyen las aproximaciones de velocidad de Pan a ellas.
+No se aplica esta selección a caras bulk que pertenecen a la receta NK.
 **Balance ALE y geometría.** En cada cara G=A(x_f)(F-sU). En una frontera
 material usar s=u* derivado del Riemann y G=(0,A*p*,A*p*u*,0,...,0). En las
 caras ordinarias s=0. Un mismo valor suministra ambos signos del intercambio.
@@ -143,14 +180,16 @@ El [volume-advisor-review](reviews/volume-advisor-review.json) corroboró el
 predictor, no una garantía de positividad no lineal ni la receta de área
 completa. Para cada etapa y región:
 
-    bL = a + |u-sL|; bR = a + |u-sR|
+    bL = a + |u-s_face,L|; bR = a + |u-s_face,R|
     dt_x = .2*dx/max(bL,bR)
     dt_V = .2*V/max(A_L*bL,A_R*bR)
     Vdot = Wdot_R-Wdot_L
     dt_shrink = .5*V/(-Vdot) si Vdot<0; +infinito si no
     dt_advisor = min_regiones(dt_x,dt_V,dt_shrink)
 
-Comprobar el mismo dt en Y0 y Y1. Si el segundo predictor falla, rechazar el
+Aquí s_face,L/R son velocidades numéricas de caras Wdot/A: cero en caras
+ordinarias y u* en materiales. No son las cotas acústicas Davis sL/sR del
+Riemann. Comprobar el mismo dt en Y0 y Y1. Si el segundo predictor falla, rechazar el
 intento completo y volver a Yn; no sustituir dt a mitad de etapa. El término
 de contracción limita la pérdida FE de volumen a la mitad en aritmética exacta;
 las guardas reales siguen comprobando geometría, redondeo, EOS y constituyentes.
@@ -158,39 +197,39 @@ S16 compondrá este límite con los demás límites físicos/eventos adjudicados
 No es una nueva regla global de CFL ni prueba de coste práctico con láminas
 materiales arbitrariamente pequeñas.
 
-## Medida W: AREA-02 cerrado y AREA-03 todavía abierto
+## Medida W: cierre acotado AREA-01/02/03
 
-El [hallazgo AREA-02](reviews/area-projection-finding.json) queda preservado:
-reintegrar A en x derivados produjo error relativo de masa 1.69568416e-7 al
-proyectar un intervalo retenido de longitud 1e-10 sobre sus propios bordes.
-La [revisión independiente](reviews/area-W-overlap-review.json) cerró ese
-hallazgo en area_solver.py SHA256
-3a98afd8d3a369d296b82f067f024f0b8035652298aed6c1498ce1a8cbbd424a,
-con 16 tests independientes PASS. Este cierre no aprueba la representación completa.
+Se preservan los hallazgos y borradores anteriores. AREA-02 documentó error
+relativo de masa 1.69568416e-7 en auto-proyección de una región de longitud
+1e-10; AREA-03 documentó presión bulk cercana a 99999.983 Pa frente a presión
+regional 100000.00000012 Pa por usar una segunda medida geométrica.
+La [revisión final independiente](reviews/area03-closure-and-W-review.json)
+cierra AREA-01/02/03 en `area_hybrid/area_solver.py`, SHA256
+3c956e1a76ebe9b29331374f761d7331b11b93958e081f34e181a73a674a841a;
+`advisor.py` SHA256
+ed03f21099f20570dd3793dd42f64f547593d89ccdd836ef8848deb8f55c8c13.
+Incluye 17 tests independientes PASS y ambas presiones del reproducer
+100000.00000012126 Pa. No equivale a aprobación completa S06/GEN1.
 
-La convención propuesta de intersección es concreta: un extremo que coincide
-con una cara existente hereda su W autoritativo; un extremo físico nuevo usa
-el W canónico del proveedor de geometría. La medida de la intersección es la
-diferencia de esos W. Conservar además los residuos de integral exacta menos
-W, incluyendo el efecto de la inversión a x. Remap y muestreo usan esta misma
-medida, sin reparación de inventarios ni de EOS. Así una región completa se
-proyecta con su DeltaW, conservando también regiones materiales muy finas.
+Un extremo de intersección coincidente con cara existente hereda su W
+autoritativo; un extremo físico nuevo usa W canónico del proveedor. La
+medida de intersección es la diferencia de esos W. Conservar los residuos
+exactos integral menos W, incluyendo inversión. Remap, proyección y presión
+ponderada consumen esa misma medida. No reparar inventarios ni EOS.
 
-La misma revisión abrió **AREA-03**: la ruta bulk todavía consume I dividido
-por la integral entre x derivados, una segunda medida distinta de DeltaW.
-En dos filas homogéneas N2/T600/p1e5/u0 de longitud 1e-10, el estado regional
-recupera p=100000.00000012 Pa pero bulk recupera aproximadamente
-99999.98304328 y 99999.98302954 Pa. No se debe aceptar esa discrepancia como
-una onda física ni corregir presión o I para esconderla.
+Bulk consume Q=I/dx y area_average=DeltaW/dx; sus ghosts consumen I/DeltaW.
+Así desaparece la segunda medida integral(x_derivado). La multiplicación/
+división del puente regional deja redondeo ordinario explícito, no identidad
+aritmética universal. Áreas físicas de caras, perímetro y fuente siguen
+evaluándose en coordenadas derivadas con sus residuos registrados. El kernel
+original identificado permanece intacto; la adaptación de almacenamiento y
+geometría se declara aquí, no se esconde como equivalencia global bitwise.
 
-Antes de congelar la representación, exigir una medida consumida por bulk
-coherente con W, evidencia de los residuos de inversión y de la aritmética
-restante, reproducer AREA-03 y regresiones de proyección completa/parcial,
-remap, observables y regiones finas. Preservar la fuente bulk original y
-explicitar cualquier adaptación; revisar independientemente fórmula,
-implementación y hashes. El cierre de AREA-02 y la aprobación del advisor
-no levantan AREA-03. Esta propuesta no anticipa la corrección en curso ni
-la declara PASS.
+La trayectoria de reposo nueva cambió inventarios finales hasta 2.22644e-15
+y fluxes hasta 4.03733e-11; se preservan datos previos y nuevos. Los seis
+controles de un paso del advisor permanecieron byte idénticos. El cierre
+acredita consistencia acotada de la representación, no convergencia completa
+de ondas con área variable, joins no cubiertos ni eventos de frontera.
 ## Alcance interior y fronteras: distinción explícita
 
 Se adopta el límite de
@@ -220,14 +259,22 @@ se puede anunciar un motor GEN1 funcionando por aprobar el interior.
 
 ## Impactos mínimos y autorización de paths que debe contener la BCR
 
-La excepción de S05 debe limitarse a `src/dino2next/gasdynamics/`,
-`tests/unit/s05/` y `tests/contract/s05/`: objeto regional aditivo inmutable,
-acceso a geometría exacta ya aceptada, proyección/observables explícitos e
-identidades de serialización. Mantener significado y restricciones de Mesh1D
-y DuctState homogéneos. No introducir flux numéricos en S05 ni rehacerlo.
-La extensión puede vivir en módulos nuevos de ese paquete; no requiere
-modificar termodinámica, especies, datasets, 0D, Cd, T3 o W2.
+La excepción S05 enumera exclusivamente:
 
+- `src/dino2next/gasdynamics/regional.py` (nuevo): objeto regional inmutable,
+  acceso a geometría exacta, proyección/observables e identidad de reinicio.
+- `src/dino2next/gasdynamics/__init__.py`: únicamente exportación aditiva de
+  la nueva interfaz; conservar implementación y comportamiento existentes.
+- `src/dino2next/gasdynamics/README.md`: documentación de la nueva interfaz.
+
+No se comparte el subtree S05 completo. Las pruebas nuevas pertenecen a
+`tests/unit/s06/` y `tests/contract/s06/`, bajo ownership S06. Mantener intactos
+los tests S05 existentes y ejecutar como regresión
+`tests/unit/s05/test_cell_inventory.py` y
+`tests/contract/s05/test_geometry_balance.py`, con su conftest sin cambios:
+Mesh1D, DuctState homogéneo, inventarios, guardas y balance geométrico conservan
+su significado. No introducir flux numéricos en S05, cambiar otras rutas S05
+ni modificar termodinámica, especies, datasets, 0D, Cd, T3 o W2.
 S06 conserva la propiedad de reconstrucción, remap, flux, etapas, guardas y
 diagnósticos en sus paths vigentes, y prueba la extensión S05 bajo la excepción
 expresa. Actualizar de forma coordinada los IDs de almacenamiento/observables
@@ -279,7 +326,7 @@ presupuesto ni se certifica practicidad GEN1. Un benchmark representativo de
 integración sigue pendiente. Datos sintéticos no son validación experimental
 ni predictiva.
 
-La siguiente acción de adjudicación es cerrar AREA-03 y revisar independientemente
-el texto de transferencia resultante junto con esta propuesta. Hasta entonces
+La siguiente acción es revisar independientemente este texto final con sus
+bindings y adjudicar expresamente la propuesta interior. Hasta entonces
 solo existe una propuesta interior técnicamente delimitada, no una receta
 completa aprobada ni autorización para eludir gates o contratos de consumidores.

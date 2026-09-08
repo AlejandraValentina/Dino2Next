@@ -11,7 +11,7 @@ ID: `S05`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S03 produces `ThermoModel`: Recover NASA states.
 
 ## Normative IDs
-`CAP-003`, `PHY-004`, `NUM-001`, `NUM-004`, `VAL-011`
+`CAP-003`, `PHY-004`, `NUM-001`, `NUM-004`, `VAL-011`, `MR-008`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -25,6 +25,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### DuctState
@@ -35,6 +36,14 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - Owner: S05
 - Mutability: Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.
 - Failure semantics: MESH_NONCONFORMING, GEOMETRY_INVALID, EOS_OUT_OF_DOMAIN
+### RegionalDuctState
+- Purpose: Additive MR-008 state extension delivered and accepted with S06 under its exact S05 handoff; historical homogeneous S05 acceptance is unchanged.
+- Inputs: Geometry/base mesh identity; authoritative cumulative-volume faces W; extensive inventory I12 per interval; physical material identities; ThermoModel/recovery identity.
+- Outputs/signatures: regional_states; conservative_projection; pressure_volume_average; integrated_inventory; immutable regional restart with inverse certificates.
+- Units: W in m3; I12 in kg, kg m/s, J and constituent kg; derived x in m; pressure in Pa.
+- Owner: S05
+- Mutability: One authoritative immutable W/I representation; read-only derived coordinates, observables and snapshots; no homogeneous EOS cache of a mixed projection.
+- Failure semantics: GEOMETRY_INVALID, NONPOSITIVE_VOLUME, EOS_OUT_OF_DOMAIN, EOS_INVERSION_FAILED, UNSUPPORTED_REGIONAL_EVENT
 
 Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Internal algorithms remain subordinate to C1; this scope does not supply missing science.
 
@@ -43,13 +52,14 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Use exact piecewise geometry integration and AF+pΔA semantics.
 - Do not compute numerical face fluxes in this scope.
 - Keep closed-port storage persistent; do not derive storage from Cd or opening.
+- MR-008 additive regional extension is produced by S06 under exact file handoff; preserve accepted homogeneous behavior and existing S05 regression tests. No numerical flux implementation belongs in S05.
 
 ## Allowed paths
 - `src/dino2next/gasdynamics/`
 - `tests/unit/s05/`
 - `tests/contract/s05/`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.

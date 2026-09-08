@@ -12,7 +12,7 @@ ID: `S07`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S06 produces `NumericalKernel`: Consume reconstructed traces.
 
 ## Normative IDs
-`CAP-002`, `CAP-004`, `PHY-004`, `PHY-005`, `NUM-007`, `NUM-008`, `VAL-004`
+`CAP-002`, `CAP-004`, `PHY-004`, `PHY-005`, `NUM-007`, `NUM-008`, `VAL-004`, `MR-008`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -27,6 +27,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### BoundaryCoupler
@@ -45,6 +46,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.
 - Closed face has zero mass/energy/species exchange and physical pressure force.
 - One flux record is shared by both endpoints; never evaluate different times for each end.
+- Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.
 
 ## Allowed paths
 - `src/dino2next/boundaries/`
@@ -56,7 +58,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/expected/VAL-004/`
 - `tests/numerical/VAL-004/`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.

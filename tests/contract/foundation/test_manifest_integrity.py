@@ -68,7 +68,7 @@ def test_duplicate_manifest_key_fails(corpus):
 
 
 def test_predecessor_bytes_preserved(corpus):
- assert module.check(corpus)['version']=='C1.0-R4'
+ assert module.check(corpus)['version']=='C1.0-R5'
  p=corpus/module.PREFIX/'history/C1.0/PHYSICS_SPEC.md';p.write_bytes(p.read_bytes()+b'changed')
  with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):module.check(corpus)
 

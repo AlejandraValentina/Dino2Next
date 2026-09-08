@@ -22,3 +22,19 @@ PR #1 stays open on work/foundation-c1-a1-ux1. No merge and no S01 execution. Fi
 ## R4 bounded S06 contract update
 
 Four decisions are specified by BCR-S06-VERIFICATION-CONTRACT. S01-S05 remain accepted. S06 numerical acceptance and downstream implementation remain pending their actual gates. Foundation/readiness do not replace these results. Original counterexamples remain preserved under R3 history and portable BCR evidence.
+
+## Current R5 bounded selection and implementation status
+
+The earlier PR1-open and no-S01 statements above are historical foundation
+snapshots. Foundation and S01-S05 are accepted and merged. PR8 remains the
+unaccepted S06 implementation. PR10 carries independently reviewed MR-008
+interior material representation and MR-010 resolution obligations; final
+contractual integration still requires its exact-HEAD review and CI.
+
+R5 preserves the original R4 manifest and all 469 referenced file identities:
+54 current files are archived and 415 existing historical files are shared
+under the explicit, hash-checked shared-root-v1 layout. H-01..H-06 stay CLOSED.
+Structural readiness does not accept S06, its incomplete numerical battery,
+material boundary consumers, full-engine cost, experimental validation or
+predictive validation. Follow the actual campaign checkpoint and the R5 BCR
+for required implementation, invalidated evidence and consumer obligations.

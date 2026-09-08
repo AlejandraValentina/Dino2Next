@@ -14,7 +14,7 @@ ID: `S22`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S00 produces `FoundationChecks`: Explicit final packaging metadata handoff; no scientific dependency selection.
 
 ## Normative IDs
-`CAP-001`, `CAP-002`, `CAP-003`, `CAP-004`, `CAP-005`, `CAP-006`, `CAP-007`, `CAP-008`, `CAP-009`, `CAP-010`, `NUM-010`
+`CAP-001`, `CAP-002`, `CAP-003`, `CAP-004`, `CAP-005`, `CAP-006`, `CAP-007`, `CAP-008`, `CAP-009`, `CAP-010`, `NUM-010`, `MR-008`, `MR-010`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -27,6 +27,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### IntegratedProduct
@@ -45,6 +46,8 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Require passed milestone and heavy gates before numerical-verification claim; leave experimental claims pending if data absent.
 - System journey uses a clearly labelled synthetic verification fixture or supplied characterized engine; never fake a real-engine result.
 - Report unmet gate IDs and artifact links rather than readiness partial-success.
+- Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.
+- Retain MR-010 resolution-specific coverage and historical failures; do not aggregate four fine confirmations into whole-battery or whole-engine acceptance.
 
 ## Allowed paths
 - `src/dino2next/composition/`
@@ -53,7 +56,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `release/`
 - `pyproject.toml`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.

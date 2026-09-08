@@ -19,7 +19,13 @@ for member in manifest['members']:
 pins=load(HERE/'execution-source-pins.json')
 for path,h in pins.items():assert digest(SOURCES/path)==h,path
 cert=load(ACOUSTIC/'free_observation_qualification.json');assert cert['status']=='REFERENCE_QUALIFIED' and not cert['candidate_imports']
-for path,h in cert['source_hashes'].items():assert digest(ROOT/path)==h,path
+# This is a replay of the historical R4 diagnostic, not R5 requalification.
+# Resolve its sole changed normative input to the byte-exact R4 archive.
+historical_catalog='docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json'
+archived_catalog='docs/science/C1.0/history/C1.0-R4/EXECUTABLE_VALIDATION_FIXTURES.json'
+for path,h in cert['source_hashes'].items():
+ source=ROOT/(archived_catalog if path==historical_catalog else path)
+ assert digest(source)==h,path
 mesh=next(x for x in cert['meshes'] if x['N']==1600)
 assert mesh['incident_eligible_samples']==list(range(84)) and mesh['reflected_eligible_samples']==list(range(67,101))
 reports=[];signals={};primitives={}
@@ -78,4 +84,4 @@ for eps in (1e-5,5e-6):comparisons.append({'epsilon':eps,'CFL_sensitivity_not_or
 for cfl in (.05,.1):
  d=(primitives[cfl,1e-5]-[1,0,1])/1e-5-(primitives[cfl,5e-6]-[1,0,1])/5e-6
  comparisons.append({'CFL':cfl,'epsilon_normalized_difference_no_subtraction':abs(d).mean(axis=1).max(axis=0).tolist()})
-print(json.dumps({'result':'FOUR_COMPACT_CHECKS_PASS_NOT_FULL_TRACE_OR_BATTERY_ACCEPTANCE','cases':reports,'comparisons':comparisons,'limits':['Read-only: no solver, no file writes, no prior review overwritten.','Absent large step streams are NOT reaudited. Their manifests are bound to the previous independent full-stream review; only included empty rejection/limiter streams checked here.','Boundary/source cumulative ledgers are trusted as hash-bound execution records; raw inventories and stricter denominator recomputed, not original full-throughput ST003 rederived.','No whole VAL010/S06/GEN1 acceptance, no extrapolated engine cost.']},indent=2))
+print(json.dumps({'result':'FOUR_COMPACT_CHECKS_PASS_NOT_FULL_TRACE_OR_BATTERY_ACCEPTANCE','cases':reports,'comparisons':comparisons,'historical_reference_binding':{historical_catalog:archived_catalog},'limits':['Historical R4 qualification replay uses the original archived catalogue bytes; this does not qualify a reference for the changed R5 catalogue.','Read-only: no solver, no file writes, no prior review overwritten.','Absent large step streams are NOT reaudited. Their manifests are bound to the previous independent full-stream review; only included empty rejection/limiter streams checked here.','Boundary/source cumulative ledgers are trusted as hash-bound execution records; raw inventories and stricter denominator recomputed, not original full-throughput ST003 rederived.','No whole VAL010/S06/GEN1 acceptance, no extrapolated engine cost.']},indent=2))

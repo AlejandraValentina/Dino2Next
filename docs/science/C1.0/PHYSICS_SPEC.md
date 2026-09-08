@@ -46,3 +46,24 @@ BOUNDARY_CONTRACT.md, TIME_EVENT_PERIODICITY_CONTRACT.md and EXECUTABLE_VALIDATI
 ## C1.0-R3 thermo representation
 
 BCR-S03-NASA-INVERSION TI-001…005 supplies the runtime identity and continuous h/e/s representation, unique energy/enthalpy inversion and mandatory revalidation. Other physics remains unchanged.
+
+## C1.0-R5 bounded material and resolution adjudication
+
+BCR-S06-MATERIAL-RESOLUTION MR-008 selects the represented regional interior
+state and numerical route, retaining NASA TI-001..005 and physical pressure.
+MR-010 explicitly assigns the free-reflection precision obligations to its
+resolution table; historical R4 failures retain their original results.
+These clauses supersede only conflicting homogeneous-state assumptions for
+the represented regional route and the specified SV-010/free resolution
+obligations. R4 guard zones, unrelated physics, thresholds, masks, tails,
+operators and rigid-boundary obligations remain in force. The ordinary
+homogeneous route remains explicit; evidence reuse requires actual identity
+of consumed sources, state, arithmetic and reference, not merely equal fluxes.
+
+S06 delivers the additive S05 extension under the three exact file handoffs
+in its registry and must verify every affected gate. Interior selection does
+not implement or qualify material birth/exit, donor reversal or source/event
+coupling: their dependent consumers require explicit prior contracts and
+verification, with unsupported operations rejected transactionally. S01-S05
+historical acceptance remains; S06 acceptance, full-engine cost, experimental
+validation and predictive validation are not established by this adjudication.

@@ -75,3 +75,7 @@ Registry source: `implementation/scope_registry.json`. Every edge below names an
 - Other cross-scope edits return to the owner scope; no blanket shared directories.
 
 S18 is an aggregator, not a prerequisite for earlier scientific test execution. Each fixture owner supplies a standalone pytest acceptance adapter; S18 later consumes it. This removes the previous validation-runner dependency cycle.
+
+## MR-008 bounded S05 to S06 handoff
+- S05 retains ownership of `src/dino2next/gasdynamics/`. S06 may edit only `src/dino2next/gasdynamics/__init__.py` (additive public exposure), `src/dino2next/gasdynamics/regional.py` (regional extension), and `src/dino2next/gasdynamics/README.md` (documentation), under its explicit MR-008 material_path_handoff declaration.
+- This grants no shared directory, sibling file, S05 test path, other-scope access, or replacement of accepted homogeneous behavior. New tests remain in S06-owned test paths.

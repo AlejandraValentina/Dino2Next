@@ -11,7 +11,7 @@ ID: `S06`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S03 produces `ThermoModel`: Use consistent thermodynamic derivatives and state recovery.
 
 ## Normative IDs
-`CAP-003`, `NUM-001`, `NUM-002`, `NUM-003`, `NUM-004`, `NUM-005`, `NUM-006`, `NUM-010`, `VAL-006`, `VAL-007`, `VAL-008`, `VAL-009`, `VAL-010`, `VAL-011`, `VAL-027`, `SV-008`, `SV-009`, `SV-010`, `SV-027`
+`CAP-003`, `NUM-001`, `NUM-002`, `NUM-003`, `NUM-004`, `NUM-005`, `NUM-006`, `NUM-010`, `VAL-006`, `VAL-007`, `VAL-008`, `VAL-009`, `VAL-010`, `VAL-011`, `VAL-027`, `SV-008`, `SV-009`, `SV-010`, `SV-027`, `MR-008`, `MR-010`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -25,16 +25,17 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md` — normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### NumericalKernel
 - Purpose: Implement the already selected interior recipe and integrator through explicit replace-free interfaces.
-- Inputs: DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only
-- Outputs/signatures: reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics)
+- Inputs: DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only; MR-008 RegionalDuctState for explicitly represented material input, never fixture identity dispatch
+- Outputs/signatures: reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics); regional_step -> transactional W/I state plus shared face/source ledgers and stage/guard/remap diagnostics
 - Units: seconds; face flux per area before area weighting; extensive ledger integrals after stage quadrature
 - Owner: S06
 - Mutability: Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.
-- Failure semantics: ROE_SECANT_NONHYPERBOLIC, EOS_OUT_OF_DOMAIN, STAGE_INADMISSIBLE, SCIENTIFIC_CHANGE_REQUIRED
+- Failure semantics: ROE_SECANT_NONHYPERBOLIC, EOS_OUT_OF_DOMAIN, STAGE_INADMISSIBLE, SCIENTIFIC_CHANGE_REQUIRED, UNSUPPORTED_REGIONAL_EVENT, RIEMANN_INADMISSIBLE, GEOMETRY_VOLUME_INVERSION
 
 Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Internal algorithms remain subordinate to C1; this scope does not supply missing science.
 
@@ -43,7 +44,10 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Do not infer the sensor formula from three constants or copy research code as authority.
 - Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.
 - No global coupled timestep policy here; S16 composes all source bounds.
-- Apply R4 SV-008/009/010/027 exactly; original failed R3 evidence remains historical, numerical reuse requires demonstrated identity and relevance, and all affected gates require valid acceptance before integration.
+- Apply R4 SV-008/009/027 and SV-010 as explicitly superseded by R5 MR-010/free; preserve historical R3/R4 failures. Implement MR-008 only within its adjudicated interior applicability and exact S05 file handoff; every changed arithmetic route requires affected verification.
+- Regional state uses authoritative W and I12, explicit physical initialization, W-weighted pressure, selected patch/remap and regional Riemann flux. Preserve NASA and inventories; no pressure/energy repair or oracle routing.
+- Validate both Euler endpoints and final physical mapped state; compose the same-dt Y0/Y1 volume predictors and preserve rejected diagnostics. Unsupported birth/exit/collision/source-event operations reject transactionally until their explicit consumer contract exists.
+- MR-010 STUDY comparisons retain failures; FINAL_PRECISION requires all declared bounds for both epsilon and all101 samples. Coarse convergence and rigid coverage remain mandatory.
 
 ## Allowed paths
 - `src/dino2next/numerics/`
@@ -77,8 +81,11 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/references/VAL-027/`
 - `validation/expected/VAL-027/`
 - `tests/numerical/VAL-027/`
+- `src/dino2next/gasdynamics/__init__.py`
+- `src/dino2next/gasdynamics/regional.py`
+- `src/dino2next/gasdynamics/README.md`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.
@@ -96,6 +103,9 @@ Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixtu
 - `tests/numerical/VAL-010/test_acceptance.py`
 - `tests/numerical/VAL-011/test_acceptance.py`
 - `tests/numerical/VAL-027/test_acceptance.py`
+- `tests/unit/s06/test_regional_state.py`
+- `tests/unit/s06/test_regional_kernel.py`
+- `tests/contract/s06/test_regional_transaction.py`
 
 These are files to create by scope completion, not tests claimed to exist today. Foundation tests already exist. Scientific fixtures are data, not pytest directories: their owning acceptance test imports them and fails if they or a qualified reference are missing. Frontend unit/E2E commands use Vitest/Playwright produced by S19, never pytest.
 
@@ -106,6 +116,7 @@ Run from repository root with the activated foundation environment. S00 setup: `
 ```sh
 python scripts/run_foundation.py
 python -m pytest tests/unit/s06/test_reconstruction.py tests/unit/s06/test_flux.py tests/contract/s06/test_step_transaction.py tests/numerical/VAL-006/test_acceptance.py tests/numerical/VAL-007/test_acceptance.py tests/numerical/VAL-008/test_acceptance.py tests/numerical/VAL-009/test_acceptance.py tests/numerical/VAL-010/test_acceptance.py tests/numerical/VAL-011/test_acceptance.py tests/numerical/VAL-027/test_acceptance.py -q
+python -m pytest tests/unit/s06/test_regional_state.py tests/unit/s06/test_regional_kernel.py tests/contract/s06/test_regional_transaction.py tests/unit/s05/test_cell_inventory.py tests/contract/s05/test_geometry_balance.py -q
 ```
 
 Install scope-specific dependencies with pinned locks during the owning scope; acceptance cannot skip missing tests. Foundation commands execute now. Feature commands must execute at this scope’s completion; zero tests, unavailable adapters and unresolved contract gaps are not PASS.
@@ -134,6 +145,7 @@ Install scope-specific dependencies with pinned locks during the owning scope; a
 - `validation/references/VAL-027/`
 - `validation/expected/VAL-027/`
 - `artifacts/S06/acceptance.json`
+- `src/dino2next/gasdynamics/regional.py`
 
 The acceptance artifact records commands, exits, nonzero collected-test counts, C1 hash, commit, environment and any pending heavy gates. It is an output under ignored `artifacts/`, not a fabricated precompleted report.
 
@@ -142,6 +154,7 @@ The acceptance artifact records commands, exits, nonzero collected-test counts, 
 - Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.
 - Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.
 - Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes.
+- The regional extension and all affected original S06 gates are complete at the accepted tree; small prototype controls and N1600 confirmations alone are insufficient. Unsupported consumer events remain explicitly tracked, not silently accepted.
 
 ## Reviewer checklist
 - Read the normative IDs before reviewing the builder explanation.

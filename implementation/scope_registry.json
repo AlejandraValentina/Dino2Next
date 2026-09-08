@@ -510,7 +510,8 @@
         "PHY-004",
         "NUM-001",
         "NUM-004",
-        "VAL-011"
+        "VAL-011",
+        "MR-008"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -533,13 +534,24 @@
           "owner": "S05",
           "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
           "failures": "MESH_NONCONFORMING, GEOMETRY_INVALID, EOS_OUT_OF_DOMAIN"
+        },
+        {
+          "name": "RegionalDuctState",
+          "purpose": "Additive MR-008 state extension delivered and accepted with S06 under its exact S05 handoff; historical homogeneous S05 acceptance is unchanged.",
+          "inputs": "Geometry/base mesh identity; authoritative cumulative-volume faces W; extensive inventory I12 per interval; physical material identities; ThermoModel/recovery identity.",
+          "outputs": "regional_states; conservative_projection; pressure_volume_average; integrated_inventory; immutable regional restart with inverse certificates.",
+          "units": "W in m3; I12 in kg, kg m/s, J and constituent kg; derived x in m; pressure in Pa.",
+          "owner": "S05",
+          "mutability": "One authoritative immutable W/I representation; read-only derived coordinates, observables and snapshots; no homogeneous EOS cache of a mixed projection.",
+          "failures": "GEOMETRY_INVALID, NONPOSITIVE_VOLUME, EOS_OUT_OF_DOMAIN, EOS_INVERSION_FAILED, UNSUPPORTED_REGIONAL_EVENT"
         }
       ],
       "behavior": [
         "Distinguish cell average from integrated inventory using dx.",
         "Use exact piecewise geometry integration and AF+pΔA semantics.",
         "Do not compute numerical face fluxes in this scope.",
-        "Keep closed-port storage persistent; do not derive storage from Cd or opening."
+        "Keep closed-port storage persistent; do not derive storage from Cd or opening.",
+        "MR-008 additive regional extension is produced by S06 under exact file handoff; preserve accepted homogeneous behavior and existing S05 regression tests. No numerical flux implementation belongs in S05."
       ],
       "tests": [
         "tests/unit/s05/test_cell_inventory.py",
@@ -592,7 +604,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -620,7 +633,9 @@
         "SV-008",
         "SV-009",
         "SV-010",
-        "SV-027"
+        "SV-027",
+        "MR-008",
+        "MR-010"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -659,18 +674,21 @@
         "validation/fixtures/VAL-027/",
         "validation/references/VAL-027/",
         "validation/expected/VAL-027/",
-        "tests/numerical/VAL-027/"
+        "tests/numerical/VAL-027/",
+        "src/dino2next/gasdynamics/__init__.py",
+        "src/dino2next/gasdynamics/regional.py",
+        "src/dino2next/gasdynamics/README.md"
       ],
       "interfaces": [
         {
           "name": "NumericalKernel",
           "purpose": "Implement the already selected interior recipe and integrator through explicit replace-free interfaces.",
-          "inputs": "DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only",
-          "outputs": "reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics)",
+          "inputs": "DuctState; stage RHS callback; time and dt; boundary flux values; immutable NumericalProfile referencing C1; trial_state_mapper(Z,time) supplied by composition layer for TS-001 (identity when no reaction); callback read-only; MR-008 RegionalDuctState for explicitly represented material input, never fixture identity dispatch",
+          "outputs": "reconstruct(state) -> FaceStates; interior_flux(faces) -> FaceFluxes; propose_step(state,rhs,time,dt) -> StepAttempt(state or rejection, limiter diagnostics); regional_step -> transactional W/I state plus shared face/source ledgers and stage/guard/remap diagnostics",
           "units": "seconds; face flux per area before area weighting; extensive ledger integrals after stage quadrature",
           "owner": "S06",
           "mutability": "Frozen value objects; caller inputs borrowed read-only; methods return new values. Stateful services own their private state and expose snapshots only.",
-          "failures": "ROE_SECANT_NONHYPERBOLIC, EOS_OUT_OF_DOMAIN, STAGE_INADMISSIBLE, SCIENTIFIC_CHANGE_REQUIRED"
+          "failures": "ROE_SECANT_NONHYPERBOLIC, EOS_OUT_OF_DOMAIN, STAGE_INADMISSIBLE, SCIENTIFIC_CHANGE_REQUIRED, UNSUPPORTED_REGIONAL_EVENT, RIEMANN_INADMISSIBLE, GEOMETRY_VOLUME_INVERSION"
         }
       ],
       "behavior": [
@@ -678,7 +696,10 @@
         "Do not infer the sensor formula from three constants or copy research code as authority.",
         "Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.",
         "No global coupled timestep policy here; S16 composes all source bounds.",
-        "Apply R4 SV-008/009/010/027 exactly; original failed R3 evidence remains historical, numerical reuse requires demonstrated identity and relevance, and all affected gates require valid acceptance before integration."
+        "Apply R4 SV-008/009/027 and SV-010 as explicitly superseded by R5 MR-010/free; preserve historical R3/R4 failures. Implement MR-008 only within its adjudicated interior applicability and exact S05 file handoff; every changed arithmetic route requires affected verification.",
+        "Regional state uses authoritative W and I12, explicit physical initialization, W-weighted pressure, selected patch/remap and regional Riemann flux. Preserve NASA and inventories; no pressure/energy repair or oracle routing.",
+        "Validate both Euler endpoints and final physical mapped state; compose the same-dt Y0/Y1 volume predictors and preserve rejected diagnostics. Unsupported birth/exit/collision/source-event operations reject transactionally until their explicit consumer contract exists.",
+        "MR-010 STUDY comparisons retain failures; FINAL_PRECISION requires all declared bounds for both epsilon and all101 samples. Coarse convergence and rigid coverage remain mandatory."
       ],
       "tests": [
         "tests/unit/s06/test_reconstruction.py",
@@ -690,7 +711,10 @@
         "tests/numerical/VAL-009/test_acceptance.py",
         "tests/numerical/VAL-010/test_acceptance.py",
         "tests/numerical/VAL-011/test_acceptance.py",
-        "tests/numerical/VAL-027/test_acceptance.py"
+        "tests/numerical/VAL-027/test_acceptance.py",
+        "tests/unit/s06/test_regional_state.py",
+        "tests/unit/s06/test_regional_kernel.py",
+        "tests/contract/s06/test_regional_transaction.py"
       ],
       "dependencies": [
         {
@@ -716,7 +740,8 @@
       "issues": [],
       "acceptance": [
         "python scripts/run_foundation.py",
-        "python -m pytest tests/unit/s06/test_reconstruction.py tests/unit/s06/test_flux.py tests/contract/s06/test_step_transaction.py tests/numerical/VAL-006/test_acceptance.py tests/numerical/VAL-007/test_acceptance.py tests/numerical/VAL-008/test_acceptance.py tests/numerical/VAL-009/test_acceptance.py tests/numerical/VAL-010/test_acceptance.py tests/numerical/VAL-011/test_acceptance.py tests/numerical/VAL-027/test_acceptance.py -q"
+        "python -m pytest tests/unit/s06/test_reconstruction.py tests/unit/s06/test_flux.py tests/contract/s06/test_step_transaction.py tests/numerical/VAL-006/test_acceptance.py tests/numerical/VAL-007/test_acceptance.py tests/numerical/VAL-008/test_acceptance.py tests/numerical/VAL-009/test_acceptance.py tests/numerical/VAL-010/test_acceptance.py tests/numerical/VAL-011/test_acceptance.py tests/numerical/VAL-027/test_acceptance.py -q",
+        "python -m pytest tests/unit/s06/test_regional_state.py tests/unit/s06/test_regional_kernel.py tests/contract/s06/test_regional_transaction.py tests/unit/s05/test_cell_inventory.py tests/contract/s05/test_geometry_balance.py -q"
       ],
       "artifacts": [
         "src/dino2next/numerics/",
@@ -741,7 +766,8 @@
         "validation/fixtures/VAL-027/",
         "validation/references/VAL-027/",
         "validation/expected/VAL-027/",
-        "artifacts/S06/acceptance.json"
+        "artifacts/S06/acceptance.json",
+        "src/dino2next/gasdynamics/regional.py"
       ],
       "forbidden_changes": [
         "Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.",
@@ -752,7 +778,8 @@
         "All listed public interfaces, behavior and test files exist; dependency scopes have accepted artifacts.",
         "Every acceptance command succeeds with nonempty test collection; no skipped required fixture accepted as PASS.",
         "Owner fixture numerical execution follows its gate class; deferred HEAVY_VERIFICATION remains explicitly unverified.",
-        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes."
+        "Independent reviewer checks contract IDs, signatures, units, failure cases, path ownership and raw artifact hashes.",
+        "The regional extension and all affected original S06 gates are complete at the accepted tree; small prototype controls and N1600 confirmations alone are insufficient. Unsupported consumer events remain explicitly tracked, not silently accepted."
       ],
       "failure_semantics": {
         "IMPLEMENTATION_DEFECT": "Code violates a specified interface/behavior; repair within owner scope, preserve failing test.",
@@ -768,9 +795,19 @@
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
         "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
-        "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md"
+        "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
-      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
+      "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim.",
+      "material_path_handoff": {
+        "owner": "S05",
+        "normative_id": "MR-008",
+        "paths": [
+          "src/dino2next/gasdynamics/__init__.py",
+          "src/dino2next/gasdynamics/regional.py",
+          "src/dino2next/gasdynamics/README.md"
+        ]
+      }
     },
     {
       "id": "S07",
@@ -784,7 +821,8 @@
         "PHY-005",
         "NUM-007",
         "NUM-008",
-        "VAL-004"
+        "VAL-004",
+        "MR-008"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -818,7 +856,8 @@
         "Implement BC-001…008 including domain-limited roots, donor reversal, sonic sampling and partial aperture/wall force.",
         "Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.",
         "Closed face has zero mass/energy/species exchange and physical pressure force.",
-        "One flux record is shared by both endpoints; never evaluate different times for each end."
+        "One flux record is shared by both endpoints; never evaluate different times for each end.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions."
       ],
       "tests": [
         "tests/unit/s07/test_boundary_donor.py",
@@ -884,7 +923,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -1593,7 +1633,8 @@
         "VAL-003",
         "VAL-018",
         "VAL-022",
-        "VAL-024"
+        "VAL-024",
+        "MR-008"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -1636,7 +1677,8 @@
         "Reject W2/K duplicate representation of the same measured region.",
         "Adiabatic shear has zero total-energy source; heat remains separately signed.",
         "No zero/default substitution for missing Hcc/Cq required characterization.",
-        "Use PH-003/004 exact thermal/loss formulas and VAL-018/024 source coupons. S18 owns the experimental VAL-022 fixture."
+        "Use PH-003/004 exact thermal/loss formulas and VAL-018/024 source coupons. S18 owns the experimental VAL-022 fixture.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions."
       ],
       "tests": [
         "tests/unit/s14/test_source_ledgers.py",
@@ -1722,7 +1764,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -1844,7 +1887,8 @@
         "NUM-008",
         "NUM-009",
         "NUM-010",
-        "VAL-021"
+        "VAL-021",
+        "MR-008"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -1878,7 +1922,8 @@
         "Roll back state and ledgers together on rejected global steps; expose every retry.",
         "No maxcycle-as-convergence, phase shifting or averaging distinct attractors.",
         "Cancellation only at accepted-state boundaries; warm start has an explicit hashed predecessor.",
-        "Implement TS-001…006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory."
+        "Implement TS-001…006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions."
       ],
       "tests": [
         "tests/unit/s16/test_period_lags.py",
@@ -1968,7 +2013,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -1979,7 +2025,8 @@
       "status": "NOT_STARTED",
       "normative_ids": [
         "CAP-010",
-        "NUM-010"
+        "NUM-010",
+        "MR-008"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -2012,7 +2059,8 @@
         "Project edits produce revisions; a submitted run reads only its pinned revision.",
         "Idempotent duplicate submission returns same run; conflicting request key rejects.",
         "Preserve missing/unavailable outputs and measurement/simulation source distinction.",
-        "Publish artifacts atomically with manifest; never turn cancellation/failure into success."
+        "Publish artifacts atomically with manifest; never turn cancellation/failure into success.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions."
       ],
       "tests": [
         "tests/integration/s17/test_run_lifecycle.py",
@@ -2073,7 +2121,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -2087,7 +2136,9 @@
         "NUM-010",
         "VAL-025",
         "VAL-026",
-        "VAL-022"
+        "VAL-022",
+        "MR-008",
+        "MR-010"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -2129,7 +2180,9 @@
         "Import owner adapters without editing their fixture/reference/expected directories.",
         "Keep NOT_IMPLEMENTED, NOT_EXECUTED, BLOCKED_CONTRACT and FAIL distinct; none counts as PASS.",
         "Heavy jobs run only by explicit gate invocation; no PR_FAST dispatch.",
-        "Use EXR-001/002 and current VAL-022/025/026 data contracts; missing measured data are unavailable, never fabricated."
+        "Use EXR-001/002 and current VAL-022/025/026 data contracts; missing measured data are unavailable, never fabricated.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.",
+        "Retain MR-010 resolution-specific coverage and historical failures; do not aggregate four fine confirmations into whole-battery or whole-engine acceptance."
       ],
       "tests": [
         "tests/unit/s18/test_gate_aggregation.py",
@@ -2209,7 +2262,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     },
@@ -2558,7 +2612,9 @@
         "CAP-008",
         "CAP-009",
         "CAP-010",
-        "NUM-010"
+        "NUM-010",
+        "MR-008",
+        "MR-010"
       ],
       "architecture": [
         "docs/architecture/A1.0/DOMAIN_MODEL.md",
@@ -2589,7 +2645,9 @@
         "Wire existing modules only; defects in other modules return to their owner scope.",
         "Require passed milestone and heavy gates before numerical-verification claim; leave experimental claims pending if data absent.",
         "System journey uses a clearly labelled synthetic verification fixture or supplied characterized engine; never fake a real-engine result.",
-        "Report unmet gate IDs and artifact links rather than readiness partial-success."
+        "Report unmet gate IDs and artifact links rather than readiness partial-success.",
+        "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.",
+        "Retain MR-010 resolution-specific coverage and historical failures; do not aggregate four fine confirmations into whole-battery or whole-engine acceptance."
       ],
       "tests": [
         "tests/system/s22/test_product_replay.py",
@@ -2659,7 +2717,8 @@
         "docs/science/C1.0/BOUNDARY_CONTRACT.md",
         "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md",
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
-        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md"
+        "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim."
     }

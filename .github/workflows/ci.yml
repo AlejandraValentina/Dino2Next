@@ -24,6 +24,26 @@ jobs:
           path: artifacts/readiness.json
           if-no-files-found: error
 
+  s06-material-resolution-bcr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m pip install -r requirements/foundation.txt -r research/bcr_s06_verification/requirements.txt
+      - run: python -m pip install --no-build-isolation --no-deps -e .
+      - name: Verify bounded material and portable acoustic evidence
+        run: |
+          mkdir -p artifacts/S06-MR
+          python research/bcr_s06_material_resolution/check_package.py --controls > artifacts/S06-MR/r5-bounded-controls.log
+      - name: Preserve bounded controls, without whole-scope acceptance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s06-material-resolution-controls
+          path: artifacts/S06-MR/r5-bounded-controls.log
+          if-no-files-found: error
+
   thermo-representation-bcr:
     runs-on: ubuntu-latest
     steps:

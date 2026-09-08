@@ -14,7 +14,7 @@ ID: `S14`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S13 produces `CombustionModel`: Combined source verification includes prescribed chemistry.
 
 ## Normative IDs
-`CAP-007`, `CAP-008`, `PHY-007`, `PHY-008`, `NUM-005`, `VAL-003`, `VAL-018`, `VAL-022`, `VAL-024`
+`CAP-007`, `CAP-008`, `PHY-007`, `PHY-008`, `NUM-005`, `VAL-003`, `VAL-018`, `VAL-022`, `VAL-024`, `MR-008`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -28,6 +28,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### PhysicalSources
@@ -46,6 +47,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Adiabatic shear has zero total-energy source; heat remains separately signed.
 - No zero/default substitution for missing Hcc/Cq required characterization.
 - Use PH-003/004 exact thermal/loss formulas and VAL-018/024 source coupons. S18 owns the experimental VAL-022 fixture.
+- Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.
 
 ## Allowed paths
 - `src/dino2next/heat_transfer/`
@@ -66,7 +68,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/expected/VAL-024/`
 - `tests/numerical/VAL-024/`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.
