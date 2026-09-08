@@ -1,0 +1,44 @@
+{
+  "reviewer": "/root/bcr_science_review",
+  "classification": "FINAL_COMPATIBILITY_DIAGNOSIS_CONFIRMED_REQUIRED_VAL010_FAILURE",
+  "candidate_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "independent_recomputed_coefficient_max_difference": 2.2878543656664133e-17,
+  "consumed_runtime_sha256": "c9d513317f7a11ead0da1bf90e22b9333c64a343d267d638e99ae69978a35149",
+  "consumed_reference_sha256": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+  "driver_source_sha256": "dcf0ba8b4de2189529ab83ce0718d387e42888cb6539344522875b59c2f50924",
+  "failed_samples": [
+    67,
+    68,
+    82,
+    83
+  ],
+  "failure_kind": "RELATIVE_AMPLITUDE_ONLY_ON_RETAINED_REFERENCE_MASK",
+  "result": "S06_NOT_ACCEPTED",
+  "findings": [
+    "The sole authorized fine trajectory completed all101 samples; its four failing samples exactly match the independent linear reduction.",
+    "Every absolute-complex and phase gate passes at this fine level. Relative amplitude remains2.277972% reflected and2.464360% incident at the worst retained tail samples, exceeding1%.",
+    "The right-boundary versus extended-folded linear comparison isolates negligible added reflection error. The verified local modified equation explains the pre-existing dispersive profile error and its exposure in the fixed-window observation.",
+    "No demonstrated boundary or observation algebra defect justifies changing implementation there. R4 failures remain failures; no threshold, mask, time, method or resolution has been changed.",
+    "Current c9 runtime differs from earlier controls by exact NASA memoization; inspected NUMERICAL_FIXTURE_ONLY batch path is unchanged and bypasses that cache. This diagnostic says nothing about NASA thermodynamics or its acceptance."
+  ],
+  "pending_decision": "Explicit scientific adjudication of accuracy/convergence assessment levels if retaining this method, or separately adjudicated method change if every original level retains1% accuracy. Neither is adopted here.",
+  "limitations": [
+    "The modified equation is local asymptotic analysis, not a global nonlinear-limiter error bound.",
+    "This is numerical compatibility diagnosis, not complete S06, experimental or predictive validation.",
+    "No additional trajectories were launched during this final review."
+  ],
+  "large_driver_log": {
+    "bytes": 1172040772,
+    "read_policy": "64KiB footer plus streaming SHA256; never loaded as JSON"
+  },
+  "evidence": {
+    "artifacts/S06-compatibility/VAL010/N800/assessment.json": "e0a5706b473d4e7e5881b4477d11d49bfa30676a8a2d7a6d25271ddde71e142f",
+    "artifacts/S06-compatibility/VAL010/N800/free-full-N800-CFL0.05.npz": "66d0b9c2e665311b4e8a85e674e38fa873a77ff3e76394ebf66c718f46bd9233",
+    "artifacts/S06-compatibility/VAL010/N800/free-full-N800-CFL0.05.json": "fe609f3b0d41440140e9316b126cea008742e3d0f596e70253491afa3cecad4b",
+    "artifacts/S06-compatibility/VAL010/fine-comparison.json": "18adf8989fe4b7f39657cfdfcc4d45695298349950613c0b1c17c6df029660d0",
+    "artifacts/S06-compatibility/VAL010/mechanism.json": "9fffc2ac4597cbb1c35cec4a6a9e8f56ff24d22be6b3807bae57d8f499500820",
+    "artifacts/S06-compatibility/VAL010/modified-equation.json": "a544a76e570d2456013e72c867dffbadfef9f2a4b8ad41f57c006c011fde31aa",
+    "artifacts/S06-compatibility/VAL010/linear-N800-CFL0.05.json": "acd9efb210a4e9b640f8144dbab21bab8dae51bebbbd0b2ba16c6a1fcc8310b5",
+    "artifacts/S06-compatibility/VAL010/linear-N800-CFL0.05.npz": "af4779ddf6697ef2c8d756dd6d8faeaa40320d15cf97cee17ff6d5be3267aefd"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "source_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "classification": "HISTORICAL_FAILURE_EVIDENCE_NOT_NEW_ACCEPTANCE",
+  "files": {
+    "contact-compatibility.json": {
+      "original_path": "artifacts/S06-compatibility/VAL008/report.json",
+      "sha256": "93865e0d5deff5ebf32e3812118b1cc7f84506c91eef19318de5984a17dc7ea8",
+      "projection": null
+    },
+    "contact-spatial-contributions.json": {
+      "original_path": "artifacts/S06-compatibility/VAL008/spatial-contributions.json",
+      "sha256": "de3385de0c128df55b1a9e8bc21b9733baf9ad7768a9c9092f4de20b7d84ec23",
+      "projection": null
+    },
+    "contact-control-brent.json": {
+      "original_path": "artifacts/S06-compatibility/VAL008/parent-control.json",
+      "sha256": "9cbdcdcc959213e5158208da80c93653c4c5fb2c64d551fcc512a24d20dffbc8",
+      "projection": null
+    },
+    "contact-independent-review.json": {
+      "original_path": "artifacts/S06-compatibility/VAL008/independent-diagnostic-review.json",
+      "sha256": "cf12f47814586dc8f701a3c8e31777b13e585f7d31c1e25fe0a254e5ea6353ff",
+      "projection": null
+    },
+    "acoustic-maxima.json": {
+      "original_path": "artifacts/S06-compatibility/VAL010/maxima-and-all-samples.json",
+      "sha256": "06828bd84579fcc6c9355825c3ad4c283958b8de6d6b69ed9c35edf7320b176c",
+      "projection": null
+    },
+    "acoustic-fine-review.json": {
+      "original_path": "artifacts/S06-compatibility/VAL010/final-review.json",
+      "sha256": "cfeb91c05ffb84ad82bfed702abc0842c71e5feb4ae9dfdef8d1a576653970e2",
+      "projection": null
+    },
+    "acoustic-modified-equation.json": {
+      "original_path": "artifacts/S06-compatibility/VAL010/modified-equation.json",
+      "sha256": "a544a76e570d2456013e72c867dffbadfef9f2a4b8ad41f57c006c011fde31aa",
+      "projection": null
+    },
+    "contact-window.npz": {
+      "original_path": "artifacts/S06-compatibility/VAL008/decomposition.npz",
+      "original_sha256": "76fc2a1eeadb294b657615f2688ca7110ef95c09de40cc93cc522054fb1c243e",
+      "sha256": "76fc2a1eeadb294b657615f2688ca7110ef95c09de40cc93cc522054fb1c243e",
+      "projection": "Exact preserved 36-sample physical-window diagnostic arrays including Q_candidate/Q_exact_average/A/B/C; no fullguard orfluxledger claim"
+    },
+    "acoustic-N200.npz": {
+      "original_path": "artifacts/S06-R4/free-end-control/free-full-N200-CFL0.2.npz",
+      "original_sha256": "f7743ba826c75ca20811143778c0fb08b2e2b3e56c6094ab6dcd31467596eae3",
+      "sha256": "602b60ea2548a08ec059ddd4d861d2b991b7f96dcf06029e17b89592136c45f1",
+      "projection": "All101times, physicaledges andfirst3Qcolumns only; constantgamma mathematicalEOS suffices to reproduce pressure/velocity/observation; notfullchemical/ledger evidence"
+    },
+    "acoustic-N400.npz": {
+      "original_path": "artifacts/S06-R4/free-end-diagnostic/N400/free-full-N400-CFL0.2.npz",
+      "original_sha256": "eba568b55a1ed102d4ca069f771673cb8dd1426b2718772f6c1e7debeaeb5ed9",
+      "sha256": "722ec7015e363579f190e3a34f12585b27e3d9cbe44003addbd7da405571c70a",
+      "projection": "All101times, physicaledges andfirst3Qcolumns only; constantgamma mathematicalEOS suffices to reproduce pressure/velocity/observation; notfullchemical/ledger evidence"
+    },
+    "acoustic-N800.npz": {
+      "original_path": "artifacts/S06-compatibility/VAL010/N800/free-full-N800-CFL0.05.npz",
+      "original_sha256": "66d0b9c2e665311b4e8a85e674e38fa873a77ff3e76394ebf66c718f46bd9233",
+      "sha256": "b0bfa87a5c7b0e3f7e9f51eb0e535f485949127f32d4efc9f60517aea8bff7db",
+      "projection": "All101times, physicaledges andfirst3Qcolumns only; constantgamma mathematicalEOS suffices to reproduce pressure/velocity/observation; notfullchemical/ledger evidence"
+    }
+  },
+  "retained_failures": "R3 andR4 originalfailures andinterruptedfullbatteries remain failures/incomplete; this extraction doesnotchangeassessment"
+}
