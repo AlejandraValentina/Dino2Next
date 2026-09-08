@@ -1,0 +1,32 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "BOUNDED_HYBRID_FUNCTION_GUARDS_CORROBORATED_NOT_GEN1_APPROVAL",
+  "source_sha256": {
+    "research/bcr_s06_material_resolution/local_material/hybrid.py": "2bdb700ee7342ceb6f685dff89f0fa009da7b52b1e7adae97fb0ca36c90fe404",
+    "research/bcr_s06_material_resolution/local_material/prototype.py": "c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee",
+    "research/bcr_s06_material_resolution/material/prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32",
+    "research/bcr_s06_material_resolution/local_material/kernel_source.py": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+    "research/bcr_s06_material_resolution/local_material/run_hybrid.py": "2e918c523043cb859329102ade613bb2b2217b20075fe0bf45d62045a5462b2d",
+    "research/bcr_s06_material_resolution/local_material/hybrid-manifest.json": "19f669204706856aa9fe19b771f535eaed5a955083694653db058f0959b910a1",
+    "research/bcr_s06_material_resolution/local_material/hybrid-result.json": "5bd1bc0ccfd31aecb0c7b6e26bffe4ce1f251adf11d2ecd23d6495ac79b36164"
+  },
+  "independent_tests": "5 passed in 4.03s",
+  "steps": 62,
+  "guard_candidates": 124,
+  "max_pressure_error_Pa": 3.785535227507353e-07,
+  "max_velocity_error": 7.097611387507641e-10,
+  "independent_ST003_max": 1.3530040992017985e-16,
+  "findings": [
+    {
+      "severity": "EVIDENCE_METADATA",
+      "path": "local_material/run_hybrid.py:48",
+      "detail": "Source mapping uses p.name and silently collapses local/global prototype.py. Both dependencies separately hash-bound by this independent review and existing manifests; fix future driver provenance to relative paths."
+    }
+  ],
+  "limits": [
+    "Only one thermal contact crossing, unit area, all accepted states audited. No qualified shock accuracy or full VAL008 acceptance.",
+    "First-order local patch and remap persist. Physical boundary events, tiny physical regions, variable-area coupling and accuracy transitions remain open.",
+    "Original pinned bulk calls and common flux guard inspected; meaningful author tests independently executed. No new unconditional positivity theorem inferred.",
+    "This result permits a next bounded directed shock investigation; it does not adjudicate GEN1 replacement or approve S06."
+  ]
+}

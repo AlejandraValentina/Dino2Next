@@ -1,0 +1,7 @@
+{
+  "published_head": "2d04c16fc77b603596f7db04a8ed7d35953afa17",
+  "tree": "6654f11dd9e564aebfab2f0fd3bf94216415fc59",
+  "execution_worktree_equivalent_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+  "all_tracked_pinned_sources_match_published_tree": true,
+  "storage_driver_is_hash_bound_artifact_not_claimed_tracked_in_this_commit": true
+}

@@ -1,0 +1,221 @@
+{
+  "classification": "RESEARCH_GEOMETRY_ALGEBRA_AND_NASA_AUDIT_NOT_TRANSPORT_ACCEPTANCE",
+  "stationary_thermal_contact": [
+    {
+      "bounds": [
+        0.5,
+        1.0
+      ],
+      "volume": 0.7916666666666666,
+      "inventory_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_rhs": [
+        0.0,
+        0.0
+      ],
+      "face_flux": [
+        [
+          0.0,
+          125000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          200000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_area_source": [
+        0.0,
+        75000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bounds": [
+        1.0,
+        1.5
+      ],
+      "volume": 1.2916666666666667,
+      "inventory_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geometry_rhs": [
+        0.0,
+        0.0
+      ],
+      "face_flux": [
+        [
+          0.0,
+          200000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          325000.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "pressure_area_source": [
+        0.0,
+        125000.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "manufactured_static_fluid_moving_mesh": [
+    {
+      "T": 600.0,
+      "Y": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "initial_specific_internal_energy": 139537.784828289,
+      "max_pressure_error_Pa": 1.212902134284377e-07,
+      "max_temperature_error_K": 7.275957614183426e-10,
+      "max_inventory_identity_normalized_diagnostic": 7.275957614183426e-13,
+      "max_exact_inverse_volume_roundoff": 3.566010185774484e-16,
+      "final_W": [
+        0.5542169996328152,
+        2.690602624065447
+      ],
+      "final_Q": [
+        1.1996908205104777,
+        4.3655745685100564e-13,
+        167402.19957286457,
+        0.0,
+        0.0,
+        1.1996908205104777,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1996908205104777,
+        0.0
+      ]
+    },
+    {
+      "T": 1800.0,
+      "Y": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "initial_specific_internal_energy": -7479172.371707257,
+      "max_pressure_error_Pa": 1.6174453776329756e-07,
+      "max_temperature_error_K": 2.9103830456733704e-09,
+      "max_inventory_identity_normalized_diagnostic": 7.275957614183426e-13,
+      "max_exact_inverse_volume_roundoff": 3.566010185774484e-16,
+      "final_W": [
+        0.5542169996328152,
+        2.690602624065447
+      ],
+      "final_Q": [
+        0.6282239037605676,
+        4.3655745685100564e-13,
+        -4698594.864252116,
+        0.0,
+        0.0,
+        0.0,
+        0.6282239037605676,
+        0.0,
+        0.0,
+        0.0,
+        0.6282239037605676,
+        0.0
+      ]
+    }
+  ],
+  "exact_position_FE_counterexample_volume_defect": "1/5000",
+  "exact_unequal_speed_SSPRK_final_volume_defect": "-7/6000000",
+  "elapsed_seconds": 0.5557725368998945,
+  "source_sha256": {
+    "research/bcr_s06_material_resolution/regional_geometry/geometry.py": "0f2ac4d8ed8556b1f9b161201deccde446338219cc3ab18340632a3a4fb520c2",
+    "research/bcr_s06_material_resolution/regional_geometry/run_controls.py": "eaa099c35cfe1ed9b00ae475693ecdf7d1176e2188a3d700cccd83710c986799",
+    "src/dino2next/gasdynamics/__init__.py": "e20f6870c04e94bbe620355d2003c8a03aa6b37caae5df864a3bb0622cba6867",
+    "src/dino2next/thermo/__init__.py": "6aeab6e87099e364b3d07a5764612af8ad74c1912941a01cfa0f58702cdcdede",
+    "docs/science/C1.0/datasets/thermo_runtime_continuous_v1.json": "5b4d37b8821fcfac906fc2ff726945b6455049e229f16c56ba66b40bec0eda7a"
+  }
+}

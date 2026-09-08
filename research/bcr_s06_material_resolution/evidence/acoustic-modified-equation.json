@@ -1,0 +1,78 @@
+{
+  "classification": "LOCAL_MODIFIED_EQUATION_DIAGNOSTIC_NOT_GLOBAL_BOUND",
+  "exact_rational_checks": [
+    {
+      "CFL": "1/5",
+      "modified_operator": [
+        "0",
+        "-1",
+        "0",
+        "9/100",
+        "-31/250"
+      ]
+    },
+    {
+      "CFL": "1/20",
+      "modified_operator": [
+        "0",
+        "-1",
+        "0",
+        "67/800",
+        "-7999/64000"
+      ]
+    },
+    {
+      "CFL": "1/7",
+      "modified_operator": [
+        "0",
+        "-1",
+        "0",
+        "17/196",
+        "-171/1372"
+      ]
+    }
+  ],
+  "semidiscrete_stencil": {
+    "1": "1/4",
+    "0": "3/4",
+    "-1": "-5/4",
+    "-2": "1/4"
+  },
+  "equation": "q_t+c q_x = c*dx^2*(1+2nu^2)/12*q_xxx - c*dx^3*(1-nu^3)/8*q_xxxx + higher terms, nu=c*dt/dx",
+  "scope": "Centered-slope cells in the constant-coefficient acoustic reduction. SSPRK2 adds +c^3 dt^2/6 to the dispersive coefficient. No extension to globally active limiter/guard regions is asserted.",
+  "gaussian": "g_xxx=epsilon/sigma^3*(12z-8z^3)*exp(-z^2). Leading perturbation is t*kappa3*g_xxx. On the full line its zeroth, first and second moments vanish; leading distortion is not simple broadening.",
+  "profile_L1_formula": "t*kappa3/sigma^3*(4+16exp(-3/2))/sqrt(pi), neglecting higher orders and limiter modifications",
+  "observation": "For a pulse far from endpoints, integral(g_xxx exp(-ikx))=(ik)^3 C, primarily a small Fourier phase change. Clipping atx=1 introduces endpoint terms [gxx w]+ik[gx w]+(ik)^2[g w], exposing the profile deformation in component amplitude.",
+  "cancellation": "At ct=.75 the exact profiles cancel, but g_xxx is odd aroundx=1. Folding the dispersed pulse produces delta p=2*t*kappa3*g_xxx on the interior, while g_xxx(1)=0 preserves exact pressure release at the boundary.",
+  "predictions": [
+    {
+      "N": 200,
+      "CFL": 0.2,
+      "sample50_profile_L1_leading_prediction": 0.03843865555459571,
+      "sample50_profile_L1_actual_linear": 0.03816646681129716,
+      "prediction_ratio": 0.992918879722212,
+      "sample75_total_pressure_absolute_leading_prediction": 0.032693509903588824,
+      "sample75_total_pressure_absolute_actual_linear": 0.02850165127624325
+    },
+    {
+      "N": 400,
+      "CFL": 0.2,
+      "sample50_profile_L1_leading_prediction": 0.009609663888648928,
+      "sample50_profile_L1_actual_linear": 0.0096228947056033,
+      "prediction_ratio": 1.0013768241124437,
+      "sample75_total_pressure_absolute_leading_prediction": 0.008173879858253281,
+      "sample75_total_pressure_absolute_actual_linear": 0.007989611183644304
+    },
+    {
+      "N": 800,
+      "CFL": 0.05,
+      "sample50_profile_L1_leading_prediction": 0.002235581529650966,
+      "sample50_profile_L1_actual_linear": 0.0022377542323308037,
+      "prediction_ratio": 1.0009718736047069,
+      "sample75_total_pressure_absolute_leading_prediction": 0.0019015916266351119,
+      "sample75_total_pressure_absolute_actual_linear": 0.001893780781474584
+    }
+  ],
+  "code_sha256": "507bfafca3cc3f4433eb35285301ce49dbb90ac79f65e6ff28d87a7baf61f675",
+  "limits": "Predictions are explanatory asymptotics, not acceptance tolerances, rigorous uncertainty bounds or permission to change SV009."
+}

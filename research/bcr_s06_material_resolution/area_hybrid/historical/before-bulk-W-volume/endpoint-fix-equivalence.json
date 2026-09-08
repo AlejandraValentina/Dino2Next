@@ -1,0 +1,13 @@
+{
+  "classification": "ENDPOINT_REPRESENTATION_SOFTWARE_FIX_NO_SCIENTIFIC_ACCEPTANCE",
+  "previous_rest_arrays_bitwise": {
+    "initial_W": true,
+    "initial_inventory": true,
+    "final_W": true,
+    "final_inventory": true,
+    "faces": true,
+    "sources": true
+  },
+  "prior_source_sha256": "5f3731bfd920382ebc0db993ef924ecfc47ad5c37ccc4cb2662128edf91c51b4",
+  "source_sha256": "f23a7442e941f21d074e157a08c84acbe8f390e602216c0dd6d9c630ef7a998c"
+}

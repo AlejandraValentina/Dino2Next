@@ -1,0 +1,46 @@
+{
+  "records": [],
+  "remap_records": [
+    {
+      "transaction_id": 1,
+      "old_intervals": 32,
+      "new_intervals": 31,
+      "residual": [
+        0.0,
+        1.4210854715202004e-14,
+        -4.656612873077393e-10,
+        0.0,
+        0.0,
+        1.1102230246251565e-16,
+        -5.551115123125783e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "transaction_records": [
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "kind": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "failure": null,
+      "derived_records_range": [
+        0,
+        0
+      ],
+      "derived_records": [],
+      "remap_records_range": [
+        0,
+        1
+      ],
+      "stage_records_range": [
+        0,
+        0
+      ]
+    }
+  ]
+}

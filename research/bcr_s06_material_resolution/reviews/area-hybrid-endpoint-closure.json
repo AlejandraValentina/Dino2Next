@@ -1,0 +1,12 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "AREA_01_CLOSED_BOUNDED_ENDPOINT_REPRESENTATION",
+  "source_sha256": "f23a7442e941f21d074e157a08c84acbe8f390e602216c0dd6d9c630ef7a998c",
+  "independent_tests": "8 passed in 1.84s",
+  "basis": "Exact canonical endpoint alone recognized, unchanged authoritative W and I, explicit exact residual record; nextafter outside rejected, interior uses original inverse. Original geometry source remains hash-pinned unchanged. All six rest-control NPZ arrays independently verified bitwise old/new.",
+  "old_raw_sha256": "63ecfe48982dd5dc557049cc1d901fb212c70645caedd3f4a47048e5fe95a639",
+  "new_raw_sha256": "63ecfe48982dd5dc557049cc1d901fb212c70645caedd3f4a47048e5fe95a639",
+  "limits": [
+    "Volume/area-aware dt design, moving material variable-area waves and broader numerical evidence remain open. This closes the endpoint defect only, not the whole GEN1 recipe."
+  ]
+}

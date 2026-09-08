@@ -1,0 +1,196 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "AREA01_AREA02_AREA03_CLOSED_FOR_BOUNDED_W_REPRESENTATION",
+  "source_sha256": "3c956e1a76ebe9b29331374f761d7331b11b93958e081f34e181a73a674a841a",
+  "advisor_sha256": "ed03f21099f20570dd3793dd42f64f547593d89ccdd836ef8848deb8f55c8c13",
+  "independent_tests": "17 passed in 3.45s",
+  "probe_bulk_pressure": [
+    100000.00000012126,
+    100000.00000012126
+  ],
+  "probe_regional_pressure": [
+    100000.00000012126,
+    100000.00000012126
+  ],
+  "source_audit": "Bulk Q=I/dx and area_average=DeltaW/dx now use one represented volume. Ghosts I/DeltaW. Regional unit bridge multiply/divide leaves ordinary rounding explicitly documented, no second geometric volume. Original pinned kernel unchanged; physical face area/perimeter/source remain evaluated at derived coordinates with recorded inverse residuals.",
+  "raw_changes_verified": {
+    "rest-control.npz": {
+      "initial_W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "initial_inventory": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "final_W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "final_inventory": {
+        "bitwise": false,
+        "max_abs": 2.2264430299401288e-15
+      },
+      "faces": {
+        "bitwise": false,
+        "max_abs": 4.037328179199514e-11
+      },
+      "sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      }
+    },
+    "advisor-controls.npz": {
+      "area0-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      }
+    }
+  },
+  "findings": [],
+  "limits": [
+    "This closes concrete consistency defects and supports bounded interior BCR selection; no variable-area full waveform convergence or full S06/GEN1 acceptance.",
+    "Rest trajectory is new evidence with reported small arithmetic changes, not reused bitwise PASS. Six one-step advisor controls remain byte-identical.",
+    "Boundary birth/exit, joins beyond covered geometry, physical source/event coupling and all applicable fixture gates remain separate explicit obligations."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "contact": {
+    "max_pressure_error": 7744.062529833056,
+    "samples": 36,
+    "classification": "PRESERVED_INCOMPLETE_FAILURE_NOT_PASS"
+  },
+  "200": {
+    "samples": 101,
+    "max_difference_from_recorded_absolute_metric": 6.100199477498958e-10,
+    "classification": "HISTORICAL_REQUIRED_FAILURE_REPRODUCED_NOT_NEW_PASS"
+  },
+  "400": {
+    "samples": 101,
+    "max_difference_from_recorded_absolute_metric": 3.8334656195931904e-11,
+    "classification": "HISTORICAL_REQUIRED_FAILURE_REPRODUCED_NOT_NEW_PASS"
+  },
+  "800": {
+    "samples": 101,
+    "max_difference_from_recorded_absolute_metric": 2.327627478780625e-11,
+    "classification": "HISTORICAL_REQUIRED_FAILURE_REPRODUCED_NOT_NEW_PASS"
+  }
+}

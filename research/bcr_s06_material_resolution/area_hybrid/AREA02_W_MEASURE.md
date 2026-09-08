@@ -1,0 +1,11 @@
+# AREA-02: one authoritative volume measure
+
+Previous source/results are preserved in historical/before-W-overlap. The defect was real: reintegrating A between rounded derived x coordinates while dividing by authoritative ΔW used two different measures. A region of width 1e-10 amplified endpoint inverse roundoff into a relative inventory discrepancy around 1.7e-7 even when projected onto its own faces.
+
+The local correction uses W intersections consistently: overlap=max(0,min(Wdonor_R,Wtarget_R)−max(Wdonor_L,Wtarget_L)). An observation/remap face already present in the state inherits its authoritative W exactly. A new physical coordinate obtains its canonical cumulative integral from the unchanged accepted geometry provider. Physical x remains derived, with exact rational integral-minus-W residual recorded; projection_records explicitly retains observation coordinates, W and those signed residuals. There is no clipping, inventory repair, energy correction or tolerance relaxation.
+
+Donor fractions use overlap/ΔW and remap retains the original final-remainder assignment. Projection onto the state's own faces therefore has unit donor fractions and reproduces all inventory bytes, including the reviewed thin N2 region. Remap and projection now use the same geometric measure as recovery and time integration.
+
+This explicitly resolves an implementation convention within the proposed W-authoritative representation; it must be included in the scientific/architecture review. It does not claim ΔW equals the integral between rounded reported x endpoints exactly. That difference remains diagnosed and cannot silently redefine a physical observable under an unrelated coordinate convention. No accepted contract is modified. Prior projection results are historical; previous evolution is checked separately because this change affects only projection/remap and their records.
+
+Added test reproduces A=1+2x² with edges[0,.9,.9000000001,1], distinct region labels and equal NASA N2/600K. Self-projection inventory and overlap volume bytes are exact; remap conservation, endpoint residual/nextafter tests, existing guards, and advisor checks are rerun. The advisor only updates its dependency hash; no timestep formula changes.

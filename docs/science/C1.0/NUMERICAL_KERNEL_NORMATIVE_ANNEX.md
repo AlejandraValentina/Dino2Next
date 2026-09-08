@@ -142,3 +142,24 @@ Se selecciona conservación estricta sobre double-flux de energía no conservati
 ## NK-005 — physical boundary companion
 
 NUM-007/008 are specified in BOUNDARY_CONTRACT.md BC-001…008. The interior AR-002 recipe above remains unchanged. No flux B at physical faces. T3 geometry and W2 do not use an algebraic Cd boundary. NASA roots are domain bounded; the old research 200K bracket is not permitted. TS-001 defines how the joint guard tests actual reaction-mapped SSPRK2 states.
+
+## C1.0-R5 bounded material and resolution adjudication
+
+BCR-S06-MATERIAL-RESOLUTION MR-008 selects the represented regional interior
+state and numerical route, retaining NASA TI-001..005 and physical pressure.
+MR-010 explicitly assigns the free-reflection precision obligations to its
+resolution table; historical R4 failures retain their original results.
+These clauses supersede only conflicting homogeneous-state assumptions for
+the represented regional route and the specified SV-010/free resolution
+obligations. R4 guard zones, unrelated physics, thresholds, masks, tails,
+operators and rigid-boundary obligations remain in force. The ordinary
+homogeneous route remains explicit; evidence reuse requires actual identity
+of consumed sources, state, arithmetic and reference, not merely equal fluxes.
+
+S06 delivers the additive S05 extension under the three exact file handoffs
+in its registry and must verify every affected gate. Interior selection does
+not implement or qualify material birth/exit, donor reversal or source/event
+coupling: their dependent consumers require explicit prior contracts and
+verification, with unsupported operations rejected transactionally. S01-S05
+historical acceptance remains; S06 acceptance, full-engine cost, experimental
+validation and predictive validation are not established by this adjudication.

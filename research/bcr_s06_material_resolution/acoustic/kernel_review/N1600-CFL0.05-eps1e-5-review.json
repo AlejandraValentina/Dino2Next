@@ -1,0 +1,4835 @@
+{
+  "case": "free-full",
+  "N": 1600,
+  "CFL": 0.05,
+  "epsilon": 1e-05,
+  "recorded_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+  "source_sha256": {
+    "src/dino2next/numerics/__init__.py": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+    "validation/references/VAL-010/reference.py": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+    "validation/fixtures/VAL-010/input.json": "4c78b379f3c89e8e70a3884eaf2bfeea8b5c0f1173501362c18d60f42ba399b5",
+    "validation/fixtures/VAL-006/gamma_adapter.py": "67e2895509fdc5fbc2845b855e21dea450698e20e99b7a94894f031b55d81dfe"
+  },
+  "raw_sha256": "26981c7ddd745545f04800f3272b754215e553c55b274419172a793bfb8706ee",
+  "execution_record_sha256": "26bd14d44a8fdcdff8fd8588db2734d10f894a4204854346db782aaa753ef4ac",
+  "assessment_sha256": "eb4ec64e7b1ddb6e17a7166b943799b293bb45f9bad889f302c3eff20bc64b24",
+  "cost_sha256": "35f6cdedad9577e5c7c39efd4cf98a6a4710d6bb8ad51d285d89efadda95e814",
+  "GNU_time_report": "\tCommand being timed: \"python artifacts/S06-exact-sums/streaming/run.py --cfl 0.05 --epsilon 1e-5 --observation /mnt/e/dino2/Dino2Next-S06-MR/research/bcr_s06_material_resolution/acoustic/observation.py --output artifacts/S06-MR-kernel/N1600-CFL0.05-eps1e-5\"\n\tUser time (seconds): 2119.75\n\tSystem time (seconds): 2.28\n\tPercent of CPU this job got: 98%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 35:47.35\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 131724\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 188974\n\tVoluntary context switches: 60031\n\tInvoluntary context switches: 6825\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 0\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+  "execution_elapsed_seconds": 2105.269307000097,
+  "steps": 32100,
+  "retries": 0,
+  "limiter_trace_count": 0,
+  "trace_manifests": {
+    "steps": {
+      "format": "gzip JSONL",
+      "file": "free-full-N1600-CFL0.05-steps.jsonl.gz",
+      "count": 32100,
+      "sha256": "3636149561748fbed9aaa01477798f8bcaa4bd4c4f0479edeeacb9ed5325676d",
+      "uncompressed_sha256": "7c20c3c6f638d44ad4f974089ca18f02e3dee4a8770f9942276ede2af8e2825f",
+      "bytes": 423169845
+    },
+    "rejections": {
+      "format": "gzip JSONL",
+      "file": "free-full-N1600-CFL0.05-rejections.jsonl.gz",
+      "count": 0,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 20
+    },
+    "limiter_records": {
+      "format": "gzip JSONL",
+      "file": "free-full-N1600-CFL0.05-limiters.jsonl.gz",
+      "count": 0,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 20
+    }
+  },
+  "failed_samples": [],
+  "strict_ledger_upper_from_lower_denominator": 8.628723099647178e-14,
+  "reported_original_ledger_max": 8.628717637537861e-14,
+  "all_samples": [
+    {
+      "sample": 0,
+      "time": 0.0,
+      "components": {
+        "incident": {
+          "C": [
+            -3.6060395693354616e-19,
+            -8.646266067784301e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "absolute_upper": 7.386170289738703e-11,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.385969041386989e-11,
+          "phase_upper": 4.153324058815935e-11
+        },
+        "reflected": {
+          "C": [
+            3.1993917806424613e-19,
+            2.787556171335811e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "absolute_upper": 7.340509551142474e-11,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -4.073751742848838e-20,
+            -8.646266067505545e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "absolute_upper": 8.319592974345558e-11,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "time": 0.008451542547285166,
+      "components": {
+        "incident": {
+          "C": [
+            -5.429059007804462e-08,
+            -8.629204484392108e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            -8.629204636468814e-07
+          ],
+          "absolute_upper": 2.738356114041244e-07,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.389283720643217e-10,
+          "phase_upper": 2.738356293584026e-07
+        },
+        "reflected": {
+          "C": [
+            -1.6645626523962213e-13,
+            -9.326171275232478e-18
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "absolute_upper": 1.9255904030987518e-07,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.429075653430988e-08,
+            -8.629204484485375e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            -8.629204636468814e-07
+          ],
+          "absolute_upper": 4.661607031267391e-07,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "time": 0.016903085094570332,
+      "components": {
+        "incident": {
+          "C": [
+            -1.083669180799228e-07,
+            -8.578087076501952e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            -8.578087677044649e-07
+          ],
+          "absolute_upper": 5.476229994291201e-07,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.742677296454336e-10,
+          "phase_upper": 5.47622979514973e-07
+        },
+        "reflected": {
+          "C": [
+            -3.322494241783559e-13,
+            -4.2724878626722713e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "absolute_upper": 3.843099931053193e-07,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -1.0836725032934699e-07,
+            -8.578087076929193e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            -8.578087677044649e-07
+          ],
+          "absolute_upper": 9.301036294968623e-07,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 3,
+      "time": 0.025354627641855497,
+      "components": {
+        "incident": {
+          "C": [
+            -1.6201556754852771e-07,
+            -8.493115583206795e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            -8.493116924514691e-07
+          ],
+          "absolute_upper": 8.21357021502788e-07,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2952691555385722e-09,
+          "phase_upper": 8.213569848667533e-07
+        },
+        "reflected": {
+          "C": [
+            -4.96687762915459e-13,
+            -9.363067105784553e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "absolute_upper": 5.744940092824667e-07,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -1.6201606423629051e-07,
+            -8.493115584143106e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            -8.493116924514691e-07
+          ],
+          "absolute_upper": 1.3897411023061095e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 4,
+      "time": 0.033806170189140665,
+      "components": {
+        "incident": {
+          "C": [
+            -2.1502480993482307e-07,
+            -8.37462535127634e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            -8.374627719619715e-07
+          ],
+          "absolute_upper": 1.0950364820599942e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.6933956729511363e-09,
+          "phase_upper": 1.0950364634228326e-06
+        },
+        "reflected": {
+          "C": [
+            -6.591235951832721e-13,
+            -1.7260042347288454e-16
+          ],
+          "Cref": [
+            -4.740197309125851e-96,
+            -2.926047721682624e-98
+          ],
+          "absolute_upper": 7.623620008146474e-07,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -2.1502546905841832e-07,
+            -8.374625353002345e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            -8.374627719619715e-07
+          ],
+          "absolute_upper": 1.843024461734609e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 5,
+      "time": 0.04225771273642583,
+      "components": {
+        "incident": {
+          "C": [
+            -2.6718544013959074e-07,
+            -8.223084011507205e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            -8.22308768511887e-07
+          ],
+          "absolute_upper": 1.3686447707750145e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.097546237962222e-09,
+          "phase_upper": 1.3686447608550074e-06
+        },
+        "reflected": {
+          "C": [
+            -8.18897080381864e-13,
+            -2.614223508327775e-16
+          ],
+          "Cref": [
+            -1.345660086724622e-93,
+            -1.5171557436924405e-95
+          ],
+          "absolute_upper": 9.471508149191779e-07,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -2.671862590366713e-07,
+            -8.223084014121423e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            -8.22308768511887e-07
+          ],
+          "absolute_upper": 2.287915581814742e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 6,
+      "time": 0.050709255283710994,
+      "components": {
+        "incident": {
+          "C": [
+            -3.182916022210646e-07,
+            -8.039089633891682e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            -8.039094880296274e-07
+          ],
+          "absolute_upper": 1.6421997093576915e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.4745911492839285e-09,
+          "phase_upper": 1.642199748413795e-06
+        },
+        "reflected": {
+          "C": [
+            -9.75403000502738e-13,
+            -3.8538945989105203e-16
+          ],
+          "Cref": [
+            -3.546752126814178e-91,
+            -4.056277544898363e-93
+          ],
+          "absolute_upper": 1.1281604877011849e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -3.1829257762406524e-07,
+            -8.03908963774558e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            -8.039094880296274e-07
+          ],
+          "absolute_upper": 2.722523691706387e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 7,
+      "time": 0.05916079783099616,
+      "components": {
+        "incident": {
+          "C": [
+            -3.6814160200005405e-07,
+            -7.823368364825324e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            -7.823375440694244e-07
+          ],
+          "absolute_upper": 1.9160416644927562e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.8900897450351166e-09,
+          "phase_upper": 1.9160416960651157e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1282953436882265e-12,
+            -3.799943622935621e-16
+          ],
+          "Cref": [
+            -8.631172923201505e-89,
+            -1.0011925817133959e-90
+          ],
+          "absolute_upper": 1.304990761639447e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -3.6814273029539783e-07,
+            -7.823368368625272e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            -7.823375440694244e-07
+          ],
+          "absolute_upper": 3.1456678456591644e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 8,
+      "time": 0.06761234037828133,
+      "components": {
+        "incident": {
+          "C": [
+            -4.165387028427878e-07,
+            -7.576771563596829e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            -7.576780712388055e-07
+          ],
+          "absolute_upper": 2.190511221983921e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.2950071077473026e-09,
+          "phase_upper": 2.1905112632959435e-06
+        },
+        "reflected": {
+          "C": [
+            -1.2772579092950396e-12,
+            -1.5429210212633471e-16
+          ],
+          "Cref": [
+            -1.9393562833038344e-86,
+            -2.282179919000921e-88
+          ],
+          "absolute_upper": 1.4772759340654851e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -4.1653998010069737e-07,
+            -7.576771565139748e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            -7.576780712388055e-07
+          ],
+          "absolute_upper": 3.5562792922087644e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 9,
+      "time": 0.0760638829255665,
+      "components": {
+        "incident": {
+          "C": [
+            -4.632919014160612e-07,
+            -7.300272445652228e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            -7.300283892111915e-07
+          ],
+          "absolute_upper": 2.4650609082794247e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.6361392361964533e-09,
+          "phase_upper": 2.4650610532995494e-06
+        },
+        "reflected": {
+          "C": [
+            -1.4212833157751018e-12,
+            4.8964366150288796e-17
+          ],
+          "Cref": [
+            -4.0234344253442372e-84,
+            -4.80428838951002e-86
+          ],
+          "absolute_upper": 1.6438510030054518e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -4.6329332269937726e-07,
+            -7.300272445162586e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            -7.300283892111915e-07
+          ],
+          "absolute_upper": 3.951627733074731e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 10,
+      "time": 0.08451542547285167,
+      "components": {
+        "incident": {
+          "C": [
+            -5.08216682357194e-07,
+            -6.994962236808243e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            -6.994976186496071e-07
+          ],
+          "absolute_upper": 2.7394176453240705e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.007547457824518e-09,
+          "phase_upper": 2.7394178487213387e-06
+        },
+        "reflected": {
+          "C": [
+            -1.5595622534154869e-12,
+            1.7919046089435116e-16
+          ],
+          "Cref": [
+            -7.707093867486791e-82,
+            -9.340299448235028e-84
+          ],
+          "absolute_upper": 1.8037799145991314e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.082182419194483e-07,
+            -6.994962235016348e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            -6.994976186496071e-07
+          ],
+          "absolute_upper": 4.329608656954393e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 11,
+      "time": 0.09296696802013683,
+      "components": {
+        "incident": {
+          "C": [
+            -5.511357467326281e-07,
+            -6.662045867169344e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            -6.662062505572767e-07
+          ],
+          "absolute_upper": 3.013793378157806e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.329034521934559e-09,
+          "phase_upper": 3.013793711161157e-06
+        },
+        "reflected": {
+          "C": [
+            -1.6917403132711947e-12,
+            2.8365914760606034e-16
+          ],
+          "Cref": [
+            -1.3631440337291403e-79,
+            -1.677069050296987e-81
+          ],
+          "absolute_upper": 1.9566527549762484e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.51137438472942e-07,
+            -6.662045864332757e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            -6.662062505572767e-07
+          ],
+          "absolute_upper": 4.689284191699469e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 12,
+      "time": 0.10141851056742199,
+      "components": {
+        "incident": {
+          "C": [
+            -5.918797111415478e-07,
+            -6.302837216886335e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            -6.302856707546814e-07
+          ],
+          "absolute_upper": 3.2882039926484116e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.598260944613245e-09,
+          "phase_upper": 3.2882045266122577e-06
+        },
+        "reflected": {
+          "C": [
+            -1.8173154894071406e-12,
+            3.5918567759436563e-16
+          ],
+          "Cref": [
+            -2.226144460880184e-77,
+            -2.781029798910529e-79
+          ],
+          "absolute_upper": 2.1018889137596887e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.91881528457037e-07,
+            -6.302837213294481e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            -6.302856707546814e-07
+          ],
+          "absolute_upper": 5.029459453586825e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 13,
+      "time": 0.10987005311470716,
+      "components": {
+        "incident": {
+          "C": [
+            -6.302877761890068e-07,
+            -5.918753931341893e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            -5.9187764135975e-07
+          ],
+          "absolute_upper": 3.562450984616208e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.916382514723551e-09,
+          "phase_upper": 3.5624516490711512e-06
+        },
+        "reflected": {
+          "C": [
+            -1.9356159202219518e-12,
+            3.6164594005199393e-16
+          ],
+          "Cref": [
+            -3.356825023531944e-75,
+            -4.259232210370701e-77
+          ],
+          "absolute_upper": 2.2387113242969937e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.302897118049262e-07,
+            -5.918753927725434e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            -5.9187764135975e-07
+          ],
+          "absolute_upper": 5.348656827451651e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 14,
+      "time": 0.11832159566199232,
+      "components": {
+        "incident": {
+          "C": [
+            -6.662083616157608e-07,
+            -5.511311824294255e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            -5.51133741317545e-07
+          ],
+          "absolute_upper": 3.836721426155905e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.236229369047976e-09,
+          "phase_upper": 3.836722217930685e-06
+        },
+        "reflected": {
+          "C": [
+            -2.0462945965825077e-12,
+            3.6798517628295237e-16
+          ],
+          "Cref": [
+            -4.673812113182214e-73,
+            -6.024689887262016e-75
+          ],
+          "absolute_upper": 2.3667186638654413e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.662104079103564e-07,
+            -5.511311820614402e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            -5.51133741317545e-07
+          ],
+          "absolute_upper": 5.646379134778017e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 15,
+      "time": 0.1267731382092775,
+      "components": {
+        "incident": {
+          "C": [
+            -6.994997040195971e-07,
+            -5.082118897915915e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            -5.082147681874154e-07
+          ],
+          "absolute_upper": 4.110971899969808e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.5597859015223906e-09,
+          "phase_upper": 4.110972813410753e-06
+        },
+        "reflected": {
+          "C": [
+            -2.1485369819320574e-12,
+            3.608342534409177e-16
+          ],
+          "Cref": [
+            -6.008755981794573e-71,
+            -7.870871557587178e-73
+          ],
+          "absolute_upper": 2.484968862510071e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.995018525565795e-07,
+            -5.082118894307565e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            -5.082147681874154e-07
+          ],
+          "absolute_upper": 5.921572401647093e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 16,
+      "time": 0.13522468075656266,
+      "components": {
+        "incident": {
+          "C": [
+            -7.300304165700823e-07,
+            -4.632868995369527e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            -4.632901035484923e-07
+          ],
+          "absolute_upper": 4.385227443882137e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.860084702407232e-09,
+          "phase_upper": 4.385228509470749e-06
+        },
+        "reflected": {
+          "C": [
+            -2.241899194215679e-12,
+            3.694742856252901e-16
+          ],
+          "Cref": [
+            -7.133003207921334e-69,
+            -9.497364147026668e-71
+          ],
+          "absolute_upper": 2.59294854656063e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.300326584692768e-07,
+            -4.632868991674783e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            -4.632901035484923e-07
+          ],
+          "absolute_upper": 6.173879674214562e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 17,
+      "time": 0.14367622330384783,
+      "components": {
+        "incident": {
+          "C": [
+            -7.576800073714236e-07,
+            -4.1653351162263175e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            -4.165370445279784e-07
+          ],
+          "absolute_upper": 4.659447381554066e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.211223955671692e-09,
+          "phase_upper": 4.659448531532835e-06
+        },
+        "reflected": {
+          "C": [
+            -2.3257536375728835e-12,
+            4.2848443008422284e-16
+          ],
+          "Cref": [
+            -7.818775710748716e-67,
+            -1.058481425928377e-68
+          ],
+          "absolute_upper": 2.689931866031398e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.576823331250605e-07,
+            -4.1653351119414743e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            -4.165370445279784e-07
+          ],
+          "absolute_upper": 6.4029253490849105e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 18,
+      "time": 0.152127765851133,
+      "components": {
+        "incident": {
+          "C": [
+            -7.82339355157059e-07,
+            -3.6813624197281865e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            -3.6814010409038685e-07
+          ],
+          "absolute_upper": 4.933582469435128e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.608244719664761e-09,
+          "phase_upper": 4.933583642909513e-06
+        },
+        "reflected": {
+          "C": [
+            -2.398696448806483e-12,
+            5.607375677948492e-16
+          ],
+          "Cref": [
+            -7.913848366589622e-65,
+            -1.0896108454496322e-66
+          ],
+          "absolute_upper": 2.7742951680665862e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.82341753853508e-07,
+            -3.681362414120812e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            -3.6814010409038685e-07
+          ],
+          "absolute_upper": 6.607976228629096e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 19,
+      "time": 0.16057930839841816,
+      "components": {
+        "incident": {
+          "C": [
+            -8.039111399245383e-07,
+            -3.1828609428732416e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            -3.1829028284916587e-07
+          ],
+          "absolute_upper": 5.20752417221464e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.989463808496736e-09,
+          "phase_upper": 5.20752538971287e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4572068454055452e-12,
+            8.443406939061835e-16
+          ],
+          "Cref": [
+            -7.396456227927624e-63,
+            -1.0360391531460355e-64
+          ],
+          "absolute_upper": 2.841966472773934e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.039135971313837e-07,
+            -3.182860934429835e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            -3.1829028284916587e-07
+          ],
+          "absolute_upper": 6.787057602668908e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 20,
+      "time": 0.16903085094570333,
+      "components": {
+        "incident": {
+          "C": [
+            -8.223102270680507e-07,
+            -2.6717980599045063e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            -2.671843152745376e-07
+          ],
+          "absolute_upper": 5.481368553215471e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.2848477936002854e-09,
+          "phase_upper": 5.481369928513802e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4942602270549776e-12,
+            1.82863444811157e-15
+          ],
+          "Cref": [
+            -6.383388064848569e-61,
+            -9.099268619162377e-63
+          ],
+          "absolute_upper": 2.8848218106693098e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.223127213282786e-07,
+            -2.6717980416181656e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            -2.671843152745376e-07
+          ],
+          "absolute_upper": 6.937066243409286e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 21,
+      "time": 0.1774823934929885,
+      "components": {
+        "incident": {
+          "C": [
+            -8.374640031436397e-07,
+            -2.1501907198814627e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            -2.1502389327242336e-07
+          ],
+          "absolute_upper": 5.755121830972343e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.545549387123918e-09,
+          "phase_upper": 5.755123408368454e-06
+        },
+        "reflected": {
+          "C": [
+            -2.497967672353808e-12,
+            4.6169875639843406e-15
+          ],
+          "Cref": [
+            -5.087158025332221e-59,
+            -7.381962494593687e-61
+          ],
+          "absolute_upper": 2.889113880300072e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.374665011113125e-07,
+            -2.1501906737115867e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            -2.1502389327242336e-07
+          ],
+          "absolute_upper": 7.053804075691771e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 22,
+      "time": 0.18593393604027367,
+      "components": {
+        "incident": {
+          "C": [
+            -8.493126625611909e-07,
+            -1.6200974877248247e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            -1.620148701986354e-07
+          ],
+          "absolute_upper": 6.0286441670061046e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.810345215775037e-09,
+          "phase_upper": 6.028645939264984e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4537569129934044e-12,
+            1.101960744714768e-14
+          ],
+          "Cref": [
+            -3.743697366194528e-57,
+            -5.532000132371838e-59
+          ],
+          "absolute_upper": 2.838004843914247e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.49315116318104e-07,
+            -1.6200973775287497e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            -1.620148701986354e-07
+          ],
+          "absolute_upper": 7.135724254624091e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 23,
+      "time": 0.19438547858755884,
+      "components": {
+        "incident": {
+          "C": [
+            -8.578094437489053e-07,
+            -1.0836104160188977e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            -1.0836644844972701e-07
+          ],
+          "absolute_upper": 6.302116925729505e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.052626929450025e-09,
+          "phase_upper": 6.302118920126825e-06
+        },
+        "reflected": {
+          "C": [
+            -2.350844845933586e-12,
+            2.394126567650692e-14
+          ],
+          "Cref": [
+            -2.544093936497352e-55,
+            -3.8295525912171577e-57
+          ],
+          "absolute_upper": 2.7190924858170693e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.578117945937518e-07,
+            -1.0836101766062418e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            -1.0836644844972701e-07
+          ],
+          "absolute_upper": 7.190874354982211e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 24,
+      "time": 0.20283702113484398,
+      "components": {
+        "incident": {
+          "C": [
+            -8.62920813605837e-07,
+            -5.428467916666886e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            -5.4290353836708564e-08
+          ],
+          "absolute_upper": 6.575647826092189e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.169982345711336e-09,
+          "phase_upper": 6.575650196265279e-06
+        },
+        "reflected": {
+          "C": [
+            -2.190639005707638e-12,
+            4.65348456899008e-14
+          ],
+          "Cref": [
+            -1.5965338732061476e-53,
+            -2.4489532413278947e-55
+          ],
+          "absolute_upper": 2.5342342332342946e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.629230042448422e-07,
+            -5.4284632631823165e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            -5.4290353836708564e-08
+          ],
+          "absolute_upper": 7.24012201980565e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 25,
+      "time": 0.21128856368212914,
+      "components": {
+        "incident": {
+          "C": [
+            -8.64626599668682e-07,
+            5.921901776283879e-12
+          ],
+          "Cref": [
+            -8.64626606750139e-07,
+            1.084761738324892e-87
+          ],
+          "absolute_upper": 6.849124141390281e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.207899139226383e-09,
+          "phase_upper": 6.849126974746771e-06
+        },
+        "reflected": {
+          "C": [
+            -1.991358740585053e-12,
+            8.119323783678462e-14
+          ],
+          "Cref": [
+            -9.252129943245146e-52,
+            -1.4467425685918998e-53
+          ],
+          "absolute_upper": 2.3050952079280307e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.646285910274224e-07,
+            6.003095014147084e-12
+          ],
+          "Cref": [
+            -8.64626606750139e-07,
+            -1.4467425685918998e-53
+          ],
+          "absolute_upper": 7.3125249397560945e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 26,
+      "time": 0.2197401062294143,
+      "components": {
+        "incident": {
+          "C": [
+            -8.629200699788913e-07,
+            5.4296499570017534e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            5.4290353836708564e-08
+          ],
+          "absolute_upper": 7.1225628997439994e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.10875545988342e-09,
+          "phase_upper": 7.122566340158528e-06
+        },
+        "reflected": {
+          "C": [
+            -1.7844743687722826e-12,
+            1.2878877396893446e-13
+          ],
+          "Cref": [
+            -4.9514256091208995e-50,
+            -7.895737894316081e-52
+          ],
+          "absolute_upper": 2.069274025448853e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.629218544532605e-07,
+            5.429662835879152e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            5.4290353836708564e-08
+          ],
+          "absolute_upper": 7.433128227041076e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 27,
+      "time": 0.22819164877669948,
+      "components": {
+        "incident": {
+          "C": [
+            -8.578079595334133e-07,
+            1.083727918551389e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            1.0836644844972701e-07
+          ],
+          "absolute_upper": 7.3959191218560505e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.830909456873463e-09,
+          "phase_upper": 7.395923335383795e-06
+        },
+        "reflected": {
+          "C": [
+            -1.6013974737003845e-12,
+            1.880998769394258e-13
+          ],
+          "Cref": [
+            -2.4470930052166063e-48,
+            -3.9810532533138495e-50
+          ],
+          "absolute_upper": 1.8648980865564587e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.57809560930887e-07,
+            1.0837297995501582e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            1.0836644844972701e-07
+          ],
+          "absolute_upper": 7.6097125636618005e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 28,
+      "time": 0.23664319132398465,
+      "components": {
+        "incident": {
+          "C": [
+            -8.493104436621134e-07,
+            1.6202138249069736e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            1.620148701986354e-07
+          ],
+          "absolute_upper": 7.669174696481325e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.399933473096112e-09,
+          "phase_upper": 7.669179787396607e-06
+        },
+        "reflected": {
+          "C": [
+            -1.4604728269683332e-12,
+            2.5629967295377856e-13
+          ],
+          "Cref": [
+            -1.1168877205241796e-46,
+            -1.8544747955859578e-48
+          ],
+          "absolute_upper": 1.7149892675675536e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.493119041349402e-07,
+            1.620216387903704e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            1.620148701986354e-07
+          ],
+          "absolute_upper": 7.832241803491549e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 29,
+      "time": 0.24509473387126982,
+      "components": {
+        "incident": {
+          "C": [
+            -8.374610583859209e-07,
+            2.1503054316626942e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            2.1502389327242336e-07
+          ],
+          "absolute_upper": 7.942335666234094e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.925391760868008e-09,
+          "phase_upper": 7.942341609278374e-06
+        },
+        "reflected": {
+          "C": [
+            -1.3624168452172065e-12,
+            3.3000069671201215e-13
+          ],
+          "Cref": [
+            -4.7077670175552786e-45,
+            -7.981348793395972e-47
+          ],
+          "absolute_upper": 1.6213324496666464e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.374624208027667e-07,
+            2.1503087316696608e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            2.1502389327242336e-07
+          ],
+          "absolute_upper": 8.083010266076059e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 30,
+      "time": 0.253546276418555,
+      "components": {
+        "incident": {
+          "C": [
+            -8.223065682995216e-07,
+            2.671910691089643e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            2.671843152745376e-07
+          ],
+          "absolute_upper": 8.215350928577101e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.341587802948265e-09,
+          "phase_upper": 8.215357743712543e-06
+        },
+        "reflected": {
+          "C": [
+            -1.2969804086690023e-12,
+            4.0612551175794643e-13
+          ],
+          "Cref": [
+            -1.832630338530351e-43,
+            -3.1738009313300734e-45
+          ],
+          "absolute_upper": 1.571907686277931e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.223078652799304e-07,
+            2.67191475234476e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            2.671843152745376e-07
+          ],
+          "absolute_upper": 8.346689366875905e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 31,
+      "time": 0.2619978189658402,
+      "components": {
+        "incident": {
+          "C": [
+            -8.039067817648566e-07,
+            3.182971046992657e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            3.1829028284916587e-07
+          ],
+          "absolute_upper": 8.48813497960621e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.707984570127575e-09,
+          "phase_upper": 8.488142622838968e-06
+        },
+        "reflected": {
+          "C": [
+            -1.249981916060227e-12,
+            4.823724280598819e-13
+          ],
+          "Cref": [
+            -6.588671009647227e-42,
+            -1.1661320373493728e-43
+          ],
+          "absolute_upper": 1.5496419622640893e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -8.039080317467725e-07,
+            3.1829758707169374e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            3.1829028284916587e-07
+          ],
+          "absolute_upper": 8.614174197608624e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 32,
+      "time": 0.2704493615131253,
+      "components": {
+        "incident": {
+          "C": [
+            -7.823343149599841e-07,
+            3.681469560892585e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            3.6814010409038685e-07
+          ],
+          "absolute_upper": 8.760764662522895e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.0296416438150086e-09,
+          "phase_upper": 8.760773080407927e-06
+        },
+        "reflected": {
+          "C": [
+            -1.2098043884879585e-12,
+            5.574236499080247e-13
+          ],
+          "Cref": [
+            -2.187726124381879e-40,
+            -3.959114844200729e-42
+          ],
+          "absolute_upper": 1.5406425760114159e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.823355247643731e-07,
+            3.681475135129086e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            3.6814010409038685e-07
+          ],
+          "absolute_upper": 8.882122913391605e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 33,
+      "time": 0.27890090406041046,
+      "components": {
+        "incident": {
+          "C": [
+            -7.576743053140844e-07,
+            4.165438869126297e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            4.165370445279784e-07
+          ],
+          "absolute_upper": 9.033151573304075e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.3502703128196305e-09,
+          "phase_upper": 9.03316068645606e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1696845740284591e-12,
+            6.304160200656342e-13
+          ],
+          "Cref": [
+            -6.709188803982636e-39,
+            -1.2420801928184345e-40
+          ],
+          "absolute_upper": 1.5368342571832483e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.576754749986587e-07,
+            4.1654451732864965e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            4.165370445279784e-07
+          ],
+          "absolute_upper": 9.149634643946372e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 34,
+      "time": 0.28735244660769566,
+      "components": {
+        "incident": {
+          "C": [
+            -7.300240754491445e-07,
+            4.6329689504344637e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            4.632901035484923e-07
+          ],
+          "absolute_upper": 9.305410304147029e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.658160092597328e-09,
+          "phase_upper": 9.305420044539842e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1265686975903471e-12,
+            7.009755734425255e-13
+          ],
+          "Cref": [
+            -1.900375498263022e-37,
+            -3.6009942548503633e-39
+          ],
+          "absolute_upper": 1.5346294040762008e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -7.300252020178421e-07,
+            4.6329759601901995e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            4.632901035484923e-07
+          ],
+          "absolute_upper": 9.417077337427339e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 35,
+      "time": 0.2958039891549808,
+      "components": {
+        "incident": {
+          "C": [
+            -6.994927491443556e-07,
+            5.082214660170252e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            5.082147681874154e-07
+          ],
+          "absolute_upper": 9.577438418676551e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.0336467776949073e-09,
+          "phase_upper": 9.577448696925059e-06
+        },
+        "reflected": {
+          "C": [
+            -1.0792227008286866e-12,
+            7.686678011870057e-13
+          ],
+          "Cref": [
+            -4.9717848361958264e-36,
+            -9.648014290597562e-38
+          ],
+          "absolute_upper": 1.5324696580878178e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.994938283670562e-07,
+            5.082222346848263e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            5.082147681874154e-07
+          ],
+          "absolute_upper": 9.684552057347411e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 36,
+      "time": 0.304255531702266,
+      "components": {
+        "incident": {
+          "C": [
+            -6.662008205998033e-07,
+            5.511403015704185e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            5.51133741317545e-07
+          ],
+          "absolute_upper": 9.84930736125157e-06,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.527372340470059e-09,
+          "phase_upper": 9.849318095699097e-06
+        },
+        "reflected": {
+          "C": [
+            -1.027654232176654e-12,
+            8.332519191577817e-13
+          ],
+          "Cref": [
+            -1.2014360680262208e-34,
+            -2.3890163428598494e-36
+          ],
+          "absolute_upper": 1.5302028887950318e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.662018482540353e-07,
+            5.511411348223377e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            5.51133741317545e-07
+          ],
+          "absolute_upper": 9.952220612821547e-06,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 37,
+      "time": 0.31270707424955113,
+      "components": {
+        "incident": {
+          "C": [
+            -6.30279678977236e-07,
+            5.918840192180184e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            5.9187764135975e-07
+          ],
+          "absolute_upper": 1.0121060831394323e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.156615557552779e-09,
+          "phase_upper": 1.012107196149632e-05
+        },
+        "reflected": {
+          "C": [
+            -9.720451092809807e-13,
+            8.94489963444701e-13
+          ],
+          "Cref": [
+            -2.6817436407056934e-33,
+            -5.467522323330874e-35
+          ],
+          "absolute_upper": 1.5278416386370055e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -6.302806510223452e-07,
+            5.918849137079817e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            5.9187764135975e-07
+          ],
+          "absolute_upper": 1.0220156830245878e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 38,
+      "time": 0.3211586167968363,
+      "components": {
+        "incident": {
+          "C": [
+            -5.918710898673415e-07,
+            6.302918207178154e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            6.302856707546814e-07
+          ],
+          "absolute_upper": 1.0392691483060635e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.9243925447839796e-09,
+          "phase_upper": 1.0392702967087782e-05
+        },
+        "reflected": {
+          "C": [
+            -9.126314115427401e-13,
+            9.52131830521926e-13
+          ],
+          "Cref": [
+            -5.529372934708625e-32,
+            -1.1565879063242015e-33
+          ],
+          "absolute_upper": 1.5254175941826278e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.918720024987528e-07,
+            6.302927728496456e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            6.302856707546814e-07
+          ],
+          "absolute_upper": 1.0488337459440065e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 39,
+      "time": 0.32961015934412147,
+      "components": {
+        "incident": {
+          "C": [
+            -5.511266357961723e-07,
+            6.66212126701676e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            6.662062505572767e-07
+          ],
+          "absolute_upper": 1.0664163056020795e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.8148099223936362e-09,
+          "phase_upper": 1.0664174866992214e-05
+        },
+        "reflected": {
+          "C": [
+            -8.497168079454082e-13,
+            1.0059318330392912e-12
+          ],
+          "Cref": [
+            -1.0531527494830101e-30,
+            -2.2615786914013868e-32
+          ],
+          "absolute_upper": 1.5229893680122788e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.511274855129803e-07,
+            6.662131326335089e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            6.662062505572767e-07
+          ],
+          "absolute_upper": 1.0756659843015503e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 40,
+      "time": 0.33806170189140666,
+      "components": {
+        "incident": {
+          "C": [
+            -5.082071179017534e-07,
+            6.995031749059429e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            6.994976186496071e-07
+          ],
+          "absolute_upper": 1.0935497133388825e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.8541876128328857e-09,
+          "phase_upper": 1.093550924609545e-05
+        },
+        "reflected": {
+          "C": [
+            -7.835146176686837e-13,
+            1.0556719007856972e-12
+          ],
+          "Cref": [
+            -1.853018289105335e-29,
+            -4.088087915107398e-31
+          ],
+          "absolute_upper": 1.52053721539485e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.082079014163711e-07,
+            6.995042305778434e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            6.994976186496071e-07
+          ],
+          "absolute_upper": 1.1025156379255294e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 41,
+      "time": 0.3465132444386918,
+      "components": {
+        "incident": {
+          "C": [
+            -4.632819214445805e-07,
+            7.300335795884693e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            7.300283892111915e-07
+          ],
+          "absolute_upper": 1.1206625924656904e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.071799644558282e-09,
+          "phase_upper": 1.120663830897702e-05
+        },
+        "reflected": {
+          "C": [
+            -7.143241385932363e-13,
+            1.101096958593743e-12
+          ],
+          "Cref": [
+            -3.0120223147634562e-28,
+            -6.83183047185651e-30
+          ],
+          "absolute_upper": 1.51804336841419e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -4.632826357687194e-07,
+            7.300346806854283e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            7.300283892111915e-07
+          ],
+          "absolute_upper": 1.1293675472104103e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 42,
+      "time": 0.354964786985977,
+      "components": {
+        "incident": {
+          "C": [
+            -4.165283471848208e-07,
+            7.576828502346567e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            7.576780712388055e-07
+          ],
+          "absolute_upper": 1.1477628997000088e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.416849750062544e-09,
+          "phase_upper": 1.147764162534613e-05
+        },
+        "reflected": {
+          "C": [
+            -6.424047509325239e-13,
+            1.1421030187645725e-12
+          ],
+          "Cref": [
+            -4.523197102827058e-27,
+            -1.0555960312333544e-28
+          ],
+          "absolute_upper": 1.5155783016074337e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -4.1652898958957154e-07,
+            7.576839923376751e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            7.576780712388055e-07
+          ],
+          "absolute_upper": 1.1562368890149654e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 43,
+      "time": 0.36341632953326214,
+      "components": {
+        "incident": {
+          "C": [
+            -3.6813091177702723e-07,
+            7.823418668539961e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            7.823375440694244e-07
+          ],
+          "absolute_upper": 1.1748459275026975e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.8916157975106457e-09,
+          "phase_upper": 1.1748472109995229e-05
+        },
+        "reflected": {
+          "C": [
+            -5.680848127727857e-13,
+            1.1785052487171603e-12
+          ],
+          "Cref": [
+            -6.275697232007935e-26,
+            -1.5081363480873362e-27
+          ],
+          "absolute_upper": 1.513154360114471e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -3.681314798618401e-07,
+            7.823430453592441e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            7.823375440694244e-07
+          ],
+          "absolute_upper": 1.1831122031901705e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 44,
+      "time": 0.37186787208054733,
+      "components": {
+        "incident": {
+          "C": [
+            -3.1828061943549393e-07,
+            8.039133107591821e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            8.039094880296274e-07
+          ],
+          "absolute_upper": 1.2019153386768391e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.50315664061408e-09,
+          "phase_upper": 1.2019166376303149e-05
+        },
+        "reflected": {
+          "C": [
+            -4.916423681513408e-13,
+            1.2101696680114926e-12
+          ],
+          "Cref": [
+            -8.045066772985342e-25,
+            -1.9925408853400773e-26
+          ],
+          "absolute_upper": 1.5107779122432201e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -3.1828111107786194e-07,
+            8.039145209288493e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            8.039094880296274e-07
+          ],
+          "absolute_upper": 1.2099980178422411e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 45,
+      "time": 0.3803194146278325,
+      "components": {
+        "incident": {
+          "C": [
+            -2.671742081462329e-07,
+            8.223120485858791e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            8.22308768511887e-07
+          ],
+          "absolute_upper": 1.2289782781065386e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.289668207692994e-09,
+          "phase_upper": 1.2289795843367944e-05
+        },
+        "reflected": {
+          "C": [
+            -4.13311968933165e-13,
+            1.2369609242021978e-12
+          ],
+          "Cref": [
+            -9.529553447130266e-24,
+            -2.43468511197484e-25
+          ],
+          "absolute_upper": 1.5084191813922237e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -2.671746214582019e-07,
+            8.223132855468029e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            8.22308768511887e-07
+          ],
+          "absolute_upper": 1.2369064518969656e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 46,
+      "time": 0.38877095717511767,
+      "components": {
+        "incident": {
+          "C": [
+            -2.1501337340201875e-07,
+            8.37465468319207e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            8.374627719619715e-07
+          ],
+          "absolute_upper": 1.2560277921238876e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.212143763455241e-09,
+          "phase_upper": 1.2560290962928506e-05
+        },
+        "reflected": {
+          "C": [
+            -3.3347902652620336e-13,
+            1.2587877339984262e-12
+          ],
+          "Cref": [
+            -1.043078292057246e-22,
+            -2.751670307528796e-24
+          ],
+          "absolute_upper": 1.5061364440212605e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -2.1501370688104525e-07,
+            8.374667271069407e-07
+          ],
+          "Cref": [
+            -2.1502389327242357e-07,
+            8.374627719619715e-07
+          ],
+          "absolute_upper": 1.263823279549119e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 47,
+      "time": 0.3972224997224028,
+      "components": {
+        "incident": {
+          "C": [
+            -1.6200397192023533e-07,
+            8.493137658229815e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            8.493116924514691e-07
+          ],
+          "absolute_upper": 1.2830712632227837e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.305324536277306e-09,
+          "phase_upper": 1.2830725519921736e-05
+        },
+        "reflected": {
+          "C": [
+            -2.5237909052496195e-13,
+            1.2755496123617406e-12
+          ],
+          "Cref": [
+            -1.0550946800542235e-21,
+            -2.8768788629467993e-23
+          ],
+          "absolute_upper": 1.5038998260101063e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -1.62004224299326e-07,
+            8.493150413725936e-07
+          ],
+          "Cref": [
+            -1.6201487019863753e-07,
+            8.493116924514691e-07
+          ],
+          "absolute_upper": 1.290762469100863e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 48,
+      "time": 0.40567404226968795,
+      "components": {
+        "incident": {
+          "C": [
+            -1.0835520944629865e-07,
+            8.578101808549755e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            8.578087677044649e-07
+          ],
+          "absolute_upper": 1.3101054261643451e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.604017709512526e-09,
+          "phase_upper": 1.3101066807845813e-05
+        },
+        "reflected": {
+          "C": [
+            -1.7036293588162916e-13,
+            1.287145768073858e-12
+          ],
+          "Cref": [
+            -9.863422272274063e-21,
+            -2.7827668917874894e-22
+          ],
+          "absolute_upper": 1.5016948576185865e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -1.0835537980923449e-07,
+            8.578114680007434e-07
+          ],
+          "Cref": [
+            -1.0836644844974673e-07,
+            8.578087677044646e-07
+          ],
+          "absolute_upper": 1.3177156028890005e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 49,
+      "time": 0.41412558481697315,
+      "components": {
+        "incident": {
+          "C": [
+            -5.4278814977233193e-08,
+            8.629211817164402e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            8.629204636468814e-07
+          ],
+          "absolute_upper": 1.3371325203716144e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 9.063647584455623e-09,
+          "phase_upper": 1.3371337202421667e-05
+        },
+        "reflected": {
+          "C": [
+            -8.776592868664714e-14,
+            1.2935735929019837e-12
+          ],
+          "Cref": [
+            -8.522365116639627e-20,
+            -2.4907274284284823e-21
+          ],
+          "absolute_upper": 1.4995856648799862e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            -5.4278902743161854e-08,
+            8.629224752900336e-07
+          ],
+          "Cref": [
+            -5.429035383687901e-08,
+            8.629204636468789e-07
+          ],
+          "absolute_upper": 1.3446850289742199e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 50,
+      "time": 0.4225771273642583,
+      "components": {
+        "incident": {
+          "C": [
+            1.1794328083826777e-11,
+            8.646265974735476e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            8.646266067501597e-07
+          ],
+          "absolute_upper": 1.3640980622061678e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.0677163736780772e-08,
+          "phase_upper": 1.364099183266741e-05
+        },
+        "reflected": {
+          "C": [
+            -5.391299955760496e-15,
+            1.2947832722991064e-12
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -2.0631936799948865e-20
+          ],
+          "absolute_upper": 1.4975581876585236e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            1.178893678386734e-11,
+            8.646278922568197e-07
+          ],
+          "Cref": [
+            -1.36131045557961e-18,
+            8.64626606750139e-07
+          ],
+          "absolute_upper": 1.3715604959673397e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 51,
+      "time": 0.4310286699115435,
+      "components": {
+        "incident": {
+          "C": [
+            5.430235648787428e-08,
+            8.629196976202579e-07
+          ],
+          "Cref": [
+            5.429035383168316e-08,
+            8.629204636470372e-07
+          ],
+          "absolute_upper": 1.3910164036169304e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2507276586803248e-08,
+          "phase_upper": 1.3910174123065507e-05
+        },
+        "reflected": {
+          "C": [
+            7.655461778432606e-14,
+            1.290747164092952e-12
+          ],
+          "Cref": [
+            -5.025404863315277e-18,
+            -1.5819602096419246e-19
+          ],
+          "absolute_upper": 1.4955010607385972e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            5.430243304249206e-08,
+            8.629209883674221e-07
+          ],
+          "Cref": [
+            5.429035382665775e-08,
+            8.62920463646879e-07
+          ],
+          "absolute_upper": 1.398368373115595e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 52,
+      "time": 0.4394802124588286,
+      "components": {
+        "incident": {
+          "C": [
+            1.0837860927097633e-07,
+            8.578072186609623e-07
+          ],
+          "Cref": [
+            1.083664484154235e-07,
+            8.578087677055877e-07
+          ],
+          "absolute_upper": 1.4178535165521704e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.459506294912701e-08,
+          "phase_upper": 1.4178543686028726e-05
+        },
+        "reflected": {
+          "C": [
+            1.5741874734744156e-13,
+            1.2814888264030338e-12
+          ],
+          "Cref": [
+            -3.43035189622414e-17,
+            -1.1229959310129915e-18
+          ],
+          "absolute_upper": 1.493316023027817e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            1.0837876668972366e-07,
+            8.57808500149789e-07
+          ],
+          "Cref": [
+            1.0836644838111998e-07,
+            8.578087677044647e-07
+          ],
+          "absolute_upper": 1.4250395714748527e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 53,
+      "time": 0.4479317550061138,
+      "components": {
+        "incident": {
+          "C": [
+            1.6202713655111586e-07,
+            8.493093373816071e-07
+          ],
+          "Cref": [
+            1.6201486998212328e-07,
+            8.493116924588513e-07
+          ],
+          "absolute_upper": 1.4446261670401324e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.709628283455848e-08,
+          "phase_upper": 1.4446267913456189e-05
+        },
+        "reflected": {
+          "C": [
+            2.3686340619633217e-13,
+            1.2669220591116865e-12
+          ],
+          "Cref": [
+            -2.165121521819711e-16,
+            -7.382139090908198e-18
+          ],
+          "absolute_upper": 1.49076496185605e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            1.6202737341452207e-07,
+            8.493106043036662e-07
+          ],
+          "Cref": [
+            1.6201486976561112e-07,
+            8.493116924514692e-07
+          ],
+          "absolute_upper": 1.451605285230504e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 54,
+      "time": 0.45638329755339896,
+      "components": {
+        "incident": {
+          "C": [
+            2.1503621019688623e-07,
+            8.374595914403742e-07
+          ],
+          "Cref": [
+            2.1502389200867612e-07,
+            8.374627720069197e-07
+          ],
+          "absolute_upper": 1.471409429351941e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.9865655495011054e-08,
+          "phase_upper": 1.47140975760403e-05
+        },
+        "reflected": {
+          "C": [
+            3.145208195253837e-13,
+            1.2471080857071886e-12
+          ],
+          "Cref": [
+            -1.2637472378205092e-15,
+            -4.494819942912555e-17
+          ],
+          "absolute_upper": 1.48797775887405e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            2.150365247177057e-07,
+            8.3746083854846e-07
+          ],
+          "Cref": [
+            2.1502389074492887e-07,
+            8.374627719619715e-07
+          ],
+          "absolute_upper": 1.4782232389398649e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 55,
+      "time": 0.46483484010068415,
+      "components": {
+        "incident": {
+          "C": [
+            2.6719662390926307e-07,
+            8.223047468418539e-07
+          ],
+          "Cref": [
+            2.67184308452126e-07,
+            8.223087687654493e-07
+          ],
+          "absolute_upper": 1.498401042392659e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.2356148823912345e-08,
+          "phase_upper": 1.4984010796517952e-05
+        },
+        "reflected": {
+          "C": [
+            3.882044699539916e-13,
+            1.2220185272087589e-12
+          ],
+          "Cref": [
+            -6.822411594968605e-15,
+            -2.535623402005353e-16
+          ],
+          "absolute_upper": 1.4856766712379277e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            2.6719701211373283e-07,
+            8.22305968860381e-07
+          ],
+          "Cref": [
+            2.6718430162971444e-07,
+            8.223087685118869e-07
+          ],
+          "absolute_upper": 1.5052993865681198e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 56,
+      "time": 0.4732863826479693,
+      "components": {
+        "incident": {
+          "C": [
+            3.1830250695492856e-07,
+            8.039046139008552e-07
+          ],
+          "Cref": [
+            3.182902487778444e-07,
+            8.039094893552787e-07
+          ],
+          "absolute_upper": 1.5257656887568804e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.3689262466831378e-08,
+          "phase_upper": 1.5257656037288944e-05
+        },
+        "reflected": {
+          "C": [
+            4.4199099087229957e-13,
+            1.1912070120090257e-12
+          ],
+          "Cref": [
+            -3.4071321462548865e-14,
+            -1.3256513974983587e-15
+          ],
+          "absolute_upper": 1.4851247122805062e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            3.183029489459195e-07,
+            8.039058051078673e-07
+          ],
+          "Cref": [
+            3.1829021470652295e-07,
+            8.039094880296274e-07
+          ],
+          "absolute_upper": 1.5331679645985053e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 57,
+      "time": 0.4817379251952545,
+      "components": {
+        "incident": {
+          "C": [
+            3.6815209199690647e-07,
+            7.823318131246946e-07
+          ],
+          "Cref": [
+            3.6813994665710193e-07,
+            7.823375504946917e-07
+          ],
+          "absolute_upper": 1.553540084633409e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.3162501997921855e-08,
+          "phase_upper": 1.5535402327383434e-05
+        },
+        "reflected": {
+          "C": [
+            4.016412963634662e-13,
+            1.1518568775697255e-12
+          ],
+          "Cref": [
+            -1.5743328491278101e-13,
+            -6.425267140323134e-15
+          ],
+          "absolute_upper": 1.4875602660481515e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            3.6815249363820287e-07,
+            7.823329649815718e-07
+          ],
+          "Cref": [
+            3.68139789223817e-07,
+            7.823375440694246e-07
+          ],
+          "absolute_upper": 1.5618888788778386e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 58,
+      "time": 0.49018946774253963,
+      "components": {
+        "incident": {
+          "C": [
+            4.165483613280903e-07,
+            7.576714960163869e-07
+          ],
+          "Cref": [
+            4.165363713111242e-07,
+            7.576781001211981e-07
+          ],
+          "absolute_upper": 1.5831699225011806e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2633470270049291e-08,
+          "phase_upper": 1.5831717531258603e-05
+        },
+        "reflected": {
+          "C": [
+            -1.5148948613346606e-14,
+            1.0914015130216178e-12
+          ],
+          "Cref": [
+            -6.732168541934693e-13,
+            -2.888239253267487e-14
+          ],
+          "absolute_upper": 1.5027285416896393e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            4.165483461791417e-07,
+            7.576725874179006e-07
+          ],
+          "Cref": [
+            4.1653569809427e-07,
+            7.576780712388055e-07
+          ],
+          "absolute_upper": 1.5944206783741106e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 59,
+      "time": 0.4986410102898248,
+      "components": {
+        "incident": {
+          "C": [
+            4.6329926849648054e-07,
+            7.30021036044873e-07
+          ],
+          "Cref": [
+            4.632874387049892e-07,
+            7.300285096699968e-07
+          ],
+          "absolute_upper": 1.6183680667862407e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.3124434483180706e-08,
+          "phase_upper": 1.618368954171898e-05
+        },
+        "reflected": {
+          "C": [
+            -1.853567836032124e-12,
+            9.603572305943642e-13
+          ],
+          "Cref": [
+            -2.664843503043797e-12,
+            -1.204588053154202e-13
+          ],
+          "absolute_upper": 1.5630474462213944e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            4.632974149286446e-07,
+            7.300219964021036e-07
+          ],
+          "Cref": [
+            4.632847738614862e-07,
+            7.300283892111914e-07
+          ],
+          "absolute_upper": 1.6383567232119188e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 60,
+      "time": 0.50709255283711,
+      "components": {
+        "incident": {
+          "C": [
+            5.082167670714514e-07,
+            6.994897371484083e-07
+          ],
+          "Cref": [
+            5.082050009952798e-07,
+            6.994980850020736e-07
+          ],
+          "absolute_upper": 1.6685392202600665e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.8781644867748522e-07,
+          "phase_upper": 1.6684456212192913e-05
+        },
+        "reflected": {
+          "C": [
+            -8.64671004088344e-12,
+            5.801648265701139e-13
+          ],
+          "Cref": [
+            -9.76719213566033e-12,
+            -4.66352466480625e-13
+          ],
+          "absolute_upper": 1.7732812538693873e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            5.082081203614102e-07,
+            6.994903173132349e-07
+          ],
+          "Cref": [
+            5.081952338031442e-07,
+            6.994976186496071e-07
+          ],
+          "absolute_upper": 1.713028110960451e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 61,
+      "time": 0.5155440953843952,
+      "components": {
+        "incident": {
+          "C": [
+            5.51112621812959e-07,
+            6.66198688242539e-07
+          ],
+          "Cref": [
+            5.511005831545315e-07,
+            6.662079274091786e-07
+          ],
+          "absolute_upper": 1.7551364580570308e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 6.413680494896994e-07,
+          "phase_upper": 1.7540060738035127e-05
+        },
+        "reflected": {
+          "C": [
+            -3.1332640879819584e-11,
+            -6.425040698504825e-13
+          ],
+          "Cref": [
+            -3.315816301342932e-11,
+            -1.6768519018862856e-12
+          ],
+          "absolute_upper": 2.4267405925712313e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            5.510812891720792e-07,
+            6.661980457384691e-07
+          ],
+          "Cref": [
+            5.510674249915181e-07,
+            6.662062505572767e-07
+          ],
+          "absolute_upper": 1.8632469990870956e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 62,
+      "time": 0.5239956379316804,
+      "components": {
+        "incident": {
+          "C": [
+            5.9178647879047e-07,
+            6.302810914720778e-07
+          ],
+          "Cref": [
+            5.917733382357829e-07,
+            6.302912740832764e-07
+          ],
+          "absolute_upper": 1.9226898855122168e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.8173301610531894e-06,
+          "phase_upper": 1.9142330619085238e-05
+        },
+        "reflected": {
+          "C": [
+            -1.0088395092883094e-10,
+            -4.519240957690953e-12
+          ],
+          "Cref": [
+            -1.0430312396720937e-10,
+            -5.603328594957154e-12
+          ],
+          "absolute_upper": 4.148554847148853e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            5.916855948395412e-07,
+            6.302765722311196e-07
+          ],
+          "Cref": [
+            5.916690351118157e-07,
+            6.302856707546814e-07
+          ],
+          "absolute_upper": 2.1853014476536624e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 63,
+      "time": 0.5324471804789654,
+      "components": {
+        "incident": {
+          "C": [
+            6.299974717981575e-07,
+            5.918837977743305e-07
+          ],
+          "Cref": [
+            6.299815261738438e-07,
+            5.918950542882454e-07
+          ],
+          "absolute_upper": 2.2574506313835504e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 4.527452908735854e-06,
+          "phase_upper": 2.2121417806474632e-05
+        },
+        "reflected": {
+          "C": [
+            -2.9736984310927746e-10,
+            -1.6134079778487798e-11
+          ],
+          "Cref": [
+            -3.041445808375926e-10,
+            -1.741292849532855e-11
+          ],
+          "absolute_upper": 7.973859952188984e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            6.297001019550479e-07,
+            5.918676636945516e-07
+          ],
+          "Cref": [
+            6.296773815930062e-07,
+            5.9187764135975e-07
+          ],
+          "absolute_upper": 2.869993757117964e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 64,
+      "time": 0.5408987230262506,
+      "components": {
+        "incident": {
+          "C": [
+            6.654054186515582e-07,
+            5.511714965447551e-07
+          ],
+          "Cref": [
+            6.653837042836043e-07,
+            5.511841051271693e-07
+          ],
+          "absolute_upper": 2.9040940567823526e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.0045075701043491e-05,
+          "phase_upper": 2.726980816576705e-05
+        },
+        "reflected": {
+          "C": [
+            -8.093944049751192e-10,
+            -4.859273530463687e-11
+          ],
+          "Cref": [
+            -8.22546273672387e-10,
+            -5.036380962431726e-11
+          ],
+          "absolute_upper": 1.5348362996986005e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            6.645960242465834e-07,
+            5.511229038094506e-07
+          ],
+          "Cref": [
+            6.645611580099319e-07,
+            5.51133741317545e-07
+          ],
+          "absolute_upper": 4.2228349992244573e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 65,
+      "time": 0.5493502655735358,
+      "components": {
+        "incident": {
+          "C": [
+            6.974649654244574e-07,
+            5.083359959126974e-07
+          ],
+          "Cref": [
+            6.974331982301285e-07,
+            5.083504693503687e-07
+          ],
+          "absolute_upper": 4.03745960282741e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.986808432826512e-05,
+          "phase_upper": 3.523289655959616e-05
+        },
+        "reflected": {
+          "C": [
+            -2.0405504748706402e-09,
+            -1.3290091764741434e-10
+          ],
+          "Cref": [
+            -2.0644204194786115e-09,
+            -1.357011629533035e-10
+          ],
+          "absolute_upper": 2.7796558478841582e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            6.954244149495869e-07,
+            5.082030949950497e-07
+          ],
+          "Cref": [
+            6.953687778106499e-07,
+            5.082147681874154e-07
+          ],
+          "absolute_upper": 6.574922719233787e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 66,
+      "time": 0.5578018081208209,
+      "components": {
+        "incident": {
+          "C": [
+            7.252632481386929e-07,
+            4.6361392627679666e-07
+          ],
+          "Cref": [
+            7.252166691450464e-07,
+            4.6363107884442474e-07
+          ],
+          "absolute_upper": 5.7408357310768704e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.4860920171374e-05,
+          "phase_upper": 4.5935973881788886e-05
+        },
+        "reflected": {
+          "C": [
+            -4.772317007400855e-09,
+            -3.3630272130866604e-10
+          ],
+          "Cref": [
+            -4.811720066145085e-09,
+            -3.409752959324376e-10
+          ],
+          "absolute_upper": 4.589163555233383e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "pressure": {
+          "C": [
+            7.204909311312925e-07,
+            4.632776235554877e-07
+          ],
+          "Cref": [
+            7.204049490789013e-07,
+            4.632901035484923e-07
+          ],
+          "absolute_upper": 0.00010048617338654961,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 67,
+      "time": 0.5662533506681061,
+      "components": {
+        "incident": {
+          "C": [
+            7.473184654718315e-07,
+            4.173160742477481e-07
+          ],
+          "Cref": [
+            7.472541551219533e-07,
+            4.1733699165046783e-07
+          ],
+          "absolute_upper": 7.821477233520525e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.368555311059047e-05,
+          "phase_upper": 5.7971382922686355e-05
+        },
+        "reflected": {
+          "C": [
+            -1.0366003526051547e-08,
+            -7.922828715472331e-10
+          ],
+          "Cref": [
+            -1.0423916116852238e-08,
+            -7.99947122489408e-10
+          ],
+          "absolute_upper": 6.756385835455194e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.005579264907433102,
+          "phase_upper": 0.00030881813641949694
+        },
+        "pressure": {
+          "C": [
+            7.369524619457793e-07,
+            4.1652379137620075e-07
+          ],
+          "Cref": [
+            7.368302390051011e-07,
+            4.165370445279784e-07
+          ],
+          "absolute_upper": 0.00014218776178408766,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 68,
+      "time": 0.5747048932153913,
+      "components": {
+        "incident": {
+          "C": [
+            7.614070311410799e-07,
+            3.698689897912818e-07
+          ],
+          "Cref": [
+            7.613276614780132e-07,
+            3.6989480402907424e-07
+          ],
+          "absolute_upper": 9.652955202562967e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.101688038509809e-05,
+          "phase_upper": 6.840479870073887e-05
+        },
+        "reflected": {
+          "C": [
+            -2.0936069576910986e-08,
+            -1.7428734872361375e-09
+          ],
+          "Cref": [
+            -2.100988259141128e-08,
+            -1.7546999386873606e-09
+          ],
+          "absolute_upper": 8.645858185091805e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.003535568382517568,
+          "phase_upper": 0.00026856478684780837
+        },
+        "pressure": {
+          "C": [
+            7.404709615641691e-07,
+            3.681261163040455e-07
+          ],
+          "Cref": [
+            7.403177788866019e-07,
+            3.681401040903869e-07
+          ],
+          "absolute_upper": 0.0001779032621321116,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 69,
+      "time": 0.5831564357626765,
+      "components": {
+        "incident": {
+          "C": [
+            7.645462332462001e-07,
+            3.2186336166753863e-07
+          ],
+          "Cref": [
+            7.644639447664277e-07,
+            3.218947707481732e-07
+          ],
+          "absolute_upper": 0.0001018694263337339,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.6738953596166e-05,
+          "phase_upper": 7.339233647274747e-05
+        },
+        "reflected": {
+          "C": [
+            -3.9367888549955884e-08,
+            -3.587756634828436e-09
+          ],
+          "Cref": [
+            -3.944554326319957e-08,
+            -3.6044878990073303e-09
+          ],
+          "absolute_upper": 9.187393537806865e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0019907637469037914,
+          "phase_upper": 0.0002427289117436044
+        },
+        "pressure": {
+          "C": [
+            7.251783446962442e-07,
+            3.182756050327104e-07
+          ],
+          "Cref": [
+            7.250184015032282e-07,
+            3.1829028284916587e-07
+          ],
+          "absolute_upper": 0.00018576244909135854,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 70,
+      "time": 0.5916079783099616,
+      "components": {
+        "incident": {
+          "C": [
+            7.532869405075966e-07,
+            2.740945054317481e-07
+          ],
+          "Cref": [
+            7.532246575619343e-07,
+            2.7413110608072216e-07
+          ],
+          "absolute_upper": 8.35517071172564e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.7403153579294436e-05,
+          "phase_upper": 6.947859975226277e-05
+        },
+        "reflected": {
+          "C": [
+            -6.902541507816701e-08,
+            -6.925503854815125e-09
+          ],
+          "Cref": [
+            -6.908411094995272e-08,
+            -6.946790806184542e-09
+          ],
+          "absolute_upper": 7.221227103164566e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.000871774458211327,
+          "phase_upper": 0.00022065965461219708
+        },
+        "pressure": {
+          "C": [
+            6.842615254294294e-07,
+            2.671690015769328e-07
+          ],
+          "Cref": [
+            6.841405466119816e-07,
+            2.671843152745376e-07
+          ],
+          "absolute_upper": 0.00014103673878282128,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 71,
+      "time": 0.6000595208572468,
+      "components": {
+        "incident": {
+          "C": [
+            7.244134855914263e-07,
+            2.275718389593912e-07
+          ],
+          "Cref": [
+            7.244007574763705e-07,
+            2.2761152729864756e-07
+          ],
+          "absolute_upper": 4.8205028845241134e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.2542515047678495e-07,
+          "phase_upper": 5.488961303225174e-05
+        },
+        "reflected": {
+          "C": [
+            -1.1305163150391056e-07,
+            -1.2563823263658047e-08
+          ],
+          "Cref": [
+            -1.1306201448560102e-07,
+            -1.25876340262242e-08
+          ],
+          "absolute_upper": 3.0043170772339748e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00011385049778781549,
+          "phase_upper": 0.0001979444211395131
+        },
+        "pressure": {
+          "C": [
+            6.113618540875158e-07,
+            2.150080156957333e-07
+          ],
+          "Cref": [
+            6.113387429907695e-07,
+            2.1502389327242336e-07
+          ],
+          "absolute_upper": 3.242978941115581e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 72,
+      "time": 0.608511063404532,
+      "components": {
+        "incident": {
+          "C": [
+            6.759799233032701e-07,
+            1.834728556302607e-07
+          ],
+          "Cref": [
+            6.76042498462817e-07,
+            1.8351168457505938e-07
+          ],
+          "absolute_upper": 8.517349047403022e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00010072921927387036,
+          "phase_upper": 3.0095690929236336e-05
+        },
+        "reflected": {
+          "C": [
+            -1.7333258857987775e-07,
+            -2.1474323343709368e-08
+          ],
+          "Cref": [
+            -1.7326919398865217e-07,
+            -2.149681437642396e-08
+          ],
+          "absolute_upper": 7.779775020099543e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00034448207191046685,
+          "phase_upper": 0.0001724814164550108
+        },
+        "pressure": {
+          "C": [
+            5.026473347233925e-07,
+            1.6199853228655124e-07
+          ],
+          "Cref": [
+            5.027733044741648e-07,
+            1.620148701986354e-07
+          ],
+          "absolute_upper": 0.00014691284094578097,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 73,
+      "time": 0.6169626059518172,
+      "components": {
+        "incident": {
+          "C": [
+            6.083829970485936e-07,
+            1.4302870601833627e-07
+          ],
+          "Cref": [
+            6.085295255453184e-07,
+            1.430615171419681e-07
+          ],
+          "absolute_upper": 0.00017366689597904885,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0002401919244256769,
+          "phase_upper": 2.54958392193118e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4942471618829863e-07,
+            -3.4678904931952035e-08
+          ],
+          "Cref": [
+            -2.492792421591463e-07,
+            -3.4695068692241087e-08
+          ],
+          "absolute_upper": 0.00016928594442029287,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0005636457245041496,
+          "phase_upper": 0.00014320903742157624
+        },
+        "pressure": {
+          "C": [
+            3.589582808602949e-07,
+            1.0834980108638425e-07
+          ],
+          "Cref": [
+            3.5925028338617207e-07,
+            1.0836644844972702e-07
+          ],
+          "absolute_upper": 0.00033826905593218096,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 74,
+      "time": 0.6254141484991023,
+      "components": {
+        "incident": {
+          "C": [
+            5.250128897101092e-07,
+            1.0735310714187324e-07
+          ],
+          "Cref": [
+            5.252258740366159e-07,
+            1.0737491685786886e-07
+          ],
+          "absolute_upper": 0.00024761888210939357,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0003973898025801186,
+          "phase_upper": 3.973221309172236e-05
+        },
+        "reflected": {
+          "C": [
+            -3.379043142625276e-07,
+            -5.307950337023093e-08
+          ],
+          "Cref": [
+            -3.3769458961026307e-07,
+            -5.30845630211603e-08
+          ],
+          "absolute_upper": 0.00024263129869599376,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0006037794025225023,
+          "phase_upper": 0.00010982803403004844
+        },
+        "pressure": {
+          "C": [
+            1.8710857544758164e-07,
+            5.4273603771642286e-08
+          ],
+          "Cref": [
+            1.875312844263528e-07,
+            5.4290353836708564e-08
+          ],
+          "absolute_upper": 0.0004892751478262842,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 75,
+      "time": 0.6338656910463875,
+      "components": {
+        "incident": {
+          "C": [
+            4.3207550608952836e-07,
+            7.725484161300053e-08
+          ],
+          "Cref": [
+            4.323133033750695e-07,
+            7.726249559538531e-08
+          ],
+          "absolute_upper": 0.000275171039367018,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0005360957451979987,
+          "phase_upper": 7.81481596961614e-05
+        },
+        "reflected": {
+          "C": [
+            -4.325454355309992e-07,
+            -7.727144021227017e-08
+          ],
+          "Cref": [
+            -4.323133033750695e-07,
+            -7.726249559538531e-08
+          ],
+          "absolute_upper": 0.00026867574329027906,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0005239198681804107,
+          "phase_upper": 7.290557524567121e-05
+        },
+        "pressure": {
+          "C": [
+            -4.699294414707142e-10,
+            -1.659859926966981e-11
+          ],
+          "Cref": [
+            0.0,
+            0.0
+          ],
+          "absolute_upper": 0.0005438440526869131,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 76,
+      "time": 0.6423172335936727,
+      "components": {
+        "incident": {
+          "C": [
+            3.374836091925382e-07,
+            5.30912320367625e-08
+          ],
+          "Cref": [
+            3.3769458961026307e-07,
+            5.30845630211603e-08
+          ],
+          "absolute_upper": 0.00024413497275522638,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0006066646116130981,
+          "phase_upper": 0.0001151855018889782
+        },
+        "reflected": {
+          "C": [
+            -5.254287989819857e-07,
+            -1.0739776053773574e-07
+          ],
+          "Cref": [
+            -5.252258740366159e-07,
+            -1.0737491685786886e-07
+          ],
+          "absolute_upper": 0.0002361788114713936,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0003793933401013936,
+          "phase_upper": 3.405549629414385e-05
+        },
+        "pressure": {
+          "C": [
+            -1.8794518978944742e-07,
+            -5.4306528500973275e-08
+          ],
+          "Cref": [
+            -1.875312844263528e-07,
+            -5.4290353836708564e-08
+          ],
+          "absolute_upper": 0.00047907487983155994,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 77,
+      "time": 0.6507687761409578,
+      "components": {
+        "incident": {
+          "C": [
+            2.491370505391661e-07,
+            3.471317949863124e-08
+          ],
+          "Cref": [
+            2.492792421591463e-07,
+            3.4695068692241087e-08
+          ],
+          "absolute_upper": 0.00016578281469145956,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0005496405173358753,
+          "phase_upper": 0.00014923619637850866
+        },
+        "reflected": {
+          "C": [
+            -6.086615009806696e-07,
+            -1.4309512582553467e-07
+          ],
+          "Cref": [
+            -6.085295255453184e-07,
+            -1.430615171419681e-07
+          ],
+          "absolute_upper": 0.0001575101552655094,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0002178213329933378,
+          "phase_upper": 4.020091369324998e-06
+        },
+        "pressure": {
+          "C": [
+            -3.5952445044150335e-07,
+            -1.0838194632690342e-07
+          ],
+          "Cref": [
+            -3.5925028338617207e-07,
+            -1.0836644844972702e-07
+          ],
+          "absolute_upper": 0.000317598941092675,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 78,
+      "time": 0.6592203186882429,
+      "components": {
+        "incident": {
+          "C": [
+            1.7321346078175953e-07,
+            2.152150878146822e-08
+          ],
+          "Cref": [
+            1.7326919398865217e-07,
+            2.149681437642396e-08
+          ],
+          "absolute_upper": 7.050326946129593e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00029935090868040207,
+          "phase_upper": 0.0001797157066584781
+        },
+        "reflected": {
+          "C": [
+            -6.760862136396783e-07,
+            -1.8355099607109297e-07
+          ],
+          "Cref": [
+            -6.76042498462817e-07,
+            -1.8351168457505938e-07
+          ],
+          "absolute_upper": 6.799607318912341e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.492778232265275e-05,
+          "phase_upper": 3.7807729927031685e-05
+        },
+        "pressure": {
+          "C": [
+            -5.028727528579189e-07,
+            -1.620294872896247e-07
+          ],
+          "Cref": [
+            -5.027733044741648e-07,
+            -1.620148701986354e-07
+          ],
+          "absolute_upper": 0.0001162546050723856,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 79,
+      "time": 0.6676718612355281,
+      "components": {
+        "incident": {
+          "C": [
+            1.1308357636857308e-07,
+            1.2613728244885883e-08
+          ],
+          "Cref": [
+            1.1306201448560102e-07,
+            1.25876340262242e-08
+          ],
+          "absolute_upper": 3.9149854337509416e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00021377603551295268,
+          "phase_upper": 0.0002069536026240383
+        },
+        "reflected": {
+          "C": [
+            -7.243657499804871e-07,
+            -2.276512115132196e-07
+          ],
+          "Cref": [
+            -7.244007574763705e-07,
+            -2.2761152729864756e-07
+          ],
+          "absolute_upper": 6.120378358199046e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.8315581586301812e-05,
+          "phase_upper": 6.368154355509964e-05
+        },
+        "pressure": {
+          "C": [
+            -6.11282173611914e-07,
+            -2.150374832683336e-07
+          ],
+          "Cref": [
+            -6.113387429907695e-07,
+            -2.1502389327242336e-07
+          ],
+          "absolute_upper": 6.728787910984646e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 80,
+      "time": 0.6761234037828133,
+      "components": {
+        "incident": {
+          "C": [
+            6.915591051401476e-08,
+            6.9702303155294395e-09
+          ],
+          "Cref": [
+            6.908411094995272e-08,
+            6.946790806184542e-09
+          ],
+          "absolute_upper": 8.735409409260203e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.001062706221837278,
+          "phase_upper": 0.00023218496713599244
+        },
+        "reflected": {
+          "C": [
+            -7.531382941450678e-07,
+            -2.7416701047218654e-07
+          ],
+          "Cref": [
+            -7.532246575619343e-07,
+            -2.7413110608072216e-07
+          ],
+          "absolute_upper": 0.00010817319051048472,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 8.592525964939995e-05,
+          "phase_upper": 7.894744607314407e-05
+        },
+        "pressure": {
+          "C": [
+            -6.839823836310527e-07,
+            -2.67196780156657e-07
+          ],
+          "Cref": [
+            -6.841405466119816e-07,
+            -2.671843152745376e-07
+          ],
+          "absolute_upper": 0.00018349342215765027,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 81,
+      "time": 0.6845749463300984,
+      "components": {
+        "incident": {
+          "C": [
+            3.953632261324196e-08,
+            3.623068297454344e-09
+          ],
+          "Cref": [
+            3.944554326319957e-08,
+            3.6044878990073303e-09
+          ],
+          "absolute_upper": 0.00010716910452357766,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.0023250473998849643,
+          "phase_upper": 0.00025798331440048117
+        },
+        "reflected": {
+          "C": [
+            -7.643577043576892e-07,
+            -3.219246255992571e-07
+          ],
+          "Cref": [
+            -7.644639447664277e-07,
+            -3.218947707481732e-07
+          ],
+          "absolute_upper": 0.0001276336073778305,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.00010407308758968791,
+          "phase_upper": 8.288573089865512e-05
+        },
+        "pressure": {
+          "C": [
+            -7.248213817444476e-07,
+            -3.183015573018028e-07
+          ],
+          "Cref": [
+            -7.250184015032282e-07,
+            -3.1829028284916587e-07
+          ],
+          "absolute_upper": 0.0002282394895407726,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 82,
+      "time": 0.6930264888773836,
+      "components": {
+        "incident": {
+          "C": [
+            2.1095217305689953e-08,
+            1.767985124592874e-09
+          ],
+          "Cref": [
+            2.100988259141128e-08,
+            1.7546999386873606e-09
+          ],
+          "absolute_upper": 9.988427550778904e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.004086000676496388,
+          "phase_upper": 0.0002898972341119288
+        },
+        "reflected": {
+          "C": [
+            -7.612261183914872e-07,
+            -3.6991812625835865e-07
+          ],
+          "Cref": [
+            -7.613276614780132e-07,
+            -3.6989480402907424e-07
+          ],
+          "absolute_upper": 0.00012049928655046054,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 9.586077603936967e-05,
+          "phase_upper": 7.721693270140976e-05
+        },
+        "pressure": {
+          "C": [
+            -7.40130901085797e-07,
+            -3.68150141133766e-07
+          ],
+          "Cref": [
+            -7.403177788866019e-07,
+            -3.681401040903869e-07
+          ],
+          "absolute_upper": 0.00021644835717691207,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 83,
+      "time": 0.7014780314246688,
+      "components": {
+        "incident": {
+          "C": [
+            1.0490816716904275e-08,
+            8.086822663826001e-10
+          ],
+          "Cref": [
+            1.0423916116852238e-08,
+            7.99947122489408e-10
+          ],
+          "absolute_upper": 7.803185670943615e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 0.006444409278754135,
+          "phase_upper": 0.00034124594599271185
+        },
+        "reflected": {
+          "C": [
+            -7.471704067208035e-07,
+            -4.1735449041503804e-07
+          ],
+          "Cref": [
+            -7.472541551219533e-07,
+            -4.1733699165046783e-07
+          ],
+          "absolute_upper": 9.895247973555304e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 7.545729384662136e-05,
+          "phase_upper": 6.556603528231281e-05
+        },
+        "pressure": {
+          "C": [
+            -7.366795900038992e-07,
+            -4.1654580814865576e-07
+          ],
+          "Cref": [
+            -7.368302390051011e-07,
+            -4.165370445279784e-07
+          ],
+          "absolute_upper": 0.00017453035501821068,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 84,
+      "time": 0.709929573971954,
+      "components": {
+        "incident": {
+          "C": [
+            4.857409004231505e-09,
+            3.4639575029766606e-10
+          ],
+          "Cref": [
+            4.811720066145085e-09,
+            3.409752959324376e-10
+          ],
+          "absolute_upper": 5.321295317846968e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -7.251535818151006e-07,
+            -4.6364396042478004e-07
+          ],
+          "Cref": [
+            -7.252166691450464e-07,
+            -4.6363107884442474e-07
+          ],
+          "absolute_upper": 7.44702813544284e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 5.369021992814676e-05,
+          "phase_upper": 5.2090229846287305e-05
+        },
+        "pressure": {
+          "C": [
+            -7.202961728108694e-07,
+            -4.6329756467448247e-07
+          ],
+          "Cref": [
+            -7.204049490789013e-07,
+            -4.632901035484923e-07
+          ],
+          "absolute_upper": 0.00012610276018882902,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 85,
+      "time": 0.7183811165192391,
+      "components": {
+        "incident": {
+          "C": [
+            2.092256881835024e-09,
+            1.3901549023203863e-10
+          ],
+          "Cref": [
+            2.0644204194786115e-09,
+            1.357011629533035e-10
+          ],
+          "absolute_upper": 3.242218188215005e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -6.973874952186514e-07,
+            -5.083599193726438e-07
+          ],
+          "Cref": [
+            -6.974331982301285e-07,
+            -5.083504693503687e-07
+          ],
+          "absolute_upper": 5.397678135181077e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 3.6344117612209505e-05,
+          "phase_upper": 4.00425473105478e-05
+        },
+        "pressure": {
+          "C": [
+            -6.952952383368157e-07,
+            -5.08220903882412e-07
+          ],
+          "Cref": [
+            -6.953687778106499e-07,
+            -5.082147681874154e-07
+          ],
+          "absolute_upper": 8.534895958217134e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 86,
+      "time": 0.7268326590665243,
+      "components": {
+        "incident": {
+          "C": [
+            8.379700511365969e-10,
+            5.249898421171221e-11
+          ],
+          "Cref": [
+            8.22546273672387e-10,
+            5.036380962431726e-11
+          ],
+          "absolute_upper": 1.8008796473733735e-05,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -6.653500270166686e-07,
+            -5.511910334859581e-07
+          ],
+          "Cref": [
+            -6.653837042836043e-07,
+            -5.511841051271693e-07
+          ],
+          "absolute_upper": 3.976578705424226e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 2.4900460314280327e-05,
+          "phase_upper": 3.104055767821613e-05
+        },
+        "pressure": {
+          "C": [
+            -6.645120569655316e-07,
+            -5.511385345017465e-07
+          ],
+          "Cref": [
+            -6.645611580099319e-07,
+            -5.51133741317545e-07
+          ],
+          "absolute_upper": 5.7058685916892256e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 87,
+      "time": 0.7352842016138095,
+      "components": {
+        "incident": {
+          "C": [
+            3.121100084086821e-10,
+            1.896949673026262e-11
+          ],
+          "Cref": [
+            3.041445808375926e-10,
+            1.741292849532855e-11
+          ],
+          "absolute_upper": 9.38684736567701e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -6.299550018839064e-07,
+            -5.91900049923636e-07
+          ],
+          "Cref": [
+            -6.299815261738438e-07,
+            -5.918950542882454e-07
+          ],
+          "absolute_upper": 3.1216526587384734e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.8405260386319976e-05,
+          "phase_upper": 2.522312105224211e-05
+        },
+        "pressure": {
+          "C": [
+            -6.296428918754972e-07,
+            -5.91881080426906e-07
+          ],
+          "Cref": [
+            -6.296773815930062e-07,
+            -5.9187764135975e-07
+          ],
+          "absolute_upper": 4.008757658952933e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 88,
+      "time": 0.7437357441610947,
+      "components": {
+        "incident": {
+          "C": [
+            1.0830296451896858e-10,
+            6.919684705187891e-12
+          ],
+          "Cref": [
+            1.0430312396720937e-10,
+            5.603328594957154e-12
+          ],
+          "absolute_upper": 4.8702083963389e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -5.917505563045253e-07,
+            -6.302946698543708e-07
+          ],
+          "Cref": [
+            -5.917733382357829e-07,
+            -6.302912740832764e-07
+          ],
+          "absolute_upper": 2.6639973445138567e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.517301804635296e-05,
+          "phase_upper": 2.189949651274108e-05
+        },
+        "pressure": {
+          "C": [
+            -5.916422533400068e-07,
+            -6.302877501696655e-07
+          ],
+          "Cref": [
+            -5.916690351118157e-07,
+            -6.302856707546814e-07
+          ],
+          "absolute_upper": 3.1068229119119166e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 89,
+      "time": 0.7521872867083798,
+      "components": {
+        "incident": {
+          "C": [
+            3.525827980210775e-11,
+            2.92099152188225e-12
+          ],
+          "Cref": [
+            3.315816301342932e-11,
+            1.6768519018862856e-12
+          ],
+          "absolute_upper": 2.823196629392828e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -5.51079560197414e-07,
+            -6.662098915279645e-07
+          ],
+          "Cref": [
+            -5.511005831545315e-07,
+            -6.662079274091786e-07
+          ],
+          "absolute_upper": 2.4420392255136812e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.374784516771972e-05,
+          "phase_upper": 2.0183840199822507e-05
+        },
+        "pressure": {
+          "C": [
+            -5.510443019176119e-07,
+            -6.662069705364433e-07
+          ],
+          "Cref": [
+            -5.510674249915181e-07,
+            -6.662062505572767e-07
+          ],
+          "absolute_upper": 2.6756434747643446e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 90,
+      "time": 0.760638829255665,
+      "components": {
+        "incident": {
+          "C": [
+            1.1026568392434788e-11,
+            1.7115163821221076e-12
+          ],
+          "Cref": [
+            9.76719213566033e-12,
+            4.66352466480625e-13
+          ],
+          "absolute_upper": 2.0483286610383478e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -5.081847605075879e-07,
+            -6.99498696814394e-07
+          ],
+          "Cref": [
+            -5.082050009952798e-07,
+            -6.994980850020736e-07
+          ],
+          "absolute_upper": 2.342021977603686e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.3187056284691811e-05,
+          "phase_upper": 1.9355153488775567e-05
+        },
+        "pressure": {
+          "C": [
+            -5.081737339391957e-07,
+            -6.994969852980117e-07
+          ],
+          "Cref": [
+            -5.081952338031442e-07,
+            -6.994976186496071e-07
+          ],
+          "absolute_upper": 2.487690940925679e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 91,
+      "time": 0.7690903718029501,
+      "components": {
+        "incident": {
+          "C": [
+            3.5634301395477248e-12,
+            1.3936606191575023e-12
+          ],
+          "Cref": [
+            2.664843503043797e-12,
+            1.204588053154202e-13
+          ],
+          "absolute_upper": 1.8023949494629313e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -4.632675828837028e-07,
+            -7.300278080688537e-07
+          ],
+          "Cref": [
+            -4.632874387049892e-07,
+            -7.300285096699968e-07
+          ],
+          "absolute_upper": 2.2978966938490352e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2990019102273417e-05,
+          "phase_upper": 1.895522444798641e-05
+        },
+        "pressure": {
+          "C": [
+            -4.6326401945356343e-07,
+            -7.30026414408235e-07
+          ],
+          "Cref": [
+            -4.632847738614862e-07,
+            -7.300283892111914e-07
+          ],
+          "absolute_upper": 2.41123695898782e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 92,
+      "time": 0.7775419143502353,
+      "components": {
+        "incident": {
+          "C": [
+            1.403991461293576e-12,
+            1.337069614296189e-12
+          ],
+          "Cref": [
+            6.732168541934693e-13,
+            2.888239253267487e-14
+          ],
+          "absolute_upper": 1.733112176140578e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -4.165167886153003e-07,
+            -7.576761095350798e-07
+          ],
+          "Cref": [
+            -4.165363713111242e-07,
+            -7.576781001211981e-07
+          ],
+          "absolute_upper": 2.2765458521669472e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2928443138783374e-05,
+          "phase_upper": 1.8738416473566543e-05
+        },
+        "pressure": {
+          "C": [
+            -4.1651538462383914e-07,
+            -7.576747724654664e-07
+          ],
+          "Cref": [
+            -4.1653569809427e-07,
+            -7.576780712388055e-07
+          ],
+          "absolute_upper": 2.3801748510618326e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 93,
+      "time": 0.7859934568975204,
+      "components": {
+        "incident": {
+          "C": [
+            7.893677959692882e-13,
+            1.3486320865064437e-12
+          ],
+          "Cref": [
+            1.5743328491278101e-13,
+            6.425267140323134e-15
+          ],
+          "absolute_upper": 1.7158431365268515e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -3.68120648526678e-07,
+            -7.823342930573718e-07
+          ],
+          "Cref": [
+            -3.6813994665710193e-07,
+            -7.823375504946917e-07
+          ],
+          "absolute_upper": 2.2635358951485068e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2911985219309598e-05,
+          "phase_upper": 1.8591571379038784e-05
+        },
+        "pressure": {
+          "C": [
+            -3.6811985915888205e-07,
+            -7.823329444252854e-07
+          ],
+          "Cref": [
+            -3.68139789223817e-07,
+            -7.823375440694246e-07
+          ],
+          "absolute_upper": 2.3656456581070175e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 94,
+      "time": 0.7944449994448056,
+      "components": {
+        "incident": {
+          "C": [
+            5.886142845679914e-13,
+            1.3738005356979123e-12
+          ],
+          "Cref": [
+            3.4071321462548865e-14,
+            1.3256513974983587e-15
+          ],
+          "absolute_upper": 1.7120753912815771e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -3.182712927939125e-07,
+            -8.039049898043849e-07
+          ],
+          "Cref": [
+            -3.182902487778444e-07,
+            -8.039094893552787e-07
+          ],
+          "absolute_upper": 2.2533086010280227e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2909187990033313e-05,
+          "phase_upper": 1.846886875708362e-05
+        },
+        "pressure": {
+          "C": [
+            -3.182707041796282e-07,
+            -8.039036160038494e-07
+          ],
+          "Cref": [
+            -3.1829021470652295e-07,
+            -8.039094880296274e-07
+          ],
+          "absolute_upper": 2.356516199826965e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 95,
+      "time": 0.8028965419920908,
+      "components": {
+        "incident": {
+          "C": [
+            4.90125098688608e-13,
+            1.3981073983280934e-12
+          ],
+          "Cref": [
+            6.822411594968605e-15,
+            2.535623402005353e-16
+          ],
+          "absolute_upper": 1.7106573427999483e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -2.6716576578615353e-07,
+            -8.223030561524194e-07
+          ],
+          "Cref": [
+            -2.67184308452126e-07,
+            -8.223087687654493e-07
+          ],
+          "absolute_upper": 2.244055927237616e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.291066746921226e-05,
+          "phase_upper": 1.835482423614314e-05
+        },
+        "pressure": {
+          "C": [
+            -2.671652756610547e-07,
+            -8.223016580450208e-07
+          ],
+          "Cref": [
+            -2.6718430162971444e-07,
+            -8.223087685118869e-07
+          ],
+          "absolute_upper": 2.3491391733288148e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 96,
+      "time": 0.8113480845393759,
+      "components": {
+        "incident": {
+          "C": [
+            4.110222092067854e-13,
+            1.4180453369798316e-12
+          ],
+          "Cref": [
+            1.2637472378205092e-15,
+            4.494819942912555e-17
+          ],
+          "absolute_upper": 1.7071545513038446e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -2.1500584023911215e-07,
+            -8.374558802760363e-07
+          ],
+          "Cref": [
+            -2.1502389200867612e-07,
+            -8.374627720069197e-07
+          ],
+          "absolute_upper": 2.2347912992905542e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2912393251884245e-05,
+          "phase_upper": 1.8240215350426173e-05
+        },
+        "pressure": {
+          "C": [
+            -2.1500542921690315e-07,
+            -8.374544622306988e-07
+          ],
+          "Cref": [
+            -2.1502389074492887e-07,
+            -8.374627719619715e-07
+          ],
+          "absolute_upper": 2.341534836203773e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 97,
+      "time": 0.8197996270866611,
+      "components": {
+        "incident": {
+          "C": [
+            3.3205473380967995e-13,
+            1.432983583818723e-12
+          ],
+          "Cref": [
+            2.165121521819711e-16,
+            7.382139090908198e-18
+          ],
+          "absolute_upper": 1.7012323380870929e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -1.6199738640642066e-07,
+            -8.493036605708844e-07
+          ],
+          "Cref": [
+            -1.6201486998212328e-07,
+            -8.493116924588513e-07
+          ],
+          "absolute_upper": 2.2252668265273596e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2913794313205608e-05,
+          "phase_upper": 1.8122395960390832e-05
+        },
+        "pressure": {
+          "C": [
+            -1.6199705435168694e-07,
+            -8.493022275873e-07
+          ],
+          "Cref": [
+            -1.6201486976561112e-07,
+            -8.493116924514692e-07
+          ],
+          "absolute_upper": 2.333216558059302e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 98,
+      "time": 0.8282511696339463,
+      "components": {
+        "incident": {
+          "C": [
+            2.519328661397651e-13,
+            1.4428626162189633e-12
+          ],
+          "Cref": [
+            3.43035189622414e-17,
+            1.1229959310129915e-18
+          ],
+          "absolute_upper": 1.6940479817150221e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -1.0834960533564759e-07,
+            -8.577996393801762e-07
+          ],
+          "Cref": [
+            -1.083664484154235e-07,
+            -8.578087677055877e-07
+          ],
+          "absolute_upper": 2.215715637763695e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2915678132409841e-05,
+          "phase_upper": 1.800363421680137e-05
+        },
+        "pressure": {
+          "C": [
+            -1.0834935340278138e-07,
+            -8.577981965175598e-07
+          ],
+          "Cref": [
+            -1.0836644838111998e-07,
+            -8.578087677044647e-07
+          ],
+          "absolute_upper": 2.3246460521294304e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 99,
+      "time": 0.8367027121812315,
+      "components": {
+        "incident": {
+          "C": [
+            1.7074076976159027e-13,
+            1.447541841282031e-12
+          ],
+          "Cref": [
+            5.025404863315277e-18,
+            1.5819602096419246e-19
+          ],
+          "absolute_upper": 1.6858258643851919e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            -5.427421981370785e-08,
+            -8.629102871890068e-07
+          ],
+          "Cref": [
+            -5.429035383168316e-08,
+            -8.629204636470372e-07
+          ],
+          "absolute_upper": 2.2061902654564912e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2918105589215464e-05,
+          "phase_upper": 1.7884519534325114e-05
+        },
+        "pressure": {
+          "C": [
+            -5.427404907293804e-08,
+            -8.629088396471658e-07
+          ],
+          "Cref": [
+            -5.429035382665775e-08,
+            -8.62920463646879e-07
+          ],
+          "absolute_upper": 2.3159238005003604e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "sample": 100,
+      "time": 0.8451542547285166,
+      "components": {
+        "incident": {
+          "C": [
+            8.867211759592314e-14,
+            1.4470436350183089e-12
+          ],
+          "Cref": [
+            6.80655227789805e-19,
+            2.0631936799948865e-20
+          ],
+          "absolute_upper": 1.6767837266244704e-06,
+          "eligible": false,
+          "passed": true
+        },
+        "reflected": {
+          "C": [
+            1.535993244828394e-11,
+            -8.646154346876723e-07
+          ],
+          "Cref": [
+            6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "absolute_upper": 2.1966981143570055e-05,
+          "eligible": true,
+          "passed": true,
+          "relative_upper": 1.2921140242902422e-05,
+          "phase_upper": 1.7765085771113858e-05
+        },
+        "pressure": {
+          "C": [
+            1.544860456591668e-11,
+            -8.64613987644037e-07
+          ],
+          "Cref": [
+            1.36131045557961e-18,
+            -8.64626606750139e-07
+          ],
+          "absolute_upper": 2.3070663289464444e-05,
+          "eligible": false,
+          "passed": true
+        }
+      }
+    }
+  ],
+  "result": "OBSERVATION_AND_LEDGER_PASS_CORROBORATED"
+}

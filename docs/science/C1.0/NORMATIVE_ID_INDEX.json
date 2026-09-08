@@ -261,5 +261,15 @@
     "path": "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
     "definition_line": "## SV-027 — additional fixed temporal refinement",
     "definition_status": "COMPLETE"
+  },
+  "MR-008": {
+    "path": "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md",
+    "definition_line": "## MR-008 — decisión y correspondencia física",
+    "definition_status": "COMPLETE"
+  },
+  "MR-010": {
+    "path": "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md",
+    "definition_line": "## MR-010 — free-end reflection operator and resolution obligations",
+    "definition_status": "COMPLETE"
   }
 }

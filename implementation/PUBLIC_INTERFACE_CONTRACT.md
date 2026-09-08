@@ -31,3 +31,23 @@ Field-group bindings and required journey assertions: `implementation/UI_FIELD_B
 ## S03 runtime thermochemistry — C1.0-R3
 
 ThermoModel uses BCR-S03-NASA-INVERSION TI-001…005 and derived identity DINO2NEXT_NASA5_CONTINUOUS 1.0.0. Energy/enthalpy inversion returns unique in-domain temperature with target and signed residual diagnostics; it does not mutate or replace conserved inputs. RAW, derived and generator hashes are separate. EOS_OUT_OF_DOMAIN and EOS_INVERSION_FAILED remain distinct; no first-root or seed-dependent success. Full signatures are in S03.
+
+## MR-008 regional state — C1.0-R5
+
+The S05-owned RegionalDuctState extension is delivered and accepted with S06
+through exactly the three enumerated file handoffs; it does not reopen or
+replace accepted homogeneous DuctState behavior. W faces and I12 inventories
+are authoritative, material identities are physical input independent of
+species/origins, and x is derived with explicit inverse certificates. Products
+distinguish regional NASA states, conservative Q projection, compensated
+inventory and pressure weighted by represented overlap DeltaW. No generic
+averaged primitive vector claims homogeneous EOS meaning. Preserve weighting
+and geometric residual metadata, immutable restart and recovery identity.
+
+S06 owns regional flux/remap/stages, all physical guards and rollback, including
+both FE endpoints. Unsupported regional boundary events are typed transactional
+rejections. Their S07/S16 consumers require explicit creation/exhaustion,
+event-time, actual-donor, paired-ledger and rollback contracts before use;
+ownership is not authority to invent an unspecified numerical mechanism.
+S14 evaluates sources on the represented state; S17/S18 preserve its identity;
+frontend consumes backend observables without recovering physics itself.

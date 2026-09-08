@@ -1,0 +1,1 @@
+{"classification": "DIRECTED_HYBRID_FUNCTION_GUARD_DEMONSTRATION_NOT_VAL008_ACCEPTANCE", "elapsed_seconds": 21.410018127877265, "steps": 62, "max_pressure_error_Pa": 3.785535227507353e-07, "max_velocity_error": 7.097611387507641e-10, "failures": []}

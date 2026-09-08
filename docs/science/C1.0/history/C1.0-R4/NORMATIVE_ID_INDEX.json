@@ -1,0 +1,265 @@
+{
+  "PHY-001": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-001 — geometry"
+  },
+  "PHY-002": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-002 — thermochemistry"
+  },
+  "PHY-003": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-003 — 0D volumes and scavenging"
+  },
+  "PHY-004": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-004 — quasi-1D passages and topology"
+  },
+  "PHY-005": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-005 — dynamic ports and loss characterization"
+  },
+  "PHY-006": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-006 — combustion"
+  },
+  "PHY-007": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-007 — heat transfer"
+  },
+  "PHY-008": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-008 — losses"
+  },
+  "PHY-009": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-009 — tracers and metrics"
+  },
+  "PHY-010": {
+    "path": "docs/science/C1.0/PHYSICS_SPEC.md",
+    "definition_line": "## PHY-010 — work and performance"
+  },
+  "NUM-001": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## State and space (NUM-001)"
+  },
+  "NUM-003": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Reconstruction and flux (NUM-003/004)"
+  },
+  "NUM-004": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Geometry and sources (NUM-004/005)"
+  },
+  "NUM-005": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Time integration and events (NUM-002/005)"
+  },
+  "NUM-002": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Time integration and events (NUM-002/005)"
+  },
+  "NUM-009": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Periodicity (NUM-009)"
+  },
+  "NUM-006": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Verification and failures (NUM-006/010)"
+  },
+  "NUM-010": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Verification and failures (NUM-006/010)"
+  },
+  "VAL-001": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-001 | UNIT | NASA tables and independent tabulated values | scaled cp,h,u,gamma ≤1e-8; EOS inversion ≤1e-8 K |"
+  },
+  "VAL-002": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-002 | NUMERICAL_VERIFICATION | closed moving ideal-gas volume, analytic isentrope, 100–800 cells/steps | finest relative error ≤1e-4; observed order ≥1.8 |"
+  },
+  "VAL-003": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-003 | NUMERICAL_VERIFICATION | closed heat ODE, m=.001 kg, cv=1000, H=2, Tw=600 K, T0=400/800 K | relative error ≤1e-5; order ≥1.8 |"
+  },
+  "VAL-004": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-004 | NUMERICAL_VERIFICATION | ideal nozzle/orifice subcritical and choked references | mass, h0 and choking branch within documented oracle uncertainty and 0.1% total scale |"
+  },
+  "VAL-005": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-005 | NUMERICAL_VERIFICATION | closed UV Wiebe/reaction extent | species/energy ≤1e-10 normalized; exact terminal extent |"
+  },
+  "VAL-006": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-006 | NUMERICAL_VERIFICATION | Sod exact cell averages, N=50…400 | L1 rho at N400 ≤0.004375; decreasing, order ≥0.5 |"
+  },
+  "VAL-007": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-007 | NUMERICAL_VERIFICATION | stationary gamma contact | p,u ≤1e-10 scaled; L1 rho ≤2 dx jump |"
+  },
+  "VAL-008": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-008 | NUMERICAL_VERIFICATION | NASA species/thermal contacts and mixed shocks | operational contact L1≤5e-4, Linf≤5e-3; thermal L1≤2e-3,Linf≤2e-2; positivity/conservation |"
+  },
+  "VAL-009": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-009 | NUMERICAL_VERIFICATION | periodic acoustic Fourier mode | amplitude ≤2(2π/N)^2+10eps; phase ≤π/N; order ≥1.8 |"
+  },
+  "VAL-010": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-010 | NUMERICAL_VERIFICATION | rigid/free reflection, N=800 | wall L1≤0.01; free-end amplitude≤1%, phase≤π/N |"
+  },
+  "VAL-011": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-011 | NUMERICAL_VERIFICATION | variable-area rest and smooth Mthroat=.3 | rest ≤1e-10; L1 rho≤2e-6 at 400; order≥1.8 |"
+  },
+  "VAL-013": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-013 | NUMERICAL_VERIFICATION | fixed reservoir–T3/W2–duct | all primary waveform errors + reference ≤0.1% physical scale; reference ≤0.01%; phase≤4 us; ledger≤1e-10 |"
+  },
+  "VAL-014": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-014 | NUMERICAL_VERIFICATION | moving cylinder–T3/W2–duct | same budgets; p·dV, transferred mass/energy and phase mandatory |"
+  },
+  "VAL-016": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-016 | NUMERICAL_VERIFICATION | original waveform plus additive R1 through 4 ms | same budgets; resolved forward→zero→reverse; donor h0/species and accumulated transfers |"
+  },
+  "VAL-018": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-018 | NUMERICAL_VERIFICATION | source-only and combined heat/shear/K/W2 | analytic/reference error≤0.1%; total-energy ledger≤1e-10; passive entropy |"
+  },
+  "VAL-020": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-020 | NUMERICAL_VERIFICATION | moving crankcase–transfer–cylinder with opening/closing | same 0.1/0.01% and phase budgets; retained passage inventory |"
+  },
+  "VAL-021": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-021 | NUMERICAL_VERIFICATION | complete coupon from cold/warm/high/low composition | NUM-009 thresholds, period 2–8 detection, max-cycle and multiple-attractor semantics |"
+  },
+  "VAL-022": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-022 | EXPERIMENTAL_VALIDATION | Motored cylinder/crankcase campaign, VF-022 and EXR-001/002 | Preregistered 95%/Holm and metrological capability; REQUIRES_EXPERIMENTAL_DATA |"
+  },
+  "VAL-023": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-023 | NUMERICAL_VERIFICATION | reaction source limits | no depleted reactant; exact coordinate/species/energy ledgers |"
+  },
+  "VAL-024": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-024 | NUMERICAL_VERIFICATION | distributed/local loss | sign/passivity/analytic laminar limit and map station semantics |"
+  },
+  "VAL-025": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-025 | EXPERIMENTAL_VALIDATION | complete reference engine calibration/validation split | GUM uncertainty, preregistered observables; calibration allowed only on calibration partition |"
+  },
+  "VAL-026": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-026 | EXPERIMENTAL_VALIDATION | held-out rpm/load/phi/exhaust points | no recalibration; preregistered 95% acceptance and multiplicity control |"
+  },
+  "VAL-027": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-027 | NUMERICAL_VERIFICATION | smooth MOL entropy wave, independent DOP853 | dt=.002…2.5e-4, finest L1≤1e-10, order 1.8–2.2 |"
+  },
+  "VAL-028": {
+    "path": "docs/science/C1.0/VALIDATION_SPEC.md",
+    "definition_line": "| VAL-028 | NUMERICAL_VERIFICATION | exact two-zone mixing/birth/merge/re-entry | relative error≤1e-6, order≥1.8, ledger≤1e-10 |"
+  },
+  "CAP-001": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-002": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-003": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-004": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-005": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-006": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-007": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-008": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-009": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "CAP-010": {
+    "path": "docs/science/C1.0/PRODUCT_AND_CAPABILITY_CONTRACT.md",
+    "definition_line": "CAP-001 crank-slider and measured geometry; CAP-002 conservative 0D volumes; CAP-003 unsteady quasi-1D gas dynamics; CAP-004 bidirectional dynamic ports; CAP-005 two-zone scavenging; CAP-006 prescribed SI combustion; CAP-007 heat transfer; CAP-008 gas-path/mechanical performance accounting; CAP-009 operating-point convergence and sweeps; CAP-010 provenance and reproducibility."
+  },
+  "NUM-007": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Physical boundaries (NUM-007/008)",
+    "definition_status": "COMPLETE"
+  },
+  "NUM-008": {
+    "path": "docs/science/C1.0/NUMERICAL_METHOD_SPEC.md",
+    "definition_line": "## Physical boundaries (NUM-007/008)",
+    "definition_status": "COMPLETE"
+  },
+  "TI-001": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-001 — representation and derivation (PHY-002)",
+    "definition_status": "COMPLETE"
+  },
+  "TI-002": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-002 — global invertibility and error separation",
+    "definition_status": "COMPLETE"
+  },
+  "TI-003": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-003 — ThermoModel inverse contract",
+    "definition_status": "COMPLETE"
+  },
+  "TI-004": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-004 — VAL-001 and independent reference",
+    "definition_status": "COMPLETE"
+  },
+  "TI-005": {
+    "path": "docs/science/C1.0/BCR-S03-NASA-INVERSION.md",
+    "definition_line": "## TI-005 — consumers and mandatory revalidation",
+    "definition_status": "COMPLETE"
+  },
+  "SV-008": {
+    "path": "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
+    "definition_line": "## SV-008 — computational guard zones",
+    "definition_status": "COMPLETE"
+  },
+  "SV-009": {
+    "path": "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
+    "definition_line": "## SV-009 — smooth acoustic extrema",
+    "definition_status": "COMPLETE"
+  },
+  "SV-010": {
+    "path": "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
+    "definition_line": "## SV-010 — characteristic reflection operator",
+    "definition_status": "COMPLETE"
+  },
+  "SV-027": {
+    "path": "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
+    "definition_line": "## SV-027 — additional fixed temporal refinement",
+    "definition_status": "COMPLETE"
+  }
+}

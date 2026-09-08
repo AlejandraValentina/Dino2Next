@@ -381,9 +381,9 @@ The JSON companion contains the same field values. All required execution remain
 
 **domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
 
-**mesh_sequence**: N=[200,400,800] uniform.
+**mesh_sequence**: Rigid: N=[200,400,800] uniform unchanged. Free MR-010: N=[200,400,800] STUDY; N=1600 FINAL_PRECISION. All rows uniform, both epsilon values executed separately.
 
-**dt_sequence**: CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.
+**dt_sequence**: Rigid: CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N unchanged. Free: each STUDY N uses CFL=[0.2,0.1,0.05]; FINAL_PRECISION N1600 uses CFL=[0.1,0.05]. Spatial sequence N200/400/800/1600 at CFL0.05; temporal sensitivity at each N. Align to end and all sampling times.
 
 **boundary_states**: Rigid: u=0 both ends. Free: right p-prime=0 pressure-release acoustic boundary, left zero incoming acoustic invariant; these are linear canonical BC tests distinct from nonlinear reservoir capacity.
 
@@ -393,15 +393,15 @@ The JSON companion contains the same field values. All required execution remain
 
 **independent_reference**: Rigid exact linear p-prime=eps*cos(pi*x)*cos(pi*c*t),u=eps/c*sin(pi*x)*sin(pi*c*t). Free p-prime=g(x-c*t)-g(2-x-c*t),u=(g(x-c*t)+g(2-x-c*t))/c. Exact Gaussian cell integrals via erf.
 
-**reference_resolution**: Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.
+**reference_resolution**: Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED. Free MR-010 requires independently qualified C_h, A0, uncertainty and reference-only masks at every assessment mesh, including N1600, with portable certificate and consumed source/data/catalogue hashes before candidate execution. Incorporating research evidence requires demonstrated identity or requalification of the published artifact; this fiche does not assert that qualification has occurred.
 
 **observable**: Rigid pressure L1 unchanged. Free SV-010 directional acoustic signals w+=(p-prime+rho0*c*u)/2 and w-=(p-prime-rho0*c*u)/2, plus totalpressure; C_h=sum cellaverage(w)*exact cell integral exp(-2pi*i*x). Peak/time only diagnostics.
 
 **normalization**: Rigid epsilon unchanged. Free A0=absolute continuous initial incident Fourier integral, strictlypositive and scaled for each epsilon. Reference applies SAME C_h to exact Gaussian cell averages; phase radians in the reference-defined SV-010 resolution mask.
 
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory. SV-010 retains all101samples including75; relative phase is never evaluated by dividing totalpressure by its canceling reference. No reference or nonlinear remainder is subtracted to improve candidate errors.
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory. SV-010 retains all101samples including75; relative phase is never evaluated by dividing totalpressure by its canceling reference. No reference or nonlinear remainder is subtracted to improve candidate errors. Free MR-010: retain all101 samples, both epsilon values, all three complex-error traces and precision comparisons at every STUDY and FINAL_PRECISION row. At CFL0.05 require strict decrease of time-maximum absolute complex error/A0 for each signal across N200/400/800/1600, demonstrated by fine upper uncertainty bound below coarse lower bound; report all three log2 ratios and field L1/L2/orders. At each STUDY N report differences among its three CFLs; at N1600 compare CFL0.1/0.05 coefficient traces and gate margins without inferring temporal order or a dt-to-zero error bound.
 
-**threshold**: Rigid L1(p-pref)/eps<=.01 atN800 unchanged. Free all101samples: complex absolute error/A0<=.01 for each directional component and totalpressure. Where abs(Cref_h)>=.01*A0 require relative amplitude error<=.01 and phase<=pi/N; outside label NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION, not phasePASS. Zero coefficient has undefined phase. Reference-only masks qualified/frozen before candidate. Repeat epsilon/2. See SV-010.
+**threshold**: Rigid L1(p-pref)/eps<=.01 atN800 unchanged. Free MR-010 FINAL_PRECISION rows N1600/CFL0.1 and N1600/CFL0.05, each epsilon separately: all101samples complex absolute error/A0<=.01 for each directional component and totalpressure. Where abs(Cref_h)>=.01*A0 require relative amplitude error<=.01 and phase<=pi/N; outside label NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION, not phasePASS. Zero coefficient has undefined phase. Reference-only masks qualified/frozen before candidate at each mesh; N1600 coverage must independently confirm incident j0..83 and reflected j67..100. STUDY rows N200/400/800 at all three original CFLs require completed admissible evolution, unchanged conservation gates and the declared convergence/sensitivity study; retain original precision comparisons and their failures without claiming final precision. Repeat epsilon/2. Historical R4 FAIL remains FAIL under R4. See SV-010 MR-010 resolution-obligation table.
 
 **failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
 

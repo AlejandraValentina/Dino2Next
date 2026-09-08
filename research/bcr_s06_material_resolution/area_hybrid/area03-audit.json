@@ -1,0 +1,223 @@
+{
+  "classification": "SOFTWARE_VOLUME_CONSISTENCY_NOT_VAL_ACCEPTANCE",
+  "probe": [
+    {
+      "source": "historical",
+      "pressure": [
+        99999.9830432826,
+        99999.98302954217
+      ],
+      "regional_pressure": [
+        100000.00000012126,
+        100000.00000012126
+      ],
+      "density_relative_error": [
+        -1.6956838688741982e-07,
+        -1.697057911975719e-07
+      ],
+      "unit_route_relative_error": [
+        -2.220446049250313e-16,
+        -2.220446049250313e-16
+      ]
+    },
+    {
+      "source": "current",
+      "pressure": [
+        100000.00000012126,
+        100000.00000012126
+      ],
+      "regional_pressure": [
+        100000.00000012126,
+        100000.00000012126
+      ],
+      "density_relative_error": [
+        -2.220446049250313e-16,
+        -2.220446049250313e-16
+      ],
+      "unit_route_relative_error": [
+        -2.220446049250313e-16,
+        -2.220446049250313e-16
+      ]
+    }
+  ],
+  "controls": {
+    "rest-control.npz": {
+      "initial_W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "initial_inventory": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "final_W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "final_inventory": {
+        "bitwise": false,
+        "max_abs": 2.2264430299401288e-15
+      },
+      "faces": {
+        "bitwise": false,
+        "max_abs": 4.037328179199514e-11
+      },
+      "sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      }
+    },
+    "advisor-controls.npz": {
+      "area0-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area0-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area1-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-initial-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-initial-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-final-W": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-final-I": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-faces": {
+        "bitwise": true,
+        "max_abs": 0.0
+      },
+      "area2-u-30-sources": {
+        "bitwise": true,
+        "max_abs": 0.0
+      }
+    }
+  },
+  "hashes": {
+    "historical/before-bulk-W-volume/area_solver.py": "3a98afd8d3a369d296b82f067f024f0b8035652298aed6c1498ce1a8cbbd424a",
+    "area_solver.py": "3c956e1a76ebe9b29331374f761d7331b11b93958e081f34e181a73a674a841a",
+    "advisor.py": "ed03f21099f20570dd3793dd42f64f547593d89ccdd836ef8848deb8f55c8c13",
+    "area03_audit.py": "9620118d363c893001b5b68de1552562cd3c3061247546fde8c3ef32afbc8595"
+  }
+}

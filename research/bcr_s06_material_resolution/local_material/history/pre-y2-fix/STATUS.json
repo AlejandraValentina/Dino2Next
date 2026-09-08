@@ -1,0 +1,4 @@
+{
+  "classification": "HISTORICAL_AUTHOR_RESULTS_WITH_MISSING_Y2_CHECK_NOT_CURRENT_ACCEPTANCE",
+  "reason": "Second FE state was not separately checked before convex combination; records lacked transaction identification."
+}

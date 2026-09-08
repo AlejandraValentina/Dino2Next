@@ -1,0 +1,8 @@
+{
+  "upstream_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "sources": {
+    "validation/references/VAL-010/qualify_free.py": "81968001cc092509f171d0127f7d465587359d3aa647bf448d0d40911a4920f3",
+    "validation/references/VAL-010/reference.py": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+    "artifacts/S06-compatibility/VAL010/acoustic_reduction.py": "0bf201b9fbb2ec60b7ef2640bfdf26d4267ee54d0b37bad2c25ff7a8f744e2d2"
+  }
+}

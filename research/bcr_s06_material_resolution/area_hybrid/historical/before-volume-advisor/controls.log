@@ -1,0 +1,28 @@
+{
+  "classification": "AREA_HYBRID_RESEARCH_REST_CONTROL_NOT_VAL_ACCEPTANCE",
+  "steps": 10,
+  "dt": 1e-06,
+  "max_pressure_error_Pa": 1.6170088201761246e-07,
+  "max_velocity": 7.619223146641456e-11,
+  "elapsed_seconds": 1.9044918743893504,
+  "ledger_residual": [
+    -8.291178945108303e-20,
+    -1.1102230246251565e-16,
+    4.722008470382273e-13,
+    0.0,
+    0.0,
+    -5.552720589053711e-17,
+    -6.685713017180531e-20,
+    0.0,
+    0.0,
+    0.0,
+    -8.291178945108303e-20,
+    0.0
+  ],
+  "source_sha256": {
+    "research/bcr_s06_material_resolution/area_hybrid/area_solver.py": "f23a7442e941f21d074e157a08c84acbe8f390e602216c0dd6d9c630ef7a998c",
+    "research/bcr_s06_material_resolution/area_hybrid/run_controls.py": "55decbcdc956348b2728afc9a3a637d0433ba4be41bb264305ddbeda33e67698",
+    "research/bcr_s06_material_resolution/local_material/hybrid.py": "2bdb700ee7342ceb6f685dff89f0fa009da7b52b1e7adae97fb0ca36c90fe404",
+    "research/bcr_s06_material_resolution/regional_geometry/geometry.py": "0f2ac4d8ed8556b1f9b161201deccde446338219cc3ab18340632a3a4fb520c2"
+  }
+}

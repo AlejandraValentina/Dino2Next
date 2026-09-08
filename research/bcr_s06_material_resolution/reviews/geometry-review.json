@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "VOLUME_COORDINATE_ALGEBRA_DEMONSTRATION_CORROBORATED_NOT_RECIPE_ADJUDICATION",
+  "source_sha256": {
+    "research/bcr_s06_material_resolution/regional_geometry/geometry.py": "0f2ac4d8ed8556b1f9b161201deccde446338219cc3ab18340632a3a4fb520c2",
+    "research/bcr_s06_material_resolution/regional_geometry/run_controls.py": "eaa099c35cfe1ed9b00ae475693ecdf7d1176e2188a3d700cccd83710c986799",
+    "src/dino2next/gasdynamics/__init__.py": "e20f6870c04e94bbe620355d2003c8a03aa6b37caae5df864a3bb0622cba6867",
+    "src/dino2next/thermo/__init__.py": "6aeab6e87099e364b3d07a5764612af8ad74c1912941a01cfa0f58702cdcdede",
+    "docs/science/C1.0/datasets/thermo_runtime_continuous_v1.json": "5b4d37b8821fcfac906fc2ff726945b6455049e229f16c56ba66b40bec0eda7a"
+  },
+  "tests": "Five tests independently PASS0.50s; original manufactured controls independently replayed with output-only redirection and exact match except timing; rational final-GCL identity independently checked including opposite-sign face speeds.",
+  "findings": [],
+  "conclusions": [
+    "The naive position FE/SSPRK geometry inconsistency for nonlinear area is real. Linear differences of authoritative W remove that discrete volume-combination inconsistency.",
+    "This changes the geometric time discretization; it is not a harmless storage refactor and needs explicit BCR coordinate/event/restart adjudication.",
+    "Monotone volume inversion returns an enclosing bracket and exact rational residual for accepted binary64 area polynomial; it does not claim a rounded x is an exact inverse.",
+    "Manufactured known-static-fluid inputs validate transport/GCL algebra, not nonlinear Riemann transport, variable-pressure accuracy, or a uniform moving physical solution in a variable-area duct."
+  ],
+  "limits": [
+    "One polynomial segment, no joins/events/material collisions or variable-pressure source reconstruction.",
+    "A production residual/error and boundary-event policy is not selected by the observed residual magnitude.",
+    "No ST003/VAL011/VAL008/S06 acceptance. Geometry/state-interface integration remains unimplemented."
+  ]
+}

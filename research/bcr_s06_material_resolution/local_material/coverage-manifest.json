@@ -1,0 +1,24 @@
+{
+  "classification": "CURRENT_HYBRID_SMALL_CONTACT_COVERAGE_AND_DIRECTED_SHOCK_EVIDENCE_PENDING_PEER_REVIEW",
+  "files": {
+    "run_fast_contacts.py": "afd39111fb88a28b7485c48d0367b9aa6a1954005c8d2f37b7b9d6cbff5b44b8",
+    "fast-contacts-summary.json": "6778cecdf660d3128dcc69b08ee4f88055c3c17ede4fe80f061c0a47c6b77b50",
+    "audit_fast_contacts.py": "1681fa6d780cee1c2f15af1c3952568b71d8529eefde8ee017b00293dd558781",
+    "fast-contacts-audit.json": "8d108fe724b91976398783f61e3c56e795c8fcd079312d7b4d2f3f8b73851e99",
+    "fast-contacts.log": "7f4b72c483086907d23e6fadc5d88096ffb8abd2c688036ab2bd8a67e0f39425",
+    "fast-contacts-audit.log": "75879fd1a6263d6782654b88711af724180cb976985defb88308480f9fa4b5f9",
+    "shock-summary.json": "88eef465fce52bdbe1b696fd7d3313a0da229b40d1c0d1dba0c861c15b8dba41",
+    "hybrid-provenance.json": "8843243301fa397452df0623cd003a3a62058f4ae94a165cbdec3b29dd276a95"
+  },
+  "raw_contacts": {
+    "fast-contact-0-0.json": "ffe05b6148d68803164f48622629a50e326bd0ff90b6c313d8ae12a75ceed2fd",
+    "fast-contact-0-100.json": "ac4cd7e5de8a92b5434565ca4181b9ad245b633ec6124a21922d22d5127f6650",
+    "fast-contact-0--100.json": "7ca64897655db869f9d10234cd41e5a8734147949fdbbcd4741b600fbe081d4b",
+    "fast-contact-1-0.json": "741ef3e4d420ae1ca0120686c52584c4e023fc56e7144d3af3e4fa11f0057cae",
+    "fast-contact-1-100.json": "c59881996bf004838227dbb93d8eaf1d89e89d578dc314c9238651b0c1dfb931",
+    "fast-contact-1--100.json": "9c15fdd05f98ca2287d4dea7412077246f66557bbbe0b2d4f65b897d27a473f0",
+    "fast-contact-2-0.json": "0522a9efe1471a978a3dd40d46b66e8ec2d1280cc2520101a88cfd4d040aa6c4",
+    "fast-contact-2-100.json": "a49d8b15ef0077284405b0cbdd9841cfd305a8dd2dda676e1b0b5b354e77f170",
+    "fast-contact-2--100.json": "3757136350e2c938526e498ba88016933856e018f46e2bbaaa499a7758bd2cfd"
+  }
+}

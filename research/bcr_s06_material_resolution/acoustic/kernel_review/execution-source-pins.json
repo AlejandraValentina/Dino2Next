@@ -1,0 +1,10 @@
+{
+  "src/dino2next/numerics/__init__.py": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+  "validation/fixtures/VAL-006/canonical_execution.py": "dcf0ba8b4de2189529ab83ce0718d387e42888cb6539344522875b59c2f50924",
+  "validation/fixtures/VAL-006/assessment.py": "d474fbfe41d94a99ddaf181bdb707461e6ef7a2cee916499458b90b77256c588",
+  "validation/fixtures/VAL-006/gamma_adapter.py": "67e2895509fdc5fbc2845b855e21dea450698e20e99b7a94894f031b55d81dfe",
+  "validation/fixtures/VAL-010/input.json": "4c78b379f3c89e8e70a3884eaf2bfeea8b5c0f1173501362c18d60f42ba399b5",
+  "validation/references/VAL-010/reference.py": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+  "artifacts/S06-exact-sums/streaming/driver.py": "52dc412ad7b2d35b24c0bbf02edf09030e00e95d6df0f5c2731741f179096a61",
+  "artifacts/S06-exact-sums/streaming/run.py": "0a282e5d064dec07695ac01f01bc49909edf473f7092ae936b6056a343768e28"
+}

@@ -1,0 +1,16 @@
+{
+  "classification": "AUTHOR_HYBRID_INCREMENT_PENDING_INDEPENDENT_REVIEW",
+  "prior_local_fix_manifest": "ac851b49c8bfddf2d3f8794dcafb7a5cec515e46df7ca48c400e76e6c2fc9cea",
+  "selective_flux_old_new_accepted_states_exact": true,
+  "files": {
+    "hybrid.py": "2bdb700ee7342ceb6f685dff89f0fa009da7b52b1e7adae97fb0ca36c90fe404",
+    "kernel_source.py": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+    "kernel_binding.json": "4eb05929bb7e1d62ad41ce15f7ec3132faa1946bbfc5b9dffbd21d3882675078",
+    "test_hybrid.py": "79b94c783ab7416fb96970965a8cf434cb84a21668b2d421f8795ddd189e0ec9",
+    "run_hybrid.py": "2e918c523043cb859329102ade613bb2b2217b20075fe0bf45d62045a5462b2d",
+    "hybrid-result.json": "5bd1bc0ccfd31aecb0c7b6e26bffe4ce1f251adf11d2ecd23d6495ac79b36164",
+    "hybrid-unit.log": "0ead1110be795e3aa57f83cff8d7ce0d5b7d58e628ffc8800b055c12a9009e3c",
+    "hybrid.log": "07d108341d693c6a59cb044616c7fb587254611052572a4100b9a482bf7ee231",
+    "HYBRID.md": "e8e974040233681612ffd4037adf5b1e624cdba8324f8a52cc759e6da382238d"
+  }
+}

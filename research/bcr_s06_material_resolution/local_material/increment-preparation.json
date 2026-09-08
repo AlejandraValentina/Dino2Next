@@ -1,0 +1,17 @@
+{
+  "classification": "EXACT_FAST_SEARCH_COMPOSITION_AND_BULK_SELECTION_CHECKS_NOT_SHOCK_EXECUTION",
+  "tests": {
+    "fast_hybrid_equivalence": "2 passed; contact+wave three steps, bitwise arrays/dt/fluxes/records",
+    "bulk_flux_b": "1 passed; actual fluxB selected, no regional HLLC outside patch; full high/low bitwise equal"
+  },
+  "files": {
+    "fast_hybrid.py": "e491679e409dd5f8c47f1918a943879a87ba974350c56c64cb47aa79108904e4",
+    "fast_overlap.py": "3a7a9f5f76d8f7eec0ea35589c6b749836b9e0e7107233231a0bdf66e517dd28",
+    "test_fast_hybrid.py": "6fa83a10a5d856690adfb4fdfa29e24666785052fe266fc6c50d26f7b6cb9168",
+    "fast-hybrid-unit.log": "9edce960170e4c73565689615cda3af6097ed45d16ad91dc808f41c85df9e5eb",
+    "test_hybrid_flux_b.py": "c35b1b657559848bce573a0d15ea73b190c92078f6b7c37de817b99cc83c7f51",
+    "hybrid-flux-b.log": "f43bf8c7b22e7910da89d0d66acb00bbd6cbf9e243345473856325072022f2da",
+    "shock_control.py": "c16bb83a21b5fcf66e43ea7143323d3da31585924e320f44616423ff8ec50085",
+    "shock-preparation.json": "e111b2affd6d77835c0c5baf8d07987fb4bc07830e08a54dab972494dc939abe"
+  }
+}

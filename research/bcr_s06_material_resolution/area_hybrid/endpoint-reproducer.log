@@ -1,0 +1,28 @@
+{
+  "classification": "CANONICAL_ENDPOINT_SOFTWARE_REPRODUCER_NOT_NUMERICAL_ACCEPTANCE",
+  "exact_volume": "5/3",
+  "stored_volume": 1.6666666666666667,
+  "exact_residual": "-1/13510798882111488",
+  "results": [
+    {
+      "label": "historical",
+      "source_sha256": "5f3731bfd920382ebc0db993ef924ecfc47ad5c37ccc4cb2662128edf91c51b4",
+      "initialized": false,
+      "reason": "GEOMETRY_VOLUME_INVERSION"
+    },
+    {
+      "label": "fixed",
+      "source_sha256": "f23a7442e941f21d074e157a08c84acbe8f390e602216c0dd6d9c630ef7a998c",
+      "initialized": true,
+      "x_right": 1.0,
+      "W_right": 1.6666666666666667,
+      "endpoint_records": [
+        [
+          24,
+          "CANONICAL_RIGHT_ENDPOINT",
+          "-1/13510798882111488"
+        ]
+      ]
+    }
+  ]
+}
