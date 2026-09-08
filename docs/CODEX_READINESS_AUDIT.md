@@ -18,3 +18,7 @@ Required checks: `python scripts/run_foundation.py`; `python scripts/check_scope
 C1 original and R1 are preserved with manifests. R2 changes only the three approved BCRs and operational checking. Lightweight research checks are recorded under research/preimplementation_r2; no coupled reference, high-resolution run, engine campaign or production solver was run/created. Heavy gates remain MANDATORY_VERIFICATION_DURING_IMPLEMENTATION. The known unresolved coupled reference error allocation still forbids NUMERICALLY_VERIFIED_GEN1. Readiness does not grant that claim, scientific validity or predictive validation.
 
 PR #1 stays open on work/foundation-c1-a1-ux1. No merge and no S01 execution. Final reported HEAD and GitHub Actions run are the evidence of remote CI status; this document never predicts that status from local tests alone.
+
+## R4 bounded S06 contract update
+
+Four decisions are specified by BCR-S06-VERIFICATION-CONTRACT. S01-S05 remain accepted. S06 numerical acceptance and downstream implementation remain pending their actual gates. Foundation/readiness do not replace these results. Original counterexamples remain preserved under R3 history and portable BCR evidence.

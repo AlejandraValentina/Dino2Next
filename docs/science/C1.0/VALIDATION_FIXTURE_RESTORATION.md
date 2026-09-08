@@ -117,3 +117,7 @@ All current execution fields are in EXECUTABLE_VALIDATION_FIXTURES.json and its 
 ## R3 applicability
 
 TI-004 defines the runtime/reference identity and additional continuity/inversion checks. All original fixture states, timing and thresholds are retained. Previously evaluated RAW references must be regenerated/requalified for TI-001 before a PASS claim.
+
+## R4 explicit amendments to historical fixture descriptions
+
+The earlier VF descriptions remain traceable historical sources. For current execution, SV-008 retains the physical window and adds causally derived computational guards; SV-009 updates only acoustic-extremum slopes with all VAL009 norms/thresholds intact; SV-010 replaces the undefined total-pressure relative operator with the fully specified directional operator; SV-027 adds dt=.000125 to the original four fixed steps and strengthens reference qualification. Exact current definitions are in the R4 executable catalogue/JSON and BCR-S06-VERIFICATION-CONTRACT. This is an explicit contract change, not a code-only correction.

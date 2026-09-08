@@ -1,4 +1,4 @@
-> **Normative — C1.0-R3** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
+> **Normative — C1.0-R4** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 
 # Executable validation catalogue
 
@@ -6,13 +6,14 @@ COMMON-001: NASA species order is isooctane,O2,N2,CO2,H2O. Dry air molar O2:1,N2
 
 The JSON companion contains the same field values. All required execution remains mandatory during implementation. Experimental acquisition remains independent. No frozen R1 threshold is relaxed.
 
+
 ## VAL-001 — current GEN1 fiche
 
 **objective**: Geometry/NASA identities and EOS round trip
 
 **type**: UNIT
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: B=.052 m,S=.05 m,l=.101 m,Vclear=1.2e-5 m³,VccTDC=3e-4 m³; theta=j*pi/180,j=0..360. T=[350,400,600,999.999999,1000,1000.000001,1600,2200] K; p=[5e4,1e5,1e6,5e6] Pa. Five pure species (mathematical stress), dry air, premix phi=.6,.7,.8 and their complete lean products. Composition definitions COMMON-001.
 
@@ -52,7 +53,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma=1.4,R=287 J/kg/K,m=.001 kg,T0=600 K,U0=m*R*T0/(gamma-1).
 
@@ -92,7 +93,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: m=.001 kg,cv=1000 J/kg/K,R=287 J/kg/K,T0=400 and 800 K,H=hA=2 W/K,Tw=600 K.
 
@@ -132,7 +133,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: A=2e-4 m²; reservoir pR=600000 Pa,T0=[400,700,1500] K, gamma1.4 R287. Ratios pback/pR=[.1,.3,.6,.9,.999,1]. Repeat NASA air/premix phi.7/products phi.7, T0=[700,1000]. Boundary wave tests: pi=200000 Pa,Ti=700 K,Mi=[-2,-.5,0,.5], pR/pi=[.5,1,2], TR=700 K; NASA compositions same plus air→products contact.
 
@@ -172,7 +173,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: NASA premix phi=[.6,.7,.8],T_SOC=[350,450,600,750] K,p_SOC=[3e5,6e5,1e6] Pa; initial m=pV/(Rmix*T),V=1e-4 m³; eta=[.8,1],Wiebe a=5,n=2, SOC time0,duration=.001 s. Include homogeneous residual mass fraction [0,.2,.4] made from same-phi products.
 
@@ -212,7 +213,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1; x<.5:rho1,u0,p1; x>.5:rho.125,u0,p.1.
 
@@ -252,7 +253,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,p=1; rhoL1,rhoR2 atx=.5; u=[0,1] m/s.
 
@@ -292,19 +293,19 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: At x=.5, pL=pR=1e5 Pa,u=[0,100,-100]m/s. Pairs: pureN2/CO2 both600K; N2 600K/CO2 1800K; premixphi.7 400K/productsphi.7 1800K. Mixed shock subcases same composition pairs, u=0,T both700K,pR=1e5,pL/pR=[2,5,10].
 
-**geometry**: x=[0,1]m,A1.
+**geometry**: Measurement window x=[0,1]m,A1; computational domain[-M/N,1+M/N],dx=1/N,M=ceil(N*S*t_final)+4 per side, S=1293m/s contacts or2544m/s shocks, per SV-008. No damping/source in guards.
 
 **domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
 
-**mesh_sequence**: Contacts N=[100,200,400]; mixed shocks N=[80,160,320,640].
+**mesh_sequence**: N denotes original-window cells: contacts[100,200,400], mixed shocks[80,160,320,640]; uniform dx=1/N throughout guards, totalN+2M. Original window0,1 and interface.5 remain faces.
 
 **dt_sequence**: CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.
 
-**boundary_states**: Constant end states; if domain of dependence reaches an edge, fail fixture setup rather than changing end time.
+**boundary_states**: Constant left/right state extension; SV-008 analytic causal guards fixed before candidate errors. Monitor all physical stages max(|u|+a)<=predeclaredS; violation SETUP_CAUSAL_BOUND_FAILED, no adaptive domain expansion.
 
 **end_condition**: Contacts .001s; shocks .0002s (verify wave travel does not reach boundary).
 
@@ -316,9 +317,9 @@ The JSON companion contains the same field values. All required execution remain
 
 **observable**: Contact pressure/velocity oscillations, rhoY, T; shock rho,p,u wave profiles and conservation.
 
-**normalization**: Pressure1e5 Pa; species mass by total mass; density by max initial rho; velocity by initial max sound speed.
+**normalization**: Every error norm uses ONLY original[0,1] window and its1m length. Pressure1e5Pa; species mass by original-window mass; density by max initialrho; velocity by initial max sound speed. Guard cells never enter error denominators.
 
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory. SV-008 requires full computational-domain and separate original-window ledgers, the latter using actual face transfers at0and1.
 
 **threshold**: Operational pressure contact L1≤5e-4,Linf≤5e-3; thermal contacts L1≤2e-3,Linf≤2e-2 normalized p by1e5. Mixed shocks: positive admissible states, ledger≤1e-10 and decreasing L1 errors with last-two order≥.5 under general discontinuity requirement; no unrecorded new peak tolerance.
 
@@ -332,7 +333,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity. SV-009: published smooth-extremum slope only for acoustic fields outside near-compression; materialMC, near-acousticminmod, flux/EOS/SSPRK2 unchanged. All original L1/L2 and Fourier gates retained.
 
 **initial_state**: gamma1.4,R1,rho=1+eps*cos(2pi*x),p=1+1.4eps*cos(2pi*x),u=sqrt(1.4)*eps*cos(2pi*x),eps=1e-5; repeat eps/2.
 
@@ -372,7 +373,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1,rho0=p0=1,c=sqrt(1.4),eps=1e-5. Rigid: p=1+eps*cos(pi*x),rho=1+eps*cos(pi*x)/c²,u=0. Free: g(x)=eps*exp(-((x-.25)/.05)^2),p=1+g,rho=1+g/c²,u=g/c.
 
@@ -394,13 +395,13 @@ The JSON companion contains the same field values. All required execution remain
 
 **reference_resolution**: Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.
 
-**observable**: Rigid pressure L1; free full reflected spatial waveform Fourier coefficient C=sum dx*p-prime*exp(-2pi i*x) with exact cell-integral operator; pulse peak/time recorded separately as diagnostics.
+**observable**: Rigid pressure L1 unchanged. Free SV-010 directional acoustic signals w+=(p-prime+rho0*c*u)/2 and w-=(p-prime-rho0*c*u)/2, plus totalpressure; C_h=sum cellaverage(w)*exact cell integral exp(-2pi*i*x). Peak/time only diagnostics.
 
-**normalization**: Rigid eps; free complex reference coefficient, phase radians. Peak diagnostics are not a replacement acceptance operator.
+**normalization**: Rigid epsilon unchanged. Free A0=absolute continuous initial incident Fourier integral, strictlypositive and scaled for each epsilon. Reference applies SAME C_h to exact Gaussian cell averages; phase radians in the reference-defined SV-010 resolution mask.
 
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory. SV-010 retains all101samples including75; relative phase is never evaluated by dividing totalpressure by its canceling reference. No reference or nonlinear remainder is subtracted to improve candidate errors.
 
-**threshold**: Rigid L1(p-p_ref)/eps≤.01 atN800; free abs(abs(C)/abs(Cref)-1)≤.01 and abs(arg(C/Cref))≤pi/N. Cref must be nonzero; cannot use peak-time difference as Fourier phase. Repeat eps/2 to bound nonlinear remainder.
+**threshold**: Rigid L1(p-pref)/eps<=.01 atN800 unchanged. Free all101samples: complex absolute error/A0<=.01 for each directional component and totalpressure. Where abs(Cref_h)>=.01*A0 require relative amplitude error<=.01 and phase<=pi/N; outside label NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION, not phasePASS. Zero coefficient has undefined phase. Reference-only masks qualified/frozen before candidate. Repeat epsilon/2. See SV-010.
 
 **failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
 
@@ -412,7 +413,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R1: rest rho=p=1,u0. Smooth p0=T01,Mthroat=.3 atx=.5; subsonic area-Mach solution.
 
@@ -452,7 +453,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left finite V=2e-4 m³,p=130000 Pa,T700,air; right infinite p120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -492,7 +493,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left cylinder B=S=.04m,l=.08m,Vclear8e-6m³,RPM6000,theta0=pi/2,p120000,T700,air; right infinitep120000,T700,air. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -532,7 +533,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left V(t)=2e-4*(1-.08*sin(pi*t/.002)^2)m³,p120000,T700,premixphi.7; right infinitep120000,T700,productsphi.7. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -566,53 +567,13 @@ The JSON companion contains the same field values. All required execution remain
 
 **artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
 
-## VAL-018 — current GEN1 fiche
-
-**objective**: Passive momentum sources plus heat, separately and together
-
-**type**: NUMERICAL_VERIFICATION
-
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
-
-**initial_state**: gamma1.4,R287,rho1 kg/m³,T0=700K,u0=[-100,100]m/s. b=[0,2]m^-1,Hvol=[0,2000]W/m³/K,Tw600K; all four combinations. E=rho*(cv*T+u²/2).
-
-**geometry**: Uniform parcel V=.001m³; equivalent window w20m^-1,lambda.2 givesb2; fixed geometry, no flux divergence.
-
-**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
-
-**mesh_sequence**: No spatial mesh: one control-volume/ODE inventory.
-
-**dt_sequence**: Uniform dt=t_end/[40,80,160,320], clipped exactly at stated events; TS-003 can further reduce steps. Preserve requested and actual steps.
-
-**boundary_states**: Closed, no external mass flux; only sources explicitly named.
-
-**end_condition**: t=.01s.
-
-**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
-
-**independent_reference**: du/dt=-b*u*abs(u); u=u0/(1+b*abs(u0)*t). dT/dt=Hvol/(rho*cv)*(Tw-T)+b*abs(u)^3/cv. Independent integrating factor: T=Tw+(T0-Tw)e^-kt+integral0..t e^-k(t-s)*b*abs(u(s))^3/cv ds, adaptive quadrature. Total energy derivative=Hvol*(Tw-T)/rho.
-
-**reference_resolution**: Independent adaptive Gauss-Kronrod integral rtol1e-12,atol1e-10K,checked by halving tolerances; analytic u exact.
-
-**observable**: u,T,E,heat ledger,entropy production due to drag b*abs(u)^3/T.
-
-**normalization**: Velocity100m/s,T700K,E=rho*cv*700 plus kinetic,entropy cv; referencequadrature error≤.0001 scales.
-
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
-
-**threshold**: All errors plus reference≤.001 respective physical scales; energyledger≤1e-10; dragentropy nonnegative within roundoff. Source separationmust reproduce b0/H0 limits.
-
-**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
-
-**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
-
 ## VAL-020 — current GEN1 fiche
 
 **objective**: Coupled T3/W2; original fixtures preserved, final reference execution pending
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Left cylinder asVAL014; right finite crankcase Vcc=1.5e-4-Apiston*s(theta), bothp120000,T700,air,theta0=pi/2,RPM6000. Pipe p,Y cosine blend: b(x)=(1-cos(pi*x/L))/2, p=(1-b)pL+b*pR,Y=(1-b)YL+b*YR; T700,u0; rho fromEOS. All initial originsR except incoming externalgasX.
 
@@ -646,13 +607,53 @@ The JSON companion contains the same field values. All required execution remain
 
 **artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
 
+## VAL-018 — current GEN1 fiche
+
+**objective**: Passive momentum sources plus heat, separately and together
+
+**type**: NUMERICAL_VERIFICATION
+
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+
+**initial_state**: gamma1.4,R287,rho1 kg/m³,T0=700K,u0=[-100,100]m/s. b=[0,2]m^-1,Hvol=[0,2000]W/m³/K,Tw600K; all four combinations. E=rho*(cv*T+u²/2).
+
+**geometry**: Uniform parcel V=.001m³; equivalent window w20m^-1,lambda.2 givesb2; fixed geometry, no flux divergence.
+
+**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
+
+**mesh_sequence**: No spatial mesh: one control-volume/ODE inventory.
+
+**dt_sequence**: Uniform dt=t_end/[40,80,160,320], clipped exactly at stated events; TS-003 can further reduce steps. Preserve requested and actual steps.
+
+**boundary_states**: Closed, no external mass flux; only sources explicitly named.
+
+**end_condition**: t=.01s.
+
+**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
+
+**independent_reference**: du/dt=-b*u*abs(u); u=u0/(1+b*abs(u0)*t). dT/dt=Hvol/(rho*cv)*(Tw-T)+b*abs(u)^3/cv. Independent integrating factor: T=Tw+(T0-Tw)e^-kt+integral0..t e^-k(t-s)*b*abs(u(s))^3/cv ds, adaptive quadrature. Total energy derivative=Hvol*(Tw-T)/rho.
+
+**reference_resolution**: Independent adaptive Gauss-Kronrod integral rtol1e-12,atol1e-10K,checked by halving tolerances; analytic u exact.
+
+**observable**: u,T,E,heat ledger,entropy production due to drag b*abs(u)^3/T.
+
+**normalization**: Velocity100m/s,T700K,E=rho*cv*700 plus kinetic,entropy cv; referencequadrature error≤.0001 scales.
+
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+
+**threshold**: All errors plus reference≤.001 respective physical scales; energyledger≤1e-10; dragentropy nonnegative within roundoff. Source separationmust reproduce b0/H0 limits.
+
+**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
+
+**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
+
 ## VAL-021 — current GEN1 fiche
 
 **objective**: Deterministic periodicity detector coupon AND mandatory later full-kernel sensitivity
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Dimensionless normalized persistent-state vector with one coordinate for each TS006 block plus two independent cell coordinates: x_n=xstar+a*r^n, xstar=1, a=[.01,-.01,.005,-.005] applied separately and one species-partition perturbation(+.005,-.005). r=.5 and .9. Full-state scale mapping TS006; ambient120000Pa,350K,air,Vcmax1e-4,Vccmax2e-4,Vd9e-5m³,pipeA2e-4.
 
@@ -686,53 +687,13 @@ The JSON companion contains the same field values. All required execution remain
 
 **artifacts**: Coupon raw sequences/expected earliest stops and failures. Additionally MANDATORY_VERIFICATION_DURING_IMPLEMENTATION: full-kernel state→output sensitivity from distinct initial states, compare to continued converged state and refinement; output residual must stay≤1e-4 fixed scales after declared qualification. Failure blocks NUMERICALLY_VERIFIED_GEN1 and needs BCR, not a changed threshold.
 
-## VAL-022 — current GEN1 fiche
-
-**objective**: Motored experimental validation
-
-**type**: EXPERIMENTAL_VALIDATION
-
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
-
-**initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
-
-**geometry**: MeasuredGEN1hardwareSI;componentcharacterizationseparatefromenginecalibration.
-
-**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
-
-**mesh_sequence**: Permeasuredgeometry successivefactor2refinementatleastthreelevels untilVAL027 numericalerror allocation qualifies; recordactualmeshes.
-
-**dt_sequence**: Successivefactor2time refinementonfixedfinemesh; encoderphaseacquisition.1degand.05deg integrationbiascheck perEXR.
-
-**boundary_states**: Measuredambient/thermal/inlet/outletstates and their covariance,not arbitrarydefaults.
-
-**end_condition**: AcquireEXR001/002 prescribedcampaign; no executionclaimuntildataavailable.
-
-**sampling**: Initially200consecutivecycles,threeindependentsessions,EXR extensionrule; retainraw individualcyclesandensembleoperator. Nine normalizedspeeds and fourthrottlefractions for motored perVF022.
-
-**independent_reference**: Independentmeasurementoperatorandrawuncertaintycontract EXR001/002 in EXPERIMENTAL_DATA_CONTRACT.md; VAL022 motoredpressureandwork,025validationpartition,026heldoutpartition.
-
-**reference_resolution**: Measurementcovarianceincludingcalibration,filter,encoder,TDC,repeatability andgeometry; independent numericalerrorbudget required.
-
-**observable**: EXRprespecifiedobservables;025/026 pressure,work/braketorquewithvalidFMEP,flow,temperatures.
-
-**normalization**: UseEXRmeasurementcovariance andrank-aware statistic; never simulatorfitresidualas measurementuncertainty.
-
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
-
-**threshold**: EXR95%covariance-compatibleacceptance,Holmalpha.05,metrologicalcapability3; no tuningonvalidationorheldout. MissingdataREQUIRES_EXPERIMENTAL_DATA,not scientificPASS.
-
-**failure**: REQUIRES_EXPERIMENTAL_DATA if acquisitionmissing;qualifiedfailedcomparisonblocksphysical/predictiveclaim; nevermodifyheldoutmodel.
-
-**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
-
 ## VAL-023 — current GEN1 fiche
 
 **objective**: Reaction-limit and event/source composition negative tests
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Use VAL005 exact mixtures/volume; eta=[.8,1],a5,n2,duration1ms. Positive tuples and out-of-domain cases individually classified by independent exactUV path. Add negativeinputs eta1.01,negativefuelmass,openportduringSOC; exactfailcodes required.
 
@@ -772,7 +733,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: NUMERICAL_VERIFICATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: gamma1.4,R287,rho1,T700,u0=[-100,100]. Laminar shear mu=2e-5Pa*s,Dh=.001m,Re=abs(u)*rho*Dh/mu (initial5000 notlaminar: use u0=[-.01,.01] forlaminar subcase only). Distributedlaminar rate c=32mu/(rho*Dh²). LocalK=.2,w20 givesb2; use±100 forK. Mapquerytests: characterizedlambda points .04/.06 bydirection,opening1,station metadata frozen; wrongstation andoutofdomain explicitfailure.
 
@@ -806,13 +767,133 @@ The JSON companion contains the same field values. All required execution remain
 
 **artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
 
+## VAL-027 — current GEN1 fiche
+
+**objective**: Isolate temporal order at fixed semidiscrete mesh
+
+**type**: NUMERICAL_VERIFICATION
+
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+
+**initial_state**: gamma1.4,R1,rho=1+.01sin(2pi*x),u=.3,p1; periodic.
+
+**geometry**: x0..1,A1,N40fixed.
+
+**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
+
+**mesh_sequence**: N40fixed; no spatialrefinementin temporal estimate.
+
+**dt_sequence**: Fixed dt=[.002,.001,.0005,.00025,.000125]s atN40; preserve every original level and its historical failure. Full reference at all801 finest endpoints; candidate errors at every endpoint of each level. See SV-027.
+
+**boundary_states**: Periodicbothends.
+
+**end_condition**: t=.1s.
+
+**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
+
+**independent_reference**: DOP853 independent integrator applied to exactly same selected semidiscrete RHS; this is temporal reference only, not independent spatial truth. rtol2.3e-14,atol1e-16,maxstep.0001; crosscheckrtol1e-13,atol1e-15.
+
+**reference_resolution**: SV-027 same-RHS DOP853 with original tolerances and crosscheck, plus independent high-precision scalar/continuous-defect qualification for the invariant material contact. Explicit uncertainty<=1e-11; two-run discrepancy alone is not an absolute certificate. Requalify changed RHS; preserve all801times.
+
+**observable**: rho L1temporal error,fullstate norms,order.
+
+**normalization**: rho1kg/m³,L1meanoverlength1.
+
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+
+**threshold**: FinestL1≤1e-10,order1.8..2.2 firsttwopairs,referenceerror≤1e-11. If errorfloorpreventsordermeasurementreportREFERENCE_NOT_QUALIFIED,notPASS.
+
+**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
+
+**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
+
+## VAL-028 — current GEN1 fiche
+
+**objective**: Two-zone mixing,birth,merge,re-entry exact limits
+
+**type**: NUMERICAL_VERIFICATION
+
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+
+**initial_state**: cp1000,R287,cv713; mixingmA.0003,mB.0007kg,TA400,TB900K,p1e5Pa,HA120J,HB630J,tau.01s. Birthsubcase A0,B.001kg,Tboth700,p1e5,mdotintoA=.01kg/s,tau.01. Reentrysubcase initiallysameemptyA,B.001,T700,externalmdotintoB=.01kg/s taggedX; existingBtagR.
+
+**geometry**: MixV=R*(mA*TA+mB*TB)/1e5 fixed. Birth/reentryV(t)=R*700*(.001+.01*t)/1e5; exact movingvolume dictatedbyconstantp/T; no heat.
+
+**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
+
+**mesh_sequence**: No spatial mesh: one control-volume/ODE inventory.
+
+**dt_sequence**: dt=.02/[40,80,160,320]s; merge event .01 exactlyaligned; mixing rate1/tau.
+
+**boundary_states**: Mixclosed; birthprescribedincomingenthalpycp*700andairwithF1tag toA; reentrysameairbutXtagtoB. Theseareclosurecoupons,not replacementsfor reversing T3 VAL016.
+
+**end_condition**: Mix/birth/reentryt=.02s; mergesubcaseat.01s,thencontinuehomogeneous.
+
+**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
+
+**independent_reference**: Mix mA=mA0exp(-t/tau),HA=HA0exp(-t/tau),mB=mtot-mA,HB=Htot-HA. BirthmA=.01*tau*(1-exp(-t/tau)),mB=.001+.01*t-mA,H_z=cp700m_z. ReentryA0,B=.001+.01t,H_B=cp700mB; Xmass=.01t,Rmass.001. Merge sumsM/species/tags,U=sumH-pV andsolvesT=U/(mtotcv); no deleted inventory.
+
+**reference_resolution**: Analyticmass/enthalpy and stoichiometric ledger withhighprecisionpointchecks. NASA algebra companion evaluates PHY003 volume/energyidentities for Cartesian mA=[1e-6,3e-4],mB=[1e-5,7e-4],TA=[400,700],TB=[700,1000],p1e5,air/products; HfromNASA,V=sumRmT/p,externalrate0,exchange tau.01; identitynormalizedresidual≤1e-11 asrestored.
+
+**observable**: mA,mB,HA,HB,p,T,chemical/origininventory,Vdot,Udot,birthdonorcomposition,mergeconservation.
+
+**normalization**: Mixmass.001kg,enthalpy750J;birth/reentrymass.0012kg,enthalpy840J,pressure1e5Pa. All species/originsuseparentmassscale.
+
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+
+**threshold**: Finestmaxrelative≤1e-6,order≥1.8 where nonzero discretizationerror; ledger≤1e-10; algebraiczero-errorcasesrequire256epsscaledagreement,no spuriousorderfit. Birthfromexactzerowithoutseed, reentrytrueXdonor, mergeconservesU.
+
+**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
+
+**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
+
+## VAL-022 — current GEN1 fiche
+
+**objective**: Motored experimental validation
+
+**type**: EXPERIMENTAL_VALIDATION
+
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+
+**initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
+
+**geometry**: MeasuredGEN1hardwareSI;componentcharacterizationseparatefromenginecalibration.
+
+**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
+
+**mesh_sequence**: Permeasuredgeometry successivefactor2refinementatleastthreelevels untilVAL027 numericalerror allocation qualifies; recordactualmeshes.
+
+**dt_sequence**: Successivefactor2time refinementonfixedfinemesh; encoderphaseacquisition.1degand.05deg integrationbiascheck perEXR.
+
+**boundary_states**: Measuredambient/thermal/inlet/outletstates and their covariance,not arbitrarydefaults.
+
+**end_condition**: AcquireEXR001/002 prescribedcampaign; no executionclaimuntildataavailable.
+
+**sampling**: Initially200consecutivecycles,threeindependentsessions,EXR extensionrule; retainraw individualcyclesandensembleoperator. Nine normalizedspeeds and fourthrottlefractions for motored perVF022.
+
+**independent_reference**: Independentmeasurementoperatorandrawuncertaintycontract EXR001/002 in EXPERIMENTAL_DATA_CONTRACT.md; VAL022 motoredpressureandwork,025validationpartition,026heldoutpartition.
+
+**reference_resolution**: Measurementcovarianceincludingcalibration,filter,encoder,TDC,repeatability andgeometry; independent numericalerrorbudget required.
+
+**observable**: EXRprespecifiedobservables;025/026 pressure,work/braketorquewithvalidFMEP,flow,temperatures.
+
+**normalization**: UseEXRmeasurementcovariance andrank-aware statistic; never simulatorfitresidualas measurementuncertainty.
+
+**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
+
+**threshold**: EXR95%covariance-compatibleacceptance,Holmalpha.05,metrologicalcapability3; no tuningonvalidationorheldout. MissingdataREQUIRES_EXPERIMENTAL_DATA,not scientificPASS.
+
+**failure**: REQUIRES_EXPERIMENTAL_DATA if acquisitionmissing;qualifiedfailedcomparisonblocksphysical/predictiveclaim; nevermodifyheldoutmodel.
+
+**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
+
 ## VAL-025 — current GEN1 fiche
 
 **objective**: Fired full-engine validation
 
 **type**: EXPERIMENTAL_VALIDATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
 
@@ -852,7 +933,7 @@ The JSON companion contains the same field values. All required execution remain
 
 **type**: EXPERIMENTAL_VALIDATION
 
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
+**physics_numerics**: Current C1.0-R4 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
 
 **initial_state**: Measured hardware/setpoints per EXR001/002; no invented numeric dataset. Required completegeometry,ambientp/T,wallT,gas/fuelcomposition,ignitionwhenfired,RPM/load,rawpressure/torque/flow andcovariance.
 
@@ -883,85 +964,5 @@ The JSON companion contains the same field values. All required execution remain
 **threshold**: EXR95%covariance-compatibleacceptance,Holmalpha.05,metrologicalcapability3; no tuningonvalidationorheldout. MissingdataREQUIRES_EXPERIMENTAL_DATA,not scientificPASS.
 
 **failure**: REQUIRES_EXPERIMENTAL_DATA if acquisitionmissing;qualifiedfailedcomparisonblocksphysical/predictiveclaim; nevermodifyheldoutmodel.
-
-**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
-
-## VAL-027 — current GEN1 fiche
-
-**objective**: Isolate temporal order at fixed semidiscrete mesh
-
-**type**: NUMERICAL_VERIFICATION
-
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
-
-**initial_state**: gamma1.4,R1,rho=1+.01sin(2pi*x),u=.3,p1; periodic.
-
-**geometry**: x0..1,A1,N40fixed.
-
-**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
-
-**mesh_sequence**: N40fixed; no spatialrefinementin temporal estimate.
-
-**dt_sequence**: dt=[.002,.001,.0005,.00025]s.
-
-**boundary_states**: Periodicbothends.
-
-**end_condition**: t=.1s.
-
-**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
-
-**independent_reference**: DOP853 independent integrator applied to exactly same selected semidiscrete RHS; this is temporal reference only, not independent spatial truth. rtol2.3e-14,atol1e-16,maxstep.0001; crosscheckrtol1e-13,atol1e-15.
-
-**reference_resolution**: Twoindependent integrator tolerance runs; discrepancy≤1e-11. SpatialqualificationseparateVAL006…011.
-
-**observable**: rho L1temporal error,fullstate norms,order.
-
-**normalization**: rho1kg/m³,L1meanoverlength1.
-
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
-
-**threshold**: FinestL1≤1e-10,order1.8..2.2 firsttwopairs,referenceerror≤1e-11. If errorfloorpreventsordermeasurementreportREFERENCE_NOT_QUALIFIED,notPASS.
-
-**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
-
-**artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.
-
-## VAL-028 — current GEN1 fiche
-
-**objective**: Two-zone mixing,birth,merge,re-entry exact limits
-
-**type**: NUMERICAL_VERIFICATION
-
-**physics_numerics**: Current C1.0-R3 physics and NUM-001…010, BC-001…008, TS-001…007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.
-
-**initial_state**: cp1000,R287,cv713; mixingmA.0003,mB.0007kg,TA400,TB900K,p1e5Pa,HA120J,HB630J,tau.01s. Birthsubcase A0,B.001kg,Tboth700,p1e5,mdotintoA=.01kg/s,tau.01. Reentrysubcase initiallysameemptyA,B.001,T700,externalmdotintoB=.01kg/s taggedX; existingBtagR.
-
-**geometry**: MixV=R*(mA*TA+mB*TB)/1e5 fixed. Birth/reentryV(t)=R*700*(.001+.01*t)/1e5; exact movingvolume dictatedbyconstantp/T; no heat.
-
-**domain**: SI units throughout. NASA5 uses frozen dataset, 300–2200 K and 50 kPa–5 MPa; constant-gamma canonical cases use their stated mathematical domain.
-
-**mesh_sequence**: No spatial mesh: one control-volume/ODE inventory.
-
-**dt_sequence**: dt=.02/[40,80,160,320]s; merge event .01 exactlyaligned; mixing rate1/tau.
-
-**boundary_states**: Mixclosed; birthprescribedincomingenthalpycp*700andairwithF1tag toA; reentrysameairbutXtagtoB. Theseareclosurecoupons,not replacementsfor reversing T3 VAL016.
-
-**end_condition**: Mix/birth/reentryt=.02s; mergesubcaseat.01s,thencontinuehomogeneous.
-
-**sampling**: Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.
-
-**independent_reference**: Mix mA=mA0exp(-t/tau),HA=HA0exp(-t/tau),mB=mtot-mA,HB=Htot-HA. BirthmA=.01*tau*(1-exp(-t/tau)),mB=.001+.01*t-mA,H_z=cp700m_z. ReentryA0,B=.001+.01t,H_B=cp700mB; Xmass=.01t,Rmass.001. Merge sumsM/species/tags,U=sumH-pV andsolvesT=U/(mtotcv); no deleted inventory.
-
-**reference_resolution**: Analyticmass/enthalpy and stoichiometric ledger withhighprecisionpointchecks. NASA algebra companion evaluates PHY003 volume/energyidentities for Cartesian mA=[1e-6,3e-4],mB=[1e-5,7e-4],TA=[400,700],TB=[700,1000],p1e5,air/products; HfromNASA,V=sumRmT/p,externalrate0,exchange tau.01; identitynormalizedresidual≤1e-11 asrestored.
-
-**observable**: mA,mB,HA,HB,p,T,chemical/origininventory,Vdot,Udot,birthdonorcomposition,mergeconservation.
-
-**normalization**: Mixmass.001kg,enthalpy750J;birth/reentrymass.0012kg,enthalpy840J,pressure1e5Pa. All species/originsuseparentmassscale.
-
-**metric**: Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final−initial−external flux−physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.
-
-**threshold**: Finestmaxrelative≤1e-6,order≥1.8 where nonzero discretizationerror; ledger≤1e-10; algebraiczero-errorcasesrequire256epsscaledagreement,no spuriousorderfit. Birthfromexactzerowithoutseed, reentrytrueXdonor, mergeconservesU.
-
-**failure**: IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.
 
 **artifacts**: Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation.

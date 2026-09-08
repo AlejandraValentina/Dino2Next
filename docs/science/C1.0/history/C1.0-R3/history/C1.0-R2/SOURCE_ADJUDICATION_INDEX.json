@@ -1,0 +1,116 @@
+{
+  "AR002": {
+    "original_path": "autonomous_dyn2t/BCR-AR-002-INTERPOLATED-SHOCK-FLUX.md",
+    "repository_path": "docs/science/C1.0/evidence/AR002.md",
+    "sha256": "524bf4c7f113a2d9279d0c6b8a5b44c9f781d2e5ba534f6e9129266de872dd4c",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARKERNEL": {
+    "original_path": "autonomous_dyn2t/NUMERICAL_REFERENCE_AND_KERNEL_REPORT.md",
+    "repository_path": "docs/science/C1.0/evidence/ARKERNEL.md",
+    "sha256": "aabcab76a10fceba9d638602bfec52cf6f3c9e825a16b6638ae5d7fdfb210ad1",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARTIME": {
+    "original_path": "autonomous_dyn2t/TIMESTEP_AND_ADMISSIBILITY_CLOSURE.md",
+    "repository_path": "docs/science/C1.0/evidence/ARTIME.md",
+    "sha256": "54d9b28ddac7f6dbf12207ef0381513f8e3888928b8ae34c1e914f9e85fc9890",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARPERIOD": {
+    "original_path": "autonomous_dyn2t/PERIODICITY_CLOSURE.md",
+    "repository_path": "docs/science/C1.0/evidence/ARPERIOD.md",
+    "sha256": "de401382fd392b55f2ef391922114d0b512a1cd0ff121b219e2151af66598ad7",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARCOUPLED": {
+    "original_path": "autonomous_dyn2t/COUPLED_VALIDATION_CLOSURE.md",
+    "repository_path": "docs/science/C1.0/evidence/ARCOUPLED.md",
+    "sha256": "96eb33fa0496f942d2b7d1fa3c1cbd0855d6ce1819b8397d64b609e8146a245b",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C10EIGEN": {
+    "original_path": "c10_dyn2t/C10_CHARACTERISTIC_EIGENSYSTEM.md",
+    "repository_path": "docs/science/C1.0/evidence/C10EIGEN.md",
+    "sha256": "564b4ed2dd0e66fe0631452b0a50178e29439be41dcc541cbdf4dea0cc587a7c",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C03PHY": {
+    "original_path": "c03_dyn2t/contract/PHYSICS_SPEC.md",
+    "repository_path": "docs/science/C1.0/evidence/C03PHY.md",
+    "sha256": "e0329fa20f1656df21e4500230b8d6745a12be164e27093daf4b68fbd7c48d46",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C03NUM": {
+    "original_path": "c03_dyn2t/contract/NUMERICAL_METHOD_SPEC.md",
+    "repository_path": "docs/science/C1.0/evidence/C03NUM.md",
+    "sha256": "f451b124493b1d7ccb3bc05b420a386ee3381ee5a06c02cb96ee81f118223457",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C03VAL": {
+    "original_path": "c03_dyn2t/contract/VALIDATION_SPEC.md",
+    "repository_path": "docs/science/C1.0/evidence/C03VAL.md",
+    "sha256": "44d98889828aefa99446d89108d98f6adf913171cfb3e7ce8970483ea102a38b",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C03GEN": {
+    "original_path": "c03_dyn2t/contract/GEN1_CONTRACT.md",
+    "repository_path": "docs/science/C1.0/evidence/C03GEN.md",
+    "sha256": "1157e29c2575e440fc17d3ebfba3da8f5c0e01963e185f42a7ab2e0ffdc2157d",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C09THEORY": {
+    "original_path": "c09_dyn2t/C09_LOSS_IDENTIFIABILITY_THEORY.md",
+    "repository_path": "docs/science/C1.0/evidence/C09THEORY.md",
+    "sha256": "24a153dd28597181addeffbfba5fae577214edf183100360bdaa1715cbaee8d4",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C09MAP": {
+    "original_path": "c09_dyn2t/C09_LOSS_MAP_GENERATION_CONTRACT.md",
+    "repository_path": "docs/science/C1.0/evidence/C09MAP.md",
+    "sha256": "ecaf6a6159303dbf275bb483bcccc29520fa3d3c5287bc588fa3825c9717c374",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C09RUNTIME": {
+    "original_path": "c09_dyn2t/C09_RUNTIME_LOSS_POLICY.md",
+    "repository_path": "docs/science/C1.0/evidence/C09RUNTIME.md",
+    "sha256": "b7fc95ed52cb25fcc316bcfd6374e62320cd919df3e34ef7606ab37ea66952ff",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C09DATA": {
+    "original_path": "c09_dyn2t/C09_MINIMUM_PORT_CHARACTERIZATION_DATASET.md",
+    "repository_path": "docs/science/C1.0/evidence/C09DATA.md",
+    "sha256": "0f9bc7544dd883773c9f76c41634b4918efb6d3601450be671e871b0403e168d",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C09BCR": {
+    "original_path": "c09_dyn2t/BCR-C09-PORT-LOSS-IDENTIFICATION-DATA.md",
+    "repository_path": "docs/science/C1.0/evidence/C09BCR.md",
+    "sha256": "26a12b03c0e65c00baeca5f7cb06048237bfb5d11d6cbd99a2fd5bb798602100",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "C02EX": {
+    "original_path": "c02_dyn2t/evidence/EXPERIMENTAL_VALIDATION_DATASET_PLAN.md",
+    "repository_path": "docs/science/C1.0/evidence/C02EX.md",
+    "sha256": "e1f97e976233c75d015671ffc2219ea7335e375ead0d4cb4a44e29e0fa767455",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARBOUNDARY": {
+    "original_path": "autonomous_dyn2t/research/autonomous_resolution/boundary_candidate.py",
+    "repository_path": "docs/science/C1.0/evidence/ARBOUNDARY.py",
+    "sha256": "af2428a76acf63dc5d696b468e674c1105437348a73275a3a11ae2018907d117",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARRAY": {
+    "original_path": "autonomous_dyn2t/research/autonomous_resolution/thermal_ray_bound.py",
+    "repository_path": "docs/science/C1.0/evidence/ARRAY.py",
+    "sha256": "195effcfff16ee3e285091422db0653e9ccaffb7adb850c706e398f9ba81515f",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  },
+  "ARACCURACY": {
+    "original_path": "autonomous_dyn2t/research/autonomous_resolution/inputs/coupled_accuracy_contract.json",
+    "repository_path": "docs/science/C1.0/evidence/ARACCURACY.json",
+    "sha256": "5218daebbf095f4d6cf138f6b1a5a5e154fe4e2468b81dd201e34a2287e80662",
+    "authority": "HISTORICAL_EVIDENCE_ONLY; only explicitly extracted selected clauses are normative"
+  }
+}

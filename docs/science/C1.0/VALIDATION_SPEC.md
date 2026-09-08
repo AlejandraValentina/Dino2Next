@@ -47,3 +47,7 @@ BOUNDARY_CONTRACT.md, TIME_EVENT_PERIODICITY_CONTRACT.md and EXECUTABLE_VALIDATI
 ## R3 VAL-001 representation boundary
 
 VAL-001 compares production against independent DINO2NEXT_NASA5_CONTINUOUS 1.0.0 evaluation, not against discontinuous RAW energy. Existing tuples and thresholds remain unchanged. TI-004 additionally checks endpoints, h inverse, interval derivatives, continuity and crossings; RAW-minus-derived changes are reported separately. The original RAW counterexample remains required BCR regression evidence, not a failed production run.
+
+## C1.0-R4 bounded S06 decisions
+
+BCR-S06-VERIFICATION-CONTRACT SV-008/009/010/027 is the normative companion for the four affected gates. It preserves original failed evidence, all unrelated physics, amplitude/error budgets and accepted TI-001..005. SV-009 changes only smooth acoustic limiting and requires affected kernel regressions. SV-008 preserves the original error window despite added computational guards. SV-010 separates directional reflection signals, qualifying a reference-defined observation mask and retaining absolute checks on every sample. SV-027 retains original levels and threshold and adds .000125s; reference qualification is not a two-run discrepancy mislabeled as certification. No implementation, numerical, experimental or predictive acceptance follows from document existence.

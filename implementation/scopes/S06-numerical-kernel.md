@@ -11,7 +11,7 @@ ID: `S06`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S03 produces `ThermoModel`: Use consistent thermodynamic derivatives and state recovery.
 
 ## Normative IDs
-`CAP-003`, `NUM-001`, `NUM-002`, `NUM-003`, `NUM-004`, `NUM-005`, `NUM-006`, `NUM-010`, `VAL-006`, `VAL-007`, `VAL-008`, `VAL-009`, `VAL-010`, `VAL-011`, `VAL-027`
+`CAP-003`, `NUM-001`, `NUM-002`, `NUM-003`, `NUM-004`, `NUM-005`, `NUM-006`, `NUM-010`, `VAL-006`, `VAL-007`, `VAL-008`, `VAL-009`, `VAL-010`, `VAL-011`, `VAL-027`, `SV-008`, `SV-009`, `SV-010`, `SV-027`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -24,6 +24,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md` — normative clause companion
 
 ## Required interfaces
 ### NumericalKernel
@@ -42,6 +43,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Do not infer the sensor formula from three constants or copy research code as authority.
 - Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.
 - No global coupled timestep policy here; S16 composes all source bounds.
+- Apply R4 SV-008/009/010/027 exactly; original failed R3 evidence remains historical, numerical reuse requires demonstrated identity and relevance, and all affected gates require valid acceptance before integration.
 
 ## Allowed paths
 - `src/dino2next/numerics/`
