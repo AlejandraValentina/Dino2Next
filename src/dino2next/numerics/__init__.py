@@ -320,6 +320,19 @@ class NumericalKernel:
                 cache.popitem(last=False)
             return result
 
+    @staticmethod
+    def _fraction_sums(values):
+        """Exact fsum result for sparse nonnegative rows; unchanged dense sums."""
+        counts = np.count_nonzero(values, axis=1)
+        result = np.zeros(len(values))
+        single = counts == 1
+        # With one positive term and only signed zeros, fsum returns that term.
+        # Empty rows retain positive zero, exactly as fsum does.
+        result[single] = np.max(values[single], axis=1)
+        dense = counts > 1
+        result[dense] = [fsum(row) for row in values[dense]]
+        return result
+
     def recover(self, U):
         U = np.asarray(U, float)
         if U.ndim != 2 or U.shape[1] != 12 or not np.all(np.isfinite(U)) or np.any(U[:,0] <= 0) or np.any(U[:,3:] < 0):
@@ -328,7 +341,7 @@ class NumericalKernel:
         Y, tau = U[:,3:8]/rho[:,None], U[:,8:]/rho[:,None]
         records = []
         for name, values in (("chemical",Y),("tracers",tau)):
-            sums = np.asarray([fsum(row) for row in values])
+            sums = self._fraction_sums(values)
             if np.any(np.abs(sums-1)>256*EPS):
                 fail("EOS_OUT_OF_DOMAIN", "/"+name, "Constituents do not match stored total density")
             for i in np.flatnonzero(sums != 1):
