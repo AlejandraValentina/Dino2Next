@@ -1,0 +1,21 @@
+{
+  "classification": "SOFTWARE_GUARD_REPRODUCER_NOT_PHYSICAL_CASE",
+  "controlled_FE1_width": 1.0,
+  "controlled_FE2_width": -0.5,
+  "unprotected_combination_width": 0.25,
+  "input_byte_unchanged": true,
+  "results": [
+    {
+      "label": "historical",
+      "source_sha256": "52482dda581dd4cef38fbb38c3ae04670cc1a72e2ceee72885288d792ab2c32c",
+      "accepted": true,
+      "final_width": 0.25
+    },
+    {
+      "label": "fixed",
+      "source_sha256": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32",
+      "accepted": false,
+      "reason": "NONPOSITIVE_REGION"
+    }
+  ]
+}

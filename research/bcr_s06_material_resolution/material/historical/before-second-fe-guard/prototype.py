@@ -40,8 +40,6 @@ class RegionSolver:
     def __init__(self, model):
         self.model = model
         self.records = []
-        self._transaction_id = 0
-        self._context = None
         self._invert = lru_cache(maxsize=65536)(model.invert_energy)
 
     def initialize(self, edges, physical, labels):
@@ -65,8 +63,7 @@ class RegionSolver:
                 if abs(discrepancy)>256*np.finfo(float).eps:
                     raise TrialRejected('SIMPLEX')
             if total!=1:
-                context=self._context or dict(transaction_id=None,stage='OBSERVATION',status='OBSERVATIONAL')
-                self.records.append(dict(context,event='TS004_DERIVED_SUM',sum_pre=total))
+                self.records.append(('TS004_DERIVED_SUM',total))
             Y=tuple(float(v/total) for v in Y)
             e=float(q[2]/q[0]-.5*u*u)
             s=self._invert(rho,e,Y)
@@ -99,38 +96,13 @@ class RegionSolver:
         rate=w[:,3]+np.maximum(abs(w[:,1]-v[:-1]),abs(w[:,1]-v[1:]))
         return float(cfl*np.min(width/rate))
 
-    def step(self,state,dt,*,_dt_guard=False):
-        """One trial; diagnostics bind to its stage and accepted/rejected status."""
-        self._transaction_id+=1
-        begin=len(self.records);previous=self._context
-        self._context=dict(transaction_id=self._transaction_id,stage='INITIAL',status='TRIAL_PENDING')
-        try:
-            if _dt_guard and dt>self.suggested_dt(state):raise TrialRejected('STAGE0_DT')
-            result=self._step(state,dt)
-        except BaseException as exc:
-            for row in self.records[begin:]:row['status']='REJECTED'
-            self.records.append(dict(self._context,event='TRIAL_END',status='REJECTED',dt=dt,reason=str(exc)))
-            raise
-        else:
-            for row in self.records[begin:]:row['status']='ACCEPTED'
-            self.records.append(dict(self._context,event='TRIAL_END',status='ACCEPTED',dt=dt))
-            return result
-        finally:
-            self._context=previous
-
-    def _step(self,state,dt):
+    def step(self,state,dt):
         if not np.isfinite(dt) or dt<=0:raise TrialRejected('BAD_DT')
-        self._context['stage']='FE1_RHS'
         v0,f0=self.rhs(state)
-        self._context['stage']='FE1_STATE'
         s1=State(state.edges+dt*v0,state.inventory+dt*(f0[:-1]-f0[1:]),state.labels)
-        self._context['stage']='FE2_RHS'
         v1,f1=self.rhs(s1)
-        self._context['stage']='FE2_STATE'
-        s2=State(s1.edges+dt*v1,s1.inventory+dt*(f1[:-1]-f1[1:]),state.labels)
-        self.recover(s2)
-        self._context['stage']='FINAL_COMBINATION'
-        out=State(.5*state.edges+.5*s2.edges,.5*state.inventory+.5*s2.inventory,state.labels)
+        out=State(.5*state.edges+.5*(s1.edges+dt*v1),
+                  .5*state.inventory+.5*(s1.inventory+dt*(f1[:-1]-f1[1:])),state.labels)
         self.recover(out)
         return out,.5*dt*(f0+f1)
 
@@ -139,7 +111,8 @@ class RegionSolver:
         failures=[]
         for _ in range(max_retries+1):
             try:
-                result,ledger=self.step(state,dt,_dt_guard=True)
+                if dt>self.suggested_dt(state):raise TrialRejected('STAGE0_DT')
+                result,ledger=self.step(state,dt)
                 return result,ledger,dt,tuple(failures)
             except (TrialRejected,ValueContractError) as exc:
                 failures.append((dt,type(exc).__name__,str(exc)))

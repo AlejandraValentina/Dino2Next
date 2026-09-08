@@ -20,3 +20,11 @@ acoustic/: independent reduction/qualification author /root/bcr_science_review; 
 Package/evidence/publication: /root. No reviewer may approve their own scientific contribution. Final publishedHEAD review and requiredchecks precede any BCRmerge; implementation acceptance is a separate later gate.
 
 Contracts/manifests will be revised only after the prototypes demonstrate their role and the complete selected formulation is independently reviewed. Until then this package makes no normativechanges and does not accept S06.
+
+## Reviewed progress after the initial snapshot
+
+The actual independent review package is under reviews/. It corroborates the initial material demonstration and the local moving-material-face extension, closes the second-Euler-endpoint admissibility and diagnostic-transaction defects after fixes and reruns, and corroborates the N1600 reference/reduction evidence. It explicitly does not approve a complete GEN1 recipe. Original pre-fix evidence is retained; the trajectory arrays that remain bitwise identical are identified in the closure reports.
+
+STATE_INTERFACE_PROPOSAL.md records an additive S05 direction and explicit observable weighting, with geometry/reconstruction obligations still open. The local_material/ large raw records are stored losslessly in a hash-verified ZIP; run its restore_evidence.py before replaying raw-data audits. software_equivalence/ contains the independently reviewed exact-sum and streaming-storage evidence used for full-kernel acoustic experiments. These software checks do not replace the pending numerical checks.
+
+The ordinary-MUSCL coupling, variable-area geometric stage representation and full-kernel N1600 confirmations are separate subsequent increments. Each needs its own evidence and review before a normative selection or merge. The accepted baseline remains C1.0-R4.

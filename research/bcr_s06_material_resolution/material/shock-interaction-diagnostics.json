@@ -1,0 +1,226 @@
+[
+  {
+    "transaction_id": 1,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.7068756728854118e-05
+  },
+  {
+    "transaction_id": 2,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.6665623179876822e-05
+  },
+  {
+    "transaction_id": 3,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.6352762254502916e-05
+  },
+  {
+    "transaction_id": 4,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.6110388092922513e-05
+  },
+  {
+    "transaction_id": 5,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5923193891599667e-05
+  },
+  {
+    "transaction_id": 6,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5779235410974065e-05
+  },
+  {
+    "transaction_id": 7,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5669086144403976e-05
+  },
+  {
+    "transaction_id": 8,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5585243575165242e-05
+  },
+  {
+    "transaction_id": 9,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5521716325323763e-05
+  },
+  {
+    "transaction_id": 10,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5473727807586572e-05
+  },
+  {
+    "transaction_id": 11,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5437490741133365e-05
+  },
+  {
+    "transaction_id": 12,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5410024817175383e-05
+  },
+  {
+    "transaction_id": 13,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.538900297982838e-05
+  },
+  {
+    "transaction_id": 14,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5372619928503246e-05
+  },
+  {
+    "transaction_id": 15,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5359480564530253e-05
+  },
+  {
+    "transaction_id": 16,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5348507544692474e-05
+  },
+  {
+    "transaction_id": 17,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5338867067187834e-05
+  },
+  {
+    "transaction_id": 18,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.532991140014293e-05
+  },
+  {
+    "transaction_id": 19,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5321136013604083e-05
+  },
+  {
+    "transaction_id": 20,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.53121487601575e-05
+  },
+  {
+    "transaction_id": 21,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5302648431489847e-05
+  },
+  {
+    "transaction_id": 22,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5292410163335423e-05
+  },
+  {
+    "transaction_id": 23,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5281275475233855e-05
+  },
+  {
+    "transaction_id": 24,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.526914514137069e-05
+  },
+  {
+    "transaction_id": 25,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.525597351625491e-05
+  },
+  {
+    "transaction_id": 26,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5216451796496167e-05
+  },
+  {
+    "transaction_id": 27,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.517809782784343e-05
+  },
+  {
+    "transaction_id": 28,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5142481438615232e-05
+  },
+  {
+    "transaction_id": 29,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5109301625788615e-05
+  },
+  {
+    "transaction_id": 30,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.507834120791482e-05
+  },
+  {
+    "transaction_id": 31,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 2.5049444261626778e-05
+  },
+  {
+    "transaction_id": 32,
+    "stage": "FINAL_COMBINATION",
+    "status": "ACCEPTED",
+    "event": "TRIAL_END",
+    "dt": 9.055505885865317e-06
+  }
+]

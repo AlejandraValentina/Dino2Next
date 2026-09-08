@@ -1,0 +1,14 @@
+{
+  "classification": "SOFTWARE_Y2_ADMISSIBILITY_AND_DIAGNOSTIC_TRANSACTION_FIX",
+  "historical": "history/pre-y2-fix/STATUS.json",
+  "contacts_rerun": 9,
+  "wave_rerun": true,
+  "old_new_final_fields_exact": true,
+  "tests": "8 passed in 0.71s",
+  "second_FE_check": "State constructor and NASA recover before convex combination",
+  "transactions": "Parent REMAP_AND_ADVANCE, child SSPRK2_TRIAL, explicit accepted/rejected and stages; derived records linked; observation records remain distinct",
+  "sources": {
+    "research\\bcr_s06_material_resolution\\local_material\\prototype.py": "c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee",
+    "research\\bcr_s06_material_resolution\\material\\prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32"
+  }
+}

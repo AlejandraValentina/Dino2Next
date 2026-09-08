@@ -1,0 +1,105 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "LOCAL_MATERIAL_MECHANISM_AND_Y2_FIX_CORROBORATED_NOT_GEN1_RECIPE",
+  "source_sha256": {
+    "research/bcr_s06_material_resolution/local_material/prototype.py": "c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee",
+    "research/bcr_s06_material_resolution/local_material/run_controls.py": "23829ed9873bdc9c964c30b4e91f8aced25251d05563ef8488fb3b5b47ca37b0",
+    "research/bcr_s06_material_resolution/material/prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32",
+    "research/bcr_s06_material_resolution/material/run_controls.py": "21390765a1fe6c1cb7bc4e1f6a691fb1b38bf53c54eaabfbcb7c85e426323fb5",
+    "src/dino2next/thermo/__init__.py": "6aeab6e87099e364b3d07a5764612af8ad74c1912941a01cfa0f58702cdcdede",
+    "docs/science/C1.0/datasets/thermo_runtime_continuous_v1.json": "5b4d37b8821fcfac906fc2ff726945b6455049e229f16c56ba66b40bec0eda7a",
+    "docs/science/C1.0/datasets/thermo_species.json": "8f7b4d0b11d9a3828c11cfe3b167f5fa7b6103fd036ad6f239175260805ba050"
+  },
+  "manifest_sha256": "ac851b49c8bfddf2d3f8794dcafb7a5cec515e46df7ca48c400e76e6c2fc9cea",
+  "tests": "8 tests independently PASS0.83s, including inadmissible Y2/final-admissible probes and diagnostic rejection linkage.",
+  "raw_cases": [
+    {
+      "case": "contact-0-0",
+      "steps": 30,
+      "final_max_pressure_error_Pa": 1.2127566151320934e-07,
+      "final_max_velocity_error": 7.980821495565862e-14,
+      "independent_ST003_residual_max": 3.956748107912285e-17,
+      "crossings": 0,
+      "raw_sha256": "4dbddbb1d664f0a49aaf348f63ef3130964b0b7dc7090348c48f1535ed2b02cd"
+    },
+    {
+      "case": "contact-0-100",
+      "steps": 49,
+      "final_max_pressure_error_Pa": 1.2147938832640648e-07,
+      "final_max_velocity_error": 2.7000623958883807e-13,
+      "independent_ST003_residual_max": 5.829460333298888e-17,
+      "crossings": 1,
+      "raw_sha256": "1beeba3461fc091a8b5f7b3a8789f1028912d81c7f880e6f4e7ed5eda69a8f1b"
+    },
+    {
+      "case": "contact-0--100",
+      "steps": 50,
+      "final_max_pressure_error_Pa": 1.2127566151320934e-07,
+      "final_max_velocity_error": 9.947598300641403e-14,
+      "independent_ST003_residual_max": 6.606721711072074e-17,
+      "crossings": 2,
+      "raw_sha256": "6149195935c541c5101eddb25dc79ee05d550ec959015ddc831a9ec307103d44"
+    },
+    {
+      "case": "contact-1-0",
+      "steps": 38,
+      "final_max_pressure_error_Pa": 1.5605473890900612e-07,
+      "final_max_velocity_error": 6.961909510348457e-10,
+      "independent_ST003_residual_max": 5.989500791779189e-17,
+      "crossings": 0,
+      "raw_sha256": "3457b5d3e736bb66b10b76df57ebd48ad5ac29d27d41f33c28528290a6327a85"
+    },
+    {
+      "case": "contact-1-100",
+      "steps": 62,
+      "final_max_pressure_error_Pa": 1.4831312000751495e-07,
+      "final_max_velocity_error": 6.959197662581573e-10,
+      "independent_ST003_residual_max": 1.7395698246429541e-16,
+      "crossings": 1,
+      "raw_sha256": "eb1f1545f66ff6a78bb8ee7ba7e96122e21234d447726baadcbd5d515327f808"
+    },
+    {
+      "case": "contact-1--100",
+      "steps": 60,
+      "final_max_pressure_error_Pa": 1.5980913303792477e-07,
+      "final_max_velocity_error": 6.945697350602131e-10,
+      "independent_ST003_residual_max": 1.7395698246429719e-16,
+      "crossings": 2,
+      "raw_sha256": "2d58899fb78410a447dcb89f4497f1290440a1f43c0787b498d53cd09fe3557f"
+    },
+    {
+      "case": "contact-2-0",
+      "steps": 49,
+      "final_max_pressure_error_Pa": 3.637105692178011e-07,
+      "final_max_velocity_error": 4.799914908259343e-10,
+      "independent_ST003_residual_max": 5.898644213445276e-17,
+      "crossings": 0,
+      "raw_sha256": "75162fe4a66ed0a78ee9d80f486c98b20b205f62f1e116cb1c36d702a8d0ccaf"
+    },
+    {
+      "case": "contact-2-100",
+      "steps": 74,
+      "final_max_pressure_error_Pa": 3.6381243262439966e-07,
+      "final_max_velocity_error": 4.792752861249028e-10,
+      "independent_ST003_residual_max": 4.7994426937349195e-17,
+      "crossings": 1,
+      "raw_sha256": "f28e9d1a1f393603d9c8a2dc10c0ac5d84ccedf569fe297e5c5d2b76416b2b8d"
+    },
+    {
+      "case": "contact-2--100",
+      "steps": 74,
+      "final_max_pressure_error_Pa": 3.630120772868395e-07,
+      "final_max_velocity_error": 4.694129529525526e-10,
+      "independent_ST003_residual_max": 5.672068638050352e-17,
+      "crossings": 2,
+      "raw_sha256": "bf5978ebbf1aa863d971eb12eb84e6396da455143f45d6e2f4cfc9afe131aa8f"
+    }
+  ],
+  "findings": [],
+  "limits": [
+    "Final raw states and all-stage exterior ledger reprocessed; raw does not store all intermediate Q, so maximum pressure over all stages remains author-measured, not independently reproduced here.",
+    "First-order ordinary fluxes and piecewise-constant remap; not accepted bulk MUSCL/guard coupling. Prototype exclusion .35dx is proposed and not a validated universal accuracy/stability rule.",
+    "No qualified shock comparison, variable-area sources, physical exits/collisions, entering material events or full-cycle budget. Tiny physical slabs still constrain dt.",
+    "Positive contact/crossing mechanism supports a next bounded integration prototype, not final BCR recipe or S06 acceptance."
+  ]
+}

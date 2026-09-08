@@ -1,0 +1,230 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "scope": "Published7c8ed3 material prototype",
+  "source_sha256": {
+    "prototype.py": "52482dda581dd4cef38fbb38c3ae04670cc1a72e2ceee72885288d792ab2c32c",
+    "run_controls.py": "51db927f6703a3481897fbfd2878e17bd08075c0b9052bd5f9224f902c1323f3"
+  },
+  "independent_unit_tests": "7PASS0.61s",
+  "contact_raw_audit": [
+    {
+      "pair": 0,
+      "u": 0.0,
+      "steps": 30,
+      "maxp": 1.2127566151320934e-07,
+      "maxu": 6.983218800240266e-14,
+      "absolute_global_residual": [
+        0.0,
+        1.9721522630525295e-31,
+        4.277410741892977e-12,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "5f6e98eaa2732029c60852752179d1fef35698dd71452cadc335b4a425a44d4a"
+    },
+    {
+      "pair": 0,
+      "u": 100.0,
+      "steps": 30,
+      "maxp": 1.212902134284377e-07,
+      "maxu": 9.379164112033322e-13,
+      "absolute_global_residual": [
+        0.0,
+        0.0,
+        5.4569682106375694e-12,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "cd7420e9a765148b0dc45bb381f3bacb40ca24a88ba7313b40a1e71c5c31fd0f"
+    },
+    {
+      "pair": 0,
+      "u": -100.0,
+      "steps": 30,
+      "maxp": 1.2165401130914688e-07,
+      "maxu": 1.1226575225009583e-12,
+      "absolute_global_residual": [
+        0.0,
+        -6.261657858885883e-14,
+        3.814193405560218e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "14edfcc80cb52b43af67fc30496e4ccd181b52e18c71eea26f641078113ee192"
+    },
+    {
+      "pair": 1,
+      "u": 0.0,
+      "steps": 38,
+      "maxp": 1.616863301023841e-07,
+      "maxu": 6.971185989651457e-10,
+      "absolute_global_residual": [
+        0.0,
+        -6.766548542331266e-16,
+        -8.211307383227501e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "fe830828be879a9b04d2f2aa190cf6968b9f00defeb07d90634b16878b70be6a"
+    },
+    {
+      "pair": 1,
+      "u": 100.0,
+      "steps": 38,
+      "maxp": 1.616863301023841e-07,
+      "maxu": 6.970992671995191e-10,
+      "absolute_global_residual": [
+        0.0,
+        -6.661338147750939e-15,
+        -3.8465941543108784e-10,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "0c8e36b42edc4e5490c57bf499eb03a2babcf5f73d91e1c1b5c80ae76c9b4c44"
+    },
+    {
+      "pair": 1,
+      "u": -100.0,
+      "steps": 38,
+      "maxp": 1.619482645764947e-07,
+      "maxu": 6.969571586523671e-10,
+      "absolute_global_residual": [
+        0.0,
+        6.439293542825908e-15,
+        -2.1012169781897683e-10,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "ba15534d7e07e9051751c52bdb4ce5a66f8cc9583ec470342aba5fe4019b6c8b"
+    },
+    {
+      "pair": 2,
+      "u": 0.0,
+      "steps": 49,
+      "maxp": 3.6381243262439966e-07,
+      "maxu": 4.839000022241056e-10,
+      "absolute_global_residual": [
+        0.0,
+        1.1500110024891194e-15,
+        1.1074652195636452e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "cd8498632f7e1da5872335633d423b49a7f8c94bcc8fed592bb556d0e52cf7b6"
+    },
+    {
+      "pair": 2,
+      "u": 100.0,
+      "steps": 49,
+      "maxp": 3.639725036919117e-07,
+      "maxu": 4.83723283650761e-10,
+      "absolute_global_residual": [
+        0.0,
+        2.020605904817785e-14,
+        -1.7053025658242404e-12,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "46e51730ae68942325a87dd887eed3dbfdbca6c9f6d57acfae823baf9c037356"
+    },
+    {
+      "pair": 2,
+      "u": -100.0,
+      "steps": 49,
+      "maxp": 3.6435085348784924e-07,
+      "maxu": 4.840643441639259e-10,
+      "absolute_global_residual": [
+        0.0,
+        -4.884981308350689e-15,
+        -2.5266899683629163e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_sha256": "554d28fb4d3c3a120a87e544678336d95eed96b4e3991c3df4c91dfd5d159ad4"
+    }
+  ],
+  "result": "ISOLATED_CONTACT_DEMONSTRATION_CORROBORATED_WITH_INTEGRATION_FINDINGS",
+  "findings": [
+    {
+      "id": "MR-REVIEW-01",
+      "path": "prototype.py:step",
+      "issue": "Second FE endpoint Y2 is not constructed/admissibility checked. Artificial RHS confirms negative Y2 width -0.5 can yield accepted final width0.25.",
+      "impact": "Blocks TS001/NK004-compatible integration; bounded contact demonstration remains observed."
+    },
+    {
+      "id": "MR-REVIEW-02",
+      "path": "prototype.py:recover/attempt",
+      "issue": "Mutable records append recoveries without stage/attempt identity or rollback separation. Diagnostic transaction claim incomplete.",
+      "impact": "Must segregate rejected and accepted diagnostics before GEN1 stage integration."
+    }
+  ],
+  "limits": [
+    "No complete VAL008/S06 acceptance. Global Lagrangian, first-order spatial prototype lacks local Eulerian interface crossing/reorganization and full closures.",
+    "Absolute ledger residuals recomputed; no full ST003 ledgerPASS inferred from author diagnostic normalization.",
+    "Published shock controls show response, not independently qualified shock accuracy.",
+    "New local-material prototype requires its own derivation and independent review."
+  ]
+}

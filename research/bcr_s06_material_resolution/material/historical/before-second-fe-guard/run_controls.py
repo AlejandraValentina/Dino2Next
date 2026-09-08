@@ -45,15 +45,12 @@ def run():
             sampled,p,pieces=solver.sample(state,np.linspace(0,1,13))
             rawfile=HERE/f'contact-{pair}-{u:g}.npz'
             np.savez_compressed(rawfile,times=history_t,inventory=history_q,edges=history_x,ledger=ledger)
-            diagfile=HERE/f'contact-{pair}-{u:g}-diagnostics.json'
-            diagfile.write_text(json.dumps(solver.records,indent=2)+'\n')
             records.append(dict(kind='CONTACT',pair=pair,u=u,steps=steps,elapsed=perf_counter()-start,
                 max_pressure_error_Pa=maxp,max_velocity_error=maxu,ledger_normalized=(abs(total)/scale).tolist(),
                 sampled_pressure_error_Pa=float(np.max(abs(p-1e5))),pieces=len(pieces),
                 material_interface_position=float(state.edges[12]),expected_position_diagnostic=.5+u*t,
                 initial_sha256=sha256(initial.inventory.tobytes()).hexdigest(),cache=solver._invert.cache_info()._asdict(),
-                raw_sha256=sha256(rawfile.read_bytes()).hexdigest(),
-                diagnostics_sha256=sha256(diagfile.read_bytes()).hexdigest()))
+                raw_sha256=sha256(rawfile.read_bytes()).hexdigest()))
     # Nonuniform physical data: no constant-pressure condition is passed to solver.
     solver=RegionSolver(m);edges=np.linspace(-.5,1.5,25)
     physical=[(600.,150000. if x<.5 else 100000.,0.,n2 if x<.5 else co2,(0,0,1,0)) for x in (edges[:-1]+edges[1:])/2]
@@ -61,7 +58,6 @@ def run():
     while t<.0002:
         dt=min(solver.suggested_dt(state),.0002-t);state,flux=solver.step(state,dt);ledger+=flux[0]-flux[-1];t+=dt;steps+=1
     w=solver.recover(state)
-    (HERE/'pressure-jump-diagnostics.json').write_text(json.dumps(solver.records,indent=2)+'\n')
     records.append(dict(kind='PRESSURE_JUMP_INTERACTION_SMOKE_ONLY',steps=steps,elapsed=perf_counter()-start,
         pressure_min=float(w[:,2].min()),pressure_max=float(w[:,2].max()),max_velocity=float(abs(w[:,1]).max()),
         ledger_normalized=(abs(state.inventory.sum(axis=0)-initial.inventory.sum(axis=0)-ledger)/np.maximum(np.sum(abs(initial.inventory),axis=0),1.)).tolist()))
@@ -74,7 +70,6 @@ def run():
     while t<.0008:
         dt=min(solver.suggested_dt(state),.0008-t);state,flux=solver.step(state,dt);ledger+=flux[0]-flux[-1];t+=dt;steps+=1
     w=solver.recover(state)
-    (HERE/'shock-interaction-diagnostics.json').write_text(json.dumps(solver.records,indent=2)+'\n')
     np.savez_compressed(HERE/'shock-interaction.npz',initial_inventory=initial.inventory,initial_edges=initial.edges,final_inventory=state.inventory,final_edges=state.edges,ledger=ledger)
     records.append(dict(kind='SEPARATE_SHOCK_MATERIAL_INTERACTION_SMOKE_ONLY',steps=steps,elapsed=perf_counter()-start,
         final_time=t,transmitted_CO2_pressure_change_Pa=float(np.max(abs(w[12:,2]-1e5))),
