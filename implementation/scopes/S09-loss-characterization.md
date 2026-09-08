@@ -52,7 +52,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `tests/unit/s09/`
 - `tests/contract/s09/`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.

@@ -19,8 +19,10 @@ REQUIRED |= frozenset(f'{PREFIX}/{name}.md' for name in ('BOUNDARY_CONTRACT', 'T
 REQUIRED |= frozenset({f'{PREFIX}/BCR-S03-NASA-INVERSION.md'})
 REQUIRED_DATA = frozenset(f'{PREFIX}/{name}' for name in ('EXECUTABLE_VALIDATION_FIXTURES.json', 'VALIDATION_CONTRACT_COVERAGE.json', 'NORMATIVE_ID_INDEX.json', 'datasets/thermo_species.json', 'datasets/thermo_transport.yaml', 'datasets/thermo_runtime_continuous_v1.json'))
 REQUIRED |= frozenset({f'{PREFIX}/BCR-S06-VERIFICATION-CONTRACT.md'})
-VERSION = 'C1.0-R4'
+VERSION = 'C1.0-R5'
 REQUIRED_DATA |= frozenset({f'{PREFIX}/S06_VERIFICATION_EVIDENCE_SHA256.json'})
+REQUIRED |= frozenset({f'{PREFIX}/BCR-S06-MATERIAL-RESOLUTION.md'})
+REQUIRED_DATA |= frozenset({f'{PREFIX}/S06_MATERIAL_RESOLUTION_EVIDENCE_SHA256.json'})
 STATUS = 'SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN'
 
 class IntegrityError(ValueError):
@@ -33,6 +35,31 @@ def unique_object(pairs):
             raise IntegrityError(f'DUPLICATE_KEY: {key}')
         result[key] = value
     return result
+
+def safe_c1_relative(name):
+    if not isinstance(name, str) or '\\' in name or ':' in name:
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + str(name))
+    path = PurePosixPath(name)
+    if path.is_absolute() or '..' in path.parts or path.as_posix() != name:
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + name)
+    try:
+        relative = path.relative_to(PREFIX)
+    except ValueError as exc:
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + name) from exc
+    if not relative.parts:
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + name)
+    return relative
+
+
+def predecessor_path(root, name):
+    safe_c1_relative(name)
+    path = root / name
+    if any(p.is_symlink() for p in (path, *path.parents) if p != root and p.is_relative_to(root)):
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + name)
+    if not path.resolve().is_relative_to(root / PREFIX):
+        raise IntegrityError('UNSAFE_PREDECESSOR_PATH: ' + name)
+    return path
+
 
 def check(root: Path = ROOT) -> dict:
     root = root.resolve()
@@ -67,12 +94,24 @@ def check(root: Path = ROOT) -> dict:
             raise IntegrityError(f'NORMATIVE_STATUS_MISSING: {name}')
     if set(manifest.get('normative_files', [])) != REQUIRED:
         raise IntegrityError('NORMATIVE_ROSTER_MISMATCH')
-    predecessor = root / manifest['predecessor_manifest_path']
+    layout = manifest.get('predecessor_history_layout', 'nested')
+    if layout not in ('nested', 'shared-root-v1'):
+        raise IntegrityError('PREDECESSOR_LAYOUT_UNKNOWN')
+    predecessor = predecessor_path(root, manifest['predecessor_manifest_path'])
+    if not predecessor.is_file():
+        raise IntegrityError('PREDECESSOR_MANIFEST_MISSING')
     if hashlib.sha256(predecessor.read_bytes()).hexdigest() != manifest['predecessor_manifest_sha256']:
         raise IntegrityError('PREDECESSOR_MANIFEST_MISMATCH')
-    previous = json.loads(predecessor.read_text())
+    previous = json.loads(predecessor.read_text(), object_pairs_hook=unique_object)
     for name, digest in previous['files'].items():
-        archived = predecessor.parent / Path(name).relative_to(PREFIX)
+        # Validate the ORIGINAL manifest path before selecting its physical home.
+        relative = safe_c1_relative(name)
+        if layout == 'shared-root-v1' and relative.parts[0] == 'history':
+            archived = predecessor_path(root, name)
+        else:
+            archived = predecessor_path(root, (predecessor.parent.relative_to(root) / relative).as_posix())
+        if not archived.is_file():
+            raise IntegrityError('PREDECESSOR_BYTES_MISSING: ' + name)
         if hashlib.sha256(archived.read_bytes()).hexdigest() != digest:
             raise IntegrityError('PREDECESSOR_BYTES_MISMATCH: ' + name)
     return {'check': 'manifest_integrity', 'result': 'PASS', 'version': VERSION, 'files': len(files)}

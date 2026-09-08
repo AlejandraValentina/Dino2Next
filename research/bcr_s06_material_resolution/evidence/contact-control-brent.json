@@ -1,0 +1,12 @@
+{
+  "reviewer": "/root",
+  "classification": "INDEPENDENT_NO_INTEGRATION_CONTROL",
+  "left_volume_fraction": 0.1,
+  "A": 100000.0,
+  "B": 108880.81231285131,
+  "T": 1633.2121846927696,
+  "energy_residual": -9.313225746154785e-10,
+  "comparison_target": 108880.8123128513,
+  "difference": 1.4551915228366852e-11,
+  "method": "Accepted evaluate plus independent Brent root; no invert_energy, kernel, reconstruction or time integration"
+}

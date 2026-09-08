@@ -1,0 +1,192 @@
+{
+  "records": [
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 1.0000000000000002
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999998
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999998
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999999
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999999
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999999
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 1.0000000000000002
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 1.0000000000000002
+    },
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "stage": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "event": "TS004_DERIVED_SUM",
+      "sum_pre": 0.9999999999999998
+    }
+  ],
+  "remap_records": [
+    {
+      "transaction_id": 1,
+      "old_intervals": 31,
+      "new_intervals": 31,
+      "residual": [
+        0.0,
+        3.552713678800501e-15,
+        -1.3969838619232178e-09,
+        0.0,
+        0.0,
+        2.7755575615628914e-17,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "transaction_records": [
+    {
+      "transaction_id": 1,
+      "parent_id": null,
+      "kind": "REORGANIZE_SOFTWARE_PILOT",
+      "status": "ACCEPTED",
+      "failure": null,
+      "derived_records_range": [
+        0,
+        9
+      ],
+      "derived_records": [
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 1.0000000000000002
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999998
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999998
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999999
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999999
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999999
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 1.0000000000000002
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 1.0000000000000002
+        },
+        {
+          "transaction_id": 1,
+          "parent_id": null,
+          "stage": "REORGANIZE_SOFTWARE_PILOT",
+          "status": "ACCEPTED",
+          "event": "TS004_DERIVED_SUM",
+          "sum_pre": 0.9999999999999998
+        }
+      ],
+      "remap_records_range": [
+        0,
+        1
+      ],
+      "stage_records_range": [
+        0,
+        0
+      ]
+    }
+  ]
+}

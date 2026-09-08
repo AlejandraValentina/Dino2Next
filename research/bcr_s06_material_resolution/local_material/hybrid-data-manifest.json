@@ -1,0 +1,81 @@
+{
+  "classification": "LOSSLESS_RESEARCH_RECORDS_NO_ACCEPTANCE_CHANGE",
+  "zip_sha256": "625079399d2c21e38e87fa11c030602da8dc737ff1744422d38b3b183c46b192",
+  "members": [
+    {
+      "path": "fast-contact-0--100.json",
+      "size": 663955,
+      "sha256": "7ca64897655db869f9d10234cd41e5a8734147949fdbbcd4741b600fbe081d4b"
+    },
+    {
+      "path": "fast-contact-0-0.json",
+      "size": 333576,
+      "sha256": "ffe05b6148d68803164f48622629a50e326bd0ff90b6c313d8ae12a75ceed2fd"
+    },
+    {
+      "path": "fast-contact-0-100.json",
+      "size": 641050,
+      "sha256": "ac4cd7e5de8a92b5434565ca4181b9ad245b633ec6124a21922d22d5127f6650"
+    },
+    {
+      "path": "fast-contact-1--100.json",
+      "size": 802291,
+      "sha256": "9c15fdd05f98ca2287d4dea7412077246f66557bbbe0b2d4f65b897d27a473f0"
+    },
+    {
+      "path": "fast-contact-1-0.json",
+      "size": 462670,
+      "sha256": "741ef3e4d420ae1ca0120686c52584c4e023fc56e7144d3af3e4fa11f0057cae"
+    },
+    {
+      "path": "fast-contact-1-100.json",
+      "size": 815273,
+      "sha256": "c59881996bf004838227dbb93d8eaf1d89e89d578dc314c9238651b0c1dfb931"
+    },
+    {
+      "path": "fast-contact-2--100.json",
+      "size": 5248542,
+      "sha256": "3757136350e2c938526e498ba88016933856e018f46e2bbaaa499a7758bd2cfd"
+    },
+    {
+      "path": "fast-contact-2-0.json",
+      "size": 3631463,
+      "sha256": "0522a9efe1471a978a3dd40d46b66e8ec2d1280cc2520101a88cfd4d040aa6c4"
+    },
+    {
+      "path": "fast-contact-2-100.json",
+      "size": 5399114,
+      "sha256": "a49d8b15ef0077284405b0cbdd9841cfd305a8dd2dda676e1b0b5b354e77f170"
+    },
+    {
+      "path": "history/shock-N80/shock-result.json",
+      "size": 7304369,
+      "sha256": "497ab3603dd38d5d1c0d8c1103ac8a1b437155b7d81994baa737a2a8f2ddb5cb"
+    },
+    {
+      "path": "hybrid-result.json",
+      "size": 809335,
+      "sha256": "5bd1bc0ccfd31aecb0c7b6e26bffe4ce1f251adf11d2ecd23d6495ac79b36164"
+    },
+    {
+      "path": "shock-N160-assessment.json",
+      "size": 1573052,
+      "sha256": "d739d52f9a6fcf70f771a26c04061fc2c98309f04b212173cc01fc39a0113bdb"
+    },
+    {
+      "path": "shock-N160-result.json",
+      "size": 20639243,
+      "sha256": "dc1172bdfabd29e81acba48053942527cce8cee8beb0f7eaf970a6b37be7c65c"
+    },
+    {
+      "path": "shock-N80-assessment.json",
+      "size": 808016,
+      "sha256": "409d42ca4da5b5f8d59a707da8f6fbefb9fe16e882514227a0c981ab438a8268"
+    },
+    {
+      "path": "shock-result.json",
+      "size": 7304369,
+      "sha256": "497ab3603dd38d5d1c0d8c1103ac8a1b437155b7d81994baa737a2a8f2ddb5cb"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ ID: `S16`. Status: `NOT_STARTED`. No scientific implementation is authorized by 
 - S15 produces `PerformanceResult`: Assess output defects.
 
 ## Normative IDs
-`CAP-009`, `NUM-002`, `NUM-005`, `NUM-006`, `NUM-008`, `NUM-009`, `NUM-010`, `VAL-021`
+`CAP-009`, `NUM-002`, `NUM-005`, `NUM-006`, `NUM-008`, `NUM-009`, `NUM-010`, `VAL-021`, `MR-008`
 
 C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_METHOD_SPEC.md`, `VALIDATION_SPEC.md`. IDs above select the relevant clauses.
 - `docs/architecture/A1.0/DOMAIN_MODEL.md` — ownership and value-object contracts
@@ -30,6 +30,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
+- `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
 
 ## Required interfaces
 ### EngineRunner
@@ -48,6 +49,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - No maxcycle-as-convergence, phase shifting or averaging distinct attractors.
 - Cancellation only at accepted-state boundaries; warm start has an explicit hashed predecessor.
 - Implement TS-001…006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory.
+- Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions.
 
 ## Allowed paths
 - `src/dino2next/convergence/`
@@ -59,7 +61,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - `validation/expected/VAL-021/`
 - `tests/numerical/VAL-021/`
 
-Paths ending in `/` are exclusive subtrees. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
+Paths ending in `/` are exclusive subtrees except for the exact file handoffs enumerated in SCOPE_DEPENDENCY_GRAPH. Other entries are exact files. Fixture/reference/expected paths are owned as one bundle. Rerunning another owner’s fixture grants no write access. Shared tooling handoffs are enumerated in SCOPE_DEPENDENCY_GRAPH.
 
 ## Forbidden changes
 - Any C1 equation, correlation, method selection, fixture input, threshold, scientific fallback or output definition without approved BCR.

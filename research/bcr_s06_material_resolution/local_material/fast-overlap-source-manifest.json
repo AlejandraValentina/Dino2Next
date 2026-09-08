@@ -1,0 +1,11 @@
+{
+  "classification": "SOURCE_AND_DIAGNOSTIC_BYTE_BINDING_FOR_BOUNDED_SOFTWARE_PILOT",
+  "all_11_trace_files_byte_identical": true,
+  "sha256": {
+    "local_material/prototype.py": "c2f9d81ce57a8cae741839b5522185e10485c7cabe1070a935500a13387d3eee",
+    "local_material/fast_overlap.py": "3a7a9f5f76d8f7eec0ea35589c6b749836b9e0e7107233231a0bdf66e517dd28",
+    "local_material/fast_overlap_pilot.py": "810bd56a53ccb0727d025a314ddb2171b1b2da1a79ac8838930261895b018993",
+    "local_material/test_fast_overlap.py": "940f7deb423ec0afb136be29a3101bd5a24ace1028dfb0c38f54bdc019901b10",
+    "material/prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32"
+  }
+}

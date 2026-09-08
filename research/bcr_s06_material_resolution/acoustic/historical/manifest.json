@@ -1,0 +1,10 @@
+{
+  "classification": "PRESERVED_R4_FAILURE_EVIDENCE_NOT_RECLASSIFIED",
+  "source_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "sha256": {
+    "maxima-and-all-samples.json": "06828bd84579fcc6c9355825c3ad4c283958b8de6d6b69ed9c35edf7320b176c",
+    "fine-comparison.json": "18adf8989fe4b7f39657cfdfcc4d45695298349950613c0b1c17c6df029660d0",
+    "final-review.json": "cfeb91c05ffb84ad82bfed702abc0842c71e5feb4ae9dfdef8d1a576653970e2",
+    "maxima.md": "162d16f1d106caba9527e16114d105b30e16d1ddd54af3ad6fcd421493fb2fd1"
+  }
+}

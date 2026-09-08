@@ -7,6 +7,47 @@ from check_contracts import check as check_integrity, VERSION
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def canonical_ownership_path(path):
+    assert isinstance(path, str) and path, 'unsafe ownership path'
+    assert '\\' not in path and ':' not in path, 'unsafe ownership path'
+    stem = path[:-1] if path.endswith('/') else path
+    assert stem and not stem.startswith('/'), 'unsafe ownership path'
+    assert all(part not in ('', '.', '..') for part in stem.split('/')), 'unsafe ownership path'
+
+
+def check_ownership(scopes):
+    for scope in scopes:
+        for path in scope['allowed_paths']:
+            canonical_ownership_path(path)
+    by = {s['id']: s for s in scopes}
+    material_paths = set()
+    for scope in scopes:
+        if 'material_path_handoff' not in scope:
+            continue
+        declaration = scope['material_path_handoff']
+        expected = {
+            'owner': 'S05', 'normative_id': 'MR-008',
+            'paths': [
+                'src/dino2next/gasdynamics/__init__.py',
+                'src/dino2next/gasdynamics/regional.py',
+                'src/dino2next/gasdynamics/README.md',
+            ],
+        }
+        assert scope['id'] == 'S06' and declaration == expected, 'invalid material handoff'
+        assert 'MR-008' in scope['normative_ids'], 'material handoff missing MR-008'
+        material_paths = set(expected['paths'])
+        assert material_paths <= set(scope['allowed_paths']), 'material handoff paths missing'
+        assert 'src/dino2next/gasdynamics/' in by['S05']['allowed_paths'], 'material handoff owner missing'
+    handoffs = {('S00','S19',p) for p in ['frontend/package.json','frontend/package-lock.json','frontend/tsconfig.json']} | {('S00','S22','pyproject.toml')}
+    for n,s in enumerate(scopes):
+        for t in scopes[n+1:]:
+            for a in s['allowed_paths']:
+                for b in t['allowed_paths']:
+                    if a == b or (a.endswith('/') and b.startswith(a)) or (b.endswith('/') and a.startswith(b)):
+                        material = (s['id'], t['id']) == ('S05', 'S06') and a == 'src/dino2next/gasdynamics/' and b in material_paths
+                        assert ((s['id'],t['id'],a) in handoffs and a == b) or material, f'ownership overlap {s["id"]}/{t["id"]}: {a}, {b}'
+
+
 def check(root=ROOT, readiness=False):
     scopes = json.loads((root/'implementation/scope_registry.json').read_text())['scopes']
     vals = json.loads((root/'implementation/validation_registry.json').read_text())['validations']
@@ -34,13 +75,7 @@ def check(root=ROOT, readiness=False):
         for p in s['tests']:
             assert any(p == a or (a.endswith('/') and p.startswith(a)) for a in s['allowed_paths']), f'unowned test {p}'
         visit(s['id'])
-    handoffs = {('S00','S19',p) for p in ['frontend/package.json','frontend/package-lock.json','frontend/tsconfig.json']} | {('S00','S22','pyproject.toml')}
-    for n,s in enumerate(scopes):
-        for t in scopes[n+1:]:
-            for a in s['allowed_paths']:
-                for b in t['allowed_paths']:
-                    if a == b or (a.endswith('/') and b.startswith(a)) or (b.endswith('/') and a.startswith(b)):
-                        assert (s['id'],t['id'],a) in handoffs and a == b, f'ownership overlap {s["id"]}/{t["id"]}: {a}, {b}'
+    check_ownership(scopes)
     assert len(vals) == 28 and {v['id'] for v in vals} == {f'VAL-{i:03}' for i in range(1,29)}, 'VAL coverage'
     for v in vals:
         if not v['mandatory']: continue

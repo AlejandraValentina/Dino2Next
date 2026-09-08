@@ -1,0 +1,46 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "TWO_LEVEL_DIRECTED_SHOCK_EVIDENCE_CORROBORATED_NOT_FULL_VAL008",
+  "method": "Read and independently executed author algebraic replay, output redirected only; no numerical RHS/time integration. All101 raw states exactly reconstructed from stored stage fluxes and remap; Y0/Y1/Y2/final accepted NASA recovery and original independent reference recomputed. Additionally independently recomputed all norms from physical candidate/reference arrays.",
+  "source_sha256": "17083990f18a6790782edab89e188d47787aa22e12fcd06a9445595aa632cfca",
+  "summary_sha256": "88eef465fce52bdbe1b696fd7d3313a0da229b40d1c0d1dba0c861c15b8dba41",
+  "levels": [
+    {
+      "N": 80,
+      "raw_sha256": "497ab3603dd38d5d1c0d8c1103ac8a1b437155b7d81994baa737a2a8f2ddb5cb",
+      "time_max_L1_upper": [
+        0.010317219353890328,
+        0.00928683507580712,
+        0.020015306754381044
+      ],
+      "checks": 489,
+      "max_speed": 638.6977412519551,
+      "outer_ST003": 2.0883292185042512e-17,
+      "window_ST003": 6.022942364778447e-17
+    },
+    {
+      "N": 160,
+      "raw_sha256": "dc1172bdfabd29e81acba48053942527cce8cee8beb0f7eaf970a6b37be7c65c",
+      "time_max_L1_upper": [
+        0.005145447214783465,
+        0.00460912548341382,
+        0.00993794308206786
+      ],
+      "checks": 861,
+      "max_speed": 638.6924872325542,
+      "outer_ST003": 1.2345986792126007e-16,
+      "window_ST003": 5.880233462354491e-17
+    }
+  ],
+  "orders": [
+    1.0036858160654343,
+    1.0106939688612622,
+    1.0100845423978282
+  ],
+  "findings": [],
+  "limits": [
+    "One prescribed NASA pair/pressure-ratio and two levels, not all nine shocks or original full mesh/CFL sequence.",
+    "Orders of uncertainty-inclusive errors are descriptive two-level observations, not full asymptotic qualification.",
+    "No production capability, whole method/BCR or S06 acceptance."
+  ]
+}

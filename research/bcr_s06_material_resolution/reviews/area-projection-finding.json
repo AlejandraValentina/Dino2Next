@@ -1,0 +1,11 @@
+{
+  "observed": "Projection mass of middle region differs from its authoritative inventory by relative1.69568416e-7 despite observing its own boundaries. Numerator reintegrates A on derived rounded x while denominator is authoritativeDeltaW. Inverse residuals near1e-17 amplify in1e-10 region.",
+  "id": "AREA-02",
+  "reproducer": "PolynomialSegment(0,1,(1,0,2),(1,)), edges[0,.9,.9000000001,1], three N2/T600/p1e5/u0 states labelsL/M/R; q,p,_=solver.sample(state,state.edges)",
+  "source_sha256": "f23a7442e941f21d074e157a08c84acbe8f390e602216c0dd6d9c630ef7a998c",
+  "requirement": "Specify consistent overlap-volume representation/accounting and expose inverse residual effects without changing physical inventories or using EOS of aggregateQ. Cover whole-region projection identity and small retained material intervals. This is separate from the correctly derived dt advisor.",
+  "path": "area_hybrid/area_solver.py sample and reorganize overlap volumes",
+  "reviewer": "/root/s01_reviewer",
+  "result": "CHANGES_REQUESTED_REPRESENTATION_CONSISTENCY",
+  "limits": "No claim of large global conservation failure or failed rest control; demonstrates local projection inconsistency in valid retained thin region."
+}

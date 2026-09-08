@@ -1,0 +1,15 @@
+{
+  "reviewer": "/root/s03_runtime_builder",
+  "verdict": "APPROVE_LIMITED_COMPATIBILITY_DIAGNOSTIC",
+  "scope": "Published data hashes, TS004 recovery records and signed ABC; no integration or numerical gate acceptance",
+  "report_sha256": "93865e0d5deff5ebf32e3812118b1cc7f84506c91eef19318de5984a17dc7ea8",
+  "control_sha256": "4946e20408abd9a66b10d2c0768c867a41fe58f514ca1e5987c9ac26ee7d9be8",
+  "record_sha256": "e16a1c136c9e6a7a490c3fdab7a346e79bd494c7b854d72ae37fca7505f07a0e",
+  "record_count": 7263,
+  "saved_Q_bindings_verified": 7200,
+  "nonnegative_derived_pre": true,
+  "all_divisions_exactly_reproduced": true,
+  "all_sum_discrepancies_within_256eps": true,
+  "signed_closure_max_Pa": 0,
+  "supersedes": "Earlier normalization interpretation was incorrect; TS004 explicitly permits this derived-fraction operation with record and unchanged Q."
+}

@@ -165,10 +165,17 @@ only the fixed nonzero scale A0, approximately8.6462771789e-7 at epsilon1e-5;
 it scales linearly for epsilon/2. This explicitly changes the former observation
 discretization and separates directional waves instead of their canceling sum.
 
-All101 original samples j=0..100, ct=j/100, remain mandatory. For each component
-and also for their total pressure sum require |C_candidate-C_reference|/A0<=.01
-at every sample, including75 and all tiny-signal tails. No measured remainder is
-subtracted. This absolute complex gate covers zero-reference instants.
+All 101 original samples j=0..100, ct=j/100, remain mandatory at every row of
+the MR-010 resolution-obligation table, for epsilon=1e-5 and epsilon=5e-6
+executed separately. Evaluate and retain each directional component and
+total-pressure complex error at every sample, including sample75 and every
+tiny-signal tail. At each FINAL_PRECISION row require
+|C_candidate-C_reference|/A0<=.01 for all three signals at all samples.
+STUDY rows retain the same error measurements and threshold comparisons;
+their required acceptance conditions are stability, conservation and the
+declared convergence/sensitivity study, not a claim of final precision.
+No measured remainder is subtracted. At FINAL_PRECISION rows this absolute
+complex gate covers zero-reference instants as well as all weaker tails.
 
 Define the declared phase-resolution mask from the reference ONLY:
 abs(C_reference,h)>=.01*A0. The cutoff is the existing absolute1% resolution
@@ -176,15 +183,63 @@ budget, not a fitted candidate error or an assertion that weaker nonzero signals
 have mathematically undefined phase. Qualify and freeze the mask before running
 the candidate. For the original three meshes and either epsilon it gives incident
 j=0..83 and reflected j=67..100, retaining resolvable pulse tails. Both components
-are assessed at75. On this mask require relative amplitude error<=.01 and
-abs(arg(C_candidate*conj(C_reference)))<=pi/N for each component, at the original
-mesh/CFL assessment levels. A zero candidate in an observable interval fails
+are assessed at75. On this reference-qualified mask require relative amplitude error<=.01 and
+abs(arg(C_candidate*conj(C_reference)))<=pi/N for each directional component
+at every FINAL_PRECISION row of the MR-010 table. Evaluate and retain those
+same comparisons at STUDY rows without relabeling a failed precision
+comparison as PASS. The mask is qualified and frozen independently at every
+mesh before candidate execution, including N1600; it is never copied from
+another mesh without qualification. The qualified N1600 mask retains
+incident j=0..83 and reflected j=67..100 for both epsilon values. A zero candidate in an observable interval fails
 amplitude; its phase is undefined, never phase PASS. Outside the mask mark phase
-NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION and enforce the absolute gate.
+NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION and enforce the absolute gate
+at FINAL_PRECISION rows; retain the same comparison at STUDY rows.
 Only a zero coefficient has undefined phase; no phase PASS is claimed for either
 category. This changes coverage/interpretation explicitly: relative phase applies
 to directional signals resolved above the declared physical absolute budget,
 and absolute vector error covers all weaker tails and every cancellation.
+
+### MR-010 resolution-obligation table (free end only)
+
+Each row requires both epsilon values and all 101 samples. Report means retain
+the measured value, uncertainty and original threshold comparison, not PASS.
+The rigid-end matrix and thresholds are unchanged. Historical R4 failures
+retain their original status. These obligations do not assert execution or
+reference qualification; source-bound qualification must precede execution.
+
+| N | CFL | Tipo | Estabilidad y conservación | Estudio obligatorio | Precisión absoluta | Precisión relativa | Fase |
+|---|---|---|---|---|---|---|---|
+| 200 | .2 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 200 | .1 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 200 | .05 | STUDY | Obligatorio | Secuencia espacial | Reporte | Reporte en máscara | Reporte en máscara |
+| 400 | .2 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 400 | .1 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 400 | .05 | STUDY | Obligatorio | Secuencia espacial | Reporte | Reporte en máscara | Reporte en máscara |
+| 800 | .2 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 800 | .1 | STUDY | Obligatorio | Sensibilidad temporal | Reporte | Reporte en máscara | Reporte en máscara |
+| 800 | .05 | STUDY | Obligatorio | Secuencia espacial | Reporte | Reporte en máscara | Reporte en máscara |
+| 1600 | .1 | FINAL_PRECISION | Obligatorio | Comparación temporal a N fijo | <=.01 A0, tres señales | <=.01 en máscara | <=pi/1600 en máscara |
+| 1600 | .05 | FINAL_PRECISION | Obligatorio | Extremo espacial y comparación temporal | <=.01 A0, tres señales | <=.01 en máscara | <=pi/1600 en máscara |
+
+Estabilidad significa completar la evolución y todas las muestras con estados
+admisibles, conservando reintentos/rechazos y su significado vigente. Una
+ejecución interrumpida no pasa. Conservación mantiene los ledgers y umbrales
+vigentes; una gráfica o coeficiente estable no los sustituye.
+
+Para cada epsilon, en CFL=.05 la secuencia N200→400→800→1600 debe mostrar
+descenso estricto del máximo temporal del error complejo absoluto/A0 de cada
+señal: incidente, reflejada y presión total. Comparar las cotas de referencia:
+la cota superior del error fino debe ser menor que la cota inferior del grueso.
+Si las cotas se solapan, no se ha demostrado ese descenso. Publicar las tres
+razones log2, los L1/L2 de campos y sus órdenes observados. No imponer ni
+atribuir un nuevo orden global dos a partir de la ecuación modificada local.
+
+La obligación temporal compara, para cada epsilon, las trazas de coeficientes
+de CFL .1 y .05 a N1600 y publica sus diferencias normalizadas y márgenes de
+los tres gates; ambas filas deben cumplir precisión por separado. En las
+mallas de estudio se conservan también las diferencias entre sus tres CFL.
+No se infiere orden temporal ni una cota al límite dt=0 de dos pasos; esa
+afirmación más fuerte requeriría evidencia y obligación adicionales explícitas.
 
 Nonzero observability follows analytically: whenever the center is inside W,
 at least one sigma-wide side is inside. Rotate C by its center phase. Its real

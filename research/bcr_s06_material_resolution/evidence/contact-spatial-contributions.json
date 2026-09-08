@@ -1,0 +1,90 @@
+{
+  "classification": "SAVED_RAW_SPATIAL_LOCALIZATION_NO_CAUSAL_ATTRIBUTION",
+  "source_sha256": "76fc2a1eeadb294b657615f2688ca7110ef95c09de40cc93cc522054fb1c243e",
+  "script_sha256": "e7c95d9c33f99b4f208576abe30b21ecc3fbd218c8a216fa6e72b665caa4303e",
+  "measure": "sum cell width * abs(C-A)/100000 Pa; original window[0,1], dx1/100",
+  "rows": [
+    {
+      "selection": "last_snapshot",
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "total_L1": 0.004155245963130325,
+      "regions": [
+        {
+          "region": "exact_cut_cell",
+          "cells": 1,
+          "contribution_to_total_L1": 3.7003498047037285e-05,
+          "fraction_of_total_L1": 0.008905248540127565
+        },
+        {
+          "region": "exact_pure_cells",
+          "cells": 99,
+          "contribution_to_total_L1": 0.004118242465083287,
+          "fraction_of_total_L1": 0.9910947514598724
+        },
+        {
+          "region": "candidate_pure_far_left_gt10dx",
+          "cells": 44,
+          "contribution_to_total_L1": 0.0014447381692951969,
+          "fraction_of_total_L1": 0.3476901685518548
+        },
+        {
+          "region": "candidate_pure_far_right_gt10dx",
+          "cells": 36,
+          "contribution_to_total_L1": 0.0019374323750346555,
+          "fraction_of_total_L1": 0.46626177901996074
+        },
+        {
+          "region": "remaining_exact_pure_cells",
+          "cells": 19,
+          "contribution_to_total_L1": 0.0007360719207534364,
+          "fraction_of_total_L1": 0.1771428038880572
+        }
+      ]
+    },
+    {
+      "selection": "global_peak_total_L1",
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "total_L1": 0.004155245963130325,
+      "regions": [
+        {
+          "region": "exact_cut_cell",
+          "cells": 1,
+          "contribution_to_total_L1": 3.7003498047037285e-05,
+          "fraction_of_total_L1": 0.008905248540127565
+        },
+        {
+          "region": "exact_pure_cells",
+          "cells": 99,
+          "contribution_to_total_L1": 0.004118242465083287,
+          "fraction_of_total_L1": 0.9910947514598724
+        },
+        {
+          "region": "candidate_pure_far_left_gt10dx",
+          "cells": 44,
+          "contribution_to_total_L1": 0.0014447381692951969,
+          "fraction_of_total_L1": 0.3476901685518548
+        },
+        {
+          "region": "candidate_pure_far_right_gt10dx",
+          "cells": 36,
+          "contribution_to_total_L1": 0.0019374323750346555,
+          "fraction_of_total_L1": 0.46626177901996074
+        },
+        {
+          "region": "remaining_exact_pure_cells",
+          "cells": 19,
+          "contribution_to_total_L1": 0.0007360719207534364,
+          "fraction_of_total_L1": 0.1771428038880572
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Exact cut versus exact pure partition is exhaustive. Far-left/right candidate-pure regions are subsets of exact pure, and remaining pure completes a disjoint partition. Do not sum both exact_pure and its subsets.",
+    "Far material purity here means actual normalized CO2 fraction exactly0 left or1 right, without fitted threshold.",
+    "Percentages localize pressure error; they do not separate causal wave generation, numerical flux errors, or representation effects. No representation error subtracted for acceptance.",
+    "Only preserved partial36-sample run; no integration and no change to approved diagnostic."
+  ]
+}

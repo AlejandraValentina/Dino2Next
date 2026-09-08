@@ -1,0 +1,5196 @@
+{
+  "classification": "EXPERIMENTAL_N1600_OBSERVATION_NOT_R4_ACCEPTANCE",
+  "samples": [
+    {
+      "time": 0.0,
+      "sample_index": 0,
+      "components": {
+        "incident": {
+          "C": [
+            2.7542916272450897e-19,
+            -8.646266067785374e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "reference_error_upper": 3.5590693606210176e-17,
+          "absolute_error_upper_normalized": 7.400240064170157e-11,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.398386127008773e-11,
+          "phase_error_upper": 4.226885653459414e-11
+        },
+        "reflected": {
+          "C": [
+            9.560202327455142e-19,
+            2.7768824892419416e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 7.329855157925357e-11,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            1.2314470844729697e-18,
+            -8.646266067507685e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "reference_error_upper": 7.118157744031309e-17,
+          "absolute_error_upper_normalized": 8.464715100106742e-11,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.008451542547285166,
+      "sample_index": 1,
+      "components": {
+        "incident": {
+          "C": [
+            -5.429059007881508e-08,
+            -8.629204484384073e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            -8.629204636468814e-07
+          ],
+          "reference_error_upper": 3.559069069566004e-17,
+          "absolute_error_upper_normalized": 2.7383656035670965e-07,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.398000171871606e-10,
+          "phase_error_upper": 2.738365770395588e-07
+        },
+        "reflected": {
+          "C": [
+            -1.664570356852613e-13,
+            -8.522226237230497e-18
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.9255993133227389e-07,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.429075653585077e-08,
+            -8.629204484469296e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            -8.629204636468814e-07
+          ],
+          "reference_error_upper": 7.118158776465275e-17,
+          "absolute_error_upper_normalized": 4.6616255414218595e-07,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.016903085094570332,
+      "sample_index": 2,
+      "components": {
+        "incident": {
+          "C": [
+            -1.0836691807980351e-07,
+            -8.5780870764915e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            -8.578087677044649e-07
+          ],
+          "reference_error_upper": 3.5590698801782475e-17,
+          "absolute_error_upper_normalized": 5.47623015921289e-07,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.754844570886098e-10,
+          "phase_error_upper": 5.476229941536588e-07
+        },
+        "reflected": {
+          "C": [
+            -3.3224930493895233e-13,
+            -4.167988227387778e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 3.8430985504340497e-07,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -1.0836725032910844e-07,
+            -8.578087076908297e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            -8.578087677044649e-07
+          ],
+          "reference_error_upper": 7.118160910566499e-17,
+          "absolute_error_upper_normalized": 9.301035347407055e-07,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.025354627641855497,
+      "sample_index": 3,
+      "components": {
+        "incident": {
+          "C": [
+            -1.6201556755004052e-07,
+            -8.49311558319926e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            -8.493116924514691e-07
+          ],
+          "reference_error_upper": 3.559071214300549e-17,
+          "absolute_error_upper_normalized": 8.21358904279242e-07,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2957974327315937e-09,
+          "phase_error_upper": 8.213588668403855e-07
+        },
+        "reflected": {
+          "C": [
+            -4.966892757469485e-13,
+            -9.28763803859738e-17
+          ],
+          "Cref": [
+            -2.926047721682624e-98,
+            -2.926047721682624e-98
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 5.744957588101098e-07,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -1.6201606423931628e-07,
+            -8.493115584128022e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            -8.493116924514691e-07
+          ],
+          "reference_error_upper": 7.118164891666759e-17,
+          "absolute_error_upper_normalized": 1.389744774568303e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.033806170189140665,
+      "sample_index": 4,
+      "components": {
+        "incident": {
+          "C": [
+            -2.1502480993427578e-07,
+            -8.374625351263481e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            -8.374627719619715e-07
+          ],
+          "reference_error_upper": 3.55906903041526e-17,
+          "absolute_error_upper_normalized": 1.0950362412423596e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.6949936073720306e-09,
+          "phase_error_upper": 1.0950362201666978e-06
+        },
+        "reflected": {
+          "C": [
+            -6.591230478744892e-13,
+            -1.7131368833124654e-16
+          ],
+          "Cref": [
+            -4.740197309125851e-96,
+            -2.926047721682624e-98
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 7.623613674269636e-07,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -2.1502546905732366e-07,
+            -8.374625352976615e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            -8.374627719619715e-07
+          ],
+          "reference_error_upper": 7.11816270778147e-17,
+          "absolute_error_upper_normalized": 1.8430236517031025e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.04225771273642583,
+      "sample_index": 5,
+      "components": {
+        "incident": {
+          "C": [
+            -2.6718544014191166e-07,
+            -8.223084011503031e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            -8.22308768511887e-07
+          ],
+          "reference_error_upper": 3.559070882731111e-17,
+          "absolute_error_upper_normalized": 1.368647472347562e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.0971759296099507e-09,
+          "phase_error_upper": 1.3686474629620006e-06
+        },
+        "reflected": {
+          "C": [
+            -8.188994011188864e-13,
+            -2.6100470401502067e-16
+          ],
+          "Cref": [
+            -1.345660086724622e-93,
+            -1.5171557436924405e-95
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 9.471534988535657e-07,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -2.671862590413128e-07,
+            -8.223084014113076e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            -8.22308768511887e-07
+          ],
+          "reference_error_upper": 7.118169854053242e-17,
+          "absolute_error_upper_normalized": 2.287921035911675e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.050709255283710994,
+      "sample_index": 6,
+      "components": {
+        "incident": {
+          "C": [
+            -3.1829160222252404e-07,
+            -8.039089633879095e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            -8.039094880296274e-07
+          ],
+          "reference_error_upper": 3.559069495846663e-17,
+          "absolute_error_upper_normalized": 1.6422018157474867e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.4753233164923377e-09,
+          "phase_error_upper": 1.6422018537235184e-06
+        },
+        "reflected": {
+          "C": [
+            -9.754044600101813e-13,
+            -3.841300554843371e-16
+          ],
+          "Cref": [
+            -3.546752126814178e-91,
+            -4.056277544898363e-93
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.1281621751451018e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -3.1829257762698406e-07,
+            -8.039089637720394e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            -8.039094880296274e-07
+          ],
+          "reference_error_upper": 7.118168467168793e-17,
+          "absolute_error_upper_normalized": 2.722527631506621e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.05916079783099616,
+      "sample_index": 7,
+      "components": {
+        "incident": {
+          "C": [
+            -3.681416020007749e-07,
+            -7.823368364810172e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            -7.823375440694244e-07
+          ],
+          "reference_error_upper": 3.5590704890574976e-17,
+          "absolute_error_upper_normalized": 1.9160431668277926e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.8913205549718477e-09,
+          "phase_error_upper": 1.91604319660799e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1282960644890593e-12,
+            -3.7847853607396634e-16
+          ],
+          "Cref": [
+            -8.631172923201505e-89,
+            -1.0011925817133959e-90
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.3049915947048284e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -3.681427302968393e-07,
+            -7.823368368594957e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            -7.823375440694244e-07
+          ],
+          "reference_error_upper": 7.11816946037963e-17,
+          "absolute_error_upper_normalized": 3.1456703671875454e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.06761234037828133,
+      "sample_index": 8,
+      "components": {
+        "incident": {
+          "C": [
+            -4.1653870284314395e-07,
+            -7.576771563603816e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            -7.576780712388055e-07
+          ],
+          "reference_error_upper": 3.559070206860957e-17,
+          "absolute_error_upper_normalized": 2.190511192324937e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.294100440075274e-09,
+          "phase_error_upper": 2.1905112349296287e-06
+        },
+        "reflected": {
+          "C": [
+            -1.2772582652514862e-12,
+            -1.5499025452504222e-16
+          ],
+          "Cref": [
+            -1.9393562833038344e-86,
+            -2.282179919000921e-88
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.477276345850838e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -4.1653998010140914e-07,
+            -7.57677156515372e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            -7.576780712388055e-07
+          ],
+          "reference_error_upper": 7.118169178183088e-17,
+          "absolute_error_upper_normalized": 3.556279597422641e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.0760638829255665,
+      "sample_index": 9,
+      "components": {
+        "incident": {
+          "C": [
+            -4.632919014151859e-07,
+            -7.300272445651059e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            -7.300283892111915e-07
+          ],
+          "reference_error_upper": 3.559070966214911e-17,
+          "absolute_error_upper_normalized": 2.465060126925709e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.6367958477655267e-09,
+          "phase_error_upper": 2.4650602709859713e-06
+        },
+        "reflected": {
+          "C": [
+            -1.4212824404435822e-12,
+            4.908120414870781e-17
+          ],
+          "Cref": [
+            -4.0234344253442372e-84,
+            -4.80428838951002e-86
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.6438499906302816e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -4.632933226976264e-07,
+            -7.300272445160247e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            -7.300283892111915e-07
+          ],
+          "reference_error_upper": 7.118169937537043e-17,
+          "absolute_error_upper_normalized": 3.951625915740883e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.08451542547285167,
+      "sample_index": 10,
+      "components": {
+        "incident": {
+          "C": [
+            -5.082166823557032e-07,
+            -6.994962236803315e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            -6.994976186496071e-07
+          ],
+          "reference_error_upper": 3.5590679730653203e-17,
+          "absolute_error_upper_normalized": 2.73941658762537e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.0090220785844545e-09,
+          "phase_error_upper": 2.7394167889125e-06
+        },
+        "reflected": {
+          "C": [
+            -1.5595607621535623e-12,
+            1.7968424472971364e-16
+          ],
+          "Cref": [
+            -7.707093867486791e-82,
+            -9.340299448235028e-84
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.8037781899200395e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.082182419164654e-07,
+            -6.994962235006471e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            -6.994976186496071e-07
+          ],
+          "reference_error_upper": 7.118177532299293e-17,
+          "absolute_error_upper_normalized": 4.329605881308156e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.09296696802013683,
+      "sample_index": 11,
+      "components": {
+        "incident": {
+          "C": [
+            -5.511357467328871e-07,
+            -6.66204586717266e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            -6.662062505572767e-07
+          ],
+          "reference_error_upper": 3.559069957638761e-17,
+          "absolute_error_upper_normalized": 3.013793363782183e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.328548002396341e-09,
+          "phase_error_upper": 3.013793697450265e-06
+        },
+        "reflected": {
+          "C": [
+            -1.6917405720819768e-12,
+            2.833279757304261e-16
+          ],
+          "Cref": [
+            -1.3631440337291403e-79,
+            -1.677069050296987e-81
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.9566530542441526e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.511374384734593e-07,
+            -6.662045864339379e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            -6.662062505572767e-07
+          ],
+          "reference_error_upper": 7.118179516872733e-17,
+          "absolute_error_upper_normalized": 4.6892844229114114e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.10141851056742199,
+      "sample_index": 12,
+      "components": {
+        "incident": {
+          "C": [
+            -5.918797111412074e-07,
+            -6.302837216878567e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            -6.302856707546814e-07
+          ],
+          "reference_error_upper": 3.5590703839950024e-17,
+          "absolute_error_upper_normalized": 3.2882043219777416e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.5991853684728e-09,
+          "phase_error_upper": 3.2882048546960317e-06
+        },
+        "reflected": {
+          "C": [
+            -1.8173151494931762e-12,
+            3.599633457027975e-16
+          ],
+          "Cref": [
+            -2.226144460880184e-77,
+            -2.781029798910529e-79
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.101888520804273e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.918815284563568e-07,
+            -6.30283721327893e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            -6.302856707546814e-07
+          ],
+          "reference_error_upper": 7.118179943228974e-17,
+          "absolute_error_upper_normalized": 5.029459556722913e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.10987005311470716,
+      "sample_index": 13,
+      "components": {
+        "incident": {
+          "C": [
+            -6.302877761888617e-07,
+            -5.918753931338674e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            -5.9187764135975e-07
+          ],
+          "reference_error_upper": 3.559070383994998e-17,
+          "absolute_error_upper_normalized": 3.5624511416608368e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.916759680637901e-09,
+          "phase_error_upper": 3.5624518055490414e-06
+        },
+        "reflected": {
+          "C": [
+            -1.93561577540179e-12,
+            3.619682950772262e-16
+          ],
+          "Cref": [
+            -3.356825023531944e-75,
+            -4.259232210370701e-77
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.2387111568724186e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.302897118046369e-07,
+            -5.918753927718989e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            -5.9187764135975e-07
+          ],
+          "reference_error_upper": 7.11817994322897e-17,
+          "absolute_error_upper_normalized": 5.348656897543676e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.11832159566199232,
+      "sample_index": 14,
+      "components": {
+        "incident": {
+          "C": [
+            -6.662083616136665e-07,
+            -5.511311824291841e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            -5.51133741317545e-07
+          ],
+          "reference_error_upper": 3.5590699576388374e-17,
+          "absolute_error_upper_normalized": 3.836720100097725e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.238273657286339e-09,
+          "phase_error_upper": 3.836720889069731e-06
+        },
+        "reflected": {
+          "C": [
+            -2.046292503130043e-12,
+            3.682269687023381e-16
+          ],
+          "Cref": [
+            -4.673812113182214e-73,
+            -6.024689887262016e-75
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.3667162426970746e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.6621040790617e-07,
+            -5.511311820609569e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            -5.51133741317545e-07
+          ],
+          "reference_error_upper": 7.118179516872809e-17,
+          "absolute_error_upper_normalized": 5.6463753045573045e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.1267731382092775,
+      "sample_index": 15,
+      "components": {
+        "incident": {
+          "C": [
+            -6.994997040184679e-07,
+            -5.082118897918707e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            -5.082147681874154e-07
+          ],
+          "reference_error_upper": 3.559067973064039e-17,
+          "absolute_error_upper_normalized": 4.110970872244941e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.560652648386602e-09,
+          "phase_error_upper": 4.110971784532061e-06
+        },
+        "reflected": {
+          "C": [
+            -2.1485358524942776e-12,
+            3.6055472172931203e-16
+          ],
+          "Cref": [
+            -6.008755981794573e-71,
+            -7.870871557587178e-73
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.484967556184985e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.995018525543206e-07,
+            -5.082118894313157e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            -5.082147681874154e-07
+          ],
+          "reference_error_upper": 7.118177532298011e-17,
+          "absolute_error_upper_normalized": 5.921569877458763e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.13522468075656266,
+      "sample_index": 16,
+      "components": {
+        "incident": {
+          "C": [
+            -7.300304165691974e-07,
+            -4.6328689953812224e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            -4.632901035484923e-07
+          ],
+          "reference_error_upper": 3.559070966236692e-17,
+          "absolute_error_upper_normalized": 4.385225753573149e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.8602241803216614e-09,
+          "phase_error_upper": 4.385226819024905e-06
+        },
+        "reflected": {
+          "C": [
+            -2.2418983089996376e-12,
+            3.683044482423453e-16
+          ],
+          "Cref": [
+            -7.133003207921334e-69,
+            -9.497364147026668e-71
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.5929475225260706e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.300326584675062e-07,
+            -4.632868991698177e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            -4.632901035484923e-07
+          ],
+          "reference_error_upper": 7.118169937558823e-17,
+          "absolute_error_upper_normalized": 6.173876412199702e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.14367622330384783,
+      "sample_index": 17,
+      "components": {
+        "incident": {
+          "C": [
+            -7.576800073700406e-07,
+            -4.1653351162396763e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            -4.165370445279784e-07
+          ],
+          "reference_error_upper": 3.559070207173331e-17,
+          "absolute_error_upper_normalized": 4.659445257929729e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.211881301979559e-09,
+          "phase_error_upper": 4.659446406980146e-06
+        },
+        "reflected": {
+          "C": [
+            -2.3257522545597862e-12,
+            4.271487056230926e-16
+          ],
+          "Cref": [
+            -7.818775710748716e-67,
+            -1.058481425928377e-68
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.6899302661994976e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.576823331222952e-07,
+            -4.1653351119681887e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            -4.165370445279784e-07
+          ],
+          "reference_error_upper": 7.118169178495462e-17,
+          "absolute_error_upper_normalized": 6.402920914936212e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.152127765851133,
+      "sample_index": 18,
+      "components": {
+        "incident": {
+          "C": [
+            -7.823393551558563e-07,
+            -3.681362419745737e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            -3.6814010409038685e-07
+          ],
+          "reference_error_upper": 3.559070484513271e-17,
+          "absolute_error_upper_normalized": 4.933580041061473e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.608639029484309e-09,
+          "phase_error_upper": 4.933581213979445e-06
+        },
+        "reflected": {
+          "C": [
+            -2.3986952461000037e-12,
+            5.589825993083408e-16
+          ],
+          "Cref": [
+            -7.913848366589622e-65,
+            -1.0896108454496322e-66
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.7742937765818673e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.823417538511026e-07,
+            -3.6813624141559103e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            -3.6814010409038685e-07
+          ],
+          "reference_error_upper": 7.118169455835402e-17,
+          "absolute_error_upper_normalized": 6.6079714342579575e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.16057930839841816,
+      "sample_index": 19,
+      "components": {
+        "incident": {
+          "C": [
+            -8.039111399245309e-07,
+            -3.182860942881517e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            -3.1829028284916587e-07
+          ],
+          "reference_error_upper": 3.559069440368387e-17,
+          "absolute_error_upper_normalized": 5.2075232786930945e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.9891193384587275e-09,
+          "phase_error_upper": 5.207524496639927e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4572068377596022e-12,
+            8.435131245769426e-16
+          ],
+          "Cref": [
+            -7.396456227927624e-63,
+            -1.0360391531460355e-64
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.8419664636021575e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.039135971313686e-07,
+            -3.1828609344463845e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            -3.1829028284916587e-07
+          ],
+          "reference_error_upper": 7.118168411690518e-17,
+          "absolute_error_upper_normalized": 6.787056223933573e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.16903085094570333,
+      "sample_index": 20,
+      "components": {
+        "incident": {
+          "C": [
+            -8.223102270680543e-07,
+            -2.671798059922315e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            -2.671843152745376e-07
+          ],
+          "reference_error_upper": 3.559070226106158e-17,
+          "absolute_error_upper_normalized": 5.481366594749908e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.28420746874115e-09,
+          "phase_error_upper": 5.481367970898872e-06
+        },
+        "reflected": {
+          "C": [
+            -2.494260230143749e-12,
+            1.826853663235683e-15
+          ],
+          "Cref": [
+            -6.383388064848569e-61,
+            -9.099268619162377e-63
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.88482181273245e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.223127213282844e-07,
+            -2.6717980416537775e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            -2.671843152745376e-07
+          ],
+          "reference_error_upper": 7.118169197428289e-17,
+          "absolute_error_upper_normalized": 6.937063150071694e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.1774823934929885,
+      "sample_index": 21,
+      "components": {
+        "incident": {
+          "C": [
+            -8.374640031437817e-07,
+            -2.1501907199020398e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            -2.1502389327242336e-07
+          ],
+          "reference_error_upper": 3.559068724735861e-17,
+          "absolute_error_upper_normalized": 5.7551195657220735e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.544798484076258e-09,
+          "phase_error_upper": 5.7551211441140596e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4979678140721897e-12,
+            4.6149297826864045e-15
+          ],
+          "Cref": [
+            -5.087158025332221e-59,
+            -7.381962494593687e-61
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.8891140398087494e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.374665011115959e-07,
+            -2.1501906737527425e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            -2.1502389327242336e-07
+          ],
+          "reference_error_upper": 7.118162402102072e-17,
+          "absolute_error_upper_normalized": 7.053800509684414e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.18593393604027367,
+      "sample_index": 22,
+      "components": {
+        "incident": {
+          "C": [
+            -8.493126625623208e-07,
+            -1.6200974877568913e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            -1.620148701986354e-07
+          ],
+          "reference_error_upper": 3.559069441421202e-17,
+          "absolute_error_upper_normalized": 6.028640766289722e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.808366686658752e-09,
+          "phase_error_upper": 6.028642541071408e-06
+        },
+        "reflected": {
+          "C": [
+            -2.453758042678345e-12,
+            1.1016400784800816e-14
+          ],
+          "Cref": [
+            -3.743697366194528e-57,
+            -5.532000132371838e-59
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.838006133804817e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.493151163203636e-07,
+            -1.6200973775928839e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            -1.620148701986354e-07
+          ],
+          "reference_error_upper": 7.118163118787413e-17,
+          "absolute_error_upper_normalized": 7.135719534371791e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.19438547858755884,
+      "sample_index": 23,
+      "components": {
+        "incident": {
+          "C": [
+            -8.578094437488717e-07,
+            -1.0836104160408075e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            -1.0836644844972701e-07
+          ],
+          "reference_error_upper": 3.5590698181633575e-17,
+          "absolute_error_upper_normalized": 6.302114406472707e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.0523478511647e-09,
+          "phase_error_upper": 6.302116401237607e-06
+        },
+        "reflected": {
+          "C": [
+            -2.35084481211496e-12,
+            2.393907472042687e-14
+          ],
+          "Cref": [
+            -2.544093936497352e-55,
+            -3.8295525912171577e-57
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.71909242090168e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.578117945936836e-07,
+            -1.0836101766500603e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            -1.0836644844972701e-07
+          ],
+          "reference_error_upper": 7.118160848551609e-17,
+          "absolute_error_upper_normalized": 7.190869889836448e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.20283702113484398,
+      "sample_index": 24,
+      "components": {
+        "incident": {
+          "C": [
+            -8.629208136054862e-07,
+            -5.428467916931193e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            -5.4290353836708564e-08
+          ],
+          "reference_error_upper": 3.559069567279153e-17,
+          "absolute_error_upper_normalized": 6.575644750023978e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.170195297505186e-09,
+          "phase_error_upper": 6.575647119927301e-06
+        },
+        "reflected": {
+          "C": [
+            -2.190638655134206e-12,
+            4.6532202632626965e-14
+          ],
+          "Cref": [
+            -1.5965338732061476e-53,
+            -2.4489532413278947e-55
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.5342337629445346e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.629230042441412e-07,
+            -5.4284632637109306e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            -5.4290353836708564e-08
+          ],
+          "reference_error_upper": 7.118159274178424e-17,
+          "absolute_error_upper_normalized": 7.2401161031259995e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.21128856368212914,
+      "sample_index": 25,
+      "components": {
+        "incident": {
+          "C": [
+            -8.646265996687276e-07,
+            5.9218987473358545e-12
+          ],
+          "Cref": [
+            -8.64626606750139e-07,
+            1.084761738324892e-87
+          ],
+          "reference_error_upper": 3.5590683359316467e-17,
+          "absolute_error_upper_normalized": 6.849120638147367e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.207846360489667e-09,
+          "phase_error_upper": 6.84912347156015e-06
+        },
+        "reflected": {
+          "C": [
+            -1.9913587864414065e-12,
+            8.119020889314786e-14
+          ],
+          "Cref": [
+            -9.252129943245146e-52,
+            -1.4467425685918998e-53
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.3050951182069145e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.64628591027514e-07,
+            6.003088956222031e-12
+          ],
+          "Cref": [
+            -8.64626606750139e-07,
+            -1.4467425685918998e-53
+          ],
+          "reference_error_upper": 7.118156719341937e-17,
+          "absolute_error_upper_normalized": 7.3125183205981825e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.2197401062294143,
+      "sample_index": 26,
+      "components": {
+        "incident": {
+          "C": [
+            -8.629200699772707e-07,
+            5.4296499567246605e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            5.4290353836708564e-08
+          ],
+          "reference_error_upper": 3.559069567279153e-17,
+          "absolute_error_upper_normalized": 7.122559821347302e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.11082742328303e-09,
+          "phase_error_upper": 7.122563259410422e-06
+        },
+        "reflected": {
+          "C": [
+            -1.784472748124189e-12,
+            1.28786003019595e-13
+          ],
+          "Cref": [
+            -4.9514256091208995e-50,
+            -7.895737894316081e-52
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 2.069271925229667e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.62921854450019e-07,
+            5.429662835324962e-08
+          ],
+          "Cref": [
+            -8.62920463646879e-07,
+            5.4290353836708564e-08
+          ],
+          "reference_error_upper": 7.118159274178424e-17,
+          "absolute_error_upper_normalized": 7.4331211580323456e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.22819164877669948,
+      "sample_index": 27,
+      "components": {
+        "incident": {
+          "C": [
+            -8.578079595322546e-07,
+            1.0837279185176147e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            1.0836644844972701e-07
+          ],
+          "reference_error_upper": 3.5590698181633575e-17,
+          "absolute_error_upper_normalized": 7.395915416315375e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.832728670127874e-09,
+          "phase_error_upper": 7.39591962790935e-06
+        },
+        "reflected": {
+          "C": [
+            -1.601396315023367e-12,
+            1.8809649950955604e-13
+          ],
+          "Cref": [
+            -2.4470930052166063e-48,
+            -3.9810532533138495e-50
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.8648962999303458e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.578095609285694e-07,
+            1.0837297994826096e-07
+          ],
+          "Cref": [
+            -8.578087677044647e-07,
+            1.0836644844972701e-07
+          ],
+          "reference_error_upper": 7.118160848551609e-17,
+          "absolute_error_upper_normalized": 7.609704485036901e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.23664319132398465,
+      "sample_index": 28,
+      "components": {
+        "incident": {
+          "C": [
+            -8.493104436622071e-07,
+            1.6202138248672835e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            1.620148701986354e-07
+          ],
+          "reference_error_upper": 3.559069441421202e-17,
+          "absolute_error_upper_normalized": 7.669170167782889e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.400687192642484e-09,
+          "phase_error_upper": 7.66917525799053e-06
+        },
+        "reflected": {
+          "C": [
+            -1.460472920839618e-12,
+            2.5629570386008636e-13
+          ],
+          "Cref": [
+            -1.1168877205241796e-46,
+            -1.8544747955859578e-48
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.7149885810383467e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.493119041351279e-07,
+            1.6202163878243226e-07
+          ],
+          "Cref": [
+            -8.493116924514691e-07,
+            1.620148701986354e-07
+          ],
+          "reference_error_upper": 7.118163118787413e-17,
+          "absolute_error_upper_normalized": 7.832232633781617e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.24509473387126982,
+      "sample_index": 29,
+      "components": {
+        "incident": {
+          "C": [
+            -8.374610583844583e-07,
+            2.1503054316394555e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            2.1502389327242336e-07
+          ],
+          "reference_error_upper": 3.559068724735861e-17,
+          "absolute_error_upper_normalized": 7.942333485667688e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.927698595768829e-09,
+          "phase_error_upper": 7.942339426695368e-06
+        },
+        "reflected": {
+          "C": [
+            -1.362415382336244e-12,
+            3.299983729075526e-13
+          ],
+          "Cref": [
+            -4.7077670175552786e-45,
+            -7.981348793395972e-47
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.6213301726010724e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.374624207998407e-07,
+            2.1503087316231846e-07
+          ],
+          "Cref": [
+            -8.374627719619715e-07,
+            2.1502389327242336e-07
+          ],
+          "reference_error_upper": 7.118162402102072e-17,
+          "absolute_error_upper_normalized": 8.083005067623318e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.253546276418555,
+      "sample_index": 30,
+      "components": {
+        "incident": {
+          "C": [
+            -8.223065682979481e-07,
+            2.671910691067022e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            2.671843152745376e-07
+          ],
+          "reference_error_upper": 3.559070226106158e-17,
+          "absolute_error_upper_normalized": 8.215349004662621e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.344127060220981e-09,
+          "phase_error_upper": 8.215355817829253e-06
+        },
+        "reflected": {
+          "C": [
+            -1.296978835242945e-12,
+            4.0612324981677056e-13
+          ],
+          "Cref": [
+            -1.832630338530351e-43,
+            -3.1738009313300734e-45
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.571905167904894e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.223078652767833e-07,
+            2.671914752299519e-07
+          ],
+          "Cref": [
+            -8.22308768511887e-07,
+            2.671843152745376e-07
+          ],
+          "reference_error_upper": 7.118169197428289e-17,
+          "absolute_error_upper_normalized": 8.346684631208468e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.2619978189658402,
+      "sample_index": 31,
+      "components": {
+        "incident": {
+          "C": [
+            -8.039067817629804e-07,
+            3.1829710469595267e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            3.1829028284916587e-07
+          ],
+          "reference_error_upper": 3.559069440368387e-17,
+          "absolute_error_upper_normalized": 8.488132218116065e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.711412861341258e-09,
+          "phase_error_upper": 8.488139859034377e-06
+        },
+        "reflected": {
+          "C": [
+            -1.2499800394669211e-12,
+            4.823691151404617e-13
+          ],
+          "Cref": [
+            -6.588671009647227e-42,
+            -1.1661320373493728e-43
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.549638557922612e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -8.039080317430196e-07,
+            3.182975870650678e-07
+          ],
+          "Cref": [
+            -8.039094880296274e-07,
+            3.1829028284916587e-07
+          ],
+          "reference_error_upper": 7.118168411690518e-17,
+          "absolute_error_upper_normalized": 8.614167530887531e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.2704493615131253,
+      "sample_index": 32,
+      "components": {
+        "incident": {
+          "C": [
+            -7.823343149588686e-07,
+            3.6814695608676015e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            3.6814010409038685e-07
+          ],
+          "reference_error_upper": 3.559070484513271e-17,
+          "absolute_error_upper_normalized": 8.760762598705102e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.032039463869843e-09,
+          "phase_error_upper": 8.760771015235671e-06
+        },
+        "reflected": {
+          "C": [
+            -1.209803272697222e-12,
+            5.574211514319325e-13
+          ],
+          "Cref": [
+            -2.187726124381879e-40,
+            -3.959114844200729e-42
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5406401947149267e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.823355247621412e-07,
+            3.6814751350791156e-07
+          ],
+          "Cref": [
+            -7.823375440694244e-07,
+            3.6814010409038685e-07
+          ],
+          "reference_error_upper": 7.118169455835402e-17,
+          "absolute_error_upper_normalized": 8.882118016125422e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.27890090406041046,
+      "sample_index": 33,
+      "components": {
+        "incident": {
+          "C": [
+            -7.576743053128559e-07,
+            4.1654388691146284e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            4.165370445279784e-07
+          ],
+          "reference_error_upper": 3.559070207173331e-17,
+          "absolute_error_upper_normalized": 9.033151076119766e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.35216557153924e-09,
+          "phase_error_upper": 9.033160188409078e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1696833453698822e-12,
+            6.304148531719072e-13
+          ],
+          "Cref": [
+            -6.709188803982636e-39,
+            -1.2420801928184345e-40
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.536832365970146e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.576754749962015e-07,
+            4.165445173263159e-07
+          ],
+          "Cref": [
+            -7.576780712388055e-07,
+            4.165370445279784e-07
+          ],
+          "reference_error_upper": 7.118169178495462e-17,
+          "absolute_error_upper_normalized": 9.149633026963462e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.28735244660769566,
+      "sample_index": 34,
+      "components": {
+        "incident": {
+          "C": [
+            -7.300240754478233e-07,
+            4.6329689504079955e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            4.632901035484923e-07
+          ],
+          "reference_error_upper": 3.559070966236692e-17,
+          "absolute_error_upper_normalized": 9.3054085393717e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.661090598277949e-09,
+          "phase_error_upper": 9.305418278685053e-06
+        },
+        "reflected": {
+          "C": [
+            -1.1265673765304209e-12,
+            7.009729265598366e-13
+          ],
+          "Cref": [
+            -1.900375498263022e-37,
+            -3.6009942548503633e-39
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5346264895191835e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -7.300252020151999e-07,
+            4.632975960137261e-07
+          ],
+          "Cref": [
+            -7.300283892111915e-07,
+            4.632901035484923e-07
+          ],
+          "reference_error_upper": 7.118169937558823e-17,
+          "absolute_error_upper_normalized": 9.417072899465305e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.2958039891549808,
+      "sample_index": 35,
+      "components": {
+        "incident": {
+          "C": [
+            -6.994927491425228e-07,
+            5.082214660147723e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            5.082147681874154e-07
+          ],
+          "reference_error_upper": 3.559067973064039e-17,
+          "absolute_error_upper_normalized": 9.577437557651122e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.036893221057029e-09,
+          "phase_error_upper": 9.577447834883162e-06
+        },
+        "reflected": {
+          "C": [
+            -1.0792208682956083e-12,
+            7.686655485211241e-13
+          ],
+          "Cref": [
+            -4.9717848361958264e-36,
+            -9.648014290597562e-38
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5324664202938307e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.994938283633911e-07,
+            5.08222234680321e-07
+          ],
+          "Cref": [
+            -6.994976186496071e-07,
+            5.082147681874154e-07
+          ],
+          "reference_error_upper": 7.118177532298011e-17,
+          "absolute_error_upper_normalized": 9.684549329873042e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.304255531702266,
+      "sample_index": 36,
+      "components": {
+        "incident": {
+          "C": [
+            -6.662008205972477e-07,
+            5.511403015680606e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            5.51133741317545e-07
+          ],
+          "reference_error_upper": 3.5590699576388374e-17,
+          "absolute_error_upper_normalized": 9.849307145069496e-06,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.531388055349696e-09,
+          "phase_error_upper": 9.849317878548933e-06
+        },
+        "reflected": {
+          "C": [
+            -1.0276516767081212e-12,
+            8.332495611387706e-13
+          ],
+          "Cref": [
+            -1.2014360680262208e-34,
+            -2.3890163428598494e-36
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5301988754343772e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.662018482489244e-07,
+            5.511411348176217e-07
+          ],
+          "Cref": [
+            -6.662062505572767e-07,
+            5.51133741317545e-07
+          ],
+          "reference_error_upper": 7.118179516872809e-17,
+          "absolute_error_upper_normalized": 9.952218950450353e-06,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.31270707424955113,
+      "sample_index": 37,
+      "components": {
+        "incident": {
+          "C": [
+            -6.302796789748323e-07,
+            5.918840192166828e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            5.9187764135975e-07
+          ],
+          "reference_error_upper": 3.559070383994998e-17,
+          "absolute_error_upper_normalized": 1.012106160908668e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.1596995011849194e-09,
+          "phase_error_upper": 1.0121072738575068e-05
+        },
+        "reflected": {
+          "C": [
+            -9.72042705480042e-13,
+            8.944886278355396e-13
+          ],
+          "Cref": [
+            -2.6817436407056934e-33,
+            -5.467522323330874e-35
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.527838546855525e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -6.302806510175375e-07,
+            5.918849137053105e-07
+          ],
+          "Cref": [
+            -6.302856707546814e-07,
+            5.9187764135975e-07
+          ],
+          "reference_error_upper": 7.11817994322897e-17,
+          "absolute_error_upper_normalized": 1.0220157446328235e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.3211586167968363,
+      "sample_index": 38,
+      "components": {
+        "incident": {
+          "C": [
+            -5.918710898652264e-07,
+            6.302918207171047e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            6.302856707546814e-07
+          ],
+          "reference_error_upper": 3.5590703839950024e-17,
+          "absolute_error_upper_normalized": 1.0392692703947242e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.9266663164390616e-09,
+          "phase_error_upper": 1.0392704187587949e-05
+        },
+        "reflected": {
+          "C": [
+            -9.12629296640126e-13,
+            9.521311199202586e-13
+          ],
+          "Cref": [
+            -5.529372934708625e-32,
+            -1.1565879063242015e-33
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5254153082788984e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.91872002494523e-07,
+            6.302927728482247e-07
+          ],
+          "Cref": [
+            -5.9187764135975e-07,
+            6.302856707546814e-07
+          ],
+          "reference_error_upper": 7.118179943228974e-17,
+          "absolute_error_upper_normalized": 1.0488339214322416e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.32961015934412147,
+      "sample_index": 39,
+      "components": {
+        "incident": {
+          "C": [
+            -5.511266357938082e-07,
+            6.662121266994349e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            6.662062505572767e-07
+          ],
+          "reference_error_upper": 3.559069957638761e-17,
+          "absolute_error_upper_normalized": 1.0664163511258468e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.8185498653125213e-09,
+          "phase_error_upper": 1.0664175321671765e-05
+        },
+        "reflected": {
+          "C": [
+            -8.497144439849641e-13,
+            1.0059295917129057e-12
+          ],
+          "Cref": [
+            -1.0531527494830101e-30,
+            -2.2615786914013868e-32
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5229856234205628e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.511274855082522e-07,
+            6.662131326290266e-07
+          ],
+          "Cref": [
+            -5.51133741317545e-07,
+            6.662062505572767e-07
+          ],
+          "reference_error_upper": 7.118179516872733e-17,
+          "absolute_error_upper_normalized": 1.0756659685111321e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.33806170189140666,
+      "sample_index": 40,
+      "components": {
+        "incident": {
+          "C": [
+            -5.082071178985708e-07,
+            6.995031749049029e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            6.994976186496071e-07
+          ],
+          "reference_error_upper": 3.5590679730653203e-17,
+          "absolute_error_upper_normalized": 1.0935499404808924e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.8573243352017418e-09,
+          "phase_error_upper": 1.0935511517031922e-05
+        },
+        "reflected": {
+          "C": [
+            -7.835114351252523e-13,
+            1.0556708607074844e-12
+          ],
+          "Cref": [
+            -1.853018289105335e-29,
+            -4.088087915107398e-31
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5205340557497335e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.08207901410006e-07,
+            6.995042305757636e-07
+          ],
+          "Cref": [
+            -5.082147681874154e-07,
+            6.994976186496071e-07
+          ],
+          "reference_error_upper": 7.118177532299293e-17,
+          "absolute_error_upper_normalized": 1.10251600138191e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.3465132444386918,
+      "sample_index": 41,
+      "components": {
+        "incident": {
+          "C": [
+            -4.632819214416882e-07,
+            7.300335795864674e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            7.300283892111915e-07
+          ],
+          "reference_error_upper": 3.559070966214911e-17,
+          "absolute_error_upper_normalized": 1.1206627509162193e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.075546934865109e-09,
+          "phase_error_upper": 1.1206639892829093e-05
+        },
+        "reflected": {
+          "C": [
+            -7.143212461837926e-13,
+            1.10109495694347e-12
+          ],
+          "Cref": [
+            -3.0120223147634562e-28,
+            -6.83183047185651e-30
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5180396056211842e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -4.632826357629343e-07,
+            7.300346806814244e-07
+          ],
+          "Cref": [
+            -4.632901035484923e-07,
+            7.300283892111915e-07
+          ],
+          "reference_error_upper": 7.118169937537043e-17,
+          "absolute_error_upper_normalized": 1.1293677605395327e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.354964786985977,
+      "sample_index": 42,
+      "components": {
+        "incident": {
+          "C": [
+            -4.1652834718002613e-07,
+            7.576828502335298e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            7.576780712388055e-07
+          ],
+          "reference_error_upper": 3.559070206860957e-17,
+          "absolute_error_upper_normalized": 1.1477633229388933e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.4206632893173135e-09,
+          "phase_error_upper": 1.1477645856942518e-05
+        },
+        "reflected": {
+          "C": [
+            -6.423999565649122e-13,
+            1.1421018921554771e-12
+          ],
+          "Cref": [
+            -4.523197102827058e-27,
+            -1.0555960312333544e-28
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5155744475266704e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -4.165289895799827e-07,
+            7.57683992335422e-07
+          ],
+          "Cref": [
+            -4.165370445279784e-07,
+            7.576780712388055e-07
+          ],
+          "reference_error_upper": 7.118169178183088e-17,
+          "absolute_error_upper_normalized": 1.156237628239109e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.36341632953326214,
+      "sample_index": 43,
+      "components": {
+        "incident": {
+          "C": [
+            -3.681309117729338e-07,
+            7.823418668528747e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            7.823375440694244e-07
+          ],
+          "reference_error_upper": 3.5590704890574976e-17,
+          "absolute_error_upper_normalized": 1.1748463007323403e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.8948051761597523e-09,
+          "phase_error_upper": 1.1748475841562727e-05
+        },
+        "reflected": {
+          "C": [
+            -5.680807193875875e-13,
+            1.178504127810606e-12
+          ],
+          "Cref": [
+            -6.275697232007935e-26,
+            -1.5081363480873362e-27
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5131511365806239e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -3.681314798536531e-07,
+            7.823430453570027e-07
+          ],
+          "Cref": [
+            -3.6814010409038685e-07,
+            7.823375440694244e-07
+          ],
+          "reference_error_upper": 7.11816946037963e-17,
+          "absolute_error_upper_normalized": 1.183112862069486e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.37186787208054733,
+      "sample_index": 44,
+      "components": {
+        "incident": {
+          "C": [
+            -3.1828061943276966e-07,
+            8.039133107575266e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            8.039094880296274e-07
+          ],
+          "reference_error_upper": 3.559069495846663e-17,
+          "absolute_error_upper_normalized": 1.201915561231612e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.506096820355491e-09,
+          "phase_error_upper": 1.2019168600979794e-05
+        },
+        "reflected": {
+          "C": [
+            -4.916396440745142e-13,
+            1.2101680134765656e-12
+          ],
+          "Cref": [
+            -8.045066772985342e-25,
+            -1.9925408853400773e-26
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5107749535535567e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -3.1828111107241377e-07,
+            8.039145209255403e-07
+          ],
+          "Cref": [
+            -3.1829028284916587e-07,
+            8.039094880296274e-07
+          ],
+          "reference_error_upper": 7.118168467168793e-17,
+          "absolute_error_upper_normalized": 1.2099983861441531e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.3803194146278325,
+      "sample_index": 45,
+      "components": {
+        "incident": {
+          "C": [
+            -2.6717420814280207e-07,
+            8.223120485841779e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            8.22308768511887e-07
+          ],
+          "reference_error_upper": 3.559070882731111e-17,
+          "absolute_error_upper_normalized": 1.2289785947909617e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.292765621536362e-09,
+          "phase_error_upper": 1.2289799009168989e-05
+        },
+        "reflected": {
+          "C": [
+            -4.133085380612775e-13,
+            1.2369592232909067e-12
+          ],
+          "Cref": [
+            -9.529553447130266e-24,
+            -2.43468511197484e-25
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5084160580597146e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -2.671746214513401e-07,
+            8.223132855434013e-07
+          ],
+          "Cref": [
+            -2.671843152745376e-07,
+            8.22308768511887e-07
+          ],
+          "reference_error_upper": 7.118169854053242e-17,
+          "absolute_error_upper_normalized": 1.236907005083525e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.38877095717511767,
+      "sample_index": 46,
+      "components": {
+        "incident": {
+          "C": [
+            -2.1501337339813542e-07,
+            8.374654683171862e-07
+          ],
+          "Cref": [
+            -2.1502389327242347e-07,
+            8.374627719619715e-07
+          ],
+          "reference_error_upper": 3.55906903041526e-17,
+          "absolute_error_upper_normalized": 1.2560281691641027e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.215524419103768e-09,
+          "phase_error_upper": 1.2560294731948672e-05
+        },
+        "reflected": {
+          "C": [
+            -3.3347514324673353e-13,
+            1.2587857134083264e-12
+          ],
+          "Cref": [
+            -1.043078292057246e-22,
+            -2.751670307528796e-24
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5061330348502348e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -2.1501370687327873e-07,
+            8.374667271028996e-07
+          ],
+          "Cref": [
+            -2.1502389327242357e-07,
+            8.374627719619715e-07
+          ],
+          "reference_error_upper": 7.11816270778147e-17,
+          "absolute_error_upper_normalized": 1.2638239477278641e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.3972224997224028,
+      "sample_index": 47,
+      "components": {
+        "incident": {
+          "C": [
+            -1.620039719163321e-07,
+            8.493137658190116e-07
+          ],
+          "Cref": [
+            -1.6201487019863647e-07,
+            8.493116924514691e-07
+          ],
+          "reference_error_upper": 3.559071214300549e-17,
+          "absolute_error_upper_normalized": 1.2830716208930335e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.310680414717543e-09,
+          "phase_error_upper": 1.2830729094064706e-05
+        },
+        "reflected": {
+          "C": [
+            -2.5237518716307105e-13,
+            1.2755456421433942e-12
+          ],
+          "Cref": [
+            -1.0550946800542235e-21,
+            -2.8768788629467993e-23
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.5038944452666667e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -1.6200422429151927e-07,
+            8.493150413646535e-07
+          ],
+          "Cref": [
+            -1.6201487019863753e-07,
+            8.493116924514691e-07
+          ],
+          "reference_error_upper": 7.118164891666759e-17,
+          "absolute_error_upper_normalized": 1.2907630548245807e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.40567404226968795,
+      "sample_index": 48,
+      "components": {
+        "incident": {
+          "C": [
+            -1.0835520944234947e-07,
+            8.578101808528315e-07
+          ],
+          "Cref": [
+            -1.0836644844973687e-07,
+            8.578087677044649e-07
+          ],
+          "reference_error_upper": 3.5590698801782475e-17,
+          "absolute_error_upper_normalized": 1.31010584841022e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.607050343885539e-09,
+          "phase_error_upper": 1.3101071028582073e-05
+        },
+        "reflected": {
+          "C": [
+            -1.7035898679426985e-13,
+            1.2871436240256699e-12
+          ],
+          "Cref": [
+            -9.863422272274063e-21,
+            -2.7827668917874894e-22
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.501691800028186e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -1.0835537980133628e-07,
+            8.578114679964554e-07
+          ],
+          "Cref": [
+            -1.0836644844974673e-07,
+            8.578087677044646e-07
+          ],
+          "reference_error_upper": 7.118160910566499e-17,
+          "absolute_error_upper_normalized": 1.3177163728024386e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.41412558481697315,
+      "sample_index": 49,
+      "components": {
+        "incident": {
+          "C": [
+            -5.427881497186327e-08,
+            8.629211817141768e-07
+          ],
+          "Cref": [
+            -5.429035383679378e-08,
+            8.629204636468814e-07
+          ],
+          "reference_error_upper": 3.559069069566004e-17,
+          "absolute_error_upper_normalized": 1.3371331239814841e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 9.066650094538075e-09,
+          "phase_error_upper": 1.3371343236525344e-05
+        },
+        "reflected": {
+          "C": [
+            -8.776055875679049e-14,
+            1.2935713292744201e-12
+          ],
+          "Cref": [
+            -8.522365116639627e-20,
+            -2.4907274284284823e-21
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.4995826324460034e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            -5.427890273242201e-08,
+            8.62922475285506e-07
+          ],
+          "Cref": [
+            -5.429035383687901e-08,
+            8.629204636468789e-07
+          ],
+          "reference_error_upper": 7.118158776465275e-17,
+          "absolute_error_upper_normalized": 1.3446861617721345e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4225771273642583,
+      "sample_index": 50,
+      "components": {
+        "incident": {
+          "C": [
+            1.1794331959605309e-11,
+            8.646265974712156e-07
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            8.646266067501597e-07
+          ],
+          "reference_error_upper": 3.5590693606210176e-17,
+          "absolute_error_upper_normalized": 1.364098510678071e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.0679860840437772e-08,
+          "phase_error_upper": 1.3640996315308072e-05
+        },
+        "reflected": {
+          "C": [
+            -5.387424181626932e-15,
+            1.2947809406611994e-12
+          ],
+          "Cref": [
+            -6.80655227789805e-19,
+            -2.0631936799948865e-20
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.4975554723299718e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            1.1788944535427115e-11,
+            8.646278922521563e-07
+          ],
+          "Cref": [
+            -1.36131045557961e-18,
+            8.64626606750139e-07
+          ],
+          "reference_error_upper": 7.118157744031309e-17,
+          "absolute_error_upper_normalized": 1.3715613287389363e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4310286699115435,
+      "sample_index": 51,
+      "components": {
+        "incident": {
+          "C": [
+            5.430235649317438e-08,
+            8.629196976187161e-07
+          ],
+          "Cref": [
+            5.429035383168316e-08,
+            8.629204636470372e-07
+          ],
+          "reference_error_upper": 3.559068540125615e-17,
+          "absolute_error_upper_normalized": 1.3910170267218048e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.250867136594755e-08,
+          "phase_error_upper": 1.391018035288765e-05
+        },
+        "reflected": {
+          "C": [
+            7.655991786377322e-14,
+            1.2907456219100846e-12
+          ],
+          "Cref": [
+            -5.025404863315277e-18,
+            -1.5819602096419246e-19
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.4954996431946886e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            5.430243305309224e-08,
+            8.629209883643378e-07
+          ],
+          "Cref": [
+            5.429035382665775e-08,
+            8.62920463646879e-07
+          ],
+          "reference_error_upper": 7.118158247024885e-17,
+          "absolute_error_upper_normalized": 1.39836958246171e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4394802124588286,
+      "sample_index": 52,
+      "components": {
+        "incident": {
+          "C": [
+            1.0837860927546018e-07,
+            8.578072186592917e-07
+          ],
+          "Cref": [
+            1.083664484154235e-07,
+            8.578087677055877e-07
+          ],
+          "reference_error_upper": 3.5590681388103725e-17,
+          "absolute_error_upper_normalized": 1.4178540553966955e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.4596329761264662e-08,
+          "phase_error_upper": 1.4178549073192509e-05
+        },
+        "reflected": {
+          "C": [
+            1.574232312046093e-13,
+            1.2814871559834009e-12
+          ],
+          "Cref": [
+            -3.43035189622414e-17,
+            -1.1229959310129915e-18
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.4933147379234403e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            1.083787666986914e-07,
+            8.578085001464475e-07
+          ],
+          "Cref": [
+            1.0836644838111998e-07,
+            8.578087677044647e-07
+          ],
+          "reference_error_upper": 7.118159169198623e-17,
+          "absolute_error_upper_normalized": 1.4250406168013772e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4479317550061138,
+      "sample_index": 53,
+      "components": {
+        "incident": {
+          "C": [
+            1.6202713655678336e-07,
+            8.493093373785929e-07
+          ],
+          "Cref": [
+            1.6201486998212328e-07,
+            8.493116924588513e-07
+          ],
+          "reference_error_upper": 3.5590715528895384e-17,
+          "absolute_error_upper_normalized": 1.4446268764993708e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.7098478968814393e-08,
+          "phase_error_upper": 1.4446275005481871e-05
+        },
+        "reflected": {
+          "C": [
+            2.3686907364409603e-13,
+            1.2669190448905499e-12
+          ],
+          "Cref": [
+            -2.165121521819711e-16,
+            -7.382139090908198e-18
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.4907627408694231e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            1.6202737342585696e-07,
+            8.493106042976376e-07
+          ],
+          "Cref": [
+            1.6201486976561112e-07,
+            8.493116924514692e-07
+          ],
+          "reference_error_upper": 7.11816523025575e-17,
+          "absolute_error_upper_normalized": 1.4516066517005203e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.45638329755339896,
+      "sample_index": 54,
+      "components": {
+        "incident": {
+          "C": [
+            2.1503621020129777e-07,
+            8.374595914368966e-07
+          ],
+          "Cref": [
+            2.1502389200867612e-07,
+            8.374627720069197e-07
+          ],
+          "reference_error_upper": 3.55906875475825e-17,
+          "absolute_error_upper_normalized": 1.471410023926153e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.9868282308657565e-08,
+          "phase_error_upper": 1.4714103518270826e-05
+        },
+        "reflected": {
+          "C": [
+            3.145252309893905e-13,
+            1.2471046083694276e-12
+          ],
+          "Cref": [
+            -1.2637472378205092e-15,
+            -4.494819942912555e-17
+          ],
+          "reference_error_upper": 3.5590672075866135e-17,
+          "absolute_error_upper_normalized": 1.4879751125134046e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            2.1503652472652874e-07,
+            8.374608385415052e-07
+          ],
+          "Cref": [
+            2.1502389074492887e-07,
+            8.374627719619715e-07
+          ],
+          "reference_error_upper": 7.118162432124467e-17,
+          "absolute_error_upper_normalized": 1.4782243693206997e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.46483484010068415,
+      "sample_index": 55,
+      "components": {
+        "incident": {
+          "C": [
+            2.671966239160679e-07,
+            8.223047468398876e-07
+          ],
+          "Cref": [
+            2.67184308452126e-07,
+            8.223087687654493e-07
+          ],
+          "reference_error_upper": 3.5590701051544647e-17,
+          "absolute_error_upper_normalized": 1.4984018611331185e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.2355879419687226e-08,
+          "phase_error_upper": 1.4984018984350295e-05
+        },
+        "reflected": {
+          "C": [
+            3.882112748819958e-13,
+            1.2220165612570536e-12
+          ],
+          "Cref": [
+            -6.822411594968605e-15,
+            -2.535623402005353e-16
+          ],
+          "reference_error_upper": 3.5590672075866246e-17,
+          "absolute_error_upper_normalized": 1.4856769280525027e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            2.671970121273428e-07,
+            8.223059688564489e-07
+          ],
+          "Cref": [
+            2.6718430162971444e-07,
+            8.223087685118869e-07
+          ],
+          "reference_error_upper": 7.118169076476612e-17,
+          "absolute_error_upper_normalized": 1.5053010216298271e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4732863826479693,
+      "sample_index": 56,
+      "components": {
+        "incident": {
+          "C": [
+            3.1830250696213183e-07,
+            8.039046138981435e-07
+          ],
+          "Cref": [
+            3.182902487778444e-07,
+            8.039094893552787e-07
+          ],
+          "reference_error_upper": 3.559070695067329e-17,
+          "absolute_error_upper_normalized": 1.5257665787880207e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.36891114780072e-08,
+          "phase_error_upper": 1.5257664937878301e-05
+        },
+        "reflected": {
+          "C": [
+            4.4199819418814037e-13,
+            1.1912043000884825e-12
+          ],
+          "Cref": [
+            -3.4071321462548865e-14,
+            -1.3256513974983587e-15
+          ],
+          "reference_error_upper": 3.559067207586673e-17,
+          "absolute_error_upper_normalized": 1.485124888104194e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            3.18302948960326e-07,
+            8.039058051024436e-07
+          ],
+          "Cref": [
+            3.1829021470652295e-07,
+            8.039094880296274e-07
+          ],
+          "reference_error_upper": 7.118169666389526e-17,
+          "absolute_error_upper_normalized": 1.5331697394953827e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4817379251952545,
+      "sample_index": 57,
+      "components": {
+        "incident": {
+          "C": [
+            3.6815209200288414e-07,
+            7.823318131220043e-07
+          ],
+          "Cref": [
+            3.6813994665710193e-07,
+            7.823375504946917e-07
+          ],
+          "reference_error_upper": 3.5590702843016066e-17,
+          "absolute_error_upper_normalized": 1.5535408426535467e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.3162373541080245e-08,
+          "phase_error_upper": 1.5535409907817012e-05
+        },
+        "reflected": {
+          "C": [
+            4.0164727403888434e-13,
+            1.1518541876339344e-12
+          ],
+          "Cref": [
+            -1.5743328491278101e-13,
+            -6.425267140323134e-15
+          ],
+          "reference_error_upper": 3.5590672075868545e-17,
+          "absolute_error_upper_normalized": 1.4875604695328214e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            3.6815249365015815e-07,
+            7.823329649761918e-07
+          ],
+          "Cref": [
+            3.68139789223817e-07,
+            7.823375440694246e-07
+          ],
+          "reference_error_upper": 7.118169255623985e-17,
+          "absolute_error_upper_normalized": 1.5618903906604695e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.49018946774253963,
+      "sample_index": 58,
+      "components": {
+        "incident": {
+          "C": [
+            4.165483613346826e-07,
+            7.576714960130188e-07
+          ],
+          "Cref": [
+            4.165363713111242e-07,
+            7.576781001211981e-07
+          ],
+          "reference_error_upper": 3.5590692371208986e-17,
+          "absolute_error_upper_normalized": 1.5831707782797328e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.263321066225223e-08,
+          "phase_error_upper": 1.5831726089251168e-05
+        },
+        "reflected": {
+          "C": [
+            -1.514235618358154e-14,
+            1.0913981446519608e-12
+          ],
+          "Cref": [
+            -6.732168541934693e-13,
+            -2.888239253267487e-14
+          ],
+          "reference_error_upper": 3.559067207587473e-17,
+          "absolute_error_upper_normalized": 1.5027290444253934e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            4.165483461923265e-07,
+            7.576725874111633e-07
+          ],
+          "Cref": [
+            4.1653569809427e-07,
+            7.576780712388055e-07
+          ],
+          "reference_error_upper": 7.118168208443896e-17,
+          "absolute_error_upper_normalized": 1.594422387408499e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.4986410102898248,
+      "sample_index": 59,
+      "components": {
+        "incident": {
+          "C": [
+            4.6329926850373723e-07,
+            7.300210360424502e-07
+          ],
+          "Cref": [
+            4.632874387049892e-07,
+            7.300285096699968e-07
+          ],
+          "reference_error_upper": 3.55906975430445e-17,
+          "absolute_error_upper_normalized": 1.6183689259984697e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.312656571877865e-08,
+          "phase_error_upper": 1.618369812955127e-05
+        },
+        "reflected": {
+          "C": [
+            -1.853560579466019e-12,
+            9.60354807841738e-13
+          ],
+          "Cref": [
+            -2.664843503043797e-12,
+            -1.204588053154202e-13
+          ],
+          "reference_error_upper": 3.5590672075885554e-17,
+          "absolute_error_upper_normalized": 1.5630502435050275e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            4.6329741494315776e-07,
+            7.30021996397258e-07
+          ],
+          "Cref": [
+            4.632847738614862e-07,
+            7.300283892111914e-07
+          ],
+          "reference_error_upper": 7.118168725628528e-17,
+          "absolute_error_upper_normalized": 1.63835847402594e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.50709255283711,
+      "sample_index": 60,
+      "components": {
+        "incident": {
+          "C": [
+            5.08216767079486e-07,
+            6.994897371452041e-07
+          ],
+          "Cref": [
+            5.082050009952798e-07,
+            6.994980850020736e-07
+          ],
+          "reference_error_upper": 3.5590711798038826e-17,
+          "absolute_error_upper_normalized": 1.6685401925858972e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.8781891263931667e-07,
+          "phase_error_upper": 1.6684465908345844e-05
+        },
+        "reflected": {
+          "C": [
+            -8.646702005923143e-12,
+            5.80161622294749e-13
+          ],
+          "Cref": [
+            -9.76719213566033e-12,
+            -4.66352466480625e-13
+          ],
+          "reference_error_upper": 3.5590672076031746e-17,
+          "absolute_error_upper_normalized": 1.7732855157570839e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            5.082081203774801e-07,
+            6.994903173068265e-07
+          ],
+          "Cref": [
+            5.081952338031442e-07,
+            6.994976186496071e-07
+          ],
+          "reference_error_upper": 7.11818073905442e-17,
+          "absolute_error_upper_normalized": 1.7130300933990665e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5155440953843952,
+      "sample_index": 61,
+      "components": {
+        "incident": {
+          "C": [
+            5.511126218202874e-07,
+            6.661986882377151e-07
+          ],
+          "Cref": [
+            5.511005831545315e-07,
+            6.662079274091786e-07
+          ],
+          "reference_error_upper": 3.559072804287104e-17,
+          "absolute_error_upper_normalized": 1.7551374701172872e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 6.413691533376149e-07,
+          "phase_error_upper": 1.7540070825300257e-05
+        },
+        "reflected": {
+          "C": [
+            -3.133263355147742e-11,
+            -6.425088939121197e-13
+          ],
+          "Cref": [
+            -3.315816301342932e-11,
+            -1.6768519018862856e-12
+          ],
+          "reference_error_upper": 3.559067207679604e-17,
+          "absolute_error_upper_normalized": 2.4267452163923513e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            5.51081289186736e-07,
+            6.661980457288212e-07
+          ],
+          "Cref": [
+            5.510674249915181e-07,
+            6.662062505572767e-07
+          ],
+          "reference_error_upper": 7.118182363614072e-17,
+          "absolute_error_upper_normalized": 1.8632490262261232e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5239956379316804,
+      "sample_index": 62,
+      "components": {
+        "incident": {
+          "C": [
+            5.917864787980036e-07,
+            6.302810914685842e-07
+          ],
+          "Cref": [
+            5.917733382357829e-07,
+            6.302912740832764e-07
+          ],
+          "reference_error_upper": 3.559071763637814e-17,
+          "absolute_error_upper_normalized": 1.9226908217387935e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.8173331797176185e-06,
+          "phase_error_upper": 1.9142339737536193e-05
+        },
+        "reflected": {
+          "C": [
+            -1.008839433952284e-10,
+            -4.519244451082219e-12
+          ],
+          "Cref": [
+            -1.0430312396720937e-10,
+            -5.603328594957154e-12
+          ],
+          "reference_error_upper": 3.5590672079890336e-17,
+          "absolute_error_upper_normalized": 4.148561931666446e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            5.916855948546082e-07,
+            6.302765722241333e-07
+          ],
+          "Cref": [
+            5.916690351118157e-07,
+            6.302856707546814e-07
+          ],
+          "reference_error_upper": 7.118181323274212e-17,
+          "absolute_error_upper_normalized": 2.185303363998642e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5324471804789654,
+      "sample_index": 63,
+      "components": {
+        "incident": {
+          "C": [
+            6.299974718052493e-07,
+            5.918837977688514e-07
+          ],
+          "Cref": [
+            6.299815261738438e-07,
+            5.918950542882454e-07
+          ],
+          "reference_error_upper": 3.5590712907325133e-17,
+          "absolute_error_upper_normalized": 2.2574516669159646e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 4.527454547968423e-06,
+          "phase_error_upper": 2.2121428043452405e-05
+        },
+        "reflected": {
+          "C": [
+            -2.9736983601721633e-10,
+            -1.613408525749568e-11
+          ],
+          "Cref": [
+            -3.041445808375926e-10,
+            -1.741292849532855e-11
+          ],
+          "reference_error_upper": 3.559067207722525e-17,
+          "absolute_error_upper_normalized": 7.973866836863302e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            6.29700101969232e-07,
+            5.918676636835939e-07
+          ],
+          "Cref": [
+            6.296773815930062e-07,
+            5.9187764135975e-07
+          ],
+          "reference_error_upper": 7.118180850102402e-17,
+          "absolute_error_upper_normalized": 2.8699957687245564e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5408987230262506,
+      "sample_index": 64,
+      "components": {
+        "incident": {
+          "C": [
+            6.654054186584582e-07,
+            5.511714965391775e-07
+          ],
+          "Cref": [
+            6.653837042836043e-07,
+            5.511841051271693e-07
+          ],
+          "reference_error_upper": 3.55907271960976e-17,
+          "absolute_error_upper_normalized": 2.9040950708375028e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.0045077733275284e-05,
+          "phase_error_upper": 2.7269818231320727e-05
+        },
+        "reflected": {
+          "C": [
+            -8.093943980756189e-10,
+            -4.859274088236527e-11
+          ],
+          "Cref": [
+            -8.22546273672387e-10,
+            -5.036380962431726e-11
+          ],
+          "reference_error_upper": 3.559067210839408e-17,
+          "absolute_error_upper_normalized": 1.534837004439641e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            6.645960242603825e-07,
+            5.51122903798295e-07
+          ],
+          "Cref": [
+            6.645611580099319e-07,
+            5.51133741317545e-07
+          ],
+          "reference_error_upper": 7.118182282096533e-17,
+          "absolute_error_upper_normalized": 4.2228369062276714e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5493502655735358,
+      "sample_index": 65,
+      "components": {
+        "incident": {
+          "C": [
+            6.974649654334117e-07,
+            5.083359959081736e-07
+          ],
+          "Cref": [
+            6.974331982301285e-07,
+            5.083504693503687e-07
+          ],
+          "reference_error_upper": 3.5590694674622284e-17,
+          "absolute_error_upper_normalized": 4.037460762172288e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.9868089625673108e-05,
+          "phase_error_upper": 3.5232906906427734e-05
+        },
+        "reflected": {
+          "C": [
+            -2.0405504659161193e-09,
+            -1.3290092217129613e-10
+          ],
+          "Cref": [
+            -2.0644204194786115e-09,
+            -1.357011629533035e-10
+          ],
+          "reference_error_upper": 3.559067221147272e-17,
+          "absolute_error_upper_normalized": 2.7796568155192004e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            6.954244149674956e-07,
+            5.082030949860023e-07
+          ],
+          "Cref": [
+            6.953687778106499e-07,
+            5.082147681874154e-07
+          ],
+          "reference_error_upper": 7.118179040256864e-17,
+          "absolute_error_upper_normalized": 6.574924961224408e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5578018081208209,
+      "sample_index": 66,
+      "components": {
+        "incident": {
+          "C": [
+            7.252632481466601e-07,
+            4.6361392627339556e-07
+          ],
+          "Cref": [
+            7.252166691450464e-07,
+            4.6363107884442474e-07
+          ],
+          "reference_error_upper": 3.559070407015485e-17,
+          "absolute_error_upper_normalized": 5.7408367317009494e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.486092584203255e-05,
+          "phase_error_upper": 4.593598219604954e-05
+        },
+        "reflected": {
+          "C": [
+            -4.772316999433864e-09,
+            -3.3630272470952974e-10
+          ],
+          "Cref": [
+            -4.811720066145085e-09,
+            -3.409752959324376e-10
+          ],
+          "reference_error_upper": 3.559067227012468e-17,
+          "absolute_error_upper_normalized": 4.589164423939916e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "pressure": {
+          "C": [
+            7.204909311472261e-07,
+            4.6327762354868604e-07
+          ],
+          "Cref": [
+            7.204049490789013e-07,
+            4.632901035484923e-07
+          ],
+          "reference_error_upper": 7.118169397763477e-17,
+          "absolute_error_upper_normalized": 0.00010048619275374284,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5662533506681061,
+      "sample_index": 67,
+      "components": {
+        "incident": {
+          "C": [
+            7.473184654780377e-07,
+            4.1731607424279763e-07
+          ],
+          "Cref": [
+            7.472541551219533e-07,
+            4.1733699165046783e-07
+          ],
+          "reference_error_upper": 3.559068314481915e-17,
+          "absolute_error_upper_normalized": 7.821478093207649e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.368555662147644e-05,
+          "phase_error_upper": 5.797139150744619e-05
+        },
+        "reflected": {
+          "C": [
+            -1.0366003519844908e-08,
+            -7.922828764976179e-10
+          ],
+          "Cref": [
+            -1.0423916116852238e-08,
+            -7.99947122489408e-10
+          ],
+          "reference_error_upper": 3.5590672426600583e-17,
+          "absolute_error_upper_normalized": 6.756386471973277e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.005579265463298151,
+          "phase_error_upper": 0.00030881761613624204
+        },
+        "pressure": {
+          "C": [
+            7.369524619581928e-07,
+            4.165237913663e-07
+          ],
+          "Cref": [
+            7.368302390051011e-07,
+            4.165370445279784e-07
+          ],
+          "reference_error_upper": 7.118167320877497e-17,
+          "absolute_error_upper_normalized": 0.00014218777729187786,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5747048932153913,
+      "sample_index": 68,
+      "components": {
+        "incident": {
+          "C": [
+            7.61407031148777e-07,
+            3.6986898978604785e-07
+          ],
+          "Cref": [
+            7.613276614780132e-07,
+            3.6989480402907424e-07
+          ],
+          "reference_error_upper": 3.559070382470737e-17,
+          "absolute_error_upper_normalized": 9.652956236362183e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.101688586287912e-05,
+          "phase_error_upper": 6.840480823558018e-05
+        },
+        "reflected": {
+          "C": [
+            -2.0936069569213997e-08,
+            -1.7428734924700772e-09
+          ],
+          "Cref": [
+            -2.100988259141128e-08,
+            -1.7546999386873606e-09
+          ],
+          "reference_error_upper": 3.559067298106488e-17,
+          "absolute_error_upper_normalized": 8.645858968322207e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0035355687257436425,
+          "phase_error_upper": 0.0002685645081774717
+        },
+        "pressure": {
+          "C": [
+            7.40470961579563e-07,
+            3.6812611629357775e-07
+          ],
+          "Cref": [
+            7.403177788866019e-07,
+            3.681401040903869e-07
+          ],
+          "reference_error_upper": 7.118169444312749e-17,
+          "absolute_error_upper_normalized": 0.00017790328096332377,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5831564357626765,
+      "sample_index": 69,
+      "components": {
+        "incident": {
+          "C": [
+            7.645462332536167e-07,
+            3.218633616625225e-07
+          ],
+          "Cref": [
+            7.644639447664277e-07,
+            3.218947707481732e-07
+          ],
+          "reference_error_upper": 3.5590710115653163e-17,
+          "absolute_error_upper_normalized": 0.00010186943641643852,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.673895949063208e-05,
+          "phase_error_upper": 7.339234551498833e-05
+        },
+        "reflected": {
+          "C": [
+            -3.9367888542539336e-08,
+            -3.5877566398447067e-09
+          ],
+          "Cref": [
+            -3.944554326319957e-08,
+            -3.6044878990073303e-09
+          ],
+          "reference_error_upper": 3.559067342718989e-17,
+          "absolute_error_upper_normalized": 9.187394254141602e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0019907639218771484,
+          "phase_error_upper": 0.00024272876834541398
+        },
+        "pressure": {
+          "C": [
+            7.251783447110774e-07,
+            3.1827560502267783e-07
+          ],
+          "Cref": [
+            7.250184015032282e-07,
+            3.1829028284916587e-07
+          ],
+          "reference_error_upper": 7.118170118019829e-17,
+          "absolute_error_upper_normalized": 0.00018576246723558666,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.5916079783099616,
+      "sample_index": 70,
+      "components": {
+        "incident": {
+          "C": [
+            7.532869405163432e-07,
+            2.7409450542558257e-07
+          ],
+          "Cref": [
+            7.532246575619343e-07,
+            2.7413110608072216e-07
+          ],
+          "reference_error_upper": 3.5590724298744053e-17,
+          "absolute_error_upper_normalized": 8.355171945173945e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.740316120349223e-05,
+          "phase_error_upper": 6.947861071116789e-05
+        },
+        "reflected": {
+          "C": [
+            -6.902541506942027e-08,
+            -6.9255038609805796e-09
+          ],
+          "Cref": [
+            -6.908411094995272e-08,
+            -6.946790806184542e-09
+          ],
+          "reference_error_upper": 3.55906728365506e-17,
+          "absolute_error_upper_normalized": 7.221227811060337e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0008717745746918881,
+          "phase_error_upper": 0.00022065955359368118
+        },
+        "pressure": {
+          "C": [
+            6.84261525446923e-07,
+            2.6716900156460205e-07
+          ],
+          "Cref": [
+            6.841405466119816e-07,
+            2.671843152745376e-07
+          ],
+          "reference_error_upper": 7.118171477264988e-17,
+          "absolute_error_upper_normalized": 0.00014103676064606294,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6000595208572468,
+      "sample_index": 71,
+      "components": {
+        "incident": {
+          "C": [
+            7.244134855988502e-07,
+            2.2757183895349423e-07
+          ],
+          "Cref": [
+            7.244007574763705e-07,
+            2.2761152729864756e-07
+          ],
+          "reference_error_upper": 3.559067669173021e-17,
+          "absolute_error_upper_normalized": 4.82050379617648e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.2543215049428003e-07,
+          "phase_error_upper": 5.488962337160452e-05
+        },
+        "reflected": {
+          "C": [
+            -1.130516314964867e-07,
+            -1.2563823269555092e-08
+          ],
+          "Cref": [
+            -1.1306201448560102e-07,
+            -1.25876340262242e-08
+          ],
+          "reference_error_upper": 3.5590675531180925e-17,
+          "absolute_error_upper_normalized": 3.0043167952561005e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00011385055692162495,
+          "phase_error_upper": 0.0001979443624046171
+        },
+        "pressure": {
+          "C": [
+            6.113618541023635e-07,
+            2.150080156839391e-07
+          ],
+          "Cref": [
+            6.113387429907695e-07,
+            2.1502389327242336e-07
+          ],
+          "reference_error_upper": 7.118161692070717e-17,
+          "absolute_error_upper_normalized": 3.242981128933887e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.608511063404532,
+      "sample_index": 72,
+      "components": {
+        "incident": {
+          "C": [
+            6.759799233114062e-07,
+            1.834728556237673e-07
+          ],
+          "Cref": [
+            6.76042498462817e-07,
+            1.8351168457505938e-07
+          ],
+          "reference_error_upper": 3.559067527462752e-17,
+          "absolute_error_upper_normalized": 8.517348643798557e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00010072921049271683,
+          "phase_error_upper": 3.00957029186921e-05
+        },
+        "reflected": {
+          "C": [
+            -1.733325885717418e-07,
+            -2.1474323350202713e-08
+          ],
+          "Cref": [
+            -1.7326919398865217e-07,
+            -2.149681437642396e-08
+          ],
+          "reference_error_upper": 3.5590677344316424e-17,
+          "absolute_error_upper_normalized": 7.779773882177381e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00034448203023833827,
+          "phase_error_upper": 0.00017248137383224258
+        },
+        "pressure": {
+          "C": [
+            5.026473347396644e-07,
+            1.619985322735646e-07
+          ],
+          "Cref": [
+            5.027733044741648e-07,
+            1.620148701986354e-07
+          ],
+          "reference_error_upper": 7.118161731673997e-17,
+          "absolute_error_upper_normalized": 0.00014691282421449954,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6169626059518172,
+      "sample_index": 73,
+      "components": {
+        "incident": {
+          "C": [
+            6.083829970553585e-07,
+            1.430287060124465e-07
+          ],
+          "Cref": [
+            6.085295255453184e-07,
+            1.430615171419681e-07
+          ],
+          "reference_error_upper": 3.5590699124985734e-17,
+          "absolute_error_upper_normalized": 0.000173666889832505,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00024019191604724728,
+          "phase_error_upper": 2.5495722707031836e-06
+        },
+        "reflected": {
+          "C": [
+            -2.4942471618153364e-07,
+            -3.467890493784181e-08
+          ],
+          "Cref": [
+            -2.492792421591463e-07,
+            -3.4695068692241087e-08
+          ],
+          "reference_error_upper": 3.559068311758091e-17,
+          "absolute_error_upper_normalized": 0.00016928593589173388,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0005636457011037067,
+          "phase_error_upper": 0.00014320901055648333
+        },
+        "pressure": {
+          "C": [
+            3.5895828087382496e-07,
+            1.083498010746047e-07
+          ],
+          "Cref": [
+            3.5925028338617207e-07,
+            1.0836644844972702e-07
+          ],
+          "reference_error_upper": 7.118151459146466e-17,
+          "absolute_error_upper_normalized": 0.00033826904108455127,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6254141484991023,
+      "sample_index": 74,
+      "components": {
+        "incident": {
+          "C": [
+            5.250128897174714e-07,
+            1.0735310713574006e-07
+          ],
+          "Cref": [
+            5.252258740366159e-07,
+            1.0737491685786886e-07
+          ],
+          "reference_error_upper": 3.5590700580052314e-17,
+          "absolute_error_upper_normalized": 0.00024761887436140355,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0003973897914172595,
+          "phase_error_upper": 3.973219912631444e-05
+        },
+        "reflected": {
+          "C": [
+            -3.379043142551654e-07,
+            -5.3079503376364115e-08
+          ],
+          "Cref": [
+            -3.3769458961026307e-07,
+            -5.30845630211603e-08
+          ],
+          "reference_error_upper": 3.5590684242606216e-17,
+          "absolute_error_upper_normalized": 0.00024263129001251134,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0006037793840305957,
+          "phase_error_upper": 0.00010982801297634995
+        },
+        "pressure": {
+          "C": [
+            1.8710857546230603e-07,
+            5.427360375937594e-08
+          ],
+          "Cref": [
+            1.875312844263528e-07,
+            5.4290353836708564e-08
+          ],
+          "reference_error_upper": 7.118145099710754e-17,
+          "absolute_error_upper_normalized": 0.0004892751313716027,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6338656910463875,
+      "sample_index": 75,
+      "components": {
+        "incident": {
+          "C": [
+            4.3207550609770185e-07,
+            7.725484160641872e-08
+          ],
+          "Cref": [
+            4.323133033750695e-07,
+            7.726249559538531e-08
+          ],
+          "reference_error_upper": 3.55906823199799e-17,
+          "absolute_error_upper_normalized": 0.0002751710301636014,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0005360957295147854,
+          "phase_error_upper": 7.814814165752322e-05
+        },
+        "reflected": {
+          "C": [
+            -4.3254543552282574e-07,
+            -7.727144021885202e-08
+          ],
+          "Cref": [
+            -4.323133033750695e-07,
+            -7.726249559538531e-08
+          ],
+          "reference_error_upper": 3.55906823199799e-17,
+          "absolute_error_upper_normalized": 0.000268675734137255,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.000523919852494666,
+          "phase_error_upper": 7.290555722844678e-05
+        },
+        "pressure": {
+          "C": [
+            -4.699294251238578e-10,
+            -1.6598612433292834e-11
+          ],
+          "Cref": [
+            0.0,
+            0.0
+          ],
+          "reference_error_upper": 7.118136463995981e-17,
+          "absolute_error_upper_normalized": 0.0005438440343298768,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6423172335936727,
+      "sample_index": 76,
+      "components": {
+        "incident": {
+          "C": [
+            3.374836092003672e-07,
+            5.3091232030923734e-08
+          ],
+          "Cref": [
+            3.3769458961026307e-07,
+            5.30845630211603e-08
+          ],
+          "reference_error_upper": 3.5590684242606216e-17,
+          "absolute_error_upper_normalized": 0.00024413496349160748,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0006066645916431521,
+          "phase_error_upper": 0.00011518548144461515
+        },
+        "reflected": {
+          "C": [
+            -5.254287989741567e-07,
+            -1.0739776054357452e-07
+          ],
+          "Cref": [
+            -5.252258740366159e-07,
+            -1.0737491685786886e-07
+          ],
+          "reference_error_upper": 3.5590700580052314e-17,
+          "absolute_error_upper_normalized": 0.0002361788032288607,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0003793933279743258,
+          "phase_error_upper": 3.4055482703898525e-05
+        },
+        "pressure": {
+          "C": [
+            -1.8794518977378943e-07,
+            -5.430652851265079e-08
+          ],
+          "Cref": [
+            -1.875312844263528e-07,
+            -5.4290353836708564e-08
+          ],
+          "reference_error_upper": 7.118145099710754e-17,
+          "absolute_error_upper_normalized": 0.0004790748622632371,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6507687761409578,
+      "sample_index": 77,
+      "components": {
+        "incident": {
+          "C": [
+            2.491370505465841e-07,
+            3.4713179494764136e-08
+          ],
+          "Cref": [
+            2.492792421591463e-07,
+            3.4695068692241087e-08
+          ],
+          "reference_error_upper": 3.559068311758091e-17,
+          "absolute_error_upper_normalized": 0.00016578280561564113,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.000549640490264317,
+          "phase_error_upper": 0.00014923617708246598
+        },
+        "reflected": {
+          "C": [
+            -6.086615009732513e-07,
+            -1.4309512582940175e-07
+          ],
+          "Cref": [
+            -6.085295255453184e-07,
+            -1.430615171419681e-07
+          ],
+          "reference_error_upper": 3.5590699124985734e-17,
+          "absolute_error_upper_normalized": 0.00015751014805483586,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00021782132285697422,
+          "phase_error_upper": 4.0201001052466515e-06
+        },
+        "pressure": {
+          "C": [
+            -3.595244504266673e-07,
+            -1.0838194633463761e-07
+          ],
+          "Cref": [
+            -3.5925028338617207e-07,
+            -1.0836644844972702e-07
+          ],
+          "reference_error_upper": 7.118151459146466e-17,
+          "absolute_error_upper_normalized": 0.00031759892446597246,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6592203186882429,
+      "sample_index": 78,
+      "components": {
+        "incident": {
+          "C": [
+            1.732134607888787e-07,
+            2.1521508776692414e-08
+          ],
+          "Cref": [
+            1.7326919398865217e-07,
+            2.149681437642396e-08
+          ],
+          "reference_error_upper": 3.5590677344316424e-17,
+          "absolute_error_upper_normalized": 7.050325969579468e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0002993508715896091,
+          "phase_error_upper": 0.0001797156744767996
+        },
+        "reflected": {
+          "C": [
+            -6.760862136325594e-07,
+            -1.8355099607586873e-07
+          ],
+          "Cref": [
+            -6.76042498462817e-07,
+            -1.8351168457505938e-07
+          ],
+          "reference_error_upper": 3.559067527462752e-17,
+          "absolute_error_upper_normalized": 6.799607076033863e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.492777430146342e-05,
+          "phase_error_upper": 3.780773916841227e-05
+        },
+        "pressure": {
+          "C": [
+            -5.028727528436806e-07,
+            -1.6202948729917632e-07
+          ],
+          "Cref": [
+            -5.027733044741648e-07,
+            -1.620148701986354e-07
+          ],
+          "reference_error_upper": 7.118161731673997e-17,
+          "absolute_error_upper_normalized": 0.00011625459038633505,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6676718612355281,
+      "sample_index": 79,
+      "components": {
+        "incident": {
+          "C": [
+            1.1308357637615237e-07,
+            1.2613728242212761e-08
+          ],
+          "Cref": [
+            1.1306201448560102e-07,
+            1.25876340262242e-08
+          ],
+          "reference_error_upper": 3.5590675531180925e-17,
+          "absolute_error_upper_normalized": 3.91498575379979e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.00021377609912235683,
+          "phase_error_upper": 0.00020695357189186964
+        },
+        "reflected": {
+          "C": [
+            -7.243657499729079e-07,
+            -2.2765121151589265e-07
+          ],
+          "Cref": [
+            -7.244007574763705e-07,
+            -2.2761152729864756e-07
+          ],
+          "reference_error_upper": 3.559067669173021e-17,
+          "absolute_error_upper_normalized": 6.120379169928641e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.8315590053226022e-05,
+          "phase_error_upper": 6.368154990629142e-05
+        },
+        "pressure": {
+          "C": [
+            -6.112821735967556e-07,
+            -2.1503748327367992e-07
+          ],
+          "Cref": [
+            -6.113387429907695e-07,
+            -2.1502389327242336e-07
+          ],
+          "reference_error_upper": 7.118161692070717e-17,
+          "absolute_error_upper_normalized": 6.728789760091361e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6761234037828133,
+      "sample_index": 80,
+      "components": {
+        "incident": {
+          "C": [
+            6.915591052121294e-08,
+            6.9702303121885315e-09
+          ],
+          "Cref": [
+            6.908411094995272e-08,
+            6.946790806184542e-09
+          ],
+          "reference_error_upper": 3.55906728365506e-17,
+          "absolute_error_upper_normalized": 8.735410080758735e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0010627063201609794,
+          "phase_error_upper": 0.00023218490892667066
+        },
+        "reflected": {
+          "C": [
+            -7.531382941378693e-07,
+            -2.741670104755274e-07
+          ],
+          "Cref": [
+            -7.532246575619343e-07,
+            -2.7413110608072216e-07
+          ],
+          "reference_error_upper": 3.5590724298744053e-17,
+          "absolute_error_upper_normalized": 0.00010817319968145107,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 8.59252666625418e-05,
+          "phase_error_upper": 7.89474530622751e-05
+        },
+        "pressure": {
+          "C": [
+            -6.839823836166564e-07,
+            -2.6719678016333885e-07
+          ],
+          "Cref": [
+            -6.841405466119816e-07,
+            -2.671843152745376e-07
+          ],
+          "reference_error_upper": 7.118171477264988e-17,
+          "absolute_error_upper_normalized": 0.00018349343936360833,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6845749463300984,
+      "sample_index": 81,
+      "components": {
+        "incident": {
+          "C": [
+            3.953632262024784e-08,
+            3.6230682944128365e-09
+          ],
+          "Cref": [
+            3.944554326319957e-08,
+            3.6044878990073303e-09
+          ],
+          "reference_error_upper": 3.559067342718989e-17,
+          "absolute_error_upper_normalized": 0.0001071691117564063,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.002325047569011531,
+          "phase_error_upper": 0.0002579832220083971
+        },
+        "reflected": {
+          "C": [
+            -7.643577043506836e-07,
+            -3.219246256022985e-07
+          ],
+          "Cref": [
+            -7.644639447664277e-07,
+            -3.218947707481732e-07
+          ],
+          "reference_error_upper": 3.5590710115653163e-17,
+          "absolute_error_upper_normalized": 0.00012763361612977403,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0001040730939500642,
+          "phase_error_upper": 8.288573755684736e-05
+        },
+        "pressure": {
+          "C": [
+            -7.248213817304357e-07,
+            -3.183015573078857e-07
+          ],
+          "Cref": [
+            -7.250184015032282e-07,
+            -3.1829028284916587e-07
+          ],
+          "reference_error_upper": 7.118170118019829e-17,
+          "absolute_error_upper_normalized": 0.0002282395061219886,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.6930264888773836,
+      "sample_index": 82,
+      "components": {
+        "incident": {
+          "C": [
+            2.1095217311720447e-08,
+            1.7679851219241673e-09
+          ],
+          "Cref": [
+            2.100988259141128e-08,
+            1.7546999386873606e-09
+          ],
+          "reference_error_upper": 3.559067298106488e-17,
+          "absolute_error_upper_normalized": 9.988428192464114e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.004086000950960988,
+          "phase_error_upper": 0.0002898970846950706
+        },
+        "reflected": {
+          "C": [
+            -7.612261183854564e-07,
+            -3.6991812626102744e-07
+          ],
+          "Cref": [
+            -7.613276614780132e-07,
+            -3.6989480402907424e-07
+          ],
+          "reference_error_upper": 3.559070382470737e-17,
+          "absolute_error_upper_normalized": 0.0001204992940393932,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 9.586078106958156e-05,
+          "phase_error_upper": 7.721693865194283e-05
+        },
+        "pressure": {
+          "C": [
+            -7.40130901073736e-07,
+            -3.6815014113910325e-07
+          ],
+          "Cref": [
+            -7.403177788866019e-07,
+            -3.681401040903869e-07
+          ],
+          "reference_error_upper": 7.118169444312749e-17,
+          "absolute_error_upper_normalized": 0.00021644837143726758,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7014780314246688,
+      "sample_index": 83,
+      "components": {
+        "incident": {
+          "C": [
+            1.0490816722790391e-08,
+            8.086822633961372e-10
+          ],
+          "Cref": [
+            1.0423916116852238e-08,
+            7.99947122489408e-10
+          ],
+          "reference_error_upper": 3.5590672426600583e-17,
+          "absolute_error_upper_normalized": 7.803186301263263e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 0.0064444098181524224,
+          "phase_error_upper": 0.0003412456200055314
+        },
+        "reflected": {
+          "C": [
+            -7.471704067149172e-07,
+            -4.173544904180247e-07
+          ],
+          "Cref": [
+            -7.472541551219533e-07,
+            -4.1733699165046783e-07
+          ],
+          "reference_error_upper": 3.559068314481915e-17,
+          "absolute_error_upper_normalized": 9.89524871059669e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 7.545729814909887e-05,
+          "phase_error_upper": 6.556604168294849e-05
+        },
+        "pressure": {
+          "C": [
+            -7.366795899921268e-07,
+            -4.1654580815462856e-07
+          ],
+          "Cref": [
+            -7.368302390051011e-07,
+            -4.165370445279784e-07
+          ],
+          "reference_error_upper": 7.118167320877497e-17,
+          "absolute_error_upper_normalized": 0.000174530369011957,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.709929573971954,
+      "sample_index": 84,
+      "components": {
+        "incident": {
+          "C": [
+            4.857409007926556e-09,
+            3.463957478116274e-10
+          ],
+          "Cref": [
+            4.811720066145085e-09,
+            3.409752959324376e-10
+          ],
+          "reference_error_upper": 3.559067227012468e-17,
+          "absolute_error_upper_normalized": 5.321295708354147e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -7.251535818114055e-07,
+            -4.636439604272662e-07
+          ],
+          "Cref": [
+            -7.252166691450464e-07,
+            -4.6363107884442474e-07
+          ],
+          "reference_error_upper": 3.559070407015485e-17,
+          "absolute_error_upper_normalized": 7.447028611688437e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 5.369022198901907e-05,
+          "phase_error_upper": 5.209023459250883e-05
+        },
+        "pressure": {
+          "C": [
+            -7.20296172803479e-07,
+            -4.6329756467945455e-07
+          ],
+          "Cref": [
+            -7.204049490789013e-07,
+            -4.632901035484923e-07
+          ],
+          "reference_error_upper": 7.118169397763477e-17,
+          "absolute_error_upper_normalized": 0.00012610276910975863,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7183811165192391,
+      "sample_index": 85,
+      "components": {
+        "incident": {
+          "C": [
+            2.092256885042263e-09,
+            1.390154890912573e-10
+          ],
+          "Cref": [
+            2.0644204194786115e-09,
+            1.357011629533035e-10
+          ],
+          "reference_error_upper": 3.559067221147272e-17,
+          "absolute_error_upper_normalized": 3.242218540953154e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -6.973874952154438e-07,
+            -5.083599193737848e-07
+          ],
+          "Cref": [
+            -6.974331982301285e-07,
+            -5.083504693503687e-07
+          ],
+          "reference_error_upper": 3.5590694674622284e-17,
+          "absolute_error_upper_normalized": 5.397678525197594e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 3.6344119836924566e-05,
+          "phase_error_upper": 4.0042550568410436e-05
+        },
+        "pressure": {
+          "C": [
+            -6.952952383304015e-07,
+            -5.082209038846936e-07
+          ],
+          "Cref": [
+            -6.953687778106499e-07,
+            -5.082147681874154e-07
+          ],
+          "reference_error_upper": 7.118179040256864e-17,
+          "absolute_error_upper_normalized": 8.534896719429347e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7268326590665243,
+      "sample_index": 86,
+      "components": {
+        "incident": {
+          "C": [
+            8.379700542224737e-10,
+            5.2498982437242625e-11
+          ],
+          "Cref": [
+            8.22546273672387e-10,
+            5.036380962431726e-11
+          ],
+          "reference_error_upper": 3.559067210839408e-17,
+          "absolute_error_upper_normalized": 1.800879972762033e-05,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -6.653500270135823e-07,
+            -5.511910334877329e-07
+          ],
+          "Cref": [
+            -6.653837042836043e-07,
+            -5.511841051271693e-07
+          ],
+          "reference_error_upper": 3.55907271960976e-17,
+          "absolute_error_upper_normalized": 3.976579096411845e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 2.490046175463564e-05,
+          "phase_error_upper": 3.104056153884381e-05
+        },
+        "pressure": {
+          "C": [
+            -6.645120569593598e-07,
+            -5.511385345052955e-07
+          ],
+          "Cref": [
+            -6.645611580099319e-07,
+            -5.51133741317545e-07
+          ],
+          "reference_error_upper": 7.118182282096533e-17,
+          "absolute_error_upper_normalized": 5.7058693420028016e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7352842016138095,
+      "sample_index": 87,
+      "components": {
+        "incident": {
+          "C": [
+            3.121100091065535e-10,
+            1.8969494456486347e-11
+          ],
+          "Cref": [
+            3.041445808375926e-10,
+            1.741292849532855e-11
+          ],
+          "reference_error_upper": 3.559067207722525e-17,
+          "absolute_error_upper_normalized": 9.386847653470201e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -6.299550018832083e-07,
+            -5.919000499259099e-07
+          ],
+          "Cref": [
+            -6.299815261738438e-07,
+            -5.918950542882454e-07
+          ],
+          "reference_error_upper": 3.5590712907325133e-17,
+          "absolute_error_upper_normalized": 3.121652786766735e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.840525917370678e-05,
+          "phase_error_upper": 2.52231235225027e-05
+        },
+        "pressure": {
+          "C": [
+            -6.296428918741017e-07,
+            -5.918810804314534e-07
+          ],
+          "Cref": [
+            -6.296773815930062e-07,
+            -5.9187764135975e-07
+          ],
+          "reference_error_upper": 7.118180850102402e-17,
+          "absolute_error_upper_normalized": 4.0087578717379314e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7437357441610947,
+      "sample_index": 88,
+      "components": {
+        "incident": {
+          "C": [
+            1.0830296543648375e-10,
+            6.919683532764234e-12
+          ],
+          "Cref": [
+            1.0430312396720937e-10,
+            5.603328594957154e-12
+          ],
+          "reference_error_upper": 3.5590672079890336e-17,
+          "absolute_error_upper_normalized": 4.870208980431073e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -5.917505563036084e-07,
+            -6.302946698555433e-07
+          ],
+          "Cref": [
+            -5.917733382357829e-07,
+            -6.302912740832764e-07
+          ],
+          "reference_error_upper": 3.559071763637814e-17,
+          "absolute_error_upper_normalized": 2.663997469394523e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.5173017783540925e-05,
+          "phase_error_upper": 2.189949821421042e-05
+        },
+        "pressure": {
+          "C": [
+            -5.91642253338172e-07,
+            -6.302877501720103e-07
+          ],
+          "Cref": [
+            -5.916690351118157e-07,
+            -6.302856707546814e-07
+          ],
+          "reference_error_upper": 7.118181323274212e-17,
+          "absolute_error_upper_normalized": 3.106823144472687e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7521872867083798,
+      "sample_index": 89,
+      "components": {
+        "incident": {
+          "C": [
+            3.5258279512922405e-11,
+            2.9209886292907535e-12
+          ],
+          "Cref": [
+            3.315816301342932e-11,
+            1.6768519018862856e-12
+          ],
+          "reference_error_upper": 3.559067207679604e-17,
+          "absolute_error_upper_normalized": 2.82319463648389e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -5.510795601977033e-07,
+            -6.662098915308573e-07
+          ],
+          "Cref": [
+            -5.511005831545315e-07,
+            -6.662079274091786e-07
+          ],
+          "reference_error_upper": 3.559072804287104e-17,
+          "absolute_error_upper_normalized": 2.4420392233266262e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.374784237638298e-05,
+          "phase_error_upper": 2.0183842074625042e-05
+        },
+        "pressure": {
+          "C": [
+            -5.510443019181904e-07,
+            -6.662069705422279e-07
+          ],
+          "Cref": [
+            -5.510674249915181e-07,
+            -6.662062505572767e-07
+          ],
+          "reference_error_upper": 7.118182363614072e-17,
+          "absolute_error_upper_normalized": 2.6756434287202574e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.760638829255665,
+      "sample_index": 90,
+      "components": {
+        "incident": {
+          "C": [
+            1.1026565409915538e-11,
+            1.7115150303114349e-12
+          ],
+          "Cref": [
+            9.76719213566033e-12,
+            4.66352466480625e-13
+          ],
+          "reference_error_upper": 3.5590672076031746e-17,
+          "absolute_error_upper_normalized": 2.0483251088412104e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -5.081847605105704e-07,
+            -6.994986968157456e-07
+          ],
+          "Cref": [
+            -5.082050009952798e-07,
+            -6.994980850020736e-07
+          ],
+          "reference_error_upper": 3.5590711798038826e-17,
+          "absolute_error_upper_normalized": 2.342021637537124e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.3187052992551764e-05,
+          "phase_error_upper": 1.9355151616753322e-05
+        },
+        "pressure": {
+          "C": [
+            -5.081737339451604e-07,
+            -6.994969853007153e-07
+          ],
+          "Cref": [
+            -5.081952338031442e-07,
+            -6.994976186496071e-07
+          ],
+          "reference_error_upper": 7.11818073905442e-17,
+          "absolute_error_upper_normalized": 2.4876902421596844e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7690903718029501,
+      "sample_index": 91,
+      "components": {
+        "incident": {
+          "C": [
+            3.5634269536985565e-12,
+            1.3936583075558076e-12
+          ],
+          "Cref": [
+            2.664843503043797e-12,
+            1.204588053154202e-13
+          ],
+          "reference_error_upper": 3.5590672075885554e-17,
+          "absolute_error_upper_normalized": 1.802390640516891e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -4.632675828868888e-07,
+            -7.300278080711652e-07
+          ],
+          "Cref": [
+            -4.632874387049892e-07,
+            -7.300285096699968e-07
+          ],
+          "reference_error_upper": 3.55906975430445e-17,
+          "absolute_error_upper_normalized": 2.2978963161547862e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2990014870661298e-05,
+          "phase_error_upper": 1.8955222769183733e-05
+        },
+        "pressure": {
+          "C": [
+            -4.6326401945993513e-07,
+            -7.300264144128577e-07
+          ],
+          "Cref": [
+            -4.632847738614862e-07,
+            -7.300283892111914e-07
+          ],
+          "reference_error_upper": 7.118168725628528e-17,
+          "absolute_error_upper_normalized": 2.4112361747282075e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7775419143502353,
+      "sample_index": 92,
+      "components": {
+        "incident": {
+          "C": [
+            1.4039866170265335e-12,
+            1.3370660202050523e-12
+          ],
+          "Cref": [
+            6.732168541934693e-13,
+            2.888239253267487e-14
+          ],
+          "reference_error_upper": 3.559067207587473e-17,
+          "absolute_error_upper_normalized": 1.7331058148096378e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -4.1651678862014455e-07,
+            -7.576761095386742e-07
+          ],
+          "Cref": [
+            -4.165363713111242e-07,
+            -7.576781001211981e-07
+          ],
+          "reference_error_upper": 3.5590692371208986e-17,
+          "absolute_error_upper_normalized": 2.276545252730111e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2928436796760822e-05,
+          "phase_error_upper": 1.873841356646964e-05
+        },
+        "pressure": {
+          "C": [
+            -4.1651538463352756e-07,
+            -7.576747724726542e-07
+          ],
+          "Cref": [
+            -4.1653569809427e-07,
+            -7.576780712388055e-07
+          ],
+          "reference_error_upper": 7.118168208443896e-17,
+          "absolute_error_upper_normalized": 2.380173611767401e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7859934568975204,
+      "sample_index": 93,
+      "components": {
+        "incident": {
+          "C": [
+            7.893649262457469e-13,
+            1.3486279614022371e-12
+          ],
+          "Cref": [
+            1.5743328491278101e-13,
+            6.425267140323134e-15
+          ],
+          "reference_error_upper": 3.5590672075868545e-17,
+          "absolute_error_upper_normalized": 1.7158374062578532e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -3.681206485295478e-07,
+            -7.823342930614972e-07
+          ],
+          "Cref": [
+            -3.6813994665710193e-07,
+            -7.823375504946917e-07
+          ],
+          "reference_error_upper": 3.5590702843016066e-17,
+          "absolute_error_upper_normalized": 2.2635354884510114e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2911979488836423e-05,
+          "phase_error_upper": 1.8591570407306246e-05
+        },
+        "pressure": {
+          "C": [
+            -3.6811985916462155e-07,
+            -7.823329444335358e-07
+          ],
+          "Cref": [
+            -3.68139789223817e-07,
+            -7.823375440694246e-07
+          ],
+          "reference_error_upper": 7.118169255623985e-17,
+          "absolute_error_upper_normalized": 2.365644796715841e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.7944449994448056,
+      "sample_index": 94,
+      "components": {
+        "incident": {
+          "C": [
+            5.886096740807408e-13,
+            1.3737973132076039e-12
+          ],
+          "Cref": [
+            3.4071321462548865e-14,
+            1.3256513974983587e-15
+          ],
+          "reference_error_upper": 3.559067207586673e-17,
+          "absolute_error_upper_normalized": 1.7120699380564394e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -3.182712927985231e-07,
+            -8.039049898076073e-07
+          ],
+          "Cref": [
+            -3.182902487778444e-07,
+            -8.039094893552787e-07
+          ],
+          "reference_error_upper": 3.559070695067329e-17,
+          "absolute_error_upper_normalized": 2.2533079961273066e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2909182561905486e-05,
+          "phase_error_upper": 1.8468865170875446e-05
+        },
+        "pressure": {
+          "C": [
+            -3.182707041888491e-07,
+            -8.03903616010294e-07
+          ],
+          "Cref": [
+            -3.1829021470652295e-07,
+            -8.039094880296274e-07
+          ],
+          "reference_error_upper": 7.118169666389526e-17,
+          "absolute_error_upper_normalized": 2.3565149638030322e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8028965419920908,
+      "sample_index": 95,
+      "components": {
+        "incident": {
+          "C": [
+            4.901208739333262e-13,
+            1.3981039178522682e-12
+          ],
+          "Cref": [
+            6.822411594968605e-15,
+            2.535623402005353e-16
+          ],
+          "reference_error_upper": 3.5590672075866246e-17,
+          "absolute_error_upper_normalized": 1.7106519417216213e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -2.6716576579037827e-07,
+            -8.223030561559001e-07
+          ],
+          "Cref": [
+            -2.67184308452126e-07,
+            -8.223087687654493e-07
+          ],
+          "reference_error_upper": 3.5590701051544647e-17,
+          "absolute_error_upper_normalized": 2.2440553417488704e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2910662130600169e-05,
+          "phase_error_upper": 1.835482083302466e-05
+        },
+        "pressure": {
+          "C": [
+            -2.6716527566950436e-07,
+            -8.223016580519822e-07
+          ],
+          "Cref": [
+            -2.6718430162971444e-07,
+            -8.223087685118869e-07
+          ],
+          "reference_error_upper": 7.118169076476612e-17,
+          "absolute_error_upper_normalized": 2.3491379760466928e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8113480845393759,
+      "sample_index": 96,
+      "components": {
+        "incident": {
+          "C": [
+            4.110179847631114e-13,
+            1.4180417983417231e-12
+          ],
+          "Cref": [
+            1.2637472378205092e-15,
+            4.494819942912555e-17
+          ],
+          "reference_error_upper": 3.5590672075866135e-17,
+          "absolute_error_upper_normalized": 1.7071492631364998e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -2.150058402433367e-07,
+            -8.374558802795747e-07
+          ],
+          "Cref": [
+            -2.1502389200867612e-07,
+            -8.374627720069197e-07
+          ],
+          "reference_error_upper": 3.55906875475825e-17,
+          "absolute_error_upper_normalized": 2.234790696861517e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2912388072955396e-05,
+          "phase_error_upper": 1.8240211635569714e-05
+        },
+        "pressure": {
+          "C": [
+            -2.150054292253519e-07,
+            -8.374544622377763e-07
+          ],
+          "Cref": [
+            -2.1502389074492887e-07,
+            -8.374627719619715e-07
+          ],
+          "reference_error_upper": 7.118162432124467e-17,
+          "absolute_error_upper_normalized": 2.3415336091699534e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8197996270866611,
+      "sample_index": 97,
+      "components": {
+        "incident": {
+          "C": [
+            3.3205087860796885e-13,
+            1.4329799244701389e-12
+          ],
+          "Cref": [
+            2.165121521819711e-16,
+            7.382139090908198e-18
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.7012272090010777e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -1.6199738641027593e-07,
+            -8.493036605745437e-07
+          ],
+          "Cref": [
+            -1.6201486998212328e-07,
+            -8.493116924588513e-07
+          ],
+          "reference_error_upper": 3.5590715528895384e-17,
+          "absolute_error_upper_normalized": 2.2252662446746783e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.2913789320533046e-05,
+          "phase_error_upper": 1.8122392373415856e-05
+        },
+        "pressure": {
+          "C": [
+            -1.619970543593973e-07,
+            -8.493022275946193e-07
+          ],
+          "Cref": [
+            -1.6201486976561112e-07,
+            -8.493116924514692e-07
+          ],
+          "reference_error_upper": 7.11816523025575e-17,
+          "absolute_error_upper_normalized": 2.3332153733775428e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8282511696339463,
+      "sample_index": 98,
+      "components": {
+        "incident": {
+          "C": [
+            2.5192862014148443e-13,
+            1.4428590931501475e-12
+          ],
+          "Cref": [
+            3.43035189622414e-17,
+            1.1229959310129915e-18
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.6940431232022643e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -1.0834960533989355e-07,
+            -8.577996393836988e-07
+          ],
+          "Cref": [
+            -1.083664484154235e-07,
+            -8.578087677055877e-07
+          ],
+          "reference_error_upper": 3.5590681388103725e-17,
+          "absolute_error_upper_normalized": 2.2157150118939186e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.291567347502308e-05,
+          "phase_error_upper": 1.800362985525736e-05
+        },
+        "pressure": {
+          "C": [
+            -1.083493534112734e-07,
+            -8.577981965246058e-07
+          ],
+          "Cref": [
+            -1.0836644838111998e-07,
+            -8.578087677044647e-07
+          ],
+          "reference_error_upper": 7.118159169198623e-17,
+          "absolute_error_upper_normalized": 2.324644788180467e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8367027121812315,
+      "sample_index": 99,
+      "components": {
+        "incident": {
+          "C": [
+            1.7073568000275635e-13,
+            1.4475380384381722e-12
+          ],
+          "Cref": [
+            5.025404863315277e-18,
+            1.5819602096419246e-19
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.6858208068840672e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            -5.427421981879758e-08,
+            -8.629102871928098e-07
+          ],
+          "Cref": [
+            -5.429035383168316e-08,
+            -8.629204636470372e-07
+          ],
+          "reference_error_upper": 3.559068540125615e-17,
+          "absolute_error_upper_normalized": 2.20618953291353e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.291810083006738e-05,
+          "phase_error_upper": 1.7884513935344687e-05
+        },
+        "pressure": {
+          "C": [
+            -5.427404908311756e-08,
+            -8.629088396547713e-07
+          ],
+          "Cref": [
+            -5.429035382665775e-08,
+            -8.62920463646879e-07
+          ],
+          "reference_error_upper": 7.118158247024885e-17,
+          "absolute_error_upper_normalized": 2.315922331222749e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    },
+    {
+      "time": 0.8451542547285166,
+      "sample_index": 100,
+      "components": {
+        "incident": {
+          "C": [
+            8.866873394903327e-14,
+            1.4470393118490439e-12
+          ],
+          "Cref": [
+            6.80655227789805e-19,
+            2.0631936799948865e-20
+          ],
+          "reference_error_upper": 3.559067207586608e-17,
+          "absolute_error_upper_normalized": 1.6767784965971749e-06,
+          "passed": true,
+          "phase_status": "NOT_ASSESSED_BELOW_DECLARED_ABSOLUTE_RESOLUTION"
+        },
+        "reflected": {
+          "C": [
+            1.5359929064644065e-11,
+            -8.646154346919952e-07
+          ],
+          "Cref": [
+            6.80655227789805e-19,
+            -8.646266067501597e-07
+          ],
+          "reference_error_upper": 3.5590693606210176e-17,
+          "absolute_error_upper_normalized": 2.196697503784433e-05,
+          "passed": true,
+          "phase_status": "ASSESSED",
+          "amplitude_relative_error_upper": 1.292113524324984e-05,
+          "phase_error_upper": 1.7765081857562775e-05
+        },
+        "pressure": {
+          "C": [
+            1.5448597798595073e-11,
+            -8.646139876526833e-07
+          ],
+          "Cref": [
+            1.36131045557961e-18,
+            -8.64626606750139e-07
+          ],
+          "reference_error_upper": 7.118157744031309e-17,
+          "absolute_error_upper_normalized": 2.307065090164589e-05,
+          "passed": true,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "all_observation_gates_satisfied": true,
+  "ledger_max": 8.628717637537861e-14,
+  "observation_sha256": "fae2ff3bf9501d8a724e7638c320f578430c2a1517778ab24c9e6328b1637555",
+  "qualification_sha256": "6c93cb36877803e5f133e7f2ad805548b2b8058d472a070fd95af4a3571e0887",
+  "assessment_sha256": "d474fbfe41d94a99ddaf181bdb707461e6ef7a2cee916499458b90b77256c588",
+  "execution_record": "free-full-N1600-CFL0.05.json"
+}

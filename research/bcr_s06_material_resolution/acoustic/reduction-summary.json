@@ -1,0 +1,382 @@
+[
+  {
+    "N": 1600,
+    "CFL": 0.05,
+    "failed_samples": [],
+    "maxima": {
+      "incident": {
+        "absolute_error_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            0.4997618504381802,
+            0.08935765494748742
+          ],
+          "Cref_over_A0": [
+            0.4999993574479453,
+            0.08935926294870788
+          ],
+          "abs_Cref_over_A0": 0.5079216822730592,
+          "absolute_error_over_A0": 0.00023751245305348793,
+          "relative_amplitude_error": 0.0004608659179581107,
+          "phase_error_radians": 7.918643124703997e-05,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 0.00023751253331687062,
+          "relative_amplitude_upper": 0.00046086599903750824,
+          "phase_upper": 7.918651228908802e-05,
+          "diagnostic_threshold_pass": true
+        },
+        "relative_amplitude_error": {
+          "sample": 83,
+          "time": 0.7014780314246688,
+          "C_over_A0": [
+            0.012132495297308652,
+            0.0009344143479288485
+          ],
+          "Cref_over_A0": [
+            0.01205595876839251,
+            0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 7.709008904431319e-05,
+          "relative_amplitude_error": 0.006369666144690358,
+          "phase_error_radians": 0.0002743537734290172,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 7.709014289823722e-05,
+          "relative_amplitude_upper": 0.0063696695706933594,
+          "phase_upper": 0.00027435717774763457,
+          "diagnostic_threshold_pass": true
+        },
+        "phase_error_radians": {
+          "sample": 83,
+          "time": 0.7014780314246688,
+          "C_over_A0": [
+            0.012132495297308652,
+            0.0009344143479288485
+          ],
+          "Cref_over_A0": [
+            0.01205595876839251,
+            0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 7.709008904431319e-05,
+          "relative_amplitude_error": 0.006369666144690358,
+          "phase_error_radians": 0.0002743537734290172,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 7.709014289823722e-05,
+          "relative_amplitude_upper": 0.0063696695706933594,
+          "phase_upper": 0.00027435717774763457,
+          "diagnostic_threshold_pass": true
+        },
+        "absolute_error_upper_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            0.4997618504381802,
+            0.08935765494748742
+          ],
+          "Cref_over_A0": [
+            0.4999993574479453,
+            0.08935926294870788
+          ],
+          "abs_Cref_over_A0": 0.5079216822730592,
+          "absolute_error_over_A0": 0.00023751245305348793,
+          "relative_amplitude_error": 0.0004608659179581107,
+          "phase_error_radians": 7.918643124703997e-05,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 0.00023751253331687062,
+          "relative_amplitude_upper": 0.00046086599903750824,
+          "phase_upper": 7.918651228908802e-05,
+          "diagnostic_threshold_pass": true
+        },
+        "relative_amplitude_upper": {
+          "sample": 83,
+          "time": 0.7014780314246688,
+          "C_over_A0": [
+            0.012132495297308652,
+            0.0009344143479288485
+          ],
+          "Cref_over_A0": [
+            0.01205595876839251,
+            0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 7.709008904431319e-05,
+          "relative_amplitude_error": 0.006369666144690358,
+          "phase_error_radians": 0.0002743537734290172,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 7.709014289823722e-05,
+          "relative_amplitude_upper": 0.0063696695706933594,
+          "phase_upper": 0.00027435717774763457,
+          "diagnostic_threshold_pass": true
+        },
+        "phase_upper": {
+          "sample": 83,
+          "time": 0.7014780314246688,
+          "C_over_A0": [
+            0.012132495297308652,
+            0.0009344143479288485
+          ],
+          "Cref_over_A0": [
+            0.01205595876839251,
+            0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 7.709008904431319e-05,
+          "relative_amplitude_error": 0.006369666144690358,
+          "phase_error_radians": 0.0002743537734290172,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 7.709014289823722e-05,
+          "relative_amplitude_upper": 0.0063696695706933594,
+          "phase_upper": 0.00027435717774763457,
+          "diagnostic_threshold_pass": true
+        }
+      },
+      "reflected": {
+        "absolute_error_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            -0.5002368287715347,
+            -0.08936374107139052
+          ],
+          "Cref_over_A0": [
+            -0.4999993574479453,
+            -0.08935926294870788
+          ],
+          "abs_Cref_over_A0": 0.5079216822730592,
+          "absolute_error_over_A0": 0.00023751354300343756,
+          "relative_amplitude_error": 0.00046179673106550603,
+          "phase_error_radians": 7.354103577950633e-05,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 0.00023751362326699968,
+          "relative_amplitude_upper": 0.00046179681214497903,
+          "phase_upper": 7.354111682155438e-05,
+          "diagnostic_threshold_pass": true
+        },
+        "relative_amplitude_error": {
+          "sample": 67,
+          "time": 0.5662533506681061,
+          "C_over_A0": [
+            -0.011990104607379357,
+            -0.0009169972406448964
+          ],
+          "Cref_over_A0": [
+            -0.01205595876839251,
+            -0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 6.636213985672184e-05,
+          "relative_amplitude_error": 0.005482221042076352,
+          "phase_error_radians": 0.00026048394243338615,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 6.636219194456289e-05,
+          "relative_amplitude_upper": 0.005482224465058208,
+          "phase_upper": 0.0002604873467520035,
+          "diagnostic_threshold_pass": true
+        },
+        "phase_error_radians": {
+          "sample": 67,
+          "time": 0.5662533506681061,
+          "C_over_A0": [
+            -0.011990104607379357,
+            -0.0009169972406448964
+          ],
+          "Cref_over_A0": [
+            -0.01205595876839251,
+            -0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 6.636213985672184e-05,
+          "relative_amplitude_error": 0.005482221042076352,
+          "phase_error_radians": 0.00026048394243338615,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 6.636219194456289e-05,
+          "relative_amplitude_upper": 0.005482224465058208,
+          "phase_upper": 0.0002604873467520035,
+          "diagnostic_threshold_pass": true
+        },
+        "absolute_error_upper_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            -0.5002368287715347,
+            -0.08936374107139052
+          ],
+          "Cref_over_A0": [
+            -0.4999993574479453,
+            -0.08935926294870788
+          ],
+          "abs_Cref_over_A0": 0.5079216822730592,
+          "absolute_error_over_A0": 0.00023751354300343756,
+          "relative_amplitude_error": 0.00046179673106550603,
+          "phase_error_radians": 7.354103577950633e-05,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 0.00023751362326699968,
+          "relative_amplitude_upper": 0.00046179681214497903,
+          "phase_upper": 7.354111682155438e-05,
+          "diagnostic_threshold_pass": true
+        },
+        "relative_amplitude_upper": {
+          "sample": 67,
+          "time": 0.5662533506681061,
+          "C_over_A0": [
+            -0.011990104607379357,
+            -0.0009169972406448964
+          ],
+          "Cref_over_A0": [
+            -0.01205595876839251,
+            -0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 6.636213985672184e-05,
+          "relative_amplitude_error": 0.005482221042076352,
+          "phase_error_radians": 0.00026048394243338615,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 6.636219194456289e-05,
+          "relative_amplitude_upper": 0.005482224465058208,
+          "phase_upper": 0.0002604873467520035,
+          "diagnostic_threshold_pass": true
+        },
+        "phase_upper": {
+          "sample": 67,
+          "time": 0.5662533506681061,
+          "C_over_A0": [
+            -0.011990104607379357,
+            -0.0009169972406448964
+          ],
+          "Cref_over_A0": [
+            -0.01205595876839251,
+            -0.0009251925492795332
+          ],
+          "abs_Cref_over_A0": 0.012091406993333016,
+          "absolute_error_over_A0": 6.636213985672184e-05,
+          "relative_amplitude_error": 0.005482221042076352,
+          "phase_error_radians": 0.00026048394243338615,
+          "phase_defined": true,
+          "phase_eligible": true,
+          "phase_status": "ASSESSED",
+          "absolute_error_upper_over_A0": 6.636219194456289e-05,
+          "relative_amplitude_upper": 0.005482224465058208,
+          "phase_upper": 0.0002604873467520035,
+          "diagnostic_threshold_pass": true
+        }
+      },
+      "pressure": {
+        "absolute_error_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            -0.00047497833335449443,
+            -6.086123903094492e-06
+          ],
+          "Cref_over_A0": [
+            0.0,
+            0.0
+          ],
+          "abs_Cref_over_A0": 0.0,
+          "absolute_error_over_A0": 0.0004750173239581658,
+          "relative_amplitude_error": null,
+          "phase_error_radians": null,
+          "phase_defined": false,
+          "phase_eligible": false,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+          "absolute_error_upper_over_A0": 0.000475017484483683,
+          "relative_amplitude_upper": null,
+          "phase_upper": null,
+          "diagnostic_threshold_pass": true
+        },
+        "absolute_error_upper_over_A0": {
+          "sample": 75,
+          "time": 0.6338656910463875,
+          "C_over_A0": [
+            -0.00047497833335449443,
+            -6.086123903094492e-06
+          ],
+          "Cref_over_A0": [
+            0.0,
+            0.0
+          ],
+          "abs_Cref_over_A0": 0.0,
+          "absolute_error_over_A0": 0.0004750173239581658,
+          "relative_amplitude_error": null,
+          "phase_error_radians": null,
+          "phase_defined": false,
+          "phase_eligible": false,
+          "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+          "absolute_error_upper_over_A0": 0.000475017484483683,
+          "relative_amplitude_upper": null,
+          "phase_upper": null,
+          "diagnostic_threshold_pass": true
+        }
+      }
+    },
+    "bounded_vs_folded_max_C_over_A0": 8.562024545708425e-13,
+    "profile": [
+      {
+        "sample": 25,
+        "incident_L1_over_initial_mass": 0.00027953324925579845,
+        "incident_peak_ratio": 0.9999900065507551
+      },
+      {
+        "sample": 50,
+        "incident_L1_over_initial_mass": 0.0005590548908983575,
+        "incident_peak_ratio": 0.999979502237301
+      },
+      {
+        "sample": 60,
+        "incident_L1_over_initial_mass": 0.0006704545112684592,
+        "incident_peak_ratio": 0.9999751575671946
+      },
+      {
+        "sample": 67,
+        "incident_L1_over_initial_mass": 0.0006840791658900995,
+        "incident_peak_ratio": 0.9999720677204963
+      },
+      {
+        "sample": 74,
+        "incident_L1_over_initial_mass": 0.00043417769430805696,
+        "incident_peak_ratio": 0.9999689378799229
+      },
+      {
+        "sample": 75,
+        "incident_L1_over_initial_mass": 0.00041876499853021014,
+        "incident_peak_ratio": 0.9999390916407707
+      },
+      {
+        "sample": 83,
+        "incident_L1_over_initial_mass": 7.554703125128097e-05,
+        "incident_peak_ratio": 1.0030246102915161
+      },
+      {
+        "sample": 100,
+        "incident_L1_over_initial_mass": 3.8194166283596295e-13,
+        "incident_peak_ratio": 0.8189547537282021
+      }
+    ],
+    "code_sha256": "9921eb7b698aa3915e08c303e0d3ac8cc750cde2a2bd1e2b138e9eef1de99755",
+    "raw_sha256": "66e1ac5482c7d6a8bd3106d6610f51a2234ccb7a6906fe2dd8f622090c06c2e8"
+  }
+]

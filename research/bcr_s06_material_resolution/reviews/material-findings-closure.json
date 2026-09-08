@@ -1,0 +1,21 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "MATERIAL_DEMONSTRATION_REVIEW_FINDINGS_CLOSED_NO_GEN1_RECIPE_APPROVAL",
+  "current_source_sha256": {
+    "prototype.py": "be0a1d24dde91ff7cc54c6e7111a320195f113d019cbb068b98800337a68ca32",
+    "run_controls.py": "21390765a1fe6c1cb7bc4e1f6a691fb1b38bf53c54eaabfbcb7c85e426323fb5"
+  },
+  "prior_review_sha256": "9618e12c7c501d6692bcbc87e99d6a83cc162e1aecf353d81128c583b9e2066d",
+  "tests": "10 tests independently PASS0.97s; independent geometricY2 probe now rejects with explicit FE2_STATE/REJECTED transaction and unchanged input.",
+  "evidence": "All nine contact trajectory files byte-identical to independently audited published version, all current source hashes match regenerated control-results.",
+  "closed": [
+    "MR-REVIEW-01",
+    "MR-REVIEW-02"
+  ],
+  "remaining_limits": [
+    "No complete VAL008/S06 acceptance. Global Lagrangian, first-order spatial prototype lacks local Eulerian interface crossing/reorganization and full closures.",
+    "Absolute ledger residuals recomputed; no full ST003 ledgerPASS inferred from author diagnostic normalization.",
+    "Published shock controls show response, not independently qualified shock accuracy.",
+    "New local-material prototype requires its own derivation and independent review."
+  ]
+}

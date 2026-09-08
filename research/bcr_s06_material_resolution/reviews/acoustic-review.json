@@ -1,0 +1,57 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "ACOUSTIC_REDUCTION_RESOLUTION_EVIDENCE_CORROBORATED_NOT_CONTRACT_ACCEPTANCE",
+  "published_candidate": "7c8ed3b2c2726633f8376f9b4fc52d1dd906e959",
+  "summary_sha256": "69163fb42fb9d6e92044926658fcfbc3f2861f8c6c47bbee3530f45b8c501b80",
+  "README_sha256": "a75e0ea2d57206091bc6f37ba3b3e940c9fc1db9449f092263fa978fc33888a2",
+  "qualification_replay": "Actual independent replay19.2676s; every interval/normalization/source binding exactly matches saved certificate. Only output location redirected.",
+  "prior_authorship_disclosure": "Original upstream qualifier was authored by this reviewer and independently reviewed in the prior baseline; current review verifies the other-author N1600 coverage adaptation, identity and replay, not a new independent approval of the original mathematical derivation.",
+  "rows": [
+    {
+      "CFL": 0.05,
+      "raw_sha256": "66e1ac5482c7d6a8bd3106d6610f51a2234ccb7a6906fe2dd8f622090c06c2e8",
+      "steps": 32034,
+      "recorded_elapsed_seconds": 34.33329487685114,
+      "both_epsilon_recomputed": {
+        "1e-05": {
+          "absolute": 0.000475017484483683,
+          "relative": 0.0063696695706933594,
+          "phase": 0.00027435717774763457
+        },
+        "5e-06": {
+          "absolute": 0.000475017484483683,
+          "relative": 0.0063696695706933594,
+          "phase": 0.00027435717774763457
+        }
+      },
+      "folded_difference": 8.562024545708425e-13
+    },
+    {
+      "CFL": 0.1,
+      "raw_sha256": "9f7d2072502f886851ded9e086a6c7620c87212e620024a9cdbc70affcc70728",
+      "steps": 16069,
+      "recorded_elapsed_seconds": 18.830929821822792,
+      "both_epsilon_recomputed": {
+        "1e-05": {
+          "absolute": 0.00048211307413586704,
+          "relative": 0.006467753296995031,
+          "phase": 0.0002787886572358938
+        },
+        "5e-06": {
+          "absolute": 0.00048211307413586704,
+          "relative": 0.006467753296995031,
+          "phase": 0.0002787886572358938
+        }
+      },
+      "folded_difference": 8.574348265579184e-13
+    }
+  ],
+  "findings": [],
+  "limits": [
+    "Proposed obligations table is explicit and preserves historical failures. It is not yet adjudicated; no existing failed row becomes retroactivePASS.",
+    "Only reduction proves sufficient diagnostic resolution. Two CFL values show sensitivity, not temporal order or rigorous zero-dt error.",
+    "Both epsilon normalized results follow positive homogeneity of dimensionless reduction; nonlinear kernel must run both independently.",
+    "Independent metrics here include complex-addition rounding for total reference, which the scalar report omits as an explicit separate term; full gates remain satisfied with it.",
+    "No S06/VAL010 acceptance, practical kernel cost decision, experimental or predictive claim."
+  ]
+}

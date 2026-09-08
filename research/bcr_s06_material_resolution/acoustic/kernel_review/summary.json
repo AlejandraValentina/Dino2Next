@@ -1,0 +1,107 @@
+{
+  "reviewer": "/root/s01_reviewer",
+  "result": "FOUR_CONFIRMATIONS_REVIEWED_NOT_FULL_R4_ACCEPTANCE",
+  "completed_count": 4,
+  "pending": [],
+  "completed_results": [
+    {
+      "case": "free-full",
+      "CFL": 0.05,
+      "epsilon": 1e-05,
+      "result": "OBSERVATION_AND_LEDGER_PASS_CORROBORATED",
+      "failed_samples": [],
+      "recorded_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+      "raw_sha256": "26981c7ddd745545f04800f3272b754215e553c55b274419172a793bfb8706ee",
+      "steps": 32100,
+      "retries": 0
+    },
+    {
+      "case": "free-half",
+      "CFL": 0.05,
+      "epsilon": 5e-06,
+      "result": "OBSERVATION_AND_LEDGER_PASS_CORROBORATED",
+      "failed_samples": [],
+      "recorded_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+      "raw_sha256": "da54f9a37ff8225b37ac21af47a620618d49808a844d1543f350942e00776ae8",
+      "steps": 32100,
+      "retries": 0
+    },
+    {
+      "case": "free-full",
+      "CFL": 0.1,
+      "epsilon": 1e-05,
+      "result": "OBSERVATION_AND_LEDGER_PASS_CORROBORATED",
+      "failed_samples": [],
+      "recorded_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+      "raw_sha256": "944e2db55e9d0aec0875ede608226aa9e73b734c74573f048fa0b74872541d48",
+      "steps": 16100,
+      "retries": 0
+    },
+    {
+      "case": "free-half",
+      "CFL": 0.1,
+      "epsilon": 5e-06,
+      "result": "OBSERVATION_AND_LEDGER_PASS_CORROBORATED",
+      "failed_samples": [],
+      "recorded_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+      "raw_sha256": "e697825d789f122bae9ad15f3e3fa25e8d3108cc894d31eb279e4c4edb275c61",
+      "steps": 16100,
+      "retries": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "CFL_SENSITIVITY_NOT_TEMPORAL_ORDER",
+      "epsilon": 1e-05,
+      "max_coefficient_difference_over_A0": [
+        3.5022619085880444e-06,
+        3.527187950978694e-06,
+        7.028175413107131e-06
+      ]
+    },
+    {
+      "kind": "CFL_SENSITIVITY_NOT_TEMPORAL_ORDER",
+      "epsilon": 5e-06,
+      "max_coefficient_difference_over_A0": [
+        3.458381698968859e-06,
+        3.5059211536287705e-06,
+        6.9590798645158285e-06
+      ]
+    },
+    {
+      "kind": "EPSILON_HALVING_NORMALIZED_DIFFERENCE_NOT_ERROR_SUBTRACTION",
+      "CFL": 0.05,
+      "max_time_mean_absolute_rho_u_p": [
+        2.2070130237250574e-06,
+        2.565962686565368e-06,
+        3.0470413692196274e-06
+      ],
+      "max_pointwise_rho_u_p": [
+        5.378620882012797e-05,
+        6.947363215981106e-05,
+        7.531101298141607e-05
+      ]
+    },
+    {
+      "kind": "EPSILON_HALVING_NORMALIZED_DIFFERENCE_NOT_ERROR_SUBTRACTION",
+      "CFL": 0.1,
+      "max_time_mean_absolute_rho_u_p": [
+        2.2012039205265843e-06,
+        2.5551610619239154e-06,
+        3.0366201983489383e-06
+      ],
+      "max_pointwise_rho_u_p": [
+        5.38184052878421e-05,
+        6.947768978160518e-05,
+        7.533301760176414e-05
+      ]
+    }
+  ],
+  "limits": [
+    "No solver execution by auditor; only completed cost exit0, execution record, assessment, all101 raw and fully hash-checked streaming traces are eligible.",
+    "A proposed N1600 obligation is not the original R4 battery and does not retrospectively approve failed historical resolutions or S06.",
+    "Ledger bound uses original cumulative boundary/source terms and denominator abs(initial inventory)+Qref, omitting positive throughput. It is a stricter upper bound, not exact original ST003 normalization.",
+    "GNU time figures are per process with four concurrent kernel jobs; do not interpret as isolated wall-clock benchmarks.",
+    "Two CFL values show sensitivity only; both amplitudes actually executed; no normalized remainder subtracted for acceptance."
+  ]
+}

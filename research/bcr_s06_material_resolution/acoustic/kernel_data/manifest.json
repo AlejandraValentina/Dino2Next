@@ -1,0 +1,193 @@
+{
+  "classification": "FOUR_DIAGNOSTIC_CONFIRMATIONS_NOT_FULL_BATTERY_ACCEPTANCE",
+  "members": [
+    {
+      "path": "N1600-CFL0.05-eps1e-5/cost.txt",
+      "size": 963,
+      "sha256": "35f6cdedad9577e5c7c39efd4cf98a6a4710d6bb8ad51d285d89efadda95e814"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05-limiters.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05-observation-assessment.json",
+      "size": 161868,
+      "sha256": "eb4ec64e7b1ddb6e17a7166b943799b293bb45f9bad889f302c3eff20bc64b24"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05-rejections.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05.json",
+      "size": 142625,
+      "sha256": "26bd14d44a8fdcdff8fd8588db2734d10f894a4204854346db782aaa753ef4ac"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05.npz",
+      "size": 3738877,
+      "sha256": "26981c7ddd745545f04800f3272b754215e553c55b274419172a793bfb8706ee"
+    },
+    {
+      "path": "N1600-CFL0.05-eps1e-5/run.log",
+      "size": 98,
+      "sha256": "11b1e86de7974501ff62145e2229ce583ad0ea208a9c10be9ee58b22a8d5dad0"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/cost.txt",
+      "size": 962,
+      "sha256": "933c74896957dee05a5fe5955c267c01205b6ac428752630b62a4e1e503d82be"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05-limiters.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05-observation-assessment.json",
+      "size": 162189,
+      "sha256": "f12fdb5bdf232bbbc16acae8404ebdb67c2c4b5914e855887210b6220cfdf914"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05-rejections.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05.json",
+      "size": 142659,
+      "sha256": "d2d2a7e1b5b87793eec6e63fd1d7c8767f4486c85a5936ccd899b0618a6e7d97"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05.npz",
+      "size": 3723315,
+      "sha256": "da54f9a37ff8225b37ac21af47a620618d49808a844d1543f350942e00776ae8"
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/run.log",
+      "size": 98,
+      "sha256": "42fd35aacac02c61170556ef4ebdbf30fb35949170a9ce711ba4c353cfeee16f"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/cost.txt",
+      "size": 959,
+      "sha256": "4318c13693f9ba00e3a9704a26fee99632249172599117318d5bcd156dc8710c"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1-limiters.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1-observation-assessment.json",
+      "size": 161868,
+      "sha256": "a804ba6d0a3e1f4264d14fae390359a9b7042a20548757415a6abe4dd4455707"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1-rejections.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1.json",
+      "size": 142656,
+      "sha256": "bca5d3026d34c54beed233bd2ac453463f192e371bb4c2fa16d2d9531c18b849"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1.npz",
+      "size": 3686530,
+      "sha256": "944e2db55e9d0aec0875ede608226aa9e73b734c74573f048fa0b74872541d48"
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/run.log",
+      "size": 96,
+      "sha256": "ebbe88583c38b870206cd442d4bee08662298ee856b8630a524b6576569fae56"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/cost.txt",
+      "size": 960,
+      "sha256": "f2ee76cbf473e61aae37f00bbf825e6c2000f2554b4d891e9c3c2e20b3957c1a"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1-limiters.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1-observation-assessment.json",
+      "size": 162173,
+      "sha256": "46559c04bab470f544805215f3c541f93838390de325e02748df47681a791ca6"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1-rejections.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1.json",
+      "size": 142665,
+      "sha256": "61b3ef035502125004d2423c3a3d64ba4a46babdbc297dbf866227507c7e255a"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1.npz",
+      "size": 3658005,
+      "sha256": "e697825d789f122bae9ad15f3e3fa25e8d3108cc894d31eb279e4c4edb275c61"
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/run.log",
+      "size": 96,
+      "sha256": "ef419b9bdad2bda9f7dca6c12c9c122dd7cbd4c1c193d26659d517c9b148d887"
+    }
+  ],
+  "omitted_full_step_streams": [
+    {
+      "path": "N1600-CFL0.05-eps1e-5/free-full-N1600-CFL0.05-steps.jsonl.gz",
+      "size": 423169845,
+      "sha256": "3636149561748fbed9aaa01477798f8bcaa4bd4c4f0479edeeacb9ed5325676d",
+      "reason": "Large full step stream audited independently; minimum portable package retains its hash and the full audit report, not the stream."
+    },
+    {
+      "path": "N1600-CFL0.05-eps5e-6/free-half-N1600-CFL0.05-steps.jsonl.gz",
+      "size": 389812992,
+      "sha256": "3250c17bb06498ad47e49d1e84b57f5b9f698d25b27aee498a0e8b7c29fb12ba",
+      "reason": "Large full step stream audited independently; minimum portable package retains its hash and the full audit report, not the stream."
+    },
+    {
+      "path": "N1600-CFL0.1-eps1e-5/free-full-N1600-CFL0.1-steps.jsonl.gz",
+      "size": 336238597,
+      "sha256": "5e802193d15807958b73b6922bf8b8d4865f2d22ea931bfcfd8f5f7731ea4db3",
+      "reason": "Large full step stream audited independently; minimum portable package retains its hash and the full audit report, not the stream."
+    },
+    {
+      "path": "N1600-CFL0.1-eps5e-6/free-half-N1600-CFL0.1-steps.jsonl.gz",
+      "size": 318867445,
+      "sha256": "b6c1dc3496fd63d56d495136765f17d5c4917cb2d7e4acb453b61c4b0e40899a",
+      "reason": "Large full step stream audited independently; minimum portable package retains its hash and the full audit report, not the stream."
+    }
+  ],
+  "recorded_tree": "6654f11dd9e564aebfab2f0fd3bf94216415fc59",
+  "published_equivalent_commit": "2d04c16fc77b603596f7db04a8ed7d35953afa17"
+}

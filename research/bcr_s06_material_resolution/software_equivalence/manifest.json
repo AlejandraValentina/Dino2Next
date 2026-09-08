@@ -1,0 +1,259 @@
+{
+  "classification": "SOFTWARE_EQUIVALENCE_NOT_NUMERICAL_ACCEPTANCE",
+  "implementation_commit": "2d04c16fc77b603596f7db04a8ed7d35953afa17",
+  "equivalent_local_commit": "eadf7ba1f1f3208076347e38ecaac056f2e8755b",
+  "tree": "6654f11dd9e564aebfab2f0fd3bf94216415fc59",
+  "zip_sha256": "5f5c25752f56c83281292a328056cc6f545272818bf0320c5b4861f491e90758",
+  "entries": [
+    {
+      "path": "artifacts/S06-exact-sums/gamma30-original-trace.json",
+      "size": 33734605,
+      "sha256": "31bee7ecad22aa31c4c0d15c522959707e93b33844cdcf6ad8c0a7b26531faa9"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/gamma30-original.npz",
+      "size": 2676130,
+      "sha256": "2ff496b5d14f5df53ba140060c4e0bbf71cc404df9b34eef621783c60507e93e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/gamma30-sparse-trace.json",
+      "size": 33734605,
+      "sha256": "31bee7ecad22aa31c4c0d15c522959707e93b33844cdcf6ad8c0a7b26531faa9"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/gamma30-sparse.npz",
+      "size": 2676130,
+      "sha256": "2ff496b5d14f5df53ba140060c4e0bbf71cc404df9b34eef621783c60507e93e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/independent-checks.json",
+      "size": 187,
+      "sha256": "8ebcfdcf736349a7b15bb1db6746e02617278940d70e84abe00d05e19e22f256"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/independent-review.json",
+      "size": 2874,
+      "sha256": "a32fa95f2a6d6634f9d08cafd3ab3f79ae4586e51a74f866bbbb0ac9412f39b6"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/independent-tests.log",
+      "size": 99,
+      "sha256": "6bfdd8fccdaa6db05097545f7cde2f5cca8a8730157847e67b6b870fa5808110"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/NASA1-original-trace.json",
+      "size": 438843,
+      "sha256": "37ea63dcd3dc555127bf49914e07578d307207883fad0cffa855e22ae398398f"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/NASA1-original.npz",
+      "size": 8264,
+      "sha256": "a121c232d1fabd1b68e5d39fcc0d6d2817f1aea56347ebc18cd63ecaa48ba491"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/NASA1-sparse-trace.json",
+      "size": 438843,
+      "sha256": "37ea63dcd3dc555127bf49914e07578d307207883fad0cffa855e22ae398398f"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/NASA1-sparse.npz",
+      "size": 8264,
+      "sha256": "a121c232d1fabd1b68e5d39fcc0d6d2817f1aea56347ebc18cd63ecaa48ba491"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/original_numerics.py",
+      "size": 35417,
+      "sha256": "c9d513317f7a11ead0da1bf90e22b9333c64a343d267d638e99ae69978a35149"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/pilot-report.json",
+      "size": 3058,
+      "sha256": "c6d07820c3ce6122fa876959ba2f22bf09eb5287c3b19f36d6b9c42fc98a2fb2"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/pilot.log",
+      "size": 211,
+      "sha256": "04a6eba42d1a091eff9b983e6047e15188e165feb53b693813fcb6b3970a8ff9"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/pilot.py",
+      "size": 5189,
+      "sha256": "907953ae77e2144643a0c702ac0702f12b5777feddda4a3a019746aed8939275"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/PLAN.md",
+      "size": 1084,
+      "sha256": "017ba8f1973064094f4f8d795f7264e2d3484310ffd578f1704ecdfd3c8bd6c1"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/reviewer_check.py",
+      "size": 2847,
+      "sha256": "599ab8eb43836464cb71a92b1c4559a7501bd264b239280f70ef4e9123c6d04e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/check_observation_bridge.py",
+      "size": 1813,
+      "sha256": "31b6545d38ac14c703212fda861bb64db49748fa609115a282b9d7d9b5b6a403"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-original/software-storage-sod-with-injected-retry-N40-CFL0.05.json",
+      "size": 472070,
+      "sha256": "b004dceb6f0b41ddf97cf5b3930c7ec863fa16bf6276c8b9927cfa64966f0127"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-original/software-storage-sod-with-injected-retry-N40-CFL0.05.npz",
+      "size": 32477,
+      "sha256": "e4388fae2f00365b38330cfaff5ad0b91dc731e794f1b8c60119bd27da215496"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-path-report.json",
+      "size": 419,
+      "sha256": "c9f4fe011526ff8789bb909da29c28632baf8e7737c4f5971189d462bd161b0e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-path.log",
+      "size": 419,
+      "sha256": "c9f4fe011526ff8789bb909da29c28632baf8e7737c4f5971189d462bd161b0e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05-limiters.jsonl.gz",
+      "size": 816,
+      "sha256": "efee1875c1212e647d757e494ff21191bbda683cd4673c60fb2cdad744908a44"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05-rejections.jsonl.gz",
+      "size": 146,
+      "sha256": "47be6f7f2de9b9dbbde05d07d66ed793eff02430ffeb18d6bea115d540e09925"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05-steps.jsonl.gz",
+      "size": 2971,
+      "sha256": "81bab61d79ed2721c6718af720fe32fe63f4e70cee401610aec0dcc676f587e4"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05.json",
+      "size": 124920,
+      "sha256": "c0e7582031d3194edbf01ddc100d906f961a2cc235bad902bbb92b657e13cd2e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/control-streamed/software-storage-sod-with-injected-retry-N40-CFL0.05.npz",
+      "size": 32477,
+      "sha256": "e4388fae2f00365b38330cfaff5ad0b91dc731e794f1b8c60119bd27da215496"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/driver.py",
+      "size": 6653,
+      "sha256": "52dc412ad7b2d35b24c0bbf02edf09030e00e95d6df0f5c2731741f179096a61"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/independent-review.json",
+      "size": 1520,
+      "sha256": "d408564c98daee4824b62a158740115c33a6590d30c361c74ab5c37fcb41331b"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/independent-review.log",
+      "size": 1354,
+      "sha256": "eede651f60095f446bdae1ce1c403ec56c434f46482ffb2eab002c0ccc8104f3"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/independent_check.py",
+      "size": 2968,
+      "sha256": "93a387ff2e2777ce1b004e9eee09df38fd0b0ff497cadd3783ad74a79f8cd445"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/observation-bridge-report.json",
+      "size": 522,
+      "sha256": "33b2ee469c8a231547dc65f955af29b0df2a4643dd45e8ddeb748f21642aacac"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/observation-bridge.log",
+      "size": 522,
+      "sha256": "33b2ee469c8a231547dc65f955af29b0df2a4643dd45e8ddeb748f21642aacac"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/original/software-storage-pilot-shortened-free-N40-CFL0.05.json",
+      "size": 726281,
+      "sha256": "7008cf3b64459932a3849753a4aafe2367ae2c82c4aa1b716a6e1f98fafb3588"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/original/software-storage-pilot-shortened-free-N40-CFL0.05.npz",
+      "size": 86134,
+      "sha256": "67739bab752bff495c17d5fb8c89df37da19b5d2bcdf96ede88082b199d0b54b"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/pilot-report.json",
+      "size": 951,
+      "sha256": "92d3a61166746e02fe8c838dd486b7ac0d854458bcc60c432405e8251f3449f7"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/pilot.log",
+      "size": 951,
+      "sha256": "92d3a61166746e02fe8c838dd486b7ac0d854458bcc60c432405e8251f3449f7"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/pilot.py",
+      "size": 2293,
+      "sha256": "59fcc5b86c54df72a7ae1b3fad057d85b4ebcbd4fa763ae6959f0241d568c1ed"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/pilot_control_paths.py",
+      "size": 1903,
+      "sha256": "aad8bfde8ebf576af72d93a6d29cd32c935a9e2958c5c5f0e198a28f3a1bb83e"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/PLAN.md",
+      "size": 1589,
+      "sha256": "f54a77c4f859d4d8cf657657433cdb564951cdda5d972d080d94aea68c11b6cd"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/RESULTS.md",
+      "size": 3298,
+      "sha256": "653cd1e62ee24f70ecccff87a4449d75ddbedb8b05d47dd62d31530ac130cf16"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/run.py",
+      "size": 1180,
+      "sha256": "0a282e5d064dec07695ac01f01bc49909edf473f7092ae936b6056a343768e28"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05-limiters.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05-rejections.jsonl.gz",
+      "size": 20,
+      "sha256": "458c5a203299dd326aa747fee1bbc7709bfbd560507d1603459d9f7d9eb6be76"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05-steps.jsonl.gz",
+      "size": 36058,
+      "sha256": "a598e00da5e4c5f4815ebe2b4a4a56185a88417add7c3e912657d80cf789aa65"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05-storage-adapted.py",
+      "size": 6315,
+      "sha256": "fb229ef4f5c704bc856934c8f521527675b2f0794031f324e32c0a3ef163a262"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05.json",
+      "size": 142122,
+      "sha256": "38e7b392a814dc692d89ed7728acd95bfb14ec6be5c71b270ccf1ba5a9e5c0f0"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/streaming/streamed/software-storage-pilot-shortened-free-N40-CFL0.05.npz",
+      "size": 86134,
+      "sha256": "67739bab752bff495c17d5fb8c89df37da19b5d2bcdf96ede88082b199d0b54b"
+    },
+    {
+      "path": "artifacts/S06-exact-sums/tests.log",
+      "size": 98,
+      "sha256": "90d9370f450c12eb76e48644d868e2458d10c22d5371a726ad49a853390a4a97"
+    }
+  ]
+}

@@ -1,0 +1,1027 @@
+{
+  "classification": "INDEPENDENT_RESOLUTION_PROTOTYPE_NOT_KERNEL_ACCEPTANCE",
+  "result": "SUFFICIENT_LINEAR_RESOLUTION_FOR_BOUNDED_KERNEL_CONFIRMATION",
+  "epsilon_coverage": [
+    1e-05,
+    5e-06
+  ],
+  "epsilon_basis": "Exact positive homogeneity of dimensionless reduction; nonlinear kernel must execute both.",
+  "levels": [
+    {
+      "N": 1600,
+      "CFL": 0.05,
+      "steps": 32034,
+      "elapsed_seconds": 34.33329487685114,
+      "failed_samples": [],
+      "maxima": {
+        "incident": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              0.4997618504381802,
+              0.08935765494748742
+            ],
+            "Cref_over_A0": [
+              0.4999993574479453,
+              0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00023751245305348793,
+            "relative_amplitude_error": 0.0004608659179581107,
+            "phase_error_radians": 7.918643124703997e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00023751253331687062,
+            "relative_amplitude_upper": 0.00046086599903750824,
+            "phase_upper": 7.918651228908802e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_error": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012132495297308652,
+              0.0009344143479288485
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.709008904431319e-05,
+            "relative_amplitude_error": 0.006369666144690358,
+            "phase_error_radians": 0.0002743537734290172,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.709014289823722e-05,
+            "relative_amplitude_upper": 0.0063696695706933594,
+            "phase_upper": 0.00027435717774763457,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_error_radians": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012132495297308652,
+              0.0009344143479288485
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.709008904431319e-05,
+            "relative_amplitude_error": 0.006369666144690358,
+            "phase_error_radians": 0.0002743537734290172,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.709014289823722e-05,
+            "relative_amplitude_upper": 0.0063696695706933594,
+            "phase_upper": 0.00027435717774763457,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              0.4997618504381802,
+              0.08935765494748742
+            ],
+            "Cref_over_A0": [
+              0.4999993574479453,
+              0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00023751245305348793,
+            "relative_amplitude_error": 0.0004608659179581107,
+            "phase_error_radians": 7.918643124703997e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00023751253331687062,
+            "relative_amplitude_upper": 0.00046086599903750824,
+            "phase_upper": 7.918651228908802e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_upper": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012132495297308652,
+              0.0009344143479288485
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.709008904431319e-05,
+            "relative_amplitude_error": 0.006369666144690358,
+            "phase_error_radians": 0.0002743537734290172,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.709014289823722e-05,
+            "relative_amplitude_upper": 0.0063696695706933594,
+            "phase_upper": 0.00027435717774763457,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_upper": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012132495297308652,
+              0.0009344143479288485
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.709008904431319e-05,
+            "relative_amplitude_error": 0.006369666144690358,
+            "phase_error_radians": 0.0002743537734290172,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.709014289823722e-05,
+            "relative_amplitude_upper": 0.0063696695706933594,
+            "phase_upper": 0.00027435717774763457,
+            "diagnostic_threshold_pass": true
+          }
+        },
+        "reflected": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.5002368287715347,
+              -0.08936374107139052
+            ],
+            "Cref_over_A0": [
+              -0.4999993574479453,
+              -0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00023751354300343756,
+            "relative_amplitude_error": 0.00046179673106550603,
+            "phase_error_radians": 7.354103577950633e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00023751362326699968,
+            "relative_amplitude_upper": 0.00046179681214497903,
+            "phase_upper": 7.354111682155438e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_error": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011990104607379357,
+              -0.0009169972406448964
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.636213985672184e-05,
+            "relative_amplitude_error": 0.005482221042076352,
+            "phase_error_radians": 0.00026048394243338615,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.636219194456289e-05,
+            "relative_amplitude_upper": 0.005482224465058208,
+            "phase_upper": 0.0002604873467520035,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_error_radians": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011990104607379357,
+              -0.0009169972406448964
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.636213985672184e-05,
+            "relative_amplitude_error": 0.005482221042076352,
+            "phase_error_radians": 0.00026048394243338615,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.636219194456289e-05,
+            "relative_amplitude_upper": 0.005482224465058208,
+            "phase_upper": 0.0002604873467520035,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.5002368287715347,
+              -0.08936374107139052
+            ],
+            "Cref_over_A0": [
+              -0.4999993574479453,
+              -0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00023751354300343756,
+            "relative_amplitude_error": 0.00046179673106550603,
+            "phase_error_radians": 7.354103577950633e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00023751362326699968,
+            "relative_amplitude_upper": 0.00046179681214497903,
+            "phase_upper": 7.354111682155438e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_upper": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011990104607379357,
+              -0.0009169972406448964
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.636213985672184e-05,
+            "relative_amplitude_error": 0.005482221042076352,
+            "phase_error_radians": 0.00026048394243338615,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.636219194456289e-05,
+            "relative_amplitude_upper": 0.005482224465058208,
+            "phase_upper": 0.0002604873467520035,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_upper": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011990104607379357,
+              -0.0009169972406448964
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.636213985672184e-05,
+            "relative_amplitude_error": 0.005482221042076352,
+            "phase_error_radians": 0.00026048394243338615,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.636219194456289e-05,
+            "relative_amplitude_upper": 0.005482224465058208,
+            "phase_upper": 0.0002604873467520035,
+            "diagnostic_threshold_pass": true
+          }
+        },
+        "pressure": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.00047497833335449443,
+              -6.086123903094492e-06
+            ],
+            "Cref_over_A0": [
+              0.0,
+              0.0
+            ],
+            "abs_Cref_over_A0": 0.0,
+            "absolute_error_over_A0": 0.0004750173239581658,
+            "relative_amplitude_error": null,
+            "phase_error_radians": null,
+            "phase_defined": false,
+            "phase_eligible": false,
+            "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+            "absolute_error_upper_over_A0": 0.000475017484483683,
+            "relative_amplitude_upper": null,
+            "phase_upper": null,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.00047497833335449443,
+              -6.086123903094492e-06
+            ],
+            "Cref_over_A0": [
+              0.0,
+              0.0
+            ],
+            "abs_Cref_over_A0": 0.0,
+            "absolute_error_over_A0": 0.0004750173239581658,
+            "relative_amplitude_error": null,
+            "phase_error_radians": null,
+            "phase_defined": false,
+            "phase_eligible": false,
+            "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+            "absolute_error_upper_over_A0": 0.000475017484483683,
+            "relative_amplitude_upper": null,
+            "phase_upper": null,
+            "diagnostic_threshold_pass": true
+          }
+        }
+      },
+      "bounded_vs_folded_max_C_over_A0": 8.562024545708425e-13,
+      "raw_sha256": "66e1ac5482c7d6a8bd3106d6610f51a2234ccb7a6906fe2dd8f622090c06c2e8",
+      "code_sha256": "9921eb7b698aa3915e08c303e0d3ac8cc750cde2a2bd1e2b138e9eef1de99755"
+    },
+    {
+      "N": 1600,
+      "CFL": 0.1,
+      "steps": 16069,
+      "elapsed_seconds": 18.830929821822792,
+      "failed_samples": [],
+      "maxima": {
+        "incident": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              0.49975830295002177,
+              0.08935760959614238
+            ],
+            "Cref_over_A0": [
+              0.4999993574479453,
+              0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00024106016789153268,
+            "relative_amplitude_error": 0.00046775691849485504,
+            "phase_error_radians": 8.032837557666353e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00024106024873895605,
+            "relative_amplitude_upper": 0.00046775699957481105,
+            "phase_upper": 8.032845661871157e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_error": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012133673624362932,
+              0.0009345591888143742
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.827728134445686e-05,
+            "relative_amplitude_error": 0.006467749870658121,
+            "phase_error_radians": 0.0002787852529172764,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.82773353938218e-05,
+            "relative_amplitude_upper": 0.006467753296995031,
+            "phase_upper": 0.0002787886572358938,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_error_radians": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012133673624362932,
+              0.0009345591888143742
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.827728134445686e-05,
+            "relative_amplitude_error": 0.006467749870658121,
+            "phase_error_radians": 0.0002787852529172764,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.82773353938218e-05,
+            "relative_amplitude_upper": 0.006467753296995031,
+            "phase_upper": 0.0002787886572358938,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              0.49975830295002177,
+              0.08935760959614238
+            ],
+            "Cref_over_A0": [
+              0.4999993574479453,
+              0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00024106016789153268,
+            "relative_amplitude_error": 0.00046775691849485504,
+            "phase_error_radians": 8.032837557666353e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00024106024873895605,
+            "relative_amplitude_upper": 0.00046775699957481105,
+            "phase_upper": 8.032845661871157e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_upper": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012133673624362932,
+              0.0009345591888143742
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.827728134445686e-05,
+            "relative_amplitude_error": 0.006467749870658121,
+            "phase_error_radians": 0.0002787852529172764,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.82773353938218e-05,
+            "relative_amplitude_upper": 0.006467753296995031,
+            "phase_upper": 0.0002787886572358938,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_upper": {
+            "sample": 83,
+            "time": 0.7014780314246688,
+            "C_over_A0": [
+              0.012133673624362932,
+              0.0009345591888143742
+            ],
+            "Cref_over_A0": [
+              0.01205595876839251,
+              0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 7.827728134445686e-05,
+            "relative_amplitude_error": 0.006467749870658121,
+            "phase_error_radians": 0.0002787852529172764,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 7.82773353938218e-05,
+            "relative_amplitude_upper": 0.006467753296995031,
+            "phase_upper": 0.0002787886572358938,
+            "diagnostic_threshold_pass": true
+          }
+        },
+        "reflected": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.5002403762903471,
+              -0.08936378656069041
+            ],
+            "Cref_over_A0": [
+              -0.4999993574479453,
+              -0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00024106128983744133,
+            "relative_amplitude_error": 0.00046868801432356955,
+            "phase_error_radians": 7.46806026367154e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00024106137068504943,
+            "relative_amplitude_upper": 0.000468688095403601,
+            "phase_upper": 7.468068367876345e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_error": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011989150858914964,
+              -0.0009168808789616023
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.732295769077442e-05,
+            "relative_amplitude_error": 0.005561603420218347,
+            "phase_error_radians": 0.0002640844474697333,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.73230099367896e-05,
+            "relative_amplitude_upper": 0.0055616068434704465,
+            "phase_upper": 0.00026408785178835066,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_error_radians": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011989150858914964,
+              -0.0009168808789616023
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.732295769077442e-05,
+            "relative_amplitude_error": 0.005561603420218347,
+            "phase_error_radians": 0.0002640844474697333,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.73230099367896e-05,
+            "relative_amplitude_upper": 0.0055616068434704465,
+            "phase_upper": 0.00026408785178835066,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.5002403762903471,
+              -0.08936378656069041
+            ],
+            "Cref_over_A0": [
+              -0.4999993574479453,
+              -0.08935926294870788
+            ],
+            "abs_Cref_over_A0": 0.5079216822730592,
+            "absolute_error_over_A0": 0.00024106128983744133,
+            "relative_amplitude_error": 0.00046868801432356955,
+            "phase_error_radians": 7.46806026367154e-05,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 0.00024106137068504943,
+            "relative_amplitude_upper": 0.000468688095403601,
+            "phase_upper": 7.468068367876345e-05,
+            "diagnostic_threshold_pass": true
+          },
+          "relative_amplitude_upper": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011989150858914964,
+              -0.0009168808789616023
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.732295769077442e-05,
+            "relative_amplitude_error": 0.005561603420218347,
+            "phase_error_radians": 0.0002640844474697333,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.73230099367896e-05,
+            "relative_amplitude_upper": 0.0055616068434704465,
+            "phase_upper": 0.00026408785178835066,
+            "diagnostic_threshold_pass": true
+          },
+          "phase_upper": {
+            "sample": 67,
+            "time": 0.5662533506681061,
+            "C_over_A0": [
+              -0.011989150858914964,
+              -0.0009168808789616023
+            ],
+            "Cref_over_A0": [
+              -0.01205595876839251,
+              -0.0009251925492795332
+            ],
+            "abs_Cref_over_A0": 0.012091406993333016,
+            "absolute_error_over_A0": 6.732295769077442e-05,
+            "relative_amplitude_error": 0.005561603420218347,
+            "phase_error_radians": 0.0002640844474697333,
+            "phase_defined": true,
+            "phase_eligible": true,
+            "phase_status": "ASSESSED",
+            "absolute_error_upper_over_A0": 6.73230099367896e-05,
+            "relative_amplitude_upper": 0.0055616068434704465,
+            "phase_upper": 0.00026408785178835066,
+            "diagnostic_threshold_pass": true
+          }
+        },
+        "pressure": {
+          "absolute_error_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.0004820733403254256,
+              -6.17696454803072e-06
+            ],
+            "Cref_over_A0": [
+              0.0,
+              0.0
+            ],
+            "abs_Cref_over_A0": 0.0,
+            "absolute_error_over_A0": 0.00048211291244224235,
+            "relative_amplitude_error": null,
+            "phase_error_radians": null,
+            "phase_defined": false,
+            "phase_eligible": false,
+            "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+            "absolute_error_upper_over_A0": 0.00048211307413586704,
+            "relative_amplitude_upper": null,
+            "phase_upper": null,
+            "diagnostic_threshold_pass": true
+          },
+          "absolute_error_upper_over_A0": {
+            "sample": 75,
+            "time": 0.6338656910463875,
+            "C_over_A0": [
+              -0.0004820733403254256,
+              -6.17696454803072e-06
+            ],
+            "Cref_over_A0": [
+              0.0,
+              0.0
+            ],
+            "abs_Cref_over_A0": 0.0,
+            "absolute_error_over_A0": 0.00048211291244224235,
+            "relative_amplitude_error": null,
+            "phase_error_radians": null,
+            "phase_defined": false,
+            "phase_eligible": false,
+            "phase_status": "ABSOLUTE_COMPLEX_GATE_ONLY",
+            "absolute_error_upper_over_A0": 0.00048211307413586704,
+            "relative_amplitude_upper": null,
+            "phase_upper": null,
+            "diagnostic_threshold_pass": true
+          }
+        }
+      },
+      "bounded_vs_folded_max_C_over_A0": 8.574348265579184e-13,
+      "raw_sha256": "9f7d2072502f886851ded9e086a6c7620c87212e620024a9cdbc70affcc70728",
+      "code_sha256": "9921eb7b698aa3915e08c303e0d3ac8cc750cde2a2bd1e2b138e9eef1de99755"
+    }
+  ],
+  "temporal_comparison": {
+    "incident": {
+      "max_coefficient_difference_over_A0": 3.5477780340440134e-06,
+      "sample": 75,
+      "differences_over_A0_all_samples": [
+        0.0,
+        1.2111858405047087e-09,
+        2.4223716172658752e-09,
+        3.6335574578670075e-09,
+        4.844737065522108e-09,
+        6.055915980218655e-09,
+        7.267094870543773e-09,
+        8.478278814776769e-09,
+        9.689464539587854e-09,
+        1.0900650298489436e-08,
+        1.2111836298674594e-08,
+        1.3323022214033405e-08,
+        1.4534208168730518e-08,
+        1.57454075266769e-08,
+        1.6956621150735627e-08,
+        1.8167834593211297e-08,
+        1.937904803488945e-08,
+        2.059026181489732e-08,
+        2.1801475306088005e-08,
+        2.3012689147353546e-08,
+        2.4223902816504614e-08,
+        2.5435116389651755e-08,
+        2.6646330052545257e-08,
+        2.785754360107203e-08,
+        2.906875716062064e-08,
+        3.0279970744270256e-08,
+        3.1491100838919e-08,
+        3.270223100964825e-08,
+        3.391336105702011e-08,
+        3.512449090061438e-08,
+        3.633562126935708e-08,
+        3.75467512555248e-08,
+        3.8757881505150816e-08,
+        3.996901155279483e-08,
+        4.118014152556894e-08,
+        4.239127132849027e-08,
+        4.3602401437128407e-08,
+        4.481353181670199e-08,
+        4.6024661775359194e-08,
+        4.7235791910548814e-08,
+        4.844692210768361e-08,
+        4.965805218692054e-08,
+        5.0869182010084624e-08,
+        5.208031213356692e-08,
+        5.329144225524059e-08,
+        5.450257229776018e-08,
+        5.5713702431535714e-08,
+        5.6924832576974804e-08,
+        5.81359626321639e-08,
+        5.934709282342959e-08,
+        6.055822407429854e-08,
+        6.176952889082309e-08,
+        6.298087276580365e-08,
+        6.419243049326149e-08,
+        6.540505029221193e-08,
+        6.66224688591242e-08,
+        6.785955834760439e-08,
+        6.916969778621368e-08,
+        7.072515195985239e-08,
+        7.302528757891413e-08,
+        7.737884287304975e-08,
+        8.695597382187379e-08,
+        1.0898191531549411e-07,
+        1.580265699702766e-07,
+        2.5685875772307616e-07,
+        4.3015928959623676e-07,
+        6.896329941693466e-07,
+        1.0104090254922152e-06,
+        1.3071091641727885e-06,
+        1.4313661730325921e-06,
+        1.218561057592481e-06,
+        6.47281367849505e-07,
+        8.835512719796954e-07,
+        2.0809543449529113e-06,
+        3.1161947464579883e-06,
+        3.5477780340440134e-06,
+        3.1935001069685353e-06,
+        2.181478736800151e-06,
+        9.191936362876431e-07,
+        6.326316773662151e-07,
+        1.3255590720551461e-06,
+        1.6150523577338233e-06,
+        1.5114419440873074e-06,
+        1.1871956574083195e-06,
+        8.117602462092489e-07,
+        4.922625565502104e-07,
+        2.6764250655966015e-07,
+        1.3137978909899584e-07,
+        5.850423543037862e-08,
+        2.371484033892888e-08,
+        8.772855048901269e-09,
+        2.967627719563666e-09,
+        9.194054382236113e-10,
+        2.612077134898608e-10,
+        6.812428822405726e-11,
+        1.632440069356413e-11,
+        3.5967719184608696e-12,
+        7.291948950912737e-13,
+        1.3679317955377137e-13,
+        2.215500013268808e-14,
+        4.63076057556714e-15
+      ]
+    },
+    "reflected": {
+      "max_coefficient_difference_over_A0": 3.5478104516104906e-06,
+      "sample": 75,
+      "differences_over_A0_all_samples": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.260918760725428e-19,
+        1.4175671915867714e-19,
+        2.529464351903067e-18,
+        2.2488149611326993e-17,
+        1.8048334642913637e-16,
+        1.3304723495946267e-15,
+        9.011107308929516e-15,
+        5.604755034519605e-14,
+        3.200338054786472e-13,
+        1.6769698677154796e-12,
+        8.060230322408927e-12,
+        3.5516562824964515e-11,
+        1.4338423830617406e-10,
+        5.299436081295724e-10,
+        1.7914922497849856e-09,
+        5.533016177473907e-09,
+        1.559005489297235e-08,
+        4.000111854214667e-08,
+        9.323587525283587e-08,
+        1.9676782669896286e-07,
+        3.742645869922237e-07,
+        6.372286766123421e-07,
+        9.608205736089845e-07,
+        1.2594851996711135e-06,
+        1.3840526200197986e-06,
+        1.166862578963897e-06,
+        5.707447223023599e-07,
+        8.527325876979546e-07,
+        2.07619345600404e-06,
+        3.1157652779185217e-06,
+        3.5478104516104906e-06,
+        3.194013701531628e-06,
+        2.186603461393737e-06,
+        9.527862787027018e-07,
+        7.178290108519258e-07,
+        1.3847045500612712e-06,
+        1.6706388711467226e-06,
+        1.568904935196248e-06,
+        1.2486513468557647e-06,
+        8.784686883649976e-07,
+        5.653410561185746e-07,
+        3.483236518391174e-07,
+        2.207172570468472e-07,
+        1.5624529849487826e-07,
+        1.2771347317756248e-07,
+        1.1647964980723964e-07,
+        1.1281525365220315e-07,
+        1.1225957107203113e-07,
+        1.1288519860730101e-07,
+        1.139196538441586e-07,
+        1.1508230900906306e-07,
+        1.1628140421734039e-07,
+        1.1748990645036619e-07,
+        1.187006188753391e-07,
+        1.1991180185455713e-07,
+        1.211230813698975e-07
+      ]
+    },
+    "pressure": {
+      "max_coefficient_difference_over_A0": 7.095588484427061e-06,
+      "sample": 75,
+      "differences_over_A0_all_samples": [
+        0.0,
+        1.2111858405047087e-09,
+        2.4223716172658752e-09,
+        3.6335574578670075e-09,
+        4.844737065522108e-09,
+        6.055915980218655e-09,
+        7.267094870543773e-09,
+        8.478278814776769e-09,
+        9.689464539587854e-09,
+        1.0900650298489436e-08,
+        1.2111836298674594e-08,
+        1.3323022214033405e-08,
+        1.4534208168730518e-08,
+        1.57454075266769e-08,
+        1.6956621150735627e-08,
+        1.8167834593211297e-08,
+        1.937904803488945e-08,
+        2.059026181489732e-08,
+        2.1801475306088005e-08,
+        2.3012689147353546e-08,
+        2.4223902816504614e-08,
+        2.5435116389651755e-08,
+        2.6646330052545257e-08,
+        2.785754360107203e-08,
+        2.906875716062064e-08,
+        3.0279970744270256e-08,
+        3.1491100838919e-08,
+        3.270223100964825e-08,
+        3.391336105702011e-08,
+        3.512449090061438e-08,
+        3.633562126935708e-08,
+        3.75467512555248e-08,
+        3.8757881505150816e-08,
+        3.996901155279483e-08,
+        4.118014152556894e-08,
+        4.239127132849027e-08,
+        4.3602401437128407e-08,
+        4.481353181670199e-08,
+        4.6024661775359194e-08,
+        4.7235791910548814e-08,
+        4.844692210768361e-08,
+        4.965805218692054e-08,
+        5.0869182010084624e-08,
+        5.208031213356692e-08,
+        5.329144225524059e-08,
+        5.450257229776018e-08,
+        5.5713702431535714e-08,
+        5.692483259139374e-08,
+        5.813596261858058e-08,
+        5.9347093024339864e-08,
+        6.055822540410036e-08,
+        6.17695378314078e-08,
+        6.298092819806616e-08,
+        6.419274252292465e-08,
+        6.540665770617793e-08,
+        6.663002932540784e-08,
+        6.789200474681835e-08,
+        6.929666384606877e-08,
+        7.11783170538613e-08,
+        7.450643828092222e-08,
+        8.187020446070723e-08,
+        9.986037892537996e-08,
+        1.440686305251007e-07,
+        2.4465516930727604e-07,
+        4.4575177859449587e-07,
+        7.944021419493629e-07,
+        1.3123417542980628e-06,
+        1.9479134157832815e-06,
+        2.5268899724484497e-06,
+        2.744928390098438e-06,
+        2.2481690735947106e-06,
+        8.107534638155977e-07,
+        1.4806597198143912e-06,
+        4.090087574286901e-06,
+        6.217574001756837e-06,
+        7.095588484427061e-06,
+        6.372719718905606e-06,
+        4.297282755172395e-06,
+        1.5947693856277715e-06,
+        8.974191017066848e-07,
+        2.5529896620332384e-06,
+        3.2025369580338596e-06,
+        3.032108592114929e-06,
+        2.4066691401758212e-06,
+        1.6715283302630781e-06,
+        1.044347227596356e-06,
+        6.0529215290433e-07,
+        3.429075766566968e-07,
+        2.0768015236647612e-07,
+        1.473924606230113e-07,
+        1.2360934127787323e-07,
+        1.1526867212883357e-07,
+        1.1304532298639927e-07,
+        1.1311634156740729e-07,
+        1.1398185101134389e-07,
+        1.1509761335377264e-07,
+        1.1628485033147945e-07,
+        1.174906171411537e-07,
+        1.1870075390119712e-07,
+        1.1991182388257433e-07,
+        1.2112308599899506e-07
+      ]
+    }
+  },
+  "temporal_limit": "Two fixed-N dt values show sensitivity and both pass. They do not establish temporal order or a rigorous dt=0 bound.",
+  "historical_status": "All N200/N400/N800 R4 failures remain failures; see historical/manifest.json and all-sample evidence.",
+  "kernel_status": "NOT_EXECUTED_BY_THIS_PROTOTYPE",
+  "source_hashes": {
+    "acoustic_reduction.py": "9921eb7b698aa3915e08c303e0d3ac8cc750cde2a2bd1e2b138e9eef1de99755",
+    "qualify_free.py": "808c094fc94f55b709ad712acb798ced3856a2b0fd9ee3f1ffd8c3a39dd30d86",
+    "reference.py": "eb6bbe9d2ef789e7d22c47480b566cfaed8772b3893bbfd4471bec7b738e54cb",
+    "observation.py": "fae2ff3bf9501d8a724e7638c320f578430c2a1517778ab24c9e6328b1637555",
+    "free_observation_qualification.json": "6c93cb36877803e5f133e7f2ad805548b2b8058d472a070fd95af4a3571e0887",
+    "summarize.py": "2cb49eb71b863b01243ac5e28281ad5d8ec52ecde0a0e8f21611b79400f2b088",
+    "upstream.json": "25fbb90a51272827b51a754e80b43df3fb0959981e9c305f0e9ecf21845dd7e9"
+  },
+  "proposed_obligations": "README.md; not adjudicated by its author."
+}

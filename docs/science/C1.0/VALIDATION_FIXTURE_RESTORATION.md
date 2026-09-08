@@ -121,3 +121,24 @@ TI-004 defines the runtime/reference identity and additional continuity/inversio
 ## R4 explicit amendments to historical fixture descriptions
 
 The earlier VF descriptions remain traceable historical sources. For current execution, SV-008 retains the physical window and adds causally derived computational guards; SV-009 updates only acoustic-extremum slopes with all VAL009 norms/thresholds intact; SV-010 replaces the undefined total-pressure relative operator with the fully specified directional operator; SV-027 adds dt=.000125 to the original four fixed steps and strengthens reference qualification. Exact current definitions are in the R4 executable catalogue/JSON and BCR-S06-VERIFICATION-CONTRACT. This is an explicit contract change, not a code-only correction.
+
+## C1.0-R5 bounded material and resolution adjudication
+
+BCR-S06-MATERIAL-RESOLUTION MR-008 selects the represented regional interior
+state and numerical route, retaining NASA TI-001..005 and physical pressure.
+MR-010 explicitly assigns the free-reflection precision obligations to its
+resolution table; historical R4 failures retain their original results.
+These clauses supersede only conflicting homogeneous-state assumptions for
+the represented regional route and the specified SV-010/free resolution
+obligations. R4 guard zones, unrelated physics, thresholds, masks, tails,
+operators and rigid-boundary obligations remain in force. The ordinary
+homogeneous route remains explicit; evidence reuse requires actual identity
+of consumed sources, state, arithmetic and reference, not merely equal fluxes.
+
+S06 delivers the additive S05 extension under the three exact file handoffs
+in its registry and must verify every affected gate. Interior selection does
+not implement or qualify material birth/exit, donor reversal or source/event
+coupling: their dependent consumers require explicit prior contracts and
+verification, with unsupported operations rejected transactionally. S01-S05
+historical acceptance remains; S06 acceptance, full-engine cost, experimental
+validation and predictive validation are not established by this adjudication.

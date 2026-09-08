@@ -1,0 +1,63 @@
+{
+  "classification": "DIRECTED_SHOCK_PAIR0_RATIO2_TWO_LEVEL_EVIDENCE_NOT_FULL_VAL008_ACCEPTANCE",
+  "levels": [
+    {
+      "N": 80,
+      "time_max_L1_upper": [
+        0.010317219353890328,
+        0.00928683507580712,
+        0.020015306754381044
+      ],
+      "time_max_L2": [
+        0.026894121238480822,
+        0.024381699796709396,
+        0.05061344428366841
+      ],
+      "stage_physical_checks": 489,
+      "max_causal_speed": 638.6977412519551,
+      "outer_ST003_max": 2.0883292185042512e-17,
+      "window_ST003_max": 6.022942364778447e-17,
+      "bitwise_all_sample_replay": true,
+      "kernel_elapsed_seconds": 52.73355166986585
+    },
+    {
+      "N": 160,
+      "time_max_L1_upper": [
+        0.005145447214783465,
+        0.00460912548341382,
+        0.00993794308206786
+      ],
+      "time_max_L2": [
+        0.018788403715298798,
+        0.017074423949524943,
+        0.035527932215968346
+      ],
+      "stage_physical_checks": 861,
+      "max_causal_speed": 638.6924872325542,
+      "outer_ST003_max": 1.2345986792126007e-16,
+      "window_ST003_max": 5.880233462354491e-17,
+      "bitwise_all_sample_replay": true,
+      "kernel_elapsed_seconds": 135.12730079237372
+    }
+  ],
+  "observed_time_max_L1_orders": [
+    1.0036858160654343,
+    1.0106939688612622,
+    1.0100845423978282
+  ],
+  "observed_final_L1_orders": [
+    1.0256244782497819,
+    1.0158245722877557,
+    1.0188087623484499
+  ],
+  "remaining": "Other eight shock parameter combinations and original full N80/160/320/640-CFL sequence remain unexecuted for this method; no reference/contract threshold changed. All previous ordinary-kernel failures preserved.",
+  "files": {
+    "shock-result.json": "497ab3603dd38d5d1c0d8c1103ac8a1b437155b7d81994baa737a2a8f2ddb5cb",
+    "shock-N160-result.json": "dc1172bdfabd29e81acba48053942527cce8cee8beb0f7eaf970a6b37be7c65c",
+    "shock-N80-assessment.json": "409d42ca4da5b5f8d59a707da8f6fbefb9fe16e882514227a0c981ab438a8268",
+    "shock-N160-assessment.json": "d739d52f9a6fcf70f771a26c04061fc2c98309f04b212173cc01fc39a0113bdb",
+    "assess_shock.py": "17083990f18a6790782edab89e188d47787aa22e12fcd06a9445595aa632cfca",
+    "shock_control.py": "f9faa9783a572ba4778ef761f25d4fdde80b0082b4f425bbf8dba2fdb5f2114e",
+    "hybrid-provenance.json": "8843243301fa397452df0623cd003a3a62058f4ae94a165cbdec3b29dd276a95"
+  }
+}

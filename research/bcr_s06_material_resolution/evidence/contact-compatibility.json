@@ -1,0 +1,194 @@
+{
+  "author": "/root/s01_reviewer",
+  "classification": "NO_TIME_INTEGRATION_COMPATIBILITY_DIAGNOSTIC",
+  "source_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "TS004_record_summary": {
+    "invocations": 7263,
+    "nonunit_sums": 153,
+    "max_abs_sum_pre_minus_one": 1.3322676295501878e-15,
+    "max_abs_post_pre": 1.3322676295501878e-15,
+    "stored_Q_byte_identity_asserted": true,
+    "records_sha256": "e16a1c136c9e6a7a490c3fdab7a346e79bd494c7b854d72ae37fca7505f07a0e"
+  },
+  "contact_cases": 9,
+  "control_fractions": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    1.0
+  ],
+  "control_rows": 63,
+  "requested_fraction_point": {
+    "pair": 1,
+    "velocity": 100.0,
+    "left_volume_fraction": 0.1,
+    "A_exact_pressure_average": 100000.0,
+    "B_pressure_of_conserved_average": 108880.81231309724,
+    "B_minus_A_Pa": 8880.812313097238,
+    "relative_B_minus_A": 0.08880812313097237,
+    "T_from_average": 1633.2121846964583,
+    "requested_diagnostic_pressure_Pa": 108880.8123128513,
+    "difference_from_requested_diagnostic_Pa": 2.4594191927462816e-07
+  },
+  "snapshot_samples": 36,
+  "snapshot_last_time": 0.00035000000000000005,
+  "snapshot_sha256": {
+    "json": "3ef75e9698cbf6a5761350e40d466a557806f1f402cfe0f07646fbe356e03b08",
+    "npz": "75ddbc7b68f5116fbcf78af1766e235199d15000e105734a80ece90f3c8b312d"
+  },
+  "source_sha256": {
+    "docs/science/C1.0/datasets/thermo_runtime_continuous_v1.json": "5b4d37b8821fcfac906fc2ff726945b6455049e229f16c56ba66b40bec0eda7a",
+    "docs/science/C1.0/datasets/thermo_species.json": "8f7b4d0b11d9a3828c11cfe3b167f5fa7b6103fd036ad6f239175260805ba050",
+    "docs/science/C1.0/datasets/thermo_transport.yaml": "1e92505751ed3a560a750993b86977847caa36e122e6aed0b3a9491cff6ecba4",
+    "research/bcr_s03_nasa_inversion/generate.py": "723d763319cd272c2eefb8afe0f551eacdfa71e330bf1711d33c3726984219a8",
+    "src/dino2next/thermo/__init__.py": "6aeab6e87099e364b3d07a5764612af8ad74c1912941a01cfa0f58702cdcdede",
+    "validation/fixtures/VAL-008/input.json": "d64f03d8a6bc81c2f793a7d9737031efcef810ddbaa3c33d6f1ea0a505b03810",
+    "docs/science/C1.0/TIME_EVENT_PERIODICITY_CONTRACT.md": "138ef1637cd367971f314680ab98fefeb9184ed9140b88a82d00898c2e8737b0"
+  },
+  "max_signed_decomposition_closure_Pa": 0.0,
+  "pure_exact_cells_max_abs_B_minus_A_Pa": 1.616863301023841e-07,
+  "pure_exact_cells_max_abs_C_minus_A_Pa": 3424.0815560082556,
+  "maxima": {
+    "total_L1": 0.0041552459631303265,
+    "total_Linf": 0.07744062529833055,
+    "representation_L1": 0.002177925629374705,
+    "representation_Linf": 0.21779256279761364,
+    "evolution_difference_L1": 0.006259164594540048,
+    "evolution_difference_Linf": 0.21409221299290992
+  },
+  "final_spatial_bands": [
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "mixed_exact_cell",
+      "cells": 1,
+      "min_C_minus_A_Pa": 370.03498047037283,
+      "max_C_minus_A_Pa": 370.03498047037283,
+      "max_abs_C_minus_A_Pa": 370.03498047037283,
+      "max_abs_B_minus_A_Pa": 21779.256279761365,
+      "max_abs_C_minus_B_Pa": 21409.22129929099,
+      "max_abs_u_minus_100": 0.567729107538625,
+      "CO2_fraction_min": 0.33959339694981655,
+      "CO2_fraction_max": 0.33959339694981655
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "all_exact_pure",
+      "cells": 99,
+      "min_C_minus_A_Pa": -1.616863301023841e-07,
+      "max_C_minus_A_Pa": 2392.624959669716,
+      "max_abs_C_minus_A_Pa": 2392.624959669716,
+      "max_abs_B_minus_A_Pa": 1.616863301023841e-07,
+      "max_abs_C_minus_B_Pa": 2392.6249598314025,
+      "max_abs_u_minus_100": 12.804451385595101,
+      "CO2_fraction_min": 0.0,
+      "CO2_fraction_max": 1.0
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "left_0_to_5dx",
+      "cells": 4,
+      "min_C_minus_A_Pa": 297.34287414081336,
+      "max_C_minus_A_Pa": 346.61784187138255,
+      "max_abs_C_minus_A_Pa": 346.61784187138255,
+      "max_abs_B_minus_A_Pa": 1.2126110959798098e-07,
+      "max_abs_C_minus_B_Pa": 346.61784175012144,
+      "max_abs_u_minus_100": 1.2432631525687867,
+      "CO2_fraction_min": 0.0,
+      "CO2_fraction_max": 0.08828465597442746
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "left_5_to_10dx",
+      "cells": 5,
+      "min_C_minus_A_Pa": 351.5078490243759,
+      "max_C_minus_A_Pa": 562.3212352090341,
+      "max_abs_C_minus_A_Pa": 562.3212352090341,
+      "max_abs_B_minus_A_Pa": 1.2126110959798098e-07,
+      "max_abs_C_minus_B_Pa": 562.321235087773,
+      "max_abs_u_minus_100": 2.014448017617937,
+      "CO2_fraction_min": 0.0,
+      "CO2_fraction_max": 0.0
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "left_beyond_10dx",
+      "cells": 44,
+      "min_C_minus_A_Pa": 7.108610589057207e-08,
+      "max_C_minus_A_Pa": 2316.033467783491,
+      "max_abs_C_minus_A_Pa": 2316.033467783491,
+      "max_abs_B_minus_A_Pa": 1.2126110959798098e-07,
+      "max_abs_C_minus_B_Pa": 2316.0334676622297,
+      "max_abs_u_minus_100": 8.233095013288363,
+      "CO2_fraction_min": 0.0,
+      "CO2_fraction_max": 0.0
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "right_0_to_5dx",
+      "cells": 5,
+      "min_C_minus_A_Pa": 287.76382036217547,
+      "max_C_minus_A_Pa": 383.0588968340453,
+      "max_abs_C_minus_A_Pa": 383.0588968340453,
+      "max_abs_B_minus_A_Pa": 1.616863301023841e-07,
+      "max_abs_C_minus_B_Pa": 383.05889699573163,
+      "max_abs_u_minus_100": 2.070900345744903,
+      "CO2_fraction_min": 0.716863096765001,
+      "CO2_fraction_max": 1.0
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "right_5_to_10dx",
+      "cells": 5,
+      "min_C_minus_A_Pa": 384.76233124795544,
+      "max_C_minus_A_Pa": 476.3872510945075,
+      "max_abs_C_minus_A_Pa": 476.3872510945075,
+      "max_abs_B_minus_A_Pa": 1.616863301023841e-07,
+      "max_abs_C_minus_B_Pa": 476.38725125619385,
+      "max_abs_u_minus_100": 2.573538528661558,
+      "CO2_fraction_min": 1.0,
+      "CO2_fraction_max": 1.0
+    },
+    {
+      "sample": 35,
+      "time": 0.00035000000000000005,
+      "band": "right_beyond_10dx",
+      "cells": 36,
+      "min_C_minus_A_Pa": -1.616863301023841e-07,
+      "max_C_minus_A_Pa": 2392.624959669716,
+      "max_abs_C_minus_A_Pa": 2392.624959669716,
+      "max_abs_B_minus_A_Pa": 1.616863301023841e-07,
+      "max_abs_C_minus_B_Pa": 2392.6249598314025,
+      "max_abs_u_minus_100": 12.804451385595101,
+      "CO2_fraction_min": 1.0,
+      "CO2_fraction_max": 1.0
+    }
+  ],
+  "observations": [
+    "A is the exact average of physical pressure100kPa. B is accepted EOS applied to exact conservative cell averages. C is accepted EOS applied to stored candidate Q. Signed identity C-A=(B-A)+(C-B) verified without subtracting representation error from the acceptance metric.",
+    "C-B measures difference associated with evolved candidate conserved states relative to exact averages; it is not a clean causal attribution to a particular flux, limiter, or temporal error.",
+    "In exact pure cells B=A to accepted inversion roundoff. Nonzero C-A there therefore cannot be attributed to nonlinear averaging within the exact cut cell; spatial bands expose pressure and velocity perturbations outside that cell.",
+    "Reference primitives and conservative averages reproduce the saved raw oracle; no time integrator, kernel, or candidate cache is imported. Local exact argument memoization only avoids repeating direct accepted EOS calls."
+  ],
+  "minimum_decision": [
+    "Maintain VERIFICATION_FAILURE_EXHIBITED and INCOMPLETE status for the preserved run; no full VAL008/S06 PASS.",
+    "A specification-level decision is needed on compatibility between the frozen primitive-pressure observable and the conservative one-state-per-cell representation at unresolved thermal/composition contacts. This diagnostic does not authorize a different observable or representation.",
+    "Additionally investigate evolved-state discrepancies outside the exact mixed cell; do not attribute all failed pressure to representation alone. No automatic method, tolerance, or physics changes."
+  ],
+  "artifacts_sha256": {
+    "contact-controls.csv": "38c383999678368196cd8eea90e20645ef9f3a85211fb90529ed1842cda32247",
+    "spatial-bands.csv": "1c3c586d6c8b01beb7918d71804bb3f538dc9d9aa09fdd2fbda12c2939a416a8",
+    "sample-decomposition.csv": "acfcd37635a8e20deb2611a7a7924f9e8a179831a0a690da64c1124fa8349e02",
+    "decomposition.npz": "76fc2a1eeadb294b657615f2688ca7110ef95c09de40cc93cc522054fb1c243e",
+    "control.py": "4946e20408abd9a66b10d2c0768c867a41fe58f514ca1e5987c9ac26ee7d9be8"
+  }
+}

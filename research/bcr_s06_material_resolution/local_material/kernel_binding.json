@@ -1,0 +1,7 @@
+{
+  "classification": "PINNED_RESEARCH_CONSUMER_OF_UNMERGED_S06_IMPLEMENTATION_NOT_MAIN_CONTRACT",
+  "upstream_base_commit": "cc5c4ed66a2f8ea94cdeeeeeb32aa39e6dceb161",
+  "source_sha256": "84e5fba185fabf8008936c6ca533d0610b8cb87aa87b48833cf3d821328bfac9",
+  "software_delta": "Independently reviewed exact sparse fsum optimization only; basecc5 plus delta identified by exact source hash.",
+  "source_path": "src/dino2next/numerics/__init__.py"
+}

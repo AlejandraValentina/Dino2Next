@@ -1,0 +1,17 @@
+{
+  "limits": [
+    "Approval of proposed normative text only, not adjudication authority for repository merge, completedVAL010/S06 or GEN1.",
+    "Final integrated BCR frozen source and coordinated contract bindings still require review; this does not preapprove later edits."
+  ],
+  "proposal_sha256": "2d2638c69180f343d514f319324a2ad386734592f1dfdc6ab14be2c36dddf8cc",
+  "independence": "Proposal authored by bcr_science_review. Reviewer audited actual four kernel runs and assessed proposed obligation wording; no self attribution of original reference qualification mathematics.",
+  "reviewer": "/root/s01_reviewer",
+  "result": "APPROVE_BOUNDED_MR010_SPECIFICATION_PROPOSAL_FOR_BCR_INCORPORATION",
+  "basis": [
+    "Explicit future resolution-obligation change, preserving original inputs/operators/reference masks/101 samples/both amplitudes and unchanged1%/piN gates at N1600.",
+    "Original coarse precision failures remain historical failures. STUDY obligations require conservation/stability and uncertainty-separated spatial decline; their comparison records are not precision PASS.",
+    "All four fine full nonlinear kernel executions corroborated separately. Temporal and epsilon comparisons are descriptive; no fictitious temporal order or error subtraction.",
+    "Rigid obligations and remaining spatial study remain pending; actual source/arithmetic identity required for reuse.",
+    "Cost measured per transit only; no invented GEN1 performance qualification or experimental/predictive validation."
+  ]
+}
