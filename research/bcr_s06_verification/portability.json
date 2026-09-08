@@ -1,0 +1,27 @@
+{
+  "analytical008010.py": {
+    "original_path": "artifacts/S06-BCR/propose_008_010.py",
+    "original_sha256": "61e0fd980d2807281ea82c4374cd0cb383673c536322a088220edbebbfe394d1",
+    "adaptation": "Repository-relative research/output paths only; numerical formulas unchanged."
+  },
+  "certify010.py": {
+    "original_path": "artifacts/S06-BCR/certify_010_reference.py",
+    "original_sha256": "366a34d13081e149fd171b4626d42037b8b2fbbf34137c59ecd26e5c129c8bc2",
+    "adaptation": "Repository-relative research/output paths only; numerical formulas unchanged."
+  },
+  "scalar027.py": {
+    "original_path": "artifacts/S06-BCR/val027/scalar_controls.py",
+    "original_sha256": "0f2ccd9f8e703010dbc7f618bdd483c54e0c12b77ee0d3b8f473cf6bf7b9594b",
+    "adaptation": "Repository-relative research/output paths only; numerical formulas unchanged."
+  },
+  "certify027_residual.py": {
+    "original_path": "artifacts/S06-BCR/val027/exact_residual_refined.py",
+    "original_sha256": "f4ac8fd2ca21cea123f68a26e3a41010d04bf2026788ec2145b2dc1da3f37f35",
+    "adaptation": "Repository-relative research/output paths only; numerical formulas unchanged."
+  },
+  "certify027_target.py": {
+    "original_path": "artifacts/S06-BCR/val027/contact_target_certificate.py",
+    "original_sha256": "e35f9812fc355489139047745d66f0671be01dfa76416106ee3eeeccfc073e63",
+    "adaptation": "Repository-relative research/output paths only; numerical formulas unchanged."
+  }
+}

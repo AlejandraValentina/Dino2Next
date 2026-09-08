@@ -68,7 +68,7 @@ def test_duplicate_manifest_key_fails(corpus):
 
 
 def test_predecessor_bytes_preserved(corpus):
- assert module.check(corpus)['version']=='C1.0-R3'
+ assert module.check(corpus)['version']=='C1.0-R4'
  p=corpus/module.PREFIX/'history/C1.0/PHYSICS_SPEC.md';p.write_bytes(p.read_bytes()+b'changed')
  with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):module.check(corpus)
 
@@ -84,4 +84,18 @@ def test_r2_archive_is_byte_bound(corpus):
  p=corpus/module.PREFIX/'history/C1.0-R2/PHYSICS_SPEC.md'
  p.write_bytes(p.read_bytes()+b'changed')
  with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):
+  module.check(corpus)
+
+
+def test_r3_failed_contract_evidence_cannot_be_rewritten(corpus):
+ p=corpus/module.PREFIX/'history/C1.0-R3/EXECUTABLE_VALIDATION_FIXTURES.json'
+ p.write_bytes(p.read_bytes()+b'changed')
+ with pytest.raises(module.IntegrityError,match='HASH_MISMATCH'):
+  module.check(corpus)
+
+
+def test_s06_verification_bcr_cannot_be_removed_from_roster(corpus):
+ name=module.PREFIX+'/BCR-S06-VERIFICATION-CONTRACT.md'
+ edit_manifest(corpus,lambda m:m['files'].pop(name))
+ with pytest.raises(module.IntegrityError,match='UNLISTED'):
   module.check(corpus)

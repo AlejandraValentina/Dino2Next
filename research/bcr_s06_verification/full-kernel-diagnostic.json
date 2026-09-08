@@ -1,0 +1,45 @@
+{
+  "classification": "FULL_KERNEL_ADDITIONAL_LEVEL_BCR_DIAGNOSTIC_NOT_SCOPE_ACCEPTANCE",
+  "commit": "8cf8de398bd47dcf896989109b479f35cdfa51a6",
+  "hashes": {
+    "src/dino2next/numerics/__init__.py": "428a08480e9de1aa62a158bd02fa089672c0d8f1b5b02208e9626ddb192e6a5c",
+    "validation/fixtures/VAL-006/canonical_execution.py": "44c9e0b16a7453a0c797aa269f4dc1dc52d6ba8c0b0fa669d55466f94bc1efe8",
+    "validation/fixtures/VAL-006/gamma_adapter.py": "67e2895509fdc5fbc2845b855e21dea450698e20e99b7a94894f031b55d81dfe",
+    "validation/fixtures/VAL-027/input.json": "1e43d94e07b31965f5c2347c58282be3d3e4ff710693faa2aae241f6e904c5e4",
+    "validation/references/VAL-027/reference.py": "be58e48f0890d7bf2431db8cb905800c89446afdb32990e050fd423b1613fb49"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.2.6"
+  },
+  "dt": 0.000125,
+  "N": 40,
+  "end": 0.1,
+  "threshold": 1e-10,
+  "primary": {
+    "rtol": 2.3e-14,
+    "atol": 1e-16,
+    "max_step": 0.0001,
+    "nfev": 14441
+  },
+  "cross": {
+    "rtol": 1e-13,
+    "atol": 1e-15,
+    "max_step": 0.0001,
+    "nfev": 14429
+  },
+  "reference_cross_max": 8.156808561921025e-13,
+  "reference_cross_density_L1_max": 8.453238109495942e-14,
+  "max_density_L1": 2.502510698665361e-11,
+  "final_density_L1": 2.490897488272026e-11,
+  "within_unchanged_error_budget": true,
+  "elapsed_seconds": 175.20750860776752,
+  "reference_uncertainty_status": "CROSS_DIFFERENCE_ONLY_NOT_ABSOLUTE_CERTIFIED_BOUND; independent control reported separately",
+  "source_hashes_unchanged": true,
+  "script_sha256": "4b90b092df33d738659780b409108dcc2333a8054b421a515039e4d5326d34db",
+  "raw_files_sha256": {
+    "full-kernel-dt-0.000125.npz": "dffe3181d98eb4cd8250e495a4f5319f46120a333b1bc3a7df1201d4d0f0889b",
+    "full-kernel-reference.npz": "58ab698f942bc9b0320d475a1f3be8bc5e0290d8674422aa8692dd1f9de7da03",
+    "original-full-dt-0.00025.npz": "216accf315261e6bb7b93c94b3ce1866fbfe1a73ea245007308258864c14ff4e"
+  }
+}

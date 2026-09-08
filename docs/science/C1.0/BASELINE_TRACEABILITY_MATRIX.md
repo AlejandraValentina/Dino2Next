@@ -22,3 +22,7 @@ Every mandatory capability has a defined implementation and validation chain. Pe
 ## R3 representation traceability
 
 PHY-002 / PH-004 → BCR-S03-NASA-INVERSION TI-001…005 → derived dataset and research/bcr_s03_nasa_inversion generator/checks → S03 ThermoModel → VAL-001. Consumer reruns are enumerated in TI-005. RAW inputs and archived R2 remain hash-addressed; small BCR checks are not production acceptance.
+
+## C1.0-R4 bounded S06 decisions
+
+BCR-S06-VERIFICATION-CONTRACT SV-008/009/010/027 is the normative companion for the four affected gates. It preserves original failed evidence, all unrelated physics, amplitude/error budgets and accepted TI-001..005. SV-009 changes only smooth acoustic limiting and requires affected kernel regressions. SV-008 preserves the original error window despite added computational guards. SV-010 separates directional reflection signals, qualifying a reference-defined observation mask and retaining absolute checks on every sample. SV-027 retains original levels and threshold and adds .000125s; reference qualification is not a two-run discrepancy mislabeled as certification. No implementation, numerical, experimental or predictive acceptance follows from document existence.

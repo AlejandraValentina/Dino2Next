@@ -1,0 +1,21 @@
+{
+  "status": "PRESPECIFIED_ENGINEERING_ACCURACY_REQUIREMENT",
+  "date": "2026-09-07",
+  "scope": ["VAL013", "VAL014", "VAL016", "VAL020"],
+  "rationale": "Resolve every primary state and extensive exchange to 0.1 percent of an input-defined physical scale; this is a numerical engineering requirement, not experimental uncertainty or a fitted threshold. Keep the existing NP phase requirement. Demonstrate convergence and separately bound reference and temporal errors. Subsequent periodic-output qualification may tighten, never silently relax, these requirements.",
+  "normalized_total_linf": 0.001,
+  "reference_fraction_of_total_budget": 0.1,
+  "temporal_fraction_of_total_budget": 0.1,
+  "pressure_scale_Pa": 120000,
+  "temperature_scale_K": 700,
+  "density_scale": "120000/(R_air*700)",
+  "velocity_scale": "a_air(700K)",
+  "mass_scale": "rho_scale*V_left(t=0)",
+  "energy_scale": "mass_scale*cv_air(700K)*700K; formation energy is excluded from the normalization, not from the balance",
+  "mass_flow_scale": "rho_scale*a_air(700K)*A_pipe",
+  "species_fraction_scale": 1.0,
+  "phase_tolerance_s": 0.000004,
+  "conservation_normalized_linf": 1e-10,
+  "phase_operator": "Compare same identified isolated extremum and interior zero crossing, with no phase shifting. Bound temporal sampling uncertainty separately; a flat/nonunique extremum has no phase claim and must be assessed by its full waveform, not assigned a convenient time.",
+  "failure": "Refine or diagnose; do not expand these thresholds because a candidate or reference misses them."
+}
