@@ -73,6 +73,37 @@ def test_mobile_pair1_u100_profiled_contractual_prefix(tmp_path):
     assert run['profile']['progress']['rejected_steps'] == 0
 
 
+def test_mobile_pair1_u100_cfl_point_two_retries_transactionally(tmp_path):
+    """A Y1 predictor rejection rolls back and halves dt without losing evidence."""
+    module = route()
+    fixture = __import__('json').loads((ROOT/'validation/fixtures/VAL-008/input.json').read_text())
+    checkpoint = tmp_path/'retry-restart.json'
+    run = module.run_contact(fixture['cases'][7], 100, .2, guard_cells=134, end_time=1e-5,
+                             samples=2, profile=True, checkpoint_path=checkpoint)
+    assert run['profile']['progress']['accepted_steps'] > 0
+    assert run['profile']['progress']['rejected_steps'] > 0
+    assert run['trials'][0]['rejection'] == 'VOLUMETRIC_STAGE_BOUND_Y1'
+    persisted = __import__('json').loads(checkpoint.read_text(encoding='utf-8'))
+    journal = checkpoint.with_suffix('.trials.jsonl')
+    assert [__import__('json').loads(line) for line in journal.read_text(encoding='utf-8').splitlines()] == list(run['trials'])
+    assert persisted['trial_records'] == len(run['trials'])
+    assert all('transaction' in ' '.join(item['diagnostics']) for item in run['trials'])
+
+
+def test_retry_evidence_survives_regional_restart(tmp_path):
+    module = route()
+    fixture = __import__('json').loads((ROOT/'validation/fixtures/VAL-008/input.json').read_text())
+    case = fixture['cases'][7]
+    kwargs = dict(guard_cells=134, end_time=4e-6, samples=2, profile=True)
+    continuous = module.run_contact(case, 100, .2, **kwargs)
+    checkpoint = tmp_path/'retry-interrupted.json'
+    module.run_contact(case, 100, .2, **kwargs, checkpoint_path=checkpoint, stop_after_steps=1)
+    resumed = module.run_contact(case, 100, .2, **kwargs, checkpoint_path=checkpoint, resume=True)
+    assert resumed['trials'] == continuous['trials']
+    assert [state.state_identity for state in resumed['states']] == [state.state_identity for state in continuous['states']]
+    assert resumed['profile']['progress'] == continuous['profile']['progress']
+
+
 def test_mobile_pair1_u100_restart_preserves_continuous_trajectory(tmp_path):
     """A committed step can be resumed without changing samples or ledgers."""
     module = route()

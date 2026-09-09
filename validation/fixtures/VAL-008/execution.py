@@ -342,7 +342,9 @@ def execute_regional_contact(case, n, cfl, *, output_root=None, checkpoint_path=
     record = dict(classification='NUMERICAL_VERIFICATION', result='EXECUTED_PENDING_ASSESSMENT', case=case, N=n, CFL=cfl,
         guard_cells_each_side=guard, metrics=metrics, regional_candidate=run['classification'],
         regional_kernel_identity=run['kernel_identity'], reference_qualification=qualified[0], raw_sha256=sha256(path.read_bytes()).hexdigest(),
-        regional_stage_audit=[repr(x) for x in run['trials']], regional_guard_audit=run['guard_audit'],
+        regional_rejected_trials=len(run['trials']), regional_rejected_trial_audit_path=run['trial_audit_path'],
+        regional_rejected_trial_audit_sha256=(sha256(Path(run['trial_audit_path']).read_bytes()).hexdigest()
+                                              if run['trial_audit_path'] else None), regional_guard_audit=run['guard_audit'],
         regional_causal_audit=run['causal_audit'], regional_step_audit=run['step_audit'], regional_ledger_samples=[
             {name:{key:np.asarray(value[key]).tolist() for key in ('initial','inventory','external','sources','throughput')}
              for name,value in sample.items()} for sample in run['ledger_samples']],

@@ -150,6 +150,7 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
                           driver_sha256=driver_sha, source_bindings=source_bindings)
     checkpoint_path = None if checkpoint_path is None else Path(checkpoint_path)
     audit_path = None if checkpoint_path is None else checkpoint_path.with_suffix('.steps.jsonl')
+    trial_path = None if checkpoint_path is None else checkpoint_path.with_suffix('.trials.jsonl')
     if checkpoint_path is not None:
         checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
     state = initial_state(case, n, guard_cells)
@@ -180,6 +181,9 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
     guard_audit = []
     causal_audit = []
     step_audit = []
+    # Rejected trials have no committed state or ledger, but remain durable
+    # evidence of the global transaction's dt recovery.
+    trials = []
     timing = dict(rhs=0., timestep=0., proposal=0., causal=0., remap=0., audit=0., persistence=0.)
     progress = dict(accepted_steps=0, rejected_steps=0, minimum_dt=float('inf'), minimum_volume=float('inf'), maximum_regions=0,
                     guard_candidates=0, guard_high_rejected=0, guard_bisection_evaluations=0,
@@ -196,8 +200,8 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
         tick = perf_counter()
         # The append is durable before the atomic pointer moves to it.  A
         # restart truncates any record written after the last committed pointer.
-        stream.flush()
-        os.fsync(stream.fileno())
+        stream.flush(); trial_stream.flush()
+        os.fsync(stream.fileno()); os.fsync(trial_stream.fileno())
         _atomic_json(checkpoint_path, dict(config=restart_config, incomplete=bool(incomplete),
             time=float(time), next_sample=int(next_sample), state=state.to_restart(),
             output=[item.to_restart() for item in output], ledger_samples=ledger_samples,
@@ -205,12 +209,17 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
             full_external=full_external, full_sources=full_sources, full_throughput=full_throughput,
             window_external=window_external, window_sources=window_sources, window_throughput=window_throughput,
             progress=progress, timing=timing, audit_offset=stream.tell(),
-            audit_sha256=audit_digest.hexdigest(), audit_records=audit_records))
+            audit_sha256=audit_digest.hexdigest(), audit_records=audit_records,
+            trial_offset=trial_stream.tell(), trial_sha256=trial_digest.hexdigest(),
+            trial_records=trial_records))
         timing['persistence'] += perf_counter()-tick
 
     stream = None
     audit_digest = sha256()
     audit_records = 0
+    trial_stream = None
+    trial_digest = sha256()
+    trial_records = 0
     next_sample = 1
     time = 0.
     if resume:
@@ -219,12 +228,18 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
         payload = json.loads(checkpoint_path.read_text(encoding='utf-8'))
         if payload.get('config') != restart_config:
             raise ValueError('Restart code, fixture, or configuration identity differs')
-        if not audit_path.is_file():
+        if not audit_path.is_file() or not trial_path.is_file():
             raise ValueError('Restart step journal is unavailable')
         audit_digest, audit_records = _journal_prefix(audit_path, int(payload['audit_offset']))
         if (payload.get('audit_sha256') != audit_digest.hexdigest()
                 or payload.get('audit_records') != audit_records):
             raise ValueError('Restart step journal prefix identity differs from checkpoint')
+        trial_digest, trial_records = _journal_prefix(trial_path, int(payload['trial_offset']))
+        if (payload.get('trial_sha256') != trial_digest.hexdigest()
+                or payload.get('trial_records') != trial_records):
+            raise ValueError('Restart rejected-trial journal prefix identity differs from checkpoint')
+        with trial_path.open('rb') as recovery:
+            trials = [json.loads(line) for line in recovery.read(int(payload['trial_offset'])).splitlines()]
         state = type(state).from_restart(payload['state'], state.thermo)
         output = [type(state).from_restart(item, state.thermo) for item in payload['output']]
         ledger_samples = payload['ledger_samples']
@@ -236,14 +251,19 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
         next_sample = int(payload['next_sample'])
         with audit_path.open('r+b') as recovery:
             recovery.truncate(int(payload['audit_offset']))
+        with trial_path.open('r+b') as recovery:
+            recovery.truncate(int(payload['trial_offset']))
     if checkpoint_path is not None:
         stream = audit_path.open('ab+')
+        trial_stream = trial_path.open('ab+')
     else:
         class _NullStream:
             def flush(self): pass
+            def write(self, value): return len(value)
             def fileno(self): return os.open(os.devnull, os.O_RDONLY)
             def tell(self): return 0
         stream = _NullStream()
+        trial_stream = _NullStream()
     if not resume:
         snapshot(state)
         checkpoint(next_sample)
@@ -274,14 +294,33 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
             bound, detail = kernel.timestep_bounds(state, rhs)
             dt = min((cfl/.2)*bound, float(target-time))
             timing['timestep'] += perf_counter()-tick
-            tick = perf_counter()
-            attempt = kernel.propose_step(state,
-                lambda candidate, stage_time: kernel.rhs(candidate, stage_time,
-                    boundary_flux=_boundary_flux(kernel, candidate)), time, dt)
-            timing['proposal'] += perf_counter()-tick
-            if not attempt.accepted:
+            # The selected transaction restores Yn on every rejected trial,
+            # halves dt, and exposes no trial ledger.  A regional route is a
+            # consumer of that rule; it must not mistake a stage predictor
+            # rejection for a terminal fixture failure.
+            for retry in range(17):
+                tick = perf_counter()
+                attempt = kernel.propose_step(state,
+                    lambda candidate, stage_time: kernel.rhs(candidate, stage_time,
+                        boundary_flux=_boundary_flux(kernel, candidate)), time, dt)
+                timing['proposal'] += perf_counter()-tick
+                if attempt.accepted:
+                    break
                 progress['rejected_steps'] += 1
-                raise RuntimeError(('REGIONAL_CONTACT_REJECTED', attempt.rejection, attempt.diagnostics))
+                trial = dict(time=float(time), dt=float(dt), retry=int(retry),
+                             rejection=attempt.rejection,
+                             diagnostics=[repr(item) for item in attempt.diagnostics])
+                trials.append(trial)
+                encoded = (json.dumps(_plain(trial), sort_keys=True, separators=(',', ':'))+'\n').encode('utf-8')
+                trial_stream.write(encoded); trial_digest.update(encoded); trial_records += 1
+                # Persist the rollback and its diagnostics before another
+                # attempt, while the checkpoint still points to the last
+                # accepted W/I12 state and journal prefix.
+                checkpoint(next_sample)
+                if retry == 16:
+                    raise RuntimeError(('ADMISSIBILITY_RETRY_EXHAUSTED', attempt.rejection,
+                                        tuple(trials[-17:])))
+                dt *= .5
             progress['accepted_steps'] += 1
             progress['minimum_dt'] = min(progress['minimum_dt'], float(dt))
             progress['minimum_volume'] = min(progress['minimum_volume'], float(np.min(state.volumes)))
@@ -333,11 +372,13 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
             checkpoint(next_sample)
             if stop_after_steps is not None and progress['accepted_steps'] >= stop_after_steps:
                 checkpoint(next_sample, incomplete=True)
-                if checkpoint_path is not None: stream.close()
+                if checkpoint_path is not None:
+                    stream.close(); trial_stream.close()
                 return dict(classification='INCOMPLETE_STOPPED_FOR_RESTART', incomplete=True, times=times[:next_sample],
                     states=tuple(output), ledgers=tuple(ledgers), ledger_samples=tuple(ledger_samples),
-                    trials=tuple(), guard_audit=tuple(guard_audit), causal_audit=tuple(causal_audit),
+                    trials=tuple(trials), guard_audit=tuple(guard_audit), causal_audit=tuple(causal_audit),
                     step_audit=tuple(step_audit), step_audit_path=str(audit_path) if audit_path else None,
+                    trial_audit_path=str(trial_path) if trial_path else None,
                     kernel_identity=kernel.identity, source_sha256=driver_sha,
                     profile=dict(timing=timing, progress=progress) if profile else None)
         output.append(state)
@@ -345,11 +386,12 @@ def run_contact(case, n, cfl, *, guard_cells, end_time=None, samples=101, profil
         next_sample += 1
         checkpoint(next_sample)
     if checkpoint_path is not None:
-        stream.close()
+        stream.close(); trial_stream.close()
     return dict(classification='NUMERICAL_FIXTURE_ONLY_REGIONAL_CANDIDATE_NOT_ACCEPTANCE',
                 times=times, states=tuple(output), ledgers=tuple(ledgers), ledger_samples=tuple(ledger_samples),
-                trials=tuple(), guard_audit=tuple(guard_audit), causal_audit=tuple(causal_audit), step_audit=tuple(step_audit),
+                trials=tuple(trials), guard_audit=tuple(guard_audit), causal_audit=tuple(causal_audit), step_audit=tuple(step_audit),
                 step_audit_path=str(audit_path) if audit_path else None,
+                trial_audit_path=str(trial_path) if trial_path else None,
                 kernel_identity=kernel.identity, source_sha256=driver_sha,
                 profile=dict(timing=timing, progress=progress) if profile else None)
 
