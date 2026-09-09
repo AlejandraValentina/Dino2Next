@@ -19,6 +19,18 @@ from dino2next.thermo import (ThermoModel, ThermoDataset, DERIVED_SHA256,
 
 ROOT = Path(__file__).resolve().parents[3]
 INPUT_SHA = 'd64f03d8a6bc81c2f793a7d9737031efcef810ddbaa3c33d6f1ea0a505b03810'
+R4_FIXTURE_CATALOG_SHA256 = 'fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513'
+R4_CATALOGUE_SHA256 = '3b23f7a74995feef37f5d5535eea11dc04b269363f42642aa91ece8f733e15b7'
+
+
+def frozen_source(fixture):
+    current = ROOT/fixture['frozen_source']; expected = fixture['frozen_source_sha256']
+    if sha256(current.read_bytes()).hexdigest() == expected:
+        return current
+    assert expected == R4_FIXTURE_CATALOG_SHA256
+    archived = ROOT/'docs/science/C1.0/history/C1.0-R4'/current.name
+    assert sha256(archived.read_bytes()).hexdigest() == expected
+    return archived
 
 
 def load_reference():
@@ -26,6 +38,15 @@ def load_reference():
     spec = importlib.util.spec_from_file_location('nasa008_reference', path)
     result = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = result
+    spec.loader.exec_module(result)
+    return result
+
+
+def regional_driver():
+    """Load the material candidate without giving it access to this oracle."""
+    path = ROOT/'validation/fixtures/VAL-008/regional_execution.py'
+    spec = importlib.util.spec_from_file_location('nasa008_regional_candidate', path)
+    result = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(result)
     return result
 
@@ -87,7 +108,7 @@ def verify_fixture():
     path = ROOT/'validation/fixtures/VAL-008/input.json'
     assert sha256(path.read_bytes()).hexdigest() == INPUT_SHA
     fixture = json.loads(path.read_text())
-    source = ROOT/fixture['frozen_source']
+    source = frozen_source(fixture)
     assert sha256(source.read_bytes()).hexdigest() == fixture['frozen_source_sha256']
     assert fixture['frozen_fiche'] == json.loads(source.read_text())['fixtures']['VAL-008']
     expected = json.loads((ROOT/'validation/expected/VAL-008/acceptance.json').read_text())
@@ -99,7 +120,10 @@ def verify_fixture():
 
 
 def execute(case, n, cfl, *, output_root=None):
+    if case['kind'] == 'contact':
+        return execute_regional_contact(case, n, cfl, output_root=output_root)
     fixture = verify_fixture()
+    historical_catalogue = frozen_source(fixture)
     out = Path(output_root) if output_root else ROOT/'artifacts/VAL-008'
     out.mkdir(parents=True,exist_ok=True)
     artifact_stem = f"{case['name']}-N{n}-CFL{cfl}"
@@ -116,7 +140,14 @@ def execute(case, n, cfl, *, output_root=None):
                 'docs/science/C1.0/datasets/thermo_runtime_continuous_v1.json'}
     assert required <= set(qualification['source_hashes']), 'REFERENCE_NOT_QUALIFIED: incomplete bindings'
     for source_path,digest in qualification['source_hashes'].items():
-        assert sha256((ROOT/source_path).read_bytes()).hexdigest() == digest, ('REFERENCE_NOT_QUALIFIED',source_path)
+        candidate = ROOT/source_path
+        if sha256(candidate.read_bytes()).hexdigest() != digest:
+            assert source_path in ('docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json',
+                                   'docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md')
+            assert digest in (R4_FIXTURE_CATALOG_SHA256, R4_CATALOGUE_SHA256)
+            candidate = (historical_catalogue if digest == R4_FIXTURE_CATALOG_SHA256 else
+                         ROOT/'docs/science/C1.0/history/C1.0-R4'/candidate.name)
+        assert sha256(candidate.read_bytes()).hexdigest() == digest, ('REFERENCE_NOT_QUALIFIED',source_path)
     qualified_cases = [r for r in qualification['cases'] if r['parameters']==case['parameters']]
     assert len(qualified_cases)==1 and qualified_cases[0]['status']=='PASS'
     k = kernel(); solution = reference.solve(reference.Case(**case['parameters']))
@@ -223,5 +254,102 @@ def execute(case, n, cfl, *, output_root=None):
         hashes={str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),
             ROOT/'src/dino2next/numerics/__init__.py', ROOT/'validation/references/VAL-008/reference.py',
             ROOT/'validation/references/VAL-008/qualification.json',ROOT/'validation/fixtures/VAL-008/input.json']})
+    path.with_suffix('.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+    return record
+
+
+def execute_regional_contact(case, n, cfl, *, output_root=None, checkpoint_path=None, resume=False,
+                             stop_after_steps=None):
+    """Assess a W/I12 contact candidate against the frozen external oracle.
+
+    Candidate construction and time stepping live in regional_execution.py;
+    this adapter is the only place where the independently qualified reference
+    is loaded and compared.
+    """
+    fixture = verify_fixture()
+    if case['kind'] != 'contact':
+        raise ValueError('Regional contact assessment requires a contact case')
+    out = Path(output_root) if output_root else ROOT/'artifacts/VAL-008'
+    out.mkdir(parents=True, exist_ok=True)
+    stem = f"{case['name']}-N{n}-CFL{cfl}"
+    reference = load_reference(); solution = reference.solve(reference.Case(**case['parameters']))
+    qualification = json.loads((ROOT/'validation/references/VAL-008/qualification.json').read_text())
+    assert qualification['status'] == 'REFERENCE_QUALIFIED' and qualification['candidate_imports'] is False
+    qualified = [row for row in qualification['cases'] if row['parameters'] == case['parameters']]
+    assert len(qualified) == 1 and qualified[0]['status'] == 'PASS'
+    candidate = regional_driver()
+    guard = math.ceil(n*fixture['guard_speeds']['contact']*case['time'])+4
+    run = candidate.run_contact(case, n, cfl, guard_cells=guard, samples=fixture['sampling_points'],
+                                checkpoint_path=checkpoint_path, resume=resume,
+                                stop_after_steps=stop_after_steps)
+    if run.get('incomplete'):
+        partial = dict(classification='NUMERICAL_VERIFICATION', result='INCOMPLETE_RESTART_AVAILABLE',
+            acceptance='NO_PASS', case=case, N=n, CFL=cfl, guard_cells_each_side=guard,
+            checkpoint_path=str(checkpoint_path), regional_candidate=run['classification'],
+            regional_kernel_identity=run['kernel_identity'], source_sha256=run['source_sha256'],
+            step_audit_path=run['step_audit_path'])
+        (out/(stem+'-partial.json')).write_text(json.dumps(partial, indent=2)+'\n', encoding='utf-8')
+        return partial
+    edges = np.linspace(0., 1., n+1); dx = np.diff(edges)
+    initial_truth = solution.cell_averages(edges, 0.)
+    initial_rho = float(np.max(initial_truth['rho']))
+    initial_a = float(max(item.a for item in run['states'][0].regional_states.states))
+    scales = np.array((initial_rho, initial_a, 1e5))
+    reference_initial = np.sum(initial_truth['conserved']*dx[:, None], axis=0)
+    metrics = []; Q = []; reference_window = []; primitive_reference = []
+
+    def ledger_row(snapshot):
+        result = {}
+        for name, value in snapshot.items():
+            initial = np.asarray(value['initial']); external = np.asarray(value['external']); sources = np.asarray(value['sources'])
+            current = np.asarray(value['inventory'])
+            throughput = np.asarray(value['throughput'])
+            # Each conserved component has its own non-zero reference scale;
+            # mass is never reused as momentum/energy scale.
+            physical_reference = reference_initial if name == 'window' else initial
+            mass_scale = max(abs(initial[0]), abs(physical_reference[0]), np.finfo(float).tiny)
+            # ST-003 uses declared physical scales per conserved component:
+            # momentum m*a, energy m*a^2, species/origins m when their initial
+            # signed inventory is exactly zero.
+            reference_scale = np.array((mass_scale, mass_scale*initial_a,
+                max(abs(initial[2]), abs(physical_reference[2]), mass_scale*initial_a*initial_a),
+                *[max(abs(initial[index]), abs(physical_reference[index]), mass_scale) for index in range(3, 12)]))
+            result[name] = dict(inventory=current.tolist(), external=external.tolist(), sources=sources.tolist(),
+                normalized=((current-initial-external-sources)/(abs(initial)+throughput+reference_scale)).tolist())
+        return result
+
+    for time, state, snapshot in zip(run['times'], run['states'], run['ledger_samples']):
+        observed = candidate.pressure_observation(state, edges)
+        truth = solution.cell_averages(edges, float(time))
+        actual = np.column_stack((observed['conservative'][:, 0], observed['velocity'], observed['pressure']))
+        exact = np.column_stack([truth[key] for key in ('rho', 'u', 'p')])
+        error = abs(actual-exact)/scales
+        species_error = abs(observed['conservative'][:, 3:8]-truth['conserved'][:, 3:8]) / float(np.sum(initial_truth['conserved'][:,0]*dx))
+        temperature_error = abs(observed['temperature']-truth['T'])
+        metrics.append(dict(time=float(time), L1=np.sum(dx[:,None]*error,axis=0).tolist(),
+            L2=np.sqrt(np.sum(dx[:,None]*error**2,axis=0)).tolist(), Linf=np.max(error,axis=0).tolist(),
+            temperature_L1=float(np.sum(dx*temperature_error)), temperature_L2=float(np.sqrt(np.sum(dx*temperature_error**2))),
+            temperature_Linf=float(np.max(temperature_error)), species_mass_L1=np.sum(dx[:,None]*species_error,axis=0).tolist(),
+            species_mass_L2=np.sqrt(np.sum(dx[:,None]*species_error**2)).tolist(), species_mass_Linf=np.max(species_error,axis=0).tolist(),
+            ledgers=ledger_row(snapshot)))
+        Q.append(observed['conservative']); reference_window.append(truth['conserved'])
+        primitive_reference.append(np.column_stack([truth[key] for key in ('rho','u','p','T')]))
+    path = out/(stem+'.npz')
+    np.savez_compressed(path, times=run['times'], Q=Q, reference_window=reference_window,
+        reference_primitive_rho_u_p_T=primitive_reference, cell_bounds=edges, window_indices=[0,n])
+    sources = (Path(__file__), ROOT/'validation/fixtures/VAL-008/regional_execution.py',
+               ROOT/'src/dino2next/gasdynamics/regional.py', ROOT/'src/dino2next/numerics/regional.py')
+    record = dict(classification='NUMERICAL_VERIFICATION', result='EXECUTED_PENDING_ASSESSMENT', case=case, N=n, CFL=cfl,
+        guard_cells_each_side=guard, metrics=metrics, regional_candidate=run['classification'],
+        regional_kernel_identity=run['kernel_identity'], reference_qualification=qualified[0], raw_sha256=sha256(path.read_bytes()).hexdigest(),
+        regional_stage_audit=[repr(x) for x in run['trials']], regional_guard_audit=run['guard_audit'],
+        regional_causal_audit=run['causal_audit'], regional_step_audit=run['step_audit'], regional_ledger_samples=[
+            {name:{key:np.asarray(value[key]).tolist() for key in ('initial','inventory','external','sources','throughput')}
+             for name,value in sample.items()} for sample in run['ledger_samples']],
+        regional_step_audit_path=run['step_audit_path'], regional_step_audit_sha256=(
+            sha256(Path(run['step_audit_path']).read_bytes()).hexdigest() if run['step_audit_path'] else None),
+        commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        environment=dict(python=platform.python_version(),numpy=np.__version__),
+        hashes={str(source.relative_to(ROOT)):sha256(source.read_bytes()).hexdigest() for source in sources})
     path.with_suffix('.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
     return record

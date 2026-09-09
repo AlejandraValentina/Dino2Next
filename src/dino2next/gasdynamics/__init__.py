@@ -450,3 +450,8 @@ def _duct(value):
 def primitive(duct):return _duct(duct).primitive()
 def integrated_inventory(duct):return _duct(duct).integrated_inventory()
 def geometry_source(duct):return _duct(duct).geometry_source()
+
+
+# MR-008 additive state representation; homogeneous S05 definitions unchanged.
+from .regional import (CumulativeVolumeGeometry, VolumeInverse,
+                       RegionalDuctState, RegionalProjection)
