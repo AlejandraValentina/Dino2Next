@@ -345,7 +345,7 @@ def execute_regional_contact(case, n, cfl, *, output_root=None, checkpoint_path=
         regional_rejected_trials=len(run['trials']), regional_rejected_trial_audit_path=run['trial_audit_path'],
         regional_rejected_trial_audit_sha256=(sha256(Path(run['trial_audit_path']).read_bytes()).hexdigest()
                                               if run['trial_audit_path'] else None), regional_guard_audit=run['guard_audit'],
-        regional_causal_audit=run['causal_audit'], regional_step_audit=run['step_audit'], regional_ledger_samples=[
+        regional_causal_audit=run['causal_audit'], regional_ledger_samples=[
             {name:{key:np.asarray(value[key]).tolist() for key in ('initial','inventory','external','sources','throughput')}
              for name,value in sample.items()} for sample in run['ledger_samples']],
         regional_step_audit_path=run['step_audit_path'], regional_step_audit_sha256=(
