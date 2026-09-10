@@ -402,6 +402,13 @@ class DuctState:
 
     def _recover(self):
         states,velocity,tags,records=[],[],[],[]
+        # A regional state commonly contains many physically identical
+        # subregions.  Energy inversion is a pure function of this exact
+        # conserved primitive tuple, so retain successful results only for the
+        # lifetime of this immutable recovery.  This neither rounds inputs nor
+        # changes failure handling: distinct binary64 inputs and every failed
+        # inversion still take the accepted NASA path independently.
+        recovered={}
         for i,(row,area) in enumerate(zip(self.Q,self.mesh.area_averages)):
             rho=row[0]/area
             if rho<=0 or not isfinite(rho):
@@ -412,7 +419,11 @@ class DuctState:
                 fail('EOS_OUT_OF_DOMAIN',f'/Q/{i}','Primitive energy/velocity not representable')
             y=fractions(row[3:8],row[0],'/chemical',i,records)
             tau=fractions(row[8:12],row[0],'/tracers',i,records)
-            result=self.thermo.invert_energy(rho,e,y)
+            key=(rho,e,y)
+            result=recovered.get(key)
+            if result is None:
+                result=self.thermo.invert_energy(rho,e,y)
+                recovered[key]=result
             try:
                 if result.rho!=rho or tuple(result.Y)!=y:
                     fail('EOS_OUT_OF_DOMAIN',f'/Q/{i}','Recovery must retain supplied density and composition')

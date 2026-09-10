@@ -339,4 +339,10 @@ class RegionalNumericalKernel:
                     fail('STAGE_INADMISSIBLE','/remap','Transfer crosses material identity')
                 amount=remainder.copy() if t==len(targets)-1 else Iold[i]*(overlap/(right-left))
                 inventories[k]+=amount;remainder-=amount
+        # Some moving-face steps already occupy the canonical target partition.
+        # The overlap calculation above is retained as the conservation check;
+        # when it proves to be an exact identity map, publishing a new regional
+        # state would only repeat the same EOS recovery for every region.
+        if tuple(W)==state.W and labels==state.labels and np.array_equal(inventories,Iold):
+            return state
         return self._new(state,W,inventories,labels)
