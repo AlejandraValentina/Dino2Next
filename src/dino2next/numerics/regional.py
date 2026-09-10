@@ -256,7 +256,7 @@ class RegionalNumericalKernel:
             records.append(('guard_candidate',2 if second else 1,float(theta),good,reason,tuple(roundoff)))
             return good,Z,flux,I,checks,tuple(candidates) if good else ()
         high=candidate(1.)
-        if high[0]:return high[1],high[2],high[5][0],1.,0
+        if high[0]:return high[1],high[2],high[5][0],1.,0,(high[5][1] if second else None)
         low=candidate(0.)
         if not low[0]:
             fail('STAGE_INADMISSIBLE','/guard','Low-order Euler endpoint is inadmissible',reason='LOW_ORDER_STAGE_INADMISSIBLE_RETRY_DT')
@@ -271,7 +271,7 @@ class RegionalNumericalKernel:
             else:upper=mid
         for reduction in range(9):
             trial=candidate(lower)
-            if trial[0]:return trial[1],trial[2],trial[5][0],lower,reduction
+            if trial[0]:return trial[1],trial[2],trial[5][0],lower,reduction,(trial[5][1] if second else None)
             lower*=1-32*EPS
         fail('STAGE_INADMISSIBLE','/guard','Flux roundoff retry required',reason='FLUX_LIMIT_ROUND_OFF_RETRY_DT')
 
@@ -291,12 +291,15 @@ class RegionalNumericalKernel:
             R0=rhs(state,time);limit0,b0=self.timestep_bounds(state,R0)
             records.extend([('rhs',0,R0.diagnostics),('volume_predictor','Y0',dt,limit0,b0)])
             if dt>limit0:fail('STAGE_INADMISSIBLE','/dt','Y0 volume predictor failed',reason='VOLUMETRIC_STAGE_BOUND_Y0')
-            Z1,F0,stage,t0,r0=self._guard(state,state,Z0,Z0,R0,dt,time+dt,trial_state_mapper,False,records)
+            Z1,F0,stage,t0,r0,_=self._guard(state,state,Z0,Z0,R0,dt,time+dt,trial_state_mapper,False,records)
             R1=rhs(stage,time+dt);limit1,b1=self.timestep_bounds(stage,R1)
             records.extend([('rhs',1,R1.diagnostics),('volume_predictor','Y1',dt,limit1,b1)])
             if dt>limit1:fail('STAGE_INADMISSIBLE','/dt','Y1 volume predictor failed',reason='VOLUMETRIC_STAGE_BOUND_Y1')
-            Z2,F1,second,t1,r1=self._guard(stage,state,Z1,Z0,R1,dt,time+dt,trial_state_mapper,True,records)
-            final=self._new(state,.5*np.asarray(state.W)+.5*np.asarray(second.W),self._mapped(.5*Z0+.5*Z2,time+dt,trial_state_mapper))
+            Z2,F1,second,t1,r1,final=self._guard(stage,state,Z1,Z0,R1,dt,time+dt,trial_state_mapper,True,records)
+            # _guard already constructs the blended Y2 state to establish
+            # admissibility.  Reusing that immutable snapshot avoids a fourth
+            # identical EOS inversion for every accepted SSPRK2 step.
+            assert final is not None
             gcl=np.diff(final.W)-np.diff(state.W)-.5*dt*(np.diff(R0.volume_speed)+np.diff(R1.volume_speed))
             records.extend([('selected_guards',(t0,t1),(r0,r1)),('max_GCL_volume',float(np.max(abs(gcl)))),
                             ('transaction','ACCEPTED','parent',state.state_identity,'child',final.state_identity)])
