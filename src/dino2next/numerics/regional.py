@@ -158,7 +158,15 @@ class RegionalNumericalKernel:
         external=frozen_array(boundary_flux,(2,12))
         edges=np.asarray(state.edges);I=np.asarray(state.inventory)
         volume=np.asarray(state.volumes);U=I/volume[:,None]
-        primitive=self.bulk.recover(U);V=primitive.V
+        # The immutable state already recovered this exact I/V representation.
+        primitive=state.regional_states;V=np.column_stack((
+            tuple(snapshot.rho for snapshot in primitive.states),
+            primitive.u,
+            tuple(snapshot.p for snapshot in primitive.states),
+            tuple(snapshot.Y for snapshot in primitive.states),
+            primitive.tracers,
+        ))
+        sound=np.asarray(tuple(snapshot.a for snapshot in primitive.states))
         n=len(I);patch=self.patch_cells(state)
         area=np.array([state.geometry.segment.value(float(x)) for x in edges])
         speed=np.zeros(n+1);regional=np.zeros((n+1,12))
@@ -166,7 +174,7 @@ class RegionalNumericalKernel:
         for i in range(1,n):
             if not (patch[i-1] or patch[i]):continue
             speed[i],regional[i]=self._regional_face(U[i-1],U[i],V[i-1],V[i],
-                primitive.a[i-1],primitive.a[i],state.labels[i-1]!=state.labels[i])
+                sound[i-1],sound[i],state.labels[i-1]!=state.labels[i])
         high=area[:,None]*regional;low=high.copy();records=[]
         i=0
         while i<n:
@@ -195,9 +203,11 @@ class RegionalNumericalKernel:
         state=self._state(state)
         if not isinstance(stage_rhs,RegionalRHS) or len(stage_rhs.sources)!=len(state.labels):
             fail('STAGE_INADMISSIBLE','/regional_rhs','Regional RHS shape/type required')
-        p=self.recover(state);dx=np.diff(state.edges);volume=np.asarray(state.volumes)
+        p=state.regional_states;dx=np.diff(state.edges);volume=np.asarray(state.volumes)
         area=stage_rhs.face_areas;speed=stage_rhs.volume_speed/area
-        left=p.a+abs(p.V[:,1]-speed[:-1]);right=p.a+abs(p.V[:,1]-speed[1:])
+        sound=np.asarray(tuple(snapshot.a for snapshot in p.states))
+        velocity=np.asarray(p.u)
+        left=sound+abs(velocity-speed[:-1]);right=sound+abs(velocity-speed[1:])
         bx=.2*(dx/np.maximum(left,right))
         bv=.2*(volume/np.maximum(area[:-1]*left,area[1:]*right))
         change=np.diff(stage_rhs.volume_speed);shrink=np.full(len(volume),np.inf)
@@ -233,14 +243,20 @@ class RegionalNumericalKernel:
             if second:checks.append((.5*initialW+.5*nextW,self._mapped(.5*Zinitial+.5*Z,end_time,mapper)))
             good=True;reason='';roundoff=[]
             try:
+                candidates=[]
                 for W,Q in checks:
                     if np.any(np.diff(W)<=0):fail('STAGE_INADMISSIBLE','/W','Final volume is nonpositive')
-                    result=self.bulk.recover(Q/np.diff(W)[:,None]);roundoff.append(result.roundoff_records)
+                    # Constructing the immutable candidate performs the same
+                    # recovery that used to be performed here, and preserves
+                    # the validated primitive state for its next consumer.
+                    candidate_state=self._new(base,W,Q)
+                    candidates.append(candidate_state)
+                    roundoff.append(candidate_state.regional_states.roundoff_records)
             except ValueContractError as exc:good=False;reason=exc.code
             records.append(('guard_candidate',2 if second else 1,float(theta),good,reason,tuple(roundoff)))
-            return good,Z,flux,I,checks
+            return good,Z,flux,I,checks,tuple(candidates) if good else ()
         high=candidate(1.)
-        if high[0]:return high[1],high[2],self._new(base,nextW,high[3]),1.,0
+        if high[0]:return high[1],high[2],high[5][0],1.,0
         low=candidate(0.)
         if not low[0]:
             fail('STAGE_INADMISSIBLE','/guard','Low-order Euler endpoint is inadmissible',reason='LOW_ORDER_STAGE_INADMISSIBLE_RETRY_DT')
@@ -255,7 +271,7 @@ class RegionalNumericalKernel:
             else:upper=mid
         for reduction in range(9):
             trial=candidate(lower)
-            if trial[0]:return trial[1],trial[2],self._new(base,nextW,trial[3]),lower,reduction
+            if trial[0]:return trial[1],trial[2],trial[5][0],lower,reduction
             lower*=1-32*EPS
         fail('STAGE_INADMISSIBLE','/guard','Flux roundoff retry required',reason='FLUX_LIMIT_ROUND_OFF_RETRY_DT')
 
