@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { stageFromPath } from '../../src/navigation/routes';
 import { fieldBinding } from '../../src/route_entries/model';
 import { ENGINE_SECTIONS, sectionStage } from '../../src/navigation/EngineTree';
+import { loadUiPreferences, saveUiPreferences } from '../../src/shell/preferences';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -24,5 +25,14 @@ describe('model workspace application boundary', () => {
   it('keeps engine sections in the model stage', () => {
     expect(ENGINE_SECTIONS).toHaveLength(4);
     expect(sectionStage('Geometría y puertos')).toBe('Modelar');
+  });
+
+  it('persists only versioned UI preferences with safe defaults', () => {
+    const storage = new Map<string, string>();
+    const fake = { getItem: (k: string) => storage.get(k) ?? null, setItem: (k: string, v: string) => storage.set(k, v) } as unknown as Storage;
+    saveUiPreferences({ unitSystem: 'US', advanced: true }, fake);
+    expect(loadUiPreferences(fake)).toEqual({ unitSystem: 'US', advanced: true });
+    storage.set('dino2next.ui-preferences.v1', '{bad');
+    expect(loadUiPreferences(fake)).toEqual({ unitSystem: 'SI', advanced: false });
   });
 });
