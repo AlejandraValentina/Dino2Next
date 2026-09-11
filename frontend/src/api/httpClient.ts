@@ -21,5 +21,10 @@ export function createHttpClient(baseUrl: string, fetcher: typeof fetch = fetch)
     preflight: (revision, requestBody) => request('/preflight', { method: 'POST', body: JSON.stringify({ revision_hash: revision, request: requestBody }) }),
     createRun: (key, preflight, requestBody) => request('/runs', { method: 'POST', headers: { 'idempotency-key': key }, body: JSON.stringify({ preflight_hash: preflight, request: requestBody }) }),
     getRun: id => request(`/runs/${encodeURIComponent(id)}`),
+    getDiagnostics: id => request(`/runs/${encodeURIComponent(id)}/diagnostics`),
+    getResults: id => request(`/runs/${encodeURIComponent(id)}/results`),
+    getTrace: (runId, traceId) => request(`/runs/${encodeURIComponent(runId)}/traces/${encodeURIComponent(traceId)}`),
+    cancelRun: id => request(`/runs/${encodeURIComponent(id)}/cancel`, { method: 'POST' }),
+    compareRuns: ids => request(`/compare?run_ids=${ids.map(encodeURIComponent).join(',')}`),
   };
 }

@@ -59,4 +59,14 @@ describe('model workspace application boundary', () => {
     const fetcher = (async () => new Response(JSON.stringify({ code: 'REVISION_CONFLICT', message: 'stale', pointer: '/revision' }), { status: 409 })) as typeof fetch;
     await expect(createHttpClient('http://localhost/api/v1', fetcher).createProject({})).rejects.toMatchObject({ status: 409, code: 'CONFLICT', pointer: '/revision' } satisfies Partial<ApplicationApiError>);
   });
+
+  it('exposes contract read/control routes without client-side physics', async () => {
+    const calls: Request[] = [];
+    const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => { calls.push(new Request(input, init)); return new Response('{}', { status: 200 }); }) as typeof fetch;
+    const api = createHttpClient('http://localhost/api/v1', fetcher);
+    await api.getDiagnostics('r/1'); await api.getResults('r/1'); await api.getTrace('r/1', 't/2'); await api.cancelRun('r/1'); await api.compareRuns(['r/1', 'r/2']);
+    expect(calls.map(c => new URL(c.url).pathname)).toEqual(['/api/v1/runs/r%2F1/diagnostics', '/api/v1/runs/r%2F1/results', '/api/v1/runs/r%2F1/traces/t%2F2', '/api/v1/runs/r%2F1/cancel', '/api/v1/compare']);
+    expect(calls[3].method).toBe('POST');
+    expect(new URL(calls[4].url).searchParams.get('run_ids')).toBe('r/1,r/2');
+  });
 });
