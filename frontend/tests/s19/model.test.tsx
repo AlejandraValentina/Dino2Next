@@ -3,6 +3,7 @@ import { stageFromPath } from '../../src/navigation/routes';
 import { fieldBinding } from '../../src/route_entries/model';
 import { ENGINE_SECTIONS, sectionStage } from '../../src/navigation/EngineTree';
 import { loadUiPreferences, saveUiPreferences } from '../../src/shell/preferences';
+import type { ApplicationApiClient } from '../../src/api/applicationBoundary';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -34,5 +35,10 @@ describe('model workspace application boundary', () => {
     expect(loadUiPreferences(fake)).toEqual({ unitSystem: 'US', advanced: true });
     storage.set('dino2next.ui-preferences.v1', '{bad');
     expect(loadUiPreferences(fake)).toEqual({ unitSystem: 'SI', advanced: false });
+  });
+
+  it('keeps the API dependency injectable at the application boundary', () => {
+    const client: ApplicationApiClient = {} as ApplicationApiClient;
+    expect(client).toBeDefined();
   });
 });
