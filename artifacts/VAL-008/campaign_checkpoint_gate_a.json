@@ -1,5 +1,5 @@
 {
-  "HEAD": "b418efe2726ef1f68d5c39d890f1951f40938e99",
+  "HEAD": "daa043a488d97cedbbeb4a0563533b8eca4f9a6d",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -15,9 +15,9 @@
   "validations": {
     "VAL-008": {
       "total_rows_GATE_A": 32,
-      "PASS": 12,
+      "PASS": 14,
       "PASS_REUSABLE": 4,
-      "PENDING": 20,
+      "PENDING": 18,
       "FAIL": 0,
       "total_rows_exhaustive": 189,
       "exhaustive_PASS": 11,
@@ -26,20 +26,20 @@
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "contact-pair2-u0",
+    "case": "contact-pair2-u-100",
     "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 414.0
+    "elapsed": 2160.9220000002533
   },
   "next_row_GATE_A": {
-    "case": "contact-pair2-u100",
+    "case": "contact-pair1-u100",
     "kind": "contact",
-    "pair": 2,
+    "pair": 1,
     "velocity": 100.0,
     "pressure_ratio": null,
-    "N": 100,
-    "CFL": 0.2,
+    "N": 400,
+    "CFL": 0.05,
     "status": "PENDING",
     "evidence": null,
     "threshold": "thermal"
@@ -335,9 +335,22 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "thermal"
+      "threshold": "thermal",
+      "elapsed": 1022.1409999998286,
+      "max_L1": [
+        8.495297784426219e-13,
+        4.159493030164946e-13,
+        2.7348811272531737e-12
+      ],
+      "max_Linf": [
+        3.489163193831942e-11,
+        6.068315330115825e-13,
+        3.637833287939429e-12
+      ],
+      "ledger_max": 2.948213189817292e-15,
+      "raw_sha256": "a9d33adc16a498bd5abea055e4a5fc169c47e46e2d4151a15fc7f91961f76d50"
     },
     {
       "case": "contact-pair2-u-100",
@@ -347,9 +360,22 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "thermal"
+      "threshold": "thermal",
+      "elapsed": 2160.9220000002533,
+      "max_L1": [
+        8.868523827090534e-13,
+        5.25990707839957e-13,
+        2.627415233291687e-12
+      ],
+      "max_Linf": [
+        3.588815923642233e-11,
+        5.982723087405498e-13,
+        3.637978807091713e-12
+      ],
+      "ledger_max": 2.6771064297167245e-15,
+      "raw_sha256": "0b8593ee2403032456098f17a978d5eeb2fda3cd17f446a43ddee33c81a4f068"
     },
     {
       "case": "contact-pair1-u100",
@@ -1107,9 +1133,10 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "thermal"
+      "threshold": "thermal",
+      "elapsed": null
     },
     {
       "case": "contact-pair2-u0",
@@ -1132,9 +1159,10 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "thermal"
+      "threshold": "thermal",
+      "elapsed": null
     },
     {
       "case": "contact-pair0-u-100",

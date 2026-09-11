@@ -1,5 +1,5 @@
 {
-  "HEAD": "b418efe2726ef1f68d5c39d890f1951f40938e99",
+  "HEAD": "daa043a488d97cedbbeb4a0563533b8eca4f9a6d",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -13,19 +13,19 @@
     "VAL-008": {
       "total_rows": 189,
       "PASS_REUSABLE": 4,
-      "PENDING": 177,
+      "PENDING": 175,
       "INCOMPLETE": 0,
       "FAIL": 0,
-      "PASS": 12
+      "PASS": 14
     },
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "contact-pair2-u0",
+    "case": "contact-pair2-u-100",
     "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 414.0
+    "elapsed": 2160.9220000002533
   },
   "next_row": {
     "case": "shock-pair0-ratio10",
@@ -601,7 +601,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },
@@ -625,7 +625,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },

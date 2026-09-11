@@ -1,5 +1,5 @@
 {
-  "HEAD": "b418efe2726ef1f68d5c39d890f1951f40938e99",
+  "HEAD": "daa043a488d97cedbbeb4a0563533b8eca4f9a6d",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -16,11 +16,11 @@
     "VAL-010": "COMPLETE (no rerun)"
   },
   "last_completed": {
-    "case": "contact-pair2-u0",
+    "case": "contact-pair2-u-100",
     "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 414.0
+    "elapsed": 2160.9220000002533
   },
   "next_row": {
     "case": "shock-pair0-ratio10",
@@ -59,16 +59,16 @@
   "blockers": [],
   "gate": "GATE_A",
   "next_row_GATE_A": {
-    "case": "contact-pair2-u100",
+    "case": "contact-pair1-u100",
     "kind": "contact",
-    "pair": 2,
+    "pair": 1,
     "velocity": 100.0,
     "pressure_ratio": null,
-    "N": 100,
-    "CFL": 0.2,
+    "N": 400,
+    "CFL": 0.05,
     "status": "PENDING",
     "evidence": null,
     "threshold": "thermal"
   },
-  "GATE_A_verified": "12/32"
+  "GATE_A_verified": "14/32"
 }
