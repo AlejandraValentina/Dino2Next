@@ -16,9 +16,19 @@ export function AppShell({ fields = [] }: { fields?: ModelField[] }) {
       <li key={item}><button type="button" aria-current={stage === item ? 'step' : undefined} onClick={() => setStage(item)}>{item}</button></li>
     )}</ol></nav>
     <section aria-labelledby="stage-title"><h2 id="stage-title">{stage}</h2>
-      {stage === 'Modelar' ? <><EngineTree active={section} onSelect={setSection} /><label><input type="checkbox" checked={preferences.advanced} onChange={e => updatePreferences(e.target.checked)} /> Opciones avanzadas</label><ModelPanel fields={fields} section={section} /></> : <p>Esta etapa queda disponible al recibir la interfaz ApplicationAPI de S17.</p>}
+      {stage === 'Modelar' ? <><EngineTree active={section} onSelect={setSection} /><label><input type="checkbox" checked={preferences.advanced} onChange={e => updatePreferences(e.target.checked)} /> Opciones avanzadas</label><ModelPanel fields={fields} section={section} /></> : <PendingStage stage={stage} />}
     </section>
   </main>;
+}
+
+function PendingStage({ stage }: { stage: AppStage }) {
+  const labels: Record<Exclude<AppStage, 'Modelar'>, string> = {
+    Preflight: 'La revisión se habilitará al recibir los diagnósticos del servicio.',
+    Ejecutar: 'La ejecución requiere una revisión aceptada y un run creado por el servicio.',
+    Resultados: 'Los resultados se mostrarán cuando el servicio publique su manifiesto.',
+    Comparar: 'La comparación requiere referencias de resultados compatibles.',
+  };
+  return <p role="status">{labels[stage]}</p>;
 }
 
 function ModelPanel({ fields, section }: { fields: ModelField[]; section: EngineSection }) {
