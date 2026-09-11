@@ -1,5 +1,5 @@
 {
-  "HEAD": "08c3f1c83191a513530709da853086d730d7bfe3",
+  "HEAD": "7090872c4e3fe1de09ec5af78fe39d275f17b8d8",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -10,7 +10,7 @@
     "S05"
   ],
   "validations": {
-    "VAL-008": "6 PASS, 183 PENDING, 0 FAIL",
+    "VAL-008": "7 PASS, 182 PENDING, 0 FAIL",
     "VAL-010": "COMPLETE (no rerun)"
   },
   "last_completed": {
@@ -19,12 +19,12 @@
     "pair": 0,
     "velocity": 0.0,
     "pressure_ratio": null,
-    "N": 100,
-    "CFL": 0.05,
+    "N": 200,
+    "CFL": 0.2,
     "status": "PASS",
     "evidence": null,
     "threshold": "operational",
-    "elapsed": 462.0157157992944
+    "elapsed": 504.48576444387436
   },
   "next_row": {
     "case": "contact-pair0-u0",
@@ -33,7 +33,7 @@
     "velocity": 0.0,
     "pressure_ratio": null,
     "N": 200,
-    "CFL": 0.2,
+    "CFL": 0.1,
     "status": "PENDING",
     "evidence": null,
     "threshold": "operational"

@@ -1,5 +1,5 @@
 {
-  "HEAD": "08c3f1c83191a513530709da853086d730d7bfe3",
+  "HEAD": "7090872c4e3fe1de09ec5af78fe39d275f17b8d8",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -13,10 +13,10 @@
     "VAL-008": {
       "total_rows": 189,
       "PASS_REUSABLE": 4,
-      "PENDING": 183,
+      "PENDING": 182,
       "INCOMPLETE": 0,
       "FAIL": 0,
-      "PASS": 6
+      "PASS": 7
     },
     "VAL-010": "COMPLETE_NO_RERUN"
   },
@@ -26,12 +26,12 @@
     "pair": 0,
     "velocity": 0.0,
     "pressure_ratio": null,
-    "N": 100,
-    "CFL": 0.05,
+    "N": 200,
+    "CFL": 0.2,
     "status": "PASS",
     "evidence": null,
     "threshold": "operational",
-    "elapsed": 462.0157157992944
+    "elapsed": 504.48576444387436
   },
   "next_row": {
     "case": "contact-pair0-u0",
@@ -40,7 +40,7 @@
     "velocity": 0.0,
     "pressure_ratio": null,
     "N": 200,
-    "CFL": 0.2,
+    "CFL": 0.1,
     "status": "PENDING",
     "evidence": null,
     "threshold": "operational"
@@ -161,9 +161,22 @@
       "pressure_ratio": null,
       "N": 200,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "operational"
+      "threshold": "operational",
+      "elapsed": 504.48576444387436,
+      "max_L1": [
+        2.082759106994344e-14,
+        3.9262129071190087e-17,
+        1.2126896763220456e-12
+      ],
+      "max_Linf": [
+        6.670064513773833e-14,
+        2.8737308176096025e-15,
+        1.2168311513960361e-12
+      ],
+      "ledger_max": 1.8258845858198646e-16,
+      "raw_sha256": "c1a30109c5a30a30873e87ec258146bec128561b2bf645c778622a4798cd4002"
     },
     {
       "case": "contact-pair0-u0",
