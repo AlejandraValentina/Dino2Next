@@ -22,6 +22,7 @@ export function AppShell({ fields = [] }: { fields?: ModelField[] }) {
 }
 
 function PendingStage({ stage }: { stage: AppStage }) {
+  if (stage === 'Modelar') return null;
   const labels: Record<Exclude<AppStage, 'Modelar'>, string> = {
     Preflight: 'La revisión se habilitará al recibir los diagnósticos del servicio.',
     Ejecutar: 'La ejecución requiere una revisión aceptada y un run creado por el servicio.',
