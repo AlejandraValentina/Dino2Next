@@ -19,9 +19,10 @@ REQUIRED |= frozenset(f'{PREFIX}/{name}.md' for name in ('BOUNDARY_CONTRACT', 'T
 REQUIRED |= frozenset({f'{PREFIX}/BCR-S03-NASA-INVERSION.md'})
 REQUIRED_DATA = frozenset(f'{PREFIX}/{name}' for name in ('EXECUTABLE_VALIDATION_FIXTURES.json', 'VALIDATION_CONTRACT_COVERAGE.json', 'NORMATIVE_ID_INDEX.json', 'datasets/thermo_species.json', 'datasets/thermo_transport.yaml', 'datasets/thermo_runtime_continuous_v1.json'))
 REQUIRED |= frozenset({f'{PREFIX}/BCR-S06-VERIFICATION-CONTRACT.md'})
-VERSION = 'C1.0-R5'
+VERSION = 'C1.0-R6'
 REQUIRED_DATA |= frozenset({f'{PREFIX}/S06_VERIFICATION_EVIDENCE_SHA256.json'})
 REQUIRED |= frozenset({f'{PREFIX}/BCR-S06-MATERIAL-RESOLUTION.md'})
+REQUIRED |= frozenset({f'{PREFIX}/BCR-S06-VERIFICATION-STAGING.md'})
 REQUIRED_DATA |= frozenset({f'{PREFIX}/S06_MATERIAL_RESOLUTION_EVIDENCE_SHA256.json'})
 STATUS = 'SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN'
 

@@ -330,7 +330,7 @@
         "Low/high NASA branch at 1000 K follows C1 exactly; no extrapolation or hidden formation-energy offset.",
         "Check simplex and supplied dataset identity; no undocumented built-in fuel dataset.",
         "Return diagnostic inversion residual and preserve input; use fixture oracle independent of candidate evaluator.",
-        "Use BCR-S03-NASA-INVERSION TI-001…005 derived runtime representation, unique bracketed energy/enthalpy inverse, original target/residual diagnostics and independent derived reference. Never overwrite input conserved state or relabel RAW energy."
+        "Use BCR-S03-NASA-INVERSION TI-001\u2026005 derived runtime representation, unique bracketed energy/enthalpy inverse, original target/residual diagnostics and independent derived reference. Never overwrite input conserved state or relabel RAW energy."
       ],
       "tests": [
         "tests/unit/s03/test_nasa_branches.py",
@@ -548,7 +548,7 @@
       ],
       "behavior": [
         "Distinguish cell average from integrated inventory using dx.",
-        "Use exact piecewise geometry integration and AF+pΔA semantics.",
+        "Use exact piecewise geometry integration and AF+p\u0394A semantics.",
         "Do not compute numerical face fluxes in this scope.",
         "Keep closed-port storage persistent; do not derive storage from Cd or opening.",
         "MR-008 additive regional extension is produced by S06 under exact file handoff; preserve accepted homogeneous behavior and existing S05 regression tests. No numerical flux implementation belongs in S05."
@@ -692,14 +692,15 @@
         }
       ],
       "behavior": [
-        "Implement NK-001…004 exactly; the joint guard receives the TS-001 physical trial-state mapping from the caller, never assumes an unreacted final combination.",
+        "Implement NK-001\u2026004 exactly; the joint guard receives the TS-001 physical trial-state mapping from the caller, never assumes an unreacted final combination.",
         "Do not infer the sensor formula from three constants or copy research code as authority.",
         "Preserve HLLC Davis, SSPRK2 and conservative final-combination check; expose every limiter activation.",
         "No global coupled timestep policy here; S16 composes all source bounds.",
         "Apply R4 SV-008/009/027 and SV-010 as explicitly superseded by R5 MR-010/free; preserve historical R3/R4 failures. Implement MR-008 only within its adjudicated interior applicability and exact S05 file handoff; every changed arithmetic route requires affected verification.",
         "Regional state uses authoritative W and I12, explicit physical initialization, W-weighted pressure, selected patch/remap and regional Riemann flux. Preserve NASA and inventories; no pressure/energy repair or oracle routing.",
         "Validate both Euler endpoints and final physical mapped state; compose the same-dt Y0/Y1 volume predictors and preserve rejected diagnostics. Unsupported birth/exit/collision/source-event operations reject transactionally until their explicit consumer contract exists.",
-        "MR-010 STUDY comparisons retain failures; FINAL_PRECISION requires all declared bounds for both epsilon and all101 samples. Coarse convergence and rigid coverage remain mandatory."
+        "MR-010 STUDY comparisons retain failures; FINAL_PRECISION requires all declared bounds for both epsilon and all101 samples. Coarse convergence and rigid coverage remain mandatory.",
+        "R6 staging: `VAL-008` has `GATE_A` 32/189 (`S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM`, `validation/fixtures/VAL-008/gate_a_matrix.json`) and `GATE_B` 189/189 (`NUMERICAL_VERIFICATION_COMPLETE`). Same `input.json`, thresholds, `101` samples, `qualification.json`, `ST003` ledger `1e-10`. `GATE_A` allows `S07\u2192S16` consumption; `GATE_B` is required for `NUMERICALLY_VERIFIED_GEN1`. `GATE_B` reuses `GATE_A` artifacts and runs in parallel via `S18`."
       ],
       "tests": [
         "tests/unit/s06/test_reconstruction.py",
@@ -708,6 +709,7 @@
         "tests/numerical/VAL-006/test_acceptance.py",
         "tests/numerical/VAL-007/test_acceptance.py",
         "tests/numerical/VAL-008/test_acceptance.py",
+        "tests/numerical/VAL-008/test_gate_a_acceptance.py",
         "tests/numerical/VAL-009/test_acceptance.py",
         "tests/numerical/VAL-010/test_acceptance.py",
         "tests/numerical/VAL-011/test_acceptance.py",
@@ -796,7 +798,8 @@
         "docs/science/C1.0/EXECUTABLE_VALIDATION_CATALOGUE.md",
         "docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md",
         "docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md",
-        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md"
+        "docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md",
+        "docs/science/C1.0/BCR-S06-VERIFICATION-STAGING.md"
       ],
       "specification_precondition": "C1.0-R2 executable contract closed. Implement only after declared dependency scopes PASS; mandatory verification must pass before its claim.",
       "material_path_handoff": {
@@ -807,6 +810,17 @@
           "src/dino2next/gasdynamics/regional.py",
           "src/dino2next/gasdynamics/README.md"
         ]
+      },
+      "verification_gates": {
+        "VAL-008": {
+          "GATE_A": "S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM",
+          "GATE_A_rows": 32,
+          "GATE_A_matrix": "validation/fixtures/VAL-008/gate_a_matrix.json",
+          "GATE_B": "NUMERICAL_VERIFICATION_COMPLETE",
+          "GATE_B_rows": 189,
+          "bcr": "docs/science/C1.0/BCR-S06-VERIFICATION-STAGING.md",
+          "note": "GATE_A 32/189 allows S07->S16 downstream consumption; GATE_B 189/189 required for NUMERICALLY_VERIFIED_GEN1. Same fixture, thresholds, 101 samples, reference."
+        }
       }
     },
     {
@@ -844,7 +858,7 @@
         {
           "name": "BoundaryCoupler",
           "purpose": "Produce oriented half-Riemann boundary traces and a shared interface ledger.",
-          "inputs": "reservoir quiescent p,T,Y,origin; reconstructed duct face state; local orientation n (+1 left/−1 right); physical Aface and Aopen in m²; stage time; ThermoModel, per BC-001",
+          "inputs": "reservoir quiescent p,T,Y,origin; reconstructed duct face state; local orientation n (+1 left/\u22121 right); physical Aface and Aopen in m\u00b2; stage time; ThermoModel, per BC-001",
           "outputs": "solve(...) -> BoundaryTrace(donor, p,T,u,M, flux, diagnostics); pair_flux(trace,left_id,right_id) -> TransferLedger pair",
           "units": "SI; outward normal +/-1; kg/s, N, W and species/tracer kg/s",
           "owner": "S07",
@@ -853,7 +867,7 @@
         }
       ],
       "behavior": [
-        "Implement BC-001…008 including domain-limited roots, donor reversal, sonic sampling and partial aperture/wall force.",
+        "Implement BC-001\u2026008 including domain-limited roots, donor reversal, sonic sampling and partial aperture/wall force.",
         "Use actual donor composition and enthalpy on reversal; no mixture averaging to suppress a contact.",
         "Closed face has zero mass/energy/species exchange and physical pressure force.",
         "One flux record is shared by both endpoints; never evaluate different times for each end.",
@@ -1070,7 +1084,7 @@
         "Raw Cd remains unchanged and linked to every fitted point.",
         "Report lack of identifying observations rather than choose a root in a plateau.",
         "No negative lambda, clipping, unqualified interpolation or extrapolation.",
-        "Use LC-001…005 interpolation, certificate, covariance and conditioning guards; no online ambiguous Cd inversion."
+        "Use LC-001\u2026005 interpolation, certificate, covariance and conditioning guards; no online ambiguous Cd inversion."
       ],
       "tests": [
         "tests/unit/s09/test_identification_status.py",
@@ -1545,7 +1559,7 @@
         "Use the exact selected reaction-coordinate integration, not an extra LHV energy source.",
         "Reject open-port or unmerged-cylinder SOC; preserve unburned reactants.",
         "End-burn handling is event aligned and does not overshoot terminal extent.",
-        "Expose TS-001 extent(t), stoichiometric b and the physical Q↔Z transformation; never add the extent increment twice or supply an LHV energy source."
+        "Expose TS-001 extent(t), stoichiometric b and the physical Q\u2194Z transformation; never add the extent increment twice or supply an LHV energy source."
       ],
       "tests": [
         "tests/unit/s13/test_reaction_balance.py",
@@ -1922,7 +1936,7 @@
         "Roll back state and ledgers together on rejected global steps; expose every retry.",
         "No maxcycle-as-convergence, phase shifting or averaging distinct attractors.",
         "Cancellation only at accepted-state boundaries; warm start has an explicit hashed predecessor.",
-        "Implement TS-001…006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory.",
+        "Implement TS-001\u2026006 global Z-stage transaction, all timestep bounds, event order, retry rollback and period scales; full-source verification remains mandatory.",
         "Consume MR-008 represented regional state and physical observables without homogeneous projection as a substitute. Implement affected birth/exit/donor/source-event routes only after their explicit contract and verification; retain required W/I/geometry/recovery identities and actual ledger transactions."
       ],
       "tests": [
@@ -2319,7 +2333,7 @@
         }
       ],
       "behavior": [
-        "Implement J01–J04: short creation, geometry/ports, exhaust and operating-point editing with free navigation after creation.",
+        "Implement J01\u2013J04: short creation, geometry/ports, exhaust and operating-point editing with free navigation after creation.",
         "Every scientific editable field binds to S17 schema pointer and eventual solver input/provenance; absent backend consumer means disabled NOT_YET_SUPPORTED.",
         "No physical calculator in frontend; displayed derived displacement comes from backend.",
         "Advanced station/uncertainty metadata is reachable without hiding required errors; keyboard tree and focus restoration are tested.",
@@ -2535,7 +2549,7 @@
         }
       ],
       "behavior": [
-        "Implement J07,J09: p–theta/PV views and run overlay preserving original phase and location.",
+        "Implement J07,J09: p\u2013theta/PV views and run overlay preserving original phase and location.",
         "Simulation and measurement get distinct legend/source markers.",
         "Unavailable brake values never render as zero; failed sweep points are gaps with reasons.",
         "Export requests preserve run/trace hashes; frontend does not synthesize scientific result data."

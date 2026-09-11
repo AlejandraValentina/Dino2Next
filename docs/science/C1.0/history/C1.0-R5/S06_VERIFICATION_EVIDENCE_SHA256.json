@@ -1,0 +1,21 @@
+{
+  "classification": "FROZEN_BCR_REPRODUCIBLE_EVIDENCE_NOT_NEW_KERNEL_ACCEPTANCE",
+  "files": {
+    "research/bcr_s06_verification/analytical008010.py": "614e1b94d01e5fe134833c4b18a05e69c4b988c3a855f8a623c51ee81eca727f",
+    "research/bcr_s06_verification/certify010.py": "6a5aab40e7317ea37e6b1f17a66f81ea4ce074fd7f4d9ed6b3006441cbe663e9",
+    "research/bcr_s06_verification/certify027_residual.py": "33c9b516ef282f7103c9cefb358ddbd323cf06215f51618e2580dd220b07016d",
+    "research/bcr_s06_verification/certify027_target.py": "5d4cd23787e6c0acb8da597671f9c85d9181054277fe4fe02d753f3f72cfc381",
+    "research/bcr_s06_verification/checks.py": "57765ee9a72f14635fba3c6d0f61e9b5b010a128e3353a46560a61e613486f8e",
+    "research/bcr_s06_verification/frozen/full-kernel-dt-0.000125.npz": "dffe3181d98eb4cd8250e495a4f5319f46120a333b1bc3a7df1201d4d0f0889b",
+    "research/bcr_s06_verification/frozen/full-kernel-reference.npz": "58ab698f942bc9b0320d475a1f3be8bc5e0290d8674422aa8692dd1f9de7da03",
+    "research/bcr_s06_verification/frozen/original-full-dt-0.00025.npz": "216accf315261e6bb7b93c94b3ce1866fbfe1a73ea245007308258864c14ff4e",
+    "research/bcr_s06_verification/full-kernel-diagnostic.json": "c0156d9b83d7a518bc41bdd6e386d0b2793d34ad9ab187347fbdeb2ab82be55d",
+    "research/bcr_s06_verification/historical-failures.json": "0ffe112ab949031884bfa8ba954a12fdb40973d1e512e5342f5ac8027530a84b",
+    "research/bcr_s06_verification/portability.json": "67cf7d48a1a0377c6da1808c1ede4cf62cc422c73719d5a970572459c2665df7",
+    "research/bcr_s06_verification/README.md": "57fc37f820502faf0806a389168c364529f1ffad8a59267ba984b2ed93318030",
+    "research/bcr_s06_verification/requirements.txt": "0492d580cc5e638bc809b6e21317925c78a981d132a8a572a35f7b8f2aa0f62b",
+    "research/bcr_s06_verification/scalar009-original-diagnostic.json": "f52a0c63b4d11d1f5f49686b04702f9366512839f8a83403c952e64f428571b5",
+    "research/bcr_s06_verification/scalar009.py": "1c54349dd0888eafbc674a345707b85c5448037b6a4a553a5cda3c1aeb66637b",
+    "research/bcr_s06_verification/scalar027.py": "74a9c292649f3054a3be3286cf4d1e5fcc857b5efae8bbb6e135ba6d9048ccae"
+  }
+}

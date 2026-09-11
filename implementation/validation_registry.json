@@ -145,7 +145,16 @@
       "test": "tests/numerical/VAL-008/test_acceptance.py",
       "execution_status": "NOT_IMPLEMENTED",
       "contract_status": "REQUIRES_EXACT_FIXTURE_CONSOLIDATION",
-      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change"
+      "failure_consequence": "Blocks NUMERICALLY_VERIFIED_GEN1; preserve failure and require BCR for method/fixture/threshold change",
+      "gate_staging": {
+        "GATE_A": "S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM",
+        "GATE_A_rows": 32,
+        "GATE_B": "NUMERICAL_VERIFICATION_COMPLETE",
+        "GATE_B_rows": 189,
+        "matrix": "validation/fixtures/VAL-008/gate_a_matrix.json",
+        "bcr": "docs/science/C1.0/BCR-S06-VERIFICATION-STAGING.md"
+      },
+      "gate_staging_note": "GATE_A 32/189 allows S07->S16; GATE_B 189/189 required for NUMERICALLY_VERIFIED_GEN1. Same thresholds, 101 samples, reference."
     },
     {
       "id": "VAL-009",

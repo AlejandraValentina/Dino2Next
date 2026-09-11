@@ -1,5 +1,5 @@
 {
-  "HEAD": "2c3594e6165dec705f133c67df4c1e32688cb2fd",
+  "HEAD": "3e8ea233f134bcaaa405def3bf16883f1fa6f5cc",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -11,7 +11,9 @@
   ],
   "validations": {
     "VAL-008": "8 PASS, 181 PENDING, 0 FAIL",
-    "VAL-010": "COMPLETE (no rerun)"
+    "VAL-010": "COMPLETE (no rerun)",
+    "VAL-008_GATE_A": "8/32 PASS",
+    "VAL-008_GATE_B": "8/189 PASS (GATE_B pending 157)"
   },
   "last_completed": {
     "case": "contact-pair0-u0",
@@ -60,5 +62,18 @@
       0.2
     ]
   ],
-  "blockers": []
+  "blockers": [],
+  "gate": "GATE_A",
+  "next_row_GATE_A": {
+    "case": "contact-pair1-u0",
+    "kind": "contact",
+    "pair": 1,
+    "velocity": 0.0,
+    "pressure_ratio": null,
+    "N": 100,
+    "CFL": 0.2,
+    "status": "PENDING",
+    "evidence": null,
+    "threshold": "thermal"
+  }
 }

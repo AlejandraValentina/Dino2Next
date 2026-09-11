@@ -1,5 +1,4 @@
-> **Normative — C1.0-R6** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
-> Per `BCR-S06-VERIFICATION-STAGING` (R6), `VAL-008` has `GATE_A` 32/189 `S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM` (unlocks `S07→S16`) and `GATE_B` 189/189 `NUMERICAL_VERIFICATION_COMPLETE` (required for `NUMERICALLY_VERIFIED_GEN1`). Same fixture, thresholds, `101` samples.
+> **Normative — C1.0-R2** · Status: `SCIENTIFIC_IMPLEMENTATION_BASELINE_FROZEN`
 >
 > This contract defines implementation requirements. Unexecuted verification gates remain mandatory and may not be relaxed without a Baseline Change Request (BCR).
 
@@ -10,9 +9,7 @@ The exact fixtures and thresholds live in VALIDATION_SPEC; this matrix schedules
 | Gate | VAL | Independent reference | Compute class | Execution | Failure blocks |
 |---|---|---|---|---|---|
 | Thermo/geometry/unit | 001–005 | tables/analytic ODE and identities | FAST_PR_GATE | every affected PR | merge |
-| Canonical gas dynamics GATE_A | 008 (32) | exact Riemann (NASA, 32/189) + `gate_a_matrix.json` | PR_SCIENTIFIC_AFFECTED | `S06` `GATE_A` | `S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM` (unlocks `S07`) |
-| Canonical gas dynamics GATE_B | 008 (189) | exact Riemann (NASA, 189/189) | PR_SCIENTIFIC_AFFECTED | `S06` `GATE_B` via `S18` | `NUMERICAL_VERIFICATION_COMPLETE` |
-| Canonical gas dynamics | 006–007,009–011 | exact Riemann/Fourier/analytic area cases | PR_SCIENTIFIC_AFFECTED | numerical-kernel PRs | merge |
+| Canonical gas dynamics | 006–011 | exact Riemann/Fourier/analytic area cases | PR_SCIENTIFIC_AFFECTED | numerical-kernel PRs | merge |
 | Fixed coupling | 013 | WENO5-HLLE-RK4 + independent half-Riemann | MILESTONE_GATE | port milestone | milestone acceptance |
 | Moving coupling | 014 | DGSEM-LF-RK4 + independent boundary | HEAVY_VERIFICATION_GATE | cylinder-port milestone | NUMERICALLY_VERIFIED_GEN1 |
 | Reversal | 016 + R1 | independent WENO5-HLLE-RK4 | HEAVY_VERIFICATION_GATE | port/coupling milestone | NUMERICALLY_VERIFIED_GEN1 |

@@ -26,6 +26,7 @@ C1 paths: `docs/science/C1.0/GEN1_CONTRACT.md`, `PHYSICS_SPEC.md`, `NUMERICAL_ME
 - `docs/science/C1.0/REFERENCE_EXECUTION_CONTRACT.md` — C1.0-R2 normative clause companion
 - `docs/science/C1.0/BCR-S06-VERIFICATION-CONTRACT.md` — normative clause companion
 - `docs/science/C1.0/BCR-S06-MATERIAL-RESOLUTION.md` — normative clause companion
+- `docs/science/C1.0/BCR-S06-VERIFICATION-STAGING.md` — normative clause companion
 
 ## Required interfaces
 ### NumericalKernel
@@ -48,6 +49,7 @@ Common software value rules: `implementation/PUBLIC_INTERFACE_CONTRACT.md`. Inte
 - Regional state uses authoritative W and I12, explicit physical initialization, W-weighted pressure, selected patch/remap and regional Riemann flux. Preserve NASA and inventories; no pressure/energy repair or oracle routing.
 - Validate both Euler endpoints and final physical mapped state; compose the same-dt Y0/Y1 volume predictors and preserve rejected diagnostics. Unsupported birth/exit/collision/source-event operations reject transactionally until their explicit consumer contract exists.
 - MR-010 STUDY comparisons retain failures; FINAL_PRECISION requires all declared bounds for both epsilon and all101 samples. Coarse convergence and rigid coverage remain mandatory.
+- R6 staging: `VAL-008` has `GATE_A` 32/189 (`S06_IMPLEMENTATION_ACCEPTED_FOR_DOWNSTREAM`, `validation/fixtures/VAL-008/gate_a_matrix.json`) and `GATE_B` 189/189 (`NUMERICAL_VERIFICATION_COMPLETE`). Same `input.json`, thresholds, `101` samples, `qualification.json`, `ST003` ledger `1e-10`. `GATE_A` allows `S07→S16` consumption; `GATE_B` is required for `NUMERICALLY_VERIFIED_GEN1`. `GATE_B` reuses `GATE_A` artifacts and runs in parallel via `S18`.
 
 ## Allowed paths
 - `src/dino2next/numerics/`
@@ -99,6 +101,7 @@ Paths ending in `/` are exclusive subtrees except for the exact file handoffs en
 - `tests/numerical/VAL-006/test_acceptance.py`
 - `tests/numerical/VAL-007/test_acceptance.py`
 - `tests/numerical/VAL-008/test_acceptance.py`
+- `tests/numerical/VAL-008/test_gate_a_acceptance.py`
 - `tests/numerical/VAL-009/test_acceptance.py`
 - `tests/numerical/VAL-010/test_acceptance.py`
 - `tests/numerical/VAL-011/test_acceptance.py`
