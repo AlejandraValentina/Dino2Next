@@ -6,6 +6,7 @@ import { loadUiPreferences, saveUiPreferences } from '../../src/shell/preference
 import type { ApplicationApiClient } from '../../src/api/applicationBoundary';
 import { createHttpClient } from '../../src/api/httpClient';
 import { ApplicationApiError } from '../../src/api/httpClient';
+import { loadDraft, saveDraft } from '../../src/shell/draftStorage';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -68,5 +69,13 @@ describe('model workspace application boundary', () => {
     expect(calls.map(c => new URL(c.url).pathname)).toEqual(['/api/v1/runs/r%2F1/diagnostics', '/api/v1/runs/r%2F1/results', '/api/v1/runs/r%2F1/traces/t%2F2', '/api/v1/runs/r%2F1/cancel', '/api/v1/compare']);
     expect(calls[3].method).toBe('POST');
     expect(new URL(calls[4].url).searchParams.get('run_ids')).toBe('r/1,r/2');
+  });
+
+  it('persists drafts separately from authoritative revisions', () => {
+    const data = new Map<string, string>();
+    const storage = { getItem: (k: string) => data.get(k) ?? null, setItem: (k: string, v: string) => data.set(k, v) } as unknown as Storage;
+    saveDraft('project-1', { '/geometry/diameter': '0.1' }, storage);
+    expect(loadDraft('project-1', storage)).toEqual({ '/geometry/diameter': '0.1' });
+    expect(loadDraft('missing', storage)).toEqual({});
   });
 });
