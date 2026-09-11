@@ -5,6 +5,7 @@ import { ENGINE_SECTIONS, sectionStage } from '../../src/navigation/EngineTree';
 import { loadUiPreferences, saveUiPreferences } from '../../src/shell/preferences';
 import type { ApplicationApiClient } from '../../src/api/applicationBoundary';
 import { createHttpClient } from '../../src/api/httpClient';
+import { ApplicationApiError } from '../../src/api/httpClient';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -52,5 +53,10 @@ describe('model workspace application boundary', () => {
     expect(calls[0].url).toContain('/projects/p%2F1/revisions');
     expect(calls[0].headers.get('if-match')).toBe('parent');
     expect(calls[1].headers.get('idempotency-key')).toBe('key-1');
+  });
+
+  it('preserves typed conflict errors from the application service', async () => {
+    const fetcher = (async () => new Response(JSON.stringify({ code: 'REVISION_CONFLICT', message: 'stale', pointer: '/revision' }), { status: 409 })) as typeof fetch;
+    await expect(createHttpClient('http://localhost/api/v1', fetcher).createProject({})).rejects.toMatchObject({ status: 409, code: 'CONFLICT', pointer: '/revision' } satisfies Partial<ApplicationApiError>);
   });
 });

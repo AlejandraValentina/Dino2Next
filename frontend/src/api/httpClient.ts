@@ -1,9 +1,18 @@
-import type { ApplicationApiClient, ProjectRevision } from './applicationBoundary';
+import type { ApplicationApiClient, ProjectRevision, ApiErrorCode } from './applicationBoundary';
+
+export class ApplicationApiError extends Error {
+  constructor(public readonly status: number, public readonly code: ApiErrorCode | 'NOT_FOUND' | 'CONFLICT', message: string, public readonly pointer?: string) { super(message); }
+}
 
 export function createHttpClient(baseUrl: string, fetcher: typeof fetch = fetch): ApplicationApiClient {
   const request = async <T>(path: string, init: RequestInit = {}): Promise<T> => {
     const response = await fetcher(`${baseUrl.replace(/\/$/, '')}${path}`, { ...init, headers: { 'content-type': 'application/json', ...(init.headers ?? {}) } });
-    if (!response.ok) throw new Error(`ApplicationAPI request failed (${response.status})`);
+    if (!response.ok) {
+      let detail: { code?: string; message?: string; pointer?: string } = {};
+      try { detail = await response.json() as typeof detail; } catch { /* preserve status when body is unavailable */ }
+      const code = response.status === 404 ? 'NOT_FOUND' : response.status === 409 ? 'CONFLICT' : (detail.code as ApiErrorCode | undefined) ?? 'API_VALIDATION_ERROR';
+      throw new ApplicationApiError(response.status, code, detail.message ?? `ApplicationAPI request failed (${response.status})`, detail.pointer);
+    }
     return response.status === 204 ? (undefined as T) : await response.json() as T;
   };
   return {
