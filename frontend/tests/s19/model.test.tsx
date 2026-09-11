@@ -4,6 +4,7 @@ import { fieldBinding } from '../../src/route_entries/model';
 import { ENGINE_SECTIONS, sectionStage } from '../../src/navigation/EngineTree';
 import { loadUiPreferences, saveUiPreferences } from '../../src/shell/preferences';
 import type { ApplicationApiClient } from '../../src/api/applicationBoundary';
+import { createHttpClient } from '../../src/api/httpClient';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -40,5 +41,16 @@ describe('model workspace application boundary', () => {
   it('keeps the API dependency injectable at the application boundary', () => {
     const client: ApplicationApiClient = {} as ApplicationApiClient;
     expect(client).toBeDefined();
+  });
+
+  it('uses only contract routes and immutable revision/idempotency headers', async () => {
+    const calls: Request[] = [];
+    const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => { calls.push(new Request(input, init)); return new Response(JSON.stringify({ id: 'p', revision_hash: 'r', schema_version: 'v1' }), { status: 200 }); }) as typeof fetch;
+    const api = createHttpClient('http://localhost/api/v1', fetcher);
+    await api.createRevision('p/1', 'parent', {});
+    await api.createRun('key-1', 'preflight', {});
+    expect(calls[0].url).toContain('/projects/p%2F1/revisions');
+    expect(calls[0].headers.get('if-match')).toBe('parent');
+    expect(calls[1].headers.get('idempotency-key')).toBe('key-1');
   });
 });
