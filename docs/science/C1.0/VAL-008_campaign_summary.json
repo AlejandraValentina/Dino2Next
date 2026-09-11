@@ -1,0 +1,64 @@
+{
+  "HEAD": "08c3f1c83191a513530709da853086d730d7bfe3",
+  "scope_active": "S06",
+  "scopes_accepted": [
+    "S00",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "validations": {
+    "VAL-008": "6 PASS, 183 PENDING, 0 FAIL",
+    "VAL-010": "COMPLETE (no rerun)"
+  },
+  "last_completed": {
+    "case": "contact-pair0-u0",
+    "kind": "contact",
+    "pair": 0,
+    "velocity": 0.0,
+    "pressure_ratio": null,
+    "N": 100,
+    "CFL": 0.05,
+    "status": "PASS",
+    "evidence": null,
+    "threshold": "operational",
+    "elapsed": 462.0157157992944
+  },
+  "next_row": {
+    "case": "contact-pair0-u0",
+    "kind": "contact",
+    "pair": 0,
+    "velocity": 0.0,
+    "pressure_ratio": null,
+    "N": 200,
+    "CFL": 0.2,
+    "status": "PENDING",
+    "evidence": null,
+    "threshold": "operational"
+  },
+  "reusable_evidence": [
+    [
+      "contact-pair1-u100",
+      200,
+      0.1
+    ],
+    [
+      "contact-pair1-u-100",
+      100,
+      0.2
+    ],
+    [
+      "contact-pair0-u0",
+      100,
+      0.2
+    ],
+    [
+      "contact-pair0-u100",
+      100,
+      0.2
+    ]
+  ],
+  "blockers": []
+}
