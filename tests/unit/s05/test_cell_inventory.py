@@ -48,6 +48,22 @@ def test_formation_energy_and_kinetic_recovery(thermo,u,Y):
     assert duct.Q==tuple(map(tuple,q))
 
 
+def test_exact_duplicate_rows_reuse_eos_result_without_changing_recovery(thermo,monkeypatch):
+    mesh=Mesh1D((0,.25,.5,.75,1.),(1,1,1,1),(1,1,1,1,1),(4,4,4,4))
+    rows=state_rows(mesh,thermo,T=600,p=200000,u=75,Y=(0,.23,.77,0,0),tau=(.1,.2,.3,.4))
+    expected=thermo.invert_energy(rows[0][0],rows[0][2]/rows[0][0]-.5*(rows[0][1]/rows[0][0])**2,
+                                  (0,.23,.77,0,0))
+    calls=[];original=type(thermo).invert_energy
+    def invert(model,rho,e,Y,**kwargs):
+        calls.append((rho,e,Y));return original(model,rho,e,Y,**kwargs)
+    monkeypatch.setattr(type(thermo),'invert_energy',invert)
+    duct=DuctState(mesh,rows,thermo)
+    assert len(calls)==1
+    for state in duct.primitive().states:
+        assert (state.T,state.p,state.rho,state.e)==pytest.approx((expected.T,expected.p,expected.rho,expected.e),rel=0,abs=5e-10)
+        assert state.Y==pytest.approx(expected.Y,rel=0,abs=5e-16)
+
+
 def test_only_derived_fraction_roundoff_is_corrected(thermo):
     mesh=Mesh1D((0,1),(1,),(1,1),(4,))
     q=state_rows(mesh,thermo)

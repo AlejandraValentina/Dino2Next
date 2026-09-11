@@ -1,0 +1,50 @@
+{
+  "id": "VAL-006",
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "baseline": "C1.0-R4",
+  "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+  "frozen_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
+  "frozen_fiche": {
+    "objective": "Sod shock tube",
+    "type": "NUMERICAL_VERIFICATION",
+    "physics_numerics": "Current C1.0-R4 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "initial_state": "gamma1.4,R1; x<.5:rho1,u0,p1; x>.5:rho.125,u0,p.1.",
+    "geometry": "x=[0,1]m,A=1m\u00b2.",
+    "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
+    "mesh_sequence": "Uniform N=[50,100,200,400] on x=[0,1] m, exact cell-average initialization; A=1 m\u00b2.",
+    "dt_sequence": "CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.",
+    "boundary_states": "Constant extrapolation; wave domain of dependence must not reach boundaries.",
+    "end_condition": "t=.2 s.",
+    "sampling": "Initial and final full cell-average fields plus 101 uniformly spaced times using endpoint alignment. Reference averages use Gauss16/32 with exact wave breaks split; no point-value vs average comparison.",
+    "independent_reference": "Exact full Euler Riemann wave solution, independent Clawpack-style pressure root and wave-split cell integration.",
+    "reference_resolution": "Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.",
+    "observable": "Cell-average rho,u,p and conservation.",
+    "normalization": "Density scale1 kg/m\u00b3; L1=(1/L)sum dx*abs(error).",
+    "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.",
+    "threshold": "N400 L1 rho\u2264.004375; decreases each level and last-two order\u2265.5; ledger\u22641e-10; rho,p positive.",
+    "failure": "IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.",
+    "artifacts": "Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation."
+  },
+  "gamma": 1.4,
+  "R_SI": 1.0,
+  "species_tag": "N2 mathematical carrier only",
+  "origin_tag": "R",
+  "CFL": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "sampling_points": 101,
+  "meshes": [
+    50,
+    100,
+    200,
+    400
+  ],
+  "cases": [
+    {
+      "name": "sod",
+      "time": 0.2
+    }
+  ]
+}

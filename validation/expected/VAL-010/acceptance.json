@@ -1,0 +1,12 @@
+{
+  "id": "VAL-010",
+  "classification": "NUMERICAL_VERIFICATION",
+  "thresholds": {
+    "finest_rigid_normalized_L1_max": 0.01,
+    "free_amplitude_relative_max": 0.01,
+    "free_phase_pi_over_N": 1,
+    "free_absolute_complex_max": 0.01,
+    "free_phase_resolution": 0.01
+  },
+  "source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513"
+}

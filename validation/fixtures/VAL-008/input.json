@@ -1,0 +1,237 @@
+{
+  "id": "VAL-008",
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "baseline": "C1.0-R4",
+  "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+  "frozen_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
+  "frozen_fiche": {
+    "objective": "NASA species/thermal contacts and mixed shocks",
+    "type": "NUMERICAL_VERIFICATION",
+    "physics_numerics": "Current C1.0-R4 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "initial_state": "At x=.5, pL=pR=1e5 Pa,u=[0,100,-100]m/s. Pairs: pureN2/CO2 both600K; N2 600K/CO2 1800K; premixphi.7 400K/productsphi.7 1800K. Mixed shock subcases same composition pairs, u=0,T both700K,pR=1e5,pL/pR=[2,5,10].",
+    "geometry": "Measurement window x=[0,1]m,A1; computational domain[-M/N,1+M/N],dx=1/N,M=ceil(N*S*t_final)+4 per side, S=1293m/s contacts or2544m/s shocks, per SV-008. No damping/source in guards.",
+    "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
+    "mesh_sequence": "N denotes original-window cells: contacts[100,200,400], mixed shocks[80,160,320,640]; uniform dx=1/N throughout guards, totalN+2M. Original window0,1 and interface.5 remain faces.",
+    "dt_sequence": "CFL=[0.2,0.1,0.05]; spatial assessment at 0.05, temporal separation on finest N. Align to end and sampling times.",
+    "boundary_states": "Constant left/right state extension; SV-008 analytic causal guards fixed before candidate errors. Monitor all physical stages max(|u|+a)<=predeclaredS; violation SETUP_CAUSAL_BOUND_FAILED, no adaptive domain expansion.",
+    "end_condition": "Contacts .001s; shocks .0002s (verify wave travel does not reach boundary).",
+    "sampling": "Initial and final full cell-average fields plus 101 uniformly spaced times using endpoint alignment. Reference averages use Gauss16/32 with exact wave breaks split; no point-value vs average comparison.",
+    "independent_reference": "Contacts exact advected material state cell averages. Mixed shocks independent full NASA Riemann solver: two Hugoniot/rarefaction curves in BC-003 with mirrored left-family sign, common p/u pressure root, separate donor compositions, exact wave sampling. Reference must qualify before use.",
+    "reference_resolution": "Analytic reference evaluated independently in float64 with 80-digit arithmetic spot checks. Reference absolute error must be below 10% of the smallest applicable threshold; otherwise REFERENCE_NOT_QUALIFIED.",
+    "observable": "Contact pressure/velocity oscillations, rhoY, T; shock rho,p,u wave profiles and conservation.",
+    "normalization": "Every error norm uses ONLY original[0,1] window and its1m length. Pressure1e5Pa; species mass by original-window mass; density by max initialrho; velocity by initial max sound speed. Guard cells never enter error denominators.",
+    "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory. SV-008 requires full computational-domain and separate original-window ledgers, the latter using actual face transfers at0and1.",
+    "threshold": "Operational pressure contact L1\u22645e-4,Linf\u22645e-3; thermal contacts L1\u22642e-3,Linf\u22642e-2 normalized p by1e5. Mixed shocks: positive admissible states, ledger\u22641e-10 and decreasing L1 errors with last-two order\u2265.5 under general discontinuity requirement; no unrecorded new peak tolerance.",
+    "failure": "IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.",
+    "artifacts": "Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation."
+  },
+  "meshes": {
+    "contact": [
+      100,
+      200,
+      400
+    ],
+    "shock": [
+      80,
+      160,
+      320,
+      640
+    ]
+  },
+  "CFL": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "sampling_points": 101,
+  "guard_speeds": {
+    "contact": 1293,
+    "shock": 2544
+  },
+  "window": [
+    0.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "name": "contact-pair0-u0",
+      "kind": "contact",
+      "parameters": {
+        "pair": 0,
+        "velocity": 0.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair0-u100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 0,
+        "velocity": 100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair0-u-100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 0,
+        "velocity": -100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "shock-pair0-ratio2",
+      "kind": "shock",
+      "parameters": {
+        "pair": 0,
+        "velocity": 0.0,
+        "pressure_ratio": 2.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair0-ratio5",
+      "kind": "shock",
+      "parameters": {
+        "pair": 0,
+        "velocity": 0.0,
+        "pressure_ratio": 5.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair0-ratio10",
+      "kind": "shock",
+      "parameters": {
+        "pair": 0,
+        "velocity": 0.0,
+        "pressure_ratio": 10.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "contact-pair1-u0",
+      "kind": "contact",
+      "parameters": {
+        "pair": 1,
+        "velocity": 0.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair1-u100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 1,
+        "velocity": 100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair1-u-100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 1,
+        "velocity": -100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "shock-pair1-ratio2",
+      "kind": "shock",
+      "parameters": {
+        "pair": 1,
+        "velocity": 0.0,
+        "pressure_ratio": 2.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair1-ratio5",
+      "kind": "shock",
+      "parameters": {
+        "pair": 1,
+        "velocity": 0.0,
+        "pressure_ratio": 5.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair1-ratio10",
+      "kind": "shock",
+      "parameters": {
+        "pair": 1,
+        "velocity": 0.0,
+        "pressure_ratio": 10.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "contact-pair2-u0",
+      "kind": "contact",
+      "parameters": {
+        "pair": 2,
+        "velocity": 0.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair2-u100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 2,
+        "velocity": 100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "contact-pair2-u-100",
+      "kind": "contact",
+      "parameters": {
+        "pair": 2,
+        "velocity": -100.0,
+        "pressure_ratio": null
+      },
+      "time": 0.001
+    },
+    {
+      "name": "shock-pair2-ratio2",
+      "kind": "shock",
+      "parameters": {
+        "pair": 2,
+        "velocity": 0.0,
+        "pressure_ratio": 2.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair2-ratio5",
+      "kind": "shock",
+      "parameters": {
+        "pair": 2,
+        "velocity": 0.0,
+        "pressure_ratio": 5.0
+      },
+      "time": 0.0002
+    },
+    {
+      "name": "shock-pair2-ratio10",
+      "kind": "shock",
+      "parameters": {
+        "pair": 2,
+        "velocity": 0.0,
+        "pressure_ratio": 10.0
+      },
+      "time": 0.0002
+    }
+  ]
+}

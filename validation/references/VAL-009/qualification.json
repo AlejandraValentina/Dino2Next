@@ -1,0 +1,22 @@
+{
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "status": "REFERENCE_QUALIFIED",
+  "fixture": "VAL-009",
+  "candidate_imports": false,
+  "precision_digits": 80,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.2.6",
+    "mpmath": "1.3.0"
+  },
+  "reference_sha256": "980c3b1c217107b0d5058308e6d0e7aa5d1a5c1ea290f1ad1d4e7daf38d9d14b",
+  "qualification_sha256": "3a4320255968b6264fa84c7bae1c5e8c30c7b2c8e6a813e9fc4e34cf1b503314",
+  "fixture_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
+  "checks": {
+    "cell_sinusoid_80_max": "0.00000000000000010532119973599050774920808256851177654142718234184169659548733508966036526651427",
+    "continuous_fourier_80_max": "0.00000000000000000000039726127217154048582708239153579521692181452450612267855187656556446493826731261",
+    "cell_fourier_operator_80": "0.0000000000000000000006569036150516150490600865917026398105816329813935954661862864706263155064665781",
+    "allocation": "Absolute pressure error<1e-14 versus finest eps/2 pressure allocation ~3.8e-10; Fourier abs error<1e-18."
+  },
+  "meaning": "Reference qualification only; candidate numerical acceptance remains separate."
+}

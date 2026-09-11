@@ -1,0 +1,54 @@
+{
+  "id": "VAL-027",
+  "classification": "NUMERICAL_FIXTURE_ONLY",
+  "baseline": "C1.0-R4",
+  "frozen_source": "docs/science/C1.0/EXECUTABLE_VALIDATION_FIXTURES.json",
+  "frozen_source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513",
+  "frozen_fiche": {
+    "objective": "Isolate temporal order at fixed semidiscrete mesh",
+    "type": "NUMERICAL_VERIFICATION",
+    "physics_numerics": "Current C1.0-R4 physics and NUM-001\u2026010, BC-001\u2026008, TS-001\u2026007. Constant-gamma fixtures explicitly test the homogeneous numerical limit, not GEN1 chemical validity.",
+    "initial_state": "gamma1.4,R1,rho=1+.01sin(2pi*x),u=.3,p1; periodic.",
+    "geometry": "x0..1,A1,N40fixed.",
+    "domain": "SI units throughout. NASA5 uses frozen dataset, 300\u20132200 K and 50 kPa\u20135 MPa; constant-gamma canonical cases use their stated mathematical domain.",
+    "mesh_sequence": "N40fixed; no spatialrefinementin temporal estimate.",
+    "dt_sequence": "Fixed dt=[.002,.001,.0005,.00025,.000125]s atN40; preserve every original level and its historical failure. Full reference at all801 finest endpoints; candidate errors at every endpoint of each level. See SV-027.",
+    "boundary_states": "Periodicbothends.",
+    "end_condition": "t=.1s.",
+    "sampling": "Initial state, every accepted endpoint and final state. Compare against reference evaluated at identical times, never phase shift.",
+    "independent_reference": "DOP853 independent integrator applied to exactly same selected semidiscrete RHS; this is temporal reference only, not independent spatial truth. rtol2.3e-14,atol1e-16,maxstep.0001; crosscheckrtol1e-13,atol1e-15.",
+    "reference_resolution": "SV-027 same-RHS DOP853 with original tolerances and crosscheck, plus independent high-precision scalar/continuous-defect qualification for the invariant material contact. Explicit uncertainty<=1e-11; two-run discrepancy alone is not an absolute certificate. Requalify changed RHS; preserve all801times.",
+    "observable": "rho L1temporal error,fullstate norms,order.",
+    "normalization": "rho1kg/m\u00b3,L1meanoverlength1.",
+    "metric": "Maximum timewise absolute error divided by declared scale, plus L1/L2 and observed log2 refinement order. Ledger is final\u2212initial\u2212external flux\u2212physical source, scaled by initial absolute inventory plus absolute throughput plus nonzero reference inventory.",
+    "threshold": "FinestL1\u22641e-10,order1.8..2.2 firsttwopairs,referenceerror\u22641e-11. If errorfloorpreventsordermeasurementreportREFERENCE_NOT_QUALIFIED,notPASS.",
+    "failure": "IMPLEMENTATION_DEFECT for violated algebra/input/ledger; VERIFICATION_FAILURE for failed numerical acceptance; REFERENCE_NOT_QUALIFIED if oracle allocation fails. No tolerance changes or scientific choices by adapter.",
+    "artifacts": "Versioned SI input JSON, candidate/ref raw time series, source and environment hashes, actual mesh/dt, all retries, ledgers, normalized metrics/order, PASS/FAIL with reason. No synthetic run is experimental validation."
+  },
+  "gamma": 1.4,
+  "R_SI": 1.0,
+  "species_tag": "N2 mathematical carrier only",
+  "origin_tag": "R",
+  "CFL": [
+    0.2,
+    0.1,
+    0.05
+  ],
+  "sampling_points": 101,
+  "meshes": [
+    40
+  ],
+  "dt": [
+    0.002,
+    0.001,
+    0.0005,
+    0.00025,
+    0.000125
+  ],
+  "cases": [
+    {
+      "name": "temporal",
+      "time": 0.1
+    }
+  ]
+}

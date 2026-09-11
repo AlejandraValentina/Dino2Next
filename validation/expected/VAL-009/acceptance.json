@@ -1,0 +1,11 @@
+{
+  "id": "VAL-009",
+  "classification": "NUMERICAL_VERIFICATION",
+  "thresholds": {
+    "amplitude_N_factor": 2,
+    "amplitude_epsilon_factor": 10,
+    "phase_pi_over_N": 1,
+    "smooth_order_min": 1.8
+  },
+  "source_sha256": "fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513"
+}
