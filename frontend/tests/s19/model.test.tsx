@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { stageFromPath } from '../../src/navigation/routes';
 import { fieldBinding } from '../../src/route_entries/model';
+import { ENGINE_SECTIONS, sectionStage } from '../../src/navigation/EngineTree';
 
 describe('model workspace application boundary', () => {
   it('maps workflow URLs to engineering stages', () => {
@@ -18,5 +19,10 @@ describe('model workspace application boundary', () => {
 
   it('disables fields whose backend consumer is unavailable', () => {
     expect(fieldBinding({ pointer: '/future/value', label: 'Future', unit: 'SI', value: '', supported: false }).enabled).toBe(false);
+  });
+
+  it('keeps engine sections in the model stage', () => {
+    expect(ENGINE_SECTIONS).toHaveLength(4);
+    expect(sectionStage('Geometría y puertos')).toBe('Modelar');
   });
 });
