@@ -25,57 +25,66 @@ R4_CATALOGUE_SHA256 = '3b23f7a74995feef37f5d5535eea11dc04b269363f42642aa91ece8f7
 
 
 def _get_commit():
+    # Worktree-aware resolver: try git CLI first, then direct .git worktree read without WSL mangling on Windows.
     try:
         return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     except Exception:
-        try:
-            git_file = ROOT / '.git'
-            if git_file.is_file():
-                content = git_file.read_text(encoding='utf-8').strip()
-                if content.startswith('gitdir:'):
-                    raw = content.split(':', 1)[1].strip()
-                    # Translate Windows path E:/... to WSL /mnt/e/... if needed
-                    if len(raw) >= 2 and raw[1] == ':':
-                        raw = f"/mnt/{raw[0].lower()}{raw[2:].replace(chr(92), '/')}"
-                    git_dir = pathlib.Path(raw)
-                    # Try to resolve HEAD via git dir
-                    head_path = git_dir / 'HEAD'
-                    if head_path.is_file():
-                        head_content = head_path.read_text(encoding='utf-8').strip()
-                        if head_content.startswith('ref:'):
-                            ref = head_content[4:].strip()
-                            # Find common dir
-                            commondir_file = git_dir / 'commondir'
-                            if commondir_file.is_file():
-                                common_raw = commondir_file.read_text(encoding='utf-8').strip()
-                                # common may be relative like ../..
-                                common_path = (git_dir / common_raw).resolve()
-                            else:
-                                common_path = git_dir
-                            ref_file = common_path / ref
-                            if ref_file.is_file():
-                                return ref_file.read_text(encoding='utf-8').strip()
-                            # Fallback to git_dir itself
-                            ref_file2 = git_dir / ref
-                            if ref_file2.is_file():
-                                return ref_file2.read_text(encoding='utf-8').strip()
-                        else:
-                            return head_content
-        except Exception:
-            pass
-        # Try with explicit GIT_DIR env
-        try:
-            git_file = ROOT / '.git'
+        pass
+    try:
+        git_file = ROOT / '.git'
+        if git_file.is_file():
             content = git_file.read_text(encoding='utf-8').strip()
-            raw = content.split(':', 1)[1].strip() if content.startswith('gitdir:') else str(git_file)
-            if len(raw) >= 2 and raw[1] == ':':
-                raw = f"/mnt/{raw[0].lower()}{raw[2:].replace(chr(92), '/')}"
-            env = dict(os.environ)
-            env['GIT_DIR'] = raw
-            env['GIT_WORK_TREE'] = str(ROOT)
-            return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True, env=env).strip()
-        except Exception as e:
-            raise RuntimeError(f"Cannot determine HEAD: {e}")
+            if content.startswith('gitdir:'):
+                raw = content.split(':', 1)[1].strip()
+                git_dir = Path(raw)
+            else:
+                git_dir = git_file
+            head_path = git_dir / 'HEAD'
+            if head_path.is_file():
+                head_content = head_path.read_text(encoding='utf-8').strip()
+                if head_content.startswith('ref:'):
+                    ref = head_content[4:].strip()
+                    commondir_file = git_dir / 'commondir'
+                    if commondir_file.is_file():
+                        common_raw = commondir_file.read_text(encoding='utf-8').strip()
+                        common_path = (git_dir / common_raw).resolve()
+                    else:
+                        common_path = git_dir
+                    ref_file = common_path / ref
+                    if ref_file.is_file():
+                        text = ref_file.read_text(encoding='utf-8').strip()
+                        if len(text) == 40 and all(c in '0123456789abcdef' for c in text.lower()):
+                            return text
+                    ref_file2 = git_dir / ref
+                    if ref_file2.is_file():
+                        text = ref_file2.read_text(encoding='utf-8').strip()
+                        if len(text) == 40 and all(c in '0123456789abcdef' for c in text.lower()):
+                            return text
+                elif len(head_content) == 40:
+                    return head_content
+    except Exception:
+        pass
+    # Last resort: ask git with explicit GIT_DIR resolved via worktree (no WSL translation on win32)
+    try:
+        git_file = ROOT / '.git'
+        content = git_file.read_text(encoding='utf-8').strip()
+        if content.startswith('gitdir:'):
+            raw = content.split(':', 1)[1].strip()
+            git_dir = raw
+        else:
+            git_dir = str(git_file)
+        env = dict(os.environ)
+        env['GIT_DIR'] = git_dir
+        env['GIT_WORK_TREE'] = str(ROOT)
+        # Also handle common dir for worktrees: git expects GIT_COMMON_DIR
+        common_candidate = Path(git_dir) / 'commondir'
+        if common_candidate.is_file():
+            common_raw = common_candidate.read_text(encoding='utf-8').strip()
+            common_path = str((Path(git_dir) / common_raw).resolve())
+            env['GIT_COMMON_DIR'] = common_path
+        return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True, env=env).strip()
+    except Exception as e:
+        raise RuntimeError(f"Cannot determine HEAD: {e}")
 
 
 def frozen_source(fixture):
@@ -162,11 +171,11 @@ class GuardedRHS:
 def verify_fixture():
     path = ROOT/'validation/fixtures/VAL-008/input.json'
     assert sha256(path.read_bytes()).hexdigest() == INPUT_SHA
-    fixture = json.loads(path.read_text())
+    fixture = json.loads(path.read_text(encoding='utf-8'))
     source = frozen_source(fixture)
     assert sha256(source.read_bytes()).hexdigest() == fixture['frozen_source_sha256']
-    assert fixture['frozen_fiche'] == json.loads(source.read_text())['fixtures']['VAL-008']
-    expected = json.loads((ROOT/'validation/expected/VAL-008/acceptance.json').read_text())
+    assert fixture['frozen_fiche'] == json.loads(source.read_text(encoding='utf-8'))['fixtures']['VAL-008']
+    expected = json.loads((ROOT/'validation/expected/VAL-008/acceptance.json').read_text(encoding='utf-8'))
     assert expected['source_sha256'] == fixture['frozen_source_sha256']
     assert expected['thresholds'] == dict(operational_pressure_L1_max=5e-4,
         operational_pressure_Linf_max=5e-3,thermal_pressure_L1_max=2e-3,
@@ -183,7 +192,7 @@ def execute(case, n, cfl, *, output_root=None):
     out.mkdir(parents=True,exist_ok=True)
     artifact_stem = f"{case['name']}-N{n}-CFL{cfl}"
     reference = load_reference()
-    qualification = json.loads((ROOT/'validation/references/VAL-008/qualification.json').read_text())
+    qualification = json.loads((ROOT/'validation/references/VAL-008/qualification.json').read_text(encoding='utf-8'))
     assert qualification['status'] == 'REFERENCE_QUALIFIED'
     assert qualification['candidate_imports'] is False
     assert qualification['reference_sha256'] == sha256((ROOT/'validation/references/VAL-008/reference.py').read_bytes()).hexdigest()
@@ -328,7 +337,7 @@ def execute_regional_contact(case, n, cfl, *, output_root=None, checkpoint_path=
     out.mkdir(parents=True, exist_ok=True)
     stem = f"{case['name']}-N{n}-CFL{cfl}"
     reference = load_reference(); solution = reference.solve(reference.Case(**case['parameters']))
-    qualification = json.loads((ROOT/'validation/references/VAL-008/qualification.json').read_text())
+    qualification = json.loads((ROOT/'validation/references/VAL-008/qualification.json').read_text(encoding='utf-8'))
     assert qualification['status'] == 'REFERENCE_QUALIFIED' and qualification['candidate_imports'] is False
     qualified = [row for row in qualification['cases'] if row['parameters'] == case['parameters']]
     assert len(qualified) == 1 and qualified[0]['status'] == 'PASS'

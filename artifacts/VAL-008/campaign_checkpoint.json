@@ -1,5 +1,5 @@
 {
-  "HEAD": "3e8ea233f134bcaaa405def3bf16883f1fa6f5cc",
+  "HEAD": "b418efe2726ef1f68d5c39d890f1951f40938e99",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -13,25 +13,19 @@
     "VAL-008": {
       "total_rows": 189,
       "PASS_REUSABLE": 4,
-      "PENDING": 181,
+      "PENDING": 177,
       "INCOMPLETE": 0,
       "FAIL": 0,
-      "PASS": 8
+      "PASS": 12
     },
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "contact-pair0-u0",
-    "kind": "contact",
-    "pair": 0,
-    "velocity": 0.0,
-    "pressure_ratio": null,
-    "N": 200,
-    "CFL": 0.1,
+    "case": "contact-pair2-u0",
+    "N": 100,
+    "CFL": 0.2,
     "status": "PASS",
-    "evidence": null,
-    "threshold": "operational",
-    "elapsed": 912.0106606846675
+    "elapsed": 414.0
   },
   "next_row": {
     "case": "shock-pair0-ratio10",
@@ -583,7 +577,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },
@@ -595,7 +589,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },
@@ -619,7 +613,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },
@@ -667,7 +661,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.1,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "thermal"
     },
