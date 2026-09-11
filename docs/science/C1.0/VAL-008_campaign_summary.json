@@ -1,5 +1,5 @@
 {
-  "HEAD": "fd1db229d29d4d669206b6c9db826be2f8666e5c",
+  "HEAD": "43e12fe3c640e1e45ee5b145805fc68bc3c44ec9",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -27,16 +27,16 @@
     "elapsed": 912.0106606846675
   },
   "next_row": {
-    "case": "contact-pair0-u0",
-    "kind": "contact",
+    "case": "shock-pair0-ratio10",
+    "kind": "shock",
     "pair": 0,
     "velocity": 0.0,
-    "pressure_ratio": null,
-    "N": 200,
-    "CFL": 0.05,
+    "pressure_ratio": 10.0,
+    "N": 80,
+    "CFL": 0.2,
     "status": "PENDING",
     "evidence": null,
-    "threshold": "operational"
+    "threshold": "shock"
   },
   "reusable_evidence": [
     [
