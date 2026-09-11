@@ -1,0 +1,13 @@
+:root { font-family: system-ui, sans-serif; color: #17202a; background: #f5f7fa; }
+body { margin: 0; }
+main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; }
+header { border-bottom: 1px solid #c7d0d9; margin-bottom: 1rem; }
+header h1 { margin: 0; font-size: 1.6rem; } header p { margin: .25rem 0 1rem; color: #52616f; }
+ol, ul { list-style: none; padding: 0; } ol { display: flex; gap: .5rem; flex-wrap: wrap; }
+button { border: 1px solid #8393a3; background: #fff; border-radius: 4px; padding: .45rem .7rem; cursor: pointer; }
+button[aria-current] { background: #173f5f; color: #fff; border-color: #173f5f; }
+section { background: #fff; border: 1px solid #c7d0d9; border-radius: 5px; padding: 1rem; }
+section > nav { float: left; width: 210px; margin-right: 1.5rem; } section > nav li { margin-bottom: .35rem; }
+fieldset { border: 1px solid #c7d0d9; border-radius: 4px; } label { display: block; margin: .6rem 0; }
+input:not([type="checkbox"]) { display: block; width: min(360px, 100%); padding: .4rem; margin-top: .2rem; }
+[role="status"] { color: #52616f; padding: 1rem; }

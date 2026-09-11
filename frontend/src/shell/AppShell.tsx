@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { APP_STAGES, type AppStage } from '../navigation/routes';
 import { EngineTree, type EngineSection } from '../navigation/EngineTree';
 import { loadUiPreferences, saveUiPreferences } from './preferences';
+import './app.css';
 
 export type ModelField = { pointer: string; label: string; unit: string; value: string; supported: boolean };
 
