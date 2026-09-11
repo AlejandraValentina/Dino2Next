@@ -7,6 +7,7 @@ import math
 import platform
 import subprocess
 import sys
+import os
 import time as clock
 from collections import deque
 
@@ -21,6 +22,60 @@ ROOT = Path(__file__).resolve().parents[3]
 INPUT_SHA = 'd64f03d8a6bc81c2f793a7d9737031efcef810ddbaa3c33d6f1ea0a505b03810'
 R4_FIXTURE_CATALOG_SHA256 = 'fd96f3e520828e12bc8483de9a437d5c3bba85bcf9269ef3675db8a6e265b513'
 R4_CATALOGUE_SHA256 = '3b23f7a74995feef37f5d5535eea11dc04b269363f42642aa91ece8f733e15b7'
+
+
+def _get_commit():
+    try:
+        return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    except Exception:
+        try:
+            git_file = ROOT / '.git'
+            if git_file.is_file():
+                content = git_file.read_text(encoding='utf-8').strip()
+                if content.startswith('gitdir:'):
+                    raw = content.split(':', 1)[1].strip()
+                    # Translate Windows path E:/... to WSL /mnt/e/... if needed
+                    if len(raw) >= 2 and raw[1] == ':':
+                        raw = f"/mnt/{raw[0].lower()}{raw[2:].replace(chr(92), '/')}"
+                    git_dir = pathlib.Path(raw)
+                    # Try to resolve HEAD via git dir
+                    head_path = git_dir / 'HEAD'
+                    if head_path.is_file():
+                        head_content = head_path.read_text(encoding='utf-8').strip()
+                        if head_content.startswith('ref:'):
+                            ref = head_content[4:].strip()
+                            # Find common dir
+                            commondir_file = git_dir / 'commondir'
+                            if commondir_file.is_file():
+                                common_raw = commondir_file.read_text(encoding='utf-8').strip()
+                                # common may be relative like ../..
+                                common_path = (git_dir / common_raw).resolve()
+                            else:
+                                common_path = git_dir
+                            ref_file = common_path / ref
+                            if ref_file.is_file():
+                                return ref_file.read_text(encoding='utf-8').strip()
+                            # Fallback to git_dir itself
+                            ref_file2 = git_dir / ref
+                            if ref_file2.is_file():
+                                return ref_file2.read_text(encoding='utf-8').strip()
+                        else:
+                            return head_content
+        except Exception:
+            pass
+        # Try with explicit GIT_DIR env
+        try:
+            git_file = ROOT / '.git'
+            content = git_file.read_text(encoding='utf-8').strip()
+            raw = content.split(':', 1)[1].strip() if content.startswith('gitdir:') else str(git_file)
+            if len(raw) >= 2 and raw[1] == ':':
+                raw = f"/mnt/{raw[0].lower()}{raw[2:].replace(chr(92), '/')}"
+            env = dict(os.environ)
+            env['GIT_DIR'] = raw
+            env['GIT_WORK_TREE'] = str(ROOT)
+            return subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True, env=env).strip()
+        except Exception as e:
+            raise RuntimeError(f"Cannot determine HEAD: {e}")
 
 
 def frozen_source(fixture):
@@ -249,7 +304,7 @@ def execute(case, n, cfl, *, output_root=None):
         guard_cells_each_side=m,speed_bound=speed,metrics=metrics,steps=steps,rejections=retries,
         physical_stage_speeds=rhs.stage_speeds,elapsed_seconds=clock.monotonic()-start,
         reference_qualification=qualified_cases[0],
-        raw_sha256=sha256(path.read_bytes()).hexdigest(),commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        raw_sha256=sha256(path.read_bytes()).hexdigest(),commit=_get_commit(),
         environment=dict(python=platform.python_version(),numpy=np.__version__),
         hashes={str(p.relative_to(ROOT)):sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),
             ROOT/'src/dino2next/numerics/__init__.py', ROOT/'validation/references/VAL-008/reference.py',
@@ -350,7 +405,7 @@ def execute_regional_contact(case, n, cfl, *, output_root=None, checkpoint_path=
              for name,value in sample.items()} for sample in run['ledger_samples']],
         regional_step_audit_path=run['step_audit_path'], regional_step_audit_sha256=(
             sha256(Path(run['step_audit_path']).read_bytes()).hexdigest() if run['step_audit_path'] else None),
-        commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        commit=_get_commit(),
         environment=dict(python=platform.python_version(),numpy=np.__version__),
         hashes={str(source.relative_to(ROOT)):sha256(source.read_bytes()).hexdigest() for source in sources})
     path.with_suffix('.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
