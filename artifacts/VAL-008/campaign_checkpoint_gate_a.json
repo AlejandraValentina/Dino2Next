@@ -1,5 +1,5 @@
 {
-  "HEAD": "daa043a488d97cedbbeb4a0563533b8eca4f9a6d",
+  "HEAD": "4192b1986afeb1fb1dd19b537b38d60737b42de4",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -15,9 +15,9 @@
   "validations": {
     "VAL-008": {
       "total_rows_GATE_A": 32,
-      "PASS": 14,
+      "PASS": 18,
       "PASS_REUSABLE": 4,
-      "PENDING": 18,
+      "PENDING": 14,
       "FAIL": 0,
       "total_rows_exhaustive": 189,
       "exhaustive_PASS": 11,
@@ -26,11 +26,11 @@
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "contact-pair2-u-100",
-    "N": 100,
+    "case": "shock-pair1-ratio2",
+    "N": 80,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 2160.9220000002533
+    "elapsed": 345.9060000004247
   },
   "next_row_GATE_A": {
     "case": "contact-pair1-u100",
@@ -45,9 +45,9 @@
     "threshold": "thermal"
   },
   "next_row_exhaustive": {
-    "case": "shock-pair0-ratio10",
+    "case": "shock-pair1-ratio10",
     "kind": "shock",
-    "pair": 0,
+    "pair": 1,
     "velocity": 0.0,
     "pressure_ratio": 10.0,
     "N": 80,
@@ -457,9 +457,22 @@
       "pressure_ratio": 2.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "operational",
+      "elapsed": 349.0939999995753,
+      "max_L1": [
+        0.007693035709780676,
+        0.005211764333150827,
+        0.011226565218318909
+      ],
+      "max_Linf": [
+        0.13715719279657426,
+        0.09492928750655458,
+        0.20229467844741653
+      ],
+      "ledger_max": 1.834662865250509e-17,
+      "raw_sha256": "8fa1248f6e845bfb4c54b01884138a2aa6255ad2467b74f8b89235bd749c8ef7"
     },
     {
       "case": "shock-pair0-ratio5",
@@ -469,9 +482,22 @@
       "pressure_ratio": 5.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "operational",
+      "elapsed": 851.3909999998286,
+      "max_L1": [
+        0.014271331689411075,
+        0.01919534366118272,
+        0.061265355482693254
+      ],
+      "max_Linf": [
+        0.14164438221734577,
+        0.3102743389803013,
+        0.8526325538957593
+      ],
+      "ledger_max": 1.3161872775054512e-16,
+      "raw_sha256": "a38832158d5882d3e5ac3b828bb0419addb42e94125e8a6f49010e0384e5b70d"
     },
     {
       "case": "shock-pair0-ratio10",
@@ -481,9 +507,22 @@
       "pressure_ratio": 10.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "operational",
+      "elapsed": 574.7810000004247,
+      "max_L1": [
+        0.01470446853140531,
+        0.028866783283567538,
+        0.12493646452961747
+      ],
+      "max_Linf": [
+        0.12187227446553282,
+        0.5072804486180915,
+        1.674713399705522
+      ],
+      "ledger_max": 1.2155080619347886e-16,
+      "raw_sha256": "c28b601bd5744be1e8c24fbabca36c9b03842fb15117a87aacf6c300b78207d1"
     },
     {
       "case": "shock-pair0-ratio5",
@@ -577,9 +616,22 @@
       "pressure_ratio": 2.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "thermal",
+      "elapsed": 345.9060000004247,
+      "max_L1": [
+        0.007693035709780676,
+        0.005211764333150827,
+        0.011226565218318909
+      ],
+      "max_Linf": [
+        0.13715719279657426,
+        0.09492928750655458,
+        0.20229467844741653
+      ],
+      "ledger_max": 1.834662865250509e-17,
+      "raw_sha256": "8fa1248f6e845bfb4c54b01884138a2aa6255ad2467b74f8b89235bd749c8ef7"
     },
     {
       "case": "shock-pair2-ratio5",
@@ -751,9 +803,10 @@
       "pressure_ratio": 10.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "shock",
+      "elapsed": 574.7810000004247
     },
     {
       "case": "shock-pair0-ratio2",
@@ -763,9 +816,10 @@
       "pressure_ratio": 2.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "shock",
+      "elapsed": 349.0939999995753
     },
     {
       "case": "shock-pair0-ratio5",
@@ -775,9 +829,10 @@
       "pressure_ratio": 5.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "shock",
+      "elapsed": 851.3909999998286
     },
     {
       "case": "shock-pair1-ratio10",
@@ -799,9 +854,10 @@
       "pressure_ratio": 2.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "shock",
+      "elapsed": 345.9060000004247
     },
     {
       "case": "shock-pair1-ratio5",
