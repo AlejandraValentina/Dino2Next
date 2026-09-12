@@ -1,5 +1,5 @@
 {
-  "HEAD": "4192b1986afeb1fb1dd19b537b38d60737b42de4",
+  "HEAD": "5de54b5be4364f33e78bb40a037ad8b1e0f0435a",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -13,19 +13,19 @@
     "VAL-008": {
       "total_rows": 189,
       "PASS_REUSABLE": 4,
-      "PENDING": 171,
+      "PENDING": 168,
       "INCOMPLETE": 0,
       "FAIL": 0,
-      "PASS": 18
+      "PASS": 21
     },
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "shock-pair1-ratio2",
-    "N": 80,
+    "case": "contact-pair0-u-100",
+    "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 345.9060000004247
+    "elapsed": 265.1100000003353
   },
   "next_row": {
     "case": "shock-pair1-ratio10",
@@ -337,7 +337,7 @@
       "pressure_ratio": 5.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "shock"
     },
@@ -565,7 +565,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "operational"
     },
@@ -637,7 +637,7 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.1,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
       "threshold": "operational"
     },

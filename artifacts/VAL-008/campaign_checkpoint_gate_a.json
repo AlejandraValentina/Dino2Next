@@ -1,5 +1,5 @@
 {
-  "HEAD": "4192b1986afeb1fb1dd19b537b38d60737b42de4",
+  "HEAD": "5de54b5be4364f33e78bb40a037ad8b1e0f0435a",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -15,9 +15,9 @@
   "validations": {
     "VAL-008": {
       "total_rows_GATE_A": 32,
-      "PASS": 18,
+      "PASS": 21,
       "PASS_REUSABLE": 4,
-      "PENDING": 14,
+      "PENDING": 11,
       "FAIL": 0,
       "total_rows_exhaustive": 189,
       "exhaustive_PASS": 11,
@@ -26,11 +26,11 @@
     "VAL-010": "COMPLETE_NO_RERUN"
   },
   "last_completed": {
-    "case": "shock-pair1-ratio2",
-    "N": 80,
+    "case": "contact-pair0-u-100",
+    "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 345.9060000004247
+    "elapsed": 265.1100000003353
   },
   "next_row_GATE_A": {
     "case": "contact-pair1-u100",
@@ -433,9 +433,22 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "operational"
+      "threshold": "operational",
+      "elapsed": 265.1100000003353,
+      "max_L1": [
+        1.1436014384275996e-14,
+        4.131024052494134e-16,
+        1.2128410162404167e-12
+      ],
+      "max_Linf": [
+        4.190814119031484e-14,
+        1.736061425666746e-14,
+        1.2470991350710392e-12
+      ],
+      "ledger_max": 1.804811350808218e-16,
+      "raw_sha256": "bcac36ad38e9dd6d830bd4a2e3ec7e9976feffe5ea69b9b633e6a4edbd380f23"
     },
     {
       "case": "contact-pair0-u-100",
@@ -445,9 +458,22 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.1,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "operational"
+      "threshold": "operational",
+      "elapsed": 1428.671999999322,
+      "max_L1": [
+        1.1670095893627303e-14,
+        6.394206439089396e-16,
+        1.2129312381148326e-12
+      ],
+      "max_Linf": [
+        5.247956419327714e-14,
+        1.7990867579516775e-14,
+        1.26339728012681e-12
+      ],
+      "ledger_max": 5.117714011398657e-16,
+      "raw_sha256": "4b73b142da26a404c01fbfc1f76220478f963f4c0a39f531a1a0275496e34583"
     },
     {
       "case": "shock-pair0-ratio2",
@@ -641,9 +667,22 @@
       "pressure_ratio": 5.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "thermal",
+      "elapsed": 728.3279999997467,
+      "max_L1": [
+        0.01104292227942913,
+        0.019475426024245197,
+        0.0553703168725633
+      ],
+      "max_Linf": [
+        0.11327582683458871,
+        0.30381347423078126,
+        0.8096173019122455
+      ],
+      "ledger_max": 7.264525791306709e-17,
+      "raw_sha256": "41579acd7a2115b44ae91d96b68df747299ae1be187fd6350623e8fa739fab3b"
     }
   ],
   "inventory_exhaustive": [
@@ -903,9 +942,10 @@
       "pressure_ratio": 5.0,
       "N": 80,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "shock"
+      "threshold": "shock",
+      "elapsed": 728.3279999997467
     },
     {
       "case": "shock-pair0-ratio10",
@@ -1131,9 +1171,10 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.2,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "operational"
+      "threshold": "operational",
+      "elapsed": null
     },
     {
       "case": "contact-pair1-u0",
@@ -1228,9 +1269,10 @@
       "pressure_ratio": null,
       "N": 100,
       "CFL": 0.1,
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": null,
-      "threshold": "operational"
+      "threshold": "operational",
+      "elapsed": null
     },
     {
       "case": "contact-pair0-u100",

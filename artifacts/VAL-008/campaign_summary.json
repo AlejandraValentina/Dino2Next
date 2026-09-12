@@ -1,5 +1,5 @@
 {
-  "HEAD": "4192b1986afeb1fb1dd19b537b38d60737b42de4",
+  "HEAD": "5de54b5be4364f33e78bb40a037ad8b1e0f0435a",
   "scope_active": "S06",
   "scopes_accepted": [
     "S00",
@@ -16,11 +16,11 @@
     "VAL-010": "COMPLETE (no rerun)"
   },
   "last_completed": {
-    "case": "shock-pair1-ratio2",
-    "N": 80,
+    "case": "contact-pair0-u-100",
+    "N": 100,
     "CFL": 0.2,
     "status": "PASS",
-    "elapsed": 345.9060000004247
+    "elapsed": 265.1100000003353
   },
   "next_row": {
     "case": "shock-pair1-ratio10",
@@ -70,5 +70,5 @@
     "evidence": null,
     "threshold": "thermal"
   },
-  "GATE_A_verified": "18/32"
+  "GATE_A_verified": "21/32"
 }
